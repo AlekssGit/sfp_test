@@ -1,0 +1,38 @@
+set_global_assignment -entity "send_packet_1" -library "send_packet_1" -name IP_TOOL_NAME "QsysPrimePro"
+set_global_assignment -entity "send_packet_1" -library "send_packet_1" -name IP_TOOL_VERSION "21.3"
+set_global_assignment -entity "send_packet_1" -library "send_packet_1" -name IP_TOOL_ENV "QsysPrimePro"
+set_global_assignment -entity "send_packet_1" -library "send_packet_1" -name IP_TOOL_VENDOR_NAME "Altera Corporation"
+set_global_assignment -entity "send_packet_1" -library "send_packet_1" -name IP_TOP_LEVEL_COMPONENT_NAME "send_packet"
+set_global_assignment -library "send_packet_1" -name SOPCINFO_FILE [file join $::quartus(qip_path) "send_packet_1.sopcinfo"]
+set_global_assignment -entity "send_packet_1" -library "send_packet_1" -name SLD_INFO "QSYS_NAME send_packet_1 HAS_SOPCINFO 1 GENERATION_ID 0"
+set_global_assignment -library "send_packet_1" -name MISC_FILE [file join $::quartus(qip_path) "send_packet_1.cmp"]
+set_global_assignment -entity "send_packet_1" -library "send_packet_1" -name IP_TARGETED_DEVICE_FAMILY "Cyclone 10 GX"
+set_global_assignment -entity "send_packet_1" -library "send_packet_1" -name IP_GENERATED_DEVICE_FAMILY "{Cyclone 10 GX}"
+set_global_assignment -entity "send_packet_1" -library "send_packet_1" -name IP_QSYS_MODE "STANDALONE"
+set_global_assignment -name SYNTHESIS_ONLY_QIP ON
+set_global_assignment -library "send_packet_1" -name MISC_FILE [file join $::quartus(qip_path) "../send_packet_1.ip"]
+
+set_global_assignment -entity "send_packet" -library "send_packet_10" -name IP_COMPONENT_NAME "c2VuZF9wYWNrZXQ="
+set_global_assignment -entity "send_packet" -library "send_packet_10" -name IP_COMPONENT_DISPLAY_NAME "c2VuZF9wYWNrZXQ="
+set_global_assignment -entity "send_packet" -library "send_packet_10" -name IP_COMPONENT_REPORT_HIERARCHY "Off"
+set_global_assignment -entity "send_packet" -library "send_packet_10" -name IP_COMPONENT_INTERNAL "Off"
+set_global_assignment -entity "send_packet" -library "send_packet_10" -name IP_COMPONENT_VERSION "MS4w"
+set_global_assignment -entity "send_packet_1" -library "send_packet_1" -name IP_COMPONENT_NAME "c2VuZF9wYWNrZXRfMQ=="
+set_global_assignment -entity "send_packet_1" -library "send_packet_1" -name IP_COMPONENT_DISPLAY_NAME "c3lzdGVt"
+set_global_assignment -entity "send_packet_1" -library "send_packet_1" -name IP_COMPONENT_REPORT_HIERARCHY "On"
+set_global_assignment -entity "send_packet_1" -library "send_packet_1" -name IP_COMPONENT_INTERNAL "Off"
+set_global_assignment -entity "send_packet_1" -library "send_packet_1" -name IP_COMPONENT_AUTHOR "QWx0ZXJhIENvcnBvcmF0aW9u"
+set_global_assignment -entity "send_packet_1" -library "send_packet_1" -name IP_COMPONENT_VERSION "MS4w"
+set_global_assignment -entity "send_packet_1" -library "send_packet_1" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MA==::QXV0byBHRU5FUkFUSU9OX0lE"
+set_global_assignment -entity "send_packet_1" -library "send_packet_1" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfRkFNSUxZ::Q3ljbG9uZSAxMCBHWA==::QXV0byBERVZJQ0VfRkFNSUxZ"
+set_global_assignment -entity "send_packet_1" -library "send_packet_1" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0U=::MTBDWDIyMFlGNzgwRTVH::QXV0byBERVZJQ0U="
+set_global_assignment -entity "send_packet_1" -library "send_packet_1" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfU1BFRURHUkFERQ==::NQ==::QXV0byBERVZJQ0VfU1BFRURHUkFERQ=="
+set_global_assignment -entity "send_packet_1" -library "send_packet_1" -name IP_COMPONENT_PARAMETER "QVVUT19DTE9DS19DTE9DS19SQVRF::LTE=::QXV0byBDTE9DS19SQVRF"
+set_global_assignment -entity "send_packet_1" -library "send_packet_1" -name IP_COMPONENT_PARAMETER "QVVUT19DTE9DS19DTE9DS19ET01BSU4=::LTE=::QXV0byBDTE9DS19ET01BSU4="
+set_global_assignment -entity "send_packet_1" -library "send_packet_1" -name IP_COMPONENT_PARAMETER "QVVUT19DTE9DS19SRVNFVF9ET01BSU4=::LTE=::QXV0byBSRVNFVF9ET01BSU4="
+set_global_assignment -entity "send_packet_1" -library "send_packet_1" -name IP_COMPONENT_PARAMETER "QVVUT19BVkFMT05fTUFTVEVSX0FERFJFU1NfV0lEVEg=::LTE=::QXV0byBBRERSRVNTX1dJRFRI"
+
+
+set_global_assignment -library "send_packet_10" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "send_packet_10/synth/send_packet.sv"]
+set_global_assignment -library "send_packet_1" -name VERILOG_FILE [file join $::quartus(qip_path) "synth/send_packet_1.v"]
+

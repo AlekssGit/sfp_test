@@ -1,0 +1,18 @@
+# system info pll on 2022.07.20.11:58:10
+system_info:
+name,value
+DEVICE,10CX220YF780E5G
+DEVICE_FAMILY,Cyclone 10 GX
+GENERATION_ID,0
+#
+#
+# Files generated for pll on 2022.07.20.11:58:10
+files:
+filepath,kind,attributes,module,is_top
+sim/pll.v,VERILOG,CONTAINS_INLINE_CONFIGURATION,pll,true
+altera_iopll_1931/sim/pll_altera_iopll_1931_bd2ubhi.vo,VERILOG,,pll_altera_iopll_1931_bd2ubhi,false
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module
+pll.pll,pll_altera_iopll_1931_bd2ubhi

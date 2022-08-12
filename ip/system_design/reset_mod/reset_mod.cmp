@@ -1,0 +1,13 @@
+	component reset_mod is
+		generic (
+			TIME_RESET_PHY : integer := 500;
+			TIME_WORK_PHY  : integer := 300
+		);
+		port (
+			clk       : in  std_logic := 'X'; -- clk
+			rst_n     : in  std_logic := 'X'; -- reset_n
+			reset     : out std_logic;        -- reset
+			reset_phy : out std_logic         -- reset
+		);
+	end component reset_mod;
+

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file
+   path="send_packet_10/sim/send_packet.sv"
+   type="SYSTEM_VERILOG"
+   library="send_packet_10" />
+ <file
+   path="sim/send_packet_1.v"
+   type="VERILOG"
+   library="send_packet_1"
+   hasInlineConfiguration="true" />
+ <topLevel name="send_packet_1.send_packet_1" />
+ <deviceFamily name="cyclone10gx" />
+ <device name="10CX220YF780E5G" />
+</simPackage>

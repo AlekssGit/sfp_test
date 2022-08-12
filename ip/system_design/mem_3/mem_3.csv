@@ -1,0 +1,18 @@
+# system info mem_3 on 2022.07.20.11:58:18
+system_info:
+name,value
+DEVICE,10CX220YF780E5G
+DEVICE_FAMILY,Cyclone 10 GX
+GENERATION_ID,0
+#
+#
+# Files generated for mem_3 on 2022.07.20.11:58:18
+files:
+filepath,kind,attributes,module,is_top
+sim/mem_3.v,VERILOG,CONTAINS_INLINE_CONFIGURATION,mem_3,true
+altera_avalon_onchip_memory2_1931/sim/mem_3_altera_avalon_onchip_memory2_1931_h4b5dza.v,VERILOG,,mem_3_altera_avalon_onchip_memory2_1931_h4b5dza,false
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module
+mem_3.mem_3,mem_3_altera_avalon_onchip_memory2_1931_h4b5dza

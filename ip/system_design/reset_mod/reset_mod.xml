@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deploy
+ date="2022.07.20.11:58:11"
+ outputDirectory="D:/Documents/Projects/Learning/SFP_test/ip/system_design/reset_mod/">
+ <perimeter>
+  <parameter
+     name="AUTO_GENERATION_ID"
+     type="Integer"
+     defaultValue="0"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_UNIQUE_ID"
+     type="String"
+     defaultValue=""
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_FAMILY"
+     type="String"
+     defaultValue="Cyclone 10 GX"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE"
+     type="String"
+     defaultValue="10CX220YF780E5G"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_SPEEDGRADE"
+     type="String"
+     defaultValue="5"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLOCK_CLOCK_RATE"
+     type="Long"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLOCK_CLOCK_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLOCK_RESET_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <interface name="clock" kind="clock" start="0">
+   <property name="clockRate" value="0" />
+   <property name="externallyDriven" value="false" />
+   <property name="ptfSchematicName" value="" />
+   <port name="clk" direction="input" role="clk" width="1" />
+  </interface>
+  <interface name="reset" kind="reset" start="0">
+   <property name="associatedClock" value="clock" />
+   <property name="synchronousEdges" value="DEASSERT" />
+   <port name="rst_n" direction="input" role="reset_n" width="1" />
+  </interface>
+  <interface name="reset_main" kind="reset" start="1">
+   <property name="associatedClock" value="" />
+   <property name="associatedDirectReset" value="" />
+   <property name="associatedResetSinks" value="reset" />
+   <property name="synchronousEdges" value="NONE" />
+   <port name="reset" direction="output" role="reset" width="1" />
+  </interface>
+  <interface name="reset_phy" kind="reset" start="1">
+   <property name="associatedClock" value="" />
+   <property name="associatedDirectReset" value="reset" />
+   <property name="associatedResetSinks" value="reset" />
+   <property name="synchronousEdges" value="NONE" />
+   <port name="reset_phy" direction="output" role="reset" width="1" />
+  </interface>
+ </perimeter>
+ <entity kind="reset_mod" version="1.0" name="reset_mod">
+  <parameter name="AUTO_CLOCK_CLOCK_RATE" value="-1" />
+  <parameter name="AUTO_CLOCK_CLOCK_DOMAIN" value="-1" />
+  <parameter name="AUTO_CLOCK_RESET_DOMAIN" value="-1" />
+  <parameter name="AUTO_GENERATION_ID" value="0" />
+  <parameter name="AUTO_DEVICE" value="10CX220YF780E5G" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone 10 GX" />
+  <parameter name="AUTO_UNIQUE_ID" value="" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="5" />
+  <generatedFiles>
+   <file
+       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\reset_mod\synth\reset_mod.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\reset_mod\synth\reset_mod.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file
+       path="D:/Documents/Projects/Learning/SFP_test/ip/system_design/reset_mod.ip" />
+  </sourceFiles>
+  <childSourceFiles>
+   <file path="D:/Documents/Projects/Learning/SFP_test/reset_module_hw.tcl" />
+  </childSourceFiles>
+  <messages>
+   <message level="Info" culprit="reset_mod">"Generating: reset_mod"</message>
+   <message level="Info" culprit="reset_mod">"Generating: reset_module"</message>
+  </messages>
+ </entity>
+ <entity kind="reset_module" version="1.0" name="reset_module">
+  <generatedFiles>
+   <file
+       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\reset_mod\reset_module_10\synth\reset_module.sv"
+       attributes="TOP_LEVEL_FILE" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\reset_mod\reset_module_10\synth\reset_module.sv"
+       attributes="TOP_LEVEL_FILE" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file path="D:/Documents/Projects/Learning/SFP_test/reset_module_hw.tcl" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <instantiator instantiator="reset_mod" as="reset_mod" />
+  <messages>
+   <message level="Info" culprit="reset_mod">"Generating: reset_module"</message>
+  </messages>
+ </entity>
+</deploy>

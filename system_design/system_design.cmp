@@ -1,0 +1,80 @@
+	component system_design is
+		port (
+			clock_50_clk                            : out std_logic;                                        -- clk
+			mac_inited_mac_inited                   : out std_logic;                                        -- mac_inited
+			init_mac_led_link_signal                : in  std_logic                     := 'X';             -- signal
+			pll_refclk_clk                          : in  std_logic                     := 'X';             -- clk
+			reset_main_out_reset                    : out std_logic;                                        -- reset
+			reset_mod_clock_clk                     : in  std_logic                     := 'X';             -- clk
+			reset_mod_reset_reset_n                 : in  std_logic                     := 'X';             -- reset_n
+			reset_mod_reset_phy_reset               : out std_logic;                                        -- reset
+			send_packet_1_control_start_ram_addr    : in  std_logic_vector(24 downto 0) := (others => 'X'); -- start_ram_addr
+			send_packet_1_control_cmd_send          : in  std_logic                     := 'X';             -- cmd_send
+			send_packet_2_control_start_ram_addr    : in  std_logic_vector(24 downto 0) := (others => 'X'); -- start_ram_addr
+			send_packet_2_control_cmd_send          : in  std_logic                     := 'X';             -- cmd_send
+			mac_misc_1_magic_wakeup                 : out std_logic;                                        -- magic_wakeup
+			mac_misc_1_magic_sleep_n                : in  std_logic                     := 'X';             -- magic_sleep_n
+			mac_misc_1_tx_crc_fwd                   : in  std_logic                     := 'X';             -- tx_crc_fwd
+			mac_mdio_mdc                            : out std_logic;                                        -- mdc
+			mac_mdio_mdio_in                        : in  std_logic                     := 'X';             -- mdio_in
+			mac_mdio_mdio_out                       : out std_logic;                                        -- mdio_out
+			mac_mdio_mdio_oen                       : out std_logic;                                        -- mdio_oen
+			mac_misc_2_magic_wakeup                 : out std_logic;                                        -- magic_wakeup
+			mac_misc_2_magic_sleep_n                : in  std_logic                     := 'X';             -- magic_sleep_n
+			mac_misc_2_tx_crc_fwd                   : in  std_logic                     := 'X';             -- tx_crc_fwd
+			tse_ref_clk                             : in  std_logic                     := 'X';             -- clk
+			status_led_connection_0_crs             : out std_logic;                                        -- crs
+			status_led_connection_0_link            : out std_logic;                                        -- link
+			status_led_connection_0_panel_link      : out std_logic;                                        -- panel_link
+			status_led_connection_0_col             : out std_logic;                                        -- col
+			status_led_connection_0_an              : out std_logic;                                        -- an
+			status_led_connection_0_char_err        : out std_logic;                                        -- char_err
+			status_led_connection_0_disp_err        : out std_logic;                                        -- disp_err
+			tx_analogreset_0_tx_analogreset         : in  std_logic_vector(0 downto 0)  := (others => 'X'); -- tx_analogreset
+			tx_digitalreset_0_tx_digitalreset       : in  std_logic_vector(0 downto 0)  := (others => 'X'); -- tx_digitalreset
+			rx_analogreset_0_rx_analogreset         : in  std_logic_vector(0 downto 0)  := (others => 'X'); -- rx_analogreset
+			rx_digitalreset_0_rx_digitalreset       : in  std_logic_vector(0 downto 0)  := (others => 'X'); -- rx_digitalreset
+			tx_cal_busy_0_tx_cal_busy               : out std_logic_vector(0 downto 0);                     -- tx_cal_busy
+			rx_cal_busy_0_rx_cal_busy               : out std_logic_vector(0 downto 0);                     -- rx_cal_busy
+			tse_rx_cdr_refclk_0_clk                 : in  std_logic                     := 'X';             -- clk
+			rx_set_locktodata_0_rx_set_locktodata   : in  std_logic_vector(0 downto 0)  := (others => 'X'); -- rx_set_locktodata
+			rx_set_locktoref_0_rx_set_locktoref     : in  std_logic_vector(0 downto 0)  := (others => 'X'); -- rx_set_locktoref
+			rx_is_lockedtoref_0_rx_is_lockedtoref   : out std_logic_vector(0 downto 0);                     -- rx_is_lockedtoref
+			rx_is_lockedtodata_0_rx_is_lockedtodata : out std_logic_vector(0 downto 0);                     -- rx_is_lockedtodata
+			sgmii_1_rxp                             : in  std_logic                     := 'X';             -- rxp
+			sgmii_1_txp                             : out std_logic;                                        -- txp
+			serdes_control_connection_0_export      : out std_logic;                                        -- export
+			status_led_connection_1_crs             : out std_logic;                                        -- crs
+			status_led_connection_1_link            : out std_logic;                                        -- link
+			status_led_connection_1_panel_link      : out std_logic;                                        -- panel_link
+			status_led_connection_1_col             : out std_logic;                                        -- col
+			status_led_connection_1_an              : out std_logic;                                        -- an
+			status_led_connection_1_char_err        : out std_logic;                                        -- char_err
+			status_led_connection_1_disp_err        : out std_logic;                                        -- disp_err
+			tx_analogreset_1_tx_analogreset         : in  std_logic_vector(0 downto 0)  := (others => 'X'); -- tx_analogreset
+			tx_digitalreset_1_tx_digitalreset       : in  std_logic_vector(0 downto 0)  := (others => 'X'); -- tx_digitalreset
+			rx_analogreset_1_rx_analogreset         : in  std_logic_vector(0 downto 0)  := (others => 'X'); -- rx_analogreset
+			rx_digitalreset_1_rx_digitalreset       : in  std_logic_vector(0 downto 0)  := (others => 'X'); -- rx_digitalreset
+			tx_cal_busy_1_tx_cal_busy               : out std_logic_vector(0 downto 0);                     -- tx_cal_busy
+			rx_cal_busy_1_rx_cal_busy               : out std_logic_vector(0 downto 0);                     -- rx_cal_busy
+			tse_rx_cdr_refclk_1_clk                 : in  std_logic                     := 'X';             -- clk
+			rx_set_locktodata_1_rx_set_locktodata   : in  std_logic_vector(0 downto 0)  := (others => 'X'); -- rx_set_locktodata
+			rx_set_locktoref_1_rx_set_locktoref     : in  std_logic_vector(0 downto 0)  := (others => 'X'); -- rx_set_locktoref
+			rx_is_lockedtoref_1_rx_is_lockedtoref   : out std_logic_vector(0 downto 0);                     -- rx_is_lockedtoref
+			rx_is_lockedtodata_1_rx_is_lockedtodata : out std_logic_vector(0 downto 0);                     -- rx_is_lockedtodata
+			sgmii_2_rxp                             : in  std_logic                     := 'X';             -- rxp
+			sgmii_2_txp                             : out std_logic;                                        -- txp
+			serdes_control_connection_1_export      : out std_logic;                                        -- export
+			tse_tx_serial_clk_2_clk                 : in  std_logic_vector(0 downto 0)  := (others => 'X'); -- clk
+			tse_rx_cdr_refclk_2_clk                 : in  std_logic                     := 'X';             -- clk
+			sgmii_3_rxp                             : in  std_logic                     := 'X';             -- rxp
+			sgmii_3_txp                             : out std_logic;                                        -- txp
+			tse_tx_serial_clk_3_clk                 : in  std_logic_vector(0 downto 0)  := (others => 'X'); -- clk
+			tse_rx_cdr_refclk_3_clk                 : in  std_logic                     := 'X';             -- clk
+			sgmii_4_rxp                             : in  std_logic                     := 'X';             -- rxp
+			sgmii_4_txp                             : out std_logic;                                        -- txp
+			xcvr_pll_powerdown_pll_powerdown        : in  std_logic                     := 'X';             -- pll_powerdown
+			xcvr_pll_refclk_clk                     : in  std_logic                     := 'X'              -- clk
+		);
+	end component system_design;
+

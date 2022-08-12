@@ -1,0 +1,23 @@
+	component receive_packet_1 is
+		port (
+			ff_rx_data       : in  std_logic_vector(7 downto 0)  := (others => 'X'); -- data
+			ff_rx_eop        : in  std_logic                     := 'X';             -- endofpacket
+			ff_rx_rdy        : out std_logic;                                        -- ready
+			ff_rx_sop        : in  std_logic                     := 'X';             -- startofpacket
+			ff_rx_dval       : in  std_logic                     := 'X';             -- valid
+			rx_err           : in  std_logic_vector(4 downto 0)  := (others => 'X'); -- error
+			ram_addr         : out std_logic_vector(9 downto 0);                     -- address
+			ram_chipselect   : out std_logic;                                        -- chipselect
+			ram_write        : out std_logic;                                        -- write
+			ram_readdata     : in  std_logic_vector(31 downto 0) := (others => 'X'); -- readdata
+			ram_writedata    : out std_logic_vector(31 downto 0);                    -- writedata
+			ram_byteenable   : out std_logic_vector(3 downto 0);                     -- byteenable
+			clk_original     : in  std_logic                     := 'X';             -- clk
+			rst              : in  std_logic                     := 'X';             -- reset
+			rx_afull_data    : out std_logic_vector(1 downto 0);                     -- data
+			rx_afull_valid   : out std_logic;                                        -- valid
+			rx_afull_channel : out std_logic_vector(1 downto 0);                     -- channel
+			fifo_status_clk  : in  std_logic                     := 'X'              -- clk
+		);
+	end component receive_packet_1;
+

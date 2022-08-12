@@ -1,0 +1,39 @@
+set_global_assignment -entity "reset_mod" -library "reset_mod" -name IP_TOOL_NAME "QsysPrimePro"
+set_global_assignment -entity "reset_mod" -library "reset_mod" -name IP_TOOL_VERSION "21.3"
+set_global_assignment -entity "reset_mod" -library "reset_mod" -name IP_TOOL_ENV "QsysPrimePro"
+set_global_assignment -entity "reset_mod" -library "reset_mod" -name IP_TOOL_VENDOR_NAME "Altera Corporation"
+set_global_assignment -entity "reset_mod" -library "reset_mod" -name IP_TOP_LEVEL_COMPONENT_NAME "reset_module"
+set_global_assignment -library "reset_mod" -name SOPCINFO_FILE [file join $::quartus(qip_path) "reset_mod.sopcinfo"]
+set_global_assignment -entity "reset_mod" -library "reset_mod" -name SLD_INFO "QSYS_NAME reset_mod HAS_SOPCINFO 1 GENERATION_ID 0"
+set_global_assignment -library "reset_mod" -name MISC_FILE [file join $::quartus(qip_path) "reset_mod.cmp"]
+set_global_assignment -entity "reset_mod" -library "reset_mod" -name IP_TARGETED_DEVICE_FAMILY "Cyclone 10 GX"
+set_global_assignment -entity "reset_mod" -library "reset_mod" -name IP_GENERATED_DEVICE_FAMILY "{Cyclone 10 GX}"
+set_global_assignment -entity "reset_mod" -library "reset_mod" -name IP_QSYS_MODE "STANDALONE"
+set_global_assignment -name SYNTHESIS_ONLY_QIP ON
+set_global_assignment -library "reset_mod" -name MISC_FILE [file join $::quartus(qip_path) "../reset_mod.ip"]
+
+set_global_assignment -entity "reset_module" -library "reset_module_10" -name IP_COMPONENT_NAME "cmVzZXRfbW9kdWxl"
+set_global_assignment -entity "reset_module" -library "reset_module_10" -name IP_COMPONENT_DISPLAY_NAME "cmVzZXRfbW9kdWxl"
+set_global_assignment -entity "reset_module" -library "reset_module_10" -name IP_COMPONENT_REPORT_HIERARCHY "Off"
+set_global_assignment -entity "reset_module" -library "reset_module_10" -name IP_COMPONENT_INTERNAL "Off"
+set_global_assignment -entity "reset_module" -library "reset_module_10" -name IP_COMPONENT_VERSION "MS4w"
+set_global_assignment -entity "reset_module" -library "reset_module_10" -name IP_COMPONENT_PARAMETER "VElNRV9SRVNFVF9QSFk=::NTAw::VElNRV9SRVNFVF9QSFk="
+set_global_assignment -entity "reset_module" -library "reset_module_10" -name IP_COMPONENT_PARAMETER "VElNRV9XT1JLX1BIWQ==::MzAw::VElNRV9XT1JLX1BIWQ=="
+set_global_assignment -entity "reset_mod" -library "reset_mod" -name IP_COMPONENT_NAME "cmVzZXRfbW9k"
+set_global_assignment -entity "reset_mod" -library "reset_mod" -name IP_COMPONENT_DISPLAY_NAME "c3lzdGVt"
+set_global_assignment -entity "reset_mod" -library "reset_mod" -name IP_COMPONENT_REPORT_HIERARCHY "On"
+set_global_assignment -entity "reset_mod" -library "reset_mod" -name IP_COMPONENT_INTERNAL "Off"
+set_global_assignment -entity "reset_mod" -library "reset_mod" -name IP_COMPONENT_AUTHOR "QWx0ZXJhIENvcnBvcmF0aW9u"
+set_global_assignment -entity "reset_mod" -library "reset_mod" -name IP_COMPONENT_VERSION "MS4w"
+set_global_assignment -entity "reset_mod" -library "reset_mod" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MA==::QXV0byBHRU5FUkFUSU9OX0lE"
+set_global_assignment -entity "reset_mod" -library "reset_mod" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfRkFNSUxZ::Q3ljbG9uZSAxMCBHWA==::QXV0byBERVZJQ0VfRkFNSUxZ"
+set_global_assignment -entity "reset_mod" -library "reset_mod" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0U=::MTBDWDIyMFlGNzgwRTVH::QXV0byBERVZJQ0U="
+set_global_assignment -entity "reset_mod" -library "reset_mod" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfU1BFRURHUkFERQ==::NQ==::QXV0byBERVZJQ0VfU1BFRURHUkFERQ=="
+set_global_assignment -entity "reset_mod" -library "reset_mod" -name IP_COMPONENT_PARAMETER "QVVUT19DTE9DS19DTE9DS19SQVRF::LTE=::QXV0byBDTE9DS19SQVRF"
+set_global_assignment -entity "reset_mod" -library "reset_mod" -name IP_COMPONENT_PARAMETER "QVVUT19DTE9DS19DTE9DS19ET01BSU4=::LTE=::QXV0byBDTE9DS19ET01BSU4="
+set_global_assignment -entity "reset_mod" -library "reset_mod" -name IP_COMPONENT_PARAMETER "QVVUT19DTE9DS19SRVNFVF9ET01BSU4=::LTE=::QXV0byBSRVNFVF9ET01BSU4="
+
+
+set_global_assignment -library "reset_module_10" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "reset_module_10/synth/reset_module.sv"]
+set_global_assignment -library "reset_mod" -name VERILOG_FILE [file join $::quartus(qip_path) "synth/reset_mod.v"]
+

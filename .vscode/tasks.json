@@ -1,0 +1,41 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+			"label": "simulation",
+			"type": "process",
+			"command": ".vscode\\runmodelsim.cmd",
+			
+			"options": {
+				"cwd": "${workspaceRoot}",
+				"shell": {
+					"executable": "cmd.exe",
+					"args": ["/C"]
+				}
+            }, 
+			"group": {
+				"kind": "test",
+				"isDefault": true
+			},
+			"args": ["tb_sfp_test.tcl"]
+		},
+		{
+			"label": "tb tse simulation",
+			"type": "process",
+			"command": ".vscode\\runmodelsim.cmd",
+			
+			"options": {
+				"cwd": "${workspaceRoot}",
+				"shell": {
+					"executable": "cmd.exe",
+					"args": ["/C"]
+				}
+            }, 
+			"group": {
+				"kind": "test",
+				"isDefault": true
+			},
+			"args": ["./tse_testbench/testbench_verilog/tse_testbench/run_tse_testbench_tb.tcl"]
+		}
+    ]
+}

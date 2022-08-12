@@ -1,0 +1,6 @@
+set_global_assignment -name FAMILY "Cyclone 10 GX"
+set_global_assignment -name TCL_SCRIPT_FILE generate_sim_verilog.tcl
+set_global_assignment -name TCL_SCRIPT_FILE generate_sim_vhdl.tcl
+set_global_assignment -name TOP_LEVEL_ENTITY generate_sim
+set_global_assignment -name LAST_QUARTUS_VERSION "21.4.0 Pro Edition"
+set_global_assignment -name DEVICE 10CX220YF780I5G

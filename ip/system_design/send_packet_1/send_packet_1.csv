@@ -1,0 +1,18 @@
+# system info send_packet_1 on 2022.07.20.11:58:14
+system_info:
+name,value
+DEVICE,10CX220YF780E5G
+DEVICE_FAMILY,Cyclone 10 GX
+GENERATION_ID,0
+#
+#
+# Files generated for send_packet_1 on 2022.07.20.11:58:14
+files:
+filepath,kind,attributes,module,is_top
+sim/send_packet_1.v,VERILOG,CONTAINS_INLINE_CONFIGURATION,send_packet_1,true
+send_packet_10/sim/send_packet.sv,SYSTEM_VERILOG,,send_packet,false
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module
+send_packet_1.send_packet_1,send_packet

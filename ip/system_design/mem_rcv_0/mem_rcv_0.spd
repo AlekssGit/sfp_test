@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file
+   path="altera_avalon_onchip_memory2_1931/sim/mem_rcv_0_altera_avalon_onchip_memory2_1931_c2ql3jy.v"
+   type="VERILOG"
+   library="altera_avalon_onchip_memory2_1931" />
+ <file
+   path="sim/mem_rcv_0.v"
+   type="VERILOG"
+   library="mem_rcv_0"
+   hasInlineConfiguration="true" />
+ <topLevel name="mem_rcv_0.mem_rcv_0" />
+ <deviceFamily name="cyclone10gx" />
+ <device name="10CX220YF780E5G" />
+ <modelMap controllerPath="mem_rcv_0.mem_rcv_0" modelPath="mem_rcv_0.mem_rcv_0" />
+</simPackage>

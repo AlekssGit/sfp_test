@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file
+   path="altera_merlin_master_translator_191/sim/system_design_altera_merlin_master_translator_191_g7h47bq.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_merlin_master_translator_191" />
+ <file
+   path="altera_merlin_slave_translator_191/sim/system_design_altera_merlin_slave_translator_191_x56fcki.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_merlin_slave_translator_191" />
+ <file
+   path="altera_mm_interconnect_1920/sim/system_design_altera_mm_interconnect_1920_schtjcy.v"
+   type="VERILOG"
+   library="altera_mm_interconnect_1920"
+   hasInlineConfiguration="true" />
+ <file
+   path="altera_mm_interconnect_1920/sim/system_design_altera_mm_interconnect_1920_mk2km6i.v"
+   type="VERILOG"
+   library="altera_mm_interconnect_1920"
+   hasInlineConfiguration="true" />
+ <file
+   path="altera_mm_interconnect_1920/sim/system_design_altera_mm_interconnect_1920_ijvwamq.v"
+   type="VERILOG"
+   library="altera_mm_interconnect_1920"
+   hasInlineConfiguration="true" />
+ <file
+   path="altera_mm_interconnect_1920/sim/system_design_altera_mm_interconnect_1920_3keutaa.v"
+   type="VERILOG"
+   library="altera_mm_interconnect_1920"
+   hasInlineConfiguration="true" />
+ <file
+   path="altera_reset_controller_1921/sim/altera_reset_controller.v"
+   type="VERILOG"
+   library="altera_reset_controller_1921" />
+ <file
+   path="altera_reset_controller_1921/sim/altera_reset_synchronizer.v"
+   type="VERILOG"
+   library="altera_reset_controller_1921" />
+ <file
+   path="altera_reset_controller_1921/sim/altera_reset_controller.sdc"
+   type="SDC_ENTITY"
+   library="altera_reset_controller_1921" />
+ <file
+   path="sim/system_design.v"
+   type="VERILOG"
+   library="system_design"
+   hasInlineConfiguration="true" />
+ <topLevel name="system_design.system_design" />
+ <deviceFamily name="cyclone10gx" />
+ <device name="10CX220YF780E5G" />
+ <modelMap controllerPath="system_design.mem_1" modelPath="system_design.mem_1" />
+ <modelMap controllerPath="system_design.mem_2" modelPath="system_design.mem_2" />
+ <modelMap
+   controllerPath="system_design.mem_rcv_1"
+   modelPath="system_design.mem_rcv_1" />
+ <modelMap
+   controllerPath="system_design.mem_rcv_2"
+   modelPath="system_design.mem_rcv_2" />
+</simPackage>
