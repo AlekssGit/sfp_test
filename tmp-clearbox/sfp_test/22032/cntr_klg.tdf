@@ -1,4 +1,4 @@
---lpm_counter CBX_DECLARE_ALL_CONNECTED_PORTS="OFF" DEVICE_FAMILY="Cyclone 10 GX" lpm_modulus=8192 lpm_port_updown="PORT_UNUSED" lpm_width=13 clk_en clock q sclr CARRY_CHAIN="MANUAL"
+--lpm_counter CBX_DECLARE_ALL_CONNECTED_PORTS="OFF" DEVICE_FAMILY="Cyclone 10 GX" lpm_modulus=32768 lpm_port_updown="PORT_UNUSED" lpm_width=15 clk_en clock q sclr CARRY_CHAIN="MANUAL"
 --VERSION_BEGIN 21.3 cbx_lpm_add_sub 2021:09:23:13:04:43:SC cbx_lpm_compare 2021:09:23:13:04:43:SC cbx_lpm_counter 2021:09:23:13:04:43:SC cbx_lpm_decode 2021:09:23:13:04:43:SC cbx_mgl 2021:09:23:13:04:52:SC cbx_nadder 2021:09:23:13:04:43:SC cbx_stratix 2021:09:23:13:04:43:SC cbx_stratixii 2021:09:23:13:04:43:SC  VERSION_END
 
 
@@ -22,16 +22,16 @@ FUNCTION cyclone10gx_lcell_comb (cin, dataa, datab, datac, datad, datae, dataf, 
 WITH ( DONT_TOUCH, EXTENDED_LUT, LUT_MASK, SHARED_ARITH)
 RETURNS ( combout, cout, shareout, sumout);
 
---synthesis_resources = lut 13 reg 13 
-SUBDESIGN cntr_sjg
+--synthesis_resources = lut 15 reg 15 
+SUBDESIGN cntr_klg
 ( 
 	clk_en	:	input;
 	clock	:	input;
-	q[12..0]	:	output;
+	q[14..0]	:	output;
 	sclr	:	input;
 ) 
 VARIABLE 
-	counter_reg_bit[12..0] : dffeas;
+	counter_reg_bit[14..0] : dffeas;
 	counter_comb_bita0 : cyclone10gx_lcell_comb
 		WITH (
 			EXTENDED_LUT = "off",
@@ -110,13 +110,25 @@ VARIABLE
 			LUT_MASK = "0000FF000000FF00",
 			SHARED_ARITH = "off"
 		);
+	counter_comb_bita13 : cyclone10gx_lcell_comb
+		WITH (
+			EXTENDED_LUT = "off",
+			LUT_MASK = "0000FF000000FF00",
+			SHARED_ARITH = "off"
+		);
+	counter_comb_bita14 : cyclone10gx_lcell_comb
+		WITH (
+			EXTENDED_LUT = "off",
+			LUT_MASK = "0000FF000000FF00",
+			SHARED_ARITH = "off"
+		);
 	aclr_actual	: WIRE;
 	cnt_en	: NODE;
-	data[12..0]	: NODE;
+	data[14..0]	: NODE;
 	external_cin	: WIRE;
 	lsb_cin	: WIRE;
-	s_val[12..0]	: WIRE;
-	safe_q[12..0]	: WIRE;
+	s_val[14..0]	: WIRE;
+	safe_q[14..0]	: WIRE;
 	sload	: NODE;
 	sset	: NODE;
 	updown_dir	: WIRE;
@@ -127,20 +139,20 @@ BEGIN
 	counter_reg_bit[].asdata = ((sset & s_val[]) # ((! sset) & data[]));
 	counter_reg_bit[].clk = clock;
 	counter_reg_bit[].clrn = (! aclr_actual);
-	counter_reg_bit[].d = ( counter_comb_bita[12..0].sumout);
+	counter_reg_bit[].d = ( counter_comb_bita[14..0].sumout);
 	counter_reg_bit[].ena = (clk_en & (((cnt_en # sclr) # sset) # sload));
 	counter_reg_bit[].sclr = sclr;
 	counter_reg_bit[].sload = (sset # sload);
-	counter_comb_bita[12..0].cin = ( counter_comb_bita[11..0].cout, lsb_cin);
-	counter_comb_bita[12..0].datad = ( counter_reg_bit[12..0].q);
-	counter_comb_bita[12..0].dataf = ( updown_other_bits, updown_other_bits, updown_other_bits, updown_other_bits, updown_other_bits, updown_other_bits, updown_other_bits, updown_other_bits, updown_other_bits, updown_other_bits, updown_other_bits, updown_other_bits, updown_lsb);
+	counter_comb_bita[14..0].cin = ( counter_comb_bita[13..0].cout, lsb_cin);
+	counter_comb_bita[14..0].datad = ( counter_reg_bit[14..0].q);
+	counter_comb_bita[14..0].dataf = ( updown_other_bits, updown_other_bits, updown_other_bits, updown_other_bits, updown_other_bits, updown_other_bits, updown_other_bits, updown_other_bits, updown_other_bits, updown_other_bits, updown_other_bits, updown_other_bits, updown_other_bits, updown_other_bits, updown_lsb);
 	aclr_actual = B"0";
 	cnt_en = VCC;
 	data[] = GND;
 	external_cin = B"1";
 	lsb_cin = B"0";
 	q[] = safe_q[];
-	s_val[] = B"1111111111111";
+	s_val[] = B"111111111111111";
 	safe_q[] = counter_reg_bit[].q;
 	sload = GND;
 	sset = GND;

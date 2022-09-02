@@ -1,5 +1,7 @@
 `include "mac_defines.sv"
 
+
+
 module initiate_mac
 (
 	input  logic clk        ,
@@ -30,6 +32,7 @@ begin
 end
 
 enum int unsigned {
+    WAIT_INIT,
     IDLE_init, 
     //PHY init using MDIO
     PHY_INIT,
@@ -71,9 +74,9 @@ enum int unsigned {
 
     END_INITIATION
 
-   } init_state, init_state_next;
+} init_state, init_state_next;
 
-assign need_init_mac = (reset) ? 1'b1 : (init_state == END_INITIATION & count_channels_inited == 3'd1) ? 1'b0 : need_init_mac;
+assign need_init_mac = (reset) ? 1'b1 : (init_state == END_INITIATION && count_channels_inited == 3'd1) ? 1'b0 : 1'b1 /*need_init_mac*/;
 assign mac_inited = ~need_init_mac;
 
 logic allow_add_channel;
@@ -82,19 +85,48 @@ always @(posedge clk, posedge reset)
 begin
     if(reset)
     begin
-        count_channels_inited = 3'd0;
-        allow_add_channel = 1'b0;
+        count_channels_inited <= 3'd0;
+        allow_add_channel <= 1'b0;
+        
     end
     else
     begin
-        if(init_state == END_INITIATION & count_channels_inited < 3'd1 & allow_add_channel)
+        if(init_state == END_INITIATION && count_channels_inited < 3'd1 && allow_add_channel)
         begin
-            allow_add_channel = 1'b0;
-            count_channels_inited++ ;
+            allow_add_channel <= 1'b0;
+            count_channels_inited <= count_channels_inited + 3'd1 ;
         end
         else if(init_state != END_INITIATION)
         begin
-            allow_add_channel = 1'b1;
+            allow_add_channel <= 1'b1;
+        end
+    end
+end
+
+logic [31:0] timer;
+
+always_ff @(posedge clk, posedge reset)
+begin
+    if(reset)
+    begin
+        timer <= 32'd0;
+    end
+    else
+    begin
+        if(init_state == WAIT_INIT)
+        begin
+            if(timer > `WAIT_INIT_TIME + 32'd1000)
+            begin
+                timer <= 32'd0;
+            end
+            else
+            begin
+                timer <= timer + 32'd1;
+            end
+        end
+        else
+        begin
+            timer <= 32'd0;
         end
     end
 end
@@ -103,18 +135,22 @@ always @(posedge clk, posedge reset)
 begin
     if(reset)
     begin
-        init_state = IDLE_init;
+        init_state <= WAIT_INIT; //IDLE_init;
     end
     else
     begin
-        init_state = init_state_next;
+        init_state <= init_state_next;
     end
 end
+
+logic led_link_reg;
+assign led_link_reg = rd_data[2];
 
 always_comb
 begin
     case (init_state)
-        IDLE_init:              init_state_next = (need_init_mac) ? (led_link) ? PCS_RESET : /*LINK_TIMER_1*/ REV_PCS : IDLE_init;
+        WAIT_INIT:              init_state_next = (timer == `WAIT_INIT_TIME) ? IDLE_init : WAIT_INIT;
+        IDLE_init:              init_state_next = (need_init_mac) ? (action_done & (led_link_reg == 1'b1) /*led_link*/) ? PCS_RESET : LINK_TIMER_1 /*REV_PCS*/ : IDLE_init;
 
         LINK_TIMER_1:           init_state_next = (action_done) ? LINK_TIMER_2 : LINK_TIMER_1;
         LINK_TIMER_2:           init_state_next = (action_done) ? REV_PCS : LINK_TIMER_2;
@@ -127,7 +163,7 @@ begin
         SGMII_CONF:             init_state_next = (action_done) ? SGMII_CONF_WAIT : SGMII_CONF;
         SGMII_CONF_WAIT:        init_state_next = (action_done) ? WAIT_LINK : SGMII_CONF_WAIT;
         
-        WAIT_LINK:              init_state_next =   (led_link) ? PCS_RESET : WAIT_LINK;
+        WAIT_LINK:              init_state_next = (action_done & (led_link_reg == 1'b1) /*led_link*/) ? PCS_RESET : WAIT_LINK;
 
         PCS_RESET:              init_state_next = (action_done) ? PCS_RESET_WAIT : PCS_RESET;
         PCS_RESET_WAIT:         init_state_next = (action_done & (rd_data[15] == 1'b0)) ? DISABLE_TX_RX : PCS_RESET_WAIT;
@@ -169,271 +205,281 @@ always @(posedge clk, posedge reset)
 begin
     if(reset)
     begin
-        wr_rq   = 1'b0;
-        rd_rq   = 1'b0;
-        wr_adr  = 32'd0;
-        wr_data = 32'd0;
-        rd_adr  = 32'd0;
+        wr_rq   <= 1'b0;
+        rd_rq   <= 1'b0;
+        wr_adr  <= 32'd0;
+        wr_data <= 32'd0;
+        rd_adr  <= 32'd0;
     end 
     else if(action_done)
     begin
-        rd_rq = 1'b0;
-        wr_rq = 1'b0;
+        rd_rq <= 1'b0;
+        wr_rq <= 1'b0;
     end   
     else
     begin
         case (init_state)
             IDLE_init:
             begin
-                wr_rq   = 1'b0;
-                rd_rq   = 1'b0;
-                wr_adr  = 32'd0;
-                wr_data = 32'd0;
-                rd_adr  = 32'd0;
+                wr_rq   <= 1'b0;
+                wr_adr  <= 32'd0;
+                wr_data <= 32'd0; 
+                
+                rd_rq   <= 1'b1;
+                rd_adr  <= {24'd0, `STATUS_ADDR}; 
             end 
             LINK_TIMER_1:
             begin
-                wr_rq   = 1'b1;
-                wr_adr  = {24'd0, `LINK_TIMER_0_ADDR}; //{22'd0, count_channels_inited[1:0], `LINK_TIMER_0_ADDR};
-                wr_data = `LINK_TIMER_0;
+                wr_rq   <= 1'b1;
+                wr_adr  <= {24'd0, `LINK_TIMER_0_ADDR}; //{22'd0, count_channels_inited[1:0], `LINK_TIMER_0_ADDR};
+                wr_data <= `LINK_TIMER_0;
                 
-                rd_rq   = 1'b0;
-                rd_adr  = 32'd0; 
+                rd_rq   <= 1'b0;
+                rd_adr  <= 32'd0; 
             end
             LINK_TIMER_2:
             begin
-                wr_rq   = 1'b1;
-                wr_adr  = {24'd0, `LINK_TIMER_1_ADDR}; //{22'd0, count_channels_inited[1:0],`LINK_TIMER_1_ADDR};
-                wr_data = `LINK_TIMER_1;
+                wr_rq   <= 1'b1;
+                wr_adr  <= {24'd0, `LINK_TIMER_1_ADDR}; //{22'd0, count_channels_inited[1:0],`LINK_TIMER_1_ADDR};
+                wr_data <= `LINK_TIMER_1;
                 
-                rd_rq   = 1'b0;
-                rd_adr  = 32'd0; 
+                rd_rq   <= 1'b0;
+                rd_adr  <= 32'd0; 
             end
             //10'h91
             REV_PCS:
             begin
-                wr_rq   = 1'b0;
-                wr_adr  = 32'd0; // {24'd0, `REV_PCS_ADDR};
-                wr_data = 32'd0;
+                wr_rq   <= 1'b0;
+                wr_adr  <= 32'd0; // {24'd0, `REV_PCS_ADDR};
+                wr_data <= 32'd0;
                 
-                rd_rq   = 1'b1;
-                rd_adr  = {24'd0, `REV_PCS_ADDR}; 
+                rd_rq   <= 1'b1;
+                rd_adr  <= {24'd0, `REV_PCS_ADDR}; 
             end
             //10'h90
             SCRATCH_PCS:
             begin
-                wr_rq   = 1'b1;
-                wr_adr  = {24'd0, `SCRATCH_PCS_ADDR};
-                wr_data = 32'h0000aaaa;
+                wr_rq   <= 1'b1;
+                wr_adr  <= {24'd0, `SCRATCH_PCS_ADDR};
+                wr_data <= 32'h0000aaaa;
                 
-                rd_rq   = 1'b0;
-                rd_adr  = 32'd0; 
+                rd_rq   <= 1'b0;
+                rd_adr  <= 32'd0; 
             end
             //10'h90
             SCRATCH_PCS_WAIT:
             begin
-                wr_rq   = 1'b0;
-                wr_adr  = 32'd0;
-                wr_data = 32'd0;
+                wr_rq   <= 1'b0;
+                wr_adr  <= 32'd0;
+                wr_data <= 32'd0;
                 
-                rd_rq   = 1'b1;
-                rd_adr  = {24'd0, `SCRATCH_PCS_ADDR};; 
+                rd_rq   <= 1'b1;
+                rd_adr  <= {24'd0, `SCRATCH_PCS_ADDR};; 
             end            
             //10'h94
             SGMII_CONF:
             begin
-                wr_rq   = 1'b1;
-                wr_adr  = {24'd0, `IF_MODE_ADDR}; //{22'd0, count_channels_inited[1:0], `IF_MODE_ADDR};
-                wr_data = `IF_MODE;
+                wr_rq   <= 1'b1;
+                wr_adr  <= {24'd0, `IF_MODE_ADDR}; //{22'd0, count_channels_inited[1:0], `IF_MODE_ADDR};
+                wr_data <= `IF_MODE;
                 
-                rd_rq   = 1'b0;
-                rd_adr  = 32'd0; 
+                rd_rq   <= 1'b0;
+                rd_adr  <= 32'd0; 
             end
             //10'h94
             SGMII_CONF_WAIT:
             begin
-                wr_rq   = 1'b0;
-                wr_adr  = 32'd0; //{22'd0, count_channels_inited[1:0], `IF_MODE_ADDR};
-                wr_data = 32'd0; //`IF_MODE;
+                wr_rq   <= 1'b0;
+                wr_adr  <= 32'd0; //{22'd0, count_channels_inited[1:0], `IF_MODE_ADDR};
+                wr_data <= 32'd0; //`IF_MODE;
                 
-                rd_rq   = 1'b1;
-                rd_adr  = {24'd0, `IF_MODE_ADDR};; 
-            end            
+                rd_rq   <= 1'b1;
+                rd_adr  <= {24'd0, `IF_MODE_ADDR}; 
+            end     
+            WAIT_LINK:
+            begin
+                wr_rq   <= 1'b0;
+                wr_adr  <= 32'd0;
+                wr_data <= 32'd0; 
+                
+                rd_rq   <= 1'b1;
+                rd_adr  <= {24'd0, `STATUS_ADDR};                
+            end       
             PCS_RESET:
             begin
-                wr_rq   = 1'b1;
-                rd_rq   = 1'b0;
-                wr_adr  = {22'd0, count_channels_inited[1:0], `CONTROL_ADDR};
-                wr_data = `PCS_CONTROL_INIT + `PCS_RESET;
-                rd_adr  = 32'd0;
+                wr_rq   <= 1'b1;
+                rd_rq   <= 1'b0;
+                wr_adr  <= {22'd0, count_channels_inited[1:0], `CONTROL_ADDR};
+                wr_data <= `PCS_CONTROL_INIT + `PCS_RESET;
+                rd_adr  <= 32'd0;
             end
             PCS_RESET_WAIT:
             begin
-                wr_rq   = 1'b0;
-                rd_rq   = 1'b1;
-                wr_adr  = 32'd0;
-                wr_data = 32'd0;
-                rd_adr  = {22'd0, count_channels_inited[1:0], `CONTROL_ADDR};
+                wr_rq   <= 1'b0;
+                rd_rq   <= 1'b1;
+                wr_adr  <= 32'd0;
+                wr_data <= 32'd0;
+                rd_adr  <= {22'd0, count_channels_inited[1:0], `CONTROL_ADDR};
             end
             DISABLE_TX_RX:
             begin
-                wr_rq   = 1'b1;
-                rd_rq   = 1'b0;
-                wr_adr  = {22'd0, count_channels_inited[1:0], `COMMAND_CONFIG_ADDR};
-                wr_data = `DISABLE_TX_RX;
-                rd_adr  = 32'd0;
+                wr_rq   <= 1'b1;
+                rd_rq   <= 1'b0;
+                wr_adr  <= {22'd0, count_channels_inited[1:0], `COMMAND_CONFIG_ADDR};
+                wr_data <= `DISABLE_TX_RX;
+                rd_adr  <= 32'd0;
             end
             DISABLE_TX_RX_WAIT:
             begin
-                wr_rq   = 1'b0;
-                rd_rq   = 1'b1;
-                wr_adr  = 32'd0;
-                wr_data = 32'd0;
-                rd_adr  = {22'd0, count_channels_inited[1:0], `COMMAND_CONFIG_ADDR};
+                wr_rq   <= 1'b0;
+                rd_rq   <= 1'b1;
+                wr_adr  <= 32'd0;
+                wr_data <= 32'd0;
+                rd_adr  <= {22'd0, count_channels_inited[1:0], `COMMAND_CONFIG_ADDR};
             end
             TX_SECTION_EMPTY:
             begin
-                wr_rq   = 1'b1;
-                rd_rq   = 1'b0;
-                wr_adr  = {22'd0, count_channels_inited[1:0], `TX_SECTION_EMPTY_ADDR};
-                wr_data = `TX_SECTION_EMPTY;
-                rd_adr  = 32'd0;
+                wr_rq   <= 1'b1;
+                rd_rq   <= 1'b0;
+                wr_adr  <= {22'd0, count_channels_inited[1:0], `TX_SECTION_EMPTY_ADDR};
+                wr_data <= `TX_SECTION_EMPTY;
+                rd_adr  <= 32'd0;
             end
             TX_ALMOST_FULL:
             begin
-                wr_rq   = 1'b1;
-                rd_rq   = 1'b0;
-                wr_adr  = {22'd0, count_channels_inited[1:0], `TX_ALMOST_FULL_ADDR};
-                wr_data = `TX_ALMOST_FULL;
-                rd_adr  = 32'd0;
+                wr_rq   <= 1'b1;
+                rd_rq   <= 1'b0;
+                wr_adr  <= {22'd0, count_channels_inited[1:0], `TX_ALMOST_FULL_ADDR};
+                wr_data <= `TX_ALMOST_FULL;
+                rd_adr  <= 32'd0;
             end
             TX_ALMOST_EMPTY:
             begin
-                wr_rq   = 1'b1;
-                rd_rq   = 1'b0;
-                wr_adr  = {22'd0, count_channels_inited[1:0], `TX_ALMOST_EMPTY_ADDR};
-                wr_data = `TX_ALMOST_EMPTY;
-                rd_adr  = 32'd0;
+                wr_rq   <= 1'b1;
+                rd_rq   <= 1'b0;
+                wr_adr  <= {22'd0, count_channels_inited[1:0], `TX_ALMOST_EMPTY_ADDR};
+                wr_data <= `TX_ALMOST_EMPTY;
+                rd_adr  <= 32'd0;
             end 
             TX_SECTION_FULL:
             begin
-                wr_rq   = 1'b1;
-                rd_rq   = 1'b0;
-                wr_adr  = {22'd0, count_channels_inited[1:0], `TX_SECTION_FULL_ADDR};
-                wr_data = `TX_SECTION_FULL;
-                rd_adr  = 32'd0;
+                wr_rq   <= 1'b1;
+                rd_rq   <= 1'b0;
+                wr_adr  <= {22'd0, count_channels_inited[1:0], `TX_SECTION_FULL_ADDR};
+                wr_data <= `TX_SECTION_FULL;
+                rd_adr  <= 32'd0;
             end  
             RX_SECTION_EMPTY:
             begin
-                wr_rq   = 1'b1;
-                rd_rq   = 1'b0;
-                wr_adr  = {22'd0, count_channels_inited[1:0], `RX_SECTION_EMPTY_ADDR};
-                wr_data = `RX_SECTION_EMPTY;
-                rd_adr  = 32'd0;
+                wr_rq   <= 1'b1;
+                rd_rq   <= 1'b0;
+                wr_adr  <= {22'd0, count_channels_inited[1:0], `RX_SECTION_EMPTY_ADDR};
+                wr_data <= `RX_SECTION_EMPTY;
+                rd_adr  <= 32'd0;
             end
             RX_ALMOST_FULL:
             begin
-                wr_rq   = 1'b1;
-                rd_rq   = 1'b0;
-                wr_adr  = {22'd0, count_channels_inited[1:0], `RX_ALMOST_FULL_ADDR};
-                wr_data = `RX_ALMOST_FULL;
-                rd_adr  = 32'd0;
+                wr_rq   <= 1'b1;
+                rd_rq   <= 1'b0;
+                wr_adr  <= {22'd0, count_channels_inited[1:0], `RX_ALMOST_FULL_ADDR};
+                wr_data <= `RX_ALMOST_FULL;
+                rd_adr  <= 32'd0;
             end
             RX_ALMOST_EMPTY:
             begin
-                wr_rq   = 1'b1;
-                rd_rq   = 1'b0;
-                wr_adr  = {22'd0, count_channels_inited[1:0], `RX_ALMOST_EMPTY_ADDR};
-                wr_data = `RX_ALMOST_EMPTY;
-                rd_adr  = 32'd0;
+                wr_rq   <= 1'b1;
+                rd_rq   <= 1'b0;
+                wr_adr  <= {22'd0, count_channels_inited[1:0], `RX_ALMOST_EMPTY_ADDR};
+                wr_data <= `RX_ALMOST_EMPTY;
+                rd_adr  <= 32'd0;
             end 
             RX_SECTION_FULL:
             begin
-                wr_rq   = 1'b1;
-                rd_rq   = 1'b0;
-                wr_adr  = {22'd0, count_channels_inited[1:0], `RX_SECTION_FULL_ADDR};
-                wr_data = `RX_SECTION_FULL;
-                rd_adr  = 32'd0;
+                wr_rq   <= 1'b1;
+                rd_rq   <= 1'b0;
+                wr_adr  <= {22'd0, count_channels_inited[1:0], `RX_SECTION_FULL_ADDR};
+                wr_data <= `RX_SECTION_FULL;
+                rd_adr  <= 32'd0;
             end 
             MAC_0:  
             begin
-                wr_rq   = 1'b1;
-                rd_rq   = 1'b0;
-                wr_adr  = {22'd0, count_channels_inited[1:0], `MAC_0_ADDR};
-                wr_data = `MAC_0;
-                rd_adr  = 32'd0;
+                wr_rq   <= 1'b1;
+                rd_rq   <= 1'b0;
+                wr_adr  <= {22'd0, count_channels_inited[1:0], `MAC_0_ADDR};
+                wr_data <= `MAC_0;
+                rd_adr  <= 32'd0;
             end            
             MAC_1:
             begin
-                wr_rq   = 1'b1;
-                rd_rq   = 1'b0;
-                wr_adr  = {22'd0, count_channels_inited[1:0], `MAC_1_ADDR};
-                wr_data = `MAC_1;
-                rd_adr  = 32'd0;
+                wr_rq   <= 1'b1;
+                rd_rq   <= 1'b0;
+                wr_adr  <= {22'd0, count_channels_inited[1:0], `MAC_1_ADDR};
+                wr_data <= `MAC_1;
+                rd_adr  <= 32'd0;
             end              
             FRAME_LENGTH:
             begin
-                wr_rq   = 1'b1;
-                rd_rq   = 1'b0;
-                wr_adr  = {22'd0, count_channels_inited[1:0], `FRM_LENGTH_ADDR};
-                wr_data = `FRM_LENGTH;
-                rd_adr  = 32'd0;
+                wr_rq   <= 1'b1;
+                rd_rq   <= 1'b0;
+                wr_adr  <= {22'd0, count_channels_inited[1:0], `FRM_LENGTH_ADDR};
+                wr_data <= `FRM_LENGTH;
+                rd_adr  <= 32'd0;
             end       
             TX_IPG_LENGTH:
             begin
-                wr_rq   = 1'b1;
-                rd_rq   = 1'b0;
-                wr_adr  = {22'd0, count_channels_inited[1:0], `TX_IPG_LENGTH_ADDR};
-                wr_data = `TX_IPG_LENGTH;
-                rd_adr  = 32'd0;
+                wr_rq   <= 1'b1;
+                rd_rq   <= 1'b0;
+                wr_adr  <= {22'd0, count_channels_inited[1:0], `TX_IPG_LENGTH_ADDR};
+                wr_data <= `TX_IPG_LENGTH;
+                rd_adr  <= 32'd0;
             end      
             PAUSE_QUANT:
             begin
-                wr_rq   = 1'b1;
-                rd_rq   = 1'b0;
-                wr_adr  = {22'd0, count_channels_inited[1:0], `PAUSE_QUANT_ADDR};
-                wr_data = `PAUSE_QUANT;
-                rd_adr  = 32'd0;
+                wr_rq   <= 1'b1;
+                rd_rq   <= 1'b0;
+                wr_adr  <= {22'd0, count_channels_inited[1:0], `PAUSE_QUANT_ADDR};
+                wr_data <= `PAUSE_QUANT;
+                rd_adr  <= 32'd0;
             end        
             COMMAND_CONFIG_REG:
             begin
-                wr_rq   = 1'b1;
-                rd_rq   = 1'b0;
-                wr_adr  = {22'd0, count_channels_inited[1:0], `COMMAND_CONFIG_ADDR};
-                wr_data = `DISABLE_TX_RX;
-                rd_adr  = 32'd0;
+                wr_rq   <= 1'b1;
+                rd_rq   <= 1'b0;
+                wr_adr  <= {22'd0, count_channels_inited[1:0], `COMMAND_CONFIG_ADDR};
+                wr_data <= `DISABLE_TX_RX;
+                rd_adr  <= 32'd0;
             end 
             MAC_RESET: 
             begin
-                wr_rq   = 1'b1;
-                rd_rq   = 1'b0;
-                wr_adr  = {22'd0, count_channels_inited[1:0], `COMMAND_CONFIG_ADDR};
-                wr_data = `DISABLE_TX_RX + `MAC_RESET;
-                rd_adr  = 32'd0;
+                wr_rq   <= 1'b1;
+                rd_rq   <= 1'b0;
+                wr_adr  <= {22'd0, count_channels_inited[1:0], `COMMAND_CONFIG_ADDR};
+                wr_data <= `DISABLE_TX_RX + `MAC_RESET;
+                rd_adr  <= 32'd0;
             end         
             MAC_RESET_WAIT:
             begin
-                wr_rq   = 1'b0;
-                rd_rq   = 1'b1;
-                wr_adr  = 32'd0;
-                wr_data = 32'd0;
-                rd_adr  = {22'd0, count_channels_inited[1:0], `COMMAND_CONFIG_ADDR};
+                wr_rq   <= 1'b0;
+                rd_rq   <= 1'b1;
+                wr_adr  <= 32'd0;
+                wr_data <= 32'd0;
+                rd_adr  <= {22'd0, count_channels_inited[1:0], `COMMAND_CONFIG_ADDR};
             end     
             ENABLE_TX_RX:
             begin
-                wr_rq   = 1'b1;
-                rd_rq   = 1'b0;
-                wr_adr  = {22'd0, count_channels_inited[1:0], `COMMAND_CONFIG_ADDR};
-                wr_data = `ENABLE_TX_RX;
-                rd_adr  = 32'd0;
+                wr_rq   <= 1'b1;
+                rd_rq   <= 1'b0;
+                wr_adr  <= {22'd0, count_channels_inited[1:0], `COMMAND_CONFIG_ADDR};
+                wr_data <= `ENABLE_TX_RX;
+                rd_adr  <= 32'd0;
             end       
             ENABLE_TX_RX_WAIT:
             begin
-                wr_rq   = 1'b0;
-                rd_rq   = 1'b1;
-                wr_adr  = 32'd0;
-                wr_data = 32'd0;
-                rd_adr  = {22'd0, count_channels_inited[1:0], `COMMAND_CONFIG_ADDR};
+                wr_rq   <= 1'b0;
+                rd_rq   <= 1'b1;
+                wr_adr  <= 32'd0;
+                wr_data <= 32'd0;
+                rd_adr  <= {22'd0, count_channels_inited[1:0], `COMMAND_CONFIG_ADDR};
             end  
             default: ;
         endcase

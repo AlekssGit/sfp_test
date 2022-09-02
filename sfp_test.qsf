@@ -22,6 +22,17 @@ set_location_assignment PIN_H26 -to sgmii_rx_2
 set_location_assignment PIN_J28 -to sgmii_tx_2
 set_location_assignment PIN_J23 -to clk_50
 set_location_assignment PIN_AC12 -to rst_n
+set_location_assignment PIN_AF6 -to sfp_rlos_led
+set_location_assignment PIN_AE6 -to sfp_prsn_led
+set_location_assignment PIN_AC6 -to sfp_txflt_led
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to sgmii_tx_1 -entity sfp_test_top
+set_location_assignment PIN_G27 -to "sgmii_tx_1(n)"
+set_instance_assignment -name IO_STANDARD "CURRENT MODE LOGIC (CML)" -to sgmii_rx_1 -entity sfp_test_top
+set_location_assignment PIN_AC7 -to blink_led
+set_global_assignment -name ENABLE_SIGNALTAP ON
+set_global_assignment -name USE_SIGNALTAP_FILE output_files/stp.stp
+set_instance_assignment -name IO_STANDARD "CURRENT MODE LOGIC (CML)" -to sgmii_rx_2 -entity sfp_test_top
+set_global_assignment -name SDC_FILE sfp_test.sdc
 set_global_assignment -name SYSTEMVERILOG_FILE modules/expander_gpio/i2c_master.sv
 set_global_assignment -name SYSTEMVERILOG_FILE modules/expander_gpio/i2c_expander_mm.sv
 set_global_assignment -name SYSTEMVERILOG_FILE modules/expander_gpio/i2c_expander_ctrl.sv
@@ -45,16 +56,15 @@ set_global_assignment -name IP_FILE ip/system_design/receive_packet_0.ip
 set_global_assignment -name IP_FILE ip/system_design/mem_3.ip
 set_global_assignment -name IP_FILE ip/system_design/mem_rcv_0.ip
 set_global_assignment -name IP_FILE ip/system_design/xcvr_pll.ip
-set_location_assignment PIN_E21 -to i2c_scl
-set_location_assignment PIN_D22 -to i2c_sda
-set_location_assignment PIN_AF6 -to sfp_rlos_led
-set_location_assignment PIN_AE6 -to sfp_prsn_led
-set_location_assignment PIN_AC6 -to sfp_txflt_led
-set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to sgmii_tx_1 -entity sfp_test_top
-set_location_assignment PIN_G27 -to "sgmii_tx_1(n)"
-set_instance_assignment -name IO_STANDARD "CURRENT MODE LOGIC (CML)" -to sgmii_rx_1 -entity sfp_test_top
-set_location_assignment PIN_AC7 -to blink_led
-set_global_assignment -name ENABLE_SIGNALTAP ON
-set_global_assignment -name USE_SIGNALTAP_FILE output_files/stp.stp
 set_global_assignment -name SIGNALTAP_FILE output_files/stp.stp
-set_instance_assignment -name IO_STANDARD "CURRENT MODE LOGIC (CML)" -to sgmii_rx_2 -entity sfp_test_top
+set_global_assignment -name POWER_USE_DEVICE_CHARACTERISTICS TYPICAL
+set_global_assignment -name NOMINAL_CORE_SUPPLY_VOLTAGE 0.9V
+set_global_assignment -name VCCBAT_USER_VOLTAGE 1.8V
+set_global_assignment -name NUM_PARALLEL_PROCESSORS ALL
+set_global_assignment -name VERILOG_INPUT_VERSION SYSTEMVERILOG_2012
+set_instance_assignment -name PARTITION_COLOUR 4290999807 -to sfp_test_top -entity sfp_test_top
+set_instance_assignment -name PARTITION_COLOUR 4294938189 -to auto_fab_0 -entity sfp_test_top
+set_location_assignment PIN_H21 -to i2c_scl_2
+set_location_assignment PIN_H20 -to i2c_sda_2
+set_location_assignment PIN_E21 -to i2c_scl_1
+set_location_assignment PIN_D22 -to i2c_sda_1

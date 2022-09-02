@@ -24,18 +24,18 @@ module avalon_mm_tse_init (
 
 enum int unsigned {IDLE, READ, WRITE} state, state_next;
 
-logic action_done;
-always @(posedge CLK_I, posedge RST_I) 
-begin
-    if(RST_I)
-    begin
-        action_done <= 1'b0;
-    end
-    else
-    begin
-        action_done <= action_done_d;
-    end
-end
+// logic action_done;
+// always @(posedge CLK_I, posedge RST_I) 
+// begin
+//     if(RST_I)
+//     begin
+//         action_done <= 1'b0;
+//     end
+//     else
+//     begin
+//         action_done <= action_done_d;
+//     end
+// end
 
 assign DAT_O = wr_data;
 always_comb 
@@ -68,34 +68,34 @@ begin
     endcase
 end
 
-logic ack_d;
-logic ack;
-always @(posedge CLK_I, posedge RST_I) 
-begin
-    if(RST_I)
-    begin
-        ack_d = 1'b0;
-    end    
-    else
-    begin
-        ack_d <= ack;
-    end
-end
+// logic ack_d;
+// logic ack;
+// always @(posedge CLK_I, posedge RST_I) 
+// begin
+//     if(RST_I)
+//     begin
+//         ack_d = 1'b0;
+//     end    
+//     else
+//     begin
+//         ack_d <= ack;
+//     end
+// end
 
-always  @(posedge CLK_I, posedge RST_I) 
-begin
-    if(RST_I) 
-    begin
-        ack = 1'b0;
-    end    
-    else
-    begin
-        if(state == READ || state == WRITE)
-            ack <= ~BUSY;
-        else
-            ack <= 1'b0;
-    end
-end
+// always  @(posedge CLK_I, posedge RST_I) 
+// begin
+//     if(RST_I) 
+//     begin
+//         ack <= 1'b0;
+//     end    
+//     else
+//     begin
+//         if(state == READ || state == WRITE)
+//             ack <= ~BUSY;
+//         else
+//             ack <= 1'b0;
+//     end
+// end
 
 // Read valid situation
 

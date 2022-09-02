@@ -4,12 +4,16 @@
 	`define ALLOW_SEND		    1'b1
 	`define PERIOD_BTN_SEND_1	32'h000000ff // 32'hffffffff	//
 	`define PERIOD_BTN_SEND_2	32'h000001ff // 32'hffffffff	//
-    `define TIME_TO_BLINK       32'd5000 
+    `define TIME_TO_BLINK       32'd2000
+    `define BLINK_LED_DIVIDE    32'd25_000 
+    `define I2C_CLK_DIVIDE      32'd62 
 `else
 	`define ALLOW_SEND		    1'b0
     `define PERIOD_BTN_SEND_1	32'h05F5E100
 	`define PERIOD_BTN_SEND_2	32'h06F5E100
     `define TIME_TO_BLINK       32'd50_000_000 
+    `define BLINK_LED_DIVIDE    32'd25_000_000
+    `define I2C_CLK_DIVIDE      32'd124 
 `endif
 
 module sfp_test_top (
@@ -31,8 +35,11 @@ module sfp_test_top (
     input   logic   sgmii_rx_4  , 
     output  logic   sgmii_tx_4  ,
 
-    inout   tri1    i2c_scl     ,
-    inout   tri1    i2c_sda     ,
+    inout   tri1    i2c_scl_1   ,
+    inout   tri1    i2c_sda_1   ,
+
+    inout   tri1    i2c_scl_2   ,
+    inout   tri1    i2c_sda_2   ,    
 
     //output test leds
     output  logic   sfp_txflt_led,
@@ -322,9 +329,9 @@ logic   sfp_rlos    ;
 logic   sfp_rs0     ;
 logic   sfp_prsn    ;
 
-assign sfp_txflt_led    =   sfp_txflt;
-assign sfp_rlos_led     =   sfp_rlos;
-assign sfp_prsn_led     =   sfp_prsn;
+assign sfp_txflt_led    =   mac_inited; //sfp_txflt;
+assign sfp_rlos_led     =   rx_ready; //sfp_rlos;
+assign sfp_prsn_led     =   rx_is_lockedtoref_0; //sfp_prsn;
 
 logic   need_write_reg_o;
 logic   need_read_reg_i;
@@ -332,13 +339,13 @@ logic   need_read_reg_o;
 logic   dev_ready;
 
 logic clk_i2c; 
-generator #(124) i2c_clk_divide	(
+generator #(`I2C_CLK_DIVIDE) i2c_clk_divide	(
 	.nreset_i	(rst_n),
 	.i_clk		(clk_50_pll),
 	.o_clk 		(clk_i2c)
 );
 
-generator #(25_000_000) blink_led_clk_divide	(
+generator #(`BLINK_LED_DIVIDE) blink_led_clk_divide	(
 	.nreset_i	(rst_n),
 	.i_clk		(clk_50_pll),
 	.o_clk 		(blink_led)
@@ -355,8 +362,8 @@ i2c_expander_sfp expander_device
     .clk_i2c            (clk_i2c    ),
 
     //  i2c wires
-    .i2c_scl            (i2c_scl    ),
-    .i2c_sda            (i2c_sda    ),
+    .i2c_scl            (i2c_scl_1  ),
+    .i2c_sda            (i2c_sda_1  ),
 
     //  Expander GPIO
     .sfp_rled           (sfp_rled   ),
@@ -383,8 +390,6 @@ assign sfp_rs0      = 1'b0;
 logic [31:0] timer;
 
 enum int unsigned { IDLE, WAIT_TIMER, WRITE_O, READ_I, READ_O } state, state_next;
-
-// assign led_state = state;
 
 logic dev_ready_prev;
 
@@ -416,7 +421,7 @@ always_comb
 begin
     case(state)
     IDLE:       state_next  = WAIT_TIMER;
-    WAIT_TIMER: state_next  =   (timer == `TIME_TO_BLINK && dev_ready)   ?   WRITE_O :   WAIT_TIMER;
+    WAIT_TIMER: state_next  =   (timer == `TIME_TO_BLINK && dev_ready   )   ?   WRITE_O :   WAIT_TIMER;
     WRITE_O:    state_next  =   (dev_ready && ~dev_ready_prev           )   ?   READ_I  :   WRITE_O;
     READ_I:     state_next  =   (dev_ready && ~dev_ready_prev           )   ?   READ_O  :   READ_I;
     READ_O:     state_next  =   (dev_ready && ~dev_ready_prev           )   ?   IDLE    :   READ_O;
@@ -433,7 +438,6 @@ begin
     end
     else
     begin
-        //if(~need_write_reg_o && ~need_read_reg_i && ~need_read_reg_o)
         if(state == WAIT_TIMER)
         begin
             if(timer > `TIME_TO_BLINK + 32'd1000)
@@ -474,7 +478,6 @@ begin
     end
     else
     begin
-        //if(timer >= `TIME_TO_BLINK)
         if(state == WRITE_O)
         begin
             need_write_reg_o <= 1'b1;

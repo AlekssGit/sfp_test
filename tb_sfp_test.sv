@@ -29,8 +29,8 @@ sfp_test_top device (
     .sgmii_rx_1         (sgmii_txd_1 /*sgmii_rxd_1*/    ), 
     .sgmii_tx_1         (sgmii_txd_1    ),
 
-    .sgmii_rx_2         (sgmii_txd_2 /*sgmii_rxd_2*/    ), 
-    .sgmii_tx_2         (sgmii_txd_2    ),
+    // .sgmii_rx_2         (sgmii_txd_2 /*sgmii_rxd_2*/    ), 
+    // .sgmii_tx_2         (sgmii_txd_2    ),
 
     .i2c_scl            (i2c_scl        ),
     .i2c_sda            (i2c_sda        )
