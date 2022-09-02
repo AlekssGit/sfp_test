@@ -12,8 +12,7 @@ module init_mac (
 		output wire        RD,         //              .read
 		output wire        WR,         //              .write
 		input  wire        BUSY,       //              .waitrequest
-		output wire        mac_inited, //    mac_inited.mac_inited
-		input  wire        led_link    //      led_link.signal
+		output wire        mac_inited  //    mac_inited.mac_inited
 	);
 
 	mac_init_top init_mac (
@@ -25,8 +24,7 @@ module init_mac (
 		.RD         (RD),         //  output,   width = 1,              .read
 		.WR         (WR),         //  output,   width = 1,              .write
 		.BUSY       (BUSY),       //   input,   width = 1,              .waitrequest
-		.mac_inited (mac_inited), //  output,   width = 1,    mac_inited.mac_inited
-		.led_link   (led_link)    //   input,   width = 1,      led_link.signal
+		.mac_inited (mac_inited)  //  output,   width = 1,    mac_inited.mac_inited
 	);
 
 endmodule

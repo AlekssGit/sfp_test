@@ -7,7 +7,6 @@
 		.RD         (_connected_to_RD_),         //  output,   width = 1,              .read
 		.WR         (_connected_to_WR_),         //  output,   width = 1,              .write
 		.BUSY       (_connected_to_BUSY_),       //   input,   width = 1,              .waitrequest
-		.mac_inited (_connected_to_mac_inited_), //  output,   width = 1,    mac_inited.mac_inited
-		.led_link   (_connected_to_led_link_)    //   input,   width = 1,      led_link.signal
+		.mac_inited (_connected_to_mac_inited_)  //  output,   width = 1,    mac_inited.mac_inited
 	);
 

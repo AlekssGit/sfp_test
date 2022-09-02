@@ -2,7 +2,6 @@
 		port (
 			clock_50_clk                            : out std_logic;                                        -- clk
 			mac_inited_mac_inited                   : out std_logic;                                        -- mac_inited
-			init_mac_led_link_signal                : in  std_logic                     := 'X';             -- signal
 			pll_refclk_clk                          : in  std_logic                     := 'X';             -- clk
 			reset_main_out_reset                    : out std_logic;                                        -- reset
 			reset_mod_clock_clk                     : in  std_logic                     := 'X';             -- clk
@@ -82,7 +81,6 @@
 		port map (
 			clock_50_clk                            => CONNECTED_TO_clock_50_clk,                            --                    clock_50.clk
 			mac_inited_mac_inited                   => CONNECTED_TO_mac_inited_mac_inited,                   --                  mac_inited.mac_inited
-			init_mac_led_link_signal                => CONNECTED_TO_init_mac_led_link_signal,                --           init_mac_led_link.signal
 			pll_refclk_clk                          => CONNECTED_TO_pll_refclk_clk,                          --                  pll_refclk.clk
 			reset_main_out_reset                    => CONNECTED_TO_reset_main_out_reset,                    --              reset_main_out.reset
 			reset_mod_clock_clk                     => CONNECTED_TO_reset_mod_clock_clk,                     --             reset_mod_clock.clk

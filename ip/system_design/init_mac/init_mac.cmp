@@ -8,8 +8,7 @@
 			RD         : out std_logic;                                        -- read
 			WR         : out std_logic;                                        -- write
 			BUSY       : in  std_logic                     := 'X';             -- waitrequest
-			mac_inited : out std_logic;                                        -- mac_inited
-			led_link   : in  std_logic                     := 'X'              -- signal
+			mac_inited : out std_logic                                         -- mac_inited
 		);
 	end component init_mac;
 

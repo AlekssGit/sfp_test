@@ -45,7 +45,7 @@
 //Register initial values
 
 //MAC_REGISTERS
-`define COMMAND_CONFIG      32'b0000_0000_1000_0000_1000_0000_0011_0000 // without loopback 32'b0000_0000_1000_0000_0000_0000_0011_0000 
+`define COMMAND_CONFIG      32'b0000_0000_1000_0000_1000_0000_0011_0000
 `define DISABLE_TX_RX       `COMMAND_CONFIG 
 `define ENABLE_TX_RX        `DISABLE_TX_RX + 32'h3 //32'h00800223
 
@@ -80,4 +80,12 @@
 
 `define IF_MODE             32'h0000003//32'h0000008 // 32'h0000003
 
-`define WAIT_INIT_TIME      32'd500_000 // 32'd5_000   // 
+// `define TEST 1
+
+`ifdef TEST
+    `define WAIT_INIT_TIME      32'd5_000
+    `define PCS_CONTROL_INIT    32'b0000_0000_0000_0000_0000_0001_0100_0000
+`else
+    `define WAIT_INIT_TIME      32'd500_000
+    `define PCS_CONTROL_INIT    32'b0000_0000_0000_0000_0001_0001_0100_0000
+`endif

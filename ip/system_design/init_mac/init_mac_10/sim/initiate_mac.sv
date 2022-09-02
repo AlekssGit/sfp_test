@@ -1,7 +1,5 @@
 `include "mac_defines.sv"
 
-
-
 module initiate_mac
 (
 	input  logic clk        ,
@@ -16,9 +14,9 @@ module initiate_mac
     input   logic [31:0] rd_data    ,
     input   logic action_done,
 
-    output  logic mac_inited,
+    output  logic mac_inited
 
-    input   logic   led_link
+    // input   logic   led_link
 );
 
 logic need_init_mac;
@@ -143,14 +141,23 @@ begin
     end
 end
 
-logic led_link_reg;
-assign led_link_reg = rd_data[2];
+logic [31:0] check_link_1_addr;
+logic [31:0] check_link_2_addr;
+
+assign check_link_1_addr = {24'd0, `STATUS_ADDR};
+assign check_link_2_addr = {24'd1, `STATUS_ADDR};
+
+logic link_ch1_reg;
+logic link_ch2_reg;
+assign link_ch1_reg = (rd_adr == check_link_1_addr) ? rd_data[2] : 1'b0;
+assign link_ch2_reg = (rd_adr == check_link_2_addr) ? rd_data[2] : 1'b0;
 
 always_comb
 begin
     case (init_state)
         WAIT_INIT:              init_state_next = (timer == `WAIT_INIT_TIME) ? IDLE_init : WAIT_INIT;
-        IDLE_init:              init_state_next = (need_init_mac) ? (action_done & (led_link_reg == 1'b1) /*led_link*/) ? PCS_RESET : LINK_TIMER_1 /*REV_PCS*/ : IDLE_init;
+        
+        IDLE_init:              init_state_next = (need_init_mac) ? (action_done & (link_ch1_reg || link_ch2_reg)) ? PCS_RESET : LINK_TIMER_1 : IDLE_init;
 
         LINK_TIMER_1:           init_state_next = (action_done) ? LINK_TIMER_2 : LINK_TIMER_1;
         LINK_TIMER_2:           init_state_next = (action_done) ? REV_PCS : LINK_TIMER_2;
@@ -163,7 +170,7 @@ begin
         SGMII_CONF:             init_state_next = (action_done) ? SGMII_CONF_WAIT : SGMII_CONF;
         SGMII_CONF_WAIT:        init_state_next = (action_done) ? WAIT_LINK : SGMII_CONF_WAIT;
         
-        WAIT_LINK:              init_state_next = (action_done & (led_link_reg == 1'b1) /*led_link*/) ? PCS_RESET : WAIT_LINK;
+        WAIT_LINK:              init_state_next = (action_done & (link_ch1_reg || link_ch2_reg)) ? PCS_RESET : WAIT_LINK;
 
         PCS_RESET:              init_state_next = (action_done) ? PCS_RESET_WAIT : PCS_RESET;
         PCS_RESET_WAIT:         init_state_next = (action_done & (rd_data[15] == 1'b0)) ? DISABLE_TX_RX : PCS_RESET_WAIT;
@@ -181,14 +188,14 @@ begin
         RX_ALMOST_EMPTY:        init_state_next = (action_done) ? RX_SECTION_FULL   : RX_ALMOST_EMPTY;
         RX_SECTION_FULL:        init_state_next = (action_done) ? MAC_0             : RX_SECTION_FULL;
 
-        MAC_0:                  init_state_next = (action_done) ? MAC_1    : MAC_0;
-        MAC_1:                  init_state_next = (action_done) ? FRAME_LENGTH   : MAC_1;
+        MAC_0:                  init_state_next = (action_done) ? MAC_1             : MAC_0;
+        MAC_1:                  init_state_next = (action_done) ? FRAME_LENGTH      : MAC_1;
 
-        FRAME_LENGTH:           init_state_next = (action_done) ? TX_IPG_LENGTH    : FRAME_LENGTH;
-        TX_IPG_LENGTH:          init_state_next = (action_done) ? PAUSE_QUANT    : TX_IPG_LENGTH;
+        FRAME_LENGTH:           init_state_next = (action_done) ? TX_IPG_LENGTH     : FRAME_LENGTH;
+        TX_IPG_LENGTH:          init_state_next = (action_done) ? PAUSE_QUANT       : TX_IPG_LENGTH;
         PAUSE_QUANT:            init_state_next = (action_done) ? COMMAND_CONFIG_REG    : PAUSE_QUANT;
 
-        COMMAND_CONFIG_REG:     init_state_next = (action_done) ? MAC_RESET    : COMMAND_CONFIG_REG;
+        COMMAND_CONFIG_REG:     init_state_next = (action_done) ? MAC_RESET         : COMMAND_CONFIG_REG;
 
         MAC_RESET:              init_state_next = (action_done) ? MAC_RESET_WAIT : MAC_RESET;     
         MAC_RESET_WAIT:         init_state_next = (action_done & (rd_data[13] == 1'b0)) ? ENABLE_TX_RX : MAC_RESET_WAIT;
@@ -196,7 +203,7 @@ begin
         ENABLE_TX_RX:           init_state_next = (action_done) ? ENABLE_TX_RX_WAIT : ENABLE_TX_RX;
         ENABLE_TX_RX_WAIT:      init_state_next = (action_done & (rd_data[1:0] == 2'b11)) ? END_INITIATION : ENABLE_TX_RX_WAIT;
 
-        END_INITIATION:         init_state_next = (count_channels_inited == 3'd1) ? END_INITIATION : IDLE_init ; //init_state_next = (need_init_mac) ? END_INITIATION : IDLE_init;
+        END_INITIATION:         init_state_next = (count_channels_inited == 3'd1) ? END_INITIATION : IDLE_init ;
     default: ;
     endcase
 end
@@ -226,12 +233,12 @@ begin
                 wr_data <= 32'd0; 
                 
                 rd_rq   <= 1'b1;
-                rd_adr  <= {24'd0, `STATUS_ADDR}; 
+                rd_adr  <= (rd_adr == check_link_1_addr) ? check_link_2_addr : check_link_1_addr; 
             end 
             LINK_TIMER_1:
             begin
                 wr_rq   <= 1'b1;
-                wr_adr  <= {24'd0, `LINK_TIMER_0_ADDR}; //{22'd0, count_channels_inited[1:0], `LINK_TIMER_0_ADDR};
+                wr_adr  <= {24'd0, `LINK_TIMER_0_ADDR};
                 wr_data <= `LINK_TIMER_0;
                 
                 rd_rq   <= 1'b0;
@@ -240,7 +247,7 @@ begin
             LINK_TIMER_2:
             begin
                 wr_rq   <= 1'b1;
-                wr_adr  <= {24'd0, `LINK_TIMER_1_ADDR}; //{22'd0, count_channels_inited[1:0],`LINK_TIMER_1_ADDR};
+                wr_adr  <= {24'd0, `LINK_TIMER_1_ADDR};
                 wr_data <= `LINK_TIMER_1;
                 
                 rd_rq   <= 1'b0;
@@ -250,7 +257,7 @@ begin
             REV_PCS:
             begin
                 wr_rq   <= 1'b0;
-                wr_adr  <= 32'd0; // {24'd0, `REV_PCS_ADDR};
+                wr_adr  <= 32'd0;
                 wr_data <= 32'd0;
                 
                 rd_rq   <= 1'b1;
@@ -280,7 +287,7 @@ begin
             SGMII_CONF:
             begin
                 wr_rq   <= 1'b1;
-                wr_adr  <= {24'd0, `IF_MODE_ADDR}; //{22'd0, count_channels_inited[1:0], `IF_MODE_ADDR};
+                wr_adr  <= {24'd0, `IF_MODE_ADDR};
                 wr_data <= `IF_MODE;
                 
                 rd_rq   <= 1'b0;
@@ -290,8 +297,8 @@ begin
             SGMII_CONF_WAIT:
             begin
                 wr_rq   <= 1'b0;
-                wr_adr  <= 32'd0; //{22'd0, count_channels_inited[1:0], `IF_MODE_ADDR};
-                wr_data <= 32'd0; //`IF_MODE;
+                wr_adr  <= 32'd0;
+                wr_data <= 32'd0;
                 
                 rd_rq   <= 1'b1;
                 rd_adr  <= {24'd0, `IF_MODE_ADDR}; 
@@ -303,7 +310,7 @@ begin
                 wr_data <= 32'd0; 
                 
                 rd_rq   <= 1'b1;
-                rd_adr  <= {24'd0, `STATUS_ADDR};                
+                rd_adr  <= (rd_adr == check_link_1_addr) ? check_link_2_addr : check_link_1_addr;;                
             end       
             PCS_RESET:
             begin

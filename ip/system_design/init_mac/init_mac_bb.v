@@ -7,8 +7,7 @@ module init_mac (
 		output wire        RD,         //              .read
 		output wire        WR,         //              .write
 		input  wire        BUSY,       //              .waitrequest
-		output wire        mac_inited, //    mac_inited.mac_inited
-		input  wire        led_link    //      led_link.signal
+		output wire        mac_inited  //    mac_inited.mac_inited
 	);
 endmodule
 

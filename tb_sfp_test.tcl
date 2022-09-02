@@ -48,18 +48,19 @@ add wave -group resets  -label "tx_ready"  /tb_sfp_test/device/tx_ready
 add wave -group resets  -label "rx_ready"  /tb_sfp_test/device/rx_ready
 
 add wave -group avalon_tse_Setup   -label "mac_inited"              /tb_sfp_test/device/mac_inited
-add wave -group avalon_tse_Setup   -label "led_link_reg"            /tb_sfp_test/device/platform_design/init_mac/init_mac/control_init/led_link_reg
+add wave -group avalon_tse_Setup   -label "link_ch1_reg"            /tb_sfp_test/device/platform_design/init_mac/init_mac/control_init/link_ch1_reg
+add wave -group avalon_tse_Setup   -label "link_ch2_reg"            /tb_sfp_test/device/platform_design/init_mac/init_mac/control_init/link_ch2_reg
 add wave -group avalon_tse_Setup   -label "count_channels_inited"   /tb_sfp_test/device/platform_design/init_mac/init_mac/control_init/count_channels_inited
 add wave -group avalon_tse_Setup   -label "init_state"              /tb_sfp_test/device/platform_design/init_mac/init_mac/control_init/init_state
 add wave -group avalon_tse_Setup   -label "wr_adr"                  /tb_sfp_test/device/platform_design/init_mac/init_mac/control_init/wr_adr
 add wave -group avalon_tse_Setup   -label "allow_add_channel"       /tb_sfp_test/device/platform_design/init_mac/init_mac/control_init/allow_add_channel
 
-# add wave -group avalon_tse_Setup   -label "mm_readdata"       /tb_sfp_test/device/platform_design/init_mac_avalon_master_readdata
-# add wave -group avalon_tse_Setup   -label "mm_waitrequest"       /tb_sfp_test/device/platform_design/init_mac_avalon_master_waitrequest
-# add wave -group avalon_tse_Setup   -label "mm_address"       /tb_sfp_test/device/platform_design/init_mac_avalon_master_address
-# add wave -group avalon_tse_Setup   -label "mm_read"       /tb_sfp_test/device/platform_design/init_mac_avalon_master_read
-# add wave -group avalon_tse_Setup   -label "mm_writedata"       /tb_sfp_test/device/platform_design/init_mac_avalon_master_writedata
-# add wave -group avalon_tse_Setup   -label "mm_write"       /tb_sfp_test/device/platform_design/init_mac_avalon_master_write
+add wave -group avalon_tse_Setup   -label "mm_readdata"             /tb_sfp_test/device/platform_design/init_mac_avalon_master_readdata
+add wave -group avalon_tse_Setup   -label "mm_waitrequest"          /tb_sfp_test/device/platform_design/init_mac_avalon_master_waitrequest
+add wave -group avalon_tse_Setup   -label "mm_address"              /tb_sfp_test/device/platform_design/init_mac_avalon_master_address
+add wave -group avalon_tse_Setup   -label "mm_read"                 /tb_sfp_test/device/platform_design/init_mac_avalon_master_read
+add wave -group avalon_tse_Setup   -label "mm_writedata"            /tb_sfp_test/device/platform_design/init_mac_avalon_master_writedata
+add wave -group avalon_tse_Setup   -label "mm_write"                /tb_sfp_test/device/platform_design/init_mac_avalon_master_write
 
 
 # add wave -group mdio   -label "mdc"       /tb_sfp_test/device/mdio_mdc
@@ -81,18 +82,18 @@ add wave -group channel_1_signals   -label "rx_is_lockedtoref"              /tb_
 add wave -group channel_1_signals   -label "rx_is_lockedtodata"             /tb_sfp_test/device/rx_is_lockedtodata_0
 add wave -group channel_1_signals   -label "rx_recov_clk"                   /tb_sfp_test/device/serdes_control_connection_0
 
-# add wave -group channel_2_signals   -label "crs"                            /tb_sfp_test/device/status_1_crs
-# add wave -group channel_2_signals   -label "link"                           /tb_sfp_test/device/status_1_link
-# add wave -group channel_2_signals   -label "panel_lin"                      /tb_sfp_test/device/status_1_panel_link
-# add wave -group channel_2_signals   -label "col"                            /tb_sfp_test/device/status_1_col
-# add wave -group channel_2_signals   -label "an"                             /tb_sfp_test/device/status_1_an
-# add wave -group channel_2_signals   -label "char_err"                       /tb_sfp_test/device/status_1_char_err
-# add wave -group channel_2_signals   -label "disp_err"                       /tb_sfp_test/device/status_1_disp_err
-# add wave -group channel_2_signals   -label "tx_cal_busy"                    /tb_sfp_test/device/tx_cal_busy_1
-# add wave -group channel_2_signals   -label "rx_cal_busy"                    /tb_sfp_test/device/rx_cal_busy_1
-# add wave -group channel_2_signals   -label "rx_is_lockedtoref"              /tb_sfp_test/device/rx_is_lockedtoref_1
-# add wave -group channel_2_signals   -label "rx_is_lockedtodata"             /tb_sfp_test/device/rx_is_lockedtodata_1
-# add wave -group channel_2_signals   -label "rx_recov_clk"                   /tb_sfp_test/device/serdes_control_connection_1
+add wave -group channel_2_signals   -label "crs"                            /tb_sfp_test/device/status_1_crs
+add wave -group channel_2_signals   -label "link"                           /tb_sfp_test/device/status_1_link
+add wave -group channel_2_signals   -label "panel_lin"                      /tb_sfp_test/device/status_1_panel_link
+add wave -group channel_2_signals   -label "col"                            /tb_sfp_test/device/status_1_col
+add wave -group channel_2_signals   -label "an"                             /tb_sfp_test/device/status_1_an
+add wave -group channel_2_signals   -label "char_err"                       /tb_sfp_test/device/status_1_char_err
+add wave -group channel_2_signals   -label "disp_err"                       /tb_sfp_test/device/status_1_disp_err
+add wave -group channel_2_signals   -label "tx_cal_busy"                    /tb_sfp_test/device/tx_cal_busy_1
+add wave -group channel_2_signals   -label "rx_cal_busy"                    /tb_sfp_test/device/rx_cal_busy_1
+add wave -group channel_2_signals   -label "rx_is_lockedtoref"              /tb_sfp_test/device/rx_is_lockedtoref_1
+add wave -group channel_2_signals   -label "rx_is_lockedtodata"             /tb_sfp_test/device/rx_is_lockedtodata_1
+add wave -group channel_2_signals   -label "rx_recov_clk"                   /tb_sfp_test/device/serdes_control_connection_1
 
 
 # add wave -group avalon_st_1    -label "serial_clk"   /tb_sfp_test/device/platform_design/xcvr_pll_tx_serial_clk_clk

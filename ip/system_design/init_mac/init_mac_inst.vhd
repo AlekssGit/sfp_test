@@ -8,8 +8,7 @@
 			RD         : out std_logic;                                        -- read
 			WR         : out std_logic;                                        -- write
 			BUSY       : in  std_logic                     := 'X';             -- waitrequest
-			mac_inited : out std_logic;                                        -- mac_inited
-			led_link   : in  std_logic                     := 'X'              -- signal
+			mac_inited : out std_logic                                         -- mac_inited
 		);
 	end component init_mac;
 
@@ -23,7 +22,6 @@
 			RD         => CONNECTED_TO_RD,         --              .read
 			WR         => CONNECTED_TO_WR,         --              .write
 			BUSY       => CONNECTED_TO_BUSY,       --              .waitrequest
-			mac_inited => CONNECTED_TO_mac_inited, --    mac_inited.mac_inited
-			led_link   => CONNECTED_TO_led_link    --      led_link.signal
+			mac_inited => CONNECTED_TO_mac_inited  --    mac_inited.mac_inited
 		);
 

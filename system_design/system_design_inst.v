@@ -1,7 +1,6 @@
 	system_design u0 (
 		.clock_50_clk                            (_connected_to_clock_50_clk_),                            //  output,   width = 1,                    clock_50.clk
 		.mac_inited_mac_inited                   (_connected_to_mac_inited_mac_inited_),                   //  output,   width = 1,                  mac_inited.mac_inited
-		.init_mac_led_link_signal                (_connected_to_init_mac_led_link_signal_),                //   input,   width = 1,           init_mac_led_link.signal
 		.pll_refclk_clk                          (_connected_to_pll_refclk_clk_),                          //   input,   width = 1,                  pll_refclk.clk
 		.reset_main_out_reset                    (_connected_to_reset_main_out_reset_),                    //  output,   width = 1,              reset_main_out.reset
 		.reset_mod_clock_clk                     (_connected_to_reset_mod_clock_clk_),                     //   input,   width = 1,             reset_mod_clock.clk

@@ -99,16 +99,10 @@ assign rx_digitalreset_0 = rx_digitalreset; //main_reset;//1'b0 ;
 logic tx_cal_busy_0;
 logic rx_cal_busy_0;
 
-assign tx_cal_busy = tx_cal_busy_0;
-assign rx_cal_busy = rx_cal_busy_0;
-
-
 logic rx_set_locktodata_0;
 logic rx_set_locktoref_0;
 logic rx_is_lockedtoref_0;
 logic rx_is_lockedtodata_0;
-
-assign rx_is_lockedtodata = rx_is_lockedtodata_0;
 
 assign rx_set_locktodata_0  = 1'b0;
 assign rx_set_locktoref_0   = 1'b0;
@@ -148,6 +142,11 @@ assign rx_set_locktoref_1   = 1'b0;
 
 logic serdes_control_connection_1;
 
+assign tx_cal_busy = tx_cal_busy_1 || tx_cal_busy_0;
+assign rx_cal_busy = rx_cal_busy_1 || rx_cal_busy_0;
+
+assign rx_is_lockedtodata = rx_is_lockedtodata_1 || rx_is_lockedtodata_0 ;
+
 logic mdio_mdc ;
 logic mdio_in  ;
 logic mdio_out ;
@@ -158,8 +157,7 @@ assign mdio_in = 1'b1;
 system_design platform_design (
 		.clock_50_clk                           (clk_50_pll         ),                         
 		
-        .mac_inited_mac_inited                  (mac_inited         ),                
-		.init_mac_led_link_signal               (status_0_link      ),
+        .mac_inited_mac_inited                  (mac_inited         ),
         .pll_refclk_clk                         (clk_50             ),                       
 		
         .reset_main_out_reset                   (main_reset         ),
@@ -278,9 +276,6 @@ logic   [31:0]      counter_to_send     ;
 logic               send_cmd            ;
 logic	[24:0]		transmit_start_addr		;
 
-// assign cmd_send_1 = send_cmd;
-// assign cmd_send_2 = send_cmd;
-
 assign start_ram_addr_1 = transmit_start_addr;
 assign start_ram_addr_2 = transmit_start_addr;
 
@@ -316,8 +311,6 @@ begin
 		end   
     end   
 end
-
-
 
 // SFP expnader gpio_led_blink
 logic   sfp_rled    ;

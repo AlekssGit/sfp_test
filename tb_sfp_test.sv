@@ -26,14 +26,14 @@ sfp_test_top device (
     .clk_125_lvds_tse   (clk_125_lvds   ),
     .reset_phy          (reset_phy      ),
 
-    .sgmii_rx_1         (sgmii_txd_1 /*sgmii_rxd_1*/    ), 
+    .sgmii_rx_1         (/*sgmii_txd_1*/    ), 
     .sgmii_tx_1         (sgmii_txd_1    ),
 
-    // .sgmii_rx_2         (sgmii_txd_2 /*sgmii_rxd_2*/    ), 
-    // .sgmii_tx_2         (sgmii_txd_2    ),
+    .sgmii_rx_2         (sgmii_txd_2    ), 
+    .sgmii_tx_2         (sgmii_txd_2    ),
 
-    .i2c_scl            (i2c_scl        ),
-    .i2c_sda            (i2c_sda        )
+    .i2c_scl_1          (i2c_scl        ),
+    .i2c_sda_1          (i2c_sda        )
 );
 
 int counter_test;
@@ -42,7 +42,6 @@ initial
 begin
     clk_50          = 1'b0   ;
     clk_125_lvds    = 1'b0   ;
-    clk_1250        = 1'b0   ;
     rst_n           = 1'b1   ;
 
     counter_test = 0;
@@ -50,7 +49,6 @@ end
 
 always #10 clk_50 = ~clk_50;
 always #4 clk_125_lvds = ~clk_125_lvds;
-// always #800 clk_1250 = ~clk_1250;
 
 always @(posedge clk_125_lvds) 
 begin
@@ -92,27 +90,9 @@ i2c_slave i2c_slave
 initial 
 begin
     clk_100          = 1'b0   ;
-
-    // counter_test = 0;
 end
 
-// always #10 clk_50 = ~clk_50;
 always #5 clk_100 = ~clk_100;
-
-
-// always @(posedge clk_50) 
-// begin
-//     counter_test++;
-//     if(counter_test == 20)
-//     begin
-//         rst_n = 1'b0;
-//     end
-//     else if(counter_test == 30)
-//     begin
-//         rst_n = 1'b1;
-//     end
-// end
-
 
 logic [2:0] cnt_ack;
 logic [2:0] cnt_ack_d;

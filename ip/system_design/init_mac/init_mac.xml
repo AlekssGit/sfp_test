@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deploy
- date="2022.09.02.11:03:20"
+ date="2022.09.02.17:25:41"
  outputDirectory="D:/Documents/Projects/Learning/SFP_test/ip/system_design/init_mac/">
  <perimeter>
   <parameter
@@ -121,12 +121,6 @@
    <property name="associatedReset" value="reset" />
    <property name="prSafe" value="false" />
    <port name="mac_inited" direction="output" role="mac_inited" width="1" />
-  </interface>
-  <interface name="led_link" kind="conduit" start="0">
-   <property name="associatedClock" value="" />
-   <property name="associatedReset" value="" />
-   <property name="prSafe" value="false" />
-   <port name="led_link" direction="input" role="signal" width="1" />
   </interface>
  </perimeter>
  <entity kind="init_mac" version="1.0" name="init_mac">

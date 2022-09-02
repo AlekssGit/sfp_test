@@ -13,9 +13,7 @@ module mac_init_top
     input   logic           BUSY    , 
 
     //  Result of work of this module
-    output  logic           mac_inited,
-
-    input   logic           led_link
+    output  logic           mac_inited
 );
 
 logic           wr_rq		;
@@ -64,9 +62,7 @@ initiate_mac control_init
     .rd_data        (rd_data    ),
     .action_done    (action_done),
 
-    .mac_inited     (mac_inited ),
-
-    .led_link       (led_link   )
+    .mac_inited     (mac_inited )
 );
 
 endmodule
