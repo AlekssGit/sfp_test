@@ -1,4 +1,4 @@
-// `define TEST 1
+`define TEST 1
 
 `ifdef TEST
 	`define ALLOW_SEND		    1'b1
@@ -7,6 +7,7 @@
     `define TIME_TO_BLINK       32'd2000
     `define BLINK_LED_DIVIDE    32'd25_000 
     `define I2C_CLK_DIVIDE      32'd62 
+    `define RELAX_TIME          32'd1500
 `else
 	`define ALLOW_SEND		    1'b0
     `define PERIOD_BTN_SEND_1	32'h05F5E100
@@ -14,6 +15,7 @@
     `define TIME_TO_BLINK       32'd50_000_000 
     `define BLINK_LED_DIVIDE    32'd25_000_000
     `define I2C_CLK_DIVIDE      32'd124 
+    `define RELAX_TIME          32'd50_000
 `endif
 
 module sfp_test_top (
@@ -49,10 +51,20 @@ module sfp_test_top (
     output  logic   blink_led
 );
 
+logic clk_50_pll;
+
+//Blinking led to determine the health of the system
+generator #(`BLINK_LED_DIVIDE) blink_led_clk_divide	(
+	.nreset_i	(rst_n),
+	.i_clk		(clk_50_pll),
+	.o_clk 		(blink_led)
+);
+
+
 logic magic_wakeup_1;
 logic magic_wakeup_2;
 
-logic clk_50_pll;
+
 logic mac_inited;
 logic main_reset;
 
@@ -312,7 +324,8 @@ begin
     end   
 end
 
-// SFP expnader gpio_led_blink
+// SFP expnaders gpio_led_blink
+
 logic   sfp_rled    ;
 logic   sfp_gled    ;
 logic   sfp_txdis   ;
@@ -336,12 +349,6 @@ generator #(`I2C_CLK_DIVIDE) i2c_clk_divide	(
 	.nreset_i	(rst_n),
 	.i_clk		(clk_50_pll),
 	.o_clk 		(clk_i2c)
-);
-
-generator #(`BLINK_LED_DIVIDE) blink_led_clk_divide	(
-	.nreset_i	(rst_n),
-	.i_clk		(clk_50_pll),
-	.o_clk 		(blink_led)
 );
 
 i2c_expander_sfp expander_device
@@ -381,8 +388,9 @@ assign sfp_rs1      = 1'b0;
 assign sfp_rs0      = 1'b0;
 
 logic [31:0] timer;
+logic [31:0] timer_relax;
 
-enum int unsigned { IDLE, WAIT_TIMER, WRITE_O, READ_I, READ_O } state, state_next;
+enum int unsigned { IDLE, WAIT_TIMER, WRITE_O, RELAX_1, READ_I, RELAX_2, READ_O } state, state_next;
 
 logic dev_ready_prev;
 
@@ -413,14 +421,42 @@ end
 always_comb
 begin
     case(state)
-    IDLE:       state_next  = WAIT_TIMER;
-    WAIT_TIMER: state_next  =   (timer == `TIME_TO_BLINK && dev_ready   )   ?   WRITE_O :   WAIT_TIMER;
-    WRITE_O:    state_next  =   (dev_ready && ~dev_ready_prev           )   ?   READ_I  :   WRITE_O;
-    READ_I:     state_next  =   (dev_ready && ~dev_ready_prev           )   ?   READ_O  :   READ_I;
-    READ_O:     state_next  =   (dev_ready && ~dev_ready_prev           )   ?   IDLE    :   READ_O;
+    IDLE:       state_next  =   (dev_ready                                  )   ?   WAIT_TIMER  :   IDLE;
+    WAIT_TIMER: state_next  =   (timer == `TIME_TO_BLINK && dev_ready       )   ?   WRITE_O     :   WAIT_TIMER;
+    WRITE_O:    state_next  =   (dev_ready && ~dev_ready_prev               )   ?   /*READ_I*/ RELAX_1      :   WRITE_O;
+    RELAX_1:    state_next  =   (timer_relax == `RELAX_TIME && dev_ready    )   ?   READ_I     :   RELAX_1;
+    READ_I:     state_next  =   (dev_ready && ~dev_ready_prev               )   ?   /*READ_O*/ RELAX_2      :   READ_I;
+    RELAX_2:    state_next  =   (timer_relax == `RELAX_TIME && dev_ready    )   ?   READ_O     :   RELAX_2;
+    READ_O:     state_next  =   (dev_ready && ~dev_ready_prev               )   ?   IDLE        :   READ_O;
 
     default: ;
     endcase
+end
+
+always_ff @(posedge clk_50_pll, negedge rst_n)
+begin
+    if(~rst_n)
+    begin
+        timer_relax <= 32'd0;
+    end
+    else
+    begin
+        if(state == RELAX_1 || state == RELAX_2)
+        begin
+            if(timer_relax > `RELAX_TIME + 32'd1000)
+            begin
+                timer_relax <= 32'd0;
+            end
+            else
+            begin
+                timer_relax <= timer_relax + 32'd1;
+            end
+        end
+        else
+        begin
+            timer_relax <= 32'd0;
+        end
+    end
 end
 
 always_ff @(posedge clk_50_pll, negedge rst_n)
@@ -468,6 +504,12 @@ begin
         need_write_reg_o <= 1'b0;
         need_read_reg_o  <= 1'b0;
         need_read_reg_i  <= 1'b0;
+    end
+    else if(~dev_ready && (state == WRITE_O || state == READ_O || state == READ_I ))
+    begin
+        need_write_reg_o <= 1'b0;
+        need_read_reg_o  <= 1'b0;
+        need_read_reg_i  <= 1'b0;        
     end
     else
     begin

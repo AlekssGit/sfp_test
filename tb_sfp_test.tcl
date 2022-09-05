@@ -192,8 +192,8 @@ add wave -group i2c_master -label "need_write_o"    /tb_sfp_test/device/expander
 add wave -group i2c_master -label "need_read_o"     /tb_sfp_test/device/expander_device/need_read_reg_o
 add wave -group i2c_master -label "need_read_i"     /tb_sfp_test/device/expander_device/need_read_reg_i
 add wave -group i2c_master -label "dev_ready"       /tb_sfp_test/device/dev_ready
-add wave -group i2c_master -label "state_ctrl_exp"       /tb_sfp_test/device/state
+add wave -group i2c_master -label "state_ctrl_exp"  /tb_sfp_test/device/state
 
 
-run 200us 
+run 1500us 
 wave zoom full
