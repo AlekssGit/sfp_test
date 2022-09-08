@@ -24,7 +24,7 @@ module i2c_expander_mm
 
 );
 
-enum int unsigned {IDLE, READ, READ_WAIT, WRITE} state, state_next;
+enum int unsigned {IDLE, READ, READ_WAIT, WRITE, WAIT_RESET_RQ} state, state_next;
 
 assign mm_write_data = wr_data;
 
@@ -55,6 +55,12 @@ begin
         mm_read   = 1'b0;
         mm_write  = 1'b1;
     end
+    WAIT_RESET_RQ:
+    begin
+        mm_addr   = 4'd0;
+        mm_read   = 1'b0;
+        mm_write  = 1'b0;
+    end
     default:  
     begin
         mm_addr   = 4'd0;
@@ -80,12 +86,25 @@ begin
 end
 
 
-assign action_done = ((state == READ_WAIT & read_wait_cnt == 4'd1) || state == WRITE) ? 1'b1: 1'b0;
+assign action_done = ((state == READ_WAIT && read_wait_cnt == 4'd1) || state == WRITE) ? 1'b1: 1'b0;
+// assign action_done = ((state == READ_WAIT && read_wait_cnt >= 4'd1) || state == WRITE) ? 1'b1: 1'b0;
 
-logic mm_read_valid;
-assign mm_read_valid = (state == READ_WAIT & read_wait_cnt == 4'd1) ? 1'b1: 1'b0;
+// logic mm_read_valid;
+// assign mm_read_valid = (state == READ_WAIT && read_wait_cnt == 4'd1) ? 1'b1: 1'b0;
 
 assign rd_data = mm_read_data; // (mm_read_valid) ? mm_read_data : 32'd0;
+
+// always_ff @(posedge clk, posedge reset) 
+// begin
+//     if(reset)
+//     begin
+//         rd_data <= 32'd0;
+//     end 
+//     else
+//     begin
+//         rd_data <= mm_read_data;
+//     end
+// end
 
 // State machine
 always_ff @(posedge clk, posedge reset) 
@@ -105,8 +124,11 @@ begin
     case (state)
     IDLE:       state_next = (rd_rq) ? READ : ((wr_rq) ? WRITE : IDLE);
     READ:       state_next = READ_WAIT;//(!rd_rq || action_done) ? READ_WAIT : READ; 
-    READ_WAIT:  state_next = (!rd_rq || action_done) ? IDLE : READ_WAIT; 
-    WRITE:      state_next = ( !wr_rq || action_done) ? IDLE : WRITE;
+    READ_WAIT:  state_next = (/*!rd_rq ||*/ action_done) ? /*IDLE*/WAIT_RESET_RQ : READ_WAIT; 
+    WRITE:      state_next = (/*!wr_rq ||*/ action_done) ? /*IDLE*/WAIT_RESET_RQ : WRITE;
+
+    WAIT_RESET_RQ: state_next = (!rd_rq && !wr_rq) ? IDLE : WAIT_RESET_RQ;
+
     default:    state_next = state_next;
     endcase
 end

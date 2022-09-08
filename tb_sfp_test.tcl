@@ -193,7 +193,14 @@ add wave -group i2c_master -label "need_read_o"     /tb_sfp_test/device/expander
 add wave -group i2c_master -label "need_read_i"     /tb_sfp_test/device/expander_device/need_read_reg_i
 add wave -group i2c_master -label "dev_ready"       /tb_sfp_test/device/dev_ready
 add wave -group i2c_master -label "state_ctrl_exp"  /tb_sfp_test/device/state
+add wave -group i2c_master -label "state_exp_dev"  /tb_sfp_test/device/expander_device/state
+add wave -group i2c_master -label "action_done_d_i2c_ctrl"  /tb_sfp_test/device/expander_device/i2c_ctrl/action_done
+add wave -group i2c_master -label "action_done_i2c_ctrl"  /tb_sfp_test/device/expander_device/i2c_ctrl/action_done_i2c
+add wave -group i2c_master -label "state_i2c_ctrl"  /tb_sfp_test/device/expander_device/i2c_ctrl/state
+add wave -group i2c_master -label "reg_read_data_i2c_ctrl"  /tb_sfp_test/device/expander_device/i2c_ctrl/reg_read_data
+add wave -group i2c_master -label "rd_data_i2c_ctrl"  /tb_sfp_test/device/expander_device/i2c_ctrl/rd_data
+add wave -group i2c_master -label "state_i2c_mm"  /tb_sfp_test/device/expander_device/i2c_ctrl/mm_exp/state
 
 
-run 1500us 
+run 2500us 
 wave zoom full

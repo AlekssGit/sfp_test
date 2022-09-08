@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <preferences>
  <debug showDebugMenu="0" />
- <window width="1936" height="1056" x="1912" y="-8" />
+ <window width="1920" height="1040" x="0" y="0" />
  <systemtable filter="All Interfaces" />
- <library expandedCategories="Library,Project,Existing IP Variants" />
+ <library expandedCategories="Project,Existing IP Variants,Library" />
  <generation path="" block_symbol_file="0" simulation="VERILOG" modelsim="1" />
 </preferences>

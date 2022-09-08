@@ -173,57 +173,57 @@ always @(posedge clk, posedge reset_delay)
 begin
     if(reset_delay)
     begin
-        wr_reg_rq   = 1'b0;
-        rd_reg_rq   = 1'b0;
-        reg_addr    = 8'd0;
-        reg_wr_data = 8'd0;
+        wr_reg_rq   <= 1'b0;
+        rd_reg_rq   <= 1'b0;
+        reg_addr    <= 8'd0;
+        reg_wr_data <= 8'd0;
     end 
     else if(reg_action_done)
     begin
-        rd_reg_rq = 1'b0;
-        wr_reg_rq = 1'b0;
+        rd_reg_rq <= 1'b0;
+        wr_reg_rq <= 1'b0;
     end   
     else
     begin
         case (state)
             IDLE:
             begin
-                wr_reg_rq    = 1'b0;
-                rd_reg_rq    = 1'b0;
-                reg_addr     = 8'd0;
-                reg_wr_data  = 8'd0;
+                wr_reg_rq    <= 1'b0;
+                rd_reg_rq    <= 1'b0;
+                reg_addr     <= 8'd0;
+                reg_wr_data  <= 8'd0;
             end 
             READ_IP:
             begin
-                wr_reg_rq    = 1'b0;
-                reg_addr     = `EXP_REG_INPUT;
-                reg_wr_data  = 8'd0;
+                wr_reg_rq    <= 1'b0;
+                reg_addr     <= `EXP_REG_INPUT;
+                reg_wr_data  <= 8'd0;
                 
-                rd_reg_rq    = 1'b1;
+                rd_reg_rq    <= 1'b1;
             end
             READ_OP:
             begin
-                wr_reg_rq    = 1'b0;
-                reg_addr     = `EXP_REG_OUTPUT;
-                reg_wr_data  = 8'd0;
+                wr_reg_rq    <= 1'b0;
+                reg_addr     <= `EXP_REG_OUTPUT;
+                reg_wr_data  <= 8'd0;
                 
-                rd_reg_rq    = 1'b1;
+                rd_reg_rq    <= 1'b1;
             end            
             WRITE_OP:
             begin
-                wr_reg_rq   = 1'b1;
-                reg_addr    = `EXP_REG_OUTPUT;
-                reg_wr_data = {1'b0, sfp_rs0, 1'b0, sfp_rs1, 1'b0, sfp_txdis, sfp_gled, sfp_rled};
+                wr_reg_rq   <= 1'b1;
+                reg_addr    <= `EXP_REG_OUTPUT;
+                reg_wr_data <= {1'b0, sfp_rs0, 1'b0, sfp_rs1, 1'b0, sfp_txdis, sfp_gled, sfp_rled};
                 
-                rd_reg_rq   = 1'b0; 
+                rd_reg_rq   <= 1'b0; 
             end
             SETUP_IO_DIRECT:
             begin
-                wr_reg_rq   = 1'b1;
-                reg_addr    = `EXP_REG_CONF;
-                reg_wr_data = `EXP_IO_DIRECT;
+                wr_reg_rq   <= 1'b1;
+                reg_addr    <= `EXP_REG_CONF;
+                reg_wr_data <= `EXP_IO_DIRECT;
                 
-                rd_reg_rq   = 1'b0;
+                rd_reg_rq   <= 1'b0;
             end
             default: ;
         endcase

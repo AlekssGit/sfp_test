@@ -4,7 +4,13 @@
 `define REG_CTRL        4'h3
 `define REG_R_DATA      4'h4
 
-`define WAIT_TIME_VAL   32'd4000
+`define TEST 1
+
+`ifdef TEST
+    `define WAIT_TIME_VAL   32'd20_000
+`else
+    `define WAIT_TIME_VAL   32'd40_000
+`endif    
 
 module i2c_expander_ctrl
 (
@@ -40,6 +46,22 @@ logic [31:0]    wr_data     ;
 logic [31:0]    rd_data     ;
 logic           action_done ;
 
+logic action_done_i2c;
+
+always_ff @(posedge clk, posedge reset)
+begin
+    if(reset)
+    begin
+        action_done <= 1'b0;
+    end
+    else
+    begin
+        action_done <= action_done_i2c;
+    end
+end
+
+// assign action_done = action_done_i2c;
+
 i2c_expander_mm mm_exp
 (
     .clk        (clk    ),
@@ -54,7 +76,7 @@ i2c_expander_mm mm_exp
     .wr_data     (wr_data ),
     .rd_data     (rd_data ),
 
-    .action_done (action_done),    
+    .action_done (action_done_i2c),    
 
     .mm_addr        (mm_addr     ),
     .mm_read        (mm_read     ),
@@ -133,72 +155,72 @@ always_ff @(posedge clk, posedge reset_delay)
 begin
     if(reset_delay)
     begin
-        wr_rq   = 1'b0;
-        rd_rq   = 1'b0;
-        wr_adr  = 4'd0;
-        wr_data = 32'd0;
-        rd_adr  = 4'd0;
+        wr_rq   <= 1'b0;
+        rd_rq   <= 1'b0;
+        wr_adr  <= 4'd0;
+        wr_data <= 32'd0;
+        rd_adr  <= 4'd0;
     end 
     else if(action_done)
     begin
-        rd_rq = 1'b0;
-        wr_rq = 1'b0;
+        rd_rq <= 1'b0;
+        wr_rq <= 1'b0;
     end   
     else
     begin
         case (state)
             IDLE:
             begin
-                wr_rq   = 1'b0;
-                rd_rq   = 1'b0;
-                wr_adr  = 4'd0;
-                wr_data = 32'd0;
-                rd_adr  = 4'd0;
+                wr_rq   <= 1'b0;
+                rd_rq   <= 1'b0;
+                wr_adr  <= 4'd0;
+                wr_data <= 32'd0;
+                rd_adr  <= 4'd0;
             end                            
             WRITE_ADR_DEV:
             begin
-                wr_rq   = 1'b1;
-                wr_adr  = `REG_ADDR;
-                wr_data = {25'd0, 7'h20};
+                wr_rq   <= 1'b1;
+                wr_adr  <= `REG_ADDR;
+                wr_data <= {25'd0, 7'h20};
                 
-                rd_rq   = 1'b0;
-                rd_adr  = 4'd0; 
+                rd_rq   <= 1'b0;
+                rd_adr  <= 4'd0; 
             end
             WRITE_ADR_REG:
             begin
-                wr_rq   = 1'b1;
-                wr_adr  = `REG_DATA_0;
-                wr_data = {24'd0, reg_addr};
+                wr_rq   <= 1'b1;
+                wr_adr  <= `REG_DATA_0;
+                wr_data <= {24'd0, reg_addr};
                 
-                rd_rq   = 1'b0;
-                rd_adr  = 4'd0; 
+                rd_rq   <= 1'b0;
+                rd_adr  <= 4'd0; 
             end
             WRITE_DATA:
             begin
-                wr_rq   = 1'b1;
-                wr_adr  = `REG_DATA_1;
-                wr_data = {24'd0, reg_write_data};
+                wr_rq   <= 1'b1;
+                wr_adr  <= `REG_DATA_1;
+                wr_data <= {24'd0, reg_write_data};
                 
-                rd_rq   = 1'b0;
-                rd_adr  = 4'd0; 
+                rd_rq   <= 1'b0;
+                rd_adr  <= 4'd0; 
             end
             START_TRANSACTION:
             begin
-                wr_rq   = 1'b1;
-                wr_adr  = `REG_CTRL;
-                wr_data = {30'd0, wr_reg_rq, 1'b1};
+                wr_rq   <= 1'b1;
+                wr_adr  <= `REG_CTRL;
+                wr_data <= {30'd0, wr_reg_rq, 1'b1};
                 
-                rd_rq   = 1'b0;
-                rd_adr  = 4'd0; 
+                rd_rq   <= 1'b0;
+                rd_adr  <= 4'd0; 
             end
             READ_DATA:
             begin
-                wr_rq   = 1'b0;
-                wr_adr  = 4'd0;
-                wr_data = 32'd0;
+                wr_rq   <= 1'b0;
+                wr_adr  <= 4'd0;
+                wr_data <= 32'd0;
                 
-                rd_rq   = 1'b1;
-                rd_adr  = `REG_R_DATA;
+                rd_rq   <= 1'b1;
+                rd_adr  <= `REG_R_DATA;
             end
             WAIT_END_TRANSACTION:
             begin
@@ -206,25 +228,28 @@ begin
             end
             WAIT_TIME:
             begin
-                time_passed = (cnt_time >= `WAIT_TIME_VAL) ? 1'b1 : 1'b0;
+                time_passed <= (cnt_time >= `WAIT_TIME_VAL) ? 1'b1 : 1'b0;
             end           
             READ_CTRL:
             begin
-                time_passed = 1'b0;
+                time_passed <= 1'b0;
 
-                wr_rq   = 1'b0;
-                wr_adr  = 4'd0;
-                wr_data = 32'd0;
+                wr_rq   <= 1'b0;
+                wr_adr  <= 4'd0;
+                wr_data <= 32'd0;
                 
-                rd_rq   = 1'b1;
-                rd_adr  = `REG_CTRL;
+                rd_rq   <= 1'b1;
+                rd_adr  <= `REG_CTRL;
             end           
             default: ;
         endcase
     end
 end
 
-assign reg_action_done = ( (state == WAIT_END_TRANSACTION && wr_reg_rq && rd_data[5] == 1'b1 ) || (state == READ_DATA && action_done) ) ? 1'b1 : 1'b0;
+assign reg_action_done =    (   (state == WAIT_END_TRANSACTION && wr_reg_rq && rd_data[5] == 1'b1 ) 
+                                || 
+                                (state == READ_DATA && action_done) 
+                            ) ? 1'b1 : 1'b0;
 assign reg_read_data = (state == READ_DATA && action_done) ? rd_data[7:0] : 8'd0;//reg_read_data;
 
 // State machine
@@ -243,7 +268,7 @@ end
 always_comb 
 begin
     case (state)
-    IDLE:           state_next = (wr_reg_rq || rd_reg_rq)    ?  WRITE_ADR_DEV : IDLE;
+    IDLE:                   state_next = (wr_reg_rq || rd_reg_rq)    ?  WRITE_ADR_DEV : IDLE;
     
 
     WRITE_ADR_DEV:          state_next = (action_done)  ? WRITE_ADR_REG : WRITE_ADR_DEV; 
