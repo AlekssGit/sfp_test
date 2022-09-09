@@ -29,7 +29,7 @@ set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to sgmi
 set_location_assignment PIN_G27 -to "sgmii_tx_1(n)"
 set_instance_assignment -name IO_STANDARD "CURRENT MODE LOGIC (CML)" -to sgmii_rx_1 -entity sfp_test_top
 set_location_assignment PIN_AC7 -to blink_led
-set_global_assignment -name ENABLE_SIGNALTAP ON
+set_global_assignment -name ENABLE_SIGNALTAP OFF
 set_global_assignment -name USE_SIGNALTAP_FILE output_files/stp.stp
 set_instance_assignment -name IO_STANDARD "CURRENT MODE LOGIC (CML)" -to sgmii_rx_2 -entity sfp_test_top
 set_global_assignment -name POWER_USE_DEVICE_CHARACTERISTICS TYPICAL
