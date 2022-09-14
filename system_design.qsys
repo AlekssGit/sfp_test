@@ -5810,6 +5810,15 @@ https://fpgasoftware.intel.com/eula.-->
                         &lt;vhdlType&gt;STD_LOGIC_VECTOR&lt;/vhdlType&gt;
                         &lt;terminationValue&gt;0&lt;/terminationValue&gt;
                     &lt;/port&gt;
+                    &lt;port&gt;
+                        &lt;name&gt;ram_waitrequest&lt;/name&gt;
+                        &lt;role&gt;waitrequest&lt;/role&gt;
+                        &lt;direction&gt;Input&lt;/direction&gt;
+                        &lt;width&gt;1&lt;/width&gt;
+                        &lt;lowerBound&gt;0&lt;/lowerBound&gt;
+                        &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
+                        &lt;terminationValue&gt;0&lt;/terminationValue&gt;
+                    &lt;/port&gt;
                 &lt;/ports&gt;
                 &lt;assignments&gt;
                     &lt;assignmentValueMap/&gt;
@@ -6349,6 +6358,15 @@ https://fpgasoftware.intel.com/eula.-->
                     &lt;width&gt;4&lt;/width&gt;
                     &lt;lowerBound&gt;0&lt;/lowerBound&gt;
                     &lt;vhdlType&gt;STD_LOGIC_VECTOR&lt;/vhdlType&gt;
+                    &lt;terminationValue&gt;0&lt;/terminationValue&gt;
+                &lt;/port&gt;
+                &lt;port&gt;
+                    &lt;name&gt;ram_waitrequest&lt;/name&gt;
+                    &lt;role&gt;waitrequest&lt;/role&gt;
+                    &lt;direction&gt;Input&lt;/direction&gt;
+                    &lt;width&gt;1&lt;/width&gt;
+                    &lt;lowerBound&gt;0&lt;/lowerBound&gt;
+                    &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
                     &lt;terminationValue&gt;0&lt;/terminationValue&gt;
                 &lt;/port&gt;
             &lt;/ports&gt;
@@ -6953,6 +6971,15 @@ https://fpgasoftware.intel.com/eula.-->
                         &lt;vhdlType&gt;STD_LOGIC_VECTOR&lt;/vhdlType&gt;
                         &lt;terminationValue&gt;0&lt;/terminationValue&gt;
                     &lt;/port&gt;
+                    &lt;port&gt;
+                        &lt;name&gt;ram_waitrequest&lt;/name&gt;
+                        &lt;role&gt;waitrequest&lt;/role&gt;
+                        &lt;direction&gt;Input&lt;/direction&gt;
+                        &lt;width&gt;1&lt;/width&gt;
+                        &lt;lowerBound&gt;0&lt;/lowerBound&gt;
+                        &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
+                        &lt;terminationValue&gt;0&lt;/terminationValue&gt;
+                    &lt;/port&gt;
                 &lt;/ports&gt;
                 &lt;assignments&gt;
                     &lt;assignmentValueMap/&gt;
@@ -7492,6 +7519,15 @@ https://fpgasoftware.intel.com/eula.-->
                     &lt;width&gt;4&lt;/width&gt;
                     &lt;lowerBound&gt;0&lt;/lowerBound&gt;
                     &lt;vhdlType&gt;STD_LOGIC_VECTOR&lt;/vhdlType&gt;
+                    &lt;terminationValue&gt;0&lt;/terminationValue&gt;
+                &lt;/port&gt;
+                &lt;port&gt;
+                    &lt;name&gt;ram_waitrequest&lt;/name&gt;
+                    &lt;role&gt;waitrequest&lt;/role&gt;
+                    &lt;direction&gt;Input&lt;/direction&gt;
+                    &lt;width&gt;1&lt;/width&gt;
+                    &lt;lowerBound&gt;0&lt;/lowerBound&gt;
+                    &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
                     &lt;terminationValue&gt;0&lt;/terminationValue&gt;
                 &lt;/port&gt;
             &lt;/ports&gt;
@@ -8681,6 +8717,15 @@ https://fpgasoftware.intel.com/eula.-->
                         &lt;vhdlType&gt;STD_LOGIC_VECTOR&lt;/vhdlType&gt;
                         &lt;terminationValue&gt;0&lt;/terminationValue&gt;
                     &lt;/port&gt;
+                    &lt;port&gt;
+                        &lt;name&gt;ram_waitrequest&lt;/name&gt;
+                        &lt;role&gt;waitrequest&lt;/role&gt;
+                        &lt;direction&gt;Input&lt;/direction&gt;
+                        &lt;width&gt;1&lt;/width&gt;
+                        &lt;lowerBound&gt;0&lt;/lowerBound&gt;
+                        &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
+                        &lt;terminationValue&gt;0&lt;/terminationValue&gt;
+                    &lt;/port&gt;
                 &lt;/ports&gt;
                 &lt;assignments&gt;
                     &lt;assignmentValueMap/&gt;
@@ -9134,6 +9179,15 @@ https://fpgasoftware.intel.com/eula.-->
                     &lt;width&gt;4&lt;/width&gt;
                     &lt;lowerBound&gt;0&lt;/lowerBound&gt;
                     &lt;vhdlType&gt;STD_LOGIC_VECTOR&lt;/vhdlType&gt;
+                    &lt;terminationValue&gt;0&lt;/terminationValue&gt;
+                &lt;/port&gt;
+                &lt;port&gt;
+                    &lt;name&gt;ram_waitrequest&lt;/name&gt;
+                    &lt;role&gt;waitrequest&lt;/role&gt;
+                    &lt;direction&gt;Input&lt;/direction&gt;
+                    &lt;width&gt;1&lt;/width&gt;
+                    &lt;lowerBound&gt;0&lt;/lowerBound&gt;
+                    &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
                     &lt;terminationValue&gt;0&lt;/terminationValue&gt;
                 &lt;/port&gt;
             &lt;/ports&gt;
@@ -9652,6 +9706,15 @@ https://fpgasoftware.intel.com/eula.-->
                         &lt;vhdlType&gt;STD_LOGIC_VECTOR&lt;/vhdlType&gt;
                         &lt;terminationValue&gt;0&lt;/terminationValue&gt;
                     &lt;/port&gt;
+                    &lt;port&gt;
+                        &lt;name&gt;ram_waitrequest&lt;/name&gt;
+                        &lt;role&gt;waitrequest&lt;/role&gt;
+                        &lt;direction&gt;Input&lt;/direction&gt;
+                        &lt;width&gt;1&lt;/width&gt;
+                        &lt;lowerBound&gt;0&lt;/lowerBound&gt;
+                        &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
+                        &lt;terminationValue&gt;0&lt;/terminationValue&gt;
+                    &lt;/port&gt;
                 &lt;/ports&gt;
                 &lt;assignments&gt;
                     &lt;assignmentValueMap/&gt;
@@ -10105,6 +10168,15 @@ https://fpgasoftware.intel.com/eula.-->
                     &lt;width&gt;4&lt;/width&gt;
                     &lt;lowerBound&gt;0&lt;/lowerBound&gt;
                     &lt;vhdlType&gt;STD_LOGIC_VECTOR&lt;/vhdlType&gt;
+                    &lt;terminationValue&gt;0&lt;/terminationValue&gt;
+                &lt;/port&gt;
+                &lt;port&gt;
+                    &lt;name&gt;ram_waitrequest&lt;/name&gt;
+                    &lt;role&gt;waitrequest&lt;/role&gt;
+                    &lt;direction&gt;Input&lt;/direction&gt;
+                    &lt;width&gt;1&lt;/width&gt;
+                    &lt;lowerBound&gt;0&lt;/lowerBound&gt;
+                    &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
                     &lt;terminationValue&gt;0&lt;/terminationValue&gt;
                 &lt;/port&gt;
             &lt;/ports&gt;
@@ -21107,7 +21179,7 @@ https://fpgasoftware.intel.com/eula.-->
         <altera:connection_parameter altera:parameter_name="qsys_mm.syncResets" altera:parameter_value="FALSE"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="qsys_mm.widthAdapterImplementation" altera:parameter_value="GENERIC_CONVERTER"></altera:connection_parameter>
       </altera:connection>
-      <altera:connection altera:kind="avalon" altera:version="21.3" altera:start="receive_packet_2.avalon_master" altera:end="mem_rcv_2.s1">
+      <altera:connection altera:kind="avalon" altera:version="21.3" altera:start="receive_packet_2.avalon_master" altera:end="mem_2.s1">
         <altera:connection_parameter altera:parameter_name="arbitrationPriority" altera:parameter_value="1"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="baseAddress" altera:parameter_value="0x0000"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="defaultConnection" altera:parameter_value="false"></altera:connection_parameter>
@@ -21321,7 +21393,7 @@ https://fpgasoftware.intel.com/eula.-->
             </ipxact:master>
           </ipxact:busInterface>
           <ipxact:busInterface>
-            <ipxact:name>mem_rcv_2.s1</ipxact:name>
+            <ipxact:name>mem_2.s1</ipxact:name>
             <ipxact:busType vendor="intel" library="intel" name="avalon" version="21.3"></ipxact:busType>
           </ipxact:busInterface>
           <ipxact:busInterface>
@@ -21385,7 +21457,7 @@ https://fpgasoftware.intel.com/eula.-->
             <ipxact:name>receive_packet_2.avalon_master</ipxact:name>
             <ipxact:segments>
               <ipxact:segment>
-                <ipxact:name>mem_rcv_2.s1</ipxact:name>
+                <ipxact:name>mem_2.s1</ipxact:name>
                 <ipxact:addressOffset>0x0000</ipxact:addressOffset>
                 <ipxact:range>0x1000</ipxact:range>
               </ipxact:segment>

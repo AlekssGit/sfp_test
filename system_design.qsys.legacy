@@ -5686,6 +5686,15 @@ https://fpgasoftware.intel.com/eula.-->
                         <vhdlType>STD_LOGIC_VECTOR</vhdlType>
                         <terminationValue>0</terminationValue>
                     </port>
+                    <port>
+                        <name>ram_waitrequest</name>
+                        <role>waitrequest</role>
+                        <direction>Input</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
                 </ports>
                 <assignments>
                     <assignmentValueMap/>
@@ -6221,6 +6230,15 @@ https://fpgasoftware.intel.com/eula.-->
                     <width>4</width>
                     <lowerBound>0</lowerBound>
                     <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>ram_waitrequest</name>
+                    <role>waitrequest</role>
+                    <direction>Input</direction>
+                    <width>1</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC</vhdlType>
                     <terminationValue>0</terminationValue>
                 </port>
             </ports>
@@ -6791,6 +6809,15 @@ https://fpgasoftware.intel.com/eula.-->
                         <vhdlType>STD_LOGIC_VECTOR</vhdlType>
                         <terminationValue>0</terminationValue>
                     </port>
+                    <port>
+                        <name>ram_waitrequest</name>
+                        <role>waitrequest</role>
+                        <direction>Input</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
                 </ports>
                 <assignments>
                     <assignmentValueMap/>
@@ -7326,6 +7353,15 @@ https://fpgasoftware.intel.com/eula.-->
                     <width>4</width>
                     <lowerBound>0</lowerBound>
                     <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>ram_waitrequest</name>
+                    <role>waitrequest</role>
+                    <direction>Input</direction>
+                    <width>1</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC</vhdlType>
                     <terminationValue>0</terminationValue>
                 </port>
             </ports>
@@ -8405,6 +8441,15 @@ https://fpgasoftware.intel.com/eula.-->
                         <vhdlType>STD_LOGIC_VECTOR</vhdlType>
                         <terminationValue>0</terminationValue>
                     </port>
+                    <port>
+                        <name>ram_waitrequest</name>
+                        <role>waitrequest</role>
+                        <direction>Input</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
                 </ports>
                 <assignments>
                     <assignmentValueMap/>
@@ -8854,6 +8899,15 @@ https://fpgasoftware.intel.com/eula.-->
                     <width>4</width>
                     <lowerBound>0</lowerBound>
                     <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>ram_waitrequest</name>
+                    <role>waitrequest</role>
+                    <direction>Input</direction>
+                    <width>1</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC</vhdlType>
                     <terminationValue>0</terminationValue>
                 </port>
             </ports>
@@ -9338,6 +9392,15 @@ https://fpgasoftware.intel.com/eula.-->
                         <vhdlType>STD_LOGIC_VECTOR</vhdlType>
                         <terminationValue>0</terminationValue>
                     </port>
+                    <port>
+                        <name>ram_waitrequest</name>
+                        <role>waitrequest</role>
+                        <direction>Input</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
                 </ports>
                 <assignments>
                     <assignmentValueMap/>
@@ -9787,6 +9850,15 @@ https://fpgasoftware.intel.com/eula.-->
                     <width>4</width>
                     <lowerBound>0</lowerBound>
                     <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>ram_waitrequest</name>
+                    <role>waitrequest</role>
+                    <direction>Input</direction>
+                    <width>1</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC</vhdlType>
                     <terminationValue>0</terminationValue>
                 </port>
             </ports>
@@ -20700,7 +20772,7 @@ https://fpgasoftware.intel.com/eula.-->
    kind="avalon"
    version="21.3"
    start="receive_packet_2.avalon_master"
-   end="mem_rcv_2.s1">
+   end="mem_2.s1">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x0000" />
   <parameter name="defaultConnection" value="false" />

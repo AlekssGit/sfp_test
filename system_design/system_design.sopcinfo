@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="system_design" kind="system_design" version="1.0" fabric="QSYS">
  <!-- Format version 21.3 170 (Future versions may contain additional information.) -->
- <!-- 2022.09.08.17:37:37 -->
+ <!-- 2022.09.14.18:20:08 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
@@ -9830,6 +9830,15 @@ the requested settings for a module instance. -->
                         <vhdlType>STD_LOGIC_VECTOR</vhdlType>
                         <terminationValue>0</terminationValue>
                     </port>
+                    <port>
+                        <name>ram_waitrequest</name>
+                        <role>waitrequest</role>
+                        <direction>Input</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
                 </ports>
                 <assignments>
                     <assignmentValueMap/>
@@ -10424,6 +10433,15 @@ the requested settings for a module instance. -->
                     <width>4</width>
                     <lowerBound>0</lowerBound>
                     <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>ram_waitrequest</name>
+                    <role>waitrequest</role>
+                    <direction>Input</direction>
+                    <width>1</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC</vhdlType>
                     <terminationValue>0</terminationValue>
                 </port>
             </ports>
@@ -11271,7 +11289,7 @@ parameters are a RESULT of the module parameters. -->
     <type>int</type>
     <value>0</value>
     <derived>false</derived>
-    <enabled>false</enabled>
+    <enabled>true</enabled>
     <visible>true</visible>
     <valid>true</valid>
    </parameter>
@@ -11336,6 +11354,12 @@ parameters are a RESULT of the module parameters. -->
     <direction>Output</direction>
     <width>4</width>
     <role>byteenable</role>
+   </port>
+   <port>
+    <name>ram_waitrequest</name>
+    <direction>Input</direction>
+    <width>1</width>
+    <role>waitrequest</role>
    </port>
    <memoryBlock>
     <isBridge>false</isBridge>
@@ -11831,6 +11855,15 @@ the requested settings for a module instance. -->
                         <width>4</width>
                         <lowerBound>0</lowerBound>
                         <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>ram_waitrequest</name>
+                        <role>waitrequest</role>
+                        <direction>Input</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC</vhdlType>
                         <terminationValue>0</terminationValue>
                     </port>
                 </ports>
@@ -12429,6 +12462,15 @@ the requested settings for a module instance. -->
                     <vhdlType>STD_LOGIC_VECTOR</vhdlType>
                     <terminationValue>0</terminationValue>
                 </port>
+                <port>
+                    <name>ram_waitrequest</name>
+                    <role>waitrequest</role>
+                    <direction>Input</direction>
+                    <width>1</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
             </ports>
             <assignments>
                 <assignmentValueMap/>
@@ -13274,7 +13316,7 @@ parameters are a RESULT of the module parameters. -->
     <type>int</type>
     <value>0</value>
     <derived>false</derived>
-    <enabled>false</enabled>
+    <enabled>true</enabled>
     <visible>true</visible>
     <valid>true</valid>
    </parameter>
@@ -13340,11 +13382,17 @@ parameters are a RESULT of the module parameters. -->
     <width>4</width>
     <role>byteenable</role>
    </port>
+   <port>
+    <name>ram_waitrequest</name>
+    <direction>Input</direction>
+    <width>1</width>
+    <role>waitrequest</role>
+   </port>
    <memoryBlock>
     <isBridge>false</isBridge>
-    <moduleName>mem_rcv_2</moduleName>
+    <moduleName>mem_2</moduleName>
     <slaveName>s1</slaveName>
-    <name>mem_rcv_2.s1</name>
+    <name>mem_2.s1</name>
     <baseAddress>0</baseAddress>
     <span>4096</span>
    </memoryBlock>
@@ -14867,6 +14915,15 @@ the requested settings for a module instance. -->
                         <vhdlType>STD_LOGIC_VECTOR</vhdlType>
                         <terminationValue>0</terminationValue>
                     </port>
+                    <port>
+                        <name>ram_waitrequest</name>
+                        <role>waitrequest</role>
+                        <direction>Input</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
                 </ports>
                 <assignments>
                     <assignmentValueMap/>
@@ -15375,6 +15432,15 @@ the requested settings for a module instance. -->
                     <width>4</width>
                     <lowerBound>0</lowerBound>
                     <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>ram_waitrequest</name>
+                    <role>waitrequest</role>
+                    <direction>Input</direction>
+                    <width>1</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC</vhdlType>
                     <terminationValue>0</terminationValue>
                 </port>
             </ports>
@@ -16110,7 +16176,7 @@ parameters are a RESULT of the module parameters. -->
     <type>int</type>
     <value>0</value>
     <derived>false</derived>
-    <enabled>false</enabled>
+    <enabled>true</enabled>
     <visible>true</visible>
     <valid>true</valid>
    </parameter>
@@ -16175,6 +16241,12 @@ parameters are a RESULT of the module parameters. -->
     <direction>Output</direction>
     <width>4</width>
     <role>byteenable</role>
+   </port>
+   <port>
+    <name>ram_waitrequest</name>
+    <direction>Input</direction>
+    <width>1</width>
+    <role>waitrequest</role>
    </port>
    <memoryBlock>
     <isBridge>false</isBridge>
@@ -16557,6 +16629,15 @@ the requested settings for a module instance. -->
                         <vhdlType>STD_LOGIC_VECTOR</vhdlType>
                         <terminationValue>0</terminationValue>
                     </port>
+                    <port>
+                        <name>ram_waitrequest</name>
+                        <role>waitrequest</role>
+                        <direction>Input</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
                 </ports>
                 <assignments>
                     <assignmentValueMap/>
@@ -17065,6 +17146,15 @@ the requested settings for a module instance. -->
                     <width>4</width>
                     <lowerBound>0</lowerBound>
                     <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>ram_waitrequest</name>
+                    <role>waitrequest</role>
+                    <direction>Input</direction>
+                    <width>1</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC</vhdlType>
                     <terminationValue>0</terminationValue>
                 </port>
             </ports>
@@ -17800,7 +17890,7 @@ parameters are a RESULT of the module parameters. -->
     <type>int</type>
     <value>0</value>
     <derived>false</derived>
-    <enabled>false</enabled>
+    <enabled>true</enabled>
     <visible>true</visible>
     <valid>true</valid>
    </parameter>
@@ -17865,6 +17955,12 @@ parameters are a RESULT of the module parameters. -->
     <direction>Output</direction>
     <width>4</width>
     <role>byteenable</role>
+   </port>
+   <port>
+    <name>ram_waitrequest</name>
+    <direction>Input</direction>
+    <width>1</width>
+    <role>waitrequest</role>
    </port>
    <memoryBlock>
     <isBridge>false</isBridge>
@@ -37041,11 +37137,11 @@ parameters are a RESULT of the module parameters. -->
   <endConnectionPoint>s1</endConnectionPoint>
  </connection>
  <connection
-   name="receive_packet_2.avalon_master/mem_rcv_2.s1"
+   name="receive_packet_2.avalon_master/mem_2.s1"
    kind="avalon"
    version="21.3"
    start="receive_packet_2.avalon_master"
-   end="mem_rcv_2.s1">
+   end="mem_2.s1">
   <parameter name="arbitrationPriority">
    <type>int</type>
    <value>1</value>
@@ -37227,7 +37323,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <startModule>receive_packet_2</startModule>
   <startConnectionPoint>avalon_master</startConnectionPoint>
-  <endModule>mem_rcv_2</endModule>
+  <endModule>mem_2</endModule>
   <endConnectionPoint>s1</endConnectionPoint>
  </connection>
  <connection

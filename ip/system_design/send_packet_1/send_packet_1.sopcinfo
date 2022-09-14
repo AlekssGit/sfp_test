@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="send_packet_1" kind="send_packet_1" version="1.0" fabric="QSYS">
  <!-- Format version 21.3 170 (Future versions may contain additional information.) -->
- <!-- 2022.09.08.17:37:27 -->
+ <!-- 2022.09.14.18:19:56 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
@@ -496,7 +496,7 @@ parameters are a RESULT of the module parameters. -->
     <type>int</type>
     <value>0</value>
     <derived>false</derived>
-    <enabled>false</enabled>
+    <enabled>true</enabled>
     <visible>true</visible>
     <valid>true</valid>
    </parameter>
@@ -561,6 +561,12 @@ parameters are a RESULT of the module parameters. -->
     <direction>Output</direction>
     <width>4</width>
     <role>byteenable</role>
+   </port>
+   <port>
+    <name>ram_waitrequest</name>
+    <direction>Input</direction>
+    <width>1</width>
+    <role>waitrequest</role>
    </port>
   </interface>
   <interface

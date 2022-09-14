@@ -205,6 +205,14 @@ https://fpgasoftware.intel.com/eula.-->
                 <ipxact:name>ram_byteenable</ipxact:name>
               </ipxact:physicalPort>
             </ipxact:portMap>
+            <ipxact:portMap>
+              <ipxact:logicalPort>
+                <ipxact:name>waitrequest</ipxact:name>
+              </ipxact:logicalPort>
+              <ipxact:physicalPort>
+                <ipxact:name>ram_waitrequest</ipxact:name>
+              </ipxact:physicalPort>
+            </ipxact:portMap>
           </ipxact:portMaps>
         </ipxact:abstractionType>
       </ipxact:abstractionTypes>
@@ -803,6 +811,19 @@ https://fpgasoftware.intel.com/eula.-->
         </ipxact:wire>
       </ipxact:port>
       <ipxact:port>
+        <ipxact:name>ram_waitrequest</ipxact:name>
+        <ipxact:wire>
+          <ipxact:direction>in</ipxact:direction>
+          <ipxact:vectors></ipxact:vectors>
+          <ipxact:wireTypeDefs>
+            <ipxact:wireTypeDef>
+              <ipxact:typeName>STD_LOGIC</ipxact:typeName>
+              <ipxact:viewRef>QUARTUS_SYNTH</ipxact:viewRef>
+            </ipxact:wireTypeDef>
+          </ipxact:wireTypeDefs>
+        </ipxact:wire>
+      </ipxact:port>
+      <ipxact:port>
         <ipxact:name>clk_original</ipxact:name>
         <ipxact:wire>
           <ipxact:direction>in</ipxact:direction>
@@ -1133,6 +1154,15 @@ https://fpgasoftware.intel.com/eula.-->
                     &lt;width&gt;4&lt;/width&gt;
                     &lt;lowerBound&gt;0&lt;/lowerBound&gt;
                     &lt;vhdlType&gt;STD_LOGIC_VECTOR&lt;/vhdlType&gt;
+                    &lt;terminationValue&gt;0&lt;/terminationValue&gt;
+                &lt;/port&gt;
+                &lt;port&gt;
+                    &lt;name&gt;ram_waitrequest&lt;/name&gt;
+                    &lt;role&gt;waitrequest&lt;/role&gt;
+                    &lt;direction&gt;Input&lt;/direction&gt;
+                    &lt;width&gt;1&lt;/width&gt;
+                    &lt;lowerBound&gt;0&lt;/lowerBound&gt;
+                    &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
                     &lt;terminationValue&gt;0&lt;/terminationValue&gt;
                 &lt;/port&gt;
             &lt;/ports&gt;
@@ -1492,6 +1522,7 @@ https://fpgasoftware.intel.com/eula.-->
         <altera:port_mapping altera:name="ram_byteenable" altera:internal="ram_byteenable"></altera:port_mapping>
         <altera:port_mapping altera:name="ram_chipselect" altera:internal="ram_chipselect"></altera:port_mapping>
         <altera:port_mapping altera:name="ram_readdata" altera:internal="ram_readdata"></altera:port_mapping>
+        <altera:port_mapping altera:name="ram_waitrequest" altera:internal="ram_waitrequest"></altera:port_mapping>
         <altera:port_mapping altera:name="ram_write" altera:internal="ram_write"></altera:port_mapping>
         <altera:port_mapping altera:name="ram_writedata" altera:internal="ram_writedata"></altera:port_mapping>
       </altera:interface_mapping>

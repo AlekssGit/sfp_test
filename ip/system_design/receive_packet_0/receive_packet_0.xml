@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deploy
- date="2022.09.08.17:37:25"
+ date="2022.09.14.18:19:55"
  outputDirectory="D:/Documents/Projects/Learning/SFP_test/ip/system_design/receive_packet_0/">
  <perimeter>
   <parameter
@@ -144,6 +144,7 @@
    <port name="ram_readdata" direction="input" role="readdata" width="32" />
    <port name="ram_writedata" direction="output" role="writedata" width="32" />
    <port name="ram_byteenable" direction="output" role="byteenable" width="4" />
+   <port name="ram_waitrequest" direction="input" role="waitrequest" width="1" />
   </interface>
   <interface name="clock" kind="clock" start="0">
    <property name="clockRate" value="0" />

@@ -114,7 +114,7 @@ module system_design (
 	wire         tse_receive_1_endofpacket;                           // tse:data_rx_eop_1 -> receive_packet_2:ff_rx_eop
 	wire   [4:0] tse_receive_1_error;                                 // tse:data_rx_error_1 -> receive_packet_2:rx_err
 	wire         tse_mac_rx_clock_connection_0_clk;                   // tse:mac_rx_clk_0 -> [mem_rcv_1:clk, mm_interconnect_3:tse_mac_rx_clock_connection_0_clk, receive_packet_1:clk_original, rst_controller_003:clk]
-	wire         tse_mac_rx_clock_connection_1_clk;                   // tse:mac_rx_clk_1 -> [mem_rcv_2:clk, mm_interconnect_4:tse_mac_rx_clock_connection_1_clk, receive_packet_2:clk_original, rst_controller_004:clk]
+	wire         tse_mac_rx_clock_connection_1_clk;                   // tse:mac_rx_clk_1 -> [mem_rcv_2:clk, mm_interconnect_2:tse_mac_rx_clock_connection_1_clk, receive_packet_2:clk_original, rst_controller_004:clk]
 	wire         tse_mac_tx_clock_connection_0_clk;                   // tse:mac_tx_clk_0 -> [mem_1:clk, mm_interconnect_1:tse_mac_tx_clock_connection_0_clk, rst_controller_001:clk, send_packet_1:clk_original]
 	wire         tse_mac_tx_clock_connection_1_clk;                   // tse:mac_tx_clk_1 -> [mem_2:clk, mm_interconnect_2:tse_mac_tx_clock_connection_1_clk, rst_controller_002:clk, send_packet_2:clk_original]
 	wire         pll_outclk0_clk;                                     // pll:outclk_0 -> [receive_packet_1:fifo_status_clk, tse:rx_afull_clk]
@@ -124,6 +124,7 @@ module system_design (
 	wire         reset_mod_reset_main_reset;                          // reset_mod:reset -> [pll:rst, reset_main:in_reset, rst_controller:reset_in0, rst_controller_001:reset_in0, rst_controller_002:reset_in0, rst_controller_003:reset_in0, rst_controller_004:reset_in0]
 	wire         send_packet_1_avalon_master_chipselect;              // send_packet_1:ram_chipselect -> mm_interconnect_1:send_packet_1_avalon_master_chipselect
 	wire  [31:0] send_packet_1_avalon_master_readdata;                // mm_interconnect_1:send_packet_1_avalon_master_readdata -> send_packet_1:ram_readdata
+	wire         send_packet_1_avalon_master_waitrequest;             // mm_interconnect_1:send_packet_1_avalon_master_waitrequest -> send_packet_1:ram_waitrequest
 	wire   [9:0] send_packet_1_avalon_master_address;                 // send_packet_1:ram_addr -> mm_interconnect_1:send_packet_1_avalon_master_address
 	wire   [3:0] send_packet_1_avalon_master_byteenable;              // send_packet_1:ram_byteenable -> mm_interconnect_1:send_packet_1_avalon_master_byteenable
 	wire         send_packet_1_avalon_master_write;                   // send_packet_1:ram_write -> mm_interconnect_1:send_packet_1_avalon_master_write
@@ -137,10 +138,18 @@ module system_design (
 	wire         mm_interconnect_1_mem_1_s1_clken;                    // mm_interconnect_1:mem_1_s1_clken -> mem_1:clken
 	wire         send_packet_2_avalon_master_chipselect;              // send_packet_2:ram_chipselect -> mm_interconnect_2:send_packet_2_avalon_master_chipselect
 	wire  [31:0] send_packet_2_avalon_master_readdata;                // mm_interconnect_2:send_packet_2_avalon_master_readdata -> send_packet_2:ram_readdata
+	wire         send_packet_2_avalon_master_waitrequest;             // mm_interconnect_2:send_packet_2_avalon_master_waitrequest -> send_packet_2:ram_waitrequest
 	wire   [9:0] send_packet_2_avalon_master_address;                 // send_packet_2:ram_addr -> mm_interconnect_2:send_packet_2_avalon_master_address
 	wire   [3:0] send_packet_2_avalon_master_byteenable;              // send_packet_2:ram_byteenable -> mm_interconnect_2:send_packet_2_avalon_master_byteenable
 	wire         send_packet_2_avalon_master_write;                   // send_packet_2:ram_write -> mm_interconnect_2:send_packet_2_avalon_master_write
 	wire  [31:0] send_packet_2_avalon_master_writedata;               // send_packet_2:ram_writedata -> mm_interconnect_2:send_packet_2_avalon_master_writedata
+	wire         receive_packet_2_avalon_master_chipselect;           // receive_packet_2:ram_chipselect -> mm_interconnect_2:receive_packet_2_avalon_master_chipselect
+	wire  [31:0] receive_packet_2_avalon_master_readdata;             // mm_interconnect_2:receive_packet_2_avalon_master_readdata -> receive_packet_2:ram_readdata
+	wire         receive_packet_2_avalon_master_waitrequest;          // mm_interconnect_2:receive_packet_2_avalon_master_waitrequest -> receive_packet_2:ram_waitrequest
+	wire   [9:0] receive_packet_2_avalon_master_address;              // receive_packet_2:ram_addr -> mm_interconnect_2:receive_packet_2_avalon_master_address
+	wire   [3:0] receive_packet_2_avalon_master_byteenable;           // receive_packet_2:ram_byteenable -> mm_interconnect_2:receive_packet_2_avalon_master_byteenable
+	wire         receive_packet_2_avalon_master_write;                // receive_packet_2:ram_write -> mm_interconnect_2:receive_packet_2_avalon_master_write
+	wire  [31:0] receive_packet_2_avalon_master_writedata;            // receive_packet_2:ram_writedata -> mm_interconnect_2:receive_packet_2_avalon_master_writedata
 	wire         mm_interconnect_2_mem_2_s1_chipselect;               // mm_interconnect_2:mem_2_s1_chipselect -> mem_2:chipselect
 	wire  [31:0] mm_interconnect_2_mem_2_s1_readdata;                 // mem_2:readdata -> mm_interconnect_2:mem_2_s1_readdata
 	wire   [9:0] mm_interconnect_2_mem_2_s1_address;                  // mm_interconnect_2:mem_2_s1_address -> mem_2:address
@@ -150,6 +159,7 @@ module system_design (
 	wire         mm_interconnect_2_mem_2_s1_clken;                    // mm_interconnect_2:mem_2_s1_clken -> mem_2:clken
 	wire         receive_packet_1_avalon_master_chipselect;           // receive_packet_1:ram_chipselect -> mm_interconnect_3:receive_packet_1_avalon_master_chipselect
 	wire  [31:0] receive_packet_1_avalon_master_readdata;             // mm_interconnect_3:receive_packet_1_avalon_master_readdata -> receive_packet_1:ram_readdata
+	wire         receive_packet_1_avalon_master_waitrequest;          // mm_interconnect_3:receive_packet_1_avalon_master_waitrequest -> receive_packet_1:ram_waitrequest
 	wire   [9:0] receive_packet_1_avalon_master_address;              // receive_packet_1:ram_addr -> mm_interconnect_3:receive_packet_1_avalon_master_address
 	wire   [3:0] receive_packet_1_avalon_master_byteenable;           // receive_packet_1:ram_byteenable -> mm_interconnect_3:receive_packet_1_avalon_master_byteenable
 	wire         receive_packet_1_avalon_master_write;                // receive_packet_1:ram_write -> mm_interconnect_3:receive_packet_1_avalon_master_write
@@ -161,19 +171,6 @@ module system_design (
 	wire         mm_interconnect_3_mem_rcv_1_s1_write;                // mm_interconnect_3:mem_rcv_1_s1_write -> mem_rcv_1:write
 	wire  [31:0] mm_interconnect_3_mem_rcv_1_s1_writedata;            // mm_interconnect_3:mem_rcv_1_s1_writedata -> mem_rcv_1:writedata
 	wire         mm_interconnect_3_mem_rcv_1_s1_clken;                // mm_interconnect_3:mem_rcv_1_s1_clken -> mem_rcv_1:clken
-	wire         receive_packet_2_avalon_master_chipselect;           // receive_packet_2:ram_chipselect -> mm_interconnect_4:receive_packet_2_avalon_master_chipselect
-	wire  [31:0] receive_packet_2_avalon_master_readdata;             // mm_interconnect_4:receive_packet_2_avalon_master_readdata -> receive_packet_2:ram_readdata
-	wire   [9:0] receive_packet_2_avalon_master_address;              // receive_packet_2:ram_addr -> mm_interconnect_4:receive_packet_2_avalon_master_address
-	wire   [3:0] receive_packet_2_avalon_master_byteenable;           // receive_packet_2:ram_byteenable -> mm_interconnect_4:receive_packet_2_avalon_master_byteenable
-	wire         receive_packet_2_avalon_master_write;                // receive_packet_2:ram_write -> mm_interconnect_4:receive_packet_2_avalon_master_write
-	wire  [31:0] receive_packet_2_avalon_master_writedata;            // receive_packet_2:ram_writedata -> mm_interconnect_4:receive_packet_2_avalon_master_writedata
-	wire         mm_interconnect_4_mem_rcv_2_s1_chipselect;           // mm_interconnect_4:mem_rcv_2_s1_chipselect -> mem_rcv_2:chipselect
-	wire  [31:0] mm_interconnect_4_mem_rcv_2_s1_readdata;             // mem_rcv_2:readdata -> mm_interconnect_4:mem_rcv_2_s1_readdata
-	wire   [9:0] mm_interconnect_4_mem_rcv_2_s1_address;              // mm_interconnect_4:mem_rcv_2_s1_address -> mem_rcv_2:address
-	wire   [3:0] mm_interconnect_4_mem_rcv_2_s1_byteenable;           // mm_interconnect_4:mem_rcv_2_s1_byteenable -> mem_rcv_2:byteenable
-	wire         mm_interconnect_4_mem_rcv_2_s1_write;                // mm_interconnect_4:mem_rcv_2_s1_write -> mem_rcv_2:write
-	wire  [31:0] mm_interconnect_4_mem_rcv_2_s1_writedata;            // mm_interconnect_4:mem_rcv_2_s1_writedata -> mem_rcv_2:writedata
-	wire         mm_interconnect_4_mem_rcv_2_s1_clken;                // mm_interconnect_4:mem_rcv_2_s1_clken -> mem_rcv_2:clken
 	wire         rst_controller_reset_out_reset;                      // rst_controller:reset_out -> [init_mac:reset, tse:reset]
 	wire         rst_controller_001_reset_out_reset;                  // rst_controller_001:reset_out -> [mem_1:reset, mm_interconnect_1:send_packet_1_reset_reset_bridge_in_reset_reset, send_packet_1:rst]
 	wire         rst_controller_001_reset_out_reset_req;              // rst_controller_001:reset_req -> [mem_1:reset_req, rst_translator:reset_req_in]
@@ -181,7 +178,7 @@ module system_design (
 	wire         rst_controller_002_reset_out_reset_req;              // rst_controller_002:reset_req -> [mem_2:reset_req, rst_translator_001:reset_req_in]
 	wire         rst_controller_003_reset_out_reset;                  // rst_controller_003:reset_out -> [mem_rcv_1:reset, mm_interconnect_3:receive_packet_1_reset_reset_bridge_in_reset_reset, receive_packet_1:rst]
 	wire         rst_controller_003_reset_out_reset_req;              // rst_controller_003:reset_req -> [mem_rcv_1:reset_req, rst_translator_002:reset_req_in]
-	wire         rst_controller_004_reset_out_reset;                  // rst_controller_004:reset_out -> [mem_rcv_2:reset, mm_interconnect_4:receive_packet_2_reset_reset_bridge_in_reset_reset, receive_packet_2:rst]
+	wire         rst_controller_004_reset_out_reset;                  // rst_controller_004:reset_out -> [mem_rcv_2:reset, mm_interconnect_2:receive_packet_2_reset_reset_bridge_in_reset_reset, receive_packet_2:rst]
 	wire         rst_controller_004_reset_out_reset_req;              // rst_controller_004:reset_req -> [mem_rcv_2:reset_req, rst_translator_003:reset_req_in]
 
 	clock_50_out clock_50_out (
@@ -241,16 +238,16 @@ module system_design (
 	);
 
 	mem_rcv_0 mem_rcv_2 (
-		.clk        (tse_mac_rx_clock_connection_1_clk),         //   input,   width = 1,   clk1.clk
-		.address    (mm_interconnect_4_mem_rcv_2_s1_address),    //   input,  width = 10,     s1.address
-		.clken      (mm_interconnect_4_mem_rcv_2_s1_clken),      //   input,   width = 1,       .clken
-		.chipselect (mm_interconnect_4_mem_rcv_2_s1_chipselect), //   input,   width = 1,       .chipselect
-		.write      (mm_interconnect_4_mem_rcv_2_s1_write),      //   input,   width = 1,       .write
-		.readdata   (mm_interconnect_4_mem_rcv_2_s1_readdata),   //  output,  width = 32,       .readdata
-		.writedata  (mm_interconnect_4_mem_rcv_2_s1_writedata),  //   input,  width = 32,       .writedata
-		.byteenable (mm_interconnect_4_mem_rcv_2_s1_byteenable), //   input,   width = 4,       .byteenable
-		.reset      (rst_controller_004_reset_out_reset),        //   input,   width = 1, reset1.reset
-		.reset_req  (rst_controller_004_reset_out_reset_req)     //   input,   width = 1,       .reset_req
+		.clk        (tse_mac_rx_clock_connection_1_clk),      //   input,   width = 1,   clk1.clk
+		.address    (),                                       //   input,  width = 10,     s1.address
+		.clken      (),                                       //   input,   width = 1,       .clken
+		.chipselect (),                                       //   input,   width = 1,       .chipselect
+		.write      (),                                       //   input,   width = 1,       .write
+		.readdata   (),                                       //  output,  width = 32,       .readdata
+		.writedata  (),                                       //   input,  width = 32,       .writedata
+		.byteenable (),                                       //   input,   width = 4,       .byteenable
+		.reset      (rst_controller_004_reset_out_reset),     //   input,   width = 1, reset1.reset
+		.reset_req  (rst_controller_004_reset_out_reset_req)  //   input,   width = 1,       .reset_req
 	);
 
 	pll pll (
@@ -263,45 +260,47 @@ module system_design (
 	);
 
 	receive_packet_1 receive_packet_1 (
-		.ff_rx_data       (tse_receive_0_data),                        //   input,   width = 8, avalon_streaming_sink.data
-		.ff_rx_eop        (tse_receive_0_endofpacket),                 //   input,   width = 1,                      .endofpacket
-		.ff_rx_rdy        (tse_receive_0_ready),                       //  output,   width = 1,                      .ready
-		.ff_rx_sop        (tse_receive_0_startofpacket),               //   input,   width = 1,                      .startofpacket
-		.ff_rx_dval       (tse_receive_0_valid),                       //   input,   width = 1,                      .valid
-		.rx_err           (tse_receive_0_error),                       //   input,   width = 5,                      .error
-		.ram_addr         (receive_packet_1_avalon_master_address),    //  output,  width = 10,         avalon_master.address
-		.ram_chipselect   (receive_packet_1_avalon_master_chipselect), //  output,   width = 1,                      .chipselect
-		.ram_write        (receive_packet_1_avalon_master_write),      //  output,   width = 1,                      .write
-		.ram_readdata     (receive_packet_1_avalon_master_readdata),   //   input,  width = 32,                      .readdata
-		.ram_writedata    (receive_packet_1_avalon_master_writedata),  //  output,  width = 32,                      .writedata
-		.ram_byteenable   (receive_packet_1_avalon_master_byteenable), //  output,   width = 4,                      .byteenable
-		.clk_original     (tse_mac_rx_clock_connection_0_clk),         //   input,   width = 1,                 clock.clk
-		.rst              (rst_controller_003_reset_out_reset),        //   input,   width = 1,                 reset.reset
-		.rx_afull_data    (receive_packet_1_fifo_status_data),         //  output,   width = 2,           fifo_status.data
-		.rx_afull_valid   (receive_packet_1_fifo_status_valid),        //  output,   width = 1,                      .valid
-		.rx_afull_channel (receive_packet_1_fifo_status_channel),      //  output,   width = 2,                      .channel
-		.fifo_status_clk  (pll_outclk0_clk)                            //   input,   width = 1,       fifo_status_clk.clk
+		.ff_rx_data       (tse_receive_0_data),                         //   input,   width = 8, avalon_streaming_sink.data
+		.ff_rx_eop        (tse_receive_0_endofpacket),                  //   input,   width = 1,                      .endofpacket
+		.ff_rx_rdy        (tse_receive_0_ready),                        //  output,   width = 1,                      .ready
+		.ff_rx_sop        (tse_receive_0_startofpacket),                //   input,   width = 1,                      .startofpacket
+		.ff_rx_dval       (tse_receive_0_valid),                        //   input,   width = 1,                      .valid
+		.rx_err           (tse_receive_0_error),                        //   input,   width = 5,                      .error
+		.ram_addr         (receive_packet_1_avalon_master_address),     //  output,  width = 10,         avalon_master.address
+		.ram_chipselect   (receive_packet_1_avalon_master_chipselect),  //  output,   width = 1,                      .chipselect
+		.ram_write        (receive_packet_1_avalon_master_write),       //  output,   width = 1,                      .write
+		.ram_readdata     (receive_packet_1_avalon_master_readdata),    //   input,  width = 32,                      .readdata
+		.ram_writedata    (receive_packet_1_avalon_master_writedata),   //  output,  width = 32,                      .writedata
+		.ram_byteenable   (receive_packet_1_avalon_master_byteenable),  //  output,   width = 4,                      .byteenable
+		.ram_waitrequest  (receive_packet_1_avalon_master_waitrequest), //   input,   width = 1,                      .waitrequest
+		.clk_original     (tse_mac_rx_clock_connection_0_clk),          //   input,   width = 1,                 clock.clk
+		.rst              (rst_controller_003_reset_out_reset),         //   input,   width = 1,                 reset.reset
+		.rx_afull_data    (receive_packet_1_fifo_status_data),          //  output,   width = 2,           fifo_status.data
+		.rx_afull_valid   (receive_packet_1_fifo_status_valid),         //  output,   width = 1,                      .valid
+		.rx_afull_channel (receive_packet_1_fifo_status_channel),       //  output,   width = 2,                      .channel
+		.fifo_status_clk  (pll_outclk0_clk)                             //   input,   width = 1,       fifo_status_clk.clk
 	);
 
 	receive_packet_0 receive_packet_2 (
-		.ff_rx_data       (tse_receive_1_data),                        //   input,   width = 8, avalon_streaming_sink.data
-		.ff_rx_eop        (tse_receive_1_endofpacket),                 //   input,   width = 1,                      .endofpacket
-		.ff_rx_rdy        (tse_receive_1_ready),                       //  output,   width = 1,                      .ready
-		.ff_rx_sop        (tse_receive_1_startofpacket),               //   input,   width = 1,                      .startofpacket
-		.ff_rx_dval       (tse_receive_1_valid),                       //   input,   width = 1,                      .valid
-		.rx_err           (tse_receive_1_error),                       //   input,   width = 5,                      .error
-		.ram_addr         (receive_packet_2_avalon_master_address),    //  output,  width = 10,         avalon_master.address
-		.ram_chipselect   (receive_packet_2_avalon_master_chipselect), //  output,   width = 1,                      .chipselect
-		.ram_write        (receive_packet_2_avalon_master_write),      //  output,   width = 1,                      .write
-		.ram_readdata     (receive_packet_2_avalon_master_readdata),   //   input,  width = 32,                      .readdata
-		.ram_writedata    (receive_packet_2_avalon_master_writedata),  //  output,  width = 32,                      .writedata
-		.ram_byteenable   (receive_packet_2_avalon_master_byteenable), //  output,   width = 4,                      .byteenable
-		.clk_original     (tse_mac_rx_clock_connection_1_clk),         //   input,   width = 1,                 clock.clk
-		.rst              (rst_controller_004_reset_out_reset),        //   input,   width = 1,                 reset.reset
-		.rx_afull_data    (),                                          //  output,   width = 2,           fifo_status.data
-		.rx_afull_valid   (),                                          //  output,   width = 1,                      .valid
-		.rx_afull_channel (),                                          //  output,   width = 2,                      .channel
-		.fifo_status_clk  (pll_outclk2_clk)                            //   input,   width = 1,       fifo_status_clk.clk
+		.ff_rx_data       (tse_receive_1_data),                         //   input,   width = 8, avalon_streaming_sink.data
+		.ff_rx_eop        (tse_receive_1_endofpacket),                  //   input,   width = 1,                      .endofpacket
+		.ff_rx_rdy        (tse_receive_1_ready),                        //  output,   width = 1,                      .ready
+		.ff_rx_sop        (tse_receive_1_startofpacket),                //   input,   width = 1,                      .startofpacket
+		.ff_rx_dval       (tse_receive_1_valid),                        //   input,   width = 1,                      .valid
+		.rx_err           (tse_receive_1_error),                        //   input,   width = 5,                      .error
+		.ram_addr         (receive_packet_2_avalon_master_address),     //  output,  width = 10,         avalon_master.address
+		.ram_chipselect   (receive_packet_2_avalon_master_chipselect),  //  output,   width = 1,                      .chipselect
+		.ram_write        (receive_packet_2_avalon_master_write),       //  output,   width = 1,                      .write
+		.ram_readdata     (receive_packet_2_avalon_master_readdata),    //   input,  width = 32,                      .readdata
+		.ram_writedata    (receive_packet_2_avalon_master_writedata),   //  output,  width = 32,                      .writedata
+		.ram_byteenable   (receive_packet_2_avalon_master_byteenable),  //  output,   width = 4,                      .byteenable
+		.ram_waitrequest  (receive_packet_2_avalon_master_waitrequest), //   input,   width = 1,                      .waitrequest
+		.clk_original     (tse_mac_rx_clock_connection_1_clk),          //   input,   width = 1,                 clock.clk
+		.rst              (rst_controller_004_reset_out_reset),         //   input,   width = 1,                 reset.reset
+		.rx_afull_data    (),                                           //  output,   width = 2,           fifo_status.data
+		.rx_afull_valid   (),                                           //  output,   width = 1,                      .valid
+		.rx_afull_channel (),                                           //  output,   width = 2,                      .channel
+		.fifo_status_clk  (pll_outclk2_clk)                             //   input,   width = 1,       fifo_status_clk.clk
 	);
 
 	reset_main reset_main (
@@ -317,41 +316,43 @@ module system_design (
 	);
 
 	send_packet_1 send_packet_1 (
-		.clk_original   (tse_mac_tx_clock_connection_0_clk),                   //   input,   width = 1,                   clock.clk
-		.rst            (rst_controller_001_reset_out_reset),                  //   input,   width = 1,                   reset.reset
-		.ram_addr       (send_packet_1_avalon_master_address),                 //  output,  width = 10,           avalon_master.address
-		.ram_chipselect (send_packet_1_avalon_master_chipselect),              //  output,   width = 1,                        .chipselect
-		.ram_write      (send_packet_1_avalon_master_write),                   //  output,   width = 1,                        .write
-		.ram_readdata   (send_packet_1_avalon_master_readdata),                //   input,  width = 32,                        .readdata
-		.ram_writedata  (send_packet_1_avalon_master_writedata),               //  output,  width = 32,                        .writedata
-		.ram_byteenable (send_packet_1_avalon_master_byteenable),              //  output,   width = 4,                        .byteenable
-		.ff_tx_data     (send_packet_1_avalon_streaming_source_data),          //  output,   width = 8, avalon_streaming_source.data
-		.ff_tx_eop      (send_packet_1_avalon_streaming_source_endofpacket),   //  output,   width = 1,                        .endofpacket
-		.ff_tx_err      (send_packet_1_avalon_streaming_source_error),         //  output,   width = 1,                        .error
-		.ff_tx_rdy      (send_packet_1_avalon_streaming_source_ready),         //   input,   width = 1,                        .ready
-		.ff_tx_sop      (send_packet_1_avalon_streaming_source_startofpacket), //  output,   width = 1,                        .startofpacket
-		.ff_tx_wren     (send_packet_1_avalon_streaming_source_valid),         //  output,   width = 1,                        .valid
-		.start_ram_addr (send_packet_1_control_start_ram_addr),                //   input,  width = 25,                 control.start_ram_addr
-		.cmd_send       (send_packet_1_control_cmd_send)                       //   input,   width = 1,                        .cmd_send
+		.clk_original    (tse_mac_tx_clock_connection_0_clk),                   //   input,   width = 1,                   clock.clk
+		.rst             (rst_controller_001_reset_out_reset),                  //   input,   width = 1,                   reset.reset
+		.ram_addr        (send_packet_1_avalon_master_address),                 //  output,  width = 10,           avalon_master.address
+		.ram_chipselect  (send_packet_1_avalon_master_chipselect),              //  output,   width = 1,                        .chipselect
+		.ram_write       (send_packet_1_avalon_master_write),                   //  output,   width = 1,                        .write
+		.ram_readdata    (send_packet_1_avalon_master_readdata),                //   input,  width = 32,                        .readdata
+		.ram_writedata   (send_packet_1_avalon_master_writedata),               //  output,  width = 32,                        .writedata
+		.ram_byteenable  (send_packet_1_avalon_master_byteenable),              //  output,   width = 4,                        .byteenable
+		.ram_waitrequest (send_packet_1_avalon_master_waitrequest),             //   input,   width = 1,                        .waitrequest
+		.ff_tx_data      (send_packet_1_avalon_streaming_source_data),          //  output,   width = 8, avalon_streaming_source.data
+		.ff_tx_eop       (send_packet_1_avalon_streaming_source_endofpacket),   //  output,   width = 1,                        .endofpacket
+		.ff_tx_err       (send_packet_1_avalon_streaming_source_error),         //  output,   width = 1,                        .error
+		.ff_tx_rdy       (send_packet_1_avalon_streaming_source_ready),         //   input,   width = 1,                        .ready
+		.ff_tx_sop       (send_packet_1_avalon_streaming_source_startofpacket), //  output,   width = 1,                        .startofpacket
+		.ff_tx_wren      (send_packet_1_avalon_streaming_source_valid),         //  output,   width = 1,                        .valid
+		.start_ram_addr  (send_packet_1_control_start_ram_addr),                //   input,  width = 25,                 control.start_ram_addr
+		.cmd_send        (send_packet_1_control_cmd_send)                       //   input,   width = 1,                        .cmd_send
 	);
 
 	send_packet_1 send_packet_2 (
-		.clk_original   (tse_mac_tx_clock_connection_1_clk),                   //   input,   width = 1,                   clock.clk
-		.rst            (rst_controller_002_reset_out_reset),                  //   input,   width = 1,                   reset.reset
-		.ram_addr       (send_packet_2_avalon_master_address),                 //  output,  width = 10,           avalon_master.address
-		.ram_chipselect (send_packet_2_avalon_master_chipselect),              //  output,   width = 1,                        .chipselect
-		.ram_write      (send_packet_2_avalon_master_write),                   //  output,   width = 1,                        .write
-		.ram_readdata   (send_packet_2_avalon_master_readdata),                //   input,  width = 32,                        .readdata
-		.ram_writedata  (send_packet_2_avalon_master_writedata),               //  output,  width = 32,                        .writedata
-		.ram_byteenable (send_packet_2_avalon_master_byteenable),              //  output,   width = 4,                        .byteenable
-		.ff_tx_data     (send_packet_2_avalon_streaming_source_data),          //  output,   width = 8, avalon_streaming_source.data
-		.ff_tx_eop      (send_packet_2_avalon_streaming_source_endofpacket),   //  output,   width = 1,                        .endofpacket
-		.ff_tx_err      (send_packet_2_avalon_streaming_source_error),         //  output,   width = 1,                        .error
-		.ff_tx_rdy      (send_packet_2_avalon_streaming_source_ready),         //   input,   width = 1,                        .ready
-		.ff_tx_sop      (send_packet_2_avalon_streaming_source_startofpacket), //  output,   width = 1,                        .startofpacket
-		.ff_tx_wren     (send_packet_2_avalon_streaming_source_valid),         //  output,   width = 1,                        .valid
-		.start_ram_addr (send_packet_2_control_start_ram_addr),                //   input,  width = 25,                 control.start_ram_addr
-		.cmd_send       (send_packet_2_control_cmd_send)                       //   input,   width = 1,                        .cmd_send
+		.clk_original    (tse_mac_tx_clock_connection_1_clk),                   //   input,   width = 1,                   clock.clk
+		.rst             (rst_controller_002_reset_out_reset),                  //   input,   width = 1,                   reset.reset
+		.ram_addr        (send_packet_2_avalon_master_address),                 //  output,  width = 10,           avalon_master.address
+		.ram_chipselect  (send_packet_2_avalon_master_chipselect),              //  output,   width = 1,                        .chipselect
+		.ram_write       (send_packet_2_avalon_master_write),                   //  output,   width = 1,                        .write
+		.ram_readdata    (send_packet_2_avalon_master_readdata),                //   input,  width = 32,                        .readdata
+		.ram_writedata   (send_packet_2_avalon_master_writedata),               //  output,  width = 32,                        .writedata
+		.ram_byteenable  (send_packet_2_avalon_master_byteenable),              //  output,   width = 4,                        .byteenable
+		.ram_waitrequest (send_packet_2_avalon_master_waitrequest),             //   input,   width = 1,                        .waitrequest
+		.ff_tx_data      (send_packet_2_avalon_streaming_source_data),          //  output,   width = 8, avalon_streaming_source.data
+		.ff_tx_eop       (send_packet_2_avalon_streaming_source_endofpacket),   //  output,   width = 1,                        .endofpacket
+		.ff_tx_err       (send_packet_2_avalon_streaming_source_error),         //  output,   width = 1,                        .error
+		.ff_tx_rdy       (send_packet_2_avalon_streaming_source_ready),         //   input,   width = 1,                        .ready
+		.ff_tx_sop       (send_packet_2_avalon_streaming_source_startofpacket), //  output,   width = 1,                        .startofpacket
+		.ff_tx_wren      (send_packet_2_avalon_streaming_source_valid),         //  output,   width = 1,                        .valid
+		.start_ram_addr  (send_packet_2_control_start_ram_addr),                //   input,  width = 25,                 control.start_ram_addr
+		.cmd_send        (send_packet_2_control_cmd_send)                       //   input,   width = 1,                        .cmd_send
 	);
 
 	tse tse (
@@ -546,76 +547,70 @@ module system_design (
 		.pll_cal_busy  ()                                  //  output,  width = 1,  pll_cal_busy.pll_cal_busy
 	);
 
-	system_design_altera_mm_interconnect_1920_schtjcy mm_interconnect_1 (
-		.send_packet_1_avalon_master_address             (send_packet_1_avalon_master_address),    //   input,  width = 10,               send_packet_1_avalon_master.address
-		.send_packet_1_avalon_master_byteenable          (send_packet_1_avalon_master_byteenable), //   input,   width = 4,                                          .byteenable
-		.send_packet_1_avalon_master_chipselect          (send_packet_1_avalon_master_chipselect), //   input,   width = 1,                                          .chipselect
-		.send_packet_1_avalon_master_readdata            (send_packet_1_avalon_master_readdata),   //  output,  width = 32,                                          .readdata
-		.send_packet_1_avalon_master_write               (send_packet_1_avalon_master_write),      //   input,   width = 1,                                          .write
-		.send_packet_1_avalon_master_writedata           (send_packet_1_avalon_master_writedata),  //   input,  width = 32,                                          .writedata
-		.mem_1_s1_address                                (mm_interconnect_1_mem_1_s1_address),     //  output,  width = 10,                                  mem_1_s1.address
-		.mem_1_s1_write                                  (mm_interconnect_1_mem_1_s1_write),       //  output,   width = 1,                                          .write
-		.mem_1_s1_readdata                               (mm_interconnect_1_mem_1_s1_readdata),    //   input,  width = 32,                                          .readdata
-		.mem_1_s1_writedata                              (mm_interconnect_1_mem_1_s1_writedata),   //  output,  width = 32,                                          .writedata
-		.mem_1_s1_byteenable                             (mm_interconnect_1_mem_1_s1_byteenable),  //  output,   width = 4,                                          .byteenable
-		.mem_1_s1_chipselect                             (mm_interconnect_1_mem_1_s1_chipselect),  //  output,   width = 1,                                          .chipselect
-		.mem_1_s1_clken                                  (mm_interconnect_1_mem_1_s1_clken),       //  output,   width = 1,                                          .clken
-		.send_packet_1_reset_reset_bridge_in_reset_reset (rst_controller_001_reset_out_reset),     //   input,   width = 1, send_packet_1_reset_reset_bridge_in_reset.reset
-		.tse_mac_tx_clock_connection_0_clk               (tse_mac_tx_clock_connection_0_clk)       //   input,   width = 1,             tse_mac_tx_clock_connection_0.clk
+	system_design_altera_mm_interconnect_1920_cqreazq mm_interconnect_1 (
+		.send_packet_1_avalon_master_address             (send_packet_1_avalon_master_address),     //   input,  width = 10,               send_packet_1_avalon_master.address
+		.send_packet_1_avalon_master_waitrequest         (send_packet_1_avalon_master_waitrequest), //  output,   width = 1,                                          .waitrequest
+		.send_packet_1_avalon_master_byteenable          (send_packet_1_avalon_master_byteenable),  //   input,   width = 4,                                          .byteenable
+		.send_packet_1_avalon_master_chipselect          (send_packet_1_avalon_master_chipselect),  //   input,   width = 1,                                          .chipselect
+		.send_packet_1_avalon_master_readdata            (send_packet_1_avalon_master_readdata),    //  output,  width = 32,                                          .readdata
+		.send_packet_1_avalon_master_write               (send_packet_1_avalon_master_write),       //   input,   width = 1,                                          .write
+		.send_packet_1_avalon_master_writedata           (send_packet_1_avalon_master_writedata),   //   input,  width = 32,                                          .writedata
+		.mem_1_s1_address                                (mm_interconnect_1_mem_1_s1_address),      //  output,  width = 10,                                  mem_1_s1.address
+		.mem_1_s1_write                                  (mm_interconnect_1_mem_1_s1_write),        //  output,   width = 1,                                          .write
+		.mem_1_s1_readdata                               (mm_interconnect_1_mem_1_s1_readdata),     //   input,  width = 32,                                          .readdata
+		.mem_1_s1_writedata                              (mm_interconnect_1_mem_1_s1_writedata),    //  output,  width = 32,                                          .writedata
+		.mem_1_s1_byteenable                             (mm_interconnect_1_mem_1_s1_byteenable),   //  output,   width = 4,                                          .byteenable
+		.mem_1_s1_chipselect                             (mm_interconnect_1_mem_1_s1_chipselect),   //  output,   width = 1,                                          .chipselect
+		.mem_1_s1_clken                                  (mm_interconnect_1_mem_1_s1_clken),        //  output,   width = 1,                                          .clken
+		.send_packet_1_reset_reset_bridge_in_reset_reset (rst_controller_001_reset_out_reset),      //   input,   width = 1, send_packet_1_reset_reset_bridge_in_reset.reset
+		.tse_mac_tx_clock_connection_0_clk               (tse_mac_tx_clock_connection_0_clk)        //   input,   width = 1,             tse_mac_tx_clock_connection_0.clk
 	);
 
-	system_design_altera_mm_interconnect_1920_mk2km6i mm_interconnect_2 (
-		.send_packet_2_avalon_master_address             (send_packet_2_avalon_master_address),    //   input,  width = 10,               send_packet_2_avalon_master.address
-		.send_packet_2_avalon_master_byteenable          (send_packet_2_avalon_master_byteenable), //   input,   width = 4,                                          .byteenable
-		.send_packet_2_avalon_master_chipselect          (send_packet_2_avalon_master_chipselect), //   input,   width = 1,                                          .chipselect
-		.send_packet_2_avalon_master_readdata            (send_packet_2_avalon_master_readdata),   //  output,  width = 32,                                          .readdata
-		.send_packet_2_avalon_master_write               (send_packet_2_avalon_master_write),      //   input,   width = 1,                                          .write
-		.send_packet_2_avalon_master_writedata           (send_packet_2_avalon_master_writedata),  //   input,  width = 32,                                          .writedata
-		.mem_2_s1_address                                (mm_interconnect_2_mem_2_s1_address),     //  output,  width = 10,                                  mem_2_s1.address
-		.mem_2_s1_write                                  (mm_interconnect_2_mem_2_s1_write),       //  output,   width = 1,                                          .write
-		.mem_2_s1_readdata                               (mm_interconnect_2_mem_2_s1_readdata),    //   input,  width = 32,                                          .readdata
-		.mem_2_s1_writedata                              (mm_interconnect_2_mem_2_s1_writedata),   //  output,  width = 32,                                          .writedata
-		.mem_2_s1_byteenable                             (mm_interconnect_2_mem_2_s1_byteenable),  //  output,   width = 4,                                          .byteenable
-		.mem_2_s1_chipselect                             (mm_interconnect_2_mem_2_s1_chipselect),  //  output,   width = 1,                                          .chipselect
-		.mem_2_s1_clken                                  (mm_interconnect_2_mem_2_s1_clken),       //  output,   width = 1,                                          .clken
-		.send_packet_2_reset_reset_bridge_in_reset_reset (rst_controller_002_reset_out_reset),     //   input,   width = 1, send_packet_2_reset_reset_bridge_in_reset.reset
-		.tse_mac_tx_clock_connection_1_clk               (tse_mac_tx_clock_connection_1_clk)       //   input,   width = 1,             tse_mac_tx_clock_connection_1.clk
+	system_design_altera_mm_interconnect_1920_n6mddmq mm_interconnect_2 (
+		.send_packet_2_avalon_master_address                (send_packet_2_avalon_master_address),        //   input,  width = 10,                  send_packet_2_avalon_master.address
+		.send_packet_2_avalon_master_waitrequest            (send_packet_2_avalon_master_waitrequest),    //  output,   width = 1,                                             .waitrequest
+		.send_packet_2_avalon_master_byteenable             (send_packet_2_avalon_master_byteenable),     //   input,   width = 4,                                             .byteenable
+		.send_packet_2_avalon_master_chipselect             (send_packet_2_avalon_master_chipselect),     //   input,   width = 1,                                             .chipselect
+		.send_packet_2_avalon_master_readdata               (send_packet_2_avalon_master_readdata),       //  output,  width = 32,                                             .readdata
+		.send_packet_2_avalon_master_write                  (send_packet_2_avalon_master_write),          //   input,   width = 1,                                             .write
+		.send_packet_2_avalon_master_writedata              (send_packet_2_avalon_master_writedata),      //   input,  width = 32,                                             .writedata
+		.receive_packet_2_avalon_master_address             (receive_packet_2_avalon_master_address),     //   input,  width = 10,               receive_packet_2_avalon_master.address
+		.receive_packet_2_avalon_master_waitrequest         (receive_packet_2_avalon_master_waitrequest), //  output,   width = 1,                                             .waitrequest
+		.receive_packet_2_avalon_master_byteenable          (receive_packet_2_avalon_master_byteenable),  //   input,   width = 4,                                             .byteenable
+		.receive_packet_2_avalon_master_chipselect          (receive_packet_2_avalon_master_chipselect),  //   input,   width = 1,                                             .chipselect
+		.receive_packet_2_avalon_master_readdata            (receive_packet_2_avalon_master_readdata),    //  output,  width = 32,                                             .readdata
+		.receive_packet_2_avalon_master_write               (receive_packet_2_avalon_master_write),       //   input,   width = 1,                                             .write
+		.receive_packet_2_avalon_master_writedata           (receive_packet_2_avalon_master_writedata),   //   input,  width = 32,                                             .writedata
+		.mem_2_s1_address                                   (mm_interconnect_2_mem_2_s1_address),         //  output,  width = 10,                                     mem_2_s1.address
+		.mem_2_s1_write                                     (mm_interconnect_2_mem_2_s1_write),           //  output,   width = 1,                                             .write
+		.mem_2_s1_readdata                                  (mm_interconnect_2_mem_2_s1_readdata),        //   input,  width = 32,                                             .readdata
+		.mem_2_s1_writedata                                 (mm_interconnect_2_mem_2_s1_writedata),       //  output,  width = 32,                                             .writedata
+		.mem_2_s1_byteenable                                (mm_interconnect_2_mem_2_s1_byteenable),      //  output,   width = 4,                                             .byteenable
+		.mem_2_s1_chipselect                                (mm_interconnect_2_mem_2_s1_chipselect),      //  output,   width = 1,                                             .chipselect
+		.mem_2_s1_clken                                     (mm_interconnect_2_mem_2_s1_clken),           //  output,   width = 1,                                             .clken
+		.send_packet_2_reset_reset_bridge_in_reset_reset    (rst_controller_002_reset_out_reset),         //   input,   width = 1,    send_packet_2_reset_reset_bridge_in_reset.reset
+		.receive_packet_2_reset_reset_bridge_in_reset_reset (rst_controller_004_reset_out_reset),         //   input,   width = 1, receive_packet_2_reset_reset_bridge_in_reset.reset
+		.tse_mac_tx_clock_connection_1_clk                  (tse_mac_tx_clock_connection_1_clk),          //   input,   width = 1,                tse_mac_tx_clock_connection_1.clk
+		.tse_mac_rx_clock_connection_1_clk                  (tse_mac_rx_clock_connection_1_clk)           //   input,   width = 1,                tse_mac_rx_clock_connection_1.clk
 	);
 
-	system_design_altera_mm_interconnect_1920_ijvwamq mm_interconnect_3 (
-		.receive_packet_1_avalon_master_address             (receive_packet_1_avalon_master_address),    //   input,  width = 10,               receive_packet_1_avalon_master.address
-		.receive_packet_1_avalon_master_byteenable          (receive_packet_1_avalon_master_byteenable), //   input,   width = 4,                                             .byteenable
-		.receive_packet_1_avalon_master_chipselect          (receive_packet_1_avalon_master_chipselect), //   input,   width = 1,                                             .chipselect
-		.receive_packet_1_avalon_master_readdata            (receive_packet_1_avalon_master_readdata),   //  output,  width = 32,                                             .readdata
-		.receive_packet_1_avalon_master_write               (receive_packet_1_avalon_master_write),      //   input,   width = 1,                                             .write
-		.receive_packet_1_avalon_master_writedata           (receive_packet_1_avalon_master_writedata),  //   input,  width = 32,                                             .writedata
-		.mem_rcv_1_s1_address                               (mm_interconnect_3_mem_rcv_1_s1_address),    //  output,  width = 10,                                 mem_rcv_1_s1.address
-		.mem_rcv_1_s1_write                                 (mm_interconnect_3_mem_rcv_1_s1_write),      //  output,   width = 1,                                             .write
-		.mem_rcv_1_s1_readdata                              (mm_interconnect_3_mem_rcv_1_s1_readdata),   //   input,  width = 32,                                             .readdata
-		.mem_rcv_1_s1_writedata                             (mm_interconnect_3_mem_rcv_1_s1_writedata),  //  output,  width = 32,                                             .writedata
-		.mem_rcv_1_s1_byteenable                            (mm_interconnect_3_mem_rcv_1_s1_byteenable), //  output,   width = 4,                                             .byteenable
-		.mem_rcv_1_s1_chipselect                            (mm_interconnect_3_mem_rcv_1_s1_chipselect), //  output,   width = 1,                                             .chipselect
-		.mem_rcv_1_s1_clken                                 (mm_interconnect_3_mem_rcv_1_s1_clken),      //  output,   width = 1,                                             .clken
-		.receive_packet_1_reset_reset_bridge_in_reset_reset (rst_controller_003_reset_out_reset),        //   input,   width = 1, receive_packet_1_reset_reset_bridge_in_reset.reset
-		.tse_mac_rx_clock_connection_0_clk                  (tse_mac_rx_clock_connection_0_clk)          //   input,   width = 1,                tse_mac_rx_clock_connection_0.clk
-	);
-
-	system_design_altera_mm_interconnect_1920_3keutaa mm_interconnect_4 (
-		.receive_packet_2_avalon_master_address             (receive_packet_2_avalon_master_address),    //   input,  width = 10,               receive_packet_2_avalon_master.address
-		.receive_packet_2_avalon_master_byteenable          (receive_packet_2_avalon_master_byteenable), //   input,   width = 4,                                             .byteenable
-		.receive_packet_2_avalon_master_chipselect          (receive_packet_2_avalon_master_chipselect), //   input,   width = 1,                                             .chipselect
-		.receive_packet_2_avalon_master_readdata            (receive_packet_2_avalon_master_readdata),   //  output,  width = 32,                                             .readdata
-		.receive_packet_2_avalon_master_write               (receive_packet_2_avalon_master_write),      //   input,   width = 1,                                             .write
-		.receive_packet_2_avalon_master_writedata           (receive_packet_2_avalon_master_writedata),  //   input,  width = 32,                                             .writedata
-		.mem_rcv_2_s1_address                               (mm_interconnect_4_mem_rcv_2_s1_address),    //  output,  width = 10,                                 mem_rcv_2_s1.address
-		.mem_rcv_2_s1_write                                 (mm_interconnect_4_mem_rcv_2_s1_write),      //  output,   width = 1,                                             .write
-		.mem_rcv_2_s1_readdata                              (mm_interconnect_4_mem_rcv_2_s1_readdata),   //   input,  width = 32,                                             .readdata
-		.mem_rcv_2_s1_writedata                             (mm_interconnect_4_mem_rcv_2_s1_writedata),  //  output,  width = 32,                                             .writedata
-		.mem_rcv_2_s1_byteenable                            (mm_interconnect_4_mem_rcv_2_s1_byteenable), //  output,   width = 4,                                             .byteenable
-		.mem_rcv_2_s1_chipselect                            (mm_interconnect_4_mem_rcv_2_s1_chipselect), //  output,   width = 1,                                             .chipselect
-		.mem_rcv_2_s1_clken                                 (mm_interconnect_4_mem_rcv_2_s1_clken),      //  output,   width = 1,                                             .clken
-		.receive_packet_2_reset_reset_bridge_in_reset_reset (rst_controller_004_reset_out_reset),        //   input,   width = 1, receive_packet_2_reset_reset_bridge_in_reset.reset
-		.tse_mac_rx_clock_connection_1_clk                  (tse_mac_rx_clock_connection_1_clk)          //   input,   width = 1,                tse_mac_rx_clock_connection_1.clk
+	system_design_altera_mm_interconnect_1920_qky3gdi mm_interconnect_3 (
+		.receive_packet_1_avalon_master_address             (receive_packet_1_avalon_master_address),     //   input,  width = 10,               receive_packet_1_avalon_master.address
+		.receive_packet_1_avalon_master_waitrequest         (receive_packet_1_avalon_master_waitrequest), //  output,   width = 1,                                             .waitrequest
+		.receive_packet_1_avalon_master_byteenable          (receive_packet_1_avalon_master_byteenable),  //   input,   width = 4,                                             .byteenable
+		.receive_packet_1_avalon_master_chipselect          (receive_packet_1_avalon_master_chipselect),  //   input,   width = 1,                                             .chipselect
+		.receive_packet_1_avalon_master_readdata            (receive_packet_1_avalon_master_readdata),    //  output,  width = 32,                                             .readdata
+		.receive_packet_1_avalon_master_write               (receive_packet_1_avalon_master_write),       //   input,   width = 1,                                             .write
+		.receive_packet_1_avalon_master_writedata           (receive_packet_1_avalon_master_writedata),   //   input,  width = 32,                                             .writedata
+		.mem_rcv_1_s1_address                               (mm_interconnect_3_mem_rcv_1_s1_address),     //  output,  width = 10,                                 mem_rcv_1_s1.address
+		.mem_rcv_1_s1_write                                 (mm_interconnect_3_mem_rcv_1_s1_write),       //  output,   width = 1,                                             .write
+		.mem_rcv_1_s1_readdata                              (mm_interconnect_3_mem_rcv_1_s1_readdata),    //   input,  width = 32,                                             .readdata
+		.mem_rcv_1_s1_writedata                             (mm_interconnect_3_mem_rcv_1_s1_writedata),   //  output,  width = 32,                                             .writedata
+		.mem_rcv_1_s1_byteenable                            (mm_interconnect_3_mem_rcv_1_s1_byteenable),  //  output,   width = 4,                                             .byteenable
+		.mem_rcv_1_s1_chipselect                            (mm_interconnect_3_mem_rcv_1_s1_chipselect),  //  output,   width = 1,                                             .chipselect
+		.mem_rcv_1_s1_clken                                 (mm_interconnect_3_mem_rcv_1_s1_clken),       //  output,   width = 1,                                             .clken
+		.receive_packet_1_reset_reset_bridge_in_reset_reset (rst_controller_003_reset_out_reset),         //   input,   width = 1, receive_packet_1_reset_reset_bridge_in_reset.reset
+		.tse_mac_rx_clock_connection_0_clk                  (tse_mac_rx_clock_connection_0_clk)           //   input,   width = 1,                tse_mac_rx_clock_connection_0.clk
 	);
 
 	altera_reset_controller #(

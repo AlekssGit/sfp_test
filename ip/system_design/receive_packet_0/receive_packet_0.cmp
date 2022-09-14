@@ -12,6 +12,7 @@
 			ram_readdata     : in  std_logic_vector(31 downto 0) := (others => 'X'); -- readdata
 			ram_writedata    : out std_logic_vector(31 downto 0);                    -- writedata
 			ram_byteenable   : out std_logic_vector(3 downto 0);                     -- byteenable
+			ram_waitrequest  : in  std_logic                     := 'X';             -- waitrequest
 			clk_original     : in  std_logic                     := 'X';             -- clk
 			rst              : in  std_logic                     := 'X';             -- reset
 			rx_afull_data    : out std_logic_vector(1 downto 0);                     -- data

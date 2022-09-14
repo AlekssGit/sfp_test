@@ -16,6 +16,7 @@ module receive_packet_0 (
 		input  wire [31:0] ram_readdata,     //                      .readdata
 		output wire [31:0] ram_writedata,    //                      .writedata
 		output wire [3:0]  ram_byteenable,   //                      .byteenable
+		input  wire        ram_waitrequest,  //                      .waitrequest
 		input  wire        clk_original,     //                 clock.clk
 		input  wire        rst,              //                 reset.reset
 		output wire [1:0]  rx_afull_data,    //           fifo_status.data
@@ -37,6 +38,7 @@ module receive_packet_0 (
 		.ram_readdata     (ram_readdata),     //   input,  width = 32,                      .readdata
 		.ram_writedata    (ram_writedata),    //  output,  width = 32,                      .writedata
 		.ram_byteenable   (ram_byteenable),   //  output,   width = 4,                      .byteenable
+		.ram_waitrequest  (ram_waitrequest),  //   input,   width = 1,                      .waitrequest
 		.clk_original     (clk_original),     //   input,   width = 1,                 clock.clk
 		.rst              (rst),              //   input,   width = 1,                 reset.reset
 		.rx_afull_data    (rx_afull_data),    //  output,   width = 2,           fifo_status.data

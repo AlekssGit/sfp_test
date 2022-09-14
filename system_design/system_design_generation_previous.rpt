@@ -46,37 +46,12 @@ Warning: system_design.tse: tse.rx_analogreset_3 must be exported, or connected 
 Warning: system_design.tse: tse.rx_digitalreset_3 must be exported, or connected to a matching conduit as it has unconnected inputs.
 Warning: system_design.tse: tse.rx_set_locktodata_3 must be exported, or connected to a matching conduit as it has unconnected inputs.
 Warning: system_design.tse: tse.rx_set_locktoref_3 must be exported, or connected to a matching conduit as it has unconnected inputs.
-Info: system_design: "Transforming system: system_design"
-Info: system_design: "Naming system components in system: system_design"
-Info: system_design: "Processing generation queue"
-Info: system_design: "Generating: system_design"
-Info: system_design: "Generating: clock_50_out"
-Info: system_design: "Generating: init_mac"
-Info: system_design: "Generating: mem_1"
-Info: system_design: "Generating: mem_0"
-Info: system_design: "Generating: mem_3"
-Info: system_design: "Generating: mem_rcv_0"
-Info: system_design: "Generating: pll"
-Info: system_design: "Generating: receive_packet_1"
-Info: system_design: "Generating: receive_packet_0"
-Info: system_design: "Generating: reset_main"
-Info: system_design: "Generating: reset_mod"
-Info: system_design: "Generating: send_packet_1"
-Info: system_design: "Generating: tse"
-Info: system_design: "Generating: xcvr_pll"
-Info: system_design: "Generating: system_design_altera_mm_interconnect_1920_schtjcy"
-Info: system_design: "Generating: system_design_altera_mm_interconnect_1920_mk2km6i"
-Info: system_design: "Generating: system_design_altera_mm_interconnect_1920_ijvwamq"
-Info: system_design: "Generating: system_design_altera_mm_interconnect_1920_3keutaa"
-Info: system_design: "Generating: altera_reset_controller"
-Info: system_design: "Generating: system_design_altera_merlin_master_translator_191_g7h47bq"
-Info: system_design: "Generating: system_design_altera_merlin_slave_translator_191_x56fcki"
-Info: system_design: Done "system_design" with 22 modules, 10 files
-Info: Generating the following file(s) for MODELSIM simulator in D:/Documents/Projects/Learning/SFP_test/system_design/sim/ directory:
-Info: 	common/modelsim_files.tcl
-Info: For information on how to simulate your IP, see the explanatory comments in the simulator-specific subdirectories under D:/Documents/Projects/Learning/SFP_test/system_design/sim/.
-Info: Regenerate these scripts whenever you make any change to any Quartus-generated IP in your project.
-Info: qsys-generate succeeded.
+Warning: system_design.mem_rcv_2.s1: mem_rcv_2.s1 must be connected to an Avalon-MM host or exported
+Warning: system_design.system_design: Must be the only host for agent receive_packet_2.avalon_master because waitrequest is missing 
+Warning: system_design.receive_packet_2.avalon_master: receive_packet_2.avalon_master and mem_2.s1 must have the same clock domain
+Warning: system_design.system_design: Must be the only host for agent send_packet_2.avalon_master because waitrequest is missing 
+Error: system_design.receive_packet_2.avalon_master/mem_2.s1: Host receive_packet_2.avalon_master does not have waitrequest. Hosts without waitrequest cannot be connected to agents in different clock domains.
+Error: qsys-generate failed with exit code 3: 1 Error, 28 Warnings
 Info: Finished: Create simulation model
 Info: Starting: Create simulation script
 Info: sim-script-gen --system-file=D:\Documents\Projects\Learning\SFP_test\system_design.qsys --simulator=MODELSIM --output-directory=D:/Documents/Projects/Learning/SFP_test/system_design/sim/ --use-relative-paths=true
@@ -133,31 +108,10 @@ Warning: system_design.tse: tse.rx_analogreset_3 must be exported, or connected 
 Warning: system_design.tse: tse.rx_digitalreset_3 must be exported, or connected to a matching conduit as it has unconnected inputs.
 Warning: system_design.tse: tse.rx_set_locktodata_3 must be exported, or connected to a matching conduit as it has unconnected inputs.
 Warning: system_design.tse: tse.rx_set_locktoref_3 must be exported, or connected to a matching conduit as it has unconnected inputs.
-Info: system_design: "Transforming system: system_design"
-Info: system_design: "Naming system components in system: system_design"
-Info: system_design: "Processing generation queue"
-Info: system_design: "Generating: system_design"
-Info: system_design: "Generating: clock_50_out"
-Info: system_design: "Generating: init_mac"
-Info: system_design: "Generating: mem_1"
-Info: system_design: "Generating: mem_0"
-Info: system_design: "Generating: mem_3"
-Info: system_design: "Generating: mem_rcv_0"
-Info: system_design: "Generating: pll"
-Info: system_design: "Generating: receive_packet_1"
-Info: system_design: "Generating: receive_packet_0"
-Info: system_design: "Generating: reset_main"
-Info: system_design: "Generating: reset_mod"
-Info: system_design: "Generating: send_packet_1"
-Info: system_design: "Generating: tse"
-Info: system_design: "Generating: xcvr_pll"
-Info: system_design: "Generating: system_design_altera_mm_interconnect_1920_schtjcy"
-Info: system_design: "Generating: system_design_altera_mm_interconnect_1920_mk2km6i"
-Info: system_design: "Generating: system_design_altera_mm_interconnect_1920_ijvwamq"
-Info: system_design: "Generating: system_design_altera_mm_interconnect_1920_3keutaa"
-Info: system_design: "Generating: altera_reset_controller"
-Info: system_design: "Generating: system_design_altera_merlin_master_translator_191_g7h47bq"
-Info: system_design: "Generating: system_design_altera_merlin_slave_translator_191_x56fcki"
-Info: system_design: Done "system_design" with 22 modules, 10 files
-Info: qsys-generate succeeded.
+Warning: system_design.mem_rcv_2.s1: mem_rcv_2.s1 must be connected to an Avalon-MM host or exported
+Warning: system_design.system_design: Must be the only host for agent receive_packet_2.avalon_master because waitrequest is missing 
+Warning: system_design.receive_packet_2.avalon_master: receive_packet_2.avalon_master and mem_2.s1 must have the same clock domain
+Warning: system_design.system_design: Must be the only host for agent send_packet_2.avalon_master because waitrequest is missing 
+Error: system_design.receive_packet_2.avalon_master/mem_2.s1: Host receive_packet_2.avalon_master does not have waitrequest. Hosts without waitrequest cannot be connected to agents in different clock domains.
+Error: qsys-generate failed with exit code 3: 1 Error, 28 Warnings
 Info: Finished: Create HDL design files for synthesis

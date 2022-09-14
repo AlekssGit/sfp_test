@@ -33,7 +33,8 @@ module receive_packet_256
     output  logic           ram_write       ,
     input   logic   [31:0]  ram_readdata    ,
     output  logic   [31:0]  ram_writedata   ,
-    output  logic   [3:0]   ram_byteenable  
+    output  logic   [3:0]   ram_byteenable  ,
+    input   logic           ram_waitrequest
 );
 
 assign rx_afull_data    =   2'd0;

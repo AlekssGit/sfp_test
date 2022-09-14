@@ -1,4 +1,4 @@
-// `define TEST 1
+`define TEST 1
 
 `ifdef TEST
 	`define ALLOW_SEND		    1'b1
