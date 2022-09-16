@@ -154,20 +154,30 @@ begin
     end
     else
     begin
-      if(ram_address_tx_local != ram_addr_prev)
-      begin
-        ram_chipselect = 1'b1;
-        ram_addr_prev = ram_address_tx_local;
-      end
-      else
-      begin
-        ram_chipselect = 1'b0;
-      end
+        if(state == PREPARE_DATA)
+        begin
+            ram_chipselect = 1'b1;
+        end
+        else
+        begin
+            ram_chipselect = 1'b0;
+        end
+    //   if(ram_address_tx_local != ram_addr_prev)
+    //   begin
+    //     ram_chipselect = 1'b1;
+    //     ram_addr_prev = ram_address_tx_local;
+    //   end
+    //   else
+    //   begin
+    //     ram_chipselect = 1'b0;
+    //   end
     end 
 end
 
 logic wait_data_flag;
 logic [24:0] address_wait;
+
+logic [3:0] test_cnt_wait;
 
 always@ (posedge clk_original, posedge rst)
 begin
@@ -175,22 +185,31 @@ begin
     begin
         wait_data_flag = 1'b0;
         address_wait = 25'd0;
+
+        test_cnt_wait = 4'd0;
     end
     else
     begin
-        if(/*~ram_ready_local & */ address_wait != ram_address_tx_local & state == PREPARE_DATA & ram_address_tx_local > 25'd0)
+        if(/*~ram_ready_local & */ test_cnt_wait == 4'd2 &&  address_wait != ram_address_tx_local && state == PREPARE_DATA && ram_address_tx_local > 25'd0)
         begin
             wait_data_flag = 1'b1;
             address_wait = ram_address_tx_local;
         end
-        else if(wait_data_flag & /* ram_ready_local & */ address_wait < ram_address_tx_local & state == PREPARE_DATA)
+        else if(wait_data_flag && /* ram_ready_local & */ address_wait < ram_address_tx_local && state == PREPARE_DATA)
         begin
             wait_data_flag = 1'b0;
+
+            test_cnt_wait = 4'd0;
         end
         else if(state != PREPARE_DATA)
         begin
             wait_data_flag = 1'b0;
+            test_cnt_wait = 4'd0;
         end
+        else if(state == PREPARE_DATA)
+        begin
+            test_cnt_wait = test_cnt_wait + 4'd1;
+        end        
     end
 end
 

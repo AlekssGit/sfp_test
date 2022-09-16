@@ -1,4 +1,4 @@
-`include "sfp_test_top.sv"
+// `include "sfp_test_top.sv"
 
 module expander_top 
 (
@@ -10,6 +10,9 @@ module expander_top
     inout tri1 i2c_scl,
     inout tri1 i2c_sda
 );
+
+parameter relax_time = 32'd1500;
+parameter time_to_blink = 32'd2000;
 
 logic   sfp_rled    ;
 logic   sfp_gled    ;
@@ -107,13 +110,13 @@ end
 always_comb
 begin
     case(state)
-    IDLE:       state_next  =   (dev_ready                                  )   ?   WAIT_TIMER  :   IDLE;
-    WAIT_TIMER: state_next  =   (timer == `TIME_TO_BLINK && dev_ready       )   ?   WRITE_O     :   WAIT_TIMER;
-    WRITE_O:    state_next  =   (dev_ready && ~dev_ready_prev               )   ?   /*READ_I*/ RELAX_1      :   WRITE_O;
-    RELAX_1:    state_next  =   (timer_relax == `RELAX_TIME && dev_ready    )   ?   READ_I     :   RELAX_1;
-    READ_I:     state_next  =   (dev_ready && ~dev_ready_prev               )   ?   /*READ_O*/ RELAX_2      :   READ_I;
-    RELAX_2:    state_next  =   (timer_relax == `RELAX_TIME && dev_ready    )   ?   READ_O     :   RELAX_2;
-    READ_O:     state_next  =   (dev_ready && ~dev_ready_prev               )   ?   IDLE        :   READ_O;
+    IDLE:       state_next  =   (dev_ready                                 )   ?   WAIT_TIMER  :   IDLE;
+    WAIT_TIMER: state_next  =   (timer == time_to_blink && dev_ready       )   ?   WRITE_O     :   WAIT_TIMER;
+    WRITE_O:    state_next  =   (dev_ready && ~dev_ready_prev              )   ?   /*READ_I*/ RELAX_1      :   WRITE_O;
+    RELAX_1:    state_next  =   (timer_relax == relax_time && dev_ready    )   ?   READ_I     :   RELAX_1;
+    READ_I:     state_next  =   (dev_ready && ~dev_ready_prev              )   ?   /*READ_O*/ RELAX_2      :   READ_I;
+    RELAX_2:    state_next  =   (timer_relax == relax_time && dev_ready    )   ?   READ_O      :   RELAX_2;
+    READ_O:     state_next  =   (dev_ready && ~dev_ready_prev              )   ?   IDLE        :   READ_O;
 
     default: ;
     endcase
@@ -129,7 +132,7 @@ begin
     begin
         if(state == RELAX_1 || state == RELAX_2)
         begin
-            if(timer_relax > `RELAX_TIME + 32'd1000)
+            if(timer_relax > relax_time + 32'd1000)
             begin
                 timer_relax <= 32'd0;
             end
@@ -155,7 +158,7 @@ begin
     begin
         if(state == WAIT_TIMER)
         begin
-            if(timer > `TIME_TO_BLINK + 32'd1000)
+            if(timer > time_to_blink + 32'd1000)
             begin
                 timer <= 32'd0;
             end
@@ -179,7 +182,7 @@ begin
     end
     else
     begin
-        sfp_gled <= (timer == `TIME_TO_BLINK/32'd2) ? ~sfp_gled : sfp_gled;
+        sfp_gled <= (timer == time_to_blink/32'd2) ? ~sfp_gled : sfp_gled;
     end
 end
 

@@ -26,7 +26,7 @@ sfp_test_top device (
     .clk_125_lvds_tse   (clk_125_lvds   ),
     .reset_phy          (reset_phy      ),
 
-    .sgmii_rx_1         (/*sgmii_txd_1*/    ), 
+    .sgmii_rx_1         (sgmii_txd_1    ), 
     .sgmii_tx_1         (sgmii_txd_1    ),
 
     .sgmii_rx_2         (sgmii_txd_2    ), 

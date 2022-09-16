@@ -338,7 +338,8 @@ assign sfp_prsn_led     =   rx_is_lockedtoref_0; //sfp_prsn;
 
 
 //Put in separate module and duplicate for second expander
-expander_top first_expander
+expander_top #(.relax_time(`RELAX_TIME), .time_to_blink(`TIME_TO_BLINK)) 
+first_expander
 (
     .clk_50 (clk_50_pll),
     .rst_n  (rst_n),
@@ -349,7 +350,8 @@ expander_top first_expander
     .i2c_sda    (i2c_sda_1)
 );
 
-expander_top second_expander
+expander_top #(.relax_time(`RELAX_TIME), .time_to_blink(`TIME_TO_BLINK)) 
+second_expander
 (
     .clk_50 (clk_50_pll),
     .rst_n  (rst_n),
@@ -359,6 +361,5 @@ expander_top second_expander
     .i2c_scl    (i2c_scl_2),
     .i2c_sda    (i2c_sda_2)
 );
-
 
 endmodule
