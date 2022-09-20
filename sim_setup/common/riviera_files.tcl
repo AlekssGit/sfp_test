@@ -11,11 +11,8 @@ proc get_design_libraries {} {
   dict set libraries altera_reset_controller_1921            1
   dict set libraries altera_eth_tse_1950                     1
   dict set libraries tse                                     1
-  dict set libraries altera_avalon_onchip_memory2_1931       1
-  dict set libraries mem_1                                   1
   dict set libraries send_packet_10                          1
   dict set libraries send_packet_1                           1
-  dict set libraries mem_0                                   1
   dict set libraries altera_iopll_1931                       1
   dict set libraries pll                                     1
   dict set libraries reset_module_10                         1
@@ -27,20 +24,16 @@ proc get_design_libraries {} {
   dict set libraries receive_packet_10                       1
   dict set libraries receive_packet_1                        1
   dict set libraries receive_packet_0                        1
+  dict set libraries altera_avalon_onchip_memory2_1931       1
   dict set libraries mem_3                                   1
   dict set libraries mem_rcv_0                               1
   dict set libraries altera_xcvr_atx_pll_a10_191             1
   dict set libraries xcvr_pll                                1
+  dict set libraries mem_4                                   1
+  dict set libraries mem_5                                   1
   dict set libraries altera_merlin_master_translator_191     1
   dict set libraries altera_merlin_slave_translator_191      1
   dict set libraries altera_mm_interconnect_1920             1
-  dict set libraries altera_merlin_master_agent_191          1
-  dict set libraries altera_merlin_slave_agent_191           1
-  dict set libraries altera_avalon_sc_fifo_1930              1
-  dict set libraries altera_merlin_router_1920               1
-  dict set libraries altera_merlin_demultiplexer_1921        1
-  dict set libraries altera_merlin_multiplexer_1921          1
-  dict set libraries hs_clk_xer_1931                         1
   dict set libraries system_design                           1
   return $libraries
 }
@@ -279,12 +272,8 @@ proc get_design_files {USER_DEFINED_COMPILE_OPTIONS USER_DEFINED_VERILOG_COMPILE
   lappend design_files "vlog -v2k5 $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../ip/system_design/tse/altera_reset_controller_1921/sim/altera_reset_synchronizer.v"]\"  -work altera_reset_controller_1921"                                               
   lappend design_files "vlog -v2k5 $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../ip/system_design/tse/altera_eth_tse_1950/sim/tse_altera_eth_tse_1950_vweooxa.v"]\"  -work altera_eth_tse_1950"                                                           
   lappend design_files "vlog -v2k5 $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../ip/system_design/tse/sim/tse.v"]\"  -work tse"                                                                                                                           
-  lappend design_files "vlog -v2k5 $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../ip/system_design/mem_1/altera_avalon_onchip_memory2_1931/sim/mem_1_altera_avalon_onchip_memory2_1931_fpphlyq.v"]\"  -work altera_avalon_onchip_memory2_1931"             
-  lappend design_files "vlog -v2k5 $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../ip/system_design/mem_1/sim/mem_1.v"]\"  -work mem_1"                                                                                                                     
   lappend design_files "vlog  $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../ip/system_design/send_packet_1/send_packet_10/sim/send_packet.sv"]\"  -work send_packet_10"                                                                                   
   lappend design_files "vlog -v2k5 $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../ip/system_design/send_packet_1/sim/send_packet_1.v"]\"  -work send_packet_1"                                                                                             
-  lappend design_files "vlog -v2k5 $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../ip/system_design/mem_0/altera_avalon_onchip_memory2_1931/sim/mem_0_altera_avalon_onchip_memory2_1931_pkw5wgy.v"]\"  -work altera_avalon_onchip_memory2_1931"             
-  lappend design_files "vlog -v2k5 $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../ip/system_design/mem_0/sim/mem_0.v"]\"  -work mem_0"                                                                                                                     
   lappend design_files "vlog -v2k5 $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../ip/system_design/pll/altera_iopll_1931/sim/pll_altera_iopll_1931_bd2ubhi.vo"]\"  -work altera_iopll_1931"                                                                
   lappend design_files "vlog -v2k5 $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../ip/system_design/pll/sim/pll.v"]\"  -work pll"                                                                                                                           
   lappend design_files "vlog  $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../ip/system_design/reset_mod/reset_module_10/sim/reset_module.sv"]\"  -work reset_module_10"                                                                                    
@@ -315,27 +304,16 @@ proc get_design_files {USER_DEFINED_COMPILE_OPTIONS USER_DEFINED_VERILOG_COMPILE
   lappend design_files "vlog  $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../ip/system_design/xcvr_pll/altera_xcvr_atx_pll_a10_191/sim/xcvr_pll_altera_xcvr_atx_pll_a10_191_6oxhjba.sv"]\" -l altera_common_sv_packages -work altera_xcvr_atx_pll_a10_191" 
   lappend design_files "vlog  $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../ip/system_design/xcvr_pll/altera_xcvr_atx_pll_a10_191/sim/alt_xcvr_atx_pll_rcfg_opt_logic_6oxhjba.sv"]\" -l altera_common_sv_packages -work altera_xcvr_atx_pll_a10_191"      
   lappend design_files "vlog -v2k5 $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../ip/system_design/xcvr_pll/sim/xcvr_pll.v"]\"  -work xcvr_pll"                                                                                                            
+  lappend design_files "vlog -v2k5 $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../ip/system_design/mem_4/altera_avalon_onchip_memory2_1931/sim/mem_4_altera_avalon_onchip_memory2_1931_imtzmlq.v"]\"  -work altera_avalon_onchip_memory2_1931"             
+  lappend design_files "vlog -v2k5 $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../ip/system_design/mem_4/sim/mem_4.v"]\"  -work mem_4"                                                                                                                     
+  lappend design_files "vlog -v2k5 $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../ip/system_design/mem_5/altera_avalon_onchip_memory2_1931/sim/mem_5_altera_avalon_onchip_memory2_1931_5zdcm7i.v"]\"  -work altera_avalon_onchip_memory2_1931"             
+  lappend design_files "vlog -v2k5 $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../ip/system_design/mem_5/sim/mem_5.v"]\"  -work mem_5"                                                                                                                     
   lappend design_files "vlog  $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../system_design/altera_merlin_master_translator_191/sim/system_design_altera_merlin_master_translator_191_g7h47bq.sv"]\"  -work altera_merlin_master_translator_191"            
   lappend design_files "vlog  $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../system_design/altera_merlin_slave_translator_191/sim/system_design_altera_merlin_slave_translator_191_x56fcki.sv"]\"  -work altera_merlin_slave_translator_191"               
-  lappend design_files "vlog -v2k5 $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../system_design/altera_mm_interconnect_1920/sim/system_design_altera_mm_interconnect_1920_cqreazq.v"]\"  -work altera_mm_interconnect_1920"                                
-  lappend design_files "vlog  $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../system_design/altera_merlin_master_agent_191/sim/system_design_altera_merlin_master_agent_191_mpbm6tq.sv"]\"  -work altera_merlin_master_agent_191"                           
-  lappend design_files "vlog  $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../system_design/altera_merlin_slave_agent_191/sim/system_design_altera_merlin_slave_agent_191_ncfkfri.sv"]\"  -work altera_merlin_slave_agent_191"                              
-  lappend design_files "vlog  $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../system_design/altera_merlin_slave_agent_191/sim/altera_merlin_burst_uncompressor.sv"]\"  -work altera_merlin_slave_agent_191"                                                 
-  lappend design_files "vlog -v2k5 $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../system_design/altera_avalon_sc_fifo_1930/sim/system_design_altera_avalon_sc_fifo_1930_pqv24kq.v"]\"  -work altera_avalon_sc_fifo_1930"                                   
-  lappend design_files "vlog  $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../system_design/altera_merlin_router_1920/sim/system_design_altera_merlin_router_1920_qttnjoi.sv"]\"  -work altera_merlin_router_1920"                                          
-  lappend design_files "vlog  $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../system_design/altera_merlin_router_1920/sim/system_design_altera_merlin_router_1920_sr4hbxi.sv"]\"  -work altera_merlin_router_1920"                                          
-  lappend design_files "vlog  $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../system_design/altera_merlin_demultiplexer_1921/sim/system_design_altera_merlin_demultiplexer_1921_ekfzhji.sv"]\"  -work altera_merlin_demultiplexer_1921"                     
-  lappend design_files "vlog  $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../system_design/altera_merlin_multiplexer_1921/sim/system_design_altera_merlin_multiplexer_1921_cworfkq.sv"]\"  -work altera_merlin_multiplexer_1921"                           
-  lappend design_files "vlog  $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../system_design/altera_merlin_multiplexer_1921/sim/altera_merlin_arbitrator.sv"]\"  -work altera_merlin_multiplexer_1921"                                                       
-  lappend design_files "vlog  $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../system_design/altera_merlin_demultiplexer_1921/sim/system_design_altera_merlin_demultiplexer_1921_xu5xrea.sv"]\"  -work altera_merlin_demultiplexer_1921"                     
-  lappend design_files "vlog  $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../system_design/altera_merlin_multiplexer_1921/sim/system_design_altera_merlin_multiplexer_1921_bp6ue5y.sv"]\"  -work altera_merlin_multiplexer_1921"                           
-  lappend design_files "vlog  $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../system_design/altera_merlin_multiplexer_1921/sim/altera_merlin_arbitrator.sv"]\"  -work altera_merlin_multiplexer_1921"                                                       
-  lappend design_files "vlog -v2k5 $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../system_design/hs_clk_xer_1931/sim/system_design_hs_clk_xer_1931_cgvepdq.v"]\"  -work hs_clk_xer_1931"                                                                    
-  lappend design_files "vlog  $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../system_design/hs_clk_xer_1931/sim/altera_avalon_st_clock_crosser.v"]\"  -work hs_clk_xer_1931"                                                                                
-  lappend design_files "vlog  $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../system_design/hs_clk_xer_1931/sim/altera_avalon_st_pipeline_base.v"]\"  -work hs_clk_xer_1931"                                                                                
-  lappend design_files "vlog  $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../system_design/hs_clk_xer_1931/sim/altera_std_synchronizer_nocut.v"]\"  -work hs_clk_xer_1931"                                                                                 
-  lappend design_files "vlog -v2k5 $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../system_design/altera_mm_interconnect_1920/sim/system_design_altera_mm_interconnect_1920_n6mddmq.v"]\"  -work altera_mm_interconnect_1920"                                
   lappend design_files "vlog -v2k5 $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../system_design/altera_mm_interconnect_1920/sim/system_design_altera_mm_interconnect_1920_qky3gdi.v"]\"  -work altera_mm_interconnect_1920"                                
+  lappend design_files "vlog -v2k5 $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../system_design/altera_mm_interconnect_1920/sim/system_design_altera_mm_interconnect_1920_tqdmh6a.v"]\"  -work altera_mm_interconnect_1920"                                
+  lappend design_files "vlog -v2k5 $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../system_design/altera_mm_interconnect_1920/sim/system_design_altera_mm_interconnect_1920_nnzxfdi.v"]\"  -work altera_mm_interconnect_1920"                                
+  lappend design_files "vlog -v2k5 $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../system_design/altera_mm_interconnect_1920/sim/system_design_altera_mm_interconnect_1920_rvh6iyy.v"]\"  -work altera_mm_interconnect_1920"                                
   lappend design_files "vlog -v2k5 $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../system_design/altera_reset_controller_1921/sim/altera_reset_controller.v"]\"  -work altera_reset_controller_1921"                                                        
   lappend design_files "vlog -v2k5 $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../system_design/altera_reset_controller_1921/sim/altera_reset_synchronizer.v"]\"  -work altera_reset_controller_1921"                                                      
   lappend design_files "vlog -v2k5 $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../system_design/sim/system_design.v"]\"  -work system_design"                                                                                                              

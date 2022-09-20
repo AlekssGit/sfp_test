@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deploy
- date="2022.09.16.18:07:07"
+ date="2022.09.20.18:10:40"
  outputDirectory="D:/Documents/Projects/Learning/SFP_test/ip/system_design/mem_1/">
  <perimeter>
   <parameter
@@ -51,6 +51,24 @@
      defaultValue="-1"
      onHdl="0"
      affectsHdl="1" />
+  <parameter
+     name="AUTO_CLK2_CLOCK_RATE"
+     type="Long"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLK2_CLOCK_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLK2_RESET_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
   <interface name="clk1" kind="clock" start="0">
    <property name="clockRate" value="0" />
    <property name="externallyDriven" value="false" />
@@ -59,7 +77,7 @@
   </interface>
   <interface name="s1" kind="avalon" start="0">
    <property name="addressAlignment" value="DYNAMIC" />
-   <property name="addressGroup" value="0" />
+   <property name="addressGroup" value="1" />
    <property name="addressSpan" value="4096" />
    <property name="addressUnits" value="WORDS" />
    <property name="alwaysBurstMaxBurst" value="false" />
@@ -113,8 +131,73 @@
    <port name="reset" direction="input" role="reset" width="1" />
    <port name="reset_req" direction="input" role="reset_req" width="1" />
   </interface>
+  <interface name="s2" kind="avalon" start="0">
+   <property name="addressAlignment" value="DYNAMIC" />
+   <property name="addressGroup" value="1" />
+   <property name="addressSpan" value="4096" />
+   <property name="addressUnits" value="WORDS" />
+   <property name="alwaysBurstMaxBurst" value="false" />
+   <property name="associatedClock" value="clk2" />
+   <property name="associatedReset" value="reset2" />
+   <property name="bitsPerSymbol" value="8" />
+   <property name="bridgedAddressOffset" value="0" />
+   <property name="bridgesToMaster" value="" />
+   <property name="burstOnBurstBoundariesOnly" value="false" />
+   <property name="burstcountUnits" value="WORDS" />
+   <property name="constantBurstBehavior" value="false" />
+   <property name="explicitAddressSpan" value="4096" />
+   <property name="holdTime" value="0" />
+   <property name="interleaveBursts" value="false" />
+   <property name="isBigEndian" value="false" />
+   <property name="isFlash" value="false" />
+   <property name="isMemoryDevice" value="true" />
+   <property name="isNonVolatileStorage" value="false" />
+   <property name="linewrapBursts" value="false" />
+   <property name="maximumPendingReadTransactions" value="0" />
+   <property name="maximumPendingWriteTransactions" value="0" />
+   <property name="minimumReadLatency" value="1" />
+   <property name="minimumResponseLatency" value="1" />
+   <property name="minimumUninterruptedRunLength" value="1" />
+   <property name="prSafe" value="false" />
+   <property name="printableDevice" value="false" />
+   <property name="readLatency" value="1" />
+   <property name="readWaitStates" value="0" />
+   <property name="readWaitTime" value="0" />
+   <property name="registerIncomingSignals" value="false" />
+   <property name="registerOutgoingSignals" value="false" />
+   <property name="setupTime" value="0" />
+   <property name="timingUnits" value="Cycles" />
+   <property name="transparentBridge" value="false" />
+   <property name="waitrequestAllowance" value="0" />
+   <property name="wellBehavedWaitrequest" value="false" />
+   <property name="writeLatency" value="0" />
+   <property name="writeWaitStates" value="0" />
+   <property name="writeWaitTime" value="0" />
+   <port name="address2" direction="input" role="address" width="10" />
+   <port name="chipselect2" direction="input" role="chipselect" width="1" />
+   <port name="clken2" direction="input" role="clken" width="1" />
+   <port name="write2" direction="input" role="write" width="1" />
+   <port name="readdata2" direction="output" role="readdata" width="32" />
+   <port name="writedata2" direction="input" role="writedata" width="32" />
+   <port name="byteenable2" direction="input" role="byteenable" width="4" />
+  </interface>
+  <interface name="clk2" kind="clock" start="0">
+   <property name="clockRate" value="0" />
+   <property name="externallyDriven" value="false" />
+   <property name="ptfSchematicName" value="" />
+   <port name="clk2" direction="input" role="clk" width="1" />
+  </interface>
+  <interface name="reset2" kind="reset" start="0">
+   <property name="associatedClock" value="clk2" />
+   <property name="synchronousEdges" value="DEASSERT" />
+   <port name="reset2" direction="input" role="reset" width="1" />
+   <port name="reset_req2" direction="input" role="reset_req" width="1" />
+  </interface>
  </perimeter>
  <entity kind="mem_1" version="1.0" name="mem_1">
+  <parameter name="AUTO_CLK2_CLOCK_RATE" value="-1" />
+  <parameter name="AUTO_CLK2_RESET_DOMAIN" value="-1" />
+  <parameter name="AUTO_CLK2_CLOCK_DOMAIN" value="-1" />
   <parameter name="AUTO_GENERATION_ID" value="0" />
   <parameter name="AUTO_DEVICE" value="10CX220YF780E5G" />
   <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone 10 GX" />
@@ -143,16 +226,16 @@
   </childSourceFiles>
   <messages>
    <message level="Info" culprit="mem_1">"Generating: mem_1"</message>
-   <message level="Info" culprit="mem_1">"Generating: mem_1_altera_avalon_onchip_memory2_1931_fpphlyq"</message>
-   <message level="Info" culprit="mem_1">Starting RTL generation for module 'mem_1_altera_avalon_onchip_memory2_1931_fpphlyq'</message>
-   <message level="Info" culprit="mem_1">  Generation command is [exec C:/intelfpga_pro/21.3/quartus/bin64//perl/bin/perl.exe -I C:/intelfpga_pro/21.3/quartus/bin64//perl/lib -I C:/intelfpga_pro/21.3/quartus/sopc_builder/bin/europa -I C:/intelfpga_pro/21.3/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_pro/21.3/quartus/sopc_builder/bin -I C:/intelfpga_pro/21.3/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_pro/21.3/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- C:/intelfpga_pro/21.3/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=mem_1_altera_avalon_onchip_memory2_1931_fpphlyq --dir=C:/Users/ALEKSA~1/AppData/Local/Temp/alt9251_6376553701614994123.dir/0003_mem_1_gen/ --quartus_dir=C:/intelfpga_pro/21.3/quartus --verilog --config=C:/Users/ALEKSA~1/AppData/Local/Temp/alt9251_6376553701614994123.dir/0003_mem_1_gen//mem_1_altera_avalon_onchip_memory2_1931_fpphlyq_component_configuration.pl  --do_build_sim=0  ]</message>
-   <message level="Info" culprit="mem_1">Done RTL generation for module 'mem_1_altera_avalon_onchip_memory2_1931_fpphlyq'</message>
+   <message level="Info" culprit="mem_1">"Generating: mem_1_altera_avalon_onchip_memory2_1931_kkg5y4a"</message>
+   <message level="Info" culprit="mem_1">Starting RTL generation for module 'mem_1_altera_avalon_onchip_memory2_1931_kkg5y4a'</message>
+   <message level="Info" culprit="mem_1">  Generation command is [exec C:/intelfpga_pro/21.3/quartus/bin64//perl/bin/perl.exe -I C:/intelfpga_pro/21.3/quartus/bin64//perl/lib -I C:/intelfpga_pro/21.3/quartus/sopc_builder/bin/europa -I C:/intelfpga_pro/21.3/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_pro/21.3/quartus/sopc_builder/bin -I C:/intelfpga_pro/21.3/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_pro/21.3/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- C:/intelfpga_pro/21.3/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=mem_1_altera_avalon_onchip_memory2_1931_kkg5y4a --dir=C:/Users/ALEKSA~1/AppData/Local/Temp/alt9255_9082031098460030723.dir/0003_mem_1_gen/ --quartus_dir=C:/intelfpga_pro/21.3/quartus --verilog --config=C:/Users/ALEKSA~1/AppData/Local/Temp/alt9255_9082031098460030723.dir/0003_mem_1_gen//mem_1_altera_avalon_onchip_memory2_1931_kkg5y4a_component_configuration.pl  --do_build_sim=0  ]</message>
+   <message level="Info" culprit="mem_1">Done RTL generation for module 'mem_1_altera_avalon_onchip_memory2_1931_kkg5y4a'</message>
   </messages>
  </entity>
  <entity
    kind="altera_avalon_onchip_memory2"
    version="19.3.1"
-   name="mem_1_altera_avalon_onchip_memory2_1931_fpphlyq">
+   name="mem_1_altera_avalon_onchip_memory2_1931_kkg5y4a">
   <parameter name="derived_singleClockOperation" value="false" />
   <parameter name="derived_is_hardcopy" value="false" />
   <parameter
@@ -163,7 +246,7 @@
   <parameter name="enPRInitMode" value="false" />
   <parameter name="useShallowMemBlocks" value="false" />
   <parameter name="writable" value="true" />
-  <parameter name="dualPort" value="false" />
+  <parameter name="dualPort" value="true" />
   <parameter name="derived_set_addr_width2" value="10" />
   <parameter name="dataWidth" value="32" />
   <parameter name="allowInSystemMemoryContentEditor" value="false" />
@@ -196,12 +279,12 @@
   <parameter name="slave2Latency" value="1" />
   <generatedFiles>
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\mem_1\altera_avalon_onchip_memory2_1931\synth\mem_1_altera_avalon_onchip_memory2_1931_fpphlyq.v"
+       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\mem_1\altera_avalon_onchip_memory2_1931\synth\mem_1_altera_avalon_onchip_memory2_1931_kkg5y4a.v"
        attributes="" />
   </generatedFiles>
   <childGeneratedFiles>
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\mem_1\altera_avalon_onchip_memory2_1931\synth\mem_1_altera_avalon_onchip_memory2_1931_fpphlyq.v"
+       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\mem_1\altera_avalon_onchip_memory2_1931\synth\mem_1_altera_avalon_onchip_memory2_1931_kkg5y4a.v"
        attributes="" />
   </childGeneratedFiles>
   <sourceFiles>
@@ -211,10 +294,10 @@
   <childSourceFiles/>
   <instantiator instantiator="mem_1" as="mem_1" />
   <messages>
-   <message level="Info" culprit="mem_1">"Generating: mem_1_altera_avalon_onchip_memory2_1931_fpphlyq"</message>
-   <message level="Info" culprit="mem_1">Starting RTL generation for module 'mem_1_altera_avalon_onchip_memory2_1931_fpphlyq'</message>
-   <message level="Info" culprit="mem_1">  Generation command is [exec C:/intelfpga_pro/21.3/quartus/bin64//perl/bin/perl.exe -I C:/intelfpga_pro/21.3/quartus/bin64//perl/lib -I C:/intelfpga_pro/21.3/quartus/sopc_builder/bin/europa -I C:/intelfpga_pro/21.3/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_pro/21.3/quartus/sopc_builder/bin -I C:/intelfpga_pro/21.3/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_pro/21.3/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- C:/intelfpga_pro/21.3/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=mem_1_altera_avalon_onchip_memory2_1931_fpphlyq --dir=C:/Users/ALEKSA~1/AppData/Local/Temp/alt9251_6376553701614994123.dir/0003_mem_1_gen/ --quartus_dir=C:/intelfpga_pro/21.3/quartus --verilog --config=C:/Users/ALEKSA~1/AppData/Local/Temp/alt9251_6376553701614994123.dir/0003_mem_1_gen//mem_1_altera_avalon_onchip_memory2_1931_fpphlyq_component_configuration.pl  --do_build_sim=0  ]</message>
-   <message level="Info" culprit="mem_1">Done RTL generation for module 'mem_1_altera_avalon_onchip_memory2_1931_fpphlyq'</message>
+   <message level="Info" culprit="mem_1">"Generating: mem_1_altera_avalon_onchip_memory2_1931_kkg5y4a"</message>
+   <message level="Info" culprit="mem_1">Starting RTL generation for module 'mem_1_altera_avalon_onchip_memory2_1931_kkg5y4a'</message>
+   <message level="Info" culprit="mem_1">  Generation command is [exec C:/intelfpga_pro/21.3/quartus/bin64//perl/bin/perl.exe -I C:/intelfpga_pro/21.3/quartus/bin64//perl/lib -I C:/intelfpga_pro/21.3/quartus/sopc_builder/bin/europa -I C:/intelfpga_pro/21.3/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_pro/21.3/quartus/sopc_builder/bin -I C:/intelfpga_pro/21.3/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_pro/21.3/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- C:/intelfpga_pro/21.3/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=mem_1_altera_avalon_onchip_memory2_1931_kkg5y4a --dir=C:/Users/ALEKSA~1/AppData/Local/Temp/alt9255_9082031098460030723.dir/0003_mem_1_gen/ --quartus_dir=C:/intelfpga_pro/21.3/quartus --verilog --config=C:/Users/ALEKSA~1/AppData/Local/Temp/alt9255_9082031098460030723.dir/0003_mem_1_gen//mem_1_altera_avalon_onchip_memory2_1931_kkg5y4a_component_configuration.pl  --do_build_sim=0  ]</message>
+   <message level="Info" culprit="mem_1">Done RTL generation for module 'mem_1_altera_avalon_onchip_memory2_1931_kkg5y4a'</message>
   </messages>
  </entity>
 </deploy>

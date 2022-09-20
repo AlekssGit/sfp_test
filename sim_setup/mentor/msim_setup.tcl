@@ -18,9 +18,7 @@
 # This script provides commands to simulate the following IP detected in
 # your Quartus project:
 #     tse.tse
-#     mem_1.mem_1
 #     send_packet_1.send_packet_1
-#     mem_0.mem_0
 #     pll.pll
 #     reset_mod.reset_mod
 #     init_mac.init_mac
@@ -31,6 +29,8 @@
 #     mem_3.mem_3
 #     mem_rcv_0.mem_rcv_0
 #     xcvr_pll.xcvr_pll
+#     mem_4.mem_4
+#     mem_5.mem_5
 #     system_design.system_design
 # 
 # Intel recommends that you source this Quartus-generated IP simulation
@@ -97,7 +97,7 @@
 # 
 # IP SIMULATION SCRIPT
 # ----------------------------------------
-# ACDS 21.3 170 win32 2022.09.16.18:09:37
+# ACDS 21.3 170 win32 2022.09.20.18:35:28
 
 # ----------------------------------------
 # Initialize variables

@@ -2,7 +2,17 @@
 <preferences>
  <debug showDebugMenu="0" />
  <window width="1920" height="1040" x="0" y="0" />
- <systemtable filter="All Interfaces" />
- <library expandedCategories="Library,Existing IP Variants,Project" />
- <generation path="" block_symbol_file="0" simulation="VERILOG" modelsim="1" />
+ <systemtable filter="All Interfaces">
+  <columns>
+   <connections preferredWidth="735" />
+  </columns>
+ </systemtable>
+ <library expandedCategories="Project,Library,Existing IP Variants" />
+ <generation
+   path=""
+   block_symbol_file="0"
+   simulation="VERILOG"
+   modelsim="1"
+   clear_previous="0" />
+ <sysinfo autosync="0" />
 </preferences>

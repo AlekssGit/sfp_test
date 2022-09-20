@@ -120,20 +120,28 @@ add wave -group avalon_mem_1    -label "byteenable"     /tb_sfp_test/device/plat
 add wave -group avalon_mem_1    -label "write"          /tb_sfp_test/device/platform_design/send_packet_1_avalon_master_write
 add wave -group avalon_mem_1    -label "writedata"      /tb_sfp_test/device/platform_design/send_packet_1_avalon_master_writedata
 
-add wave -group avalon_mem_2    -label "chipselect"     /tb_sfp_test/device/platform_design/send_packet_2_avalon_master_chipselect
-add wave -group avalon_mem_2    -label "readdata"       /tb_sfp_test/device/platform_design/send_packet_2_avalon_master_readdata
-add wave -group avalon_mem_2    -label "address"        /tb_sfp_test/device/platform_design/send_packet_2_avalon_master_address
-add wave -group avalon_mem_2    -label "byteenable"     /tb_sfp_test/device/platform_design/send_packet_2_avalon_master_byteenable
-add wave -group avalon_mem_2    -label "write"          /tb_sfp_test/device/platform_design/send_packet_2_avalon_master_write
-add wave -group avalon_mem_2    -label "writedata"      /tb_sfp_test/device/platform_design/send_packet_2_avalon_master_writedata
-add wave -group avalon_mem_2    -label "waitrequest"    /tb_sfp_test/device/platform_design/receive_packet_2_avalon_master_waitrequest
+add wave -group avalon_mem_2    -label "chipselect"     /tb_sfp_test/device/platform_design/mem_4/mem_4/chipselect
+add wave -group avalon_mem_2    -label "readdata"       /tb_sfp_test/device/platform_design/mem_4/mem_4/readdata
+add wave -group avalon_mem_2    -label "address"        /tb_sfp_test/device/platform_design/mem_4/mem_4/address
+add wave -group avalon_mem_2    -label "byteenable"     /tb_sfp_test/device/platform_design/mem_4/mem_4/byteenable
+add wave -group avalon_mem_2    -label "write"          /tb_sfp_test/device/platform_design/mem_4/mem_4/write
+add wave -group avalon_mem_2    -label "writedata"      /tb_sfp_test/device/platform_design/mem_4/mem_4/writedata
+# add wave -group avalon_mem_2    -label "waitrequest"    /tb_sfp_test/device/platform_design/mem_2/mem_1/waitrequest
+add wave -group avalon_mem_2    -label "chipselect_2"     /tb_sfp_test/device/platform_design/mem_4/mem_4/chipselect2
+add wave -group avalon_mem_2    -label "readdata_2"       /tb_sfp_test/device/platform_design/mem_4/mem_4/readdata2
+add wave -group avalon_mem_2    -label "address_2"        /tb_sfp_test/device/platform_design/mem_4/mem_4/address2
+add wave -group avalon_mem_2    -label "byteenable_2"     /tb_sfp_test/device/platform_design/mem_4/mem_4/byteenable2
+add wave -group avalon_mem_2    -label "write_2"          /tb_sfp_test/device/platform_design/mem_4/mem_4/write2
+add wave -group avalon_mem_2    -label "writedata_2"      /tb_sfp_test/device/platform_design/mem_4/mem_4/writedata2
+# add wave -group avalon_mem_2    -label "waitrequest_2"    /tb_sfp_test/device/platform_design/mem_2/mem_1/waitrequest2
 
+add wave -group send_packet_1    -label "clk_original"          /tb_sfp_test/device/platform_design/send_packet_1/send_packet_1/clk_original
 add wave -group send_packet_1    -label "wait_data_flag"        /tb_sfp_test/device/platform_design/send_packet_1/send_packet_1/wait_data_flag
-add wave -group send_packet_1    -label "test_cnt_wait"        /tb_sfp_test/device/platform_design/send_packet_1/send_packet_1/test_cnt_wait
+add wave -group send_packet_1    -label "test_cnt_wait"         /tb_sfp_test/device/platform_design/send_packet_1/send_packet_1/test_cnt_wait
 add wave -group send_packet_1    -label "count_prepare_wait"    /tb_sfp_test/device/platform_design/send_packet_1/send_packet_1/count_prepare_wait
 add wave -group send_packet_1    -label "state"                 /tb_sfp_test/device/platform_design/send_packet_1/send_packet_1/state
-add wave -group send_packet_1    -label "address_wait"                 /tb_sfp_test/device/platform_design/send_packet_1/send_packet_1/address_wait
-add wave -group send_packet_1    -label "ram_address_tx_local"                 /tb_sfp_test/device/platform_design/send_packet_1/send_packet_1/ram_address_tx_local
+add wave -group send_packet_1    -label "address_wait"          /tb_sfp_test/device/platform_design/send_packet_1/send_packet_1/address_wait
+add wave -group send_packet_1    -label "ram_address_tx_local"  /tb_sfp_test/device/platform_design/send_packet_1/send_packet_1/ram_address_tx_local
 
 add wave -group avalon_rcv_1    -label "valid"   /tb_sfp_test/device/platform_design/tse_receive_0_valid
 add wave -group avalon_rcv_1    -label "data"    /tb_sfp_test/device/platform_design/tse_receive_0_data
@@ -160,12 +168,20 @@ add wave -group avalon_rcv_2    -label "ram_waitrequest"    /tb_sfp_test/device/
 add wave -group avalon_rcv_2    -label "count_saved"       -radix decimal /tb_sfp_test/device/platform_design/receive_packet_2/receive_packet_0/count_saved
 add wave -group avalon_rcv_2    -label "data_received"       {/tb_sfp_test/device/platform_design/receive_packet_2/receive_packet_0/data_received[64:0]}
 
-# add wave -group avalon_mem_rcv_1    -label "chipselect"     /tb_sfp_test/device/platform_design/receive_packet_1_avalon_master_chipselect
-# add wave -group avalon_mem_rcv_1    -label "readdata"       /tb_sfp_test/device/platform_design/receive_packet_1_avalon_master_readdata
-# add wave -group avalon_mem_rcv_1    -label "address"        /tb_sfp_test/device/platform_design/receive_packet_1_avalon_master_address
-# add wave -group avalon_mem_rcv_1    -label "byteenable"     /tb_sfp_test/device/platform_design/receive_packet_1_avalon_master_byteenable
-# add wave -group avalon_mem_rcv_1    -label "write"          /tb_sfp_test/device/platform_design/receive_packet_1_avalon_master_write
-# add wave -group avalon_mem_rcv_1    -label "writedata"      /tb_sfp_test/device/platform_design/receive_packet_1_avalon_master_writedata
+add wave -group avalon_mem_rcv_1    -label "chipselect"     /tb_sfp_test/device/platform_design/receive_packet_1_avalon_master_chipselect
+add wave -group avalon_mem_rcv_1    -label "readdata"       /tb_sfp_test/device/platform_design/receive_packet_1_avalon_master_readdata
+add wave -group avalon_mem_rcv_1    -label "address"        /tb_sfp_test/device/platform_design/receive_packet_1_avalon_master_address
+add wave -group avalon_mem_rcv_1    -label "byteenable"     /tb_sfp_test/device/platform_design/receive_packet_1_avalon_master_byteenable
+add wave -group avalon_mem_rcv_1    -label "write"          /tb_sfp_test/device/platform_design/receive_packet_1_avalon_master_write
+add wave -group avalon_mem_rcv_1    -label "writedata"      /tb_sfp_test/device/platform_design/receive_packet_1_avalon_master_writedata
+
+
+add wave -group avalon_mem_rcv_2    -label "chipselect"     /tb_sfp_test/device/platform_design/mem_rcv_2/mem_rcv_0/chipselect
+add wave -group avalon_mem_rcv_2    -label "readdata"       /tb_sfp_test/device/platform_design/mem_rcv_2/mem_rcv_0/readdata
+add wave -group avalon_mem_rcv_2    -label "address"        /tb_sfp_test/device/platform_design/mem_rcv_2/mem_rcv_0/address
+add wave -group avalon_mem_rcv_2    -label "byteenable"     /tb_sfp_test/device/platform_design/mem_rcv_2/mem_rcv_0/byteenable
+add wave -group avalon_mem_rcv_2    -label "write"          /tb_sfp_test/device/platform_design/mem_rcv_2/mem_rcv_0/write
+add wave -group avalon_mem_rcv_2    -label "writedata"      /tb_sfp_test/device/platform_design/mem_rcv_2/mem_rcv_0/writedata
 
 add wave -label "cmd_send_1"    /tb_sfp_test/device/cmd_send_1
 add wave -label "cmd_send_2"    /tb_sfp_test/device/cmd_send_2
@@ -215,5 +231,5 @@ add wave -group fifo_status    -label "channel"     /tb_sfp_test/device/platform
 # add wave -group i2c_master -label "state_i2c_mm"  /tb_sfp_test/device/expander_device/i2c_ctrl/mm_exp/state
 
 
-run 500us 
+run 200us 
 wave zoom full

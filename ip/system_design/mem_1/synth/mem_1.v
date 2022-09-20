@@ -4,30 +4,50 @@
 
 `timescale 1 ps / 1 ps
 module mem_1 (
-		input  wire        clk,        //   clk1.clk
-		input  wire [9:0]  address,    //     s1.address
-		input  wire        clken,      //       .clken
-		input  wire        chipselect, //       .chipselect
-		input  wire        write,      //       .write
-		output wire [31:0] readdata,   //       .readdata
-		input  wire [31:0] writedata,  //       .writedata
-		input  wire [3:0]  byteenable, //       .byteenable
-		input  wire        reset,      // reset1.reset
-		input  wire        reset_req   //       .reset_req
+		input  wire        clk,         //   clk1.clk
+		input  wire [9:0]  address,     //     s1.address
+		input  wire        clken,       //       .clken
+		input  wire        chipselect,  //       .chipselect
+		input  wire        write,       //       .write
+		output wire [31:0] readdata,    //       .readdata
+		input  wire [31:0] writedata,   //       .writedata
+		input  wire [3:0]  byteenable,  //       .byteenable
+		input  wire        reset,       // reset1.reset
+		input  wire        reset_req,   //       .reset_req
+		input  wire [9:0]  address2,    //     s2.address
+		input  wire        chipselect2, //       .chipselect
+		input  wire        clken2,      //       .clken
+		input  wire        write2,      //       .write
+		output wire [31:0] readdata2,   //       .readdata
+		input  wire [31:0] writedata2,  //       .writedata
+		input  wire [3:0]  byteenable2, //       .byteenable
+		input  wire        clk2,        //   clk2.clk
+		input  wire        reset2,      // reset2.reset
+		input  wire        reset_req2   //       .reset_req
 	);
 
-	mem_1_altera_avalon_onchip_memory2_1931_fpphlyq mem_1 (
-		.clk        (clk),        //   input,   width = 1,   clk1.clk
-		.address    (address),    //   input,  width = 10,     s1.address
-		.clken      (clken),      //   input,   width = 1,       .clken
-		.chipselect (chipselect), //   input,   width = 1,       .chipselect
-		.write      (write),      //   input,   width = 1,       .write
-		.readdata   (readdata),   //  output,  width = 32,       .readdata
-		.writedata  (writedata),  //   input,  width = 32,       .writedata
-		.byteenable (byteenable), //   input,   width = 4,       .byteenable
-		.reset      (reset),      //   input,   width = 1, reset1.reset
-		.reset_req  (reset_req),  //   input,   width = 1,       .reset_req
-		.freeze     (1'b0)        // (terminated),                     
+	mem_1_altera_avalon_onchip_memory2_1931_kkg5y4a mem_1 (
+		.clk         (clk),         //   input,   width = 1,   clk1.clk
+		.address     (address),     //   input,  width = 10,     s1.address
+		.clken       (clken),       //   input,   width = 1,       .clken
+		.chipselect  (chipselect),  //   input,   width = 1,       .chipselect
+		.write       (write),       //   input,   width = 1,       .write
+		.readdata    (readdata),    //  output,  width = 32,       .readdata
+		.writedata   (writedata),   //   input,  width = 32,       .writedata
+		.byteenable  (byteenable),  //   input,   width = 4,       .byteenable
+		.reset       (reset),       //   input,   width = 1, reset1.reset
+		.reset_req   (reset_req),   //   input,   width = 1,       .reset_req
+		.address2    (address2),    //   input,  width = 10,     s2.address
+		.chipselect2 (chipselect2), //   input,   width = 1,       .chipselect
+		.clken2      (clken2),      //   input,   width = 1,       .clken
+		.write2      (write2),      //   input,   width = 1,       .write
+		.readdata2   (readdata2),   //  output,  width = 32,       .readdata
+		.writedata2  (writedata2),  //   input,  width = 32,       .writedata
+		.byteenable2 (byteenable2), //   input,   width = 4,       .byteenable
+		.clk2        (clk2),        //   input,   width = 1,   clk2.clk
+		.reset2      (reset2),      //   input,   width = 1, reset2.reset
+		.reset_req2  (reset_req2),  //   input,   width = 1,       .reset_req
+		.freeze      (1'b0)         // (terminated),                     
 	);
 
 endmodule

@@ -39,23 +39,7 @@ https://fpgasoftware.intel.com/eula.-->
          type = "int";
       }
    }
-   element mem_1
-   {
-      datum _sortIndex
-      {
-         value = "1";
-         type = "int";
-      }
-   }
-   element mem_1.s1
-   {
-      datum baseAddress
-      {
-         value = "0";
-         type = "String";
-      }
-   }
-   element mem_2
+   element mem_4
    {
       datum _sortIndex
       {
@@ -63,7 +47,31 @@ https://fpgasoftware.intel.com/eula.-->
          type = "int";
       }
    }
-   element mem_2.s1
+   element mem_4.s1
+   {
+      datum baseAddress
+      {
+         value = "0";
+         type = "String";
+      }
+   }
+   element mem_4.s2
+   {
+      datum baseAddress
+      {
+         value = "0";
+         type = "String";
+      }
+   }
+   element mem_5
+   {
+      datum _sortIndex
+      {
+         value = "1";
+         type = "int";
+      }
+   }
+   element mem_5.s1
    {
       datum baseAddress
       {
@@ -77,6 +85,14 @@ https://fpgasoftware.intel.com/eula.-->
       {
          value = "7";
          type = "int";
+      }
+   }
+   element mem_rcv_1.s1
+   {
+      datum baseAddress
+      {
+         value = "0";
+         type = "String";
       }
    }
    element mem_rcv_2
@@ -1371,7 +1387,7 @@ https://fpgasoftware.intel.com/eula.-->
   <parameter name="svInterfaceDefinition" value="" />
  </module>
  <module
-   name="mem_1"
+   name="mem_4"
    kind="altera_generic_component"
    version="1.0"
    enabled="1">
@@ -1509,7 +1525,7 @@ https://fpgasoftware.intel.com/eula.-->
                         </entry>
                         <entry>
                             <key>addressGroup</key>
-                            <value>0</value>
+                            <value>1</value>
                         </entry>
                         <entry>
                             <key>addressSpan</key>
@@ -1709,6 +1725,337 @@ https://fpgasoftware.intel.com/eula.-->
                     </parameterValueMap>
                 </parameters>
             </interface>
+            <interface>
+                <name>s2</name>
+                <type>avalon</type>
+                <isStart>false</isStart>
+                <ports>
+                    <port>
+                        <name>address2</name>
+                        <role>address</role>
+                        <direction>Input</direction>
+                        <width>10</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>chipselect2</name>
+                        <role>chipselect</role>
+                        <direction>Input</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>clken2</name>
+                        <role>clken</role>
+                        <direction>Input</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>write2</name>
+                        <role>write</role>
+                        <direction>Input</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>readdata2</name>
+                        <role>readdata</role>
+                        <direction>Output</direction>
+                        <width>32</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>writedata2</name>
+                        <role>writedata</role>
+                        <direction>Input</direction>
+                        <width>32</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>byteenable2</name>
+                        <role>byteenable</role>
+                        <direction>Input</direction>
+                        <width>4</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                </ports>
+                <assignments>
+                    <assignmentValueMap>
+                        <entry>
+                            <key>embeddedsw.configuration.isFlash</key>
+                            <value>0</value>
+                        </entry>
+                        <entry>
+                            <key>embeddedsw.configuration.isMemoryDevice</key>
+                            <value>1</value>
+                        </entry>
+                        <entry>
+                            <key>embeddedsw.configuration.isNonVolatileStorage</key>
+                            <value>0</value>
+                        </entry>
+                        <entry>
+                            <key>embeddedsw.configuration.isPrintableDevice</key>
+                            <value>0</value>
+                        </entry>
+                    </assignmentValueMap>
+                </assignments>
+                <parameters>
+                    <parameterValueMap>
+                        <entry>
+                            <key>addressAlignment</key>
+                            <value>DYNAMIC</value>
+                        </entry>
+                        <entry>
+                            <key>addressGroup</key>
+                            <value>1</value>
+                        </entry>
+                        <entry>
+                            <key>addressSpan</key>
+                            <value>4096</value>
+                        </entry>
+                        <entry>
+                            <key>addressUnits</key>
+                            <value>WORDS</value>
+                        </entry>
+                        <entry>
+                            <key>alwaysBurstMaxBurst</key>
+                            <value>false</value>
+                        </entry>
+                        <entry>
+                            <key>associatedClock</key>
+                            <value>clk2</value>
+                        </entry>
+                        <entry>
+                            <key>associatedReset</key>
+                            <value>reset2</value>
+                        </entry>
+                        <entry>
+                            <key>bitsPerSymbol</key>
+                            <value>8</value>
+                        </entry>
+                        <entry>
+                            <key>bridgedAddressOffset</key>
+                            <value>0</value>
+                        </entry>
+                        <entry>
+                            <key>bridgesToMaster</key>
+                        </entry>
+                        <entry>
+                            <key>burstOnBurstBoundariesOnly</key>
+                            <value>false</value>
+                        </entry>
+                        <entry>
+                            <key>burstcountUnits</key>
+                            <value>WORDS</value>
+                        </entry>
+                        <entry>
+                            <key>constantBurstBehavior</key>
+                            <value>false</value>
+                        </entry>
+                        <entry>
+                            <key>explicitAddressSpan</key>
+                            <value>4096</value>
+                        </entry>
+                        <entry>
+                            <key>holdTime</key>
+                            <value>0</value>
+                        </entry>
+                        <entry>
+                            <key>interleaveBursts</key>
+                            <value>false</value>
+                        </entry>
+                        <entry>
+                            <key>isBigEndian</key>
+                            <value>false</value>
+                        </entry>
+                        <entry>
+                            <key>isFlash</key>
+                            <value>false</value>
+                        </entry>
+                        <entry>
+                            <key>isMemoryDevice</key>
+                            <value>true</value>
+                        </entry>
+                        <entry>
+                            <key>isNonVolatileStorage</key>
+                            <value>false</value>
+                        </entry>
+                        <entry>
+                            <key>linewrapBursts</key>
+                            <value>false</value>
+                        </entry>
+                        <entry>
+                            <key>maximumPendingReadTransactions</key>
+                            <value>0</value>
+                        </entry>
+                        <entry>
+                            <key>maximumPendingWriteTransactions</key>
+                            <value>0</value>
+                        </entry>
+                        <entry>
+                            <key>minimumReadLatency</key>
+                            <value>1</value>
+                        </entry>
+                        <entry>
+                            <key>minimumResponseLatency</key>
+                            <value>1</value>
+                        </entry>
+                        <entry>
+                            <key>minimumUninterruptedRunLength</key>
+                            <value>1</value>
+                        </entry>
+                        <entry>
+                            <key>prSafe</key>
+                            <value>false</value>
+                        </entry>
+                        <entry>
+                            <key>printableDevice</key>
+                            <value>false</value>
+                        </entry>
+                        <entry>
+                            <key>readLatency</key>
+                            <value>1</value>
+                        </entry>
+                        <entry>
+                            <key>readWaitStates</key>
+                            <value>0</value>
+                        </entry>
+                        <entry>
+                            <key>readWaitTime</key>
+                            <value>0</value>
+                        </entry>
+                        <entry>
+                            <key>registerIncomingSignals</key>
+                            <value>false</value>
+                        </entry>
+                        <entry>
+                            <key>registerOutgoingSignals</key>
+                            <value>false</value>
+                        </entry>
+                        <entry>
+                            <key>setupTime</key>
+                            <value>0</value>
+                        </entry>
+                        <entry>
+                            <key>timingUnits</key>
+                            <value>Cycles</value>
+                        </entry>
+                        <entry>
+                            <key>transparentBridge</key>
+                            <value>false</value>
+                        </entry>
+                        <entry>
+                            <key>waitrequestAllowance</key>
+                            <value>0</value>
+                        </entry>
+                        <entry>
+                            <key>wellBehavedWaitrequest</key>
+                            <value>false</value>
+                        </entry>
+                        <entry>
+                            <key>writeLatency</key>
+                            <value>0</value>
+                        </entry>
+                        <entry>
+                            <key>writeWaitStates</key>
+                            <value>0</value>
+                        </entry>
+                        <entry>
+                            <key>writeWaitTime</key>
+                            <value>0</value>
+                        </entry>
+                    </parameterValueMap>
+                </parameters>
+            </interface>
+            <interface>
+                <name>clk2</name>
+                <type>clock</type>
+                <isStart>false</isStart>
+                <ports>
+                    <port>
+                        <name>clk2</name>
+                        <role>clk</role>
+                        <direction>Input</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                </ports>
+                <assignments>
+                    <assignmentValueMap/>
+                </assignments>
+                <parameters>
+                    <parameterValueMap>
+                        <entry>
+                            <key>clockRate</key>
+                            <value>0</value>
+                        </entry>
+                        <entry>
+                            <key>externallyDriven</key>
+                            <value>false</value>
+                        </entry>
+                        <entry>
+                            <key>ptfSchematicName</key>
+                        </entry>
+                    </parameterValueMap>
+                </parameters>
+            </interface>
+            <interface>
+                <name>reset2</name>
+                <type>reset</type>
+                <isStart>false</isStart>
+                <ports>
+                    <port>
+                        <name>reset2</name>
+                        <role>reset</role>
+                        <direction>Input</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>reset_req2</name>
+                        <role>reset_req</role>
+                        <direction>Input</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                </ports>
+                <assignments>
+                    <assignmentValueMap/>
+                </assignments>
+                <parameters>
+                    <parameterValueMap>
+                        <entry>
+                            <key>associatedClock</key>
+                            <value>clk2</value>
+                        </entry>
+                        <entry>
+                            <key>synchronousEdges</key>
+                            <value>DEASSERT</value>
+                        </entry>
+                    </parameterValueMap>
+                </parameters>
+            </interface>
         </interfaces>
     </boundary>
     <originalModuleInfo>
@@ -1748,6 +2095,27 @@ https://fpgasoftware.intel.com/eula.-->
                         <entry>
                             <key>ADDRESS_MAP</key>
                             <value>&lt;address-map&gt;&lt;slave name='s1' start='0x0' end='0x1000' datawidth='32' /&gt;&lt;/address-map&gt;</value>
+                        </entry>
+                        <entry>
+                            <key>ADDRESS_WIDTH</key>
+                            <value>12</value>
+                        </entry>
+                        <entry>
+                            <key>MAX_SLAVE_DATA_WIDTH</key>
+                            <value>32</value>
+                        </entry>
+                    </suppliedSystemInfos>
+                    <consumedSystemInfos/>
+                </value>
+            </entry>
+            <entry>
+                <key>s2</key>
+                <value>
+                    <connectionPointName>s2</connectionPointName>
+                    <suppliedSystemInfos>
+                        <entry>
+                            <key>ADDRESS_MAP</key>
+                            <value>&lt;address-map&gt;&lt;slave name='s2' start='0x0' end='0x1000' datawidth='32' /&gt;&lt;/address-map&gt;</value>
                         </entry>
                         <entry>
                             <key>ADDRESS_WIDTH</key>
@@ -1897,7 +2265,7 @@ https://fpgasoftware.intel.com/eula.-->
                     </entry>
                     <entry>
                         <key>addressGroup</key>
-                        <value>0</value>
+                        <value>1</value>
                     </entry>
                     <entry>
                         <key>addressSpan</key>
@@ -2097,32 +2465,363 @@ https://fpgasoftware.intel.com/eula.-->
                 </parameterValueMap>
             </parameters>
         </interface>
+        <interface>
+            <name>s2</name>
+            <type>avalon</type>
+            <isStart>false</isStart>
+            <ports>
+                <port>
+                    <name>address2</name>
+                    <role>address</role>
+                    <direction>Input</direction>
+                    <width>10</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>chipselect2</name>
+                    <role>chipselect</role>
+                    <direction>Input</direction>
+                    <width>1</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>clken2</name>
+                    <role>clken</role>
+                    <direction>Input</direction>
+                    <width>1</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>write2</name>
+                    <role>write</role>
+                    <direction>Input</direction>
+                    <width>1</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>readdata2</name>
+                    <role>readdata</role>
+                    <direction>Output</direction>
+                    <width>32</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>writedata2</name>
+                    <role>writedata</role>
+                    <direction>Input</direction>
+                    <width>32</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>byteenable2</name>
+                    <role>byteenable</role>
+                    <direction>Input</direction>
+                    <width>4</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+            </ports>
+            <assignments>
+                <assignmentValueMap>
+                    <entry>
+                        <key>embeddedsw.configuration.isFlash</key>
+                        <value>0</value>
+                    </entry>
+                    <entry>
+                        <key>embeddedsw.configuration.isMemoryDevice</key>
+                        <value>1</value>
+                    </entry>
+                    <entry>
+                        <key>embeddedsw.configuration.isNonVolatileStorage</key>
+                        <value>0</value>
+                    </entry>
+                    <entry>
+                        <key>embeddedsw.configuration.isPrintableDevice</key>
+                        <value>0</value>
+                    </entry>
+                </assignmentValueMap>
+            </assignments>
+            <parameters>
+                <parameterValueMap>
+                    <entry>
+                        <key>addressAlignment</key>
+                        <value>DYNAMIC</value>
+                    </entry>
+                    <entry>
+                        <key>addressGroup</key>
+                        <value>1</value>
+                    </entry>
+                    <entry>
+                        <key>addressSpan</key>
+                        <value>4096</value>
+                    </entry>
+                    <entry>
+                        <key>addressUnits</key>
+                        <value>WORDS</value>
+                    </entry>
+                    <entry>
+                        <key>alwaysBurstMaxBurst</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>associatedClock</key>
+                        <value>clk2</value>
+                    </entry>
+                    <entry>
+                        <key>associatedReset</key>
+                        <value>reset2</value>
+                    </entry>
+                    <entry>
+                        <key>bitsPerSymbol</key>
+                        <value>8</value>
+                    </entry>
+                    <entry>
+                        <key>bridgedAddressOffset</key>
+                        <value>0</value>
+                    </entry>
+                    <entry>
+                        <key>bridgesToMaster</key>
+                    </entry>
+                    <entry>
+                        <key>burstOnBurstBoundariesOnly</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>burstcountUnits</key>
+                        <value>WORDS</value>
+                    </entry>
+                    <entry>
+                        <key>constantBurstBehavior</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>explicitAddressSpan</key>
+                        <value>4096</value>
+                    </entry>
+                    <entry>
+                        <key>holdTime</key>
+                        <value>0</value>
+                    </entry>
+                    <entry>
+                        <key>interleaveBursts</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>isBigEndian</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>isFlash</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>isMemoryDevice</key>
+                        <value>true</value>
+                    </entry>
+                    <entry>
+                        <key>isNonVolatileStorage</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>linewrapBursts</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>maximumPendingReadTransactions</key>
+                        <value>0</value>
+                    </entry>
+                    <entry>
+                        <key>maximumPendingWriteTransactions</key>
+                        <value>0</value>
+                    </entry>
+                    <entry>
+                        <key>minimumReadLatency</key>
+                        <value>1</value>
+                    </entry>
+                    <entry>
+                        <key>minimumResponseLatency</key>
+                        <value>1</value>
+                    </entry>
+                    <entry>
+                        <key>minimumUninterruptedRunLength</key>
+                        <value>1</value>
+                    </entry>
+                    <entry>
+                        <key>prSafe</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>printableDevice</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>readLatency</key>
+                        <value>1</value>
+                    </entry>
+                    <entry>
+                        <key>readWaitStates</key>
+                        <value>0</value>
+                    </entry>
+                    <entry>
+                        <key>readWaitTime</key>
+                        <value>0</value>
+                    </entry>
+                    <entry>
+                        <key>registerIncomingSignals</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>registerOutgoingSignals</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>setupTime</key>
+                        <value>0</value>
+                    </entry>
+                    <entry>
+                        <key>timingUnits</key>
+                        <value>Cycles</value>
+                    </entry>
+                    <entry>
+                        <key>transparentBridge</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>waitrequestAllowance</key>
+                        <value>0</value>
+                    </entry>
+                    <entry>
+                        <key>wellBehavedWaitrequest</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>writeLatency</key>
+                        <value>0</value>
+                    </entry>
+                    <entry>
+                        <key>writeWaitStates</key>
+                        <value>0</value>
+                    </entry>
+                    <entry>
+                        <key>writeWaitTime</key>
+                        <value>0</value>
+                    </entry>
+                </parameterValueMap>
+            </parameters>
+        </interface>
+        <interface>
+            <name>clk2</name>
+            <type>clock</type>
+            <isStart>false</isStart>
+            <ports>
+                <port>
+                    <name>clk2</name>
+                    <role>clk</role>
+                    <direction>Input</direction>
+                    <width>1</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+            </ports>
+            <assignments>
+                <assignmentValueMap/>
+            </assignments>
+            <parameters>
+                <parameterValueMap>
+                    <entry>
+                        <key>clockRate</key>
+                        <value>0</value>
+                    </entry>
+                    <entry>
+                        <key>externallyDriven</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>ptfSchematicName</key>
+                    </entry>
+                </parameterValueMap>
+            </parameters>
+        </interface>
+        <interface>
+            <name>reset2</name>
+            <type>reset</type>
+            <isStart>false</isStart>
+            <ports>
+                <port>
+                    <name>reset2</name>
+                    <role>reset</role>
+                    <direction>Input</direction>
+                    <width>1</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>reset_req2</name>
+                    <role>reset_req</role>
+                    <direction>Input</direction>
+                    <width>1</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+            </ports>
+            <assignments>
+                <assignmentValueMap/>
+            </assignments>
+            <parameters>
+                <parameterValueMap>
+                    <entry>
+                        <key>associatedClock</key>
+                        <value>clk2</value>
+                    </entry>
+                    <entry>
+                        <key>synchronousEdges</key>
+                        <value>DEASSERT</value>
+                    </entry>
+                </parameterValueMap>
+            </parameters>
+        </interface>
     </interfaces>
 </boundaryDefinition>]]></parameter>
   <parameter name="generationInfoDefinition"><![CDATA[<generationInfoDefinition>
-    <hdlLibraryName>mem_1</hdlLibraryName>
+    <hdlLibraryName>mem_4</hdlLibraryName>
     <fileSets>
         <fileSet>
-            <fileSetName>mem_1</fileSetName>
-            <fileSetFixedName>mem_1</fileSetFixedName>
+            <fileSetName>mem_4</fileSetName>
+            <fileSetFixedName>mem_4</fileSetFixedName>
             <fileSetKind>QUARTUS_SYNTH</fileSetKind>
             <fileSetFiles/>
         </fileSet>
         <fileSet>
-            <fileSetName>mem_1</fileSetName>
-            <fileSetFixedName>mem_1</fileSetFixedName>
+            <fileSetName>mem_4</fileSetName>
+            <fileSetFixedName>mem_4</fileSetFixedName>
             <fileSetKind>SIM_VERILOG</fileSetKind>
             <fileSetFiles/>
         </fileSet>
         <fileSet>
-            <fileSetName>mem_1</fileSetName>
-            <fileSetFixedName>mem_1</fileSetFixedName>
+            <fileSetName>mem_4</fileSetName>
+            <fileSetFixedName>mem_4</fileSetFixedName>
             <fileSetKind>SIM_VHDL</fileSetKind>
             <fileSetFiles/>
         </fileSet>
         <fileSet>
-            <fileSetName>mem_1</fileSetName>
-            <fileSetFixedName>mem_1</fileSetFixedName>
+            <fileSetName>mem_4</fileSetName>
+            <fileSetFixedName>mem_4</fileSetFixedName>
             <fileSetKind>CDC</fileSetKind>
             <fileSetFiles/>
         </fileSet>
@@ -2130,7 +2829,7 @@ https://fpgasoftware.intel.com/eula.-->
 </generationInfoDefinition>]]></parameter>
   <parameter name="hdlParameters"><![CDATA[<hdlParameterDescriptorDefinitionList/>]]></parameter>
   <parameter name="hlsFile" value="" />
-  <parameter name="logicalView">ip/system_design/mem_1.ip</parameter>
+  <parameter name="logicalView">ip/system_design/mem_4.ip</parameter>
   <parameter name="moduleAssignmentDefinition"><![CDATA[<assignmentDefinition>
     <assignmentValueMap>
         <entry>
@@ -2147,7 +2846,7 @@ https://fpgasoftware.intel.com/eula.-->
         </entry>
         <entry>
             <key>embeddedsw.CMacro.DUAL_PORT</key>
-            <value>0</value>
+            <value>1</value>
         </entry>
         <entry>
             <key>embeddedsw.CMacro.GUI_RAM_BLOCK_TYPE</key>
@@ -2234,7 +2933,7 @@ https://fpgasoftware.intel.com/eula.-->
   <parameter name="svInterfaceDefinition" value="" />
  </module>
  <module
-   name="mem_2"
+   name="mem_5"
    kind="altera_generic_component"
    version="1.0"
    enabled="1">
@@ -2963,29 +3662,29 @@ https://fpgasoftware.intel.com/eula.-->
     </interfaces>
 </boundaryDefinition>]]></parameter>
   <parameter name="generationInfoDefinition"><![CDATA[<generationInfoDefinition>
-    <hdlLibraryName>mem_0</hdlLibraryName>
+    <hdlLibraryName>mem_5</hdlLibraryName>
     <fileSets>
         <fileSet>
-            <fileSetName>mem_0</fileSetName>
-            <fileSetFixedName>mem_0</fileSetFixedName>
+            <fileSetName>mem_5</fileSetName>
+            <fileSetFixedName>mem_5</fileSetFixedName>
             <fileSetKind>QUARTUS_SYNTH</fileSetKind>
             <fileSetFiles/>
         </fileSet>
         <fileSet>
-            <fileSetName>mem_0</fileSetName>
-            <fileSetFixedName>mem_0</fileSetFixedName>
+            <fileSetName>mem_5</fileSetName>
+            <fileSetFixedName>mem_5</fileSetFixedName>
             <fileSetKind>SIM_VERILOG</fileSetKind>
             <fileSetFiles/>
         </fileSet>
         <fileSet>
-            <fileSetName>mem_0</fileSetName>
-            <fileSetFixedName>mem_0</fileSetFixedName>
+            <fileSetName>mem_5</fileSetName>
+            <fileSetFixedName>mem_5</fileSetFixedName>
             <fileSetKind>SIM_VHDL</fileSetKind>
             <fileSetFiles/>
         </fileSet>
         <fileSet>
-            <fileSetName>mem_0</fileSetName>
-            <fileSetFixedName>mem_0</fileSetFixedName>
+            <fileSetName>mem_5</fileSetName>
+            <fileSetFixedName>mem_5</fileSetFixedName>
             <fileSetKind>CDC</fileSetKind>
             <fileSetFiles/>
         </fileSet>
@@ -2993,7 +3692,7 @@ https://fpgasoftware.intel.com/eula.-->
 </generationInfoDefinition>]]></parameter>
   <parameter name="hdlParameters"><![CDATA[<hdlParameterDescriptorDefinitionList/>]]></parameter>
   <parameter name="hlsFile" value="" />
-  <parameter name="logicalView">ip/system_design/mem_0.ip</parameter>
+  <parameter name="logicalView">ip/system_design/mem_5.ip</parameter>
   <parameter name="moduleAssignmentDefinition"><![CDATA[<assignmentDefinition>
     <assignmentValueMap>
         <entry>
@@ -20702,52 +21401,6 @@ https://fpgasoftware.intel.com/eula.-->
  <connection
    kind="avalon"
    version="21.3"
-   start="send_packet_1.avalon_master"
-   end="mem_1.s1">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0000" />
-  <parameter name="defaultConnection" value="false" />
-  <parameter name="domainAlias" value="" />
-  <parameter name="qsys_mm.burstAdapterImplementation" value="GENERIC_CONVERTER" />
-  <parameter name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />
-  <parameter name="qsys_mm.enableAllPipelines" value="FALSE" />
-  <parameter name="qsys_mm.enableEccProtection" value="FALSE" />
-  <parameter name="qsys_mm.enableInstrumentation" value="FALSE" />
-  <parameter name="qsys_mm.insertDefaultSlave" value="FALSE" />
-  <parameter name="qsys_mm.interconnectResetSource" value="DEFAULT" />
-  <parameter name="qsys_mm.interconnectType" value="STANDARD" />
-  <parameter name="qsys_mm.maxAdditionalLatency" value="1" />
-  <parameter name="qsys_mm.optimizeRdFifoSize" value="FALSE" />
-  <parameter name="qsys_mm.piplineType" value="PIPELINE_STAGE" />
-  <parameter name="qsys_mm.syncResets" value="FALSE" />
-  <parameter name="qsys_mm.widthAdapterImplementation" value="GENERIC_CONVERTER" />
- </connection>
- <connection
-   kind="avalon"
-   version="21.3"
-   start="send_packet_2.avalon_master"
-   end="mem_2.s1">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0000" />
-  <parameter name="defaultConnection" value="false" />
-  <parameter name="domainAlias" value="" />
-  <parameter name="qsys_mm.burstAdapterImplementation" value="GENERIC_CONVERTER" />
-  <parameter name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />
-  <parameter name="qsys_mm.enableAllPipelines" value="FALSE" />
-  <parameter name="qsys_mm.enableEccProtection" value="FALSE" />
-  <parameter name="qsys_mm.enableInstrumentation" value="FALSE" />
-  <parameter name="qsys_mm.insertDefaultSlave" value="FALSE" />
-  <parameter name="qsys_mm.interconnectResetSource" value="DEFAULT" />
-  <parameter name="qsys_mm.interconnectType" value="STANDARD" />
-  <parameter name="qsys_mm.maxAdditionalLatency" value="1" />
-  <parameter name="qsys_mm.optimizeRdFifoSize" value="FALSE" />
-  <parameter name="qsys_mm.piplineType" value="PIPELINE_STAGE" />
-  <parameter name="qsys_mm.syncResets" value="FALSE" />
-  <parameter name="qsys_mm.widthAdapterImplementation" value="GENERIC_CONVERTER" />
- </connection>
- <connection
-   kind="avalon"
-   version="21.3"
    start="receive_packet_1.avalon_master"
    end="mem_rcv_1.s1">
   <parameter name="arbitrationPriority" value="1" />
@@ -20771,8 +21424,54 @@ https://fpgasoftware.intel.com/eula.-->
  <connection
    kind="avalon"
    version="21.3"
+   start="send_packet_2.avalon_master"
+   end="mem_4.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0000" />
+  <parameter name="defaultConnection" value="false" />
+  <parameter name="domainAlias" value="" />
+  <parameter name="qsys_mm.burstAdapterImplementation" value="GENERIC_CONVERTER" />
+  <parameter name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />
+  <parameter name="qsys_mm.enableAllPipelines" value="FALSE" />
+  <parameter name="qsys_mm.enableEccProtection" value="FALSE" />
+  <parameter name="qsys_mm.enableInstrumentation" value="FALSE" />
+  <parameter name="qsys_mm.insertDefaultSlave" value="FALSE" />
+  <parameter name="qsys_mm.interconnectResetSource" value="DEFAULT" />
+  <parameter name="qsys_mm.interconnectType" value="STANDARD" />
+  <parameter name="qsys_mm.maxAdditionalLatency" value="1" />
+  <parameter name="qsys_mm.optimizeRdFifoSize" value="FALSE" />
+  <parameter name="qsys_mm.piplineType" value="PIPELINE_STAGE" />
+  <parameter name="qsys_mm.syncResets" value="FALSE" />
+  <parameter name="qsys_mm.widthAdapterImplementation" value="GENERIC_CONVERTER" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="21.3"
+   start="send_packet_1.avalon_master"
+   end="mem_5.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0000" />
+  <parameter name="defaultConnection" value="false" />
+  <parameter name="domainAlias" value="" />
+  <parameter name="qsys_mm.burstAdapterImplementation" value="GENERIC_CONVERTER" />
+  <parameter name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />
+  <parameter name="qsys_mm.enableAllPipelines" value="FALSE" />
+  <parameter name="qsys_mm.enableEccProtection" value="FALSE" />
+  <parameter name="qsys_mm.enableInstrumentation" value="FALSE" />
+  <parameter name="qsys_mm.insertDefaultSlave" value="FALSE" />
+  <parameter name="qsys_mm.interconnectResetSource" value="DEFAULT" />
+  <parameter name="qsys_mm.interconnectType" value="STANDARD" />
+  <parameter name="qsys_mm.maxAdditionalLatency" value="1" />
+  <parameter name="qsys_mm.optimizeRdFifoSize" value="FALSE" />
+  <parameter name="qsys_mm.piplineType" value="PIPELINE_STAGE" />
+  <parameter name="qsys_mm.syncResets" value="FALSE" />
+  <parameter name="qsys_mm.widthAdapterImplementation" value="GENERIC_CONVERTER" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="21.3"
    start="receive_packet_2.avalon_master"
-   end="mem_2.s1">
+   end="mem_4.s2">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x0000" />
   <parameter name="defaultConnection" value="false" />
@@ -20905,12 +21604,17 @@ https://fpgasoftware.intel.com/eula.-->
    kind="clock"
    version="21.3"
    start="tse.mac_rx_clock_connection_1"
+   end="mem_4.clk2" />
+ <connection
+   kind="clock"
+   version="21.3"
+   start="tse.mac_rx_clock_connection_1"
    end="receive_packet_2.clock" />
  <connection
    kind="clock"
    version="21.3"
    start="tse.mac_tx_clock_connection_0"
-   end="mem_1.clk1" />
+   end="mem_5.clk1" />
  <connection
    kind="clock"
    version="21.3"
@@ -20920,7 +21624,7 @@ https://fpgasoftware.intel.com/eula.-->
    kind="clock"
    version="21.3"
    start="tse.mac_tx_clock_connection_1"
-   end="mem_2.clk1" />
+   end="mem_4.clk1" />
  <connection
    kind="clock"
    version="21.3"
@@ -21001,22 +21705,27 @@ https://fpgasoftware.intel.com/eula.-->
    kind="reset"
    version="21.3"
    start="reset_mod.reset_main"
-   end="mem_1.reset1" />
- <connection
-   kind="reset"
-   version="21.3"
-   start="reset_mod.reset_main"
-   end="mem_2.reset1" />
- <connection
-   kind="reset"
-   version="21.3"
-   start="reset_mod.reset_main"
    end="mem_rcv_2.reset1" />
  <connection
    kind="reset"
    version="21.3"
    start="reset_mod.reset_main"
    end="mem_rcv_1.reset1" />
+ <connection
+   kind="reset"
+   version="21.3"
+   start="reset_mod.reset_main"
+   end="mem_4.reset1" />
+ <connection
+   kind="reset"
+   version="21.3"
+   start="reset_mod.reset_main"
+   end="mem_5.reset1" />
+ <connection
+   kind="reset"
+   version="21.3"
+   start="reset_mod.reset_main"
+   end="mem_4.reset2" />
  <connection
    kind="reset"
    version="21.3"

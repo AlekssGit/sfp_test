@@ -61,31 +61,32 @@ enum int unsigned {IDLE, READ, SAVE} state, state_next;
 assign ram_byteenable = 4'hf;
 assign ram_addr = ram_address_rx[9:0];
 
-assign ram_chipselect = state == SAVE ? 1'b1 : 1'b0;
+assign ram_chipselect = ram_write; //state == SAVE ? 1'b1 : 1'b0;
+// assign ram_write = state == SAVE ? 1'b1 : 1'b0;
 
 
 always @(posedge clk_original, posedge rst) 
 begin
     if(rst)
     begin
-        size_received   = 12'd0;
-        need_count_save = 12'd0;        
+        size_received   <= 12'd0;
+        need_count_save <= 12'd0;        
     end
     else
     begin
         if(state == SAVE)
         begin
-            size_received = count_received;
-            need_count_save = (size_received % 12'd4 == 12'd0) ? (size_received / 12'd4) : (size_received / 12'd4) + 12'd1;
+            size_received <= count_received;
+            need_count_save <= (size_received % 12'd4 == 12'd0) ? (size_received / 12'd4) : (size_received / 12'd4) + 12'd1;
         end
         else if(state == IDLE)
         begin
-            need_count_save = 12'd0;
+            need_count_save <= 12'd0;
         end
         else
         begin
-            size_received = size_received;
-            need_count_save = need_count_save;
+            size_received <= size_received;
+            need_count_save <= need_count_save;
         end        
     end
 end
@@ -94,19 +95,19 @@ always @(posedge clk_original, posedge rst)
 begin
     if(rst)
     begin
-        count_received = 12'd0;
+        count_received <= 12'd0;
     end
     else
     begin
         if(ff_rx_dval)
         begin
-            data_received [count_received] = ff_rx_data; 
+            data_received [count_received] <= ff_rx_data; 
 
-            count_received = count_received + 12'd1;    
+            count_received <= count_received + 12'd1;    
         end
         else if(state == IDLE)
         begin
-            count_received = 12'd0;
+            count_received <= 12'd0;
         end
     end        
 end
@@ -117,8 +118,8 @@ always @(posedge clk_original, posedge rst)
 begin
     if(rst)
     begin
-        count_saved     = 12'd0;
-        ram_address_rx  = 25'd0;
+        count_saved     <= 12'd0;
+        ram_address_rx  <= 25'd0;
     end
     else
     begin
@@ -127,20 +128,24 @@ begin
             if(count_saved == 12'd0)
             begin
                 // if(ram_ready)
+                // if (~ram_waitrequest)
                 // begin
-                    need_write_data = 1'b1;
-                    count_saved++;
+                    need_write_data <= 1'b1;
+                    count_saved <= count_saved + 12'd1;
                 // end
             end
-            else    if(count_saved == 12'd10)
+            else    if(count_saved == 12'd30)
             begin
                 // if(ram_ready)
+                // if (~ram_waitrequest)
                 // begin
-                    need_write_data = 1'b1;
-                    ram_address_rx  = `START_RAM_SAVE_ADDR;
+                    need_write_data <= 1'b1;
+                    ram_address_rx  <= `START_RAM_SAVE_ADDR;
                     // ram_data_write  = {save_stamp_96b, 32'd0, save_stamp_64b, 32'd0, 20'd0, size_received};    //  {243'd0,   size_received};
                     ram_writedata = {20'd0, size_received}; //for onchip memory
-                    count_saved++;
+                    count_saved <= count_saved + 12'd1;
+
+                    ram_write <= 1'b1;
                 // end
             end
             else if(count_saved % 12'd30 == 0)
@@ -158,29 +163,41 @@ begin
                 //     ram_address_rx++;
                 // end
 
-                if(ram_address_rx < `START_RAM_SAVE_ADDR + need_count_save + 1)
-                begin
-                // for onchip memory
-                ram_writedata[31  -:  8]  = data_received[0 + (ram_address_rx - `START_RAM_SAVE_ADDR) * 9'd4]  ;
-                ram_writedata[23  -:  8]  = data_received[1 + (ram_address_rx - `START_RAM_SAVE_ADDR) * 9'd4]  ;
-                ram_writedata[15  -:  8]  = data_received[2 + (ram_address_rx - `START_RAM_SAVE_ADDR) * 9'd4]  ;
-                ram_writedata[7   -:  8]  = data_received[3 + (ram_address_rx - `START_RAM_SAVE_ADDR) * 9'd4]  ;
+                // if (~ram_waitrequest)
+                // begin
+                    if(ram_address_rx < `START_RAM_SAVE_ADDR + need_count_save + 1)
+                    begin
+                        // for onchip memory
+                        ram_writedata[31  -:  8]  <= data_received[0 + (ram_address_rx - `START_RAM_SAVE_ADDR) * 9'd4]  ;
+                        ram_writedata[23  -:  8]  <= data_received[1 + (ram_address_rx - `START_RAM_SAVE_ADDR) * 9'd4]  ;
+                        ram_writedata[15  -:  8]  <= data_received[2 + (ram_address_rx - `START_RAM_SAVE_ADDR) * 9'd4]  ;
+                        ram_writedata[7   -:  8]  <= data_received[3 + (ram_address_rx - `START_RAM_SAVE_ADDR) * 9'd4]  ;
 
-                ram_address_rx++;
-                end
-                
-                count_saved++;
+                        ram_address_rx <= ram_address_rx + 25'd1;
+
+                        ram_write <= 1'b1;
+                    end
+                    
+                    count_saved <= count_saved + 12'd1;                   
+                // end
             end
             else
             begin
-                count_saved++;
+                count_saved <= count_saved + 12'd1;
+
+            if(~ram_waitrequest && count_saved % 12'd30 > 12'd5)
+                begin
+                    ram_write <= 1'b0;
+                end
             end 
         end
         else
         begin
-            need_write_data = 1'b0;
-            count_saved     = 12'd0;
-            ram_address_rx  = 25'd0;
+            need_write_data <= 1'b0;
+            count_saved     <= 12'd0;
+            ram_address_rx  <= 25'd0;
+
+            ram_write <= 1'b0;
         end
     end        
 end
@@ -189,18 +206,18 @@ always @(posedge clk_original, posedge rst)
 begin
     if(rst)
     begin
-        data_saved = 12'd0;
+        data_saved <= 12'd0;
     end
     else
     begin
         if(state == SAVE & count_saved > 12'd2 & (count_saved/12'd30 >= (need_count_save + 12'd2)))
         // if(state == SAVE & count_saved > 12'd2 & (count_saved >= (need_count_save + 12'd2))) //for onchip mem
         begin
-            data_saved = 1'b1;
+            data_saved <= 1'b1;
         end
         else
         begin
-            data_saved = 1'b0;
+            data_saved <= 1'b0;
         end
     end        
 end

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="system_design" kind="system_design" version="1.0" fabric="QSYS">
  <!-- Format version 21.3 170 (Future versions may contain additional information.) -->
- <!-- 2022.09.16.18:07:22 -->
+ <!-- 2022.09.20.18:22:19 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
@@ -2041,13 +2041,13 @@ parameters are a RESULT of the module parameters. -->
   </interface>
  </module>
  <module
-   name="mem_1"
+   name="mem_4"
    kind="altera_avalon_onchip_memory2"
    version="19.3.1"
-   entity="mem_1"
-   library="mem_1"
-   path="mem_1"
-   hpath="mem_1"
+   entity="mem_4"
+   library="mem_4"
+   path="mem_4"
+   hpath="mem_4"
    className="altera_generic_component">
   <!-- Describes a single module. Module parameters are
 the requested settings for a module instance. -->
@@ -2065,7 +2065,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.DUAL_PORT</name>
-   <value>0</value>
+   <value>1</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.GUI_RAM_BLOCK_TYPE</name>
@@ -2283,7 +2283,7 @@ the requested settings for a module instance. -->
                         </entry>
                         <entry>
                             <key>addressGroup</key>
-                            <value>0</value>
+                            <value>1</value>
                         </entry>
                         <entry>
                             <key>addressSpan</key>
@@ -2483,6 +2483,337 @@ the requested settings for a module instance. -->
                     </parameterValueMap>
                 </parameters>
             </interface>
+            <interface>
+                <name>s2</name>
+                <type>avalon</type>
+                <isStart>false</isStart>
+                <ports>
+                    <port>
+                        <name>address2</name>
+                        <role>address</role>
+                        <direction>Input</direction>
+                        <width>10</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>chipselect2</name>
+                        <role>chipselect</role>
+                        <direction>Input</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>clken2</name>
+                        <role>clken</role>
+                        <direction>Input</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>write2</name>
+                        <role>write</role>
+                        <direction>Input</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>readdata2</name>
+                        <role>readdata</role>
+                        <direction>Output</direction>
+                        <width>32</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>writedata2</name>
+                        <role>writedata</role>
+                        <direction>Input</direction>
+                        <width>32</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>byteenable2</name>
+                        <role>byteenable</role>
+                        <direction>Input</direction>
+                        <width>4</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                </ports>
+                <assignments>
+                    <assignmentValueMap>
+                        <entry>
+                            <key>embeddedsw.configuration.isFlash</key>
+                            <value>0</value>
+                        </entry>
+                        <entry>
+                            <key>embeddedsw.configuration.isMemoryDevice</key>
+                            <value>1</value>
+                        </entry>
+                        <entry>
+                            <key>embeddedsw.configuration.isNonVolatileStorage</key>
+                            <value>0</value>
+                        </entry>
+                        <entry>
+                            <key>embeddedsw.configuration.isPrintableDevice</key>
+                            <value>0</value>
+                        </entry>
+                    </assignmentValueMap>
+                </assignments>
+                <parameters>
+                    <parameterValueMap>
+                        <entry>
+                            <key>addressAlignment</key>
+                            <value>DYNAMIC</value>
+                        </entry>
+                        <entry>
+                            <key>addressGroup</key>
+                            <value>1</value>
+                        </entry>
+                        <entry>
+                            <key>addressSpan</key>
+                            <value>4096</value>
+                        </entry>
+                        <entry>
+                            <key>addressUnits</key>
+                            <value>WORDS</value>
+                        </entry>
+                        <entry>
+                            <key>alwaysBurstMaxBurst</key>
+                            <value>false</value>
+                        </entry>
+                        <entry>
+                            <key>associatedClock</key>
+                            <value>clk2</value>
+                        </entry>
+                        <entry>
+                            <key>associatedReset</key>
+                            <value>reset2</value>
+                        </entry>
+                        <entry>
+                            <key>bitsPerSymbol</key>
+                            <value>8</value>
+                        </entry>
+                        <entry>
+                            <key>bridgedAddressOffset</key>
+                            <value>0</value>
+                        </entry>
+                        <entry>
+                            <key>bridgesToMaster</key>
+                        </entry>
+                        <entry>
+                            <key>burstOnBurstBoundariesOnly</key>
+                            <value>false</value>
+                        </entry>
+                        <entry>
+                            <key>burstcountUnits</key>
+                            <value>WORDS</value>
+                        </entry>
+                        <entry>
+                            <key>constantBurstBehavior</key>
+                            <value>false</value>
+                        </entry>
+                        <entry>
+                            <key>explicitAddressSpan</key>
+                            <value>4096</value>
+                        </entry>
+                        <entry>
+                            <key>holdTime</key>
+                            <value>0</value>
+                        </entry>
+                        <entry>
+                            <key>interleaveBursts</key>
+                            <value>false</value>
+                        </entry>
+                        <entry>
+                            <key>isBigEndian</key>
+                            <value>false</value>
+                        </entry>
+                        <entry>
+                            <key>isFlash</key>
+                            <value>false</value>
+                        </entry>
+                        <entry>
+                            <key>isMemoryDevice</key>
+                            <value>true</value>
+                        </entry>
+                        <entry>
+                            <key>isNonVolatileStorage</key>
+                            <value>false</value>
+                        </entry>
+                        <entry>
+                            <key>linewrapBursts</key>
+                            <value>false</value>
+                        </entry>
+                        <entry>
+                            <key>maximumPendingReadTransactions</key>
+                            <value>0</value>
+                        </entry>
+                        <entry>
+                            <key>maximumPendingWriteTransactions</key>
+                            <value>0</value>
+                        </entry>
+                        <entry>
+                            <key>minimumReadLatency</key>
+                            <value>1</value>
+                        </entry>
+                        <entry>
+                            <key>minimumResponseLatency</key>
+                            <value>1</value>
+                        </entry>
+                        <entry>
+                            <key>minimumUninterruptedRunLength</key>
+                            <value>1</value>
+                        </entry>
+                        <entry>
+                            <key>prSafe</key>
+                            <value>false</value>
+                        </entry>
+                        <entry>
+                            <key>printableDevice</key>
+                            <value>false</value>
+                        </entry>
+                        <entry>
+                            <key>readLatency</key>
+                            <value>1</value>
+                        </entry>
+                        <entry>
+                            <key>readWaitStates</key>
+                            <value>0</value>
+                        </entry>
+                        <entry>
+                            <key>readWaitTime</key>
+                            <value>0</value>
+                        </entry>
+                        <entry>
+                            <key>registerIncomingSignals</key>
+                            <value>false</value>
+                        </entry>
+                        <entry>
+                            <key>registerOutgoingSignals</key>
+                            <value>false</value>
+                        </entry>
+                        <entry>
+                            <key>setupTime</key>
+                            <value>0</value>
+                        </entry>
+                        <entry>
+                            <key>timingUnits</key>
+                            <value>Cycles</value>
+                        </entry>
+                        <entry>
+                            <key>transparentBridge</key>
+                            <value>false</value>
+                        </entry>
+                        <entry>
+                            <key>waitrequestAllowance</key>
+                            <value>0</value>
+                        </entry>
+                        <entry>
+                            <key>wellBehavedWaitrequest</key>
+                            <value>false</value>
+                        </entry>
+                        <entry>
+                            <key>writeLatency</key>
+                            <value>0</value>
+                        </entry>
+                        <entry>
+                            <key>writeWaitStates</key>
+                            <value>0</value>
+                        </entry>
+                        <entry>
+                            <key>writeWaitTime</key>
+                            <value>0</value>
+                        </entry>
+                    </parameterValueMap>
+                </parameters>
+            </interface>
+            <interface>
+                <name>clk2</name>
+                <type>clock</type>
+                <isStart>false</isStart>
+                <ports>
+                    <port>
+                        <name>clk2</name>
+                        <role>clk</role>
+                        <direction>Input</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                </ports>
+                <assignments>
+                    <assignmentValueMap/>
+                </assignments>
+                <parameters>
+                    <parameterValueMap>
+                        <entry>
+                            <key>clockRate</key>
+                            <value>0</value>
+                        </entry>
+                        <entry>
+                            <key>externallyDriven</key>
+                            <value>false</value>
+                        </entry>
+                        <entry>
+                            <key>ptfSchematicName</key>
+                        </entry>
+                    </parameterValueMap>
+                </parameters>
+            </interface>
+            <interface>
+                <name>reset2</name>
+                <type>reset</type>
+                <isStart>false</isStart>
+                <ports>
+                    <port>
+                        <name>reset2</name>
+                        <role>reset</role>
+                        <direction>Input</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>reset_req2</name>
+                        <role>reset_req</role>
+                        <direction>Input</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                </ports>
+                <assignments>
+                    <assignmentValueMap/>
+                </assignments>
+                <parameters>
+                    <parameterValueMap>
+                        <entry>
+                            <key>associatedClock</key>
+                            <value>clk2</value>
+                        </entry>
+                        <entry>
+                            <key>synchronousEdges</key>
+                            <value>DEASSERT</value>
+                        </entry>
+                    </parameterValueMap>
+                </parameters>
+            </interface>
         </interfaces>
     </boundary>
     <originalModuleInfo>
@@ -2535,6 +2866,27 @@ the requested settings for a module instance. -->
                     <consumedSystemInfos/>
                 </value>
             </entry>
+            <entry>
+                <key>s2</key>
+                <value>
+                    <connectionPointName>s2</connectionPointName>
+                    <suppliedSystemInfos>
+                        <entry>
+                            <key>ADDRESS_MAP</key>
+                            <value>&lt;address-map&gt;&lt;slave name='s2' start='0x0' end='0x1000' datawidth='32' /&gt;&lt;/address-map&gt;</value>
+                        </entry>
+                        <entry>
+                            <key>ADDRESS_WIDTH</key>
+                            <value>12</value>
+                        </entry>
+                        <entry>
+                            <key>MAX_SLAVE_DATA_WIDTH</key>
+                            <value>32</value>
+                        </entry>
+                    </suppliedSystemInfos>
+                    <consumedSystemInfos/>
+                </value>
+            </entry>
         </connPtSystemInfos>
     </systemInfos>
 </componentDefinition>]]></value>
@@ -2546,29 +2898,29 @@ the requested settings for a module instance. -->
   <parameter name="generationInfoDefinition">
    <type>com.altera.qsys.blackboxmodule.definitions.GenerationInfoDefinition</type>
    <value><![CDATA[<generationInfoDefinition>
-    <hdlLibraryName>mem_1</hdlLibraryName>
+    <hdlLibraryName>mem_4</hdlLibraryName>
     <fileSets>
         <fileSet>
-            <fileSetName>mem_1</fileSetName>
-            <fileSetFixedName>mem_1</fileSetFixedName>
+            <fileSetName>mem_4</fileSetName>
+            <fileSetFixedName>mem_4</fileSetFixedName>
             <fileSetKind>QUARTUS_SYNTH</fileSetKind>
             <fileSetFiles/>
         </fileSet>
         <fileSet>
-            <fileSetName>mem_1</fileSetName>
-            <fileSetFixedName>mem_1</fileSetFixedName>
+            <fileSetName>mem_4</fileSetName>
+            <fileSetFixedName>mem_4</fileSetFixedName>
             <fileSetKind>SIM_VERILOG</fileSetKind>
             <fileSetFiles/>
         </fileSet>
         <fileSet>
-            <fileSetName>mem_1</fileSetName>
-            <fileSetFixedName>mem_1</fileSetFixedName>
+            <fileSetName>mem_4</fileSetName>
+            <fileSetFixedName>mem_4</fileSetFixedName>
             <fileSetKind>SIM_VHDL</fileSetKind>
             <fileSetFiles/>
         </fileSet>
         <fileSet>
-            <fileSetName>mem_1</fileSetName>
-            <fileSetFixedName>mem_1</fileSetFixedName>
+            <fileSetName>mem_4</fileSetName>
+            <fileSetFixedName>mem_4</fileSetFixedName>
             <fileSetKind>CDC</fileSetKind>
             <fileSetFiles/>
         </fileSet>
@@ -2589,7 +2941,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="logicalView">
    <type>java.lang.String</type>
-   <value>ip/system_design/mem_1.ip</value>
+   <value>ip/system_design/mem_4.ip</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -2730,7 +3082,7 @@ the requested settings for a module instance. -->
                     </entry>
                     <entry>
                         <key>addressGroup</key>
-                        <value>0</value>
+                        <value>1</value>
                     </entry>
                     <entry>
                         <key>addressSpan</key>
@@ -2930,6 +3282,337 @@ the requested settings for a module instance. -->
                 </parameterValueMap>
             </parameters>
         </interface>
+        <interface>
+            <name>s2</name>
+            <type>avalon</type>
+            <isStart>false</isStart>
+            <ports>
+                <port>
+                    <name>address2</name>
+                    <role>address</role>
+                    <direction>Input</direction>
+                    <width>10</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>chipselect2</name>
+                    <role>chipselect</role>
+                    <direction>Input</direction>
+                    <width>1</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>clken2</name>
+                    <role>clken</role>
+                    <direction>Input</direction>
+                    <width>1</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>write2</name>
+                    <role>write</role>
+                    <direction>Input</direction>
+                    <width>1</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>readdata2</name>
+                    <role>readdata</role>
+                    <direction>Output</direction>
+                    <width>32</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>writedata2</name>
+                    <role>writedata</role>
+                    <direction>Input</direction>
+                    <width>32</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>byteenable2</name>
+                    <role>byteenable</role>
+                    <direction>Input</direction>
+                    <width>4</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+            </ports>
+            <assignments>
+                <assignmentValueMap>
+                    <entry>
+                        <key>embeddedsw.configuration.isFlash</key>
+                        <value>0</value>
+                    </entry>
+                    <entry>
+                        <key>embeddedsw.configuration.isMemoryDevice</key>
+                        <value>1</value>
+                    </entry>
+                    <entry>
+                        <key>embeddedsw.configuration.isNonVolatileStorage</key>
+                        <value>0</value>
+                    </entry>
+                    <entry>
+                        <key>embeddedsw.configuration.isPrintableDevice</key>
+                        <value>0</value>
+                    </entry>
+                </assignmentValueMap>
+            </assignments>
+            <parameters>
+                <parameterValueMap>
+                    <entry>
+                        <key>addressAlignment</key>
+                        <value>DYNAMIC</value>
+                    </entry>
+                    <entry>
+                        <key>addressGroup</key>
+                        <value>1</value>
+                    </entry>
+                    <entry>
+                        <key>addressSpan</key>
+                        <value>4096</value>
+                    </entry>
+                    <entry>
+                        <key>addressUnits</key>
+                        <value>WORDS</value>
+                    </entry>
+                    <entry>
+                        <key>alwaysBurstMaxBurst</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>associatedClock</key>
+                        <value>clk2</value>
+                    </entry>
+                    <entry>
+                        <key>associatedReset</key>
+                        <value>reset2</value>
+                    </entry>
+                    <entry>
+                        <key>bitsPerSymbol</key>
+                        <value>8</value>
+                    </entry>
+                    <entry>
+                        <key>bridgedAddressOffset</key>
+                        <value>0</value>
+                    </entry>
+                    <entry>
+                        <key>bridgesToMaster</key>
+                    </entry>
+                    <entry>
+                        <key>burstOnBurstBoundariesOnly</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>burstcountUnits</key>
+                        <value>WORDS</value>
+                    </entry>
+                    <entry>
+                        <key>constantBurstBehavior</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>explicitAddressSpan</key>
+                        <value>4096</value>
+                    </entry>
+                    <entry>
+                        <key>holdTime</key>
+                        <value>0</value>
+                    </entry>
+                    <entry>
+                        <key>interleaveBursts</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>isBigEndian</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>isFlash</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>isMemoryDevice</key>
+                        <value>true</value>
+                    </entry>
+                    <entry>
+                        <key>isNonVolatileStorage</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>linewrapBursts</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>maximumPendingReadTransactions</key>
+                        <value>0</value>
+                    </entry>
+                    <entry>
+                        <key>maximumPendingWriteTransactions</key>
+                        <value>0</value>
+                    </entry>
+                    <entry>
+                        <key>minimumReadLatency</key>
+                        <value>1</value>
+                    </entry>
+                    <entry>
+                        <key>minimumResponseLatency</key>
+                        <value>1</value>
+                    </entry>
+                    <entry>
+                        <key>minimumUninterruptedRunLength</key>
+                        <value>1</value>
+                    </entry>
+                    <entry>
+                        <key>prSafe</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>printableDevice</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>readLatency</key>
+                        <value>1</value>
+                    </entry>
+                    <entry>
+                        <key>readWaitStates</key>
+                        <value>0</value>
+                    </entry>
+                    <entry>
+                        <key>readWaitTime</key>
+                        <value>0</value>
+                    </entry>
+                    <entry>
+                        <key>registerIncomingSignals</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>registerOutgoingSignals</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>setupTime</key>
+                        <value>0</value>
+                    </entry>
+                    <entry>
+                        <key>timingUnits</key>
+                        <value>Cycles</value>
+                    </entry>
+                    <entry>
+                        <key>transparentBridge</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>waitrequestAllowance</key>
+                        <value>0</value>
+                    </entry>
+                    <entry>
+                        <key>wellBehavedWaitrequest</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>writeLatency</key>
+                        <value>0</value>
+                    </entry>
+                    <entry>
+                        <key>writeWaitStates</key>
+                        <value>0</value>
+                    </entry>
+                    <entry>
+                        <key>writeWaitTime</key>
+                        <value>0</value>
+                    </entry>
+                </parameterValueMap>
+            </parameters>
+        </interface>
+        <interface>
+            <name>clk2</name>
+            <type>clock</type>
+            <isStart>false</isStart>
+            <ports>
+                <port>
+                    <name>clk2</name>
+                    <role>clk</role>
+                    <direction>Input</direction>
+                    <width>1</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+            </ports>
+            <assignments>
+                <assignmentValueMap/>
+            </assignments>
+            <parameters>
+                <parameterValueMap>
+                    <entry>
+                        <key>clockRate</key>
+                        <value>0</value>
+                    </entry>
+                    <entry>
+                        <key>externallyDriven</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>ptfSchematicName</key>
+                    </entry>
+                </parameterValueMap>
+            </parameters>
+        </interface>
+        <interface>
+            <name>reset2</name>
+            <type>reset</type>
+            <isStart>false</isStart>
+            <ports>
+                <port>
+                    <name>reset2</name>
+                    <role>reset</role>
+                    <direction>Input</direction>
+                    <width>1</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>reset_req2</name>
+                    <role>reset_req</role>
+                    <direction>Input</direction>
+                    <width>1</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+            </ports>
+            <assignments>
+                <assignmentValueMap/>
+            </assignments>
+            <parameters>
+                <parameterValueMap>
+                    <entry>
+                        <key>associatedClock</key>
+                        <value>clk2</value>
+                    </entry>
+                    <entry>
+                        <key>synchronousEdges</key>
+                        <value>DEASSERT</value>
+                    </entry>
+                </parameterValueMap>
+            </parameters>
+        </interface>
     </interfaces>
 </boundaryDefinition>]]></value>
    <derived>false</derived>
@@ -2955,7 +3638,7 @@ the requested settings for a module instance. -->
         </entry>
         <entry>
             <key>embeddedsw.CMacro.DUAL_PORT</key>
-            <value>0</value>
+            <value>1</value>
         </entry>
         <entry>
             <key>embeddedsw.CMacro.GUI_RAM_BLOCK_TYPE</key>
@@ -3062,7 +3745,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="autoInitializationFileName">
    <type>java.lang.String</type>
-   <value>system_design_mem_1</value>
+   <value>system_design_mem_4</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -3188,7 +3871,7 @@ parameters are a RESULT of the module parameters. -->
    </parameter>
    <parameter name="addressGroup">
     <type>int</type>
-    <value>0</value>
+    <value>1</value>
     <derived>false</derived>
     <enabled>true</enabled>
     <visible>true</visible>
@@ -3618,15 +4301,520 @@ parameters are a RESULT of the module parameters. -->
     <role>reset_req</role>
    </port>
   </interface>
+  <interface name="s2" kind="avalon_slave" version="21.3">
+   <!-- The connection points exposed by a module instance for the
+particular module parameters. Connection points and their
+parameters are a RESULT of the module parameters. -->
+   <assignment>
+    <name>embeddedsw.configuration.isFlash</name>
+    <value>0</value>
+   </assignment>
+   <assignment>
+    <name>embeddedsw.configuration.isMemoryDevice</name>
+    <value>1</value>
+   </assignment>
+   <assignment>
+    <name>embeddedsw.configuration.isNonVolatileStorage</name>
+    <value>0</value>
+   </assignment>
+   <assignment>
+    <name>embeddedsw.configuration.isPrintableDevice</name>
+    <value>0</value>
+   </assignment>
+   <parameter name="addressAlignment">
+    <type>com.altera.sopcmodel.avalon.AvalonConnectionPoint$AddressAlignment</type>
+    <value>DYNAMIC</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>false</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="addressGroup">
+    <type>int</type>
+    <value>1</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="addressSpan">
+    <type>java.math.BigInteger</type>
+    <value>4096</value>
+    <derived>true</derived>
+    <enabled>true</enabled>
+    <visible>false</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="addressUnits">
+    <type>com.altera.sopcmodel.avalon.EAddrBurstUnits</type>
+    <value>WORDS</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="alwaysBurstMaxBurst">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>false</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="associatedClock">
+    <type>java.lang.String</type>
+    <value>clk2</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="associatedReset">
+    <type>java.lang.String</type>
+    <value>reset2</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="bitsPerSymbol">
+    <type>int</type>
+    <value>8</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="bridgedAddressOffset">
+    <type>java.math.BigInteger</type>
+    <value>0</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="bridgesToMaster">
+    <type>com.altera.entityinterfaces.IConnectionPoint</type>
+    <value></value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="burstOnBurstBoundariesOnly">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="burstcountUnits">
+    <type>com.altera.sopcmodel.avalon.EAddrBurstUnits</type>
+    <value>WORDS</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="constantBurstBehavior">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>false</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="explicitAddressSpan">
+    <type>java.math.BigInteger</type>
+    <value>4096</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="holdTime">
+    <type>int</type>
+    <value>0</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="interleaveBursts">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>false</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="isBigEndian">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>false</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="isFlash">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>false</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="isMemoryDevice">
+    <type>boolean</type>
+    <value>true</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>false</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="isNonVolatileStorage">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>false</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="linewrapBursts">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="maximumPendingReadTransactions">
+    <type>int</type>
+    <value>0</value>
+    <derived>false</derived>
+    <enabled>false</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="maximumPendingWriteTransactions">
+    <type>int</type>
+    <value>0</value>
+    <derived>false</derived>
+    <enabled>false</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="minimumReadLatency">
+    <type>int</type>
+    <value>1</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>false</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="minimumResponseLatency">
+    <type>int</type>
+    <value>1</value>
+    <derived>false</derived>
+    <enabled>false</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="minimumUninterruptedRunLength">
+    <type>int</type>
+    <value>1</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>false</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="prSafe">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>false</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="printableDevice">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>false</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="readLatency">
+    <type>int</type>
+    <value>1</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="readWaitStates">
+    <type>int</type>
+    <value>0</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>false</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="readWaitTime">
+    <type>int</type>
+    <value>0</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="registerIncomingSignals">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>false</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="registerOutgoingSignals">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>false</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="setupTime">
+    <type>int</type>
+    <value>0</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="timingUnits">
+    <type>com.altera.sopcmodel.avalon.TimingUnits</type>
+    <value>Cycles</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="transparentBridge">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="waitrequestAllowance">
+    <type>int</type>
+    <value>0</value>
+    <derived>false</derived>
+    <enabled>false</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="wellBehavedWaitrequest">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>false</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="writeLatency">
+    <type>int</type>
+    <value>0</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>false</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="writeWaitStates">
+    <type>int</type>
+    <value>0</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>false</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="writeWaitTime">
+    <type>int</type>
+    <value>0</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="deviceFamily">
+    <type>java.lang.String</type>
+    <value>UNKNOWN</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="generateLegacySim">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <type>avalon</type>
+   <isStart>false</isStart>
+   <port>
+    <name>address2</name>
+    <direction>Input</direction>
+    <width>10</width>
+    <role>address</role>
+   </port>
+   <port>
+    <name>chipselect2</name>
+    <direction>Input</direction>
+    <width>1</width>
+    <role>chipselect</role>
+   </port>
+   <port>
+    <name>clken2</name>
+    <direction>Input</direction>
+    <width>1</width>
+    <role>clken</role>
+   </port>
+   <port>
+    <name>write2</name>
+    <direction>Input</direction>
+    <width>1</width>
+    <role>write</role>
+   </port>
+   <port>
+    <name>readdata2</name>
+    <direction>Output</direction>
+    <width>32</width>
+    <role>readdata</role>
+   </port>
+   <port>
+    <name>writedata2</name>
+    <direction>Input</direction>
+    <width>32</width>
+    <role>writedata</role>
+   </port>
+   <port>
+    <name>byteenable2</name>
+    <direction>Input</direction>
+    <width>4</width>
+    <role>byteenable</role>
+   </port>
+  </interface>
+  <interface name="clk2" kind="clock_sink" version="21.3">
+   <!-- The connection points exposed by a module instance for the
+particular module parameters. Connection points and their
+parameters are a RESULT of the module parameters. -->
+   <parameter name="externallyDriven">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>false</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="ptfSchematicName">
+    <type>java.lang.String</type>
+    <value></value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>false</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="deviceFamily">
+    <type>java.lang.String</type>
+    <value>UNKNOWN</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="generateLegacySim">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <type>clock</type>
+   <isStart>false</isStart>
+   <port>
+    <name>clk2</name>
+    <direction>Input</direction>
+    <width>1</width>
+    <role>clk</role>
+   </port>
+  </interface>
+  <interface name="reset2" kind="reset_sink" version="21.3">
+   <!-- The connection points exposed by a module instance for the
+particular module parameters. Connection points and their
+parameters are a RESULT of the module parameters. -->
+   <parameter name="associatedClock">
+    <type>java.lang.String</type>
+    <value>clk2</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="synchronousEdges">
+    <type>com.altera.sopcmodel.reset.Reset$Edges</type>
+    <value>DEASSERT</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="deviceFamily">
+    <type>java.lang.String</type>
+    <value>UNKNOWN</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="generateLegacySim">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <type>reset</type>
+   <isStart>false</isStart>
+   <port>
+    <name>reset2</name>
+    <direction>Input</direction>
+    <width>1</width>
+    <role>reset</role>
+   </port>
+   <port>
+    <name>reset_req2</name>
+    <direction>Input</direction>
+    <width>1</width>
+    <role>reset_req</role>
+   </port>
+  </interface>
  </module>
  <module
-   name="mem_2"
+   name="mem_5"
    kind="altera_avalon_onchip_memory2"
    version="19.3.1"
-   entity="mem_0"
-   library="mem_0"
-   path="mem_2"
-   hpath="mem_2"
+   entity="mem_5"
+   library="mem_5"
+   path="mem_5"
+   hpath="mem_5"
    className="altera_generic_component">
   <!-- Describes a single module. Module parameters are
 the requested settings for a module instance. -->
@@ -4125,29 +5313,29 @@ the requested settings for a module instance. -->
   <parameter name="generationInfoDefinition">
    <type>com.altera.qsys.blackboxmodule.definitions.GenerationInfoDefinition</type>
    <value><![CDATA[<generationInfoDefinition>
-    <hdlLibraryName>mem_0</hdlLibraryName>
+    <hdlLibraryName>mem_5</hdlLibraryName>
     <fileSets>
         <fileSet>
-            <fileSetName>mem_0</fileSetName>
-            <fileSetFixedName>mem_0</fileSetFixedName>
+            <fileSetName>mem_5</fileSetName>
+            <fileSetFixedName>mem_5</fileSetFixedName>
             <fileSetKind>QUARTUS_SYNTH</fileSetKind>
             <fileSetFiles/>
         </fileSet>
         <fileSet>
-            <fileSetName>mem_0</fileSetName>
-            <fileSetFixedName>mem_0</fileSetFixedName>
+            <fileSetName>mem_5</fileSetName>
+            <fileSetFixedName>mem_5</fileSetFixedName>
             <fileSetKind>SIM_VERILOG</fileSetKind>
             <fileSetFiles/>
         </fileSet>
         <fileSet>
-            <fileSetName>mem_0</fileSetName>
-            <fileSetFixedName>mem_0</fileSetFixedName>
+            <fileSetName>mem_5</fileSetName>
+            <fileSetFixedName>mem_5</fileSetFixedName>
             <fileSetKind>SIM_VHDL</fileSetKind>
             <fileSetFiles/>
         </fileSet>
         <fileSet>
-            <fileSetName>mem_0</fileSetName>
-            <fileSetFixedName>mem_0</fileSetFixedName>
+            <fileSetName>mem_5</fileSetName>
+            <fileSetFixedName>mem_5</fileSetFixedName>
             <fileSetKind>CDC</fileSetKind>
             <fileSetFiles/>
         </fileSet>
@@ -4168,7 +5356,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="logicalView">
    <type>java.lang.String</type>
-   <value>ip/system_design/mem_0.ip</value>
+   <value>ip/system_design/mem_5.ip</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -4641,7 +5829,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="autoInitializationFileName">
    <type>java.lang.String</type>
-   <value>system_design_mem_2</value>
+   <value>system_design_mem_5</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -13390,9 +14578,9 @@ parameters are a RESULT of the module parameters. -->
    </port>
    <memoryBlock>
     <isBridge>false</isBridge>
-    <moduleName>mem_2</moduleName>
-    <slaveName>s1</slaveName>
-    <name>mem_2.s1</name>
+    <moduleName>mem_4</moduleName>
+    <slaveName>s2</slaveName>
+    <name>mem_4.s2</name>
     <baseAddress>0</baseAddress>
     <span>4096</span>
    </memoryBlock>
@@ -16250,9 +17438,9 @@ parameters are a RESULT of the module parameters. -->
    </port>
    <memoryBlock>
     <isBridge>false</isBridge>
-    <moduleName>mem_1</moduleName>
+    <moduleName>mem_5</moduleName>
     <slaveName>s1</slaveName>
-    <name>mem_1.s1</name>
+    <name>mem_5.s1</name>
     <baseAddress>0</baseAddress>
     <span>4096</span>
    </memoryBlock>
@@ -17964,9 +19152,9 @@ parameters are a RESULT of the module parameters. -->
    </port>
    <memoryBlock>
     <isBridge>false</isBridge>
-    <moduleName>mem_2</moduleName>
+    <moduleName>mem_4</moduleName>
     <slaveName>s1</slaveName>
-    <name>mem_2.s1</name>
+    <name>mem_4.s1</name>
     <baseAddress>0</baseAddress>
     <span>4096</span>
    </memoryBlock>
@@ -29299,9 +30487,9 @@ parameters are a RESULT of the module parameters. -->
    </port>
    <clockDomainMember>
     <isBridge>false</isBridge>
-    <moduleName>mem_1</moduleName>
+    <moduleName>mem_5</moduleName>
     <slaveName>clk1</slaveName>
-    <name>mem_1.clk1</name>
+    <name>mem_5.clk1</name>
    </clockDomainMember>
    <clockDomainMember>
     <isBridge>false</isBridge>
@@ -30014,6 +31202,12 @@ parameters are a RESULT of the module parameters. -->
    </clockDomainMember>
    <clockDomainMember>
     <isBridge>false</isBridge>
+    <moduleName>mem_4</moduleName>
+    <slaveName>clk2</slaveName>
+    <name>mem_4.clk2</name>
+   </clockDomainMember>
+   <clockDomainMember>
+    <isBridge>false</isBridge>
     <moduleName>receive_packet_2</moduleName>
     <slaveName>clock</slaveName>
     <name>receive_packet_2.clock</name>
@@ -30089,9 +31283,9 @@ parameters are a RESULT of the module parameters. -->
    </port>
    <clockDomainMember>
     <isBridge>false</isBridge>
-    <moduleName>mem_2</moduleName>
+    <moduleName>mem_4</moduleName>
     <slaveName>clk1</slaveName>
-    <name>mem_2.clk1</name>
+    <name>mem_4.clk1</name>
    </clockDomainMember>
    <clockDomainMember>
     <isBridge>false</isBridge>
@@ -36567,386 +37761,6 @@ parameters are a RESULT of the module parameters. -->
   <endConnectionPoint>control_port</endConnectionPoint>
  </connection>
  <connection
-   name="send_packet_1.avalon_master/mem_1.s1"
-   kind="avalon"
-   version="21.3"
-   start="send_packet_1.avalon_master"
-   end="mem_1.s1">
-  <parameter name="arbitrationPriority">
-   <type>int</type>
-   <value>1</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="baseAddress">
-   <type>java.math.BigInteger</type>
-   <value>0x0000</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="defaultConnection">
-   <type>boolean</type>
-   <value>false</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="domainAlias">
-   <type>java.lang.String</type>
-   <value></value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="slaveDataWidthSysInfo">
-   <type>java.lang.Integer</type>
-   <value>-1</value>
-   <derived>true</derived>
-   <enabled>true</enabled>
-   <visible>false</visible>
-   <valid>true</valid>
-   <sysinfo_type>MAX_SLAVE_DATA_WIDTH</sysinfo_type>
-  </parameter>
-  <parameter name="addressMapSysInfo">
-   <type>com.altera.entityinterfaces.moduleext.AddressMap</type>
-   <value></value>
-   <derived>true</derived>
-   <enabled>true</enabled>
-   <visible>false</visible>
-   <valid>true</valid>
-   <sysinfo_type>ADDRESS_MAP</sysinfo_type>
-  </parameter>
-  <parameter name="addressWidthSysInfo">
-   <type>com.altera.entityinterfaces.moduleext.AddressWidthType</type>
-   <value></value>
-   <derived>true</derived>
-   <enabled>true</enabled>
-   <visible>false</visible>
-   <valid>true</valid>
-   <sysinfo_type>ADDRESS_WIDTH</sysinfo_type>
-  </parameter>
-  <parameter name="qsys_mm.piplineType">
-   <type>java.lang.String</type>
-   <value>PIPELINE_STAGE</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="qsys_mm.enableAllPipelines">
-   <type>java.lang.String</type>
-   <value>FALSE</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="qsys_mm.maxAdditionalLatency">
-   <type>java.lang.String</type>
-   <value>1</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="qsys_mm.clockCrossingAdapter">
-   <type>java.lang.String</type>
-   <value>HANDSHAKE</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="qsys_mm.insertDefaultSlave">
-   <type>java.lang.String</type>
-   <value>FALSE</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="qsys_mm.enableInstrumentation">
-   <type>java.lang.String</type>
-   <value>FALSE</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="qsys_mm.interconnectResetSource">
-   <type>java.lang.String</type>
-   <value>DEFAULT</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="qsys_mm.burstAdapterImplementation">
-   <type>java.lang.String</type>
-   <value>GENERIC_CONVERTER</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="qsys_mm.widthAdapterImplementation">
-   <type>java.lang.String</type>
-   <value>GENERIC_CONVERTER</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="qsys_mm.enableEccProtection">
-   <type>java.lang.String</type>
-   <value>FALSE</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="qsys_mm.interconnectType">
-   <type>java.lang.String</type>
-   <value>STANDARD</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="qsys_mm.syncResets">
-   <type>java.lang.String</type>
-   <value>FALSE</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="qsys_mm.optimizeRdFifoSize">
-   <type>java.lang.String</type>
-   <value>FALSE</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="deviceFamily">
-   <type>java.lang.String</type>
-   <value>UNKNOWN</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="generateLegacySim">
-   <type>boolean</type>
-   <value>false</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <startModule>send_packet_1</startModule>
-  <startConnectionPoint>avalon_master</startConnectionPoint>
-  <endModule>mem_1</endModule>
-  <endConnectionPoint>s1</endConnectionPoint>
- </connection>
- <connection
-   name="send_packet_2.avalon_master/mem_2.s1"
-   kind="avalon"
-   version="21.3"
-   start="send_packet_2.avalon_master"
-   end="mem_2.s1">
-  <parameter name="arbitrationPriority">
-   <type>int</type>
-   <value>1</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="baseAddress">
-   <type>java.math.BigInteger</type>
-   <value>0x0000</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="defaultConnection">
-   <type>boolean</type>
-   <value>false</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="domainAlias">
-   <type>java.lang.String</type>
-   <value></value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="slaveDataWidthSysInfo">
-   <type>java.lang.Integer</type>
-   <value>-1</value>
-   <derived>true</derived>
-   <enabled>true</enabled>
-   <visible>false</visible>
-   <valid>true</valid>
-   <sysinfo_type>MAX_SLAVE_DATA_WIDTH</sysinfo_type>
-  </parameter>
-  <parameter name="addressMapSysInfo">
-   <type>com.altera.entityinterfaces.moduleext.AddressMap</type>
-   <value></value>
-   <derived>true</derived>
-   <enabled>true</enabled>
-   <visible>false</visible>
-   <valid>true</valid>
-   <sysinfo_type>ADDRESS_MAP</sysinfo_type>
-  </parameter>
-  <parameter name="addressWidthSysInfo">
-   <type>com.altera.entityinterfaces.moduleext.AddressWidthType</type>
-   <value></value>
-   <derived>true</derived>
-   <enabled>true</enabled>
-   <visible>false</visible>
-   <valid>true</valid>
-   <sysinfo_type>ADDRESS_WIDTH</sysinfo_type>
-  </parameter>
-  <parameter name="qsys_mm.piplineType">
-   <type>java.lang.String</type>
-   <value>PIPELINE_STAGE</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="qsys_mm.enableAllPipelines">
-   <type>java.lang.String</type>
-   <value>FALSE</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="qsys_mm.maxAdditionalLatency">
-   <type>java.lang.String</type>
-   <value>1</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="qsys_mm.clockCrossingAdapter">
-   <type>java.lang.String</type>
-   <value>HANDSHAKE</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="qsys_mm.insertDefaultSlave">
-   <type>java.lang.String</type>
-   <value>FALSE</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="qsys_mm.enableInstrumentation">
-   <type>java.lang.String</type>
-   <value>FALSE</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="qsys_mm.interconnectResetSource">
-   <type>java.lang.String</type>
-   <value>DEFAULT</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="qsys_mm.burstAdapterImplementation">
-   <type>java.lang.String</type>
-   <value>GENERIC_CONVERTER</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="qsys_mm.widthAdapterImplementation">
-   <type>java.lang.String</type>
-   <value>GENERIC_CONVERTER</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="qsys_mm.enableEccProtection">
-   <type>java.lang.String</type>
-   <value>FALSE</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="qsys_mm.interconnectType">
-   <type>java.lang.String</type>
-   <value>STANDARD</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="qsys_mm.syncResets">
-   <type>java.lang.String</type>
-   <value>FALSE</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="qsys_mm.optimizeRdFifoSize">
-   <type>java.lang.String</type>
-   <value>FALSE</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="deviceFamily">
-   <type>java.lang.String</type>
-   <value>UNKNOWN</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="generateLegacySim">
-   <type>boolean</type>
-   <value>false</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <startModule>send_packet_2</startModule>
-  <startConnectionPoint>avalon_master</startConnectionPoint>
-  <endModule>mem_2</endModule>
-  <endConnectionPoint>s1</endConnectionPoint>
- </connection>
- <connection
    name="receive_packet_1.avalon_master/mem_rcv_1.s1"
    kind="avalon"
    version="21.3"
@@ -37137,11 +37951,391 @@ parameters are a RESULT of the module parameters. -->
   <endConnectionPoint>s1</endConnectionPoint>
  </connection>
  <connection
-   name="receive_packet_2.avalon_master/mem_2.s1"
+   name="send_packet_2.avalon_master/mem_4.s1"
+   kind="avalon"
+   version="21.3"
+   start="send_packet_2.avalon_master"
+   end="mem_4.s1">
+  <parameter name="arbitrationPriority">
+   <type>int</type>
+   <value>1</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="baseAddress">
+   <type>java.math.BigInteger</type>
+   <value>0x0000</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="defaultConnection">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="domainAlias">
+   <type>java.lang.String</type>
+   <value></value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="slaveDataWidthSysInfo">
+   <type>java.lang.Integer</type>
+   <value>-1</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+   <sysinfo_type>MAX_SLAVE_DATA_WIDTH</sysinfo_type>
+  </parameter>
+  <parameter name="addressMapSysInfo">
+   <type>com.altera.entityinterfaces.moduleext.AddressMap</type>
+   <value></value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+   <sysinfo_type>ADDRESS_MAP</sysinfo_type>
+  </parameter>
+  <parameter name="addressWidthSysInfo">
+   <type>com.altera.entityinterfaces.moduleext.AddressWidthType</type>
+   <value></value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+   <sysinfo_type>ADDRESS_WIDTH</sysinfo_type>
+  </parameter>
+  <parameter name="qsys_mm.piplineType">
+   <type>java.lang.String</type>
+   <value>PIPELINE_STAGE</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="qsys_mm.enableAllPipelines">
+   <type>java.lang.String</type>
+   <value>FALSE</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="qsys_mm.maxAdditionalLatency">
+   <type>java.lang.String</type>
+   <value>1</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="qsys_mm.clockCrossingAdapter">
+   <type>java.lang.String</type>
+   <value>HANDSHAKE</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="qsys_mm.insertDefaultSlave">
+   <type>java.lang.String</type>
+   <value>FALSE</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="qsys_mm.enableInstrumentation">
+   <type>java.lang.String</type>
+   <value>FALSE</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="qsys_mm.interconnectResetSource">
+   <type>java.lang.String</type>
+   <value>DEFAULT</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="qsys_mm.burstAdapterImplementation">
+   <type>java.lang.String</type>
+   <value>GENERIC_CONVERTER</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="qsys_mm.widthAdapterImplementation">
+   <type>java.lang.String</type>
+   <value>GENERIC_CONVERTER</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="qsys_mm.enableEccProtection">
+   <type>java.lang.String</type>
+   <value>FALSE</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="qsys_mm.interconnectType">
+   <type>java.lang.String</type>
+   <value>STANDARD</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="qsys_mm.syncResets">
+   <type>java.lang.String</type>
+   <value>FALSE</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="qsys_mm.optimizeRdFifoSize">
+   <type>java.lang.String</type>
+   <value>FALSE</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="deviceFamily">
+   <type>java.lang.String</type>
+   <value>UNKNOWN</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="generateLegacySim">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <startModule>send_packet_2</startModule>
+  <startConnectionPoint>avalon_master</startConnectionPoint>
+  <endModule>mem_4</endModule>
+  <endConnectionPoint>s1</endConnectionPoint>
+ </connection>
+ <connection
+   name="send_packet_1.avalon_master/mem_5.s1"
+   kind="avalon"
+   version="21.3"
+   start="send_packet_1.avalon_master"
+   end="mem_5.s1">
+  <parameter name="arbitrationPriority">
+   <type>int</type>
+   <value>1</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="baseAddress">
+   <type>java.math.BigInteger</type>
+   <value>0x0000</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="defaultConnection">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="domainAlias">
+   <type>java.lang.String</type>
+   <value></value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="slaveDataWidthSysInfo">
+   <type>java.lang.Integer</type>
+   <value>-1</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+   <sysinfo_type>MAX_SLAVE_DATA_WIDTH</sysinfo_type>
+  </parameter>
+  <parameter name="addressMapSysInfo">
+   <type>com.altera.entityinterfaces.moduleext.AddressMap</type>
+   <value></value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+   <sysinfo_type>ADDRESS_MAP</sysinfo_type>
+  </parameter>
+  <parameter name="addressWidthSysInfo">
+   <type>com.altera.entityinterfaces.moduleext.AddressWidthType</type>
+   <value></value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+   <sysinfo_type>ADDRESS_WIDTH</sysinfo_type>
+  </parameter>
+  <parameter name="qsys_mm.piplineType">
+   <type>java.lang.String</type>
+   <value>PIPELINE_STAGE</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="qsys_mm.enableAllPipelines">
+   <type>java.lang.String</type>
+   <value>FALSE</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="qsys_mm.maxAdditionalLatency">
+   <type>java.lang.String</type>
+   <value>1</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="qsys_mm.clockCrossingAdapter">
+   <type>java.lang.String</type>
+   <value>HANDSHAKE</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="qsys_mm.insertDefaultSlave">
+   <type>java.lang.String</type>
+   <value>FALSE</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="qsys_mm.enableInstrumentation">
+   <type>java.lang.String</type>
+   <value>FALSE</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="qsys_mm.interconnectResetSource">
+   <type>java.lang.String</type>
+   <value>DEFAULT</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="qsys_mm.burstAdapterImplementation">
+   <type>java.lang.String</type>
+   <value>GENERIC_CONVERTER</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="qsys_mm.widthAdapterImplementation">
+   <type>java.lang.String</type>
+   <value>GENERIC_CONVERTER</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="qsys_mm.enableEccProtection">
+   <type>java.lang.String</type>
+   <value>FALSE</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="qsys_mm.interconnectType">
+   <type>java.lang.String</type>
+   <value>STANDARD</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="qsys_mm.syncResets">
+   <type>java.lang.String</type>
+   <value>FALSE</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="qsys_mm.optimizeRdFifoSize">
+   <type>java.lang.String</type>
+   <value>FALSE</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="deviceFamily">
+   <type>java.lang.String</type>
+   <value>UNKNOWN</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="generateLegacySim">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <startModule>send_packet_1</startModule>
+  <startConnectionPoint>avalon_master</startConnectionPoint>
+  <endModule>mem_5</endModule>
+  <endConnectionPoint>s1</endConnectionPoint>
+ </connection>
+ <connection
+   name="receive_packet_2.avalon_master/mem_4.s2"
    kind="avalon"
    version="21.3"
    start="receive_packet_2.avalon_master"
-   end="mem_2.s1">
+   end="mem_4.s2">
   <parameter name="arbitrationPriority">
    <type>int</type>
    <value>1</value>
@@ -37323,8 +38517,8 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <startModule>receive_packet_2</startModule>
   <startConnectionPoint>avalon_master</startConnectionPoint>
-  <endModule>mem_2</endModule>
-  <endConnectionPoint>s1</endConnectionPoint>
+  <endModule>mem_4</endModule>
+  <endConnectionPoint>s2</endConnectionPoint>
  </connection>
  <connection
    name="send_packet_1.avalon_streaming_source/tse.transmit_0"
@@ -38171,6 +39365,69 @@ parameters are a RESULT of the module parameters. -->
   <endConnectionPoint>clk1</endConnectionPoint>
  </connection>
  <connection
+   name="tse.mac_rx_clock_connection_1/mem_4.clk2"
+   kind="clock"
+   version="21.3"
+   start="tse.mac_rx_clock_connection_1"
+   end="mem_4.clk2">
+  <parameter name="clockRateSysInfo">
+   <type>java.lang.Long</type>
+   <value></value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+   <sysinfo_type>CLOCK_RATE</sysinfo_type>
+  </parameter>
+  <parameter name="clockDomainSysInfo">
+   <type>java.lang.Integer</type>
+   <value>-1</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+   <sysinfo_type>CLOCK_DOMAIN</sysinfo_type>
+  </parameter>
+  <parameter name="resetDomainSysInfo">
+   <type>java.lang.Integer</type>
+   <value>-1</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+   <sysinfo_type>RESET_DOMAIN</sysinfo_type>
+  </parameter>
+  <parameter name="clockResetSysInfo">
+   <type>java.lang.String</type>
+   <value></value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+   <sysinfo_type>CLOCK_RESET_INFO</sysinfo_type>
+  </parameter>
+  <parameter name="deviceFamily">
+   <type>java.lang.String</type>
+   <value>UNKNOWN</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="generateLegacySim">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <startModule>tse</startModule>
+  <startConnectionPoint>mac_rx_clock_connection_1</startConnectionPoint>
+  <endModule>mem_4</endModule>
+  <endConnectionPoint>clk2</endConnectionPoint>
+ </connection>
+ <connection
    name="tse.mac_rx_clock_connection_1/receive_packet_2.clock"
    kind="clock"
    version="21.3"
@@ -38234,11 +39491,11 @@ parameters are a RESULT of the module parameters. -->
   <endConnectionPoint>clock</endConnectionPoint>
  </connection>
  <connection
-   name="tse.mac_tx_clock_connection_0/mem_1.clk1"
+   name="tse.mac_tx_clock_connection_0/mem_5.clk1"
    kind="clock"
    version="21.3"
    start="tse.mac_tx_clock_connection_0"
-   end="mem_1.clk1">
+   end="mem_5.clk1">
   <parameter name="clockRateSysInfo">
    <type>java.lang.Long</type>
    <value></value>
@@ -38293,7 +39550,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <startModule>tse</startModule>
   <startConnectionPoint>mac_tx_clock_connection_0</startConnectionPoint>
-  <endModule>mem_1</endModule>
+  <endModule>mem_5</endModule>
   <endConnectionPoint>clk1</endConnectionPoint>
  </connection>
  <connection
@@ -38360,11 +39617,11 @@ parameters are a RESULT of the module parameters. -->
   <endConnectionPoint>clock</endConnectionPoint>
  </connection>
  <connection
-   name="tse.mac_tx_clock_connection_1/mem_2.clk1"
+   name="tse.mac_tx_clock_connection_1/mem_4.clk1"
    kind="clock"
    version="21.3"
    start="tse.mac_tx_clock_connection_1"
-   end="mem_2.clk1">
+   end="mem_4.clk1">
   <parameter name="clockRateSysInfo">
    <type>java.lang.Long</type>
    <value></value>
@@ -38419,7 +39676,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <startModule>tse</startModule>
   <startConnectionPoint>mac_tx_clock_connection_1</startConnectionPoint>
-  <endModule>mem_2</endModule>
+  <endModule>mem_4</endModule>
   <endConnectionPoint>clk1</endConnectionPoint>
  </connection>
  <connection
@@ -39296,114 +40553,6 @@ parameters are a RESULT of the module parameters. -->
   <endConnectionPoint>reset</endConnectionPoint>
  </connection>
  <connection
-   name="reset_mod.reset_main/mem_1.reset1"
-   kind="reset"
-   version="21.3"
-   start="reset_mod.reset_main"
-   end="mem_1.reset1">
-  <parameter name="resetDomainSysInfo">
-   <type>java.lang.Integer</type>
-   <value>-1</value>
-   <derived>true</derived>
-   <enabled>true</enabled>
-   <visible>false</visible>
-   <valid>true</valid>
-   <sysinfo_type>RESET_DOMAIN</sysinfo_type>
-  </parameter>
-  <parameter name="clockDomainSysInfo">
-   <type>java.lang.Integer</type>
-   <value>-1</value>
-   <derived>true</derived>
-   <enabled>true</enabled>
-   <visible>false</visible>
-   <valid>true</valid>
-   <sysinfo_type>CLOCK_DOMAIN</sysinfo_type>
-  </parameter>
-  <parameter name="clockResetSysInfo">
-   <type>java.lang.String</type>
-   <value></value>
-   <derived>true</derived>
-   <enabled>true</enabled>
-   <visible>false</visible>
-   <valid>true</valid>
-   <sysinfo_type>CLOCK_RESET_INFO</sysinfo_type>
-  </parameter>
-  <parameter name="deviceFamily">
-   <type>java.lang.String</type>
-   <value>UNKNOWN</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="generateLegacySim">
-   <type>boolean</type>
-   <value>false</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <startModule>reset_mod</startModule>
-  <startConnectionPoint>reset_main</startConnectionPoint>
-  <endModule>mem_1</endModule>
-  <endConnectionPoint>reset1</endConnectionPoint>
- </connection>
- <connection
-   name="reset_mod.reset_main/mem_2.reset1"
-   kind="reset"
-   version="21.3"
-   start="reset_mod.reset_main"
-   end="mem_2.reset1">
-  <parameter name="resetDomainSysInfo">
-   <type>java.lang.Integer</type>
-   <value>-1</value>
-   <derived>true</derived>
-   <enabled>true</enabled>
-   <visible>false</visible>
-   <valid>true</valid>
-   <sysinfo_type>RESET_DOMAIN</sysinfo_type>
-  </parameter>
-  <parameter name="clockDomainSysInfo">
-   <type>java.lang.Integer</type>
-   <value>-1</value>
-   <derived>true</derived>
-   <enabled>true</enabled>
-   <visible>false</visible>
-   <valid>true</valid>
-   <sysinfo_type>CLOCK_DOMAIN</sysinfo_type>
-  </parameter>
-  <parameter name="clockResetSysInfo">
-   <type>java.lang.String</type>
-   <value></value>
-   <derived>true</derived>
-   <enabled>true</enabled>
-   <visible>false</visible>
-   <valid>true</valid>
-   <sysinfo_type>CLOCK_RESET_INFO</sysinfo_type>
-  </parameter>
-  <parameter name="deviceFamily">
-   <type>java.lang.String</type>
-   <value>UNKNOWN</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="generateLegacySim">
-   <type>boolean</type>
-   <value>false</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <startModule>reset_mod</startModule>
-  <startConnectionPoint>reset_main</startConnectionPoint>
-  <endModule>mem_2</endModule>
-  <endConnectionPoint>reset1</endConnectionPoint>
- </connection>
- <connection
    name="reset_mod.reset_main/mem_rcv_2.reset1"
    kind="reset"
    version="21.3"
@@ -39512,6 +40661,168 @@ parameters are a RESULT of the module parameters. -->
   <endConnectionPoint>reset1</endConnectionPoint>
  </connection>
  <connection
+   name="reset_mod.reset_main/mem_4.reset1"
+   kind="reset"
+   version="21.3"
+   start="reset_mod.reset_main"
+   end="mem_4.reset1">
+  <parameter name="resetDomainSysInfo">
+   <type>java.lang.Integer</type>
+   <value>-1</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+   <sysinfo_type>RESET_DOMAIN</sysinfo_type>
+  </parameter>
+  <parameter name="clockDomainSysInfo">
+   <type>java.lang.Integer</type>
+   <value>-1</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+   <sysinfo_type>CLOCK_DOMAIN</sysinfo_type>
+  </parameter>
+  <parameter name="clockResetSysInfo">
+   <type>java.lang.String</type>
+   <value></value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+   <sysinfo_type>CLOCK_RESET_INFO</sysinfo_type>
+  </parameter>
+  <parameter name="deviceFamily">
+   <type>java.lang.String</type>
+   <value>UNKNOWN</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="generateLegacySim">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <startModule>reset_mod</startModule>
+  <startConnectionPoint>reset_main</startConnectionPoint>
+  <endModule>mem_4</endModule>
+  <endConnectionPoint>reset1</endConnectionPoint>
+ </connection>
+ <connection
+   name="reset_mod.reset_main/mem_5.reset1"
+   kind="reset"
+   version="21.3"
+   start="reset_mod.reset_main"
+   end="mem_5.reset1">
+  <parameter name="resetDomainSysInfo">
+   <type>java.lang.Integer</type>
+   <value>-1</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+   <sysinfo_type>RESET_DOMAIN</sysinfo_type>
+  </parameter>
+  <parameter name="clockDomainSysInfo">
+   <type>java.lang.Integer</type>
+   <value>-1</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+   <sysinfo_type>CLOCK_DOMAIN</sysinfo_type>
+  </parameter>
+  <parameter name="clockResetSysInfo">
+   <type>java.lang.String</type>
+   <value></value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+   <sysinfo_type>CLOCK_RESET_INFO</sysinfo_type>
+  </parameter>
+  <parameter name="deviceFamily">
+   <type>java.lang.String</type>
+   <value>UNKNOWN</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="generateLegacySim">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <startModule>reset_mod</startModule>
+  <startConnectionPoint>reset_main</startConnectionPoint>
+  <endModule>mem_5</endModule>
+  <endConnectionPoint>reset1</endConnectionPoint>
+ </connection>
+ <connection
+   name="reset_mod.reset_main/mem_4.reset2"
+   kind="reset"
+   version="21.3"
+   start="reset_mod.reset_main"
+   end="mem_4.reset2">
+  <parameter name="resetDomainSysInfo">
+   <type>java.lang.Integer</type>
+   <value>-1</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+   <sysinfo_type>RESET_DOMAIN</sysinfo_type>
+  </parameter>
+  <parameter name="clockDomainSysInfo">
+   <type>java.lang.Integer</type>
+   <value>-1</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+   <sysinfo_type>CLOCK_DOMAIN</sysinfo_type>
+  </parameter>
+  <parameter name="clockResetSysInfo">
+   <type>java.lang.String</type>
+   <value></value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+   <sysinfo_type>CLOCK_RESET_INFO</sysinfo_type>
+  </parameter>
+  <parameter name="deviceFamily">
+   <type>java.lang.String</type>
+   <value>UNKNOWN</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="generateLegacySim">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <startModule>reset_mod</startModule>
+  <startConnectionPoint>reset_main</startConnectionPoint>
+  <endModule>mem_4</endModule>
+  <endConnectionPoint>reset2</endConnectionPoint>
+ </connection>
+ <connection
    name="reset_mod.reset_main/tse.reset_connection"
    kind="reset"
    version="21.3"
@@ -39574,7 +40885,7 @@ parameters are a RESULT of the module parameters. -->
   <version>1.0</version>
  </plugin>
  <plugin>
-  <instanceCount>22</instanceCount>
+  <instanceCount>23</instanceCount>
   <name>clock_sink</name>
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
@@ -39590,7 +40901,7 @@ parameters are a RESULT of the module parameters. -->
   <version>21.3</version>
  </plugin>
  <plugin>
-  <instanceCount>13</instanceCount>
+  <instanceCount>14</instanceCount>
   <name>reset_sink</name>
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
@@ -39614,7 +40925,7 @@ parameters are a RESULT of the module parameters. -->
   <version>21.3</version>
  </plugin>
  <plugin>
-  <instanceCount>5</instanceCount>
+  <instanceCount>6</instanceCount>
   <name>avalon_slave</name>
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
@@ -39678,7 +40989,7 @@ parameters are a RESULT of the module parameters. -->
   <version>21.3</version>
  </plugin>
  <plugin>
-  <instanceCount>14</instanceCount>
+  <instanceCount>15</instanceCount>
   <name>clock</name>
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IConnection</subtype>
@@ -39694,7 +41005,7 @@ parameters are a RESULT of the module parameters. -->
   <version>21.3</version>
  </plugin>
  <plugin>
-  <instanceCount>12</instanceCount>
+  <instanceCount>13</instanceCount>
   <name>reset</name>
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IConnection</subtype>

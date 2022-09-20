@@ -12,10 +12,10 @@ the sole purpose of programming logic devices manufactured by
 Intel and sold by Intel or its authorized distributors.  Please
 refer to the applicable agreement for further details, at
 https://fpgasoftware.intel.com/eula.-->
-<ipxact:component xmlns:altera="http://www.altera.com/XMLSchema/IPXact2014/extensions" xmlns:ipxact="http://www.accellera.org/XMLSchema/IPXACT/1685-2014">
+<ipxact:component xmlns:ipxact="http://www.accellera.org/XMLSchema/IPXACT/1685-2014" xmlns:altera="http://www.altera.com/XMLSchema/IPXact2014/extensions">
   <ipxact:vendor>Intel Corporation</ipxact:vendor>
-  <ipxact:library>mem_1</ipxact:library>
-  <ipxact:name>mem_1</ipxact:name>
+  <ipxact:library>mem_0</ipxact:library>
+  <ipxact:name>mem_0</ipxact:name>
   <ipxact:version>19.3.1</ipxact:version>
   <ipxact:busInterfaces>
     <ipxact:busInterface>
@@ -567,7 +567,7 @@ https://fpgasoftware.intel.com/eula.-->
   <ipxact:vendorExtensions>
     <altera:entity_info>
       <ipxact:vendor>Intel Corporation</ipxact:vendor>
-      <ipxact:library>mem_1</ipxact:library>
+      <ipxact:library>mem_0</ipxact:library>
       <ipxact:name>altera_avalon_onchip_memory2</ipxact:name>
       <ipxact:version>19.3.1</ipxact:version>
     </altera:entity_info>
@@ -611,7 +611,7 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:parameter parameterId="initializationFileName" type="string">
           <ipxact:name>initializationFileName</ipxact:name>
           <ipxact:displayName>User created initialization file</ipxact:displayName>
-          <ipxact:value>D:/Documents/Projects/Learning/SFP_test/mem_init/mem_init_1.mif</ipxact:value>
+          <ipxact:value>D:/Documents/Projects/Learning/SFP_test/mem_init/mem_init_2.mif</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="enPRInitMode" type="bit">
           <ipxact:name>enPRInitMode</ipxact:name>
@@ -691,7 +691,7 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:parameter parameterId="autoInitializationFileName" type="string">
           <ipxact:name>autoInitializationFileName</ipxact:name>
           <ipxact:displayName>autoInitializationFileName</ipxact:displayName>
-          <ipxact:value>mem_1_mem_1</ipxact:value>
+          <ipxact:value>mem_0_mem_0</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="deviceFamily" type="string">
           <ipxact:name>deviceFamily</ipxact:name>
@@ -729,7 +729,7 @@ https://fpgasoftware.intel.com/eula.-->
         </ipxact:parameter>
         <ipxact:parameter parameterId="embeddedsw.CMacro.INIT_CONTENTS_FILE" type="string">
           <ipxact:name>embeddedsw.CMacro.INIT_CONTENTS_FILE</ipxact:name>
-          <ipxact:value>mem_init_1</ipxact:value>
+          <ipxact:value>mem_init_2</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="embeddedsw.CMacro.INIT_MEM_CONTENT" type="string">
           <ipxact:name>embeddedsw.CMacro.INIT_MEM_CONTENT</ipxact:name>
@@ -793,7 +793,7 @@ https://fpgasoftware.intel.com/eula.-->
         </ipxact:parameter>
         <ipxact:parameter parameterId="embeddedsw.memoryInfo.MEM_INIT_FILENAME" type="string">
           <ipxact:name>embeddedsw.memoryInfo.MEM_INIT_FILENAME</ipxact:name>
-          <ipxact:value>mem_init_1</ipxact:value>
+          <ipxact:value>mem_init_2</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="postgeneration.simulation.init_file.param_name" type="string">
           <ipxact:name>postgeneration.simulation.init_file.param_name</ipxact:name>
@@ -840,7 +840,7 @@ https://fpgasoftware.intel.com/eula.-->
          type = "String";
       }
    }
-   element mem_1
+   element mem_0
    {
    }
 }
@@ -1222,14 +1222,14 @@ https://fpgasoftware.intel.com/eula.-->
       </ipxact:parameters>
     </altera:altera_system_parameters>
     <altera:altera_interface_boundary>
-      <altera:interface_mapping altera:name="clk1" altera:internal="mem_1.clk1" altera:type="clock" altera:dir="end">
+      <altera:interface_mapping altera:name="clk1" altera:internal="mem_0.clk1" altera:type="clock" altera:dir="end">
         <altera:port_mapping altera:name="clk" altera:internal="clk"></altera:port_mapping>
       </altera:interface_mapping>
-      <altera:interface_mapping altera:name="reset1" altera:internal="mem_1.reset1" altera:type="reset" altera:dir="end">
+      <altera:interface_mapping altera:name="reset1" altera:internal="mem_0.reset1" altera:type="reset" altera:dir="end">
         <altera:port_mapping altera:name="reset" altera:internal="reset"></altera:port_mapping>
         <altera:port_mapping altera:name="reset_req" altera:internal="reset_req"></altera:port_mapping>
       </altera:interface_mapping>
-      <altera:interface_mapping altera:name="s1" altera:internal="mem_1.s1" altera:type="avalon" altera:dir="end">
+      <altera:interface_mapping altera:name="s1" altera:internal="mem_0.s1" altera:type="avalon" altera:dir="end">
         <altera:port_mapping altera:name="address" altera:internal="address"></altera:port_mapping>
         <altera:port_mapping altera:name="byteenable" altera:internal="byteenable"></altera:port_mapping>
         <altera:port_mapping altera:name="chipselect" altera:internal="chipselect"></altera:port_mapping>

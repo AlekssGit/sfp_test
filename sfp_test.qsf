@@ -55,9 +55,7 @@ set_global_assignment -name SYSTEMVERILOG_FILE modules/phyip_reset.sv
 set_global_assignment -name SYSTEMVERILOG_FILE sfp_test_top.sv
 set_global_assignment -name QSYS_FILE system_design.qsys
 set_global_assignment -name IP_FILE ip/system_design/tse.ip
-set_global_assignment -name IP_FILE ip/system_design/mem_1.ip
 set_global_assignment -name IP_FILE ip/system_design/send_packet_1.ip
-set_global_assignment -name IP_FILE ip/system_design/mem_0.ip
 set_global_assignment -name IP_FILE ip/system_design/pll.ip
 set_global_assignment -name IP_FILE ip/system_design/reset_mod.ip
 set_global_assignment -name IP_FILE ip/system_design/init_mac.ip
@@ -69,3 +67,5 @@ set_global_assignment -name IP_FILE ip/system_design/mem_3.ip
 set_global_assignment -name IP_FILE ip/system_design/mem_rcv_0.ip
 set_global_assignment -name IP_FILE ip/system_design/xcvr_pll.ip
 set_global_assignment -name SIGNALTAP_FILE output_files/stp.stp
+set_global_assignment -name IP_FILE ip/system_design/mem_4.ip
+set_global_assignment -name IP_FILE ip/system_design/mem_5.ip

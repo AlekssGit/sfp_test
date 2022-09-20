@@ -86,7 +86,7 @@
           </parameter>
           <parameter>
             <name>dualPort</name>
-            <value>false</value>
+            <value>true</value>
           </parameter>
           <parameter>
             <name>ecc_enabled</name>
@@ -161,7 +161,7 @@
         <className>altera_avalon_onchip_memory2</className>
         <version>19.3.1</version>
         <name>mem_1</name>
-        <uniqueName>mem_1_altera_avalon_onchip_memory2_1931_fpphlyq</uniqueName>
+        <uniqueName>mem_1_altera_avalon_onchip_memory2_1931_kkg5y4a</uniqueName>
         <nonce>0</nonce>
         <incidentConnections></incidentConnections>
         <path>mem_1.mem_1</path>

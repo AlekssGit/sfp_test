@@ -113,29 +113,29 @@ module system_design (
 	wire         tse_receive_1_startofpacket;                         // tse:data_rx_sop_1 -> receive_packet_2:ff_rx_sop
 	wire         tse_receive_1_endofpacket;                           // tse:data_rx_eop_1 -> receive_packet_2:ff_rx_eop
 	wire   [4:0] tse_receive_1_error;                                 // tse:data_rx_error_1 -> receive_packet_2:rx_err
-	wire         tse_mac_rx_clock_connection_0_clk;                   // tse:mac_rx_clk_0 -> [mem_rcv_1:clk, mm_interconnect_3:tse_mac_rx_clock_connection_0_clk, receive_packet_1:clk_original, rst_controller_003:clk]
-	wire         tse_mac_rx_clock_connection_1_clk;                   // tse:mac_rx_clk_1 -> [mem_rcv_2:clk, mm_interconnect_2:tse_mac_rx_clock_connection_1_clk, receive_packet_2:clk_original, rst_controller_004:clk]
-	wire         tse_mac_tx_clock_connection_0_clk;                   // tse:mac_tx_clk_0 -> [mem_1:clk, mm_interconnect_1:tse_mac_tx_clock_connection_0_clk, rst_controller_001:clk, send_packet_1:clk_original]
-	wire         tse_mac_tx_clock_connection_1_clk;                   // tse:mac_tx_clk_1 -> [mem_2:clk, mm_interconnect_2:tse_mac_tx_clock_connection_1_clk, rst_controller_002:clk, send_packet_2:clk_original]
+	wire         tse_mac_rx_clock_connection_0_clk;                   // tse:mac_rx_clk_0 -> [mem_rcv_1:clk, mm_interconnect_1:tse_mac_rx_clock_connection_0_clk, receive_packet_1:clk_original, rst_controller_004:clk]
+	wire         tse_mac_rx_clock_connection_1_clk;                   // tse:mac_rx_clk_1 -> [mem_4:clk2, mem_rcv_2:clk, mm_interconnect_4:tse_mac_rx_clock_connection_1_clk, receive_packet_2:clk_original, rst_controller_002:clk]
+	wire         tse_mac_tx_clock_connection_0_clk;                   // tse:mac_tx_clk_0 -> [mem_5:clk, mm_interconnect_3:tse_mac_tx_clock_connection_0_clk, rst_controller_003:clk, send_packet_1:clk_original]
+	wire         tse_mac_tx_clock_connection_1_clk;                   // tse:mac_tx_clk_1 -> [mem_4:clk, mm_interconnect_2:tse_mac_tx_clock_connection_1_clk, rst_controller_001:clk, send_packet_2:clk_original]
 	wire         pll_outclk0_clk;                                     // pll:outclk_0 -> [receive_packet_1:fifo_status_clk, tse:rx_afull_clk]
 	wire         pll_outclk1_clk;                                     // pll:outclk_1 -> [clock_50_out:in_clk, init_mac:clk, rst_controller:clk, tse:clk]
 	wire         pll_outclk2_clk;                                     // pll:outclk_2 -> receive_packet_2:fifo_status_clk
 	wire         xcvr_pll_tx_serial_clk_clk;                          // xcvr_pll:tx_serial_clk -> [tse:tx_serial_clk_0, tse:tx_serial_clk_1]
 	wire         reset_mod_reset_main_reset;                          // reset_mod:reset -> [pll:rst, reset_main:in_reset, rst_controller:reset_in0, rst_controller_001:reset_in0, rst_controller_002:reset_in0, rst_controller_003:reset_in0, rst_controller_004:reset_in0]
-	wire         send_packet_1_avalon_master_chipselect;              // send_packet_1:ram_chipselect -> mm_interconnect_1:send_packet_1_avalon_master_chipselect
-	wire  [31:0] send_packet_1_avalon_master_readdata;                // mm_interconnect_1:send_packet_1_avalon_master_readdata -> send_packet_1:ram_readdata
-	wire         send_packet_1_avalon_master_waitrequest;             // mm_interconnect_1:send_packet_1_avalon_master_waitrequest -> send_packet_1:ram_waitrequest
-	wire   [9:0] send_packet_1_avalon_master_address;                 // send_packet_1:ram_addr -> mm_interconnect_1:send_packet_1_avalon_master_address
-	wire   [3:0] send_packet_1_avalon_master_byteenable;              // send_packet_1:ram_byteenable -> mm_interconnect_1:send_packet_1_avalon_master_byteenable
-	wire         send_packet_1_avalon_master_write;                   // send_packet_1:ram_write -> mm_interconnect_1:send_packet_1_avalon_master_write
-	wire  [31:0] send_packet_1_avalon_master_writedata;               // send_packet_1:ram_writedata -> mm_interconnect_1:send_packet_1_avalon_master_writedata
-	wire         mm_interconnect_1_mem_1_s1_chipselect;               // mm_interconnect_1:mem_1_s1_chipselect -> mem_1:chipselect
-	wire  [31:0] mm_interconnect_1_mem_1_s1_readdata;                 // mem_1:readdata -> mm_interconnect_1:mem_1_s1_readdata
-	wire   [9:0] mm_interconnect_1_mem_1_s1_address;                  // mm_interconnect_1:mem_1_s1_address -> mem_1:address
-	wire   [3:0] mm_interconnect_1_mem_1_s1_byteenable;               // mm_interconnect_1:mem_1_s1_byteenable -> mem_1:byteenable
-	wire         mm_interconnect_1_mem_1_s1_write;                    // mm_interconnect_1:mem_1_s1_write -> mem_1:write
-	wire  [31:0] mm_interconnect_1_mem_1_s1_writedata;                // mm_interconnect_1:mem_1_s1_writedata -> mem_1:writedata
-	wire         mm_interconnect_1_mem_1_s1_clken;                    // mm_interconnect_1:mem_1_s1_clken -> mem_1:clken
+	wire         receive_packet_1_avalon_master_chipselect;           // receive_packet_1:ram_chipselect -> mm_interconnect_1:receive_packet_1_avalon_master_chipselect
+	wire  [31:0] receive_packet_1_avalon_master_readdata;             // mm_interconnect_1:receive_packet_1_avalon_master_readdata -> receive_packet_1:ram_readdata
+	wire         receive_packet_1_avalon_master_waitrequest;          // mm_interconnect_1:receive_packet_1_avalon_master_waitrequest -> receive_packet_1:ram_waitrequest
+	wire   [9:0] receive_packet_1_avalon_master_address;              // receive_packet_1:ram_addr -> mm_interconnect_1:receive_packet_1_avalon_master_address
+	wire   [3:0] receive_packet_1_avalon_master_byteenable;           // receive_packet_1:ram_byteenable -> mm_interconnect_1:receive_packet_1_avalon_master_byteenable
+	wire         receive_packet_1_avalon_master_write;                // receive_packet_1:ram_write -> mm_interconnect_1:receive_packet_1_avalon_master_write
+	wire  [31:0] receive_packet_1_avalon_master_writedata;            // receive_packet_1:ram_writedata -> mm_interconnect_1:receive_packet_1_avalon_master_writedata
+	wire         mm_interconnect_1_mem_rcv_1_s1_chipselect;           // mm_interconnect_1:mem_rcv_1_s1_chipselect -> mem_rcv_1:chipselect
+	wire  [31:0] mm_interconnect_1_mem_rcv_1_s1_readdata;             // mem_rcv_1:readdata -> mm_interconnect_1:mem_rcv_1_s1_readdata
+	wire   [9:0] mm_interconnect_1_mem_rcv_1_s1_address;              // mm_interconnect_1:mem_rcv_1_s1_address -> mem_rcv_1:address
+	wire   [3:0] mm_interconnect_1_mem_rcv_1_s1_byteenable;           // mm_interconnect_1:mem_rcv_1_s1_byteenable -> mem_rcv_1:byteenable
+	wire         mm_interconnect_1_mem_rcv_1_s1_write;                // mm_interconnect_1:mem_rcv_1_s1_write -> mem_rcv_1:write
+	wire  [31:0] mm_interconnect_1_mem_rcv_1_s1_writedata;            // mm_interconnect_1:mem_rcv_1_s1_writedata -> mem_rcv_1:writedata
+	wire         mm_interconnect_1_mem_rcv_1_s1_clken;                // mm_interconnect_1:mem_rcv_1_s1_clken -> mem_rcv_1:clken
 	wire         send_packet_2_avalon_master_chipselect;              // send_packet_2:ram_chipselect -> mm_interconnect_2:send_packet_2_avalon_master_chipselect
 	wire  [31:0] send_packet_2_avalon_master_readdata;                // mm_interconnect_2:send_packet_2_avalon_master_readdata -> send_packet_2:ram_readdata
 	wire         send_packet_2_avalon_master_waitrequest;             // mm_interconnect_2:send_packet_2_avalon_master_waitrequest -> send_packet_2:ram_waitrequest
@@ -143,43 +143,50 @@ module system_design (
 	wire   [3:0] send_packet_2_avalon_master_byteenable;              // send_packet_2:ram_byteenable -> mm_interconnect_2:send_packet_2_avalon_master_byteenable
 	wire         send_packet_2_avalon_master_write;                   // send_packet_2:ram_write -> mm_interconnect_2:send_packet_2_avalon_master_write
 	wire  [31:0] send_packet_2_avalon_master_writedata;               // send_packet_2:ram_writedata -> mm_interconnect_2:send_packet_2_avalon_master_writedata
-	wire         receive_packet_2_avalon_master_chipselect;           // receive_packet_2:ram_chipselect -> mm_interconnect_2:receive_packet_2_avalon_master_chipselect
-	wire  [31:0] receive_packet_2_avalon_master_readdata;             // mm_interconnect_2:receive_packet_2_avalon_master_readdata -> receive_packet_2:ram_readdata
-	wire         receive_packet_2_avalon_master_waitrequest;          // mm_interconnect_2:receive_packet_2_avalon_master_waitrequest -> receive_packet_2:ram_waitrequest
-	wire   [9:0] receive_packet_2_avalon_master_address;              // receive_packet_2:ram_addr -> mm_interconnect_2:receive_packet_2_avalon_master_address
-	wire   [3:0] receive_packet_2_avalon_master_byteenable;           // receive_packet_2:ram_byteenable -> mm_interconnect_2:receive_packet_2_avalon_master_byteenable
-	wire         receive_packet_2_avalon_master_write;                // receive_packet_2:ram_write -> mm_interconnect_2:receive_packet_2_avalon_master_write
-	wire  [31:0] receive_packet_2_avalon_master_writedata;            // receive_packet_2:ram_writedata -> mm_interconnect_2:receive_packet_2_avalon_master_writedata
-	wire         mm_interconnect_2_mem_2_s1_chipselect;               // mm_interconnect_2:mem_2_s1_chipselect -> mem_2:chipselect
-	wire  [31:0] mm_interconnect_2_mem_2_s1_readdata;                 // mem_2:readdata -> mm_interconnect_2:mem_2_s1_readdata
-	wire   [9:0] mm_interconnect_2_mem_2_s1_address;                  // mm_interconnect_2:mem_2_s1_address -> mem_2:address
-	wire   [3:0] mm_interconnect_2_mem_2_s1_byteenable;               // mm_interconnect_2:mem_2_s1_byteenable -> mem_2:byteenable
-	wire         mm_interconnect_2_mem_2_s1_write;                    // mm_interconnect_2:mem_2_s1_write -> mem_2:write
-	wire  [31:0] mm_interconnect_2_mem_2_s1_writedata;                // mm_interconnect_2:mem_2_s1_writedata -> mem_2:writedata
-	wire         mm_interconnect_2_mem_2_s1_clken;                    // mm_interconnect_2:mem_2_s1_clken -> mem_2:clken
-	wire         receive_packet_1_avalon_master_chipselect;           // receive_packet_1:ram_chipselect -> mm_interconnect_3:receive_packet_1_avalon_master_chipselect
-	wire  [31:0] receive_packet_1_avalon_master_readdata;             // mm_interconnect_3:receive_packet_1_avalon_master_readdata -> receive_packet_1:ram_readdata
-	wire         receive_packet_1_avalon_master_waitrequest;          // mm_interconnect_3:receive_packet_1_avalon_master_waitrequest -> receive_packet_1:ram_waitrequest
-	wire   [9:0] receive_packet_1_avalon_master_address;              // receive_packet_1:ram_addr -> mm_interconnect_3:receive_packet_1_avalon_master_address
-	wire   [3:0] receive_packet_1_avalon_master_byteenable;           // receive_packet_1:ram_byteenable -> mm_interconnect_3:receive_packet_1_avalon_master_byteenable
-	wire         receive_packet_1_avalon_master_write;                // receive_packet_1:ram_write -> mm_interconnect_3:receive_packet_1_avalon_master_write
-	wire  [31:0] receive_packet_1_avalon_master_writedata;            // receive_packet_1:ram_writedata -> mm_interconnect_3:receive_packet_1_avalon_master_writedata
-	wire         mm_interconnect_3_mem_rcv_1_s1_chipselect;           // mm_interconnect_3:mem_rcv_1_s1_chipselect -> mem_rcv_1:chipselect
-	wire  [31:0] mm_interconnect_3_mem_rcv_1_s1_readdata;             // mem_rcv_1:readdata -> mm_interconnect_3:mem_rcv_1_s1_readdata
-	wire   [9:0] mm_interconnect_3_mem_rcv_1_s1_address;              // mm_interconnect_3:mem_rcv_1_s1_address -> mem_rcv_1:address
-	wire   [3:0] mm_interconnect_3_mem_rcv_1_s1_byteenable;           // mm_interconnect_3:mem_rcv_1_s1_byteenable -> mem_rcv_1:byteenable
-	wire         mm_interconnect_3_mem_rcv_1_s1_write;                // mm_interconnect_3:mem_rcv_1_s1_write -> mem_rcv_1:write
-	wire  [31:0] mm_interconnect_3_mem_rcv_1_s1_writedata;            // mm_interconnect_3:mem_rcv_1_s1_writedata -> mem_rcv_1:writedata
-	wire         mm_interconnect_3_mem_rcv_1_s1_clken;                // mm_interconnect_3:mem_rcv_1_s1_clken -> mem_rcv_1:clken
+	wire         mm_interconnect_2_mem_4_s1_chipselect;               // mm_interconnect_2:mem_4_s1_chipselect -> mem_4:chipselect
+	wire  [31:0] mm_interconnect_2_mem_4_s1_readdata;                 // mem_4:readdata -> mm_interconnect_2:mem_4_s1_readdata
+	wire   [9:0] mm_interconnect_2_mem_4_s1_address;                  // mm_interconnect_2:mem_4_s1_address -> mem_4:address
+	wire   [3:0] mm_interconnect_2_mem_4_s1_byteenable;               // mm_interconnect_2:mem_4_s1_byteenable -> mem_4:byteenable
+	wire         mm_interconnect_2_mem_4_s1_write;                    // mm_interconnect_2:mem_4_s1_write -> mem_4:write
+	wire  [31:0] mm_interconnect_2_mem_4_s1_writedata;                // mm_interconnect_2:mem_4_s1_writedata -> mem_4:writedata
+	wire         mm_interconnect_2_mem_4_s1_clken;                    // mm_interconnect_2:mem_4_s1_clken -> mem_4:clken
+	wire         send_packet_1_avalon_master_chipselect;              // send_packet_1:ram_chipselect -> mm_interconnect_3:send_packet_1_avalon_master_chipselect
+	wire  [31:0] send_packet_1_avalon_master_readdata;                // mm_interconnect_3:send_packet_1_avalon_master_readdata -> send_packet_1:ram_readdata
+	wire         send_packet_1_avalon_master_waitrequest;             // mm_interconnect_3:send_packet_1_avalon_master_waitrequest -> send_packet_1:ram_waitrequest
+	wire   [9:0] send_packet_1_avalon_master_address;                 // send_packet_1:ram_addr -> mm_interconnect_3:send_packet_1_avalon_master_address
+	wire   [3:0] send_packet_1_avalon_master_byteenable;              // send_packet_1:ram_byteenable -> mm_interconnect_3:send_packet_1_avalon_master_byteenable
+	wire         send_packet_1_avalon_master_write;                   // send_packet_1:ram_write -> mm_interconnect_3:send_packet_1_avalon_master_write
+	wire  [31:0] send_packet_1_avalon_master_writedata;               // send_packet_1:ram_writedata -> mm_interconnect_3:send_packet_1_avalon_master_writedata
+	wire         mm_interconnect_3_mem_5_s1_chipselect;               // mm_interconnect_3:mem_5_s1_chipselect -> mem_5:chipselect
+	wire  [31:0] mm_interconnect_3_mem_5_s1_readdata;                 // mem_5:readdata -> mm_interconnect_3:mem_5_s1_readdata
+	wire   [9:0] mm_interconnect_3_mem_5_s1_address;                  // mm_interconnect_3:mem_5_s1_address -> mem_5:address
+	wire   [3:0] mm_interconnect_3_mem_5_s1_byteenable;               // mm_interconnect_3:mem_5_s1_byteenable -> mem_5:byteenable
+	wire         mm_interconnect_3_mem_5_s1_write;                    // mm_interconnect_3:mem_5_s1_write -> mem_5:write
+	wire  [31:0] mm_interconnect_3_mem_5_s1_writedata;                // mm_interconnect_3:mem_5_s1_writedata -> mem_5:writedata
+	wire         mm_interconnect_3_mem_5_s1_clken;                    // mm_interconnect_3:mem_5_s1_clken -> mem_5:clken
+	wire         receive_packet_2_avalon_master_chipselect;           // receive_packet_2:ram_chipselect -> mm_interconnect_4:receive_packet_2_avalon_master_chipselect
+	wire  [31:0] receive_packet_2_avalon_master_readdata;             // mm_interconnect_4:receive_packet_2_avalon_master_readdata -> receive_packet_2:ram_readdata
+	wire         receive_packet_2_avalon_master_waitrequest;          // mm_interconnect_4:receive_packet_2_avalon_master_waitrequest -> receive_packet_2:ram_waitrequest
+	wire   [9:0] receive_packet_2_avalon_master_address;              // receive_packet_2:ram_addr -> mm_interconnect_4:receive_packet_2_avalon_master_address
+	wire   [3:0] receive_packet_2_avalon_master_byteenable;           // receive_packet_2:ram_byteenable -> mm_interconnect_4:receive_packet_2_avalon_master_byteenable
+	wire         receive_packet_2_avalon_master_write;                // receive_packet_2:ram_write -> mm_interconnect_4:receive_packet_2_avalon_master_write
+	wire  [31:0] receive_packet_2_avalon_master_writedata;            // receive_packet_2:ram_writedata -> mm_interconnect_4:receive_packet_2_avalon_master_writedata
+	wire         mm_interconnect_4_mem_4_s2_chipselect;               // mm_interconnect_4:mem_4_s2_chipselect -> mem_4:chipselect2
+	wire  [31:0] mm_interconnect_4_mem_4_s2_readdata;                 // mem_4:readdata2 -> mm_interconnect_4:mem_4_s2_readdata
+	wire   [9:0] mm_interconnect_4_mem_4_s2_address;                  // mm_interconnect_4:mem_4_s2_address -> mem_4:address2
+	wire   [3:0] mm_interconnect_4_mem_4_s2_byteenable;               // mm_interconnect_4:mem_4_s2_byteenable -> mem_4:byteenable2
+	wire         mm_interconnect_4_mem_4_s2_write;                    // mm_interconnect_4:mem_4_s2_write -> mem_4:write2
+	wire  [31:0] mm_interconnect_4_mem_4_s2_writedata;                // mm_interconnect_4:mem_4_s2_writedata -> mem_4:writedata2
+	wire         mm_interconnect_4_mem_4_s2_clken;                    // mm_interconnect_4:mem_4_s2_clken -> mem_4:clken2
 	wire         rst_controller_reset_out_reset;                      // rst_controller:reset_out -> [init_mac:reset, tse:reset]
-	wire         rst_controller_001_reset_out_reset;                  // rst_controller_001:reset_out -> [mem_1:reset, mm_interconnect_1:send_packet_1_reset_reset_bridge_in_reset_reset, send_packet_1:rst]
-	wire         rst_controller_001_reset_out_reset_req;              // rst_controller_001:reset_req -> [mem_1:reset_req, rst_translator:reset_req_in]
-	wire         rst_controller_002_reset_out_reset;                  // rst_controller_002:reset_out -> [mem_2:reset, mm_interconnect_2:send_packet_2_reset_reset_bridge_in_reset_reset, send_packet_2:rst]
-	wire         rst_controller_002_reset_out_reset_req;              // rst_controller_002:reset_req -> [mem_2:reset_req, rst_translator_001:reset_req_in]
-	wire         rst_controller_003_reset_out_reset;                  // rst_controller_003:reset_out -> [mem_rcv_1:reset, mm_interconnect_3:receive_packet_1_reset_reset_bridge_in_reset_reset, receive_packet_1:rst]
-	wire         rst_controller_003_reset_out_reset_req;              // rst_controller_003:reset_req -> [mem_rcv_1:reset_req, rst_translator_002:reset_req_in]
-	wire         rst_controller_004_reset_out_reset;                  // rst_controller_004:reset_out -> [mem_rcv_2:reset, mm_interconnect_2:receive_packet_2_reset_reset_bridge_in_reset_reset, receive_packet_2:rst]
-	wire         rst_controller_004_reset_out_reset_req;              // rst_controller_004:reset_req -> [mem_rcv_2:reset_req, rst_translator_003:reset_req_in]
+	wire         rst_controller_001_reset_out_reset;                  // rst_controller_001:reset_out -> [mem_4:reset, mm_interconnect_2:send_packet_2_reset_reset_bridge_in_reset_reset, send_packet_2:rst]
+	wire         rst_controller_001_reset_out_reset_req;              // rst_controller_001:reset_req -> [mem_4:reset_req, rst_translator:reset_req_in]
+	wire         rst_controller_002_reset_out_reset;                  // rst_controller_002:reset_out -> [mem_4:reset2, mem_rcv_2:reset, mm_interconnect_4:receive_packet_2_reset_reset_bridge_in_reset_reset, receive_packet_2:rst]
+	wire         rst_controller_002_reset_out_reset_req;              // rst_controller_002:reset_req -> [mem_4:reset_req2, mem_rcv_2:reset_req, rst_translator_001:reset_req_in]
+	wire         rst_controller_003_reset_out_reset;                  // rst_controller_003:reset_out -> [mem_5:reset, mm_interconnect_3:send_packet_1_reset_reset_bridge_in_reset_reset, send_packet_1:rst]
+	wire         rst_controller_003_reset_out_reset_req;              // rst_controller_003:reset_req -> [mem_5:reset_req, rst_translator_002:reset_req_in]
+	wire         rst_controller_004_reset_out_reset;                  // rst_controller_004:reset_out -> [mem_rcv_1:reset, mm_interconnect_1:receive_packet_1_reset_reset_bridge_in_reset_reset, receive_packet_1:rst]
+	wire         rst_controller_004_reset_out_reset_req;              // rst_controller_004:reset_req -> [mem_rcv_1:reset_req, rst_translator_003:reset_req_in]
 
 	clock_50_out clock_50_out (
 		.in_clk  (pll_outclk1_clk), //   input,  width = 1,  in_clk.clk
@@ -198,43 +205,53 @@ module system_design (
 		.mac_inited (mac_inited_mac_inited)               //  output,   width = 1,    mac_inited.mac_inited
 	);
 
-	mem_1 mem_1 (
-		.clk        (tse_mac_tx_clock_connection_0_clk),      //   input,   width = 1,   clk1.clk
-		.address    (mm_interconnect_1_mem_1_s1_address),     //   input,  width = 10,     s1.address
-		.clken      (mm_interconnect_1_mem_1_s1_clken),       //   input,   width = 1,       .clken
-		.chipselect (mm_interconnect_1_mem_1_s1_chipselect),  //   input,   width = 1,       .chipselect
-		.write      (mm_interconnect_1_mem_1_s1_write),       //   input,   width = 1,       .write
-		.readdata   (mm_interconnect_1_mem_1_s1_readdata),    //  output,  width = 32,       .readdata
-		.writedata  (mm_interconnect_1_mem_1_s1_writedata),   //   input,  width = 32,       .writedata
-		.byteenable (mm_interconnect_1_mem_1_s1_byteenable),  //   input,   width = 4,       .byteenable
-		.reset      (rst_controller_001_reset_out_reset),     //   input,   width = 1, reset1.reset
-		.reset_req  (rst_controller_001_reset_out_reset_req)  //   input,   width = 1,       .reset_req
+	mem_4 mem_4 (
+		.clk         (tse_mac_tx_clock_connection_1_clk),      //   input,   width = 1,   clk1.clk
+		.address     (mm_interconnect_2_mem_4_s1_address),     //   input,  width = 10,     s1.address
+		.clken       (mm_interconnect_2_mem_4_s1_clken),       //   input,   width = 1,       .clken
+		.chipselect  (mm_interconnect_2_mem_4_s1_chipselect),  //   input,   width = 1,       .chipselect
+		.write       (mm_interconnect_2_mem_4_s1_write),       //   input,   width = 1,       .write
+		.readdata    (mm_interconnect_2_mem_4_s1_readdata),    //  output,  width = 32,       .readdata
+		.writedata   (mm_interconnect_2_mem_4_s1_writedata),   //   input,  width = 32,       .writedata
+		.byteenable  (mm_interconnect_2_mem_4_s1_byteenable),  //   input,   width = 4,       .byteenable
+		.reset       (rst_controller_001_reset_out_reset),     //   input,   width = 1, reset1.reset
+		.reset_req   (rst_controller_001_reset_out_reset_req), //   input,   width = 1,       .reset_req
+		.address2    (mm_interconnect_4_mem_4_s2_address),     //   input,  width = 10,     s2.address
+		.chipselect2 (mm_interconnect_4_mem_4_s2_chipselect),  //   input,   width = 1,       .chipselect
+		.clken2      (mm_interconnect_4_mem_4_s2_clken),       //   input,   width = 1,       .clken
+		.write2      (mm_interconnect_4_mem_4_s2_write),       //   input,   width = 1,       .write
+		.readdata2   (mm_interconnect_4_mem_4_s2_readdata),    //  output,  width = 32,       .readdata
+		.writedata2  (mm_interconnect_4_mem_4_s2_writedata),   //   input,  width = 32,       .writedata
+		.byteenable2 (mm_interconnect_4_mem_4_s2_byteenable),  //   input,   width = 4,       .byteenable
+		.clk2        (tse_mac_rx_clock_connection_1_clk),      //   input,   width = 1,   clk2.clk
+		.reset2      (rst_controller_002_reset_out_reset),     //   input,   width = 1, reset2.reset
+		.reset_req2  (rst_controller_002_reset_out_reset_req)  //   input,   width = 1,       .reset_req
 	);
 
-	mem_0 mem_2 (
-		.clk        (tse_mac_tx_clock_connection_1_clk),      //   input,   width = 1,   clk1.clk
-		.address    (mm_interconnect_2_mem_2_s1_address),     //   input,  width = 10,     s1.address
-		.clken      (mm_interconnect_2_mem_2_s1_clken),       //   input,   width = 1,       .clken
-		.chipselect (mm_interconnect_2_mem_2_s1_chipselect),  //   input,   width = 1,       .chipselect
-		.write      (mm_interconnect_2_mem_2_s1_write),       //   input,   width = 1,       .write
-		.readdata   (mm_interconnect_2_mem_2_s1_readdata),    //  output,  width = 32,       .readdata
-		.writedata  (mm_interconnect_2_mem_2_s1_writedata),   //   input,  width = 32,       .writedata
-		.byteenable (mm_interconnect_2_mem_2_s1_byteenable),  //   input,   width = 4,       .byteenable
-		.reset      (rst_controller_002_reset_out_reset),     //   input,   width = 1, reset1.reset
-		.reset_req  (rst_controller_002_reset_out_reset_req)  //   input,   width = 1,       .reset_req
+	mem_5 mem_5 (
+		.clk        (tse_mac_tx_clock_connection_0_clk),      //   input,   width = 1,   clk1.clk
+		.address    (mm_interconnect_3_mem_5_s1_address),     //   input,  width = 10,     s1.address
+		.clken      (mm_interconnect_3_mem_5_s1_clken),       //   input,   width = 1,       .clken
+		.chipselect (mm_interconnect_3_mem_5_s1_chipselect),  //   input,   width = 1,       .chipselect
+		.write      (mm_interconnect_3_mem_5_s1_write),       //   input,   width = 1,       .write
+		.readdata   (mm_interconnect_3_mem_5_s1_readdata),    //  output,  width = 32,       .readdata
+		.writedata  (mm_interconnect_3_mem_5_s1_writedata),   //   input,  width = 32,       .writedata
+		.byteenable (mm_interconnect_3_mem_5_s1_byteenable),  //   input,   width = 4,       .byteenable
+		.reset      (rst_controller_003_reset_out_reset),     //   input,   width = 1, reset1.reset
+		.reset_req  (rst_controller_003_reset_out_reset_req)  //   input,   width = 1,       .reset_req
 	);
 
 	mem_3 mem_rcv_1 (
 		.clk        (tse_mac_rx_clock_connection_0_clk),         //   input,   width = 1,   clk1.clk
-		.address    (mm_interconnect_3_mem_rcv_1_s1_address),    //   input,  width = 10,     s1.address
-		.clken      (mm_interconnect_3_mem_rcv_1_s1_clken),      //   input,   width = 1,       .clken
-		.chipselect (mm_interconnect_3_mem_rcv_1_s1_chipselect), //   input,   width = 1,       .chipselect
-		.write      (mm_interconnect_3_mem_rcv_1_s1_write),      //   input,   width = 1,       .write
-		.readdata   (mm_interconnect_3_mem_rcv_1_s1_readdata),   //  output,  width = 32,       .readdata
-		.writedata  (mm_interconnect_3_mem_rcv_1_s1_writedata),  //   input,  width = 32,       .writedata
-		.byteenable (mm_interconnect_3_mem_rcv_1_s1_byteenable), //   input,   width = 4,       .byteenable
-		.reset      (rst_controller_003_reset_out_reset),        //   input,   width = 1, reset1.reset
-		.reset_req  (rst_controller_003_reset_out_reset_req)     //   input,   width = 1,       .reset_req
+		.address    (mm_interconnect_1_mem_rcv_1_s1_address),    //   input,  width = 10,     s1.address
+		.clken      (mm_interconnect_1_mem_rcv_1_s1_clken),      //   input,   width = 1,       .clken
+		.chipselect (mm_interconnect_1_mem_rcv_1_s1_chipselect), //   input,   width = 1,       .chipselect
+		.write      (mm_interconnect_1_mem_rcv_1_s1_write),      //   input,   width = 1,       .write
+		.readdata   (mm_interconnect_1_mem_rcv_1_s1_readdata),   //  output,  width = 32,       .readdata
+		.writedata  (mm_interconnect_1_mem_rcv_1_s1_writedata),  //   input,  width = 32,       .writedata
+		.byteenable (mm_interconnect_1_mem_rcv_1_s1_byteenable), //   input,   width = 4,       .byteenable
+		.reset      (rst_controller_004_reset_out_reset),        //   input,   width = 1, reset1.reset
+		.reset_req  (rst_controller_004_reset_out_reset_req)     //   input,   width = 1,       .reset_req
 	);
 
 	mem_rcv_0 mem_rcv_2 (
@@ -246,8 +263,8 @@ module system_design (
 		.readdata   (),                                       //  output,  width = 32,       .readdata
 		.writedata  (),                                       //   input,  width = 32,       .writedata
 		.byteenable (),                                       //   input,   width = 4,       .byteenable
-		.reset      (rst_controller_004_reset_out_reset),     //   input,   width = 1, reset1.reset
-		.reset_req  (rst_controller_004_reset_out_reset_req)  //   input,   width = 1,       .reset_req
+		.reset      (rst_controller_002_reset_out_reset),     //   input,   width = 1, reset1.reset
+		.reset_req  (rst_controller_002_reset_out_reset_req)  //   input,   width = 1,       .reset_req
 	);
 
 	pll pll (
@@ -274,7 +291,7 @@ module system_design (
 		.ram_byteenable   (receive_packet_1_avalon_master_byteenable),  //  output,   width = 4,                      .byteenable
 		.ram_waitrequest  (receive_packet_1_avalon_master_waitrequest), //   input,   width = 1,                      .waitrequest
 		.clk_original     (tse_mac_rx_clock_connection_0_clk),          //   input,   width = 1,                 clock.clk
-		.rst              (rst_controller_003_reset_out_reset),         //   input,   width = 1,                 reset.reset
+		.rst              (rst_controller_004_reset_out_reset),         //   input,   width = 1,                 reset.reset
 		.rx_afull_data    (receive_packet_1_fifo_status_data),          //  output,   width = 2,           fifo_status.data
 		.rx_afull_valid   (receive_packet_1_fifo_status_valid),         //  output,   width = 1,                      .valid
 		.rx_afull_channel (receive_packet_1_fifo_status_channel),       //  output,   width = 2,                      .channel
@@ -296,7 +313,7 @@ module system_design (
 		.ram_byteenable   (receive_packet_2_avalon_master_byteenable),  //  output,   width = 4,                      .byteenable
 		.ram_waitrequest  (receive_packet_2_avalon_master_waitrequest), //   input,   width = 1,                      .waitrequest
 		.clk_original     (tse_mac_rx_clock_connection_1_clk),          //   input,   width = 1,                 clock.clk
-		.rst              (rst_controller_004_reset_out_reset),         //   input,   width = 1,                 reset.reset
+		.rst              (rst_controller_002_reset_out_reset),         //   input,   width = 1,                 reset.reset
 		.rx_afull_data    (),                                           //  output,   width = 2,           fifo_status.data
 		.rx_afull_valid   (),                                           //  output,   width = 1,                      .valid
 		.rx_afull_channel (),                                           //  output,   width = 2,                      .channel
@@ -317,7 +334,7 @@ module system_design (
 
 	send_packet_1 send_packet_1 (
 		.clk_original    (tse_mac_tx_clock_connection_0_clk),                   //   input,   width = 1,                   clock.clk
-		.rst             (rst_controller_001_reset_out_reset),                  //   input,   width = 1,                   reset.reset
+		.rst             (rst_controller_003_reset_out_reset),                  //   input,   width = 1,                   reset.reset
 		.ram_addr        (send_packet_1_avalon_master_address),                 //  output,  width = 10,           avalon_master.address
 		.ram_chipselect  (send_packet_1_avalon_master_chipselect),              //  output,   width = 1,                        .chipselect
 		.ram_write       (send_packet_1_avalon_master_write),                   //  output,   width = 1,                        .write
@@ -337,7 +354,7 @@ module system_design (
 
 	send_packet_1 send_packet_2 (
 		.clk_original    (tse_mac_tx_clock_connection_1_clk),                   //   input,   width = 1,                   clock.clk
-		.rst             (rst_controller_002_reset_out_reset),                  //   input,   width = 1,                   reset.reset
+		.rst             (rst_controller_001_reset_out_reset),                  //   input,   width = 1,                   reset.reset
 		.ram_addr        (send_packet_2_avalon_master_address),                 //  output,  width = 10,           avalon_master.address
 		.ram_chipselect  (send_packet_2_avalon_master_chipselect),              //  output,   width = 1,                        .chipselect
 		.ram_write       (send_packet_2_avalon_master_write),                   //  output,   width = 1,                        .write
@@ -547,54 +564,7 @@ module system_design (
 		.pll_cal_busy  ()                                  //  output,  width = 1,  pll_cal_busy.pll_cal_busy
 	);
 
-	system_design_altera_mm_interconnect_1920_cqreazq mm_interconnect_1 (
-		.send_packet_1_avalon_master_address             (send_packet_1_avalon_master_address),     //   input,  width = 10,               send_packet_1_avalon_master.address
-		.send_packet_1_avalon_master_waitrequest         (send_packet_1_avalon_master_waitrequest), //  output,   width = 1,                                          .waitrequest
-		.send_packet_1_avalon_master_byteenable          (send_packet_1_avalon_master_byteenable),  //   input,   width = 4,                                          .byteenable
-		.send_packet_1_avalon_master_chipselect          (send_packet_1_avalon_master_chipselect),  //   input,   width = 1,                                          .chipselect
-		.send_packet_1_avalon_master_readdata            (send_packet_1_avalon_master_readdata),    //  output,  width = 32,                                          .readdata
-		.send_packet_1_avalon_master_write               (send_packet_1_avalon_master_write),       //   input,   width = 1,                                          .write
-		.send_packet_1_avalon_master_writedata           (send_packet_1_avalon_master_writedata),   //   input,  width = 32,                                          .writedata
-		.mem_1_s1_address                                (mm_interconnect_1_mem_1_s1_address),      //  output,  width = 10,                                  mem_1_s1.address
-		.mem_1_s1_write                                  (mm_interconnect_1_mem_1_s1_write),        //  output,   width = 1,                                          .write
-		.mem_1_s1_readdata                               (mm_interconnect_1_mem_1_s1_readdata),     //   input,  width = 32,                                          .readdata
-		.mem_1_s1_writedata                              (mm_interconnect_1_mem_1_s1_writedata),    //  output,  width = 32,                                          .writedata
-		.mem_1_s1_byteenable                             (mm_interconnect_1_mem_1_s1_byteenable),   //  output,   width = 4,                                          .byteenable
-		.mem_1_s1_chipselect                             (mm_interconnect_1_mem_1_s1_chipselect),   //  output,   width = 1,                                          .chipselect
-		.mem_1_s1_clken                                  (mm_interconnect_1_mem_1_s1_clken),        //  output,   width = 1,                                          .clken
-		.send_packet_1_reset_reset_bridge_in_reset_reset (rst_controller_001_reset_out_reset),      //   input,   width = 1, send_packet_1_reset_reset_bridge_in_reset.reset
-		.tse_mac_tx_clock_connection_0_clk               (tse_mac_tx_clock_connection_0_clk)        //   input,   width = 1,             tse_mac_tx_clock_connection_0.clk
-	);
-
-	system_design_altera_mm_interconnect_1920_n6mddmq mm_interconnect_2 (
-		.send_packet_2_avalon_master_address                (send_packet_2_avalon_master_address),        //   input,  width = 10,                  send_packet_2_avalon_master.address
-		.send_packet_2_avalon_master_waitrequest            (send_packet_2_avalon_master_waitrequest),    //  output,   width = 1,                                             .waitrequest
-		.send_packet_2_avalon_master_byteenable             (send_packet_2_avalon_master_byteenable),     //   input,   width = 4,                                             .byteenable
-		.send_packet_2_avalon_master_chipselect             (send_packet_2_avalon_master_chipselect),     //   input,   width = 1,                                             .chipselect
-		.send_packet_2_avalon_master_readdata               (send_packet_2_avalon_master_readdata),       //  output,  width = 32,                                             .readdata
-		.send_packet_2_avalon_master_write                  (send_packet_2_avalon_master_write),          //   input,   width = 1,                                             .write
-		.send_packet_2_avalon_master_writedata              (send_packet_2_avalon_master_writedata),      //   input,  width = 32,                                             .writedata
-		.receive_packet_2_avalon_master_address             (receive_packet_2_avalon_master_address),     //   input,  width = 10,               receive_packet_2_avalon_master.address
-		.receive_packet_2_avalon_master_waitrequest         (receive_packet_2_avalon_master_waitrequest), //  output,   width = 1,                                             .waitrequest
-		.receive_packet_2_avalon_master_byteenable          (receive_packet_2_avalon_master_byteenable),  //   input,   width = 4,                                             .byteenable
-		.receive_packet_2_avalon_master_chipselect          (receive_packet_2_avalon_master_chipselect),  //   input,   width = 1,                                             .chipselect
-		.receive_packet_2_avalon_master_readdata            (receive_packet_2_avalon_master_readdata),    //  output,  width = 32,                                             .readdata
-		.receive_packet_2_avalon_master_write               (receive_packet_2_avalon_master_write),       //   input,   width = 1,                                             .write
-		.receive_packet_2_avalon_master_writedata           (receive_packet_2_avalon_master_writedata),   //   input,  width = 32,                                             .writedata
-		.mem_2_s1_address                                   (mm_interconnect_2_mem_2_s1_address),         //  output,  width = 10,                                     mem_2_s1.address
-		.mem_2_s1_write                                     (mm_interconnect_2_mem_2_s1_write),           //  output,   width = 1,                                             .write
-		.mem_2_s1_readdata                                  (mm_interconnect_2_mem_2_s1_readdata),        //   input,  width = 32,                                             .readdata
-		.mem_2_s1_writedata                                 (mm_interconnect_2_mem_2_s1_writedata),       //  output,  width = 32,                                             .writedata
-		.mem_2_s1_byteenable                                (mm_interconnect_2_mem_2_s1_byteenable),      //  output,   width = 4,                                             .byteenable
-		.mem_2_s1_chipselect                                (mm_interconnect_2_mem_2_s1_chipselect),      //  output,   width = 1,                                             .chipselect
-		.mem_2_s1_clken                                     (mm_interconnect_2_mem_2_s1_clken),           //  output,   width = 1,                                             .clken
-		.send_packet_2_reset_reset_bridge_in_reset_reset    (rst_controller_002_reset_out_reset),         //   input,   width = 1,    send_packet_2_reset_reset_bridge_in_reset.reset
-		.receive_packet_2_reset_reset_bridge_in_reset_reset (rst_controller_004_reset_out_reset),         //   input,   width = 1, receive_packet_2_reset_reset_bridge_in_reset.reset
-		.tse_mac_tx_clock_connection_1_clk                  (tse_mac_tx_clock_connection_1_clk),          //   input,   width = 1,                tse_mac_tx_clock_connection_1.clk
-		.tse_mac_rx_clock_connection_1_clk                  (tse_mac_rx_clock_connection_1_clk)           //   input,   width = 1,                tse_mac_rx_clock_connection_1.clk
-	);
-
-	system_design_altera_mm_interconnect_1920_qky3gdi mm_interconnect_3 (
+	system_design_altera_mm_interconnect_1920_qky3gdi mm_interconnect_1 (
 		.receive_packet_1_avalon_master_address             (receive_packet_1_avalon_master_address),     //   input,  width = 10,               receive_packet_1_avalon_master.address
 		.receive_packet_1_avalon_master_waitrequest         (receive_packet_1_avalon_master_waitrequest), //  output,   width = 1,                                             .waitrequest
 		.receive_packet_1_avalon_master_byteenable          (receive_packet_1_avalon_master_byteenable),  //   input,   width = 4,                                             .byteenable
@@ -602,15 +572,72 @@ module system_design (
 		.receive_packet_1_avalon_master_readdata            (receive_packet_1_avalon_master_readdata),    //  output,  width = 32,                                             .readdata
 		.receive_packet_1_avalon_master_write               (receive_packet_1_avalon_master_write),       //   input,   width = 1,                                             .write
 		.receive_packet_1_avalon_master_writedata           (receive_packet_1_avalon_master_writedata),   //   input,  width = 32,                                             .writedata
-		.mem_rcv_1_s1_address                               (mm_interconnect_3_mem_rcv_1_s1_address),     //  output,  width = 10,                                 mem_rcv_1_s1.address
-		.mem_rcv_1_s1_write                                 (mm_interconnect_3_mem_rcv_1_s1_write),       //  output,   width = 1,                                             .write
-		.mem_rcv_1_s1_readdata                              (mm_interconnect_3_mem_rcv_1_s1_readdata),    //   input,  width = 32,                                             .readdata
-		.mem_rcv_1_s1_writedata                             (mm_interconnect_3_mem_rcv_1_s1_writedata),   //  output,  width = 32,                                             .writedata
-		.mem_rcv_1_s1_byteenable                            (mm_interconnect_3_mem_rcv_1_s1_byteenable),  //  output,   width = 4,                                             .byteenable
-		.mem_rcv_1_s1_chipselect                            (mm_interconnect_3_mem_rcv_1_s1_chipselect),  //  output,   width = 1,                                             .chipselect
-		.mem_rcv_1_s1_clken                                 (mm_interconnect_3_mem_rcv_1_s1_clken),       //  output,   width = 1,                                             .clken
-		.receive_packet_1_reset_reset_bridge_in_reset_reset (rst_controller_003_reset_out_reset),         //   input,   width = 1, receive_packet_1_reset_reset_bridge_in_reset.reset
+		.mem_rcv_1_s1_address                               (mm_interconnect_1_mem_rcv_1_s1_address),     //  output,  width = 10,                                 mem_rcv_1_s1.address
+		.mem_rcv_1_s1_write                                 (mm_interconnect_1_mem_rcv_1_s1_write),       //  output,   width = 1,                                             .write
+		.mem_rcv_1_s1_readdata                              (mm_interconnect_1_mem_rcv_1_s1_readdata),    //   input,  width = 32,                                             .readdata
+		.mem_rcv_1_s1_writedata                             (mm_interconnect_1_mem_rcv_1_s1_writedata),   //  output,  width = 32,                                             .writedata
+		.mem_rcv_1_s1_byteenable                            (mm_interconnect_1_mem_rcv_1_s1_byteenable),  //  output,   width = 4,                                             .byteenable
+		.mem_rcv_1_s1_chipselect                            (mm_interconnect_1_mem_rcv_1_s1_chipselect),  //  output,   width = 1,                                             .chipselect
+		.mem_rcv_1_s1_clken                                 (mm_interconnect_1_mem_rcv_1_s1_clken),       //  output,   width = 1,                                             .clken
+		.receive_packet_1_reset_reset_bridge_in_reset_reset (rst_controller_004_reset_out_reset),         //   input,   width = 1, receive_packet_1_reset_reset_bridge_in_reset.reset
 		.tse_mac_rx_clock_connection_0_clk                  (tse_mac_rx_clock_connection_0_clk)           //   input,   width = 1,                tse_mac_rx_clock_connection_0.clk
+	);
+
+	system_design_altera_mm_interconnect_1920_tqdmh6a mm_interconnect_2 (
+		.send_packet_2_avalon_master_address             (send_packet_2_avalon_master_address),     //   input,  width = 10,               send_packet_2_avalon_master.address
+		.send_packet_2_avalon_master_waitrequest         (send_packet_2_avalon_master_waitrequest), //  output,   width = 1,                                          .waitrequest
+		.send_packet_2_avalon_master_byteenable          (send_packet_2_avalon_master_byteenable),  //   input,   width = 4,                                          .byteenable
+		.send_packet_2_avalon_master_chipselect          (send_packet_2_avalon_master_chipselect),  //   input,   width = 1,                                          .chipselect
+		.send_packet_2_avalon_master_readdata            (send_packet_2_avalon_master_readdata),    //  output,  width = 32,                                          .readdata
+		.send_packet_2_avalon_master_write               (send_packet_2_avalon_master_write),       //   input,   width = 1,                                          .write
+		.send_packet_2_avalon_master_writedata           (send_packet_2_avalon_master_writedata),   //   input,  width = 32,                                          .writedata
+		.mem_4_s1_address                                (mm_interconnect_2_mem_4_s1_address),      //  output,  width = 10,                                  mem_4_s1.address
+		.mem_4_s1_write                                  (mm_interconnect_2_mem_4_s1_write),        //  output,   width = 1,                                          .write
+		.mem_4_s1_readdata                               (mm_interconnect_2_mem_4_s1_readdata),     //   input,  width = 32,                                          .readdata
+		.mem_4_s1_writedata                              (mm_interconnect_2_mem_4_s1_writedata),    //  output,  width = 32,                                          .writedata
+		.mem_4_s1_byteenable                             (mm_interconnect_2_mem_4_s1_byteenable),   //  output,   width = 4,                                          .byteenable
+		.mem_4_s1_chipselect                             (mm_interconnect_2_mem_4_s1_chipselect),   //  output,   width = 1,                                          .chipselect
+		.mem_4_s1_clken                                  (mm_interconnect_2_mem_4_s1_clken),        //  output,   width = 1,                                          .clken
+		.send_packet_2_reset_reset_bridge_in_reset_reset (rst_controller_001_reset_out_reset),      //   input,   width = 1, send_packet_2_reset_reset_bridge_in_reset.reset
+		.tse_mac_tx_clock_connection_1_clk               (tse_mac_tx_clock_connection_1_clk)        //   input,   width = 1,             tse_mac_tx_clock_connection_1.clk
+	);
+
+	system_design_altera_mm_interconnect_1920_nnzxfdi mm_interconnect_3 (
+		.send_packet_1_avalon_master_address             (send_packet_1_avalon_master_address),     //   input,  width = 10,               send_packet_1_avalon_master.address
+		.send_packet_1_avalon_master_waitrequest         (send_packet_1_avalon_master_waitrequest), //  output,   width = 1,                                          .waitrequest
+		.send_packet_1_avalon_master_byteenable          (send_packet_1_avalon_master_byteenable),  //   input,   width = 4,                                          .byteenable
+		.send_packet_1_avalon_master_chipselect          (send_packet_1_avalon_master_chipselect),  //   input,   width = 1,                                          .chipselect
+		.send_packet_1_avalon_master_readdata            (send_packet_1_avalon_master_readdata),    //  output,  width = 32,                                          .readdata
+		.send_packet_1_avalon_master_write               (send_packet_1_avalon_master_write),       //   input,   width = 1,                                          .write
+		.send_packet_1_avalon_master_writedata           (send_packet_1_avalon_master_writedata),   //   input,  width = 32,                                          .writedata
+		.mem_5_s1_address                                (mm_interconnect_3_mem_5_s1_address),      //  output,  width = 10,                                  mem_5_s1.address
+		.mem_5_s1_write                                  (mm_interconnect_3_mem_5_s1_write),        //  output,   width = 1,                                          .write
+		.mem_5_s1_readdata                               (mm_interconnect_3_mem_5_s1_readdata),     //   input,  width = 32,                                          .readdata
+		.mem_5_s1_writedata                              (mm_interconnect_3_mem_5_s1_writedata),    //  output,  width = 32,                                          .writedata
+		.mem_5_s1_byteenable                             (mm_interconnect_3_mem_5_s1_byteenable),   //  output,   width = 4,                                          .byteenable
+		.mem_5_s1_chipselect                             (mm_interconnect_3_mem_5_s1_chipselect),   //  output,   width = 1,                                          .chipselect
+		.mem_5_s1_clken                                  (mm_interconnect_3_mem_5_s1_clken),        //  output,   width = 1,                                          .clken
+		.send_packet_1_reset_reset_bridge_in_reset_reset (rst_controller_003_reset_out_reset),      //   input,   width = 1, send_packet_1_reset_reset_bridge_in_reset.reset
+		.tse_mac_tx_clock_connection_0_clk               (tse_mac_tx_clock_connection_0_clk)        //   input,   width = 1,             tse_mac_tx_clock_connection_0.clk
+	);
+
+	system_design_altera_mm_interconnect_1920_rvh6iyy mm_interconnect_4 (
+		.receive_packet_2_avalon_master_address             (receive_packet_2_avalon_master_address),     //   input,  width = 10,               receive_packet_2_avalon_master.address
+		.receive_packet_2_avalon_master_waitrequest         (receive_packet_2_avalon_master_waitrequest), //  output,   width = 1,                                             .waitrequest
+		.receive_packet_2_avalon_master_byteenable          (receive_packet_2_avalon_master_byteenable),  //   input,   width = 4,                                             .byteenable
+		.receive_packet_2_avalon_master_chipselect          (receive_packet_2_avalon_master_chipselect),  //   input,   width = 1,                                             .chipselect
+		.receive_packet_2_avalon_master_readdata            (receive_packet_2_avalon_master_readdata),    //  output,  width = 32,                                             .readdata
+		.receive_packet_2_avalon_master_write               (receive_packet_2_avalon_master_write),       //   input,   width = 1,                                             .write
+		.receive_packet_2_avalon_master_writedata           (receive_packet_2_avalon_master_writedata),   //   input,  width = 32,                                             .writedata
+		.mem_4_s2_address                                   (mm_interconnect_4_mem_4_s2_address),         //  output,  width = 10,                                     mem_4_s2.address
+		.mem_4_s2_write                                     (mm_interconnect_4_mem_4_s2_write),           //  output,   width = 1,                                             .write
+		.mem_4_s2_readdata                                  (mm_interconnect_4_mem_4_s2_readdata),        //   input,  width = 32,                                             .readdata
+		.mem_4_s2_writedata                                 (mm_interconnect_4_mem_4_s2_writedata),       //  output,  width = 32,                                             .writedata
+		.mem_4_s2_byteenable                                (mm_interconnect_4_mem_4_s2_byteenable),      //  output,   width = 4,                                             .byteenable
+		.mem_4_s2_chipselect                                (mm_interconnect_4_mem_4_s2_chipselect),      //  output,   width = 1,                                             .chipselect
+		.mem_4_s2_clken                                     (mm_interconnect_4_mem_4_s2_clken),           //  output,   width = 1,                                             .clken
+		.receive_packet_2_reset_reset_bridge_in_reset_reset (rst_controller_002_reset_out_reset),         //   input,   width = 1, receive_packet_2_reset_reset_bridge_in_reset.reset
+		.tse_mac_rx_clock_connection_1_clk                  (tse_mac_rx_clock_connection_1_clk)           //   input,   width = 1,                tse_mac_rx_clock_connection_1.clk
 	);
 
 	altera_reset_controller #(
@@ -703,7 +730,7 @@ module system_design (
 		.ADAPT_RESET_REQUEST       (0)
 	) rst_controller_001 (
 		.reset_in0      (reset_mod_reset_main_reset),             //   input,  width = 1, reset_in0.reset
-		.clk            (tse_mac_tx_clock_connection_0_clk),      //   input,  width = 1,       clk.clk
+		.clk            (tse_mac_tx_clock_connection_1_clk),      //   input,  width = 1,       clk.clk
 		.reset_out      (rst_controller_001_reset_out_reset),     //  output,  width = 1, reset_out.reset
 		.reset_req      (rst_controller_001_reset_out_reset_req), //  output,  width = 1,          .reset_req
 		.reset_req_in0  (1'b0),                                   // (terminated),                       
@@ -766,7 +793,7 @@ module system_design (
 		.ADAPT_RESET_REQUEST       (0)
 	) rst_controller_002 (
 		.reset_in0      (reset_mod_reset_main_reset),             //   input,  width = 1, reset_in0.reset
-		.clk            (tse_mac_tx_clock_connection_1_clk),      //   input,  width = 1,       clk.clk
+		.clk            (tse_mac_rx_clock_connection_1_clk),      //   input,  width = 1,       clk.clk
 		.reset_out      (rst_controller_002_reset_out_reset),     //  output,  width = 1, reset_out.reset
 		.reset_req      (rst_controller_002_reset_out_reset_req), //  output,  width = 1,          .reset_req
 		.reset_req_in0  (1'b0),                                   // (terminated),                       
@@ -829,7 +856,7 @@ module system_design (
 		.ADAPT_RESET_REQUEST       (0)
 	) rst_controller_003 (
 		.reset_in0      (reset_mod_reset_main_reset),             //   input,  width = 1, reset_in0.reset
-		.clk            (tse_mac_rx_clock_connection_0_clk),      //   input,  width = 1,       clk.clk
+		.clk            (tse_mac_tx_clock_connection_0_clk),      //   input,  width = 1,       clk.clk
 		.reset_out      (rst_controller_003_reset_out_reset),     //  output,  width = 1, reset_out.reset
 		.reset_req      (rst_controller_003_reset_out_reset_req), //  output,  width = 1,          .reset_req
 		.reset_req_in0  (1'b0),                                   // (terminated),                       
@@ -892,7 +919,7 @@ module system_design (
 		.ADAPT_RESET_REQUEST       (0)
 	) rst_controller_004 (
 		.reset_in0      (reset_mod_reset_main_reset),             //   input,  width = 1, reset_in0.reset
-		.clk            (tse_mac_rx_clock_connection_1_clk),      //   input,  width = 1,       clk.clk
+		.clk            (tse_mac_rx_clock_connection_0_clk),      //   input,  width = 1,       clk.clk
 		.reset_out      (rst_controller_004_reset_out_reset),     //  output,  width = 1, reset_out.reset
 		.reset_req      (rst_controller_004_reset_out_reset_req), //  output,  width = 1,          .reset_req
 		.reset_req_in0  (1'b0),                                   // (terminated),                       

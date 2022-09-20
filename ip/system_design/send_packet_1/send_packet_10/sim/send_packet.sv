@@ -48,13 +48,13 @@ logic [10:0] need_count_avalon_st;
 assign ff_tx_err    =   1'b0;
 assign ff_tx_eop    = (counter_data_write == need_count_avalon_st) ? 1'b1 : 1'b0;
 assign ff_tx_sop    = (counter_data_write == 11'd1) ? 1'b1 : 1'b0;
-assign ff_tx_wren   = (counter_data_write >= 11'd1 & counter_data_write  <= packet_size) ? 1'b1 : 1'b0;
+assign ff_tx_wren   = (counter_data_write >= 11'd1 && counter_data_write  <= packet_size) ? 1'b1 : 1'b0;
 
 always@ (posedge clk_original, posedge rst)
 begin
     if(rst)
     begin
-       counter_data_write = 11'd0; 
+        counter_data_write <= 11'd0; 
     end 
     else
     begin
@@ -64,17 +64,17 @@ begin
             begin
                 if(counter_data_write >= 11'd0 & ff_tx_rdy)
                 begin
-                    counter_data_write = counter_data_write + 11'd1; 
+                    counter_data_write <= counter_data_write + 11'd1; 
                 end
                 else
                 begin
-                    counter_data_write = 11'd1;
+                    counter_data_write <= 11'd1;
                 end 
             end
         end  
         else
         begin
-            counter_data_write = 11'd0;
+            counter_data_write <= 11'd0;
         end
     end   
 end
@@ -83,24 +83,24 @@ always@ (posedge clk_original, posedge rst)
 begin
     if(rst)
     begin
-        prev_cmd_send = 1'b0;
+        prev_cmd_send <= 1'b0;
     end    
     else
     begin
         if(cmd_send)
         begin
-            prev_cmd_send = cmd_send;
+            prev_cmd_send <= cmd_send;
         end
         else
         begin
             if(prev_cmd_send)
             begin
-                need_transmit = 1'b1;
-                prev_cmd_send = 1'b0;
+                need_transmit <= 1'b1;
+                prev_cmd_send <= 1'b0;
             end
             else
             begin
-                need_transmit = 1'b0;
+                need_transmit <= 1'b0;
             end
         end
     end
@@ -150,17 +150,17 @@ always @(posedge clk_original, posedge rst)
 begin
     if(rst)
     begin
-      ram_addr_prev = 25'd0;
+      ram_addr_prev <= 25'd0;
     end
     else
     begin
         if(state == PREPARE_DATA)
         begin
-            ram_chipselect = 1'b1;
+            ram_chipselect <= 1'b1;
         end
         else
         begin
-            ram_chipselect = 1'b0;
+            ram_chipselect <= 1'b0;
         end
     //   if(ram_address_tx_local != ram_addr_prev)
     //   begin
@@ -177,38 +177,38 @@ end
 logic wait_data_flag;
 logic [24:0] address_wait;
 
-logic [3:0] test_cnt_wait;
+logic [1:0] test_cnt_wait;
 
 always@ (posedge clk_original, posedge rst)
 begin
     if(rst)
     begin
-        wait_data_flag = 1'b0;
-        address_wait = 25'd0;
+        wait_data_flag <= 1'b0;
+        address_wait <= 25'd0;
 
-        test_cnt_wait = 4'd0;
+        test_cnt_wait <= 4'd0;
     end
     else
     begin
         if(/*~ram_ready_local & */ test_cnt_wait == 4'd2 &&  address_wait != ram_address_tx_local && state == PREPARE_DATA && ram_address_tx_local > 25'd0)
         begin
-            wait_data_flag = 1'b1;
-            address_wait = ram_address_tx_local;
+            wait_data_flag <= 1'b1;
+            address_wait <= ram_address_tx_local;
         end
         else if(wait_data_flag && /* ram_ready_local & */ address_wait < ram_address_tx_local && state == PREPARE_DATA)
         begin
-            wait_data_flag = 1'b0;
+            wait_data_flag <= 1'b0;
 
-            test_cnt_wait = 4'd0;
+            test_cnt_wait <= 4'd0;
         end
         else if(state != PREPARE_DATA)
         begin
-            wait_data_flag = 1'b0;
-            test_cnt_wait = 4'd0;
+            wait_data_flag <= 1'b0;
+            test_cnt_wait <= 4'd0;
         end
         else if(state == PREPARE_DATA)
         begin
-            test_cnt_wait = test_cnt_wait + 4'd1;
+            test_cnt_wait <= test_cnt_wait + 4'd1;
         end        
     end
 end
@@ -219,17 +219,17 @@ always@ (posedge clk_original, posedge rst)
 begin
     if(rst)
     begin
-        count_prepare_wait = 10'd0;
+        count_prepare_wait <= 10'd0;
     end    
     else
     begin
-        if(state == PREPARE_DATA & count_prepare_wait < 10'd25)
+        if(state == PREPARE_DATA && count_prepare_wait < 10'd25)
         begin
-            count_prepare_wait++;
+            count_prepare_wait <= count_prepare_wait + 10'd1;
         end
         else
         begin
-            count_prepare_wait = 10'd0;
+            count_prepare_wait <= 10'd0;
         end
     end
 end
@@ -242,72 +242,72 @@ always@ (posedge clk_original, posedge rst)
 begin
     if(rst)
     begin
-        data_ready = 1'b0;
-        packet_size = 11'd0;
-        need_count_avalon_st = 11'd0;
-        count_prepared = 11'd0;
-        ram_address_tx_local = 25'd0;
-        for(i = 9'd0; i < 9'd256; i++) packet_data[i] = 7'd0;
+        data_ready <= 1'b0;
+        packet_size <= 11'd0;
+        need_count_avalon_st <= 11'd0;
+        count_prepared <= 11'd0;
+        ram_address_tx_local <= 25'd0;
+        for(i = 9'd0; i < 9'd256; i++) packet_data[i] <= 7'd0;
     end
     else
     begin
         if(state == PREPARE_DATA)
         begin
-            if(ram_address_tx_local == 25'd0 & count_prepare_wait >= 10'd20)
+            if(ram_address_tx_local == 25'd0 && count_prepare_wait >= 10'd20)
             begin
-                data_ready = 1'b0;
+                data_ready <= 1'b0;
                 if(ram_ready_local)
                 begin
-                    ram_address_tx_local = start_ram_addr; 
+                    ram_address_tx_local <= start_ram_addr; 
                 end
             end
-            else if(wait_data_flag & ram_address_tx_local == start_ram_addr)
+            else if(wait_data_flag && ram_address_tx_local == start_ram_addr)
             begin
                 if(ram_ready_local)
                 begin
-                    packet_size = ram_data_read_local[10:0];
+                    packet_size <= ram_data_read_local[10:0];
                     if(packet_size > 0)
                     begin
-                        need_count_prepare = (packet_size % 8'd4 == 0) ? packet_size/8'd4 : packet_size/8'd4 + 8'd1;
-                        need_count_avalon_st = packet_size;
-                        count_prepared = 11'd0;
-                        ram_address_tx_local = start_ram_addr + 25'd1;
+                        need_count_prepare <= (packet_size % 8'd4 == 0) ? packet_size/8'd4 : packet_size/8'd4 + 8'd1;
+                        need_count_avalon_st <= packet_size;
+                        count_prepared <= 11'd0;
+                        ram_address_tx_local <= start_ram_addr + 25'd1;
                     end
                 end
             end
-            else if(wait_data_flag & ram_address_tx_local > start_ram_addr & address_wait == ram_address_tx_local)
+            else if(wait_data_flag && ram_address_tx_local > start_ram_addr && address_wait == ram_address_tx_local)
             begin
                 if(ram_ready_local)
                 begin
                     // for(i = 9'd0; i < 9'd8; i++) 
                     // begin
-                        packet_data[1 + 0 + /*i * 4*/ + count_prepared * 9'd4] = ram_data_read_local[/*i * 32 + */ 31  -:  8];
-                        packet_data[1 + 1 + /*i * 4*/ + count_prepared * 9'd4] = ram_data_read_local[/*i * 32 + */ 23  -:  8];
-                        packet_data[1 + 2 + /*i * 4*/ + count_prepared * 9'd4] = ram_data_read_local[/*i * 32 + */ 15  -:  8];
-                        packet_data[1 + 3 + /*i * 4*/ + count_prepared * 9'd4] = ram_data_read_local[/*i * 32 + */ 7   -:  8];
+                        packet_data[1 + 0 + /*i * 4*/ + count_prepared * 9'd4] <= ram_data_read_local[/*i * 32 + */ 31  -:  8];
+                        packet_data[1 + 1 + /*i * 4*/ + count_prepared * 9'd4] <= ram_data_read_local[/*i * 32 + */ 23  -:  8];
+                        packet_data[1 + 2 + /*i * 4*/ + count_prepared * 9'd4] <= ram_data_read_local[/*i * 32 + */ 15  -:  8];
+                        packet_data[1 + 3 + /*i * 4*/ + count_prepared * 9'd4] <= ram_data_read_local[/*i * 32 + */ 7   -:  8];
                     // end
                     
-                    count_prepared++;
+                    count_prepared <= count_prepared + 10'd1;
 
                     if(count_prepared < need_count_prepare)
                     begin
-                        ram_address_tx_local++;
+                        ram_address_tx_local <= ram_address_tx_local + 25'd1;
                     end
                     else
                     begin
-                        data_ready = 1'b1;
+                        data_ready <= 1'b1;
                     end 
                 end
             end
-            else if(count_prepare_wait < 10'd20 & ram_address_tx_local == 25'd0)
+            else if(count_prepare_wait < 10'd20 && ram_address_tx_local == 25'd0)
             begin
-                ram_address_tx_local = 25'd0;
+                ram_address_tx_local <= 25'd0;
             end
         end
         else
         begin
-            ram_address_tx_local = 25'd0;
-            data_ready = 1'b0;
+            ram_address_tx_local <= 25'd0;
+            data_ready <= 1'b0;
         end
     end
 end
