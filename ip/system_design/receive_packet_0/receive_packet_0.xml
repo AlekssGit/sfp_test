@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deploy
- date="2022.09.20.18:22:09"
- outputDirectory="D:/Documents/Projects/Learning/SFP_test/ip/system_design/receive_packet_0/">
+ date="2022.09.20.22:40:17"
+ outputDirectory="C:/Users/alvas/Documents/Work_ASD/Projects/Learning/Ethernet/sfp_test/ip/system_design/receive_packet_0/">
  <perimeter>
   <parameter
      name="AUTO_GENERATION_ID"
@@ -199,20 +199,21 @@
   <parameter name="AUTO_AVALON_MASTER_ADDRESS_MAP" value="" />
   <generatedFiles>
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\receive_packet_0\synth\receive_packet_0.v"
+       path="C:\Users\alvas\Documents\Work_ASD\Projects\Learning\Ethernet\sfp_test\ip\system_design\receive_packet_0\synth\receive_packet_0.v"
        attributes="CONTAINS_INLINE_CONFIGURATION" />
   </generatedFiles>
   <childGeneratedFiles>
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\receive_packet_0\synth\receive_packet_0.v"
+       path="C:\Users\alvas\Documents\Work_ASD\Projects\Learning\Ethernet\sfp_test\ip\system_design\receive_packet_0\synth\receive_packet_0.v"
        attributes="CONTAINS_INLINE_CONFIGURATION" />
   </childGeneratedFiles>
   <sourceFiles>
    <file
-       path="D:/Documents/Projects/Learning/SFP_test/ip/system_design/receive_packet_0.ip" />
+       path="C:/Users/alvas/Documents/Work_ASD/Projects/Learning/Ethernet/sfp_test/ip/system_design/receive_packet_0.ip" />
   </sourceFiles>
   <childSourceFiles>
-   <file path="D:/Documents/Projects/Learning/SFP_test/receive_packet_hw.tcl" />
+   <file
+       path="C:/Users/alvas/Documents/Work_ASD/Projects/Learning/Ethernet/sfp_test/receive_packet_hw.tcl" />
   </childSourceFiles>
   <messages>
    <message level="Info" culprit="receive_packet_0">"Generating: receive_packet_0"</message>
@@ -222,16 +223,17 @@
  <entity kind="receive_packet" version="1.0" name="receive_packet_256">
   <generatedFiles>
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\receive_packet_0\receive_packet_10\synth\receive_packet.sv"
+       path="C:\Users\alvas\Documents\Work_ASD\Projects\Learning\Ethernet\sfp_test\ip\system_design\receive_packet_0\receive_packet_10\synth\receive_packet.sv"
        attributes="TOP_LEVEL_FILE" />
   </generatedFiles>
   <childGeneratedFiles>
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\receive_packet_0\receive_packet_10\synth\receive_packet.sv"
+       path="C:\Users\alvas\Documents\Work_ASD\Projects\Learning\Ethernet\sfp_test\ip\system_design\receive_packet_0\receive_packet_10\synth\receive_packet.sv"
        attributes="TOP_LEVEL_FILE" />
   </childGeneratedFiles>
   <sourceFiles>
-   <file path="D:/Documents/Projects/Learning/SFP_test/receive_packet_hw.tcl" />
+   <file
+       path="C:/Users/alvas/Documents/Work_ASD/Projects/Learning/Ethernet/sfp_test/receive_packet_hw.tcl" />
   </sourceFiles>
   <childSourceFiles/>
   <instantiator instantiator="receive_packet_0" as="receive_packet_0" />

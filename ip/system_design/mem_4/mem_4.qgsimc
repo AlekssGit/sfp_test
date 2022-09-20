@@ -50,7 +50,7 @@
           </parameter>
           <parameter>
             <name>derived_init_file_name</name>
-            <value>D:/Documents/Projects/Learning/SFP_test/mem_init/mem_init_1.mif</value>
+            <value>C:/Users/alvas/Documents/Work_ASD/Projects/Learning/Ethernet/sfp_test/mem_init/mem_init_3.mif</value>
           </parameter>
           <parameter>
             <name>derived_is_hardcopy</name>
@@ -106,7 +106,7 @@
           </parameter>
           <parameter>
             <name>initializationFileName</name>
-            <value>D:/Documents/Projects/Learning/SFP_test/mem_init/mem_init_1.mif</value>
+            <value>C:/Users/alvas/Documents/Work_ASD/Projects/Learning/Ethernet/sfp_test/mem_init/mem_init_3.mif</value>
           </parameter>
           <parameter>
             <name>instanceID</name>
@@ -161,7 +161,7 @@
         <className>altera_avalon_onchip_memory2</className>
         <version>19.3.1</version>
         <name>mem_4</name>
-        <uniqueName>mem_4_altera_avalon_onchip_memory2_1931_imtzmlq</uniqueName>
+        <uniqueName>mem_4_altera_avalon_onchip_memory2_1931_36jbw6a</uniqueName>
         <nonce>0</nonce>
         <incidentConnections></incidentConnections>
         <path>mem_4.mem_4</path>

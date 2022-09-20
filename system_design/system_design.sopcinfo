@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="system_design" kind="system_design" version="1.0" fabric="QSYS">
- <!-- Format version 21.3 170 (Future versions may contain additional information.) -->
- <!-- 2022.09.20.18:22:19 -->
+ <!-- Format version 21.4 67 (Future versions may contain additional information.) -->
+ <!-- 2022.09.20.22:42:06 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
@@ -661,7 +661,7 @@ the requested settings for a module instance. -->
    <visible>true</visible>
    <valid>true</valid>
   </parameter>
-  <interface name="in_clk" kind="clock_sink" version="21.3">
+  <interface name="in_clk" kind="clock_sink" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -722,7 +722,7 @@ parameters are a RESULT of the module parameters. -->
     <role>clk</role>
    </port>
   </interface>
-  <interface name="out_clk" kind="clock_source" version="21.3">
+  <interface name="out_clk" kind="clock_source" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -1557,7 +1557,7 @@ the requested settings for a module instance. -->
    <visible>true</visible>
    <valid>true</valid>
   </parameter>
-  <interface name="clock" kind="clock_sink" version="21.3">
+  <interface name="clock" kind="clock_sink" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -1602,7 +1602,7 @@ parameters are a RESULT of the module parameters. -->
     <role>clk</role>
    </port>
   </interface>
-  <interface name="reset" kind="reset_sink" version="21.3">
+  <interface name="reset" kind="reset_sink" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -1647,7 +1647,7 @@ parameters are a RESULT of the module parameters. -->
     <role>reset</role>
    </port>
   </interface>
-  <interface name="avalon_master" kind="avalon_master" version="21.3">
+  <interface name="avalon_master" kind="avalon_master" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -1986,7 +1986,7 @@ parameters are a RESULT of the module parameters. -->
     <span>4096</span>
    </memoryBlock>
   </interface>
-  <interface name="mac_inited" kind="conduit_end" version="21.3">
+  <interface name="mac_inited" kind="conduit_end" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -2073,7 +2073,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.INIT_CONTENTS_FILE</name>
-   <value>mem_init_1</value>
+   <value>mem_init_3</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.INIT_MEM_CONTENT</name>
@@ -2137,7 +2137,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.memoryInfo.MEM_INIT_FILENAME</name>
-   <value>mem_init_1</value>
+   <value>mem_init_3</value>
   </assignment>
   <assignment>
    <name>postgeneration.simulation.init_file.param_name</name>
@@ -3646,7 +3646,7 @@ the requested settings for a module instance. -->
         </entry>
         <entry>
             <key>embeddedsw.CMacro.INIT_CONTENTS_FILE</key>
-            <value>mem_init_1</value>
+            <value>mem_init_3</value>
         </entry>
         <entry>
             <key>embeddedsw.CMacro.INIT_MEM_CONTENT</key>
@@ -3710,7 +3710,7 @@ the requested settings for a module instance. -->
         </entry>
         <entry>
             <key>embeddedsw.memoryInfo.MEM_INIT_FILENAME</key>
-            <value>mem_init_1</value>
+            <value>mem_init_3</value>
         </entry>
         <entry>
             <key>postgeneration.simulation.init_file.param_name</key>
@@ -3796,7 +3796,7 @@ the requested settings for a module instance. -->
    <visible>true</visible>
    <valid>true</valid>
   </parameter>
-  <interface name="clk1" kind="clock_sink" version="21.3">
+  <interface name="clk1" kind="clock_sink" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -3841,7 +3841,7 @@ parameters are a RESULT of the module parameters. -->
     <role>clk</role>
    </port>
   </interface>
-  <interface name="s1" kind="avalon_slave" version="21.3">
+  <interface name="s1" kind="avalon_slave" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -4250,7 +4250,7 @@ parameters are a RESULT of the module parameters. -->
     <role>byteenable</role>
    </port>
   </interface>
-  <interface name="reset1" kind="reset_sink" version="21.3">
+  <interface name="reset1" kind="reset_sink" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -4301,7 +4301,7 @@ parameters are a RESULT of the module parameters. -->
     <role>reset_req</role>
    </port>
   </interface>
-  <interface name="s2" kind="avalon_slave" version="21.3">
+  <interface name="s2" kind="avalon_slave" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -4710,7 +4710,7 @@ parameters are a RESULT of the module parameters. -->
     <role>byteenable</role>
    </port>
   </interface>
-  <interface name="clk2" kind="clock_sink" version="21.3">
+  <interface name="clk2" kind="clock_sink" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -4755,7 +4755,7 @@ parameters are a RESULT of the module parameters. -->
     <role>clk</role>
    </port>
   </interface>
-  <interface name="reset2" kind="reset_sink" version="21.3">
+  <interface name="reset2" kind="reset_sink" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -5880,7 +5880,7 @@ the requested settings for a module instance. -->
    <visible>true</visible>
    <valid>true</valid>
   </parameter>
-  <interface name="clk1" kind="clock_sink" version="21.3">
+  <interface name="clk1" kind="clock_sink" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -5925,7 +5925,7 @@ parameters are a RESULT of the module parameters. -->
     <role>clk</role>
    </port>
   </interface>
-  <interface name="s1" kind="avalon_slave" version="21.3">
+  <interface name="s1" kind="avalon_slave" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -6334,7 +6334,7 @@ parameters are a RESULT of the module parameters. -->
     <role>byteenable</role>
    </port>
   </interface>
-  <interface name="reset1" kind="reset_sink" version="21.3">
+  <interface name="reset1" kind="reset_sink" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -7459,7 +7459,7 @@ the requested settings for a module instance. -->
    <visible>true</visible>
    <valid>true</valid>
   </parameter>
-  <interface name="clk1" kind="clock_sink" version="21.3">
+  <interface name="clk1" kind="clock_sink" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -7504,7 +7504,7 @@ parameters are a RESULT of the module parameters. -->
     <role>clk</role>
    </port>
   </interface>
-  <interface name="s1" kind="avalon_slave" version="21.3">
+  <interface name="s1" kind="avalon_slave" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -7913,7 +7913,7 @@ parameters are a RESULT of the module parameters. -->
     <role>byteenable</role>
    </port>
   </interface>
-  <interface name="reset1" kind="reset_sink" version="21.3">
+  <interface name="reset1" kind="reset_sink" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -9038,7 +9038,7 @@ the requested settings for a module instance. -->
    <visible>true</visible>
    <valid>true</valid>
   </parameter>
-  <interface name="clk1" kind="clock_sink" version="21.3">
+  <interface name="clk1" kind="clock_sink" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -9083,7 +9083,7 @@ parameters are a RESULT of the module parameters. -->
     <role>clk</role>
    </port>
   </interface>
-  <interface name="s1" kind="avalon_slave" version="21.3">
+  <interface name="s1" kind="avalon_slave" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -9492,7 +9492,7 @@ parameters are a RESULT of the module parameters. -->
     <role>byteenable</role>
    </port>
   </interface>
-  <interface name="reset1" kind="reset_sink" version="21.3">
+  <interface name="reset1" kind="reset_sink" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -10377,7 +10377,7 @@ the requested settings for a module instance. -->
    <visible>true</visible>
    <valid>true</valid>
   </parameter>
-  <interface name="reset" kind="reset_sink" version="21.3">
+  <interface name="reset" kind="reset_sink" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -10426,7 +10426,7 @@ parameters are a RESULT of the module parameters. -->
     <role>reset</role>
    </port>
   </interface>
-  <interface name="refclk" kind="clock_sink" version="21.3">
+  <interface name="refclk" kind="clock_sink" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -10491,7 +10491,7 @@ parameters are a RESULT of the module parameters. -->
     <role>clk</role>
    </port>
   </interface>
-  <interface name="outclk0" kind="clock_source" version="21.3">
+  <interface name="outclk0" kind="clock_source" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -10576,7 +10576,7 @@ parameters are a RESULT of the module parameters. -->
     <name>tse.receive_fifo_status_clock_connection</name>
    </clockDomainMember>
   </interface>
-  <interface name="outclk1" kind="clock_source" version="21.3">
+  <interface name="outclk1" kind="clock_source" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -10667,7 +10667,7 @@ parameters are a RESULT of the module parameters. -->
     <name>clock_50_out.in_clk</name>
    </clockDomainMember>
   </interface>
-  <interface name="outclk2" kind="clock_source" version="21.3">
+  <interface name="outclk2" kind="clock_source" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -10746,7 +10746,7 @@ parameters are a RESULT of the module parameters. -->
     <name>receive_packet_2.fifo_status_clk</name>
    </clockDomainMember>
   </interface>
-  <interface name="outclk3" kind="clock_source" version="21.3">
+  <interface name="outclk3" kind="clock_source" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -12042,7 +12042,7 @@ the requested settings for a module instance. -->
   <interface
      name="avalon_streaming_sink"
      kind="avalon_streaming_sink"
-     version="21.3">
+     version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -12213,7 +12213,7 @@ parameters are a RESULT of the module parameters. -->
     <role>error</role>
    </port>
   </interface>
-  <interface name="avalon_master" kind="avalon_master" version="21.3">
+  <interface name="avalon_master" kind="avalon_master" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -12558,7 +12558,7 @@ parameters are a RESULT of the module parameters. -->
     <span>4096</span>
    </memoryBlock>
   </interface>
-  <interface name="clock" kind="clock_sink" version="21.3">
+  <interface name="clock" kind="clock_sink" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -12603,7 +12603,7 @@ parameters are a RESULT of the module parameters. -->
     <role>clk</role>
    </port>
   </interface>
-  <interface name="reset" kind="reset_sink" version="21.3">
+  <interface name="reset" kind="reset_sink" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -12648,7 +12648,7 @@ parameters are a RESULT of the module parameters. -->
     <role>reset</role>
    </port>
   </interface>
-  <interface name="fifo_status" kind="avalon_streaming_source" version="21.3">
+  <interface name="fifo_status" kind="avalon_streaming_source" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -12801,7 +12801,7 @@ parameters are a RESULT of the module parameters. -->
     <role>channel</role>
    </port>
   </interface>
-  <interface name="fifo_status_clk" kind="clock_sink" version="21.3">
+  <interface name="fifo_status_clk" kind="clock_sink" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -14069,7 +14069,7 @@ the requested settings for a module instance. -->
   <interface
      name="avalon_streaming_sink"
      kind="avalon_streaming_sink"
-     version="21.3">
+     version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -14240,7 +14240,7 @@ parameters are a RESULT of the module parameters. -->
     <role>error</role>
    </port>
   </interface>
-  <interface name="avalon_master" kind="avalon_master" version="21.3">
+  <interface name="avalon_master" kind="avalon_master" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -14585,7 +14585,7 @@ parameters are a RESULT of the module parameters. -->
     <span>4096</span>
    </memoryBlock>
   </interface>
-  <interface name="clock" kind="clock_sink" version="21.3">
+  <interface name="clock" kind="clock_sink" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -14630,7 +14630,7 @@ parameters are a RESULT of the module parameters. -->
     <role>clk</role>
    </port>
   </interface>
-  <interface name="reset" kind="reset_sink" version="21.3">
+  <interface name="reset" kind="reset_sink" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -14675,7 +14675,7 @@ parameters are a RESULT of the module parameters. -->
     <role>reset</role>
    </port>
   </interface>
-  <interface name="fifo_status" kind="avalon_streaming_source" version="21.3">
+  <interface name="fifo_status" kind="avalon_streaming_source" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -14828,7 +14828,7 @@ parameters are a RESULT of the module parameters. -->
     <role>channel</role>
    </port>
   </interface>
-  <interface name="fifo_status_clk" kind="clock_sink" version="21.3">
+  <interface name="fifo_status_clk" kind="clock_sink" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -15187,7 +15187,7 @@ the requested settings for a module instance. -->
    <visible>true</visible>
    <valid>true</valid>
   </parameter>
-  <interface name="in_reset" kind="reset_sink" version="21.3">
+  <interface name="in_reset" kind="reset_sink" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -15232,7 +15232,7 @@ parameters are a RESULT of the module parameters. -->
     <role>reset</role>
    </port>
   </interface>
-  <interface name="out_reset" kind="reset_source" version="21.3">
+  <interface name="out_reset" kind="reset_source" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -15750,7 +15750,7 @@ the requested settings for a module instance. -->
    <visible>true</visible>
    <valid>true</valid>
   </parameter>
-  <interface name="clock" kind="clock_sink" version="21.3">
+  <interface name="clock" kind="clock_sink" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -15795,7 +15795,7 @@ parameters are a RESULT of the module parameters. -->
     <role>clk</role>
    </port>
   </interface>
-  <interface name="reset" kind="reset_sink" version="21.3">
+  <interface name="reset" kind="reset_sink" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -15840,7 +15840,7 @@ parameters are a RESULT of the module parameters. -->
     <role>reset_n</role>
    </port>
   </interface>
-  <interface name="reset_main" kind="reset_source" version="21.3">
+  <interface name="reset_main" kind="reset_source" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -15901,7 +15901,7 @@ parameters are a RESULT of the module parameters. -->
     <role>reset</role>
    </port>
   </interface>
-  <interface name="reset_phy" kind="reset_source" version="21.3">
+  <interface name="reset_phy" kind="reset_source" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -17010,7 +17010,7 @@ the requested settings for a module instance. -->
    <visible>true</visible>
    <valid>true</valid>
   </parameter>
-  <interface name="clock" kind="clock_sink" version="21.3">
+  <interface name="clock" kind="clock_sink" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -17055,7 +17055,7 @@ parameters are a RESULT of the module parameters. -->
     <role>clk</role>
    </port>
   </interface>
-  <interface name="reset" kind="reset_sink" version="21.3">
+  <interface name="reset" kind="reset_sink" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -17100,7 +17100,7 @@ parameters are a RESULT of the module parameters. -->
     <role>reset</role>
    </port>
   </interface>
-  <interface name="avalon_master" kind="avalon_master" version="21.3">
+  <interface name="avalon_master" kind="avalon_master" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -17448,7 +17448,7 @@ parameters are a RESULT of the module parameters. -->
   <interface
      name="avalon_streaming_source"
      kind="avalon_streaming_source"
-     version="21.3">
+     version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -17619,7 +17619,7 @@ parameters are a RESULT of the module parameters. -->
     <role>valid</role>
    </port>
   </interface>
-  <interface name="control" kind="conduit_end" version="21.3">
+  <interface name="control" kind="conduit_end" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -18724,7 +18724,7 @@ the requested settings for a module instance. -->
    <visible>true</visible>
    <valid>true</valid>
   </parameter>
-  <interface name="clock" kind="clock_sink" version="21.3">
+  <interface name="clock" kind="clock_sink" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -18769,7 +18769,7 @@ parameters are a RESULT of the module parameters. -->
     <role>clk</role>
    </port>
   </interface>
-  <interface name="reset" kind="reset_sink" version="21.3">
+  <interface name="reset" kind="reset_sink" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -18814,7 +18814,7 @@ parameters are a RESULT of the module parameters. -->
     <role>reset</role>
    </port>
   </interface>
-  <interface name="avalon_master" kind="avalon_master" version="21.3">
+  <interface name="avalon_master" kind="avalon_master" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -19162,7 +19162,7 @@ parameters are a RESULT of the module parameters. -->
   <interface
      name="avalon_streaming_source"
      kind="avalon_streaming_source"
-     version="21.3">
+     version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -19333,7 +19333,7 @@ parameters are a RESULT of the module parameters. -->
     <role>valid</role>
    </port>
   </interface>
-  <interface name="control" kind="conduit_end" version="21.3">
+  <interface name="control" kind="conduit_end" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -29639,7 +29639,7 @@ the requested settings for a module instance. -->
    <visible>true</visible>
    <valid>true</valid>
   </parameter>
-  <interface name="control_port_clock_connection" kind="clock_sink" version="21.3">
+  <interface name="control_port_clock_connection" kind="clock_sink" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -29684,7 +29684,7 @@ parameters are a RESULT of the module parameters. -->
     <role>clk</role>
    </port>
   </interface>
-  <interface name="reset_connection" kind="reset_sink" version="21.3">
+  <interface name="reset_connection" kind="reset_sink" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -29729,7 +29729,7 @@ parameters are a RESULT of the module parameters. -->
     <role>reset</role>
    </port>
   </interface>
-  <interface name="control_port" kind="avalon_slave" version="21.3">
+  <interface name="control_port" kind="avalon_slave" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -30135,7 +30135,7 @@ parameters are a RESULT of the module parameters. -->
   <interface
      name="receive_fifo_status_clock_connection"
      kind="clock_sink"
-     version="21.3">
+     version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -30183,7 +30183,7 @@ parameters are a RESULT of the module parameters. -->
   <interface
      name="receive_fifo_status"
      kind="avalon_streaming_sink"
-     version="21.3">
+     version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -30336,7 +30336,7 @@ parameters are a RESULT of the module parameters. -->
     <role>channel</role>
    </port>
   </interface>
-  <interface name="mac_rx_clock_connection_0" kind="clock_source" version="21.3">
+  <interface name="mac_rx_clock_connection_0" kind="clock_source" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -30417,7 +30417,7 @@ parameters are a RESULT of the module parameters. -->
     <name>receive_packet_1.clock</name>
    </clockDomainMember>
   </interface>
-  <interface name="mac_tx_clock_connection_0" kind="clock_source" version="21.3">
+  <interface name="mac_tx_clock_connection_0" kind="clock_source" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -30498,7 +30498,7 @@ parameters are a RESULT of the module parameters. -->
     <name>send_packet_1.clock</name>
    </clockDomainMember>
   </interface>
-  <interface name="receive_0" kind="avalon_streaming_source" version="21.3">
+  <interface name="receive_0" kind="avalon_streaming_source" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -30669,7 +30669,7 @@ parameters are a RESULT of the module parameters. -->
     <role>valid</role>
    </port>
   </interface>
-  <interface name="transmit_0" kind="avalon_streaming_sink" version="21.3">
+  <interface name="transmit_0" kind="avalon_streaming_sink" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -30843,7 +30843,7 @@ parameters are a RESULT of the module parameters. -->
   <interface
      name="receive_packet_type_0"
      kind="avalon_streaming_source"
-     version="21.3">
+     version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -30990,7 +30990,7 @@ parameters are a RESULT of the module parameters. -->
     <role>valid</role>
    </port>
   </interface>
-  <interface name="mac_misc_connection_0" kind="conduit_end" version="21.3">
+  <interface name="mac_misc_connection_0" kind="conduit_end" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -31055,7 +31055,7 @@ parameters are a RESULT of the module parameters. -->
     <role>tx_crc_fwd</role>
    </port>
   </interface>
-  <interface name="mac_mdio_connection" kind="conduit_end" version="21.3">
+  <interface name="mac_mdio_connection" kind="conduit_end" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -31126,7 +31126,7 @@ parameters are a RESULT of the module parameters. -->
     <role>mdio_oen</role>
    </port>
   </interface>
-  <interface name="mac_rx_clock_connection_1" kind="clock_source" version="21.3">
+  <interface name="mac_rx_clock_connection_1" kind="clock_source" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -31213,7 +31213,7 @@ parameters are a RESULT of the module parameters. -->
     <name>receive_packet_2.clock</name>
    </clockDomainMember>
   </interface>
-  <interface name="mac_tx_clock_connection_1" kind="clock_source" version="21.3">
+  <interface name="mac_tx_clock_connection_1" kind="clock_source" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -31294,7 +31294,7 @@ parameters are a RESULT of the module parameters. -->
     <name>send_packet_2.clock</name>
    </clockDomainMember>
   </interface>
-  <interface name="receive_1" kind="avalon_streaming_source" version="21.3">
+  <interface name="receive_1" kind="avalon_streaming_source" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -31465,7 +31465,7 @@ parameters are a RESULT of the module parameters. -->
     <role>valid</role>
    </port>
   </interface>
-  <interface name="transmit_1" kind="avalon_streaming_sink" version="21.3">
+  <interface name="transmit_1" kind="avalon_streaming_sink" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -31639,7 +31639,7 @@ parameters are a RESULT of the module parameters. -->
   <interface
      name="receive_packet_type_1"
      kind="avalon_streaming_source"
-     version="21.3">
+     version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -31786,7 +31786,7 @@ parameters are a RESULT of the module parameters. -->
     <role>valid</role>
    </port>
   </interface>
-  <interface name="mac_misc_connection_1" kind="conduit_end" version="21.3">
+  <interface name="mac_misc_connection_1" kind="conduit_end" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -31851,7 +31851,7 @@ parameters are a RESULT of the module parameters. -->
     <role>tx_crc_fwd</role>
    </port>
   </interface>
-  <interface name="mac_rx_clock_connection_2" kind="clock_source" version="21.3">
+  <interface name="mac_rx_clock_connection_2" kind="clock_source" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -31920,7 +31920,7 @@ parameters are a RESULT of the module parameters. -->
     <role>clk</role>
    </port>
   </interface>
-  <interface name="mac_tx_clock_connection_2" kind="clock_source" version="21.3">
+  <interface name="mac_tx_clock_connection_2" kind="clock_source" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -31989,7 +31989,7 @@ parameters are a RESULT of the module parameters. -->
     <role>clk</role>
    </port>
   </interface>
-  <interface name="receive_2" kind="avalon_streaming_source" version="21.3">
+  <interface name="receive_2" kind="avalon_streaming_source" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -32160,7 +32160,7 @@ parameters are a RESULT of the module parameters. -->
     <role>valid</role>
    </port>
   </interface>
-  <interface name="transmit_2" kind="avalon_streaming_sink" version="21.3">
+  <interface name="transmit_2" kind="avalon_streaming_sink" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -32334,7 +32334,7 @@ parameters are a RESULT of the module parameters. -->
   <interface
      name="receive_packet_type_2"
      kind="avalon_streaming_source"
-     version="21.3">
+     version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -32481,7 +32481,7 @@ parameters are a RESULT of the module parameters. -->
     <role>valid</role>
    </port>
   </interface>
-  <interface name="mac_misc_connection_2" kind="conduit_end" version="21.3">
+  <interface name="mac_misc_connection_2" kind="conduit_end" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -32546,7 +32546,7 @@ parameters are a RESULT of the module parameters. -->
     <role>tx_crc_fwd</role>
    </port>
   </interface>
-  <interface name="mac_rx_clock_connection_3" kind="clock_source" version="21.3">
+  <interface name="mac_rx_clock_connection_3" kind="clock_source" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -32615,7 +32615,7 @@ parameters are a RESULT of the module parameters. -->
     <role>clk</role>
    </port>
   </interface>
-  <interface name="mac_tx_clock_connection_3" kind="clock_source" version="21.3">
+  <interface name="mac_tx_clock_connection_3" kind="clock_source" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -32684,7 +32684,7 @@ parameters are a RESULT of the module parameters. -->
     <role>clk</role>
    </port>
   </interface>
-  <interface name="receive_3" kind="avalon_streaming_source" version="21.3">
+  <interface name="receive_3" kind="avalon_streaming_source" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -32855,7 +32855,7 @@ parameters are a RESULT of the module parameters. -->
     <role>valid</role>
    </port>
   </interface>
-  <interface name="transmit_3" kind="avalon_streaming_sink" version="21.3">
+  <interface name="transmit_3" kind="avalon_streaming_sink" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -33029,7 +33029,7 @@ parameters are a RESULT of the module parameters. -->
   <interface
      name="receive_packet_type_3"
      kind="avalon_streaming_source"
-     version="21.3">
+     version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -33176,7 +33176,7 @@ parameters are a RESULT of the module parameters. -->
     <role>valid</role>
    </port>
   </interface>
-  <interface name="mac_misc_connection_3" kind="conduit_end" version="21.3">
+  <interface name="mac_misc_connection_3" kind="conduit_end" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -33241,7 +33241,7 @@ parameters are a RESULT of the module parameters. -->
     <role>tx_crc_fwd</role>
    </port>
   </interface>
-  <interface name="pcs_ref_clk_clock_connection" kind="clock_sink" version="21.3">
+  <interface name="pcs_ref_clk_clock_connection" kind="clock_sink" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -33286,7 +33286,7 @@ parameters are a RESULT of the module parameters. -->
     <role>clk</role>
    </port>
   </interface>
-  <interface name="status_led_connection_0" kind="conduit_end" version="21.3">
+  <interface name="status_led_connection_0" kind="conduit_end" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -33375,7 +33375,7 @@ parameters are a RESULT of the module parameters. -->
     <role>disp_err</role>
    </port>
   </interface>
-  <interface name="tx_analogreset_0" kind="conduit_end" version="21.3">
+  <interface name="tx_analogreset_0" kind="conduit_end" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -33432,7 +33432,7 @@ parameters are a RESULT of the module parameters. -->
     <role>tx_analogreset</role>
    </port>
   </interface>
-  <interface name="tx_digitalreset_0" kind="conduit_end" version="21.3">
+  <interface name="tx_digitalreset_0" kind="conduit_end" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -33489,7 +33489,7 @@ parameters are a RESULT of the module parameters. -->
     <role>tx_digitalreset</role>
    </port>
   </interface>
-  <interface name="rx_analogreset_0" kind="conduit_end" version="21.3">
+  <interface name="rx_analogreset_0" kind="conduit_end" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -33546,7 +33546,7 @@ parameters are a RESULT of the module parameters. -->
     <role>rx_analogreset</role>
    </port>
   </interface>
-  <interface name="rx_digitalreset_0" kind="conduit_end" version="21.3">
+  <interface name="rx_digitalreset_0" kind="conduit_end" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -33603,7 +33603,7 @@ parameters are a RESULT of the module parameters. -->
     <role>rx_digitalreset</role>
    </port>
   </interface>
-  <interface name="tx_cal_busy_0" kind="conduit_end" version="21.3">
+  <interface name="tx_cal_busy_0" kind="conduit_end" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -33660,7 +33660,7 @@ parameters are a RESULT of the module parameters. -->
     <role>tx_cal_busy</role>
    </port>
   </interface>
-  <interface name="rx_cal_busy_0" kind="conduit_end" version="21.3">
+  <interface name="rx_cal_busy_0" kind="conduit_end" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -33717,7 +33717,7 @@ parameters are a RESULT of the module parameters. -->
     <role>rx_cal_busy</role>
    </port>
   </interface>
-  <interface name="tx_serial_clk_0" kind="hssi_serial_clock_sink" version="21.3">
+  <interface name="tx_serial_clk_0" kind="hssi_serial_clock_sink" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -33758,7 +33758,7 @@ parameters are a RESULT of the module parameters. -->
     <role>clk</role>
    </port>
   </interface>
-  <interface name="rx_cdr_refclk_0" kind="clock_sink" version="21.3">
+  <interface name="rx_cdr_refclk_0" kind="clock_sink" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -33807,7 +33807,7 @@ parameters are a RESULT of the module parameters. -->
     <role>clk</role>
    </port>
   </interface>
-  <interface name="rx_set_locktodata_0" kind="conduit_end" version="21.3">
+  <interface name="rx_set_locktodata_0" kind="conduit_end" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -33864,7 +33864,7 @@ parameters are a RESULT of the module parameters. -->
     <role>rx_set_locktodata</role>
    </port>
   </interface>
-  <interface name="rx_set_locktoref_0" kind="conduit_end" version="21.3">
+  <interface name="rx_set_locktoref_0" kind="conduit_end" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -33921,7 +33921,7 @@ parameters are a RESULT of the module parameters. -->
     <role>rx_set_locktoref</role>
    </port>
   </interface>
-  <interface name="rx_is_lockedtoref_0" kind="conduit_end" version="21.3">
+  <interface name="rx_is_lockedtoref_0" kind="conduit_end" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -33978,7 +33978,7 @@ parameters are a RESULT of the module parameters. -->
     <role>rx_is_lockedtoref</role>
    </port>
   </interface>
-  <interface name="rx_is_lockedtodata_0" kind="conduit_end" version="21.3">
+  <interface name="rx_is_lockedtodata_0" kind="conduit_end" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -34035,7 +34035,7 @@ parameters are a RESULT of the module parameters. -->
     <role>rx_is_lockedtodata</role>
    </port>
   </interface>
-  <interface name="serial_connection_0" kind="conduit_end" version="21.3">
+  <interface name="serial_connection_0" kind="conduit_end" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -34094,7 +34094,7 @@ parameters are a RESULT of the module parameters. -->
     <role>txp</role>
    </port>
   </interface>
-  <interface name="serdes_control_connection_0" kind="conduit_end" version="21.3">
+  <interface name="serdes_control_connection_0" kind="conduit_end" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -34147,7 +34147,7 @@ parameters are a RESULT of the module parameters. -->
     <role>export</role>
    </port>
   </interface>
-  <interface name="status_led_connection_1" kind="conduit_end" version="21.3">
+  <interface name="status_led_connection_1" kind="conduit_end" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -34236,7 +34236,7 @@ parameters are a RESULT of the module parameters. -->
     <role>disp_err</role>
    </port>
   </interface>
-  <interface name="tx_analogreset_1" kind="conduit_end" version="21.3">
+  <interface name="tx_analogreset_1" kind="conduit_end" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -34293,7 +34293,7 @@ parameters are a RESULT of the module parameters. -->
     <role>tx_analogreset</role>
    </port>
   </interface>
-  <interface name="tx_digitalreset_1" kind="conduit_end" version="21.3">
+  <interface name="tx_digitalreset_1" kind="conduit_end" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -34350,7 +34350,7 @@ parameters are a RESULT of the module parameters. -->
     <role>tx_digitalreset</role>
    </port>
   </interface>
-  <interface name="rx_analogreset_1" kind="conduit_end" version="21.3">
+  <interface name="rx_analogreset_1" kind="conduit_end" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -34407,7 +34407,7 @@ parameters are a RESULT of the module parameters. -->
     <role>rx_analogreset</role>
    </port>
   </interface>
-  <interface name="rx_digitalreset_1" kind="conduit_end" version="21.3">
+  <interface name="rx_digitalreset_1" kind="conduit_end" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -34464,7 +34464,7 @@ parameters are a RESULT of the module parameters. -->
     <role>rx_digitalreset</role>
    </port>
   </interface>
-  <interface name="tx_cal_busy_1" kind="conduit_end" version="21.3">
+  <interface name="tx_cal_busy_1" kind="conduit_end" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -34521,7 +34521,7 @@ parameters are a RESULT of the module parameters. -->
     <role>tx_cal_busy</role>
    </port>
   </interface>
-  <interface name="rx_cal_busy_1" kind="conduit_end" version="21.3">
+  <interface name="rx_cal_busy_1" kind="conduit_end" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -34578,7 +34578,7 @@ parameters are a RESULT of the module parameters. -->
     <role>rx_cal_busy</role>
    </port>
   </interface>
-  <interface name="tx_serial_clk_1" kind="hssi_serial_clock_sink" version="21.3">
+  <interface name="tx_serial_clk_1" kind="hssi_serial_clock_sink" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -34619,7 +34619,7 @@ parameters are a RESULT of the module parameters. -->
     <role>clk</role>
    </port>
   </interface>
-  <interface name="rx_cdr_refclk_1" kind="clock_sink" version="21.3">
+  <interface name="rx_cdr_refclk_1" kind="clock_sink" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -34668,7 +34668,7 @@ parameters are a RESULT of the module parameters. -->
     <role>clk</role>
    </port>
   </interface>
-  <interface name="rx_set_locktodata_1" kind="conduit_end" version="21.3">
+  <interface name="rx_set_locktodata_1" kind="conduit_end" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -34725,7 +34725,7 @@ parameters are a RESULT of the module parameters. -->
     <role>rx_set_locktodata</role>
    </port>
   </interface>
-  <interface name="rx_set_locktoref_1" kind="conduit_end" version="21.3">
+  <interface name="rx_set_locktoref_1" kind="conduit_end" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -34782,7 +34782,7 @@ parameters are a RESULT of the module parameters. -->
     <role>rx_set_locktoref</role>
    </port>
   </interface>
-  <interface name="rx_is_lockedtoref_1" kind="conduit_end" version="21.3">
+  <interface name="rx_is_lockedtoref_1" kind="conduit_end" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -34839,7 +34839,7 @@ parameters are a RESULT of the module parameters. -->
     <role>rx_is_lockedtoref</role>
    </port>
   </interface>
-  <interface name="rx_is_lockedtodata_1" kind="conduit_end" version="21.3">
+  <interface name="rx_is_lockedtodata_1" kind="conduit_end" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -34896,7 +34896,7 @@ parameters are a RESULT of the module parameters. -->
     <role>rx_is_lockedtodata</role>
    </port>
   </interface>
-  <interface name="serial_connection_1" kind="conduit_end" version="21.3">
+  <interface name="serial_connection_1" kind="conduit_end" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -34955,7 +34955,7 @@ parameters are a RESULT of the module parameters. -->
     <role>txp</role>
    </port>
   </interface>
-  <interface name="serdes_control_connection_1" kind="conduit_end" version="21.3">
+  <interface name="serdes_control_connection_1" kind="conduit_end" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -35008,7 +35008,7 @@ parameters are a RESULT of the module parameters. -->
     <role>export</role>
    </port>
   </interface>
-  <interface name="status_led_connection_2" kind="conduit_end" version="21.3">
+  <interface name="status_led_connection_2" kind="conduit_end" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -35097,7 +35097,7 @@ parameters are a RESULT of the module parameters. -->
     <role>disp_err</role>
    </port>
   </interface>
-  <interface name="tx_analogreset_2" kind="conduit_end" version="21.3">
+  <interface name="tx_analogreset_2" kind="conduit_end" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -35154,7 +35154,7 @@ parameters are a RESULT of the module parameters. -->
     <role>tx_analogreset</role>
    </port>
   </interface>
-  <interface name="tx_digitalreset_2" kind="conduit_end" version="21.3">
+  <interface name="tx_digitalreset_2" kind="conduit_end" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -35211,7 +35211,7 @@ parameters are a RESULT of the module parameters. -->
     <role>tx_digitalreset</role>
    </port>
   </interface>
-  <interface name="rx_analogreset_2" kind="conduit_end" version="21.3">
+  <interface name="rx_analogreset_2" kind="conduit_end" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -35268,7 +35268,7 @@ parameters are a RESULT of the module parameters. -->
     <role>rx_analogreset</role>
    </port>
   </interface>
-  <interface name="rx_digitalreset_2" kind="conduit_end" version="21.3">
+  <interface name="rx_digitalreset_2" kind="conduit_end" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -35325,7 +35325,7 @@ parameters are a RESULT of the module parameters. -->
     <role>rx_digitalreset</role>
    </port>
   </interface>
-  <interface name="tx_cal_busy_2" kind="conduit_end" version="21.3">
+  <interface name="tx_cal_busy_2" kind="conduit_end" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -35382,7 +35382,7 @@ parameters are a RESULT of the module parameters. -->
     <role>tx_cal_busy</role>
    </port>
   </interface>
-  <interface name="rx_cal_busy_2" kind="conduit_end" version="21.3">
+  <interface name="rx_cal_busy_2" kind="conduit_end" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -35439,7 +35439,7 @@ parameters are a RESULT of the module parameters. -->
     <role>rx_cal_busy</role>
    </port>
   </interface>
-  <interface name="tx_serial_clk_2" kind="hssi_serial_clock_sink" version="21.3">
+  <interface name="tx_serial_clk_2" kind="hssi_serial_clock_sink" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -35480,7 +35480,7 @@ parameters are a RESULT of the module parameters. -->
     <role>clk</role>
    </port>
   </interface>
-  <interface name="rx_cdr_refclk_2" kind="clock_sink" version="21.3">
+  <interface name="rx_cdr_refclk_2" kind="clock_sink" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -35529,7 +35529,7 @@ parameters are a RESULT of the module parameters. -->
     <role>clk</role>
    </port>
   </interface>
-  <interface name="rx_set_locktodata_2" kind="conduit_end" version="21.3">
+  <interface name="rx_set_locktodata_2" kind="conduit_end" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -35586,7 +35586,7 @@ parameters are a RESULT of the module parameters. -->
     <role>rx_set_locktodata</role>
    </port>
   </interface>
-  <interface name="rx_set_locktoref_2" kind="conduit_end" version="21.3">
+  <interface name="rx_set_locktoref_2" kind="conduit_end" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -35643,7 +35643,7 @@ parameters are a RESULT of the module parameters. -->
     <role>rx_set_locktoref</role>
    </port>
   </interface>
-  <interface name="rx_is_lockedtoref_2" kind="conduit_end" version="21.3">
+  <interface name="rx_is_lockedtoref_2" kind="conduit_end" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -35700,7 +35700,7 @@ parameters are a RESULT of the module parameters. -->
     <role>rx_is_lockedtoref</role>
    </port>
   </interface>
-  <interface name="rx_is_lockedtodata_2" kind="conduit_end" version="21.3">
+  <interface name="rx_is_lockedtodata_2" kind="conduit_end" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -35757,7 +35757,7 @@ parameters are a RESULT of the module parameters. -->
     <role>rx_is_lockedtodata</role>
    </port>
   </interface>
-  <interface name="serial_connection_2" kind="conduit_end" version="21.3">
+  <interface name="serial_connection_2" kind="conduit_end" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -35816,7 +35816,7 @@ parameters are a RESULT of the module parameters. -->
     <role>txp</role>
    </port>
   </interface>
-  <interface name="serdes_control_connection_2" kind="conduit_end" version="21.3">
+  <interface name="serdes_control_connection_2" kind="conduit_end" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -35869,7 +35869,7 @@ parameters are a RESULT of the module parameters. -->
     <role>export</role>
    </port>
   </interface>
-  <interface name="status_led_connection_3" kind="conduit_end" version="21.3">
+  <interface name="status_led_connection_3" kind="conduit_end" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -35958,7 +35958,7 @@ parameters are a RESULT of the module parameters. -->
     <role>disp_err</role>
    </port>
   </interface>
-  <interface name="tx_analogreset_3" kind="conduit_end" version="21.3">
+  <interface name="tx_analogreset_3" kind="conduit_end" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -36015,7 +36015,7 @@ parameters are a RESULT of the module parameters. -->
     <role>tx_analogreset</role>
    </port>
   </interface>
-  <interface name="tx_digitalreset_3" kind="conduit_end" version="21.3">
+  <interface name="tx_digitalreset_3" kind="conduit_end" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -36072,7 +36072,7 @@ parameters are a RESULT of the module parameters. -->
     <role>tx_digitalreset</role>
    </port>
   </interface>
-  <interface name="rx_analogreset_3" kind="conduit_end" version="21.3">
+  <interface name="rx_analogreset_3" kind="conduit_end" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -36129,7 +36129,7 @@ parameters are a RESULT of the module parameters. -->
     <role>rx_analogreset</role>
    </port>
   </interface>
-  <interface name="rx_digitalreset_3" kind="conduit_end" version="21.3">
+  <interface name="rx_digitalreset_3" kind="conduit_end" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -36186,7 +36186,7 @@ parameters are a RESULT of the module parameters. -->
     <role>rx_digitalreset</role>
    </port>
   </interface>
-  <interface name="tx_cal_busy_3" kind="conduit_end" version="21.3">
+  <interface name="tx_cal_busy_3" kind="conduit_end" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -36243,7 +36243,7 @@ parameters are a RESULT of the module parameters. -->
     <role>tx_cal_busy</role>
    </port>
   </interface>
-  <interface name="rx_cal_busy_3" kind="conduit_end" version="21.3">
+  <interface name="rx_cal_busy_3" kind="conduit_end" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -36300,7 +36300,7 @@ parameters are a RESULT of the module parameters. -->
     <role>rx_cal_busy</role>
    </port>
   </interface>
-  <interface name="tx_serial_clk_3" kind="hssi_serial_clock_sink" version="21.3">
+  <interface name="tx_serial_clk_3" kind="hssi_serial_clock_sink" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -36341,7 +36341,7 @@ parameters are a RESULT of the module parameters. -->
     <role>clk</role>
    </port>
   </interface>
-  <interface name="rx_cdr_refclk_3" kind="clock_sink" version="21.3">
+  <interface name="rx_cdr_refclk_3" kind="clock_sink" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -36390,7 +36390,7 @@ parameters are a RESULT of the module parameters. -->
     <role>clk</role>
    </port>
   </interface>
-  <interface name="rx_set_locktodata_3" kind="conduit_end" version="21.3">
+  <interface name="rx_set_locktodata_3" kind="conduit_end" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -36447,7 +36447,7 @@ parameters are a RESULT of the module parameters. -->
     <role>rx_set_locktodata</role>
    </port>
   </interface>
-  <interface name="rx_set_locktoref_3" kind="conduit_end" version="21.3">
+  <interface name="rx_set_locktoref_3" kind="conduit_end" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -36504,7 +36504,7 @@ parameters are a RESULT of the module parameters. -->
     <role>rx_set_locktoref</role>
    </port>
   </interface>
-  <interface name="rx_is_lockedtoref_3" kind="conduit_end" version="21.3">
+  <interface name="rx_is_lockedtoref_3" kind="conduit_end" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -36561,7 +36561,7 @@ parameters are a RESULT of the module parameters. -->
     <role>rx_is_lockedtoref</role>
    </port>
   </interface>
-  <interface name="rx_is_lockedtodata_3" kind="conduit_end" version="21.3">
+  <interface name="rx_is_lockedtodata_3" kind="conduit_end" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -36618,7 +36618,7 @@ parameters are a RESULT of the module parameters. -->
     <role>rx_is_lockedtodata</role>
    </port>
   </interface>
-  <interface name="serial_connection_3" kind="conduit_end" version="21.3">
+  <interface name="serial_connection_3" kind="conduit_end" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -36677,7 +36677,7 @@ parameters are a RESULT of the module parameters. -->
     <role>txp</role>
    </port>
   </interface>
-  <interface name="serdes_control_connection_3" kind="conduit_end" version="21.3">
+  <interface name="serdes_control_connection_3" kind="conduit_end" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -37308,7 +37308,7 @@ the requested settings for a module instance. -->
    <visible>true</visible>
    <valid>true</valid>
   </parameter>
-  <interface name="pll_powerdown" kind="conduit_end" version="21.3">
+  <interface name="pll_powerdown" kind="conduit_end" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -37365,7 +37365,7 @@ parameters are a RESULT of the module parameters. -->
     <role>pll_powerdown</role>
    </port>
   </interface>
-  <interface name="pll_refclk0" kind="clock_sink" version="21.3">
+  <interface name="pll_refclk0" kind="clock_sink" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -37414,7 +37414,7 @@ parameters are a RESULT of the module parameters. -->
     <role>clk</role>
    </port>
   </interface>
-  <interface name="tx_serial_clk" kind="hssi_serial_clock_source" version="21.3">
+  <interface name="tx_serial_clk" kind="hssi_serial_clock_source" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -37455,7 +37455,7 @@ parameters are a RESULT of the module parameters. -->
     <role>clk</role>
    </port>
   </interface>
-  <interface name="pll_locked" kind="conduit_end" version="21.3">
+  <interface name="pll_locked" kind="conduit_end" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -37512,7 +37512,7 @@ parameters are a RESULT of the module parameters. -->
     <role>pll_locked</role>
    </port>
   </interface>
-  <interface name="pll_cal_busy" kind="conduit_end" version="21.3">
+  <interface name="pll_cal_busy" kind="conduit_end" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -37573,7 +37573,7 @@ parameters are a RESULT of the module parameters. -->
  <connection
    name="init_mac.avalon_master/tse.control_port"
    kind="avalon"
-   version="21.3"
+   version="21.4"
    start="init_mac.avalon_master"
    end="tse.control_port">
   <parameter name="arbitrationPriority">
@@ -37763,7 +37763,7 @@ parameters are a RESULT of the module parameters. -->
  <connection
    name="receive_packet_1.avalon_master/mem_rcv_1.s1"
    kind="avalon"
-   version="21.3"
+   version="21.4"
    start="receive_packet_1.avalon_master"
    end="mem_rcv_1.s1">
   <parameter name="arbitrationPriority">
@@ -37953,7 +37953,7 @@ parameters are a RESULT of the module parameters. -->
  <connection
    name="send_packet_2.avalon_master/mem_4.s1"
    kind="avalon"
-   version="21.3"
+   version="21.4"
    start="send_packet_2.avalon_master"
    end="mem_4.s1">
   <parameter name="arbitrationPriority">
@@ -38143,7 +38143,7 @@ parameters are a RESULT of the module parameters. -->
  <connection
    name="send_packet_1.avalon_master/mem_5.s1"
    kind="avalon"
-   version="21.3"
+   version="21.4"
    start="send_packet_1.avalon_master"
    end="mem_5.s1">
   <parameter name="arbitrationPriority">
@@ -38333,7 +38333,7 @@ parameters are a RESULT of the module parameters. -->
  <connection
    name="receive_packet_2.avalon_master/mem_4.s2"
    kind="avalon"
-   version="21.3"
+   version="21.4"
    start="receive_packet_2.avalon_master"
    end="mem_4.s2">
   <parameter name="arbitrationPriority">
@@ -38523,7 +38523,7 @@ parameters are a RESULT of the module parameters. -->
  <connection
    name="send_packet_1.avalon_streaming_source/tse.transmit_0"
    kind="avalon_streaming"
-   version="21.3"
+   version="21.4"
    start="send_packet_1.avalon_streaming_source"
    end="tse.transmit_0">
   <parameter name="qsys_mm.piplineType">
@@ -38654,7 +38654,7 @@ parameters are a RESULT of the module parameters. -->
  <connection
    name="send_packet_2.avalon_streaming_source/tse.transmit_1"
    kind="avalon_streaming"
-   version="21.3"
+   version="21.4"
    start="send_packet_2.avalon_streaming_source"
    end="tse.transmit_1">
   <parameter name="qsys_mm.piplineType">
@@ -38785,7 +38785,7 @@ parameters are a RESULT of the module parameters. -->
  <connection
    name="receive_packet_1.fifo_status/tse.receive_fifo_status"
    kind="avalon_streaming"
-   version="21.3"
+   version="21.4"
    start="receive_packet_1.fifo_status"
    end="tse.receive_fifo_status">
   <parameter name="qsys_mm.piplineType">
@@ -38916,7 +38916,7 @@ parameters are a RESULT of the module parameters. -->
  <connection
    name="tse.receive_0/receive_packet_1.avalon_streaming_sink"
    kind="avalon_streaming"
-   version="21.3"
+   version="21.4"
    start="tse.receive_0"
    end="receive_packet_1.avalon_streaming_sink">
   <parameter name="qsys_mm.piplineType">
@@ -39047,7 +39047,7 @@ parameters are a RESULT of the module parameters. -->
  <connection
    name="tse.receive_1/receive_packet_2.avalon_streaming_sink"
    kind="avalon_streaming"
-   version="21.3"
+   version="21.4"
    start="tse.receive_1"
    end="receive_packet_2.avalon_streaming_sink">
   <parameter name="qsys_mm.piplineType">
@@ -39178,7 +39178,7 @@ parameters are a RESULT of the module parameters. -->
  <connection
    name="tse.mac_rx_clock_connection_0/mem_rcv_1.clk1"
    kind="clock"
-   version="21.3"
+   version="21.4"
    start="tse.mac_rx_clock_connection_0"
    end="mem_rcv_1.clk1">
   <parameter name="clockRateSysInfo">
@@ -39241,7 +39241,7 @@ parameters are a RESULT of the module parameters. -->
  <connection
    name="tse.mac_rx_clock_connection_0/receive_packet_1.clock"
    kind="clock"
-   version="21.3"
+   version="21.4"
    start="tse.mac_rx_clock_connection_0"
    end="receive_packet_1.clock">
   <parameter name="clockRateSysInfo">
@@ -39304,7 +39304,7 @@ parameters are a RESULT of the module parameters. -->
  <connection
    name="tse.mac_rx_clock_connection_1/mem_rcv_2.clk1"
    kind="clock"
-   version="21.3"
+   version="21.4"
    start="tse.mac_rx_clock_connection_1"
    end="mem_rcv_2.clk1">
   <parameter name="clockRateSysInfo">
@@ -39367,7 +39367,7 @@ parameters are a RESULT of the module parameters. -->
  <connection
    name="tse.mac_rx_clock_connection_1/mem_4.clk2"
    kind="clock"
-   version="21.3"
+   version="21.4"
    start="tse.mac_rx_clock_connection_1"
    end="mem_4.clk2">
   <parameter name="clockRateSysInfo">
@@ -39430,7 +39430,7 @@ parameters are a RESULT of the module parameters. -->
  <connection
    name="tse.mac_rx_clock_connection_1/receive_packet_2.clock"
    kind="clock"
-   version="21.3"
+   version="21.4"
    start="tse.mac_rx_clock_connection_1"
    end="receive_packet_2.clock">
   <parameter name="clockRateSysInfo">
@@ -39493,7 +39493,7 @@ parameters are a RESULT of the module parameters. -->
  <connection
    name="tse.mac_tx_clock_connection_0/mem_5.clk1"
    kind="clock"
-   version="21.3"
+   version="21.4"
    start="tse.mac_tx_clock_connection_0"
    end="mem_5.clk1">
   <parameter name="clockRateSysInfo">
@@ -39556,7 +39556,7 @@ parameters are a RESULT of the module parameters. -->
  <connection
    name="tse.mac_tx_clock_connection_0/send_packet_1.clock"
    kind="clock"
-   version="21.3"
+   version="21.4"
    start="tse.mac_tx_clock_connection_0"
    end="send_packet_1.clock">
   <parameter name="clockRateSysInfo">
@@ -39619,7 +39619,7 @@ parameters are a RESULT of the module parameters. -->
  <connection
    name="tse.mac_tx_clock_connection_1/mem_4.clk1"
    kind="clock"
-   version="21.3"
+   version="21.4"
    start="tse.mac_tx_clock_connection_1"
    end="mem_4.clk1">
   <parameter name="clockRateSysInfo">
@@ -39682,7 +39682,7 @@ parameters are a RESULT of the module parameters. -->
  <connection
    name="tse.mac_tx_clock_connection_1/send_packet_2.clock"
    kind="clock"
-   version="21.3"
+   version="21.4"
    start="tse.mac_tx_clock_connection_1"
    end="send_packet_2.clock">
   <parameter name="clockRateSysInfo">
@@ -39745,7 +39745,7 @@ parameters are a RESULT of the module parameters. -->
  <connection
    name="pll.outclk0/receive_packet_1.fifo_status_clk"
    kind="clock"
-   version="21.3"
+   version="21.4"
    start="pll.outclk0"
    end="receive_packet_1.fifo_status_clk">
   <parameter name="clockRateSysInfo">
@@ -39808,7 +39808,7 @@ parameters are a RESULT of the module parameters. -->
  <connection
    name="pll.outclk0/tse.receive_fifo_status_clock_connection"
    kind="clock"
-   version="21.3"
+   version="21.4"
    start="pll.outclk0"
    end="tse.receive_fifo_status_clock_connection">
   <parameter name="clockRateSysInfo">
@@ -39871,7 +39871,7 @@ parameters are a RESULT of the module parameters. -->
  <connection
    name="pll.outclk1/init_mac.clock"
    kind="clock"
-   version="21.3"
+   version="21.4"
    start="pll.outclk1"
    end="init_mac.clock">
   <parameter name="clockRateSysInfo">
@@ -39934,7 +39934,7 @@ parameters are a RESULT of the module parameters. -->
  <connection
    name="pll.outclk1/tse.control_port_clock_connection"
    kind="clock"
-   version="21.3"
+   version="21.4"
    start="pll.outclk1"
    end="tse.control_port_clock_connection">
   <parameter name="clockRateSysInfo">
@@ -39997,7 +39997,7 @@ parameters are a RESULT of the module parameters. -->
  <connection
    name="pll.outclk1/clock_50_out.in_clk"
    kind="clock"
-   version="21.3"
+   version="21.4"
    start="pll.outclk1"
    end="clock_50_out.in_clk">
   <parameter name="clockRateSysInfo">
@@ -40060,7 +40060,7 @@ parameters are a RESULT of the module parameters. -->
  <connection
    name="pll.outclk2/receive_packet_2.fifo_status_clk"
    kind="clock"
-   version="21.3"
+   version="21.4"
    start="pll.outclk2"
    end="receive_packet_2.fifo_status_clk">
   <parameter name="clockRateSysInfo">
@@ -40123,7 +40123,7 @@ parameters are a RESULT of the module parameters. -->
  <connection
    name="xcvr_pll.tx_serial_clk/tse.tx_serial_clk_0"
    kind="hssi_serial_clock"
-   version="21.3"
+   version="21.4"
    start="xcvr_pll.tx_serial_clk"
    end="tse.tx_serial_clk_0">
   <parameter name="deviceFamily">
@@ -40150,7 +40150,7 @@ parameters are a RESULT of the module parameters. -->
  <connection
    name="xcvr_pll.tx_serial_clk/tse.tx_serial_clk_1"
    kind="hssi_serial_clock"
-   version="21.3"
+   version="21.4"
    start="xcvr_pll.tx_serial_clk"
    end="tse.tx_serial_clk_1">
   <parameter name="deviceFamily">
@@ -40177,7 +40177,7 @@ parameters are a RESULT of the module parameters. -->
  <connection
    name="reset_mod.reset_main/reset_main.in_reset"
    kind="reset"
-   version="21.3"
+   version="21.4"
    start="reset_mod.reset_main"
    end="reset_main.in_reset">
   <parameter name="resetDomainSysInfo">
@@ -40231,7 +40231,7 @@ parameters are a RESULT of the module parameters. -->
  <connection
    name="reset_mod.reset_main/pll.reset"
    kind="reset"
-   version="21.3"
+   version="21.4"
    start="reset_mod.reset_main"
    end="pll.reset">
   <parameter name="resetDomainSysInfo">
@@ -40285,7 +40285,7 @@ parameters are a RESULT of the module parameters. -->
  <connection
    name="reset_mod.reset_main/send_packet_2.reset"
    kind="reset"
-   version="21.3"
+   version="21.4"
    start="reset_mod.reset_main"
    end="send_packet_2.reset">
   <parameter name="resetDomainSysInfo">
@@ -40339,7 +40339,7 @@ parameters are a RESULT of the module parameters. -->
  <connection
    name="reset_mod.reset_main/send_packet_1.reset"
    kind="reset"
-   version="21.3"
+   version="21.4"
    start="reset_mod.reset_main"
    end="send_packet_1.reset">
   <parameter name="resetDomainSysInfo">
@@ -40393,7 +40393,7 @@ parameters are a RESULT of the module parameters. -->
  <connection
    name="reset_mod.reset_main/init_mac.reset"
    kind="reset"
-   version="21.3"
+   version="21.4"
    start="reset_mod.reset_main"
    end="init_mac.reset">
   <parameter name="resetDomainSysInfo">
@@ -40447,7 +40447,7 @@ parameters are a RESULT of the module parameters. -->
  <connection
    name="reset_mod.reset_main/receive_packet_2.reset"
    kind="reset"
-   version="21.3"
+   version="21.4"
    start="reset_mod.reset_main"
    end="receive_packet_2.reset">
   <parameter name="resetDomainSysInfo">
@@ -40501,7 +40501,7 @@ parameters are a RESULT of the module parameters. -->
  <connection
    name="reset_mod.reset_main/receive_packet_1.reset"
    kind="reset"
-   version="21.3"
+   version="21.4"
    start="reset_mod.reset_main"
    end="receive_packet_1.reset">
   <parameter name="resetDomainSysInfo">
@@ -40555,7 +40555,7 @@ parameters are a RESULT of the module parameters. -->
  <connection
    name="reset_mod.reset_main/mem_rcv_2.reset1"
    kind="reset"
-   version="21.3"
+   version="21.4"
    start="reset_mod.reset_main"
    end="mem_rcv_2.reset1">
   <parameter name="resetDomainSysInfo">
@@ -40609,7 +40609,7 @@ parameters are a RESULT of the module parameters. -->
  <connection
    name="reset_mod.reset_main/mem_rcv_1.reset1"
    kind="reset"
-   version="21.3"
+   version="21.4"
    start="reset_mod.reset_main"
    end="mem_rcv_1.reset1">
   <parameter name="resetDomainSysInfo">
@@ -40663,7 +40663,7 @@ parameters are a RESULT of the module parameters. -->
  <connection
    name="reset_mod.reset_main/mem_4.reset1"
    kind="reset"
-   version="21.3"
+   version="21.4"
    start="reset_mod.reset_main"
    end="mem_4.reset1">
   <parameter name="resetDomainSysInfo">
@@ -40717,7 +40717,7 @@ parameters are a RESULT of the module parameters. -->
  <connection
    name="reset_mod.reset_main/mem_5.reset1"
    kind="reset"
-   version="21.3"
+   version="21.4"
    start="reset_mod.reset_main"
    end="mem_5.reset1">
   <parameter name="resetDomainSysInfo">
@@ -40771,7 +40771,7 @@ parameters are a RESULT of the module parameters. -->
  <connection
    name="reset_mod.reset_main/mem_4.reset2"
    kind="reset"
-   version="21.3"
+   version="21.4"
    start="reset_mod.reset_main"
    end="mem_4.reset2">
   <parameter name="resetDomainSysInfo">
@@ -40825,7 +40825,7 @@ parameters are a RESULT of the module parameters. -->
  <connection
    name="reset_mod.reset_main/tse.reset_connection"
    kind="reset"
-   version="21.3"
+   version="21.4"
    start="reset_mod.reset_main"
    end="tse.reset_connection">
   <parameter name="resetDomainSysInfo">
@@ -40890,7 +40890,7 @@ parameters are a RESULT of the module parameters. -->
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
   <displayName>Clock Input</displayName>
-  <version>21.3</version>
+  <version>21.4</version>
  </plugin>
  <plugin>
   <instanceCount>13</instanceCount>
@@ -40898,7 +40898,7 @@ parameters are a RESULT of the module parameters. -->
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
   <displayName>Clock Output</displayName>
-  <version>21.3</version>
+  <version>21.4</version>
  </plugin>
  <plugin>
   <instanceCount>14</instanceCount>
@@ -40906,7 +40906,7 @@ parameters are a RESULT of the module parameters. -->
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
   <displayName>Reset Input</displayName>
-  <version>21.3</version>
+  <version>21.4</version>
  </plugin>
  <plugin>
   <instanceCount>5</instanceCount>
@@ -40914,7 +40914,7 @@ parameters are a RESULT of the module parameters. -->
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
   <displayName>Avalon Memory Mapped Host</displayName>
-  <version>21.3</version>
+  <version>21.4</version>
  </plugin>
  <plugin>
   <instanceCount>63</instanceCount>
@@ -40922,7 +40922,7 @@ parameters are a RESULT of the module parameters. -->
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
   <displayName>Conduit</displayName>
-  <version>21.3</version>
+  <version>21.4</version>
  </plugin>
  <plugin>
   <instanceCount>6</instanceCount>
@@ -40930,7 +40930,7 @@ parameters are a RESULT of the module parameters. -->
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
   <displayName>Avalon Memory Mapped Agent</displayName>
-  <version>21.3</version>
+  <version>21.4</version>
  </plugin>
  <plugin>
   <instanceCount>7</instanceCount>
@@ -40938,7 +40938,7 @@ parameters are a RESULT of the module parameters. -->
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
   <displayName>Avalon Streaming Sink</displayName>
-  <version>21.3</version>
+  <version>21.4</version>
  </plugin>
  <plugin>
   <instanceCount>12</instanceCount>
@@ -40946,7 +40946,7 @@ parameters are a RESULT of the module parameters. -->
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
   <displayName>Avalon Streaming Source</displayName>
-  <version>21.3</version>
+  <version>21.4</version>
  </plugin>
  <plugin>
   <instanceCount>3</instanceCount>
@@ -40954,7 +40954,7 @@ parameters are a RESULT of the module parameters. -->
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
   <displayName>Reset Output</displayName>
-  <version>21.3</version>
+  <version>21.4</version>
  </plugin>
  <plugin>
   <instanceCount>4</instanceCount>
@@ -40962,7 +40962,7 @@ parameters are a RESULT of the module parameters. -->
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
   <displayName>HSSI Serial Clock Input</displayName>
-  <version>21.3</version>
+  <version>21.4</version>
  </plugin>
  <plugin>
   <instanceCount>1</instanceCount>
@@ -40970,7 +40970,7 @@ parameters are a RESULT of the module parameters. -->
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
   <displayName>HSSI Serial Clock Output</displayName>
-  <version>21.3</version>
+  <version>21.4</version>
  </plugin>
  <plugin>
   <instanceCount>5</instanceCount>
@@ -40978,7 +40978,7 @@ parameters are a RESULT of the module parameters. -->
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IConnection</subtype>
   <displayName>Avalon Memory Mapped Connection</displayName>
-  <version>21.3</version>
+  <version>21.4</version>
  </plugin>
  <plugin>
   <instanceCount>5</instanceCount>
@@ -40986,7 +40986,7 @@ parameters are a RESULT of the module parameters. -->
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IConnection</subtype>
   <displayName>Avalon Streaming Connection</displayName>
-  <version>21.3</version>
+  <version>21.4</version>
  </plugin>
  <plugin>
   <instanceCount>15</instanceCount>
@@ -40994,7 +40994,7 @@ parameters are a RESULT of the module parameters. -->
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IConnection</subtype>
   <displayName>Clock Connection</displayName>
-  <version>21.3</version>
+  <version>21.4</version>
  </plugin>
  <plugin>
   <instanceCount>2</instanceCount>
@@ -41002,7 +41002,7 @@ parameters are a RESULT of the module parameters. -->
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IConnection</subtype>
   <displayName>HSSI Serial Clock Connection</displayName>
-  <version>21.3</version>
+  <version>21.4</version>
  </plugin>
  <plugin>
   <instanceCount>13</instanceCount>
@@ -41010,8 +41010,8 @@ parameters are a RESULT of the module parameters. -->
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IConnection</subtype>
   <displayName>Reset Connection</displayName>
-  <version>21.3</version>
+  <version>21.4</version>
  </plugin>
- <reportVersion>21.3 170</reportVersion>
+ <reportVersion>21.4 67</reportVersion>
  <uniqueIdentifier></uniqueIdentifier>
 </EnsembleReport>

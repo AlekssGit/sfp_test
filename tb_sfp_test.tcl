@@ -176,12 +176,12 @@ add wave -group avalon_mem_rcv_1    -label "write"          /tb_sfp_test/device/
 add wave -group avalon_mem_rcv_1    -label "writedata"      /tb_sfp_test/device/platform_design/receive_packet_1_avalon_master_writedata
 
 
-add wave -group avalon_mem_rcv_2    -label "chipselect"     /tb_sfp_test/device/platform_design/mem_rcv_2/mem_rcv_0/chipselect
-add wave -group avalon_mem_rcv_2    -label "readdata"       /tb_sfp_test/device/platform_design/mem_rcv_2/mem_rcv_0/readdata
-add wave -group avalon_mem_rcv_2    -label "address"        /tb_sfp_test/device/platform_design/mem_rcv_2/mem_rcv_0/address
-add wave -group avalon_mem_rcv_2    -label "byteenable"     /tb_sfp_test/device/platform_design/mem_rcv_2/mem_rcv_0/byteenable
-add wave -group avalon_mem_rcv_2    -label "write"          /tb_sfp_test/device/platform_design/mem_rcv_2/mem_rcv_0/write
-add wave -group avalon_mem_rcv_2    -label "writedata"      /tb_sfp_test/device/platform_design/mem_rcv_2/mem_rcv_0/writedata
+# add wave -group avalon_mem_rcv_2    -label "chipselect"     /tb_sfp_test/device/platform_design/mem_rcv_2/mem_rcv_0/chipselect
+# add wave -group avalon_mem_rcv_2    -label "readdata"       /tb_sfp_test/device/platform_design/mem_rcv_2/mem_rcv_0/readdata
+# add wave -group avalon_mem_rcv_2    -label "address"        /tb_sfp_test/device/platform_design/mem_rcv_2/mem_rcv_0/address
+# add wave -group avalon_mem_rcv_2    -label "byteenable"     /tb_sfp_test/device/platform_design/mem_rcv_2/mem_rcv_0/byteenable
+# add wave -group avalon_mem_rcv_2    -label "write"          /tb_sfp_test/device/platform_design/mem_rcv_2/mem_rcv_0/write
+# add wave -group avalon_mem_rcv_2    -label "writedata"      /tb_sfp_test/device/platform_design/mem_rcv_2/mem_rcv_0/writedata
 
 add wave -label "cmd_send_1"    /tb_sfp_test/device/cmd_send_1
 add wave -label "cmd_send_2"    /tb_sfp_test/device/cmd_send_2

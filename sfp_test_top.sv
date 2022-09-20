@@ -289,7 +289,7 @@ logic               send_cmd            ;
 logic	[24:0]		transmit_start_addr		;
 
 assign start_ram_addr_1 = transmit_start_addr;
-assign start_ram_addr_2 = transmit_start_addr;
+assign start_ram_addr_2 = 25'd5; //transmit_start_addr;
 
 always @(posedge clk_50_pll, posedge main_reset) 
 begin

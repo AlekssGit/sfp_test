@@ -1,5 +1,5 @@
 set_global_assignment -entity "init_mac" -library "init_mac" -name IP_TOOL_NAME "QsysPrimePro"
-set_global_assignment -entity "init_mac" -library "init_mac" -name IP_TOOL_VERSION "21.3"
+set_global_assignment -entity "init_mac" -library "init_mac" -name IP_TOOL_VERSION "21.4"
 set_global_assignment -entity "init_mac" -library "init_mac" -name IP_TOOL_ENV "QsysPrimePro"
 set_global_assignment -entity "init_mac" -library "init_mac" -name IP_TOOL_VENDOR_NAME "Altera Corporation"
 set_global_assignment -entity "init_mac" -library "init_mac" -name IP_TOP_LEVEL_COMPONENT_NAME "init_mac"

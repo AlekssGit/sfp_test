@@ -2854,7 +2854,7 @@ https://fpgasoftware.intel.com/eula.-->
         </entry>
         <entry>
             <key>embeddedsw.CMacro.INIT_CONTENTS_FILE</key>
-            <value>mem_init_1</value>
+            <value>mem_init_3</value>
         </entry>
         <entry>
             <key>embeddedsw.CMacro.INIT_MEM_CONTENT</key>
@@ -2918,7 +2918,7 @@ https://fpgasoftware.intel.com/eula.-->
         </entry>
         <entry>
             <key>embeddedsw.memoryInfo.MEM_INIT_FILENAME</key>
-            <value>mem_init_1</value>
+            <value>mem_init_3</value>
         </entry>
         <entry>
             <key>postgeneration.simulation.init_file.param_name</key>
@@ -21377,7 +21377,7 @@ https://fpgasoftware.intel.com/eula.-->
  </module>
  <connection
    kind="avalon"
-   version="21.3"
+   version="21.4"
    start="init_mac.avalon_master"
    end="tse.control_port">
   <parameter name="arbitrationPriority" value="1" />
@@ -21400,7 +21400,7 @@ https://fpgasoftware.intel.com/eula.-->
  </connection>
  <connection
    kind="avalon"
-   version="21.3"
+   version="21.4"
    start="receive_packet_1.avalon_master"
    end="mem_rcv_1.s1">
   <parameter name="arbitrationPriority" value="1" />
@@ -21423,7 +21423,7 @@ https://fpgasoftware.intel.com/eula.-->
  </connection>
  <connection
    kind="avalon"
-   version="21.3"
+   version="21.4"
    start="send_packet_2.avalon_master"
    end="mem_4.s1">
   <parameter name="arbitrationPriority" value="1" />
@@ -21446,7 +21446,7 @@ https://fpgasoftware.intel.com/eula.-->
  </connection>
  <connection
    kind="avalon"
-   version="21.3"
+   version="21.4"
    start="send_packet_1.avalon_master"
    end="mem_5.s1">
   <parameter name="arbitrationPriority" value="1" />
@@ -21469,7 +21469,7 @@ https://fpgasoftware.intel.com/eula.-->
  </connection>
  <connection
    kind="avalon"
-   version="21.3"
+   version="21.4"
    start="receive_packet_2.avalon_master"
    end="mem_4.s2">
   <parameter name="arbitrationPriority" value="1" />
@@ -21492,7 +21492,7 @@ https://fpgasoftware.intel.com/eula.-->
  </connection>
  <connection
    kind="avalon_streaming"
-   version="21.3"
+   version="21.4"
    start="send_packet_1.avalon_streaming_source"
    end="tse.transmit_0">
   <parameter name="qsys_mm.burstAdapterImplementation" value="GENERIC_CONVERTER" />
@@ -21511,7 +21511,7 @@ https://fpgasoftware.intel.com/eula.-->
  </connection>
  <connection
    kind="avalon_streaming"
-   version="21.3"
+   version="21.4"
    start="send_packet_2.avalon_streaming_source"
    end="tse.transmit_1">
   <parameter name="qsys_mm.burstAdapterImplementation" value="GENERIC_CONVERTER" />
@@ -21530,7 +21530,7 @@ https://fpgasoftware.intel.com/eula.-->
  </connection>
  <connection
    kind="avalon_streaming"
-   version="21.3"
+   version="21.4"
    start="receive_packet_1.fifo_status"
    end="tse.receive_fifo_status">
   <parameter name="qsys_mm.burstAdapterImplementation" value="GENERIC_CONVERTER" />
@@ -21549,7 +21549,7 @@ https://fpgasoftware.intel.com/eula.-->
  </connection>
  <connection
    kind="avalon_streaming"
-   version="21.3"
+   version="21.4"
    start="tse.receive_0"
    end="receive_packet_1.avalon_streaming_sink">
   <parameter name="qsys_mm.burstAdapterImplementation" value="GENERIC_CONVERTER" />
@@ -21568,7 +21568,7 @@ https://fpgasoftware.intel.com/eula.-->
  </connection>
  <connection
    kind="avalon_streaming"
-   version="21.3"
+   version="21.4"
    start="tse.receive_1"
    end="receive_packet_2.avalon_streaming_sink">
   <parameter name="qsys_mm.burstAdapterImplementation" value="GENERIC_CONVERTER" />
@@ -21587,148 +21587,148 @@ https://fpgasoftware.intel.com/eula.-->
  </connection>
  <connection
    kind="clock"
-   version="21.3"
+   version="21.4"
    start="tse.mac_rx_clock_connection_0"
    end="mem_rcv_1.clk1" />
  <connection
    kind="clock"
-   version="21.3"
+   version="21.4"
    start="tse.mac_rx_clock_connection_0"
    end="receive_packet_1.clock" />
  <connection
    kind="clock"
-   version="21.3"
+   version="21.4"
    start="tse.mac_rx_clock_connection_1"
    end="mem_rcv_2.clk1" />
  <connection
    kind="clock"
-   version="21.3"
+   version="21.4"
    start="tse.mac_rx_clock_connection_1"
    end="mem_4.clk2" />
  <connection
    kind="clock"
-   version="21.3"
+   version="21.4"
    start="tse.mac_rx_clock_connection_1"
    end="receive_packet_2.clock" />
  <connection
    kind="clock"
-   version="21.3"
+   version="21.4"
    start="tse.mac_tx_clock_connection_0"
    end="mem_5.clk1" />
  <connection
    kind="clock"
-   version="21.3"
+   version="21.4"
    start="tse.mac_tx_clock_connection_0"
    end="send_packet_1.clock" />
  <connection
    kind="clock"
-   version="21.3"
+   version="21.4"
    start="tse.mac_tx_clock_connection_1"
    end="mem_4.clk1" />
  <connection
    kind="clock"
-   version="21.3"
+   version="21.4"
    start="tse.mac_tx_clock_connection_1"
    end="send_packet_2.clock" />
  <connection
    kind="clock"
-   version="21.3"
+   version="21.4"
    start="pll.outclk0"
    end="receive_packet_1.fifo_status_clk" />
  <connection
    kind="clock"
-   version="21.3"
+   version="21.4"
    start="pll.outclk0"
    end="tse.receive_fifo_status_clock_connection" />
- <connection kind="clock" version="21.3" start="pll.outclk1" end="init_mac.clock" />
+ <connection kind="clock" version="21.4" start="pll.outclk1" end="init_mac.clock" />
  <connection
    kind="clock"
-   version="21.3"
+   version="21.4"
    start="pll.outclk1"
    end="tse.control_port_clock_connection" />
  <connection
    kind="clock"
-   version="21.3"
+   version="21.4"
    start="pll.outclk1"
    end="clock_50_out.in_clk" />
  <connection
    kind="clock"
-   version="21.3"
+   version="21.4"
    start="pll.outclk2"
    end="receive_packet_2.fifo_status_clk" />
  <connection
    kind="hssi_serial_clock"
-   version="21.3"
+   version="21.4"
    start="xcvr_pll.tx_serial_clk"
    end="tse.tx_serial_clk_0" />
  <connection
    kind="hssi_serial_clock"
-   version="21.3"
+   version="21.4"
    start="xcvr_pll.tx_serial_clk"
    end="tse.tx_serial_clk_1" />
  <connection
    kind="reset"
-   version="21.3"
+   version="21.4"
    start="reset_mod.reset_main"
    end="reset_main.in_reset" />
  <connection
    kind="reset"
-   version="21.3"
+   version="21.4"
    start="reset_mod.reset_main"
    end="pll.reset" />
  <connection
    kind="reset"
-   version="21.3"
+   version="21.4"
    start="reset_mod.reset_main"
    end="send_packet_2.reset" />
  <connection
    kind="reset"
-   version="21.3"
+   version="21.4"
    start="reset_mod.reset_main"
    end="send_packet_1.reset" />
  <connection
    kind="reset"
-   version="21.3"
+   version="21.4"
    start="reset_mod.reset_main"
    end="init_mac.reset" />
  <connection
    kind="reset"
-   version="21.3"
+   version="21.4"
    start="reset_mod.reset_main"
    end="receive_packet_2.reset" />
  <connection
    kind="reset"
-   version="21.3"
+   version="21.4"
    start="reset_mod.reset_main"
    end="receive_packet_1.reset" />
  <connection
    kind="reset"
-   version="21.3"
+   version="21.4"
    start="reset_mod.reset_main"
    end="mem_rcv_2.reset1" />
  <connection
    kind="reset"
-   version="21.3"
+   version="21.4"
    start="reset_mod.reset_main"
    end="mem_rcv_1.reset1" />
  <connection
    kind="reset"
-   version="21.3"
+   version="21.4"
    start="reset_mod.reset_main"
    end="mem_4.reset1" />
  <connection
    kind="reset"
-   version="21.3"
+   version="21.4"
    start="reset_mod.reset_main"
    end="mem_5.reset1" />
  <connection
    kind="reset"
-   version="21.3"
+   version="21.4"
    start="reset_mod.reset_main"
    end="mem_4.reset2" />
  <connection
    kind="reset"
-   version="21.3"
+   version="21.4"
    start="reset_mod.reset_main"
    end="tse.reset_connection" />
 </system>

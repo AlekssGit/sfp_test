@@ -7,12 +7,12 @@
    <connections preferredWidth="735" />
   </columns>
  </systemtable>
- <library expandedCategories="Project,Library,Existing IP Variants" />
+ <library expandedCategories="Existing IP Variants,Project,Library" />
  <generation
    path=""
    block_symbol_file="0"
    simulation="VERILOG"
    modelsim="1"
    clear_previous="0" />
- <sysinfo autosync="0" />
+ <sysinfo autosync="1" />
 </preferences>
