@@ -18,7 +18,7 @@
 // altera message_level Level1 
 // altera message_off 10034 10035 10036 10037 10230 10240 10030 13469 16735 16788 
 
-module mem_4_altera_avalon_onchip_memory2_1931_36jbw6a (
+module mem_4_altera_avalon_onchip_memory2_1931_ksjxloy (
                                                          // inputs:
                                                           address,
                                                           address2,
@@ -46,7 +46,7 @@ module mem_4_altera_avalon_onchip_memory2_1931_36jbw6a (
                                                        )
 ;
 
-  parameter INIT_FILE = "C:/Users/alvas/Documents/Work_ASD/Projects/Learning/Ethernet/sfp_test/mem_init/mem_init_3.mif";
+  parameter INIT_FILE = "D:/Documents/Projects/Learning/SFP_test/mem_init/mem_init_3.mif";
 
 
   output  [ 31: 0] readdata;

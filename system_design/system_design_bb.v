@@ -2,6 +2,8 @@ module system_design (
 		output wire        clock_50_clk,                            //                    clock_50.clk
 		output wire        mac_inited_mac_inited,                   //                  mac_inited.mac_inited
 		input  wire        pll_refclk_clk,                          //                  pll_refclk.clk
+		output wire        receive_packet_1_data_saved_data_saved,  // receive_packet_1_data_saved.data_saved
+		output wire        receive_packet_2_data_saved_data_saved,  // receive_packet_2_data_saved.data_saved
 		output wire        reset_main_out_reset,                    //              reset_main_out.reset
 		input  wire        reset_mod_clock_clk,                     //             reset_mod_clock.clk
 		input  wire        reset_mod_reset_reset_n,                 //             reset_mod_reset.reset_n

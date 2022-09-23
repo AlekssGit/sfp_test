@@ -1,4 +1,4 @@
-# system info tse on 2022.09.20.22:41:31
+# system info tse on 2022.09.21.14:38:16
 system_info:
 name,value
 DEVICE,10CX220YF780E5G
@@ -6,7 +6,7 @@ DEVICE_FAMILY,Cyclone 10 GX
 GENERATION_ID,0
 #
 #
-# Files generated for tse on 2022.09.20.22:41:31
+# Files generated for tse on 2022.09.21.14:38:16
 files:
 filepath,kind,attributes,module,is_top
 sim/tse.v,VERILOG,CONTAINS_INLINE_CONFIGURATION,tse,true

@@ -166,6 +166,8 @@ add wave -group avalon_rcv_2    -label "ram_writedata  "    /tb_sfp_test/device/
 add wave -group avalon_rcv_2    -label "ram_byteenable "    /tb_sfp_test/device/platform_design/receive_packet_2/receive_packet_0/ram_byteenable  
 add wave -group avalon_rcv_2    -label "ram_waitrequest"    /tb_sfp_test/device/platform_design/receive_packet_2/receive_packet_0/ram_waitrequest
 add wave -group avalon_rcv_2    -label "count_saved"       -radix decimal /tb_sfp_test/device/platform_design/receive_packet_2/receive_packet_0/count_saved
+add wave -group avalon_rcv_2    -label "packets_counter"   -radix decimal /tb_sfp_test/device/platform_design/receive_packet_2/receive_packet_0/packets_counter
+add wave -group avalon_rcv_2    -label "ram_address_rx"   /tb_sfp_test/device/platform_design/receive_packet_2/receive_packet_0/ram_address_rx
 add wave -group avalon_rcv_2    -label "data_received"       {/tb_sfp_test/device/platform_design/receive_packet_2/receive_packet_0/data_received[64:0]}
 
 add wave -group avalon_mem_rcv_1    -label "chipselect"     /tb_sfp_test/device/platform_design/receive_packet_1_avalon_master_chipselect
@@ -173,6 +175,7 @@ add wave -group avalon_mem_rcv_1    -label "readdata"       /tb_sfp_test/device/
 add wave -group avalon_mem_rcv_1    -label "address"        /tb_sfp_test/device/platform_design/receive_packet_1_avalon_master_address
 add wave -group avalon_mem_rcv_1    -label "byteenable"     /tb_sfp_test/device/platform_design/receive_packet_1_avalon_master_byteenable
 add wave -group avalon_mem_rcv_1    -label "write"          /tb_sfp_test/device/platform_design/receive_packet_1_avalon_master_write
+
 add wave -group avalon_mem_rcv_1    -label "writedata"      /tb_sfp_test/device/platform_design/receive_packet_1_avalon_master_writedata
 
 
@@ -185,6 +188,7 @@ add wave -group avalon_mem_rcv_1    -label "writedata"      /tb_sfp_test/device/
 
 add wave -label "cmd_send_1"    /tb_sfp_test/device/cmd_send_1
 add wave -label "cmd_send_2"    /tb_sfp_test/device/cmd_send_2
+add wave -label "data_saved_2"  /tb_sfp_test/device/data_saved_2
 
 add wave -group misc_1    -label "magic_wakeup"     /tb_sfp_test/device/platform_design/mac_misc_1_magic_wakeup
 add wave -group misc_1    -label "magic_sleep_n"    /tb_sfp_test/device/platform_design/mac_misc_1_magic_sleep_n
@@ -231,5 +235,5 @@ add wave -group fifo_status    -label "channel"     /tb_sfp_test/device/platform
 # add wave -group i2c_master -label "state_i2c_mm"  /tb_sfp_test/device/expander_device/i2c_ctrl/mm_exp/state
 
 
-run 200us 
+run 1000us 
 wave zoom full

@@ -20,7 +20,7 @@
 // $Source: /ipbu/cvs/sio/projects/TriSpeedEthernet/src/RTL/MAC/mac/rgmii/altera_tse_rgmii_module.v,v $
 //
 // $Revision: #1 $
-// $Date: 2021/09/02 $
+// $Date: 2021/07/29 $
 // Check in by : $Author: psgswbuild $
 // Author      : Arul Paniandi
 //

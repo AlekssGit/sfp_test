@@ -3,6 +3,8 @@
 			clock_50_clk                            : out std_logic;                                        -- clk
 			mac_inited_mac_inited                   : out std_logic;                                        -- mac_inited
 			pll_refclk_clk                          : in  std_logic                     := 'X';             -- clk
+			receive_packet_1_data_saved_data_saved  : out std_logic;                                        -- data_saved
+			receive_packet_2_data_saved_data_saved  : out std_logic;                                        -- data_saved
 			reset_main_out_reset                    : out std_logic;                                        -- reset
 			reset_mod_clock_clk                     : in  std_logic                     := 'X';             -- clk
 			reset_mod_reset_reset_n                 : in  std_logic                     := 'X';             -- reset_n
@@ -82,6 +84,8 @@
 			clock_50_clk                            => CONNECTED_TO_clock_50_clk,                            --                    clock_50.clk
 			mac_inited_mac_inited                   => CONNECTED_TO_mac_inited_mac_inited,                   --                  mac_inited.mac_inited
 			pll_refclk_clk                          => CONNECTED_TO_pll_refclk_clk,                          --                  pll_refclk.clk
+			receive_packet_1_data_saved_data_saved  => CONNECTED_TO_receive_packet_1_data_saved_data_saved,  -- receive_packet_1_data_saved.data_saved
+			receive_packet_2_data_saved_data_saved  => CONNECTED_TO_receive_packet_2_data_saved_data_saved,  -- receive_packet_2_data_saved.data_saved
 			reset_main_out_reset                    => CONNECTED_TO_reset_main_out_reset,                    --              reset_main_out.reset
 			reset_mod_clock_clk                     => CONNECTED_TO_reset_mod_clock_clk,                     --             reset_mod_clock.clk
 			reset_mod_reset_reset_n                 => CONNECTED_TO_reset_mod_reset_reset_n,                 --             reset_mod_reset.reset_n

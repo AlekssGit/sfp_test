@@ -2,6 +2,8 @@
 		.clock_50_clk                            (_connected_to_clock_50_clk_),                            //  output,   width = 1,                    clock_50.clk
 		.mac_inited_mac_inited                   (_connected_to_mac_inited_mac_inited_),                   //  output,   width = 1,                  mac_inited.mac_inited
 		.pll_refclk_clk                          (_connected_to_pll_refclk_clk_),                          //   input,   width = 1,                  pll_refclk.clk
+		.receive_packet_1_data_saved_data_saved  (_connected_to_receive_packet_1_data_saved_data_saved_),  //  output,   width = 1, receive_packet_1_data_saved.data_saved
+		.receive_packet_2_data_saved_data_saved  (_connected_to_receive_packet_2_data_saved_data_saved_),  //  output,   width = 1, receive_packet_2_data_saved.data_saved
 		.reset_main_out_reset                    (_connected_to_reset_main_out_reset_),                    //  output,   width = 1,              reset_main_out.reset
 		.reset_mod_clock_clk                     (_connected_to_reset_mod_clock_clk_),                     //   input,   width = 1,             reset_mod_clock.clk
 		.reset_mod_reset_reset_n                 (_connected_to_reset_mod_reset_reset_n_),                 //   input,   width = 1,             reset_mod_reset.reset_n

@@ -13,7 +13,7 @@ module receive_packet_256
     input   logic [4:0]     rx_err              , 
 
     // output  logic [11:0]    size_received       ,
-    // output  logic           data_saved          ,
+    output  logic           data_saved          ,
     // output  logic [255:0]   ram_data_write      ,
     // output  logic [24:0]    ram_address_rx      ,
     // output  logic           need_write_data     ,
@@ -44,7 +44,7 @@ assign rx_afull_channel =   2'd0;
 assign ff_rx_rdy = 1'b1;
 
 logic [11:0]    size_received;
-logic           data_saved      ;
+// logic           data_saved      ;
 logic [255:0]   ram_data_write  ;
 logic [24:0]    ram_address_rx  ;
 logic           need_write_data ;
@@ -64,6 +64,22 @@ assign ram_addr = ram_address_rx[9:0];
 assign ram_chipselect = ram_write; //state == SAVE ? 1'b1 : 1'b0;
 // assign ram_write = state == SAVE ? 1'b1 : 1'b0;
 
+logic [31:0] packets_counter;
+
+always @(posedge clk_original, posedge rst) 
+begin
+    if(rst)
+    begin
+        packets_counter   <= 32'd0;        
+    end
+    else
+    begin
+        if(ff_rx_sop && state == IDLE)
+        begin
+            packets_counter <= packets_counter + 32'd1;
+        end
+    end
+end
 
 always @(posedge clk_original, posedge rst) 
 begin
@@ -168,11 +184,18 @@ begin
                     if(ram_address_rx < `START_RAM_SAVE_ADDR + need_count_save + 1)
                     begin
                         // for onchip memory
-                        ram_writedata[31  -:  8]  <= data_received[0 + (ram_address_rx - `START_RAM_SAVE_ADDR) * 9'd4]  ;
-                        ram_writedata[23  -:  8]  <= data_received[1 + (ram_address_rx - `START_RAM_SAVE_ADDR) * 9'd4]  ;
-                        ram_writedata[15  -:  8]  <= data_received[2 + (ram_address_rx - `START_RAM_SAVE_ADDR) * 9'd4]  ;
-                        ram_writedata[7   -:  8]  <= data_received[3 + (ram_address_rx - `START_RAM_SAVE_ADDR) * 9'd4]  ;
 
+                        if(ram_address_rx - `START_RAM_SAVE_ADDR == 25'd9)
+                        begin
+                            ram_writedata[31:0] <= packets_counter;
+                        end
+                        else
+                        begin
+                            ram_writedata[31  -:  8]  <= data_received[0 + (ram_address_rx - `START_RAM_SAVE_ADDR) * 9'd4]  ;
+                            ram_writedata[23  -:  8]  <= data_received[1 + (ram_address_rx - `START_RAM_SAVE_ADDR) * 9'd4]  ;
+                            ram_writedata[15  -:  8]  <= data_received[2 + (ram_address_rx - `START_RAM_SAVE_ADDR) * 9'd4]  ;
+                            ram_writedata[7   -:  8]  <= data_received[3 + (ram_address_rx - `START_RAM_SAVE_ADDR) * 9'd4]  ;
+                        end
                         ram_address_rx <= ram_address_rx + 25'd1;
 
                         ram_write <= 1'b1;
@@ -185,7 +208,7 @@ begin
             begin
                 count_saved <= count_saved + 12'd1;
 
-            if(~ram_waitrequest && count_saved % 12'd30 > 12'd5)
+                if(~ram_waitrequest && count_saved % 12'd30 > 12'd5)
                 begin
                     ram_write <= 1'b0;
                 end
@@ -202,6 +225,8 @@ begin
     end        
 end
 
+logic [2:0] cnt_data_saved;
+
 always @(posedge clk_original, posedge rst) 
 begin
     if(rst)
@@ -210,14 +235,19 @@ begin
     end
     else
     begin
-        if(state == SAVE & count_saved > 12'd2 & (count_saved/12'd30 >= (need_count_save + 12'd2)))
+        if(state == SAVE && count_saved > 12'd2 && (count_saved/12'd30 >= (need_count_save + 12'd2)))
         // if(state == SAVE & count_saved > 12'd2 & (count_saved >= (need_count_save + 12'd2))) //for onchip mem
         begin
             data_saved <= 1'b1;
         end
+        else if(data_saved == 1'b1 && cnt_data_saved < 3'd3)
+        begin
+            cnt_data_saved <= cnt_data_saved + 3'd1;
+        end
         else
         begin
             data_saved <= 1'b0;
+            cnt_data_saved <= 3'd0;
         end
     end        
 end
@@ -238,7 +268,7 @@ always_comb
 begin
     case (state)
     IDLE:    state_next = (ff_rx_sop                )   ?   READ    :   IDLE    ;
-    READ:    state_next = (~ff_rx_eop & ~ff_rx_dval )   ?   SAVE    :   READ    ;
+    READ:    state_next = (~ff_rx_eop && ~ff_rx_dval )   ?   SAVE    :   READ    ;
     SAVE:    state_next = (data_saved               )   ?   IDLE    :   SAVE    ;
     default: state_next = IDLE;
     endcase

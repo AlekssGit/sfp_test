@@ -1,4 +1,4 @@
-`define TEST 1
+// `define TEST 1
 
 `ifdef TEST
 	`define ALLOW_SEND		    1'b1
@@ -164,14 +164,19 @@ logic mdio_in  ;
 logic mdio_out ;
 logic mdio_oen ;
 
+logic data_saved_1;
+logic data_saved_2;
+
 assign mdio_in = 1'b1;
 
 system_design platform_design (
 		.clock_50_clk                           (clk_50_pll         ),                         
 		
         .mac_inited_mac_inited                  (mac_inited         ),
-        .pll_refclk_clk                         (clk_50             ),                       
-		
+        .pll_refclk_clk                         (clk_50             ),  
+
+        .receive_packet_1_data_saved_data_saved (data_saved_1       ),                     
+		.receive_packet_2_data_saved_data_saved (data_saved_2       ),
         .reset_main_out_reset                   (main_reset         ),
         .reset_mod_clock_clk                    (clk_50             ),                  
 		.reset_mod_reset_reset_n                (rst_n              ),              
@@ -291,35 +296,64 @@ logic	[24:0]		transmit_start_addr		;
 assign start_ram_addr_1 = transmit_start_addr;
 assign start_ram_addr_2 = 25'd5; //transmit_start_addr;
 
+logic cmd_2_send_first;
+
 always @(posedge clk_50_pll, posedge main_reset) 
 begin
     if(main_reset)
     begin
-        counter_to_send = 32'd0;  
-        cmd_send_1    = 1'b0;  
-        cmd_send_2    = 1'b0;  
+        counter_to_send <= 32'd0;  
+        cmd_send_1    <= 1'b0;  
     end 
     else
     begin
 		if(mac_inited && rx_ready )
 		begin
-            counter_to_send = counter_to_send + 1;
+            counter_to_send <= counter_to_send + 1;
             if(counter_to_send == `PERIOD_BTN_SEND_1)
             begin
-                cmd_send_1 = 1'b1;
-                transmit_start_addr = 25'd1;
-            end
-            else if(counter_to_send == `PERIOD_BTN_SEND_2)
-            begin
-                cmd_send_2 = 1'b1;
-                transmit_start_addr = 25'd1;
+                cmd_send_1 <= 1'b1;
+                transmit_start_addr <= 25'd1;
             end
             else if(counter_to_send == `PERIOD_BTN_SEND_1 + 32'd3)
-                cmd_send_1 = 1'b0;
-            else if(counter_to_send == `PERIOD_BTN_SEND_2 + 32'd3)
-                cmd_send_2 = 1'b0;    
+                cmd_send_1 <= 1'b0;
             else if(counter_to_send == `PERIOD_BTN_SEND_2 + 32'd10)
-                counter_to_send = 32'd0;
+                counter_to_send <= 32'd0;
+		end   
+    end   
+end
+
+always @(posedge clk_50_pll, posedge main_reset) 
+begin
+    if(main_reset)
+    begin
+        cmd_send_2    <= 1'b0;  
+
+        cmd_2_send_first <= 1'b0;
+    end 
+    else
+    begin
+		if(mac_inited && rx_ready )
+		begin
+            if(counter_to_send == `PERIOD_BTN_SEND_2 && cmd_2_send_first == 1'b0 && `ALLOW_SEND)
+            begin
+                cmd_send_2 <= 1'b1;
+            end
+            else if(counter_to_send == `PERIOD_BTN_SEND_2 + 32'd3  && cmd_2_send_first == 1'b0  && `ALLOW_SEND)
+            begin    
+                cmd_send_2 <= 1'b0; 
+
+                cmd_2_send_first <= 1'b1;   
+            end
+            else if(data_saved_2 && ~cmd_send_2)
+            begin
+                cmd_send_2 <= 1'b1;
+            end
+            else if(~data_saved_2)
+            begin
+                cmd_send_2 <= 1'b0;
+            end
+
 		end   
     end   
 end

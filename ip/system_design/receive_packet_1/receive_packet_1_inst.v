@@ -17,6 +17,7 @@
 		.rx_afull_data    (_connected_to_rx_afull_data_),    //  output,   width = 2,           fifo_status.data
 		.rx_afull_valid   (_connected_to_rx_afull_valid_),   //  output,   width = 1,                      .valid
 		.rx_afull_channel (_connected_to_rx_afull_channel_), //  output,   width = 2,                      .channel
-		.fifo_status_clk  (_connected_to_fifo_status_clk_)   //   input,   width = 1,       fifo_status_clk.clk
+		.fifo_status_clk  (_connected_to_fifo_status_clk_),  //   input,   width = 1,       fifo_status_clk.clk
+		.data_saved       (_connected_to_data_saved_)        //  output,   width = 1,            data_saved.data_saved
 	);
 

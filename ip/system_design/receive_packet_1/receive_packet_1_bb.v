@@ -17,7 +17,8 @@ module receive_packet_1 (
 		output wire [1:0]  rx_afull_data,    //           fifo_status.data
 		output wire        rx_afull_valid,   //                      .valid
 		output wire [1:0]  rx_afull_channel, //                      .channel
-		input  wire        fifo_status_clk   //       fifo_status_clk.clk
+		input  wire        fifo_status_clk,  //       fifo_status_clk.clk
+		output wire        data_saved        //            data_saved.data_saved
 	);
 endmodule
 

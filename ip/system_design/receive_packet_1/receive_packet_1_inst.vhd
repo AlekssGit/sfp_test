@@ -18,7 +18,8 @@
 			rx_afull_data    : out std_logic_vector(1 downto 0);                     -- data
 			rx_afull_valid   : out std_logic;                                        -- valid
 			rx_afull_channel : out std_logic_vector(1 downto 0);                     -- channel
-			fifo_status_clk  : in  std_logic                     := 'X'              -- clk
+			fifo_status_clk  : in  std_logic                     := 'X';             -- clk
+			data_saved       : out std_logic                                         -- data_saved
 		);
 	end component receive_packet_1;
 
@@ -42,6 +43,7 @@
 			rx_afull_data    => CONNECTED_TO_rx_afull_data,    --           fifo_status.data
 			rx_afull_valid   => CONNECTED_TO_rx_afull_valid,   --                      .valid
 			rx_afull_channel => CONNECTED_TO_rx_afull_channel, --                      .channel
-			fifo_status_clk  => CONNECTED_TO_fifo_status_clk   --       fifo_status_clk.clk
+			fifo_status_clk  => CONNECTED_TO_fifo_status_clk,  --       fifo_status_clk.clk
+			data_saved       => CONNECTED_TO_data_saved        --            data_saved.data_saved
 		);
 
