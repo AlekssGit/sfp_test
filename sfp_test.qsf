@@ -69,3 +69,4 @@ set_global_assignment -name IP_FILE ip/system_design/xcvr_pll.ip
 set_global_assignment -name SIGNALTAP_FILE output_files/stp.stp
 set_global_assignment -name IP_FILE ip/system_design/mem_4.ip
 set_global_assignment -name IP_FILE ip/system_design/mem_5.ip
+set_global_assignment -name CDF_FILE output_files/programmer.cdf
