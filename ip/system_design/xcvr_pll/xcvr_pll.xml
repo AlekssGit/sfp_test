@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deploy
- date="2022.09.21.14:38:01"
- outputDirectory="D:/Documents/Projects/Learning/SFP_test/ip/system_design/xcvr_pll/">
+ date="2023.04.28.16:00:54"
+ outputDirectory="C:/Users/alvas/Documents/Work_ASD/Projects/Learning/sfp_test/ip/system_design/xcvr_pll/">
  <perimeter>
   <parameter
      name="AUTO_GENERATION_ID"
@@ -24,7 +24,7 @@
   <parameter
      name="AUTO_DEVICE"
      type="String"
-     defaultValue="10CX220YF780E5G"
+     defaultValue="10CX220YF780I5G"
      onHdl="0"
      affectsHdl="1" />
   <parameter
@@ -84,32 +84,32 @@
   <parameter name="AUTO_PLL_REFCLK0_RESET_DOMAIN" value="-1" />
   <parameter name="AUTO_PLL_REFCLK0_CLOCK_DOMAIN" value="-1" />
   <parameter name="AUTO_GENERATION_ID" value="0" />
-  <parameter name="AUTO_DEVICE" value="10CX220YF780E5G" />
+  <parameter name="AUTO_DEVICE" value="10CX220YF780I5G" />
   <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone 10 GX" />
   <parameter name="AUTO_UNIQUE_ID" value="" />
   <parameter name="AUTO_PLL_REFCLK0_CLOCK_RATE" value="-1" />
   <parameter name="AUTO_DEVICE_SPEEDGRADE" value="5" />
   <generatedFiles>
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\xcvr_pll\synth\xcvr_pll.v"
+       path="C:\Users\alvas\Documents\Work_ASD\Projects\Learning\sfp_test\ip\system_design\xcvr_pll\synth\xcvr_pll.v"
        attributes="CONTAINS_INLINE_CONFIGURATION" />
   </generatedFiles>
   <childGeneratedFiles>
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\xcvr_pll\synth\xcvr_pll.v"
+       path="C:\Users\alvas\Documents\Work_ASD\Projects\Learning\sfp_test\ip\system_design\xcvr_pll\synth\xcvr_pll.v"
        attributes="CONTAINS_INLINE_CONFIGURATION" />
   </childGeneratedFiles>
   <sourceFiles>
    <file
-       path="D:/Documents/Projects/Learning/SFP_test/ip/system_design/xcvr_pll.ip" />
+       path="C:/Users/alvas/Documents/Work_ASD/Projects/Learning/sfp_test/ip/system_design/xcvr_pll.ip" />
   </sourceFiles>
   <childSourceFiles>
    <file
-       path="C:/intelfpga_pro/21.3/ip/altera/alt_xcvr/altera_xcvr_pll/altera_xcvr_atx_pll_vi/tcl/altera_xcvr_atx_pll_a10_hw.tcl" />
+       path="C:/intelfpga_pro/21.4/ip/altera/alt_xcvr/altera_xcvr_pll/altera_xcvr_atx_pll_vi/tcl/altera_xcvr_atx_pll_a10_hw.tcl" />
   </childSourceFiles>
   <messages>
    <message level="Info" culprit="xcvr_pll">"Generating: xcvr_pll"</message>
-   <message level="Info" culprit="xcvr_pll">"Generating: xcvr_pll_altera_xcvr_atx_pll_a10_191_6oxhjba"</message>
+   <message level="Info" culprit="xcvr_pll">"Generating: xcvr_pll_altera_xcvr_atx_pll_a10_191_rdwboly"</message>
    <message level="Info" culprit="xcvr_pll">add_fileset_file ./twentynm_xcvr_avmm.sv SYSTEM_VERILOG PATH ../../../alt_xcvr_core/nf/twentynm_xcvr_avmm.sv</message>
    <message level="Info" culprit="xcvr_pll">add_fileset_file ./alt_xcvr_resync.sv SYSTEM_VERILOG PATH ../../../../altera_xcvr_generic/ctrl/alt_xcvr_resync.sv</message>
    <message level="Info" culprit="xcvr_pll">add_fileset_file ./alt_xcvr_arbiter.sv SYSTEM_VERILOG PATH ../../../../altera_xcvr_generic/ctrl/alt_xcvr_arbiter.sv</message>
@@ -124,7 +124,7 @@
  <entity
    kind="altera_xcvr_atx_pll_a10"
    version="19.1"
-   name="xcvr_pll_altera_xcvr_atx_pll_a10_191_6oxhjba">
+   name="xcvr_pll_altera_xcvr_atx_pll_a10_191_rdwboly">
   <parameter name="enable_atx_to_fpll_cascade_out" value="0" />
   <parameter name="hssi_pma_cgb_master_input_select" value="lcpll_top" />
   <parameter name="refclk_cnt" value="1" />
@@ -164,7 +164,7 @@
   <parameter name="atx_pll_tank_voltage_fine" value="vreg_setting5" />
   <parameter name="enable_hip_cal_done_port" value="0" />
   <parameter name="enable_debug_ports_parameters" value="0" />
-  <parameter name="device" value="10CX220YF780E5G" />
+  <parameter name="device" value="10CX220YF780I5G" />
   <parameter name="atx_pll_dsm_ecn_test_en" value="false" />
   <parameter name="atx_pll_device_variant" value="device1" />
   <parameter name="hssi_pma_cgb_master_datarate" value="2500000000 bps" />
@@ -174,7 +174,7 @@
   <parameter name="atx_pll_f_min_tank_1" value="8800000000 Hz" />
   <parameter name="set_output_clock_frequency" value="1250.0" />
   <parameter name="atx_pll_f_min_tank_0" value="6500000000 Hz" />
-  <parameter name="atx_pll_pm_speed_grade" value="e4" />
+  <parameter name="atx_pll_pm_speed_grade" value="i4" />
   <parameter name="mcgb_aux_clkin_cnt" value="0" />
   <parameter name="atx_pll_tank_voltage_coarse" value="vreg_setting_coarse0" />
   <parameter
@@ -310,7 +310,7 @@
   <parameter name="rcfg_profile_data5" value="" />
   <parameter name="iqclk_mux_sel" value="iqtxrxclk0" />
   <parameter name="set_m_counter" value="24" />
-  <parameter name="pma_speedgrade" value="e4" />
+  <parameter name="pma_speedgrade" value="i4" />
   <parameter name="enable_fractional" value="0" />
   <parameter
      name="hssi_pma_lc_refclk_select_mux_xmux_lc_scratch2_src"
@@ -474,88 +474,88 @@
   <parameter name="support_mode" value="user_mode" />
   <generatedFiles>
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\xcvr_pll\altera_xcvr_atx_pll_a10_191\synth\twentynm_xcvr_avmm.sv"
+       path="C:\Users\alvas\Documents\Work_ASD\Projects\Learning\sfp_test\ip\system_design\xcvr_pll\altera_xcvr_atx_pll_a10_191\synth\twentynm_xcvr_avmm.sv"
        attributes="" />
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\xcvr_pll\altera_xcvr_atx_pll_a10_191\synth\alt_xcvr_resync.sv"
+       path="C:\Users\alvas\Documents\Work_ASD\Projects\Learning\sfp_test\ip\system_design\xcvr_pll\altera_xcvr_atx_pll_a10_191\synth\alt_xcvr_resync.sv"
        attributes="" />
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\xcvr_pll\altera_xcvr_atx_pll_a10_191\synth\alt_xcvr_arbiter.sv"
+       path="C:\Users\alvas\Documents\Work_ASD\Projects\Learning\sfp_test\ip\system_design\xcvr_pll\altera_xcvr_atx_pll_a10_191\synth\alt_xcvr_arbiter.sv"
        attributes="" />
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\xcvr_pll\altera_xcvr_atx_pll_a10_191\synth\a10_avmm_h.sv"
+       path="C:\Users\alvas\Documents\Work_ASD\Projects\Learning\sfp_test\ip\system_design\xcvr_pll\altera_xcvr_atx_pll_a10_191\synth\a10_avmm_h.sv"
        attributes="" />
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\xcvr_pll\altera_xcvr_atx_pll_a10_191\synth\altera_xcvr_native_a10_functions_h.sv"
+       path="C:\Users\alvas\Documents\Work_ASD\Projects\Learning\sfp_test\ip\system_design\xcvr_pll\altera_xcvr_atx_pll_a10_191\synth\altera_xcvr_native_a10_functions_h.sv"
        attributes="" />
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\xcvr_pll\altera_xcvr_atx_pll_a10_191\synth\alt_xcvr_atx_pll_rcfg_arb.sv"
+       path="C:\Users\alvas\Documents\Work_ASD\Projects\Learning\sfp_test\ip\system_design\xcvr_pll\altera_xcvr_atx_pll_a10_191\synth\alt_xcvr_atx_pll_rcfg_arb.sv"
        attributes="" />
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\xcvr_pll\altera_xcvr_atx_pll_a10_191\synth\a10_xcvr_atx_pll.sv"
+       path="C:\Users\alvas\Documents\Work_ASD\Projects\Learning\sfp_test\ip\system_design\xcvr_pll\altera_xcvr_atx_pll_a10_191\synth\a10_xcvr_atx_pll.sv"
        attributes="" />
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\xcvr_pll\altera_xcvr_atx_pll_a10_191\synth\alt_xcvr_pll_embedded_debug.sv"
+       path="C:\Users\alvas\Documents\Work_ASD\Projects\Learning\sfp_test\ip\system_design\xcvr_pll\altera_xcvr_atx_pll_a10_191\synth\alt_xcvr_pll_embedded_debug.sv"
        attributes="" />
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\xcvr_pll\altera_xcvr_atx_pll_a10_191\synth\alt_xcvr_pll_avmm_csr.sv"
+       path="C:\Users\alvas\Documents\Work_ASD\Projects\Learning\sfp_test\ip\system_design\xcvr_pll\altera_xcvr_atx_pll_a10_191\synth\alt_xcvr_pll_avmm_csr.sv"
        attributes="" />
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\xcvr_pll\altera_xcvr_atx_pll_a10_191\synth\plain_files.txt"
+       path="C:\Users\alvas\Documents\Work_ASD\Projects\Learning\sfp_test\ip\system_design\xcvr_pll\altera_xcvr_atx_pll_a10_191\synth\plain_files.txt"
        attributes="" />
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\xcvr_pll\altera_xcvr_atx_pll_a10_191\synth\xcvr_pll_altera_xcvr_atx_pll_a10_191_6oxhjba.sv"
+       path="C:\Users\alvas\Documents\Work_ASD\Projects\Learning\sfp_test\ip\system_design\xcvr_pll\altera_xcvr_atx_pll_a10_191\synth\xcvr_pll_altera_xcvr_atx_pll_a10_191_rdwboly.sv"
        attributes="" />
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\xcvr_pll\altera_xcvr_atx_pll_a10_191\synth\alt_xcvr_atx_pll_rcfg_opt_logic_6oxhjba.sv"
+       path="C:\Users\alvas\Documents\Work_ASD\Projects\Learning\sfp_test\ip\system_design\xcvr_pll\altera_xcvr_atx_pll_a10_191\synth\alt_xcvr_atx_pll_rcfg_opt_logic_rdwboly.sv"
        attributes="" />
   </generatedFiles>
   <childGeneratedFiles>
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\xcvr_pll\altera_xcvr_atx_pll_a10_191\synth\twentynm_xcvr_avmm.sv"
+       path="C:\Users\alvas\Documents\Work_ASD\Projects\Learning\sfp_test\ip\system_design\xcvr_pll\altera_xcvr_atx_pll_a10_191\synth\twentynm_xcvr_avmm.sv"
        attributes="" />
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\xcvr_pll\altera_xcvr_atx_pll_a10_191\synth\alt_xcvr_resync.sv"
+       path="C:\Users\alvas\Documents\Work_ASD\Projects\Learning\sfp_test\ip\system_design\xcvr_pll\altera_xcvr_atx_pll_a10_191\synth\alt_xcvr_resync.sv"
        attributes="" />
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\xcvr_pll\altera_xcvr_atx_pll_a10_191\synth\alt_xcvr_arbiter.sv"
+       path="C:\Users\alvas\Documents\Work_ASD\Projects\Learning\sfp_test\ip\system_design\xcvr_pll\altera_xcvr_atx_pll_a10_191\synth\alt_xcvr_arbiter.sv"
        attributes="" />
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\xcvr_pll\altera_xcvr_atx_pll_a10_191\synth\a10_avmm_h.sv"
+       path="C:\Users\alvas\Documents\Work_ASD\Projects\Learning\sfp_test\ip\system_design\xcvr_pll\altera_xcvr_atx_pll_a10_191\synth\a10_avmm_h.sv"
        attributes="" />
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\xcvr_pll\altera_xcvr_atx_pll_a10_191\synth\altera_xcvr_native_a10_functions_h.sv"
+       path="C:\Users\alvas\Documents\Work_ASD\Projects\Learning\sfp_test\ip\system_design\xcvr_pll\altera_xcvr_atx_pll_a10_191\synth\altera_xcvr_native_a10_functions_h.sv"
        attributes="" />
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\xcvr_pll\altera_xcvr_atx_pll_a10_191\synth\alt_xcvr_atx_pll_rcfg_arb.sv"
+       path="C:\Users\alvas\Documents\Work_ASD\Projects\Learning\sfp_test\ip\system_design\xcvr_pll\altera_xcvr_atx_pll_a10_191\synth\alt_xcvr_atx_pll_rcfg_arb.sv"
        attributes="" />
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\xcvr_pll\altera_xcvr_atx_pll_a10_191\synth\a10_xcvr_atx_pll.sv"
+       path="C:\Users\alvas\Documents\Work_ASD\Projects\Learning\sfp_test\ip\system_design\xcvr_pll\altera_xcvr_atx_pll_a10_191\synth\a10_xcvr_atx_pll.sv"
        attributes="" />
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\xcvr_pll\altera_xcvr_atx_pll_a10_191\synth\alt_xcvr_pll_embedded_debug.sv"
+       path="C:\Users\alvas\Documents\Work_ASD\Projects\Learning\sfp_test\ip\system_design\xcvr_pll\altera_xcvr_atx_pll_a10_191\synth\alt_xcvr_pll_embedded_debug.sv"
        attributes="" />
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\xcvr_pll\altera_xcvr_atx_pll_a10_191\synth\alt_xcvr_pll_avmm_csr.sv"
+       path="C:\Users\alvas\Documents\Work_ASD\Projects\Learning\sfp_test\ip\system_design\xcvr_pll\altera_xcvr_atx_pll_a10_191\synth\alt_xcvr_pll_avmm_csr.sv"
        attributes="" />
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\xcvr_pll\altera_xcvr_atx_pll_a10_191\synth\plain_files.txt"
+       path="C:\Users\alvas\Documents\Work_ASD\Projects\Learning\sfp_test\ip\system_design\xcvr_pll\altera_xcvr_atx_pll_a10_191\synth\plain_files.txt"
        attributes="" />
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\xcvr_pll\altera_xcvr_atx_pll_a10_191\synth\xcvr_pll_altera_xcvr_atx_pll_a10_191_6oxhjba.sv"
+       path="C:\Users\alvas\Documents\Work_ASD\Projects\Learning\sfp_test\ip\system_design\xcvr_pll\altera_xcvr_atx_pll_a10_191\synth\xcvr_pll_altera_xcvr_atx_pll_a10_191_rdwboly.sv"
        attributes="" />
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\xcvr_pll\altera_xcvr_atx_pll_a10_191\synth\alt_xcvr_atx_pll_rcfg_opt_logic_6oxhjba.sv"
+       path="C:\Users\alvas\Documents\Work_ASD\Projects\Learning\sfp_test\ip\system_design\xcvr_pll\altera_xcvr_atx_pll_a10_191\synth\alt_xcvr_atx_pll_rcfg_opt_logic_rdwboly.sv"
        attributes="" />
   </childGeneratedFiles>
   <sourceFiles>
    <file
-       path="C:/intelfpga_pro/21.3/ip/altera/alt_xcvr/altera_xcvr_pll/altera_xcvr_atx_pll_vi/tcl/altera_xcvr_atx_pll_a10_hw.tcl" />
+       path="C:/intelfpga_pro/21.4/ip/altera/alt_xcvr/altera_xcvr_pll/altera_xcvr_atx_pll_vi/tcl/altera_xcvr_atx_pll_a10_hw.tcl" />
   </sourceFiles>
   <childSourceFiles/>
   <instantiator instantiator="xcvr_pll" as="xcvr_pll" />
   <messages>
-   <message level="Info" culprit="xcvr_pll">"Generating: xcvr_pll_altera_xcvr_atx_pll_a10_191_6oxhjba"</message>
+   <message level="Info" culprit="xcvr_pll">"Generating: xcvr_pll_altera_xcvr_atx_pll_a10_191_rdwboly"</message>
    <message level="Info" culprit="xcvr_pll">add_fileset_file ./twentynm_xcvr_avmm.sv SYSTEM_VERILOG PATH ../../../alt_xcvr_core/nf/twentynm_xcvr_avmm.sv</message>
    <message level="Info" culprit="xcvr_pll">add_fileset_file ./alt_xcvr_resync.sv SYSTEM_VERILOG PATH ../../../../altera_xcvr_generic/ctrl/alt_xcvr_resync.sv</message>
    <message level="Info" culprit="xcvr_pll">add_fileset_file ./alt_xcvr_arbiter.sv SYSTEM_VERILOG PATH ../../../../altera_xcvr_generic/ctrl/alt_xcvr_arbiter.sv</message>

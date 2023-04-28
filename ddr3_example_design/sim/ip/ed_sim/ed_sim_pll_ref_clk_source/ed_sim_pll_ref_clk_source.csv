@@ -1,0 +1,19 @@
+# system info ed_sim_pll_ref_clk_source on 2023.04.28.15:40:28
+system_info:
+name,value
+DEVICE,10CX220YF780I5G
+DEVICE_FAMILY,Cyclone 10 GX
+GENERATION_ID,0
+#
+#
+# Files generated for ed_sim_pll_ref_clk_source on 2023.04.28.15:40:28
+files:
+filepath,kind,attributes,module,is_top
+sim/ed_sim_pll_ref_clk_source.v,VERILOG,CONTAINS_INLINE_CONFIGURATION,ed_sim_pll_ref_clk_source,true
+altera_avalon_clock_source_191/sim/verbosity_pkg.sv,SYSTEM_VERILOG, COMMON_SYSTEMVERILOG_PACKAGE=avalon_vip_verbosity_pkg,altera_avalon_clock_source,false
+altera_avalon_clock_source_191/sim/altera_avalon_clock_source.sv,SYSTEM_VERILOG,,altera_avalon_clock_source,false
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module
+ed_sim_pll_ref_clk_source.pll_ref_clk_source,altera_avalon_clock_source

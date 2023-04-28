@@ -1,0 +1,33 @@
+# system info ed_sim on 2023.04.28.15:40:23
+system_info:
+name,value
+DEVICE,10CX220YF780I5G
+DEVICE_FAMILY,Cyclone 10 GX
+GENERATION_ID,0
+#
+#
+# Files generated for ed_sim on 2023.04.28.15:40:23
+files:
+filepath,kind,attributes,module,is_top
+sim/ed_sim.v,VERILOG,CONTAINS_INLINE_CONFIGURATION,ed_sim,true
+altera_mm_interconnect_1920/sim/ed_sim_altera_mm_interconnect_1920_3ogrq5i.v,VERILOG,CONTAINS_INLINE_CONFIGURATION,ed_sim_altera_mm_interconnect_1920_3ogrq5i,false
+altera_reset_controller_1921/sim/altera_reset_controller.v,VERILOG,,altera_reset_controller,false
+altera_reset_controller_1921/sim/altera_reset_synchronizer.v,VERILOG,,altera_reset_controller,false
+altera_reset_controller_1921/sim/altera_reset_controller.sdc,SDC_ENTITY,NO_AUTO_INSTANCE_DISCOVERY NO_SDC_PROMOTION,altera_reset_controller,false
+altera_merlin_master_translator_191/sim/ed_sim_altera_merlin_master_translator_191_g7h47bq.sv,SYSTEM_VERILOG,,ed_sim_altera_merlin_master_translator_191_g7h47bq,false
+altera_merlin_slave_translator_191/sim/ed_sim_altera_merlin_slave_translator_191_x56fcki.sv,SYSTEM_VERILOG,,ed_sim_altera_merlin_slave_translator_191_x56fcki,false
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module
+ed_sim.ddr3,ed_sim_ddr3
+ed_sim.global_reset_n_source,ed_sim_global_reset_n_source
+ed_sim.global_reset_n_splitter,ed_sim_global_reset_n_splitter
+ed_sim.mem,ed_sim_mem
+ed_sim.pll_ref_clk_source,ed_sim_pll_ref_clk_source
+ed_sim.sim_checker,ed_sim_sim_checker
+ed_sim.tg,ed_sim_tg
+ed_sim.mm_interconnect_0,ed_sim_altera_mm_interconnect_1920_3ogrq5i
+ed_sim.mm_interconnect_0.tg_ctrl_amm_0_translator,ed_sim_altera_merlin_master_translator_191_g7h47bq
+ed_sim.mm_interconnect_0.ddr3_ctrl_amm_0_translator,ed_sim_altera_merlin_slave_translator_191_x56fcki
+ed_sim.rst_controller,altera_reset_controller

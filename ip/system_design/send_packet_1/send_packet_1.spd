@@ -11,5 +11,5 @@
    hasInlineConfiguration="true" />
  <topLevel name="send_packet_1.send_packet_1" />
  <deviceFamily name="cyclone10gx" />
- <device name="10CX220YF780E5G" />
+ <device name="10CX220YF780I5G" />
 </simPackage>

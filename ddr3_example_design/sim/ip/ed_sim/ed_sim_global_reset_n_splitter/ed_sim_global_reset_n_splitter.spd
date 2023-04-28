@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file
+   path="sim/ed_sim_global_reset_n_splitter.v"
+   type="VERILOG"
+   library="ed_sim_global_reset_n_splitter"
+   hasInlineConfiguration="true" />
+ <topLevel name="ed_sim_global_reset_n_splitter.ed_sim_global_reset_n_splitter" />
+ <deviceFamily name="cyclone10gx" />
+ <device name="10CX220YF780I5G" />
+</simPackage>

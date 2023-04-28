@@ -48,6 +48,7 @@ add wave -group resets  -label "rx_digitalreset"  /tb_sfp_test/device/rx_digital
 add wave -group resets  -label "tx_ready"  /tb_sfp_test/device/tx_ready
 add wave -group resets  -label "rx_ready"  /tb_sfp_test/device/rx_ready
 
+add wave -group avalon_tse_Setup   -label "init_timer"              /tb_sfp_test/device/platform_design/init_mac/init_mac/control_init/timer
 add wave -group avalon_tse_Setup   -label "mac_inited"              /tb_sfp_test/device/mac_inited
 add wave -group avalon_tse_Setup   -label "link_ch1_reg"            /tb_sfp_test/device/platform_design/init_mac/init_mac/control_init/link_ch1_reg
 add wave -group avalon_tse_Setup   -label "link_ch2_reg"            /tb_sfp_test/device/platform_design/init_mac/init_mac/control_init/link_ch2_reg

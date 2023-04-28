@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deploy
- date="2022.09.21.14:38:01"
- outputDirectory="D:/Documents/Projects/Learning/SFP_test/ip/system_design/init_mac/">
+ date="2023.04.28.15:56:40"
+ outputDirectory="C:/Users/alvas/Documents/Work_ASD/Projects/Learning/sfp_test/ip/system_design/init_mac/">
  <perimeter>
   <parameter
      name="AUTO_GENERATION_ID"
@@ -24,7 +24,7 @@
   <parameter
      name="AUTO_DEVICE"
      type="String"
-     defaultValue="10CX220YF780E5G"
+     defaultValue="10CX220YF780I5G"
      onHdl="0"
      affectsHdl="1" />
   <parameter
@@ -128,7 +128,7 @@
   <parameter name="AUTO_CLOCK_CLOCK_DOMAIN" value="-1" />
   <parameter name="AUTO_CLOCK_RESET_DOMAIN" value="-1" />
   <parameter name="AUTO_GENERATION_ID" value="0" />
-  <parameter name="AUTO_DEVICE" value="10CX220YF780E5G" />
+  <parameter name="AUTO_DEVICE" value="10CX220YF780I5G" />
   <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone 10 GX" />
   <parameter name="AUTO_AVALON_MASTER_ADDRESS_WIDTH" value="-1" />
   <parameter name="AUTO_UNIQUE_ID" value="" />
@@ -136,20 +136,21 @@
   <parameter name="AUTO_DEVICE_SPEEDGRADE" value="5" />
   <generatedFiles>
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\init_mac\synth\init_mac.v"
+       path="C:\Users\alvas\Documents\Work_ASD\Projects\Learning\sfp_test\ip\system_design\init_mac\synth\init_mac.v"
        attributes="CONTAINS_INLINE_CONFIGURATION" />
   </generatedFiles>
   <childGeneratedFiles>
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\init_mac\synth\init_mac.v"
+       path="C:\Users\alvas\Documents\Work_ASD\Projects\Learning\sfp_test\ip\system_design\init_mac\synth\init_mac.v"
        attributes="CONTAINS_INLINE_CONFIGURATION" />
   </childGeneratedFiles>
   <sourceFiles>
    <file
-       path="D:/Documents/Projects/Learning/SFP_test/ip/system_design/init_mac.ip" />
+       path="C:/Users/alvas/Documents/Work_ASD/Projects/Learning/sfp_test/ip/system_design/init_mac.ip" />
   </sourceFiles>
   <childSourceFiles>
-   <file path="D:/Documents/Projects/Learning/SFP_test/inti_mac_hw.tcl" />
+   <file
+       path="C:/Users/alvas/Documents/Work_ASD/Projects/Learning/sfp_test/inti_mac_hw.tcl" />
   </childSourceFiles>
   <messages>
    <message level="Info" culprit="init_mac">"Generating: init_mac"</message>
@@ -159,34 +160,35 @@
  <entity kind="init_mac" version="1.0" name="mac_init_top">
   <generatedFiles>
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\init_mac\init_mac_10\synth\mac_init_top.sv"
+       path="C:\Users\alvas\Documents\Work_ASD\Projects\Learning\sfp_test\ip\system_design\init_mac\init_mac_10\synth\mac_init_top.sv"
        attributes="TOP_LEVEL_FILE" />
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\init_mac\init_mac_10\synth\avalon_mm_tse_init.sv"
+       path="C:\Users\alvas\Documents\Work_ASD\Projects\Learning\sfp_test\ip\system_design\init_mac\init_mac_10\synth\avalon_mm_tse_init.sv"
        attributes="" />
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\init_mac\init_mac_10\synth\initiate_mac.sv"
+       path="C:\Users\alvas\Documents\Work_ASD\Projects\Learning\sfp_test\ip\system_design\init_mac\init_mac_10\synth\initiate_mac.sv"
        attributes="" />
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\init_mac\init_mac_10\synth\mac_defines.sv"
+       path="C:\Users\alvas\Documents\Work_ASD\Projects\Learning\sfp_test\ip\system_design\init_mac\init_mac_10\synth\mac_defines.sv"
        attributes="" />
   </generatedFiles>
   <childGeneratedFiles>
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\init_mac\init_mac_10\synth\mac_init_top.sv"
+       path="C:\Users\alvas\Documents\Work_ASD\Projects\Learning\sfp_test\ip\system_design\init_mac\init_mac_10\synth\mac_init_top.sv"
        attributes="TOP_LEVEL_FILE" />
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\init_mac\init_mac_10\synth\avalon_mm_tse_init.sv"
+       path="C:\Users\alvas\Documents\Work_ASD\Projects\Learning\sfp_test\ip\system_design\init_mac\init_mac_10\synth\avalon_mm_tse_init.sv"
        attributes="" />
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\init_mac\init_mac_10\synth\initiate_mac.sv"
+       path="C:\Users\alvas\Documents\Work_ASD\Projects\Learning\sfp_test\ip\system_design\init_mac\init_mac_10\synth\initiate_mac.sv"
        attributes="" />
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\init_mac\init_mac_10\synth\mac_defines.sv"
+       path="C:\Users\alvas\Documents\Work_ASD\Projects\Learning\sfp_test\ip\system_design\init_mac\init_mac_10\synth\mac_defines.sv"
        attributes="" />
   </childGeneratedFiles>
   <sourceFiles>
-   <file path="D:/Documents/Projects/Learning/SFP_test/inti_mac_hw.tcl" />
+   <file
+       path="C:/Users/alvas/Documents/Work_ASD/Projects/Learning/sfp_test/inti_mac_hw.tcl" />
   </sourceFiles>
   <childSourceFiles/>
   <instantiator instantiator="init_mac" as="init_mac" />

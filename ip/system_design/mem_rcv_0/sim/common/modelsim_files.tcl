@@ -19,7 +19,7 @@ namespace eval mem_rcv_0 {
   
   proc get_design_files {USER_DEFINED_COMPILE_OPTIONS USER_DEFINED_VERILOG_COMPILE_OPTIONS USER_DEFINED_VHDL_COMPILE_OPTIONS QSYS_SIMDIR} {
     set design_files [list]
-    lappend design_files "vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../altera_avalon_onchip_memory2_1931/sim/mem_rcv_0_altera_avalon_onchip_memory2_1931_c2ql3jy.v"]\"  -work altera_avalon_onchip_memory2_1931"
+    lappend design_files "vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../altera_avalon_onchip_memory2_1931/sim/mem_rcv_0_altera_avalon_onchip_memory2_1931_hik5kaq.v"]\"  -work altera_avalon_onchip_memory2_1931"
     lappend design_files "vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/mem_rcv_0.v"]\"  -work mem_rcv_0"                                                                                                           
     return $design_files
   }

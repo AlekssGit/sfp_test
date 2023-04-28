@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file
+   path="altera_merlin_master_translator_191/sim/ed_sim_altera_merlin_master_translator_191_g7h47bq.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_merlin_master_translator_191" />
+ <file
+   path="altera_merlin_slave_translator_191/sim/ed_sim_altera_merlin_slave_translator_191_x56fcki.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_merlin_slave_translator_191" />
+ <file
+   path="altera_mm_interconnect_1920/sim/ed_sim_altera_mm_interconnect_1920_3ogrq5i.v"
+   type="VERILOG"
+   library="altera_mm_interconnect_1920"
+   hasInlineConfiguration="true" />
+ <file
+   path="altera_reset_controller_1921/sim/altera_reset_controller.v"
+   type="VERILOG"
+   library="altera_reset_controller_1921" />
+ <file
+   path="altera_reset_controller_1921/sim/altera_reset_synchronizer.v"
+   type="VERILOG"
+   library="altera_reset_controller_1921" />
+ <file
+   path="altera_reset_controller_1921/sim/altera_reset_controller.sdc"
+   type="SDC_ENTITY"
+   library="altera_reset_controller_1921" />
+ <file
+   path="sim/ed_sim.v"
+   type="VERILOG"
+   library="ed_sim"
+   hasInlineConfiguration="true" />
+ <topLevel name="ed_sim.ed_sim" />
+ <deviceFamily name="cyclone10gx" />
+ <device name="10CX220YF780I5G" />
+</simPackage>

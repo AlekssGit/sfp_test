@@ -1526,7 +1526,7 @@
           </parameter>
           <parameter>
             <name>gui_device_component</name>
-            <value>10CX220YF780E5G</value>
+            <value>10CX220YF780I5G</value>
           </parameter>
           <parameter>
             <name>gui_device_family</name>
@@ -2930,7 +2930,7 @@
           </parameter>
           <parameter>
             <name>system_info_device_component</name>
-            <value>10CX220YF780E5G</value>
+            <value>10CX220YF780I5G</value>
           </parameter>
           <parameter>
             <name>system_info_device_family</name>
@@ -2961,7 +2961,7 @@
         <className>altera_iopll</className>
         <version>19.3.1</version>
         <name>pll</name>
-        <uniqueName>pll_altera_iopll_1931_bd2ubhi</uniqueName>
+        <uniqueName>pll_altera_iopll_1931_ldt7zry</uniqueName>
         <nonce>0</nonce>
         <incidentConnections></incidentConnections>
         <path>pll.pll</path>

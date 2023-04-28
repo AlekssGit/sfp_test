@@ -1,0 +1,7 @@
+	component ed_synth_global_reset_n_splitter is
+		port (
+			sig_input    : in  std_logic := 'X'; -- reset_n
+			sig_output_0 : out std_logic         -- reset_n
+		);
+	end component ed_synth_global_reset_n_splitter;
+

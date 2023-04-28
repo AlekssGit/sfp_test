@@ -1,0 +1,26 @@
+# system info ed_sim_mem on 2023.04.28.15:40:16
+system_info:
+name,value
+DEVICE,10CX220YF780I5G
+DEVICE_FAMILY,Cyclone 10 GX
+GENERATION_ID,0
+#
+#
+# Files generated for ed_sim_mem on 2023.04.28.15:40:16
+files:
+filepath,kind,attributes,module,is_top
+sim/ed_sim_mem.v,VERILOG,CONTAINS_INLINE_CONFIGURATION,ed_sim_mem,true
+altera_emif_mem_model_191/sim/ed_sim_mem_altera_emif_mem_model_191_2oew2ha.v,VERILOG,CONTAINS_INLINE_CONFIGURATION,ed_sim_mem_altera_emif_mem_model_191_2oew2ha,false
+altera_emif_mem_model_core_ddr3_191/sim/altera_emif_ddrx_model.sv,SYSTEM_VERILOG,,altera_emif_ddrx_model,false
+altera_emif_mem_model_core_ddr3_191/sim/altera_emif_ddrx_model_per_ping_pong.sv,SYSTEM_VERILOG,,altera_emif_ddrx_model,false
+altera_emif_mem_model_core_ddr3_191/sim/altera_emif_ddrx_model_per_device.sv,SYSTEM_VERILOG,,altera_emif_ddrx_model,false
+altera_emif_mem_model_core_ddr3_191/sim/altera_emif_ddrx_model_rank.sv,SYSTEM_VERILOG,,altera_emif_ddrx_model,false
+altera_emif_mem_model_core_ddr3_191/sim/altera_emif_ddr3_model_rdimm_chip.sv,SYSTEM_VERILOG,,altera_emif_ddrx_model,false
+altera_emif_mem_model_core_ddr3_191/sim/altera_emif_ddr3_model_lrdimm_chip.sv,SYSTEM_VERILOG,,altera_emif_ddrx_model,false
+altera_emif_mem_model_core_ddr3_191/sim/altera_emif_ddrx_model_bidir_delay.sv,SYSTEM_VERILOG,,altera_emif_ddrx_model,false
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module
+ed_sim_mem.mem,ed_sim_mem_altera_emif_mem_model_191_2oew2ha
+ed_sim_mem.mem.core,altera_emif_ddrx_model

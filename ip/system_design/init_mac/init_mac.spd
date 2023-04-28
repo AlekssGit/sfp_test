@@ -23,5 +23,5 @@
    hasInlineConfiguration="true" />
  <topLevel name="init_mac.init_mac" />
  <deviceFamily name="cyclone10gx" />
- <device name="10CX220YF780E5G" />
+ <device name="10CX220YF780I5G" />
 </simPackage>

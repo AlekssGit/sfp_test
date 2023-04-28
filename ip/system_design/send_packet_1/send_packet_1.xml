@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deploy
- date="2022.09.21.14:38:04"
- outputDirectory="D:/Documents/Projects/Learning/SFP_test/ip/system_design/send_packet_1/">
+ date="2023.04.28.16:00:17"
+ outputDirectory="C:/Users/alvas/Documents/Work_ASD/Projects/Learning/sfp_test/ip/system_design/send_packet_1/">
  <perimeter>
   <parameter
      name="AUTO_GENERATION_ID"
@@ -24,7 +24,7 @@
   <parameter
      name="AUTO_DEVICE"
      type="String"
-     defaultValue="10CX220YF780E5G"
+     defaultValue="10CX220YF780I5G"
      onHdl="0"
      affectsHdl="1" />
   <parameter
@@ -156,7 +156,7 @@
   <parameter name="AUTO_CLOCK_CLOCK_DOMAIN" value="-1" />
   <parameter name="AUTO_CLOCK_RESET_DOMAIN" value="-1" />
   <parameter name="AUTO_GENERATION_ID" value="0" />
-  <parameter name="AUTO_DEVICE" value="10CX220YF780E5G" />
+  <parameter name="AUTO_DEVICE" value="10CX220YF780I5G" />
   <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone 10 GX" />
   <parameter name="AUTO_AVALON_MASTER_ADDRESS_WIDTH" value="-1" />
   <parameter name="AUTO_UNIQUE_ID" value="" />
@@ -164,20 +164,21 @@
   <parameter name="AUTO_DEVICE_SPEEDGRADE" value="5" />
   <generatedFiles>
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\send_packet_1\synth\send_packet_1.v"
+       path="C:\Users\alvas\Documents\Work_ASD\Projects\Learning\sfp_test\ip\system_design\send_packet_1\synth\send_packet_1.v"
        attributes="CONTAINS_INLINE_CONFIGURATION" />
   </generatedFiles>
   <childGeneratedFiles>
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\send_packet_1\synth\send_packet_1.v"
+       path="C:\Users\alvas\Documents\Work_ASD\Projects\Learning\sfp_test\ip\system_design\send_packet_1\synth\send_packet_1.v"
        attributes="CONTAINS_INLINE_CONFIGURATION" />
   </childGeneratedFiles>
   <sourceFiles>
    <file
-       path="D:/Documents/Projects/Learning/SFP_test/ip/system_design/send_packet_1.ip" />
+       path="C:/Users/alvas/Documents/Work_ASD/Projects/Learning/sfp_test/ip/system_design/send_packet_1.ip" />
   </sourceFiles>
   <childSourceFiles>
-   <file path="D:/Documents/Projects/Learning/SFP_test/send_packet_hw.tcl" />
+   <file
+       path="C:/Users/alvas/Documents/Work_ASD/Projects/Learning/sfp_test/send_packet_hw.tcl" />
   </childSourceFiles>
   <messages>
    <message level="Info" culprit="send_packet_1">"Generating: send_packet_1"</message>
@@ -187,16 +188,17 @@
  <entity kind="send_packet" version="1.0" name="send_packet">
   <generatedFiles>
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\send_packet_1\send_packet_10\synth\send_packet.sv"
+       path="C:\Users\alvas\Documents\Work_ASD\Projects\Learning\sfp_test\ip\system_design\send_packet_1\send_packet_10\synth\send_packet.sv"
        attributes="TOP_LEVEL_FILE" />
   </generatedFiles>
   <childGeneratedFiles>
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\send_packet_1\send_packet_10\synth\send_packet.sv"
+       path="C:\Users\alvas\Documents\Work_ASD\Projects\Learning\sfp_test\ip\system_design\send_packet_1\send_packet_10\synth\send_packet.sv"
        attributes="TOP_LEVEL_FILE" />
   </childGeneratedFiles>
   <sourceFiles>
-   <file path="D:/Documents/Projects/Learning/SFP_test/send_packet_hw.tcl" />
+   <file
+       path="C:/Users/alvas/Documents/Work_ASD/Projects/Learning/sfp_test/send_packet_hw.tcl" />
   </sourceFiles>
   <childSourceFiles/>
   <instantiator instantiator="send_packet_1" as="send_packet_1" />

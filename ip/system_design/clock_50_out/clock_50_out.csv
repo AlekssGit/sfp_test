@@ -1,12 +1,12 @@
-# system info clock_50_out on 2022.09.21.14:38:26
+# system info clock_50_out on 2023.04.28.15:57:16
 system_info:
 name,value
-DEVICE,10CX220YF780E5G
+DEVICE,10CX220YF780I5G
 DEVICE_FAMILY,Cyclone 10 GX
 GENERATION_ID,0
 #
 #
-# Files generated for clock_50_out on 2022.09.21.14:38:26
+# Files generated for clock_50_out on 2023.04.28.15:57:16
 files:
 filepath,kind,attributes,module,is_top
 sim/clock_50_out.v,VERILOG,CONTAINS_INLINE_CONFIGURATION,clock_50_out,true

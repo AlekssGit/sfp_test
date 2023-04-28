@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file
+   path="altera_avalon_reset_source_191/sim/verbosity_pkg.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_common_sv_packages"
+   systemVerilogPackageName="avalon_vip_verbosity_pkg" />
+ <file
+   path="altera_avalon_reset_source_191/sim/altera_avalon_reset_source.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_avalon_reset_source_191" />
+ <file
+   path="sim/ed_sim_global_reset_n_source.v"
+   type="VERILOG"
+   library="ed_sim_global_reset_n_source"
+   hasInlineConfiguration="true" />
+ <topLevel name="ed_sim_global_reset_n_source.ed_sim_global_reset_n_source" />
+ <deviceFamily name="cyclone10gx" />
+ <device name="10CX220YF780I5G" />
+</simPackage>

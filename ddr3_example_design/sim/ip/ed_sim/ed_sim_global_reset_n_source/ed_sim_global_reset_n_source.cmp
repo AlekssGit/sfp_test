@@ -1,0 +1,11 @@
+	component ed_sim_global_reset_n_source is
+		generic (
+			ASSERT_HIGH_RESET    : integer := 0;
+			INITIAL_RESET_CYCLES : integer := 5
+		);
+		port (
+			reset : out std_logic;        -- reset_n
+			clk   : in  std_logic := 'X'  -- clk
+		);
+	end component ed_sim_global_reset_n_source;
+

@@ -1,0 +1,7 @@
+	component ddr_avalon_reset is
+		port (
+			in_reset  : in  std_logic := 'X'; -- reset
+			out_reset : out std_logic         -- reset
+		);
+	end component ddr_avalon_reset;
+

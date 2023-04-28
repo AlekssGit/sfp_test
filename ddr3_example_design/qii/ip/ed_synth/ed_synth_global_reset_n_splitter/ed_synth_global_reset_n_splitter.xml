@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deploy
+ date="2023.04.28.15:38:38"
+ outputDirectory="C:/Users/alvas/AppData/Local/Temp/alt9475_9143118846348988458.dir/0002_ddr3_gen/qii/ip/ed_synth/ed_synth_global_reset_n_splitter/">
+ <perimeter>
+  <parameter
+     name="AUTO_GENERATION_ID"
+     type="Integer"
+     defaultValue="0"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_UNIQUE_ID"
+     type="String"
+     defaultValue=""
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_FAMILY"
+     type="String"
+     defaultValue="Cyclone 10 GX"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE"
+     type="String"
+     defaultValue="10CX220YF780I5G"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_SPEEDGRADE"
+     type="String"
+     defaultValue="5"
+     onHdl="0"
+     affectsHdl="1" />
+  <interface name="sig_input_if" kind="reset" start="0">
+   <property name="associatedClock" value="" />
+   <property name="synchronousEdges" value="NONE" />
+   <port name="sig_input" direction="input" role="reset_n" width="1" />
+  </interface>
+  <interface name="sig_output_if_0" kind="reset" start="1">
+   <property name="associatedClock" value="" />
+   <property name="associatedDirectReset" value="" />
+   <property name="associatedResetSinks" value="none" />
+   <property name="synchronousEdges" value="NONE" />
+   <port name="sig_output_0" direction="output" role="reset_n" width="1" />
+  </interface>
+ </perimeter>
+ <entity
+   kind="ed_synth_global_reset_n_splitter"
+   version="1.0"
+   name="ed_synth_global_reset_n_splitter">
+  <parameter name="AUTO_GENERATION_ID" value="0" />
+  <parameter name="AUTO_DEVICE" value="10CX220YF780I5G" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone 10 GX" />
+  <parameter name="AUTO_UNIQUE_ID" value="" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="5" />
+  <generatedFiles>
+   <file
+       path="C:\Users\alvas\AppData\Local\Temp\alt9475_9143118846348988458.dir\0002_ddr3_gen\qii\ip\ed_synth\ed_synth_global_reset_n_splitter\synth\ed_synth_global_reset_n_splitter.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="C:\Users\alvas\AppData\Local\Temp\alt9475_9143118846348988458.dir\0002_ddr3_gen\qii\ip\ed_synth\ed_synth_global_reset_n_splitter\synth\ed_synth_global_reset_n_splitter.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file
+       path="C:/Users/alvas/AppData/Local/Temp/alt9475_9143118846348988458.dir/0002_ddr3_gen/qii/ip/ed_synth/ed_synth_global_reset_n_splitter.ip" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <messages>
+   <message level="Info" culprit="ed_synth_global_reset_n_splitter">"Generating: ed_synth_global_reset_n_splitter"</message>
+  </messages>
+ </entity>
+</deploy>

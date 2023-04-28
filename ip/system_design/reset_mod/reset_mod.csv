@@ -1,12 +1,12 @@
-# system info reset_mod on 2022.09.21.14:37:55
+# system info reset_mod on 2023.04.28.15:57:40
 system_info:
 name,value
-DEVICE,10CX220YF780E5G
+DEVICE,10CX220YF780I5G
 DEVICE_FAMILY,Cyclone 10 GX
 GENERATION_ID,0
 #
 #
-# Files generated for reset_mod on 2022.09.21.14:37:55
+# Files generated for reset_mod on 2023.04.28.15:57:40
 files:
 filepath,kind,attributes,module,is_top
 sim/reset_mod.v,VERILOG,CONTAINS_INLINE_CONFIGURATION,reset_mod,true

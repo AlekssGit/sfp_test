@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deploy
- date="2022.09.21.14:37:59"
- outputDirectory="D:/Documents/Projects/Learning/SFP_test/ip/system_design/pll/">
+ date="2023.04.28.15:56:46"
+ outputDirectory="C:/Users/alvas/Documents/Work_ASD/Projects/Learning/sfp_test/ip/system_design/pll/">
  <perimeter>
   <parameter
      name="AUTO_GENERATION_ID"
@@ -24,7 +24,7 @@
   <parameter
      name="AUTO_DEVICE"
      type="String"
-     defaultValue="10CX220YF780E5G"
+     defaultValue="10CX220YF780I5G"
      onHdl="0"
      affectsHdl="1" />
   <parameter
@@ -98,7 +98,7 @@
  <entity kind="pll" version="1.0" name="pll">
   <parameter name="AUTO_REFCLK_CLOCK_DOMAIN" value="-1" />
   <parameter name="AUTO_GENERATION_ID" value="0" />
-  <parameter name="AUTO_DEVICE" value="10CX220YF780E5G" />
+  <parameter name="AUTO_DEVICE" value="10CX220YF780I5G" />
   <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone 10 GX" />
   <parameter name="AUTO_REFCLK_CLOCK_RATE" value="-1" />
   <parameter name="AUTO_UNIQUE_ID" value="" />
@@ -106,25 +106,25 @@
   <parameter name="AUTO_DEVICE_SPEEDGRADE" value="5" />
   <generatedFiles>
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\pll\synth\pll.v"
+       path="C:\Users\alvas\Documents\Work_ASD\Projects\Learning\sfp_test\ip\system_design\pll\synth\pll.v"
        attributes="CONTAINS_INLINE_CONFIGURATION" />
   </generatedFiles>
   <childGeneratedFiles>
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\pll\synth\pll.v"
+       path="C:\Users\alvas\Documents\Work_ASD\Projects\Learning\sfp_test\ip\system_design\pll\synth\pll.v"
        attributes="CONTAINS_INLINE_CONFIGURATION" />
   </childGeneratedFiles>
   <sourceFiles>
    <file
-       path="D:/Documents/Projects/Learning/SFP_test/ip/system_design/pll.ip" />
+       path="C:/Users/alvas/Documents/Work_ASD/Projects/Learning/sfp_test/ip/system_design/pll.ip" />
   </sourceFiles>
   <childSourceFiles>
    <file
-       path="C:/intelfpga_pro/21.3/ip/altera/altera_iopll/top/altera_iopll_hw.tcl" />
+       path="C:/intelfpga_pro/21.4/ip/altera/altera_iopll/top/altera_iopll_hw.tcl" />
   </childSourceFiles>
   <messages>
    <message level="Info" culprit="pll">"Generating: pll"</message>
-   <message level="Info" culprit="pll">"Generating: pll_altera_iopll_1931_bd2ubhi"</message>
+   <message level="Info" culprit="pll">"Generating: pll_altera_iopll_1931_ldt7zry"</message>
    <message level="Debug" culprit="pll">IN HDL WRAP: reset refclk outclk0 outclk1 outclk2 outclk3</message>
    <message level="Debug" culprit="pll">--hdl_params: c_cnt_bypass_en0 c_cnt_bypass_en1 c_cnt_bypass_en2 c_cnt_bypass_en3 c_cnt_bypass_en4 c_cnt_bypass_en5 c_cnt_bypass_en6 c_cnt_bypass_en7 c_cnt_bypass_en8 c_cnt_hi_div0 c_cnt_hi_div1 c_cnt_hi_div2 c_cnt_hi_div3 c_cnt_hi_div4 c_cnt_hi_div5 c_cnt_hi_div6 c_cnt_hi_div7 c_cnt_hi_div8 c_cnt_in_src0 c_cnt_in_src1 c_cnt_in_src2 c_cnt_in_src3 c_cnt_in_src4 c_cnt_in_src5 c_cnt_in_src6 c_cnt_in_src7 c_cnt_in_src8 c_cnt_lo_div0 c_cnt_lo_div1 c_cnt_lo_div2 c_cnt_lo_div3 c_cnt_lo_div4 c_cnt_lo_div5 c_cnt_lo_div6 c_cnt_lo_div7 c_cnt_lo_div8 c_cnt_odd_div_duty_en0 c_cnt_odd_div_duty_en1 c_cnt_odd_div_duty_en2 c_cnt_odd_div_duty_en3 c_cnt_odd_div_duty_en4 c_cnt_odd_div_duty_en5 c_cnt_odd_div_duty_en6 c_cnt_odd_div_duty_en7 c_cnt_odd_div_duty_en8 c_cnt_ph_mux_prst0 c_cnt_ph_mux_prst1 c_cnt_ph_mux_prst2 c_cnt_ph_mux_prst3 c_cnt_ph_mux_prst4 c_cnt_ph_mux_prst5 c_cnt_ph_mux_prst6 c_cnt_ph_mux_prst7 c_cnt_ph_mux_prst8 c_cnt_prst0 c_cnt_prst1 c_cnt_prst2 c_cnt_prst3 c_cnt_prst4 c_cnt_prst5 c_cnt_prst6 c_cnt_prst7 c_cnt_prst8 clock_name_0 clock_name_1 clock_name_2 clock_name_3 clock_name_4 clock_name_5 clock_name_6 clock_name_7 clock_name_8 clock_name_global_0 clock_name_global_1 clock_name_global_2 clock_name_global_3 clock_name_global_4 clock_name_global_5 clock_name_global_6 clock_name_global_7 clock_name_global_8 duty_cycle0 duty_cycle1 duty_cycle2 duty_cycle3 duty_cycle4 duty_cycle5 duty_cycle6 duty_cycle7 duty_cycle8 m_cnt_bypass_en m_cnt_hi_div m_cnt_lo_div m_cnt_odd_div_duty_en n_cnt_bypass_en n_cnt_hi_div n_cnt_lo_div n_cnt_odd_div_duty_en number_of_clocks operation_mode output_clock_frequency0 output_clock_frequency1 output_clock_frequency2 output_clock_frequency3 output_clock_frequency4 output_clock_frequency5 output_clock_frequency6 output_clock_frequency7 output_clock_frequency8 phase_shift0 phase_shift1 phase_shift2 phase_shift3 phase_shift4 phase_shift5 phase_shift6 phase_shift7 phase_shift8 pll_bw_sel pll_bwctrl pll_cp_current pll_extclk_0_cnt_src pll_extclk_1_cnt_src pll_fbclk_mux_1 pll_fbclk_mux_2 pll_m_cnt_in_src pll_output_clk_frequency pll_slf_rst pll_subtype pll_type prot_mode reference_clock_frequency</message>
    <message level="Debug" culprit="pll">altera_pll_ports ports: refclk1 {DIRECT_MAPPING true MAPPING_FUNCTION {} TIE_OFF 1'b0} rst {DIRECT_MAPPING true MAPPING_FUNCTION {} TIE_OFF 1'b0} fbclk {DIRECT_MAPPING false MAPPING_FUNCTION map_fbclk_port TIE_OFF {}} fboutclk {DIRECT_MAPPING false MAPPING_FUNCTION map_fboutclk_port TIE_OFF {}} zdbfbclk {DIRECT_MAPPING true MAPPING_FUNCTION {} TIE_OFF { }} locked {DIRECT_MAPPING true MAPPING_FUNCTION {} TIE_OFF { }} loaden {DIRECT_MAPPING true MAPPING_FUNCTION {} TIE_OFF { }} phase_done {DIRECT_MAPPING true MAPPING_FUNCTION {} TIE_OFF { }} reconfig_to_pll {DIRECT_MAPPING false MAPPING_FUNCTION map_reconfig_to_port TIE_OFF {}} refclk {DIRECT_MAPPING true MAPPING_FUNCTION {} TIE_OFF 1'b0} scanclk {DIRECT_MAPPING true MAPPING_FUNCTION {} TIE_OFF 1'b0} phout {DIRECT_MAPPING true MAPPING_FUNCTION {} TIE_OFF { }} num_phase_shifts {DIRECT_MAPPING true MAPPING_FUNCTION {} TIE_OFF 3'b0} cntsel {DIRECT_MAPPING true MAPPING_FUNCTION {} TIE_OFF 5'b0} clkbad {DIRECT_MAPPING true MAPPING_FUNCTION {} TIE_OFF { }} extclk_out {DIRECT_MAPPING true MAPPING_FUNCTION {} TIE_OFF { }} lvds_clk {DIRECT_MAPPING true MAPPING_FUNCTION {} TIE_OFF { }} outclk {DIRECT_MAPPING false MAPPING_FUNCTION map_outclk_port TIE_OFF {}} phase_en {DIRECT_MAPPING true MAPPING_FUNCTION {} TIE_OFF 1'b0} extswitch {DIRECT_MAPPING true MAPPING_FUNCTION {} TIE_OFF 1'b0} cascade_out {DIRECT_MAPPING true MAPPING_FUNCTION {} TIE_OFF { }} activeclk {DIRECT_MAPPING true MAPPING_FUNCTION {} TIE_OFF { }} adjpllin {DIRECT_MAPPING true MAPPING_FUNCTION {} TIE_OFF 1'b0} updn {DIRECT_MAPPING true MAPPING_FUNCTION {} TIE_OFF 1'b0} reconfig_from_pll {DIRECT_MAPPING true MAPPING_FUNCTION {} TIE_OFF { }}</message>
@@ -134,7 +134,7 @@
  <entity
    kind="altera_iopll"
    version="19.3.1"
-   name="pll_altera_iopll_1931_bd2ubhi">
+   name="pll_altera_iopll_1931_ldt7zry">
   <parameter name="gui_clock_name_string12" value="outclk12" />
   <parameter name="hp_actual_phase_shift_fp5" value="0.0" />
   <parameter name="gui_clock_name_string11" value="outclk11" />
@@ -306,7 +306,7 @@
   <parameter name="lock_mode" value="low_lock_time" />
   <parameter name="gui_phase_shift17" value="0.0" />
   <parameter name="c_cnt_prst0" value="1" />
-  <parameter name="gui_device_component" value="10CX220YF780E5G" />
+  <parameter name="gui_device_component" value="10CX220YF780I5G" />
   <parameter name="c_cnt_prst2" value="1" />
   <parameter name="c_cnt_prst1" value="1" />
   <parameter name="c_cnt_prst4" value="1" />
@@ -608,7 +608,7 @@
   <parameter name="pll_defer_cal_user_mode" value="true" />
   <parameter name="gui_extclkout_0_source" value="C0" />
   <parameter name="gui_actual_output_clock_frequency_range4" value="100.0" />
-  <parameter name="system_info_device_component" value="10CX220YF780E5G" />
+  <parameter name="system_info_device_component" value="10CX220YF780I5G" />
   <parameter name="gui_actual_output_clock_frequency_range5" value="100.0" />
   <parameter name="gui_actual_output_clock_frequency_range6" value="100.0" />
   <parameter name="gui_actual_output_clock_frequency_range7" value="100.0" />
@@ -910,22 +910,22 @@
   <parameter name="c_cnt_bypass_en5" value="true" />
   <generatedFiles>
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\pll\altera_iopll_1931\synth\pll_altera_iopll_1931_bd2ubhi.v"
+       path="C:\Users\alvas\Documents\Work_ASD\Projects\Learning\sfp_test\ip\system_design\pll\altera_iopll_1931\synth\pll_altera_iopll_1931_ldt7zry.v"
        attributes="" />
   </generatedFiles>
   <childGeneratedFiles>
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\pll\altera_iopll_1931\synth\pll_altera_iopll_1931_bd2ubhi.v"
+       path="C:\Users\alvas\Documents\Work_ASD\Projects\Learning\sfp_test\ip\system_design\pll\altera_iopll_1931\synth\pll_altera_iopll_1931_ldt7zry.v"
        attributes="" />
   </childGeneratedFiles>
   <sourceFiles>
    <file
-       path="C:/intelfpga_pro/21.3/ip/altera/altera_iopll/top/altera_iopll_hw.tcl" />
+       path="C:/intelfpga_pro/21.4/ip/altera/altera_iopll/top/altera_iopll_hw.tcl" />
   </sourceFiles>
   <childSourceFiles/>
   <instantiator instantiator="pll" as="pll" />
   <messages>
-   <message level="Info" culprit="pll">"Generating: pll_altera_iopll_1931_bd2ubhi"</message>
+   <message level="Info" culprit="pll">"Generating: pll_altera_iopll_1931_ldt7zry"</message>
    <message level="Debug" culprit="pll">IN HDL WRAP: reset refclk outclk0 outclk1 outclk2 outclk3</message>
    <message level="Debug" culprit="pll">--hdl_params: c_cnt_bypass_en0 c_cnt_bypass_en1 c_cnt_bypass_en2 c_cnt_bypass_en3 c_cnt_bypass_en4 c_cnt_bypass_en5 c_cnt_bypass_en6 c_cnt_bypass_en7 c_cnt_bypass_en8 c_cnt_hi_div0 c_cnt_hi_div1 c_cnt_hi_div2 c_cnt_hi_div3 c_cnt_hi_div4 c_cnt_hi_div5 c_cnt_hi_div6 c_cnt_hi_div7 c_cnt_hi_div8 c_cnt_in_src0 c_cnt_in_src1 c_cnt_in_src2 c_cnt_in_src3 c_cnt_in_src4 c_cnt_in_src5 c_cnt_in_src6 c_cnt_in_src7 c_cnt_in_src8 c_cnt_lo_div0 c_cnt_lo_div1 c_cnt_lo_div2 c_cnt_lo_div3 c_cnt_lo_div4 c_cnt_lo_div5 c_cnt_lo_div6 c_cnt_lo_div7 c_cnt_lo_div8 c_cnt_odd_div_duty_en0 c_cnt_odd_div_duty_en1 c_cnt_odd_div_duty_en2 c_cnt_odd_div_duty_en3 c_cnt_odd_div_duty_en4 c_cnt_odd_div_duty_en5 c_cnt_odd_div_duty_en6 c_cnt_odd_div_duty_en7 c_cnt_odd_div_duty_en8 c_cnt_ph_mux_prst0 c_cnt_ph_mux_prst1 c_cnt_ph_mux_prst2 c_cnt_ph_mux_prst3 c_cnt_ph_mux_prst4 c_cnt_ph_mux_prst5 c_cnt_ph_mux_prst6 c_cnt_ph_mux_prst7 c_cnt_ph_mux_prst8 c_cnt_prst0 c_cnt_prst1 c_cnt_prst2 c_cnt_prst3 c_cnt_prst4 c_cnt_prst5 c_cnt_prst6 c_cnt_prst7 c_cnt_prst8 clock_name_0 clock_name_1 clock_name_2 clock_name_3 clock_name_4 clock_name_5 clock_name_6 clock_name_7 clock_name_8 clock_name_global_0 clock_name_global_1 clock_name_global_2 clock_name_global_3 clock_name_global_4 clock_name_global_5 clock_name_global_6 clock_name_global_7 clock_name_global_8 duty_cycle0 duty_cycle1 duty_cycle2 duty_cycle3 duty_cycle4 duty_cycle5 duty_cycle6 duty_cycle7 duty_cycle8 m_cnt_bypass_en m_cnt_hi_div m_cnt_lo_div m_cnt_odd_div_duty_en n_cnt_bypass_en n_cnt_hi_div n_cnt_lo_div n_cnt_odd_div_duty_en number_of_clocks operation_mode output_clock_frequency0 output_clock_frequency1 output_clock_frequency2 output_clock_frequency3 output_clock_frequency4 output_clock_frequency5 output_clock_frequency6 output_clock_frequency7 output_clock_frequency8 phase_shift0 phase_shift1 phase_shift2 phase_shift3 phase_shift4 phase_shift5 phase_shift6 phase_shift7 phase_shift8 pll_bw_sel pll_bwctrl pll_cp_current pll_extclk_0_cnt_src pll_extclk_1_cnt_src pll_fbclk_mux_1 pll_fbclk_mux_2 pll_m_cnt_in_src pll_output_clk_frequency pll_slf_rst pll_subtype pll_type prot_mode reference_clock_frequency</message>
    <message level="Debug" culprit="pll">altera_pll_ports ports: refclk1 {DIRECT_MAPPING true MAPPING_FUNCTION {} TIE_OFF 1'b0} rst {DIRECT_MAPPING true MAPPING_FUNCTION {} TIE_OFF 1'b0} fbclk {DIRECT_MAPPING false MAPPING_FUNCTION map_fbclk_port TIE_OFF {}} fboutclk {DIRECT_MAPPING false MAPPING_FUNCTION map_fboutclk_port TIE_OFF {}} zdbfbclk {DIRECT_MAPPING true MAPPING_FUNCTION {} TIE_OFF { }} locked {DIRECT_MAPPING true MAPPING_FUNCTION {} TIE_OFF { }} loaden {DIRECT_MAPPING true MAPPING_FUNCTION {} TIE_OFF { }} phase_done {DIRECT_MAPPING true MAPPING_FUNCTION {} TIE_OFF { }} reconfig_to_pll {DIRECT_MAPPING false MAPPING_FUNCTION map_reconfig_to_port TIE_OFF {}} refclk {DIRECT_MAPPING true MAPPING_FUNCTION {} TIE_OFF 1'b0} scanclk {DIRECT_MAPPING true MAPPING_FUNCTION {} TIE_OFF 1'b0} phout {DIRECT_MAPPING true MAPPING_FUNCTION {} TIE_OFF { }} num_phase_shifts {DIRECT_MAPPING true MAPPING_FUNCTION {} TIE_OFF 3'b0} cntsel {DIRECT_MAPPING true MAPPING_FUNCTION {} TIE_OFF 5'b0} clkbad {DIRECT_MAPPING true MAPPING_FUNCTION {} TIE_OFF { }} extclk_out {DIRECT_MAPPING true MAPPING_FUNCTION {} TIE_OFF { }} lvds_clk {DIRECT_MAPPING true MAPPING_FUNCTION {} TIE_OFF { }} outclk {DIRECT_MAPPING false MAPPING_FUNCTION map_outclk_port TIE_OFF {}} phase_en {DIRECT_MAPPING true MAPPING_FUNCTION {} TIE_OFF 1'b0} extswitch {DIRECT_MAPPING true MAPPING_FUNCTION {} TIE_OFF 1'b0} cascade_out {DIRECT_MAPPING true MAPPING_FUNCTION {} TIE_OFF { }} activeclk {DIRECT_MAPPING true MAPPING_FUNCTION {} TIE_OFF { }} adjpllin {DIRECT_MAPPING true MAPPING_FUNCTION {} TIE_OFF 1'b0} updn {DIRECT_MAPPING true MAPPING_FUNCTION {} TIE_OFF 1'b0} reconfig_from_pll {DIRECT_MAPPING true MAPPING_FUNCTION {} TIE_OFF { }}</message>

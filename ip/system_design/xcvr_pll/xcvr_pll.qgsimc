@@ -366,7 +366,7 @@
           </parameter>
           <parameter>
             <name>atx_pll_pm_speed_grade</name>
-            <value>e4</value>
+            <value>i4</value>
           </parameter>
           <parameter>
             <name>atx_pll_pma_width</name>
@@ -514,7 +514,7 @@
           </parameter>
           <parameter>
             <name>device</name>
-            <value>10CX220YF780E5G</value>
+            <value>10CX220YF780I5G</value>
           </parameter>
           <parameter>
             <name>device_family</name>
@@ -938,7 +938,7 @@
           </parameter>
           <parameter>
             <name>pma_speedgrade</name>
-            <value>e4</value>
+            <value>i4</value>
           </parameter>
           <parameter>
             <name>pma_width</name>
@@ -1193,7 +1193,7 @@
         <className>altera_xcvr_atx_pll_a10</className>
         <version>19.1</version>
         <name>xcvr_pll</name>
-        <uniqueName>xcvr_pll_altera_xcvr_atx_pll_a10_191_6oxhjba</uniqueName>
+        <uniqueName>xcvr_pll_altera_xcvr_atx_pll_a10_191_rdwboly</uniqueName>
         <nonce>0</nonce>
         <incidentConnections></incidentConnections>
         <path>xcvr_pll.xcvr_pll</path>

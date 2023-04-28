@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deploy
- date="2022.09.21.14:38:27"
- outputDirectory="D:/Documents/Projects/Learning/SFP_test/ip/system_design/clock_50_out/">
+ date="2023.04.28.15:57:34"
+ outputDirectory="C:/Users/alvas/Documents/Work_ASD/Projects/Learning/sfp_test/ip/system_design/clock_50_out/">
  <perimeter>
   <parameter
      name="AUTO_GENERATION_ID"
@@ -24,7 +24,7 @@
   <parameter
      name="AUTO_DEVICE"
      type="String"
-     defaultValue="10CX220YF780E5G"
+     defaultValue="10CX220YF780I5G"
      onHdl="0"
      affectsHdl="1" />
   <parameter
@@ -68,7 +68,7 @@
  </perimeter>
  <entity kind="clock_50_out" version="1.0" name="clock_50_out">
   <parameter name="AUTO_GENERATION_ID" value="0" />
-  <parameter name="AUTO_DEVICE" value="10CX220YF780E5G" />
+  <parameter name="AUTO_DEVICE" value="10CX220YF780I5G" />
   <parameter name="AUTO_IN_CLK_CLOCK_RATE" value="-1" />
   <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone 10 GX" />
   <parameter name="AUTO_IN_CLK_RESET_DOMAIN" value="-1" />
@@ -77,17 +77,17 @@
   <parameter name="AUTO_IN_CLK_CLOCK_DOMAIN" value="-1" />
   <generatedFiles>
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\clock_50_out\synth\clock_50_out.v"
+       path="C:\Users\alvas\Documents\Work_ASD\Projects\Learning\sfp_test\ip\system_design\clock_50_out\synth\clock_50_out.v"
        attributes="CONTAINS_INLINE_CONFIGURATION" />
   </generatedFiles>
   <childGeneratedFiles>
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\clock_50_out\synth\clock_50_out.v"
+       path="C:\Users\alvas\Documents\Work_ASD\Projects\Learning\sfp_test\ip\system_design\clock_50_out\synth\clock_50_out.v"
        attributes="CONTAINS_INLINE_CONFIGURATION" />
   </childGeneratedFiles>
   <sourceFiles>
    <file
-       path="D:/Documents/Projects/Learning/SFP_test/ip/system_design/clock_50_out.ip" />
+       path="C:/Users/alvas/Documents/Work_ASD/Projects/Learning/sfp_test/ip/system_design/clock_50_out.ip" />
   </sourceFiles>
   <childSourceFiles/>
   <messages>

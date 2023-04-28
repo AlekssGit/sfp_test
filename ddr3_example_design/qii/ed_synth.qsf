@@ -1,0 +1,12 @@
+set_global_assignment -name FAMILY "Cyclone 10 GX"
+set_global_assignment -name TOP_LEVEL_ENTITY ed_synth
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 21.4.0
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "15:39:18  APRIL 28, 2023"
+set_global_assignment -name LAST_QUARTUS_VERSION "21.4.0 Pro Edition"
+set_global_assignment -name DEVICE 10CX220YF780I5G
+set_global_assignment -name QSYS_FILE ed_synth.qsys
+set_global_assignment -name VERILOG_MACRO "ALTERA_EMIF_ENABLE_ISSP=1"
+set_global_assignment -name IP_FILE ip/ed_synth/ed_synth_ddr3.ip
+set_global_assignment -name IP_FILE ip/ed_synth/ed_synth_global_reset_n_splitter.ip
+set_global_assignment -name IP_FILE ip/ed_synth/ed_synth_tg.ip
+set_global_assignment -name SDC_FILE jtag_example.sdc

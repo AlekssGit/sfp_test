@@ -1,0 +1,46 @@
+set_global_assignment -entity "setup_ddr" -library "setup_ddr" -name IP_TOOL_NAME "QsysPrimePro"
+set_global_assignment -entity "setup_ddr" -library "setup_ddr" -name IP_TOOL_VERSION "21.4"
+set_global_assignment -entity "setup_ddr" -library "setup_ddr" -name IP_TOOL_ENV "QsysPrimePro"
+set_global_assignment -entity "setup_ddr" -library "setup_ddr" -name IP_TOOL_VENDOR_NAME "Altera Corporation"
+set_global_assignment -entity "setup_ddr" -library "setup_ddr" -name IP_TOP_LEVEL_COMPONENT_NAME "setup_ddr"
+set_global_assignment -library "setup_ddr" -name SOPCINFO_FILE [file join $::quartus(qip_path) "setup_ddr.sopcinfo"]
+set_global_assignment -entity "setup_ddr" -library "setup_ddr" -name SLD_INFO "QSYS_NAME setup_ddr HAS_SOPCINFO 1 GENERATION_ID 0"
+set_global_assignment -library "setup_ddr" -name MISC_FILE [file join $::quartus(qip_path) "setup_ddr.cmp"]
+set_global_assignment -entity "setup_ddr" -library "setup_ddr" -name IP_TARGETED_DEVICE_FAMILY "Cyclone 10 GX"
+set_global_assignment -entity "setup_ddr" -library "setup_ddr" -name IP_GENERATED_DEVICE_FAMILY "{Cyclone 10 GX}"
+set_global_assignment -entity "setup_ddr" -library "setup_ddr" -name IP_QSYS_MODE "STANDALONE"
+set_global_assignment -name SYNTHESIS_ONLY_QIP ON
+set_global_assignment -library "setup_ddr" -name MISC_FILE [file join $::quartus(qip_path) "../setup_ddr.ip"]
+
+set_global_assignment -entity "setup_ddr_data_256" -library "setup_ddr_10" -name IP_COMPONENT_NAME "c2V0dXBfZGRyX2RhdGFfMjU2"
+set_global_assignment -entity "setup_ddr_data_256" -library "setup_ddr_10" -name IP_COMPONENT_DISPLAY_NAME "c2V0dXBfZGRy"
+set_global_assignment -entity "setup_ddr_data_256" -library "setup_ddr_10" -name IP_COMPONENT_REPORT_HIERARCHY "Off"
+set_global_assignment -entity "setup_ddr_data_256" -library "setup_ddr_10" -name IP_COMPONENT_INTERNAL "Off"
+set_global_assignment -entity "setup_ddr_data_256" -library "setup_ddr_10" -name IP_COMPONENT_VERSION "MS4w"
+set_global_assignment -entity "setup_ddr" -library "setup_ddr" -name IP_COMPONENT_NAME "c2V0dXBfZGRy"
+set_global_assignment -entity "setup_ddr" -library "setup_ddr" -name IP_COMPONENT_DISPLAY_NAME "c3lzdGVt"
+set_global_assignment -entity "setup_ddr" -library "setup_ddr" -name IP_COMPONENT_REPORT_HIERARCHY "On"
+set_global_assignment -entity "setup_ddr" -library "setup_ddr" -name IP_COMPONENT_INTERNAL "Off"
+set_global_assignment -entity "setup_ddr" -library "setup_ddr" -name IP_COMPONENT_AUTHOR "QWx0ZXJhIENvcnBvcmF0aW9u"
+set_global_assignment -entity "setup_ddr" -library "setup_ddr" -name IP_COMPONENT_VERSION "MS4w"
+set_global_assignment -entity "setup_ddr" -library "setup_ddr" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MA==::QXV0byBHRU5FUkFUSU9OX0lE"
+set_global_assignment -entity "setup_ddr" -library "setup_ddr" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfRkFNSUxZ::Q3ljbG9uZSAxMCBHWA==::QXV0byBERVZJQ0VfRkFNSUxZ"
+set_global_assignment -entity "setup_ddr" -library "setup_ddr" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0U=::MTBDWDIyMFlGNzgwSTVH::QXV0byBERVZJQ0U="
+set_global_assignment -entity "setup_ddr" -library "setup_ddr" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfU1BFRURHUkFERQ==::NQ==::QXV0byBERVZJQ0VfU1BFRURHUkFERQ=="
+set_global_assignment -entity "setup_ddr" -library "setup_ddr" -name IP_COMPONENT_PARAMETER "QVVUT19BVkFMT05fTUFTVEVSX0FERFJFU1NfV0lEVEg=::LTE=::QXV0byBBRERSRVNTX1dJRFRI"
+set_global_assignment -entity "setup_ddr" -library "setup_ddr" -name IP_COMPONENT_PARAMETER "QVVUT19DTE9DS18xMjVfVFhfUlhfQ0xPQ0tfUkFURQ==::LTE=::QXV0byBDTE9DS19SQVRF"
+set_global_assignment -entity "setup_ddr" -library "setup_ddr" -name IP_COMPONENT_PARAMETER "QVVUT19DTE9DS18xMjVfVFhfUlhfQ0xPQ0tfRE9NQUlO::LTE=::QXV0byBDTE9DS19ET01BSU4="
+set_global_assignment -entity "setup_ddr" -library "setup_ddr" -name IP_COMPONENT_PARAMETER "QVVUT19DTE9DS18xMjVfVFhfUlhfUkVTRVRfRE9NQUlO::LTE=::QXV0byBSRVNFVF9ET01BSU4="
+set_global_assignment -entity "setup_ddr" -library "setup_ddr" -name IP_COMPONENT_PARAMETER "QVVUT19DTE9DS19BVkFMT05fQ0xPQ0tfUkFURQ==::LTE=::QXV0byBDTE9DS19SQVRF"
+set_global_assignment -entity "setup_ddr" -library "setup_ddr" -name IP_COMPONENT_PARAMETER "QVVUT19DTE9DS19BVkFMT05fQ0xPQ0tfRE9NQUlO::LTE=::QXV0byBDTE9DS19ET01BSU4="
+set_global_assignment -entity "setup_ddr" -library "setup_ddr" -name IP_COMPONENT_PARAMETER "QVVUT19DTE9DS19BVkFMT05fUkVTRVRfRE9NQUlO::LTE=::QXV0byBSRVNFVF9ET01BSU4="
+set_global_assignment -entity "setup_ddr" -library "setup_ddr" -name IP_COMPONENT_PARAMETER "QVVUT19DTE9DS181MF9DTE9DS19SQVRF::LTE=::QXV0byBDTE9DS19SQVRF"
+set_global_assignment -entity "setup_ddr" -library "setup_ddr" -name IP_COMPONENT_PARAMETER "QVVUT19DTE9DS181MF9DTE9DS19ET01BSU4=::LTE=::QXV0byBDTE9DS19ET01BSU4="
+set_global_assignment -entity "setup_ddr" -library "setup_ddr" -name IP_COMPONENT_PARAMETER "QVVUT19DTE9DS181MF9SRVNFVF9ET01BSU4=::LTE=::QXV0byBSRVNFVF9ET01BSU4="
+
+
+set_global_assignment -library "setup_ddr_10" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "setup_ddr_10/synth/setup_ddr_data_256.sv"]
+set_global_assignment -library "setup_ddr_10" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "setup_ddr_10/synth/avalon_mm_ddr.sv"]
+set_global_assignment -library "setup_ddr_10" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "setup_ddr_10/synth/external_ram_256.sv"]
+set_global_assignment -library "setup_ddr" -name VERILOG_FILE [file join $::quartus(qip_path) "synth/setup_ddr.v"]
+
