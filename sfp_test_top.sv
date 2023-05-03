@@ -1,4 +1,4 @@
-`define TEST 1
+// `define TEST 1
 
 `ifdef TEST
 	`define ALLOW_SEND		    1'b1
@@ -207,12 +207,16 @@ assign mdio_in = 1'b1;
 // pcie signals
 wire pcie_npor;
 assign pcie_npor = 1'b1;
+
+logic [5:0] pcie_start_ram_addr;
+logic   pcie_send_cmd;      
 // ---------------------------------------------------
 // ddr signals
 logic   ddr_setup_done;
 logic   ddr_ready;
 logic   ddr_avalon_clk;
 logic   ddr_avalon_reset;
+logic   ddr_cal_success;
 // ---------------------------------------------------
 
 
@@ -222,7 +226,7 @@ system_design platform_design (
 		
         .ddr_avalon_clk                         (ddr_avalon_clk     ),       
 
-        .ddr3_global_reset_n_reset_n            (~rst_n             ),       
+        .ddr3_global_reset_n_reset_n            (rst_n             ),       
         .ddr3_clock_clk                         (clk_ddr            ),                    
         .ddr3_oct_oct_rzqin                     (oct_rzqin          ),                
         .ddr3_mem_mem_ck                        (mem_ck             ),                   
@@ -263,8 +267,11 @@ system_design platform_design (
 		.receive_packet_2_data_saved_data_saved (data_saved_2       ),
         .reset_main_out_reset                   (main_reset         ),
         .reset_mod_clock_clk                    (clk_50             ),                  
-		.reset_mod_reset_reset_n                (rst_n              ),              
-		.reset_mod_reset_phy_reset              (reset_phy          ),            
+		.reset_mod_reset_reset_n                (rst_n & ddr_cal_success ),              
+		.reset_mod_reset_phy_reset              (reset_phy          ),    
+
+        .pcie_send_control_start_ram_addr       (pcie_start_ram_addr), 
+        .pcie_send_control_signal               (pcie_send_cmd      ),                 
 		
         .send_packet_1_control_start_ram_addr   (start_ram_addr_1   ), 
 		.send_packet_1_control_cmd_send         (cmd_send_1         ),       
@@ -272,10 +279,11 @@ system_design platform_design (
         .send_packet_2_control_start_ram_addr   (start_ram_addr_2   ), 
 		.send_packet_2_control_cmd_send         (cmd_send_2         ),       
 		
-        .ddr_setup_setup_done                   (ddr_setup_done     ),
+        //.ddr_setup_setup_done                   (ddr_setup_done     ),
         .ddr_ready_ram_ready                    (ddr_ready          ),  
         .reset_board_reset                      (rst_n              ),             
 
+        .mem_cal_success_cal_success            (ddr_cal_success    ),
         .mac_misc_1_magic_wakeup                (magic_wakeup_1     ),           
 		.mac_misc_1_magic_sleep_n               (1'b1               ),           
 		.mac_misc_1_tx_crc_fwd                  (1'b0               ),           

@@ -21,12 +21,40 @@ module setup_ddr_data_256
     input   logic           local_cal_success_avalon,
     input   logic           local_cal_fail_avalon,
     
-    output  logic           local_cal_success,
+    output  logic           reset_local_cal_success,
 
     input   logic           rst_n,
     input   logic           ram_ready,
-    input   logic           clk_50
+    input   logic           clk_50,
+
+    output  logic           ddr_local_cal_success,
+    output  logic           ddr_local_cal_fail,
+    output  logic           system_main_reset,
+    output  logic           ddr_avalon_rst,
+    output  logic           board_reset
 );
+
+assign system_main_reset = reset;
+
+assign reset_local_cal_success = local_cal_success_avalon;
+assign ddr_avalon_rst = avalon_reset;
+assign board_reset = rst_n;
+
+always_ff @(posedge avalon_clk, posedge avalon_reset)
+begin
+    if(avalon_reset)
+    begin
+        ddr_local_cal_success   <= 1'b0;
+        ddr_local_cal_fail      <= 1'b0;
+    end
+    else
+    begin
+        ddr_local_cal_success   <= local_cal_success_avalon;
+        ddr_local_cal_fail      <= local_cal_fail_avalon;
+    end
+end
+// assign ddr_local_cal_success   = local_cal_success_avalon;
+// assign ddr_local_cal_fail      = local_cal_fail_avalon;
 
 logic [255:0]    data ;
 logic [24:0]     addr ;
@@ -111,7 +139,7 @@ begin
         if(count_data <= 16'd3 & need_setup)
         begin
             setup_done = 1'b0;
-            if(wait_data % 16'd30 == 16'd0)
+            if(wait_data % 16'd60 == 16'd0)
             begin
                 wait_data = 16'd1;
 
@@ -183,6 +211,9 @@ logic   [31:0]  byte_enable    ;
 logic           action_done    ;
 
 logic [255:0] read_data;
+
+logic local_cal_success;
+
 external_ram_256 ddr_cntrl(
     .data                       (data                       ),    	// datain
 	.q		                    (read_data	                ),      // dataout
@@ -203,15 +234,15 @@ external_ram_256 ddr_cntrl(
     .byte_enable                (byte_enable                ),
     .action_done                (action_done                ),
 
-    .avalon_clk                 (ddr_avalon_clk             ),
-    .avalon_reset               (ddr_avalon_rst             ),
+    .avalon_clk                 (avalon_clk                 ),  // (ddr_avalon_clk             ),
+    .avalon_reset               (avalon_reset               ),  // (ddr_avalon_rst             ),
     .local_cal_success_avalon   (local_cal_success_avalon   ),
     .local_cal_success          (local_cal_success          )
 );
 
 avalon_mm_ddr avalon_mm(
-    .RST_I                  (avalon_clk         ),
-    .CLK_I                  (avalon_reset       ),
+    .RST_I                  (avalon_reset       ),
+    .CLK_I                  (avalon_clk         ),
 
     //Control signals
     .wr_rq                  (wr_rq_avalon       ),

@@ -1,4 +1,4 @@
-# system info send_cmd_pcie on 2023.04.28.15:56:14
+# system info send_cmd_pcie on 2023.05.03.15:56:55
 system_info:
 name,value
 DEVICE,10CX220YF780I5G
@@ -6,7 +6,7 @@ DEVICE_FAMILY,Cyclone 10 GX
 GENERATION_ID,0
 #
 #
-# Files generated for send_cmd_pcie on 2023.04.28.15:56:14
+# Files generated for send_cmd_pcie on 2023.05.03.15:56:55
 files:
 filepath,kind,attributes,module,is_top
 sim/send_cmd_pcie.v,VERILOG,CONTAINS_INLINE_CONFIGURATION,send_cmd_pcie,true

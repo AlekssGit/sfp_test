@@ -1,5 +1,6 @@
-`define REG_SEND_PACKET 16'h0050
-`define REG_TEST        16'h0010
+`define REG_SEND_PACKET     16'h0050
+`define REG_TEST            16'h0010
+`define REG_DDR_STATUS      16'h00C0
 
 module avalon_mm_slave 
 (
@@ -15,13 +16,32 @@ module avalon_mm_slave
 
 
     output  logic             send_cmd              ,
-    output  logic   [5:0]     start_ram_addr        
+    output  logic   [5:0]     start_ram_addr        ,
+
+    input   logic             ddr_local_cal_success ,
+    input   logic             ddr_local_cal_fail    ,
+    input   logic             ddr_setup_done        ,
+    input   logic             system_main_reset     ,
+    input   logic             ddr_avalon_rst,
+    input   logic             board_reset
 );
 
 logic [31:0] data_reg_send_packet;
 
 assign  send_cmd        =   data_reg_send_packet[5];
 assign  start_ram_addr  =   data_reg_send_packet[13:8]; 
+
+logic [31:0] ddr_status;
+logic d_ddr_local_success;
+logic d_ddr_local_fail;
+
+always_ff @(posedge clk)
+begin
+    d_ddr_local_success <= ddr_local_cal_success;
+    d_ddr_local_fail <= ddr_local_cal_fail;
+end
+
+assign ddr_status = {26'h0, board_reset, ddr_avalon_rst, system_main_reset, ddr_setup_done, d_ddr_local_success, d_ddr_local_fail};
 
 always_ff @(posedge clk, negedge rst_n)
 begin
@@ -53,6 +73,10 @@ begin
         else if(avalon_mm_read & avalon_mm_addr == `REG_TEST)
         begin
             avalon_mm_read_data <= 32'hff0ff423;
+        end
+        else if(avalon_mm_read & avalon_mm_addr == `REG_DDR_STATUS)
+        begin
+            avalon_mm_read_data <= ddr_status;
         end
         else if(avalon_mm_read)
         begin

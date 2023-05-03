@@ -45,9 +45,9 @@
 		.send_packet_1_control_cmd_send          (_connected_to_send_packet_1_control_cmd_send_),          //   input,   width = 1,                            .cmd_send
 		.send_packet_2_control_start_ram_addr    (_connected_to_send_packet_2_control_start_ram_addr_),    //   input,  width = 25,       send_packet_2_control.start_ram_addr
 		.send_packet_2_control_cmd_send          (_connected_to_send_packet_2_control_cmd_send_),          //   input,   width = 1,                            .cmd_send
-		.ddr_setup_setup_done                    (_connected_to_ddr_setup_setup_done_),                    //  output,   width = 1,                   ddr_setup.setup_done
 		.ddr_ready_ram_ready                     (_connected_to_ddr_ready_ram_ready_),                     //   input,   width = 1,                   ddr_ready.ram_ready
 		.reset_board_reset                       (_connected_to_reset_board_reset_),                       //   input,   width = 1,                 reset_board.reset
+		.mem_cal_success_cal_success             (_connected_to_mem_cal_success_cal_success_),             //  output,   width = 1,             mem_cal_success.cal_success
 		.mac_misc_1_magic_wakeup                 (_connected_to_mac_misc_1_magic_wakeup_),                 //  output,   width = 1,                  mac_misc_1.magic_wakeup
 		.mac_misc_1_magic_sleep_n                (_connected_to_mac_misc_1_magic_sleep_n_),                //   input,   width = 1,                            .magic_sleep_n
 		.mac_misc_1_tx_crc_fwd                   (_connected_to_mac_misc_1_tx_crc_fwd_),                   //   input,   width = 1,                            .tx_crc_fwd

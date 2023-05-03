@@ -1,15 +1,21 @@
 	component send_cmd_pcie is
 		port (
-			clk                  : in  std_logic                     := 'X';             -- clk
-			rst_n                : in  std_logic                     := 'X';             -- reset_n
-			avalon_mm_read       : in  std_logic                     := 'X';             -- read
-			avalon_mm_write      : in  std_logic                     := 'X';             -- write
-			avalon_mm_addr       : in  std_logic_vector(15 downto 0) := (others => 'X'); -- address
-			avalon_mm_write_data : in  std_logic_vector(31 downto 0) := (others => 'X'); -- writedata
-			avalon_mm_read_data  : out std_logic_vector(31 downto 0);                    -- readdata
-			avalon_mm_rd_valid   : out std_logic;                                        -- readdatavalid
-			start_ram_addr       : out std_logic_vector(5 downto 0);                     -- start_ram_addr
-			send_cmd             : out std_logic                                         -- signal
+			clk                   : in  std_logic                     := 'X';             -- clk
+			rst_n                 : in  std_logic                     := 'X';             -- reset_n
+			avalon_mm_read        : in  std_logic                     := 'X';             -- read
+			avalon_mm_write       : in  std_logic                     := 'X';             -- write
+			avalon_mm_addr        : in  std_logic_vector(15 downto 0) := (others => 'X'); -- address
+			avalon_mm_write_data  : in  std_logic_vector(31 downto 0) := (others => 'X'); -- writedata
+			avalon_mm_read_data   : out std_logic_vector(31 downto 0);                    -- readdata
+			avalon_mm_rd_valid    : out std_logic;                                        -- readdatavalid
+			start_ram_addr        : out std_logic_vector(5 downto 0);                     -- start_ram_addr
+			send_cmd              : out std_logic;                                        -- signal
+			ddr_local_cal_success : in  std_logic                     := 'X';             -- local_cal_success
+			ddr_local_cal_fail    : in  std_logic                     := 'X';             -- local_cal_fail
+			ddr_setup_done        : in  std_logic                     := 'X';             -- setup_done
+			system_main_reset     : in  std_logic                     := 'X';             -- main_reset
+			ddr_avalon_rst        : in  std_logic                     := 'X';             -- ddr_avalon_reset
+			board_reset           : in  std_logic                     := 'X'              -- board_reset
 		);
 	end component send_cmd_pcie;
 

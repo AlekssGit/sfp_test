@@ -19,7 +19,12 @@
 			rst_n                    : in  std_logic                      := 'X';             -- reset
 			avalon_reset             : in  std_logic                      := 'X';             -- reset
 			reset                    : in  std_logic                      := 'X';             -- reset
-			local_cal_success        : out std_logic                                          -- writeresponsevalid_n
+			reset_local_cal_success  : out std_logic;                                         -- cal_success
+			ddr_local_cal_success    : out std_logic;                                         -- local_cal_success
+			ddr_local_cal_fail       : out std_logic;                                         -- local_cal_fail
+			system_main_reset        : out std_logic;                                         -- main_reset
+			ddr_avalon_rst           : out std_logic;                                         -- ddr_avalon_reset
+			board_reset              : out std_logic                                          -- board_reset
 		);
 	end component setup_ddr;
 

@@ -1,4 +1,4 @@
-# system info system_design on 2023.04.28.15:58:00
+# system info system_design on 2023.05.03.15:57:24
 system_info:
 name,value
 DEVICE,10CX220YF780I5G
@@ -6,7 +6,7 @@ DEVICE_FAMILY,Cyclone 10 GX
 GENERATION_ID,0
 #
 #
-# Files generated for system_design on 2023.04.28.15:58:00
+# Files generated for system_design on 2023.05.03.15:57:24
 files:
 filepath,kind,attributes,module,is_top
 sim/system_design.v,VERILOG,CONTAINS_INLINE_CONFIGURATION,system_design,true
@@ -153,4 +153,3 @@ system_design.rst_controller_002,altera_reset_controller
 system_design.rst_controller_003,altera_reset_controller
 system_design.rst_controller_004,altera_reset_controller
 system_design.rst_controller_005,altera_reset_controller
-system_design.rst_controller_006,altera_reset_controller

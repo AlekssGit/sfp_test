@@ -18,25 +18,25 @@
 // altera message_level Level1 
 // altera message_off 10034 10035 10036 10037 10230 10240 10030 13469 16735 16788 
 
-module mem_3_altera_avalon_onchip_memory2_1931_2cdg6kq (
-                                                         // inputs:
-                                                          address,
-                                                          byteenable,
-                                                          chipselect,
-                                                          clk,
-                                                          clken,
-                                                          freeze,
-                                                          reset,
-                                                          reset_req,
-                                                          write,
-                                                          writedata,
+module mem_rcv_0_altera_avalon_onchip_memory2_1931_c2ql3jy (
+                                                             // inputs:
+                                                              address,
+                                                              byteenable,
+                                                              chipselect,
+                                                              clk,
+                                                              clken,
+                                                              freeze,
+                                                              reset,
+                                                              reset_req,
+                                                              write,
+                                                              writedata,
 
-                                                         // outputs:
-                                                          readdata
-                                                       )
+                                                             // outputs:
+                                                              readdata
+                                                           )
 ;
 
-  parameter INIT_FILE = "C:/Users/alvas/Documents/Work_ASD/Projects/Learning/sfp_test/mem_init/mem_init_1.mif";
+  parameter INIT_FILE = "D:/Documents/Projects/Learning/SFP_test/mem_init/mem_init_1.mif";
 
 
   output  [ 31: 0] readdata;

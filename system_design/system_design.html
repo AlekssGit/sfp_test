@@ -67,7 +67,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
   </table>
   <table class="blueBar">
    <tr>
-    <td class="l">2023.04.28.15:58:18</td>
+    <td class="l">2023.05.03.15:57:29</td>
     <td class="r">Datasheet</td>
    </tr>
   </table>
@@ -1652,7 +1652,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        <a href="#module_pcie">pcie</a>
       </td>
       <td class="from">rxm_bar0&#160;&#160;</td>
-      <td class="main" rowspan="6">send_cmd_pcie</td>
+      <td class="main" rowspan="13">send_cmd_pcie</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;avalon_slave</td>
@@ -1668,6 +1668,30 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="to">&#160;&#160;reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="6">
+       <a href="#module_setup_ddr">setup_ddr</a>
+      </td>
+      <td class="from">ddr_status_out&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;ddr_status</td>
+     </tr>
+     <tr>
+      <td class="from">resets_information&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;resets_information</td>
+     </tr>
+     <tr>
+      <td class="from">setup&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;ddr_setup_done</td>
      </tr>
     </table>
    </div>
@@ -1869,7 +1893,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        <a href="#module_ddr3">ddr3</a>
       </td>
       <td class="from">emif_usr_clk&#160;&#160;</td>
-      <td class="main" rowspan="16">setup_ddr</td>
+      <td class="main" rowspan="23">setup_ddr</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;clock_avalon</td>
@@ -1928,6 +1952,42 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td></td>
       <td class="to">&#160;&#160;ctrl_amm_0</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">ddr_status_out&#160;&#160;</td>
+      <td class="neighbor" rowspan="6">
+       <a href="#module_send_cmd_pcie">send_cmd_pcie</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;ddr_status</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">resets_information&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;resets_information</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">setup&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;ddr_setup_done</td>
      </tr>
     </table>
    </div>
@@ -2325,8 +2385,8 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
   </div>
   <table class="blueBar">
    <tr>
-    <td class="l">generation took 0,01 seconds</td>
-    <td class="r">rendering took 0,15 seconds</td>
+    <td class="l">generation took 0,00 seconds</td>
+    <td class="r">rendering took 0,03 seconds</td>
    </tr>
   </table>
  </body>
