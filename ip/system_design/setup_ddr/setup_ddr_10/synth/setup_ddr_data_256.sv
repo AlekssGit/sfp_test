@@ -61,15 +61,15 @@ logic [24:0]     addr ;
 
 logic need_setup;
 
-always @(posedge clk, posedge reset) 
+always_ff @(posedge clk, posedge reset) 
 begin
     if(reset)
     begin
-        need_setup = 1'b1;
+        need_setup <= 1'b1;
     end    
     else
     begin
-        need_setup = (setup_done) ? 1'b0 : need_setup;
+        need_setup <= (setup_done) ? 1'b0 : need_setup;
     end
 end
 
@@ -122,76 +122,91 @@ logic [31:0] test_data  [28] = '{   32'd0,
                                      };
 assign ram_data_read = test_data[ram_address];
 
-always @(posedge clk, posedge reset) 
+always_comb 
+begin
+    case(count_ram_data)
+    4'd0:   ddr_data <= {224'd0  , ram_data_read};                  
+    4'd1:   ddr_data <= {192'd0  , ram_data_read , ddr_data[31:0]}; 
+    4'd2:   ddr_data <= {160'd0  , ram_data_read , ddr_data[63:0]}; 
+    4'd3:   ddr_data <= {128'd0  , ram_data_read , ddr_data[95:0]}; 
+    4'd4:   ddr_data <= {96'd0   , ram_data_read , ddr_data[127:0]};
+    4'd5:   ddr_data <= {64'd0   , ram_data_read , ddr_data[159:0]};
+    4'd6:   ddr_data <= {32'd0   , ram_data_read , ddr_data[191:0]};
+    4'd7:   ddr_data <= {ram_data_read, ddr_data[223:0]};      
+    default:    ddr_data <= 256'd0;     
+    endcase        
+end
+
+always_ff @(posedge clk, posedge reset) 
 begin
     if(reset)
     begin
-        wait_data   =   16'd1    ;
-        count_data  =   16'd0   ;
-        setup_done  =   1'b0    ;
-        ram_address =   10'd0   ;
-        addr        =   25'd0   ;
-        data        =   256'd0  ;
-        count_ram_data = 4'd0;
+        wait_data   <=   16'd1    ;
+        count_data  <=   16'd0   ;
+        setup_done  <=   1'b0    ;
+        ram_address <=   10'd0   ;
+        addr        <=   25'd0   ;
+        data        <=   256'd0  ;
+        count_ram_data <= 4'd0;
     end    
     else
     begin
         if(count_data <= 16'd3 & need_setup)
         begin
-            setup_done = 1'b0;
+            setup_done <= 1'b0;
             if(wait_data % 16'd60 == 16'd0)
             begin
-                wait_data = 16'd1;
+                wait_data <= 16'd1;
 
                 if(count_data == 16'd0)
                 begin
-                    count_data++;
-                    ram_address = count_data[9:0];
+                    count_data <= count_data + 16'd1;
+                    ram_address <= count_data[9:0] + 10'd1;
                 end
                 else if(count_data == 16'd1)
                 begin
-                    count_data++;
-                    ddr_data = {224'd0, ram_data_read};
-                    data    =   ddr_data;
-                    addr    =   {15'd0, ram_address};
-                    ram_address = count_data[9:0];
+                    count_data <= count_data + 16'd1; // ???
+                    // ddr_data <= {224'd0, ram_data_read};
+                    data    <=   {224'd0, ram_data_read}; // ???
+                    addr    <=   {15'd0, ram_address};
+                    ram_address <= count_data[9:0] + 10'd1; // ???
                 end
                 else
                 begin
-                    case(count_ram_data)
-                    4'd0:   ddr_data = {224'd0  , ram_data_read};                  
-                    4'd1:   ddr_data = {192'd0  , ram_data_read , ddr_data[31:0]}; 
-                    4'd2:   ddr_data = {160'd0  , ram_data_read , ddr_data[63:0]}; 
-                    4'd3:   ddr_data = {128'd0  , ram_data_read , ddr_data[95:0]}; 
-                    4'd4:   ddr_data = {96'd0   , ram_data_read , ddr_data[127:0]};
-                    4'd5:   ddr_data = {64'd0   , ram_data_read , ddr_data[159:0]};
-                    4'd6:   ddr_data = {32'd0   , ram_data_read , ddr_data[191:0]};
-                    4'd7:   ddr_data = {ram_data_read, ddr_data[223:0]};           
-                    endcase
-                    ram_address =   10'd2 + {6'd0, count_ram_data + 4'd1} + ((count_data[9:0] - 10'd2) << 3);
-                    count_ram_data++;
+                    // case(count_ram_data)
+                    // 4'd0:   ddr_data <= {224'd0  , ram_data_read};                  
+                    // 4'd1:   ddr_data <= {192'd0  , ram_data_read , ddr_data[31:0]}; 
+                    // 4'd2:   ddr_data <= {160'd0  , ram_data_read , ddr_data[63:0]}; 
+                    // 4'd3:   ddr_data <= {128'd0  , ram_data_read , ddr_data[95:0]}; 
+                    // 4'd4:   ddr_data <= {96'd0   , ram_data_read , ddr_data[127:0]};
+                    // 4'd5:   ddr_data <= {64'd0   , ram_data_read , ddr_data[159:0]};
+                    // 4'd6:   ddr_data <= {32'd0   , ram_data_read , ddr_data[191:0]};
+                    // 4'd7:   ddr_data <= {ram_data_read, ddr_data[223:0]};           
+                    // endcase
+                    ram_address <=   10'd2 + {6'd0, count_ram_data + 4'd1} + ((count_data[9:0] - 10'd2) << 3);
+                    count_ram_data <= count_ram_data + 4'd1; // ???
                 end
 
                 if(count_ram_data == 4'd8)
                 begin
-                    count_ram_data = 4'd0;
-                    data    =   ddr_data;
-                    addr    =   {15'd0, count_data};
-                    count_data++;
+                    count_ram_data <= 4'd0;
+                    data    <=   ddr_data;
+                    addr    <=   {15'd0, count_data};
+                    count_data <= count_data + 16'd1; // ???
                 end
             end
             else
             begin
-                wait_data++;
+                wait_data <= wait_data + 16'd1; // ???
             end
         end
         else if(count_data == 16'd100)
         begin
-            setup_done = 1'b1;
+            setup_done <= 1'b1;
         end
         else if(need_setup)
         begin
-            count_data++;
+            count_data <= count_data + 16'd1; // ???
         end
         else
         begin

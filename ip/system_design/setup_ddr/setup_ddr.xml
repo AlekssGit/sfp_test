@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deploy
- date="2023.05.03.15:57:55"
- outputDirectory="D:/Documents/Projects/Learning/SFP_test/ip/system_design/setup_ddr/">
+ date="2023.05.04.18:48:24"
+ outputDirectory="C:/Users/alvas/Documents/Work_ASD/Projects/Learning/sfp_test/ip/system_design/setup_ddr/">
  <perimeter>
   <parameter
      name="AUTO_GENERATION_ID"
@@ -269,20 +269,21 @@
   <parameter name="AUTO_CLOCK_50_CLOCK_RATE" value="-1" />
   <generatedFiles>
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\setup_ddr\synth\setup_ddr.v"
+       path="C:\Users\alvas\Documents\Work_ASD\Projects\Learning\sfp_test\ip\system_design\setup_ddr\synth\setup_ddr.v"
        attributes="CONTAINS_INLINE_CONFIGURATION" />
   </generatedFiles>
   <childGeneratedFiles>
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\setup_ddr\synth\setup_ddr.v"
+       path="C:\Users\alvas\Documents\Work_ASD\Projects\Learning\sfp_test\ip\system_design\setup_ddr\synth\setup_ddr.v"
        attributes="CONTAINS_INLINE_CONFIGURATION" />
   </childGeneratedFiles>
   <sourceFiles>
    <file
-       path="D:/Documents/Projects/Learning/SFP_test/ip/system_design/setup_ddr.ip" />
+       path="C:/Users/alvas/Documents/Work_ASD/Projects/Learning/sfp_test/ip/system_design/setup_ddr.ip" />
   </sourceFiles>
   <childSourceFiles>
-   <file path="D:/Documents/Projects/Learning/SFP_test/setup_ddr_hw.tcl" />
+   <file
+       path="C:/Users/alvas/Documents/Work_ASD/Projects/Learning/sfp_test/setup_ddr_hw.tcl" />
   </childSourceFiles>
   <messages>
    <message level="Info" culprit="setup_ddr">"Generating: setup_ddr"</message>
@@ -292,28 +293,29 @@
  <entity kind="setup_ddr" version="1.0" name="setup_ddr_data_256">
   <generatedFiles>
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\setup_ddr\setup_ddr_10\synth\setup_ddr_data_256.sv"
+       path="C:\Users\alvas\Documents\Work_ASD\Projects\Learning\sfp_test\ip\system_design\setup_ddr\setup_ddr_10\synth\setup_ddr_data_256.sv"
        attributes="TOP_LEVEL_FILE" />
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\setup_ddr\setup_ddr_10\synth\avalon_mm_ddr.sv"
+       path="C:\Users\alvas\Documents\Work_ASD\Projects\Learning\sfp_test\ip\system_design\setup_ddr\setup_ddr_10\synth\avalon_mm_ddr.sv"
        attributes="" />
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\setup_ddr\setup_ddr_10\synth\external_ram_256.sv"
+       path="C:\Users\alvas\Documents\Work_ASD\Projects\Learning\sfp_test\ip\system_design\setup_ddr\setup_ddr_10\synth\external_ram_256.sv"
        attributes="" />
   </generatedFiles>
   <childGeneratedFiles>
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\setup_ddr\setup_ddr_10\synth\setup_ddr_data_256.sv"
+       path="C:\Users\alvas\Documents\Work_ASD\Projects\Learning\sfp_test\ip\system_design\setup_ddr\setup_ddr_10\synth\setup_ddr_data_256.sv"
        attributes="TOP_LEVEL_FILE" />
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\setup_ddr\setup_ddr_10\synth\avalon_mm_ddr.sv"
+       path="C:\Users\alvas\Documents\Work_ASD\Projects\Learning\sfp_test\ip\system_design\setup_ddr\setup_ddr_10\synth\avalon_mm_ddr.sv"
        attributes="" />
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\setup_ddr\setup_ddr_10\synth\external_ram_256.sv"
+       path="C:\Users\alvas\Documents\Work_ASD\Projects\Learning\sfp_test\ip\system_design\setup_ddr\setup_ddr_10\synth\external_ram_256.sv"
        attributes="" />
   </childGeneratedFiles>
   <sourceFiles>
-   <file path="D:/Documents/Projects/Learning/SFP_test/setup_ddr_hw.tcl" />
+   <file
+       path="C:/Users/alvas/Documents/Work_ASD/Projects/Learning/sfp_test/setup_ddr_hw.tcl" />
   </sourceFiles>
   <childSourceFiles/>
   <instantiator instantiator="setup_ddr" as="setup_ddr" />
