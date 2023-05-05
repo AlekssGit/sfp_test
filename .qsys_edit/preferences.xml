@@ -7,7 +7,7 @@
    <connections preferredWidth="735" />
   </columns>
  </systemtable>
- <library expandedCategories="Project,Library,Existing IP Variants" />
+ <library expandedCategories="Project,Existing IP Variants,Library" />
  <generation
    path=""
    block_symbol_file="0"

@@ -199,6 +199,16 @@ add wave -group fifo_status    -label "data"        /tb_sfp_test/device/platform
 add wave -group fifo_status    -label "valid"       /tb_sfp_test/device/platform_design/receive_packet_1_fifo_status_valid
 add wave -group fifo_status    -label "channel"     /tb_sfp_test/device/platform_design/receive_packet_1_fifo_status_channel
 
+add wave -group ddr_setup    -label "clk_125"           /tb_sfp_test/device/platform_design/setup_ddr/clk
+add wave -group ddr_setup    -label "reset"             /tb_sfp_test/device/platform_design/setup_ddr/reset
+add wave -group ddr_setup    -label "ram_data_read"     /tb_sfp_test/device/platform_design/setup_ddr/ram_data_read
+add wave -group ddr_setup    -label "ddr_data"          /tb_sfp_test/device/platform_design/setup_ddr/ddr_data
+add wave -group ddr_setup    -label "ram_address"       /tb_sfp_test/device/platform_design/setup_ddr/ram_address
+add wave -group ddr_setup    -label "count_ram_data"    /tb_sfp_test/device/platform_design/setup_ddr/count_ram_data
+add wave -group ddr_setup    -label "count_data"        /tb_sfp_test/device/platform_design/setup_ddr/count_data
+add wave -group ddr_setup    -label "wait_data"         /tb_sfp_test/device/platform_design/setup_ddr/wait_data
+add wave -group ddr_setup    -label "setup_done"        /tb_sfp_test/device/platform_design/setup_ddr/setup_done
+
 
 # i2c expander test
 # add wave -group i2c_slave -label "clk"          /tb_sfp_test/i2c_slave/clk
