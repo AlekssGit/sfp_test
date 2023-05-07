@@ -36,6 +36,7 @@
 #     ddr_avalon_reset.ddr_avalon_reset
 #     setup_ddr.setup_ddr
 #     pcie.pcie
+#     send_cmd_pcie.send_cmd_pcie
 #     system_design.system_design
 # 
 # Intel recommends that you source this Quartus-generated IP simulation
@@ -102,7 +103,7 @@
 # 
 # IP SIMULATION SCRIPT
 # ----------------------------------------
-# ACDS 21.4 67 win32 2023.04.28.15:09:53
+# ACDS 21.4 67 win32 2023.05.07.08:56:42
 
 # ----------------------------------------
 # Initialize variables
