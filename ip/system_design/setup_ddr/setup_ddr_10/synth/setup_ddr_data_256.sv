@@ -174,7 +174,7 @@ begin
         if(count_data <= 16'd3 & need_setup)
         begin
             setup_done <= 1'b0;
-            if(wait_data % 16'd60 == 16'd0)
+            if(wait_data % 16'd100 == 16'd0)
             begin
                 // wait_data <= 16'd1;
 

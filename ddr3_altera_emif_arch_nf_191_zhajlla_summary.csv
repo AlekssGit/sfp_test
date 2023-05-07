@@ -1,29 +1,29 @@
 Core: ddr3_altera_emif_arch_nf_191_zhajlla - Instance: platform_design|ddr3|ddr3
 Path, Setup Margin, Hold Margin
 "Address/Command (Slow 900mV 100C Model)",0.114,0.114
-"Core (Slow 900mV 100C Model)",0.546,0.056
-"Core Recovery/Removal (Slow 900mV 100C Model)",-2.751,0.381
+"Core (Slow 900mV 100C Model)",0.275,0.06
+"Core Recovery/Removal (Slow 900mV 100C Model)",-2.947,0.482
 "DQS Gating (Slow 900mV 100C Model)",0.085,0.085
 "Read Capture (Slow 900mV 100C Model)",0.033,0.033
 "Write (Slow 900mV 100C Model)",0.037,0.037
 "Write Levelling (Slow 900mV 100C Model)",0.149,0.149
 "Address/Command (Slow 900mV 0C Model)",0.114,0.114
-"Core (Slow 900mV 0C Model)",0.713,0.052
-"Core Recovery/Removal (Slow 900mV 0C Model)",-2.391,0.389
+"Core (Slow 900mV 0C Model)",0.428,0.055
+"Core Recovery/Removal (Slow 900mV 0C Model)",-2.602,0.473
 "DQS Gating (Slow 900mV 0C Model)",0.085,0.085
 "Read Capture (Slow 900mV 0C Model)",0.033,0.033
 "Write (Slow 900mV 0C Model)",0.037,0.037
 "Write Levelling (Slow 900mV 0C Model)",0.149,0.149
 "Address/Command (Fast 900mV 100C Model)",0.114,0.114
-"Core (Fast 900mV 100C Model)",1.459,0.023
-"Core Recovery/Removal (Fast 900mV 100C Model)",-2.069,0.215
+"Core (Fast 900mV 100C Model)",1.335,0.021
+"Core Recovery/Removal (Fast 900mV 100C Model)",-2.188,0.276
 "DQS Gating (Fast 900mV 100C Model)",0.085,0.085
 "Read Capture (Fast 900mV 100C Model)",0.033,0.033
 "Write (Fast 900mV 100C Model)",0.037,0.037
 "Write Levelling (Fast 900mV 100C Model)",0.149,0.149
 "Address/Command (Fast 900mV 0C Model)",0.114,0.114
-"Core (Fast 900mV 0C Model)",1.88,0.02
-"Core Recovery/Removal (Fast 900mV 0C Model)",-1.666,0.185
+"Core (Fast 900mV 0C Model)",1.84,0.02
+"Core Recovery/Removal (Fast 900mV 0C Model)",-1.753,0.23
 "DQS Gating (Fast 900mV 0C Model)",0.085,0.085
 "Read Capture (Fast 900mV 0C Model)",0.033,0.033
 "Write (Fast 900mV 0C Model)",0.037,0.037
