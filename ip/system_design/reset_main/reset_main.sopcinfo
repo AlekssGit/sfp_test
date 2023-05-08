@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="reset_main" kind="reset_main" version="1.0" fabric="QSYS">
+<<<<<<< HEAD
  <!-- Format version 21.4 67 (Future versions may contain additional information.) -->
  <!-- 2023.05.08.12:10:54 -->
+=======
+ <!-- Format version 21.3 170 (Future versions may contain additional information.) -->
+ <!-- 2023.05.07.10:37:51 -->
+>>>>>>> 7195fa45c040afc1f0b8147cd5f62971c68e7b2d
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
@@ -139,7 +144,7 @@ the requested settings for a module instance. -->
    <visible>true</visible>
    <valid>true</valid>
   </parameter>
-  <interface name="in_reset" kind="reset_sink" version="21.4">
+  <interface name="in_reset" kind="reset_sink" version="21.3">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -184,7 +189,7 @@ parameters are a RESULT of the module parameters. -->
     <role>reset</role>
    </port>
   </interface>
-  <interface name="out_reset" kind="reset_source" version="21.4">
+  <interface name="out_reset" kind="reset_source" version="21.3">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -260,7 +265,7 @@ parameters are a RESULT of the module parameters. -->
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
   <displayName>Reset Input</displayName>
-  <version>21.4</version>
+  <version>21.3</version>
  </plugin>
  <plugin>
   <instanceCount>1</instanceCount>
@@ -268,8 +273,8 @@ parameters are a RESULT of the module parameters. -->
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
   <displayName>Reset Output</displayName>
-  <version>21.4</version>
+  <version>21.3</version>
  </plugin>
- <reportVersion>21.4 67</reportVersion>
+ <reportVersion>21.3 170</reportVersion>
  <uniqueIdentifier></uniqueIdentifier>
 </EnsembleReport>

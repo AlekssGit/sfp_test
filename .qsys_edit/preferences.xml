@@ -7,7 +7,11 @@
    <connections preferredWidth="735" />
   </columns>
  </systemtable>
+<<<<<<< HEAD
  <library expandedCategories="Project,Existing IP Variants,Library" />
+=======
+ <library expandedCategories="Library,Existing IP Variants,Project" />
+>>>>>>> 7195fa45c040afc1f0b8147cd5f62971c68e7b2d
  <generation
    path=""
    block_symbol_file="0"

@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deploy
+<<<<<<< HEAD
  date="2023.05.08.12:10:54"
  outputDirectory="C:/Users/alvas/Documents/Work_ASD/Projects/Learning/sfp_test/ip/system_design/reset_main/">
+=======
+ date="2023.05.07.10:37:51"
+ outputDirectory="D:/Documents/Projects/Learning/SFP_test/ip/system_design/reset_main/">
+>>>>>>> 7195fa45c040afc1f0b8147cd5f62971c68e7b2d
  <perimeter>
   <parameter
      name="AUTO_GENERATION_ID"
@@ -54,17 +59,17 @@
   <parameter name="AUTO_DEVICE_SPEEDGRADE" value="5" />
   <generatedFiles>
    <file
-       path="C:\Users\alvas\Documents\Work_ASD\Projects\Learning\sfp_test\ip\system_design\reset_main\synth\reset_main.v"
+       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\reset_main\synth\reset_main.v"
        attributes="CONTAINS_INLINE_CONFIGURATION" />
   </generatedFiles>
   <childGeneratedFiles>
    <file
-       path="C:\Users\alvas\Documents\Work_ASD\Projects\Learning\sfp_test\ip\system_design\reset_main\synth\reset_main.v"
+       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\reset_main\synth\reset_main.v"
        attributes="CONTAINS_INLINE_CONFIGURATION" />
   </childGeneratedFiles>
   <sourceFiles>
    <file
-       path="C:/Users/alvas/Documents/Work_ASD/Projects/Learning/sfp_test/ip/system_design/reset_main.ip" />
+       path="D:/Documents/Projects/Learning/SFP_test/ip/system_design/reset_main.ip" />
   </sourceFiles>
   <childSourceFiles/>
   <messages>
