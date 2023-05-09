@@ -1,0 +1,60 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 2021  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+*/
+(header "symbol" (version "1.1"))
+(symbol
+	(rect 0 0 208 128)
+	(text "ddr_avalon_reset" (rect 41 -1 111 11)(font "Dialog" (font_size 12)))
+	(text "inst" (rect 8 112 20 124)(font "Arial" ))
+	(port
+		(pt 0 80)
+		(input)
+		(text "in_reset" (rect 0 0 31 12)(font "Dialog" (font_size 9)))
+		(text "in_reset" (rect 4 72 52 85)(font "Dialog" (font_size 9)))
+	)
+	(port
+		(pt 208 80)
+		(output)
+		(text "out_reset" (rect 0 0 37 12)(font "Dialog" (font_size 9)))
+		(text "out_reset" (rect 151 72 205 85)(font "Dialog" (font_size 9)))
+	)
+	(drawing
+		(text "in_reset" (rect 10 52 68 118)(font "Dialog" (color 128 0 0)(font_size 10)))
+		(text "reset" (rect 62 80 154 171)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text "out_reset" (rect 134 52 322 118)(font "Dialog" (color 128 0 0)(font_size 10)))
+		(text "reset" (rect 105 80 240 171)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text " ddr_avalon_reset " (rect 119 114 346 239)(font "Dialog" (font_size 8)))
+		(line (pt 57 38)(pt 133 38)(line_width 1))
+		(line (pt 133 38)(pt 133 113)(line_width 1))
+		(line (pt 57 113)(pt 133 113)(line_width 1))
+		(line (pt 57 38)(pt 57 113)(line_width 1))
+		(line (pt 0 85)(pt 57 85)(line_width 1))
+		(line (pt 58 62)(pt 58 89)(line_width 1))
+		(line (pt 59 62)(pt 59 89)(line_width 1))
+		(line (pt 209 85)(pt 133 85)(line_width 1))
+		(line (pt 132 62)(pt 132 89)(line_width 1))
+		(line (pt 131 62)(pt 131 89)(line_width 1))
+		(line (pt 0 0)(pt 209 0)(line_width 1))
+		(line (pt 209 0)(pt 209 132)(line_width 1))
+		(line (pt 0 132)(pt 209 132)(line_width 1))
+		(line (pt 0 0)(pt 0 132)(line_width 1))
+	)
+)

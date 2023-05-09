@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deploy
-<<<<<<< HEAD
- date="2023.05.08.12:07:26"
- outputDirectory="C:/Users/alvas/Documents/Work_ASD/Projects/Learning/sfp_test/ip/system_design/clock_50_out/">
-=======
- date="2023.05.07.10:37:58"
+ date="2023.05.08.14:30:36"
  outputDirectory="D:/Documents/Projects/Learning/SFP_test/ip/system_design/clock_50_out/">
->>>>>>> 7195fa45c040afc1f0b8147cd5f62971c68e7b2d
  <perimeter>
   <parameter
      name="AUTO_GENERATION_ID"

@@ -1,0 +1,187 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 2021  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+*/
+(header "symbol" (version "1.1"))
+(symbol
+	(rect 0 0 488 720)
+	(text "send_cmd_pcie" (rect 191 -1 254 11)(font "Dialog" (font_size 12)))
+	(text "inst" (rect 8 704 20 716)(font "Arial" ))
+	(port
+		(pt 0 80)
+		(input)
+		(text "clk" (rect 0 0 10 12)(font "Dialog" (font_size 9)))
+		(text "clk" (rect 4 72 22 85)(font "Dialog" (font_size 9)))
+	)
+	(port
+		(pt 0 136)
+		(input)
+		(text "rst_n" (rect 0 0 21 12)(font "Dialog" (font_size 9)))
+		(text "rst_n" (rect 4 128 34 141)(font "Dialog" (font_size 9)))
+	)
+	(port
+		(pt 0 192)
+		(input)
+		(text "avalon_mm_read" (rect 0 0 71 12)(font "Dialog" (font_size 9)))
+		(text "avalon_mm_read" (rect 4 184 88 197)(font "Dialog" (font_size 9)))
+	)
+	(port
+		(pt 0 224)
+		(input)
+		(text "avalon_mm_write" (rect 0 0 71 12)(font "Dialog" (font_size 9)))
+		(text "avalon_mm_write" (rect 4 212 94 225)(font "Dialog" (font_size 9)))
+	)
+	(port
+		(pt 0 248)
+		(input)
+		(text "avalon_mm_addr[15..0]" (rect 0 0 95 12)(font "Dialog" (font_size 9)))
+		(text "avalon_mm_addr[15..0]" (rect 4 240 130 253)(font "Dialog" (font_size 9)))
+	)
+	(port
+		(pt 0 280)
+		(input)
+		(text "avalon_mm_write_data[31..0]" (rect 0 0 118 12)(font "Dialog" (font_size 9)))
+		(text "avalon_mm_write_data[31..0]" (rect 4 268 166 281)(font "Dialog" (font_size 9)))
+	)
+	(port
+		(pt 0 472)
+		(input)
+		(text "ddr_local_cal_success" (rect 0 0 90 12)(font "Dialog" (font_size 9)))
+		(text "ddr_local_cal_success" (rect 4 464 130 477)(font "Dialog" (font_size 9)))
+	)
+	(port
+		(pt 0 504)
+		(input)
+		(text "ddr_local_cal_fail" (rect 0 0 68 12)(font "Dialog" (font_size 9)))
+		(text "ddr_local_cal_fail" (rect 4 492 112 505)(font "Dialog" (font_size 9)))
+	)
+	(port
+		(pt 0 560)
+		(input)
+		(text "ddr_setup_done" (rect 0 0 64 12)(font "Dialog" (font_size 9)))
+		(text "ddr_setup_done" (rect 4 548 88 561)(font "Dialog" (font_size 9)))
+	)
+	(port
+		(pt 0 616)
+		(input)
+		(text "system_main_reset" (rect 0 0 81 12)(font "Dialog" (font_size 9)))
+		(text "system_main_reset" (rect 4 604 106 617)(font "Dialog" (font_size 9)))
+	)
+	(port
+		(pt 0 640)
+		(input)
+		(text "ddr_avalon_rst" (rect 0 0 61 12)(font "Dialog" (font_size 9)))
+		(text "ddr_avalon_rst" (rect 4 632 88 645)(font "Dialog" (font_size 9)))
+	)
+	(port
+		(pt 0 672)
+		(input)
+		(text "board_reset" (rect 0 0 48 12)(font "Dialog" (font_size 9)))
+		(text "board_reset" (rect 4 660 70 673)(font "Dialog" (font_size 9)))
+	)
+	(port
+		(pt 0 304)
+		(output)
+		(text "avalon_mm_read_data[31..0]" (rect 0 0 118 12)(font "Dialog" (font_size 9)))
+		(text "avalon_mm_read_data[31..0]" (rect 4 296 160 309)(font "Dialog" (font_size 9)))
+	)
+	(port
+		(pt 0 336)
+		(output)
+		(text "avalon_mm_rd_valid" (rect 0 0 86 12)(font "Dialog" (font_size 9)))
+		(text "avalon_mm_rd_valid" (rect 4 324 112 337)(font "Dialog" (font_size 9)))
+	)
+	(port
+		(pt 0 392)
+		(output)
+		(text "start_ram_addr[5..0]" (rect 0 0 83 12)(font "Dialog" (font_size 9)))
+		(text "start_ram_addr[5..0]" (rect 4 380 124 393)(font "Dialog" (font_size 9)))
+	)
+	(port
+		(pt 0 416)
+		(output)
+		(text "send_cmd" (rect 0 0 42 12)(font "Dialog" (font_size 9)))
+		(text "send_cmd" (rect 4 408 52 421)(font "Dialog" (font_size 9)))
+	)
+	(drawing
+		(text "clock" (rect 160 52 350 118)(font "Dialog" (color 128 0 0)(font_size 10)))
+		(text "clk" (rect 195 80 408 171)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text "reset" (rect 161 108 352 230)(font "Dialog" (color 128 0 0)(font_size 10)))
+		(text "reset_n" (rect 195 136 432 283)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text "avalon_slave" (rect 116 164 304 342)(font "Dialog" (color 128 0 0)(font_size 10)))
+		(text "read" (rect 195 192 414 395)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text "write" (rect 195 220 420 451)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text "address" (rect 195 248 432 507)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text "writedata" (rect 195 276 444 563)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text "readdata" (rect 195 304 438 619)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text "readdatavalid" (rect 195 332 468 675)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text "send_control" (rect 115 360 302 734)(font "Dialog" (color 128 0 0)(font_size 10)))
+		(text "start_ram_addr" (rect 195 388 474 787)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text "signal" (rect 195 416 426 843)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text "ddr_status" (rect 128 444 316 902)(font "Dialog" (color 128 0 0)(font_size 10)))
+		(text "local_cal_success" (rect 195 472 492 955)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text "local_cal_fail" (rect 195 500 474 1011)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text "ddr_setup_done" (rect 96 528 276 1070)(font "Dialog" (color 128 0 0)(font_size 10)))
+		(text "setup_done" (rect 195 556 450 1123)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text "resets_information" (rect 80 584 268 1182)(font "Dialog" (color 128 0 0)(font_size 10)))
+		(text "main_reset" (rect 195 612 450 1235)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text "ddr_avalon_reset" (rect 195 640 486 1291)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text "board_reset" (rect 195 668 456 1347)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text " send_cmd_pcie " (rect 413 702 916 1415)(font "Dialog" (font_size 8)))
+		(line (pt 190 38)(pt 304 38)(line_width 1))
+		(line (pt 304 38)(pt 304 701)(line_width 1))
+		(line (pt 190 701)(pt 304 701)(line_width 1))
+		(line (pt 190 38)(pt 190 701)(line_width 1))
+		(line (pt 0 85)(pt 190 85)(line_width 1))
+		(line (pt 191 62)(pt 191 89)(line_width 1))
+		(line (pt 192 62)(pt 192 89)(line_width 1))
+		(line (pt 0 141)(pt 190 141)(line_width 1))
+		(line (pt 191 118)(pt 191 145)(line_width 1))
+		(line (pt 192 118)(pt 192 145)(line_width 1))
+		(line (pt 0 197)(pt 190 197)(line_width 1))
+		(line (pt 0 225)(pt 190 225)(line_width 1))
+		(line (pt 0 253)(pt 190 253)(line_width 3))
+		(line (pt 0 281)(pt 190 281)(line_width 3))
+		(line (pt 0 309)(pt 190 309)(line_width 3))
+		(line (pt 0 337)(pt 190 337)(line_width 1))
+		(line (pt 191 174)(pt 191 341)(line_width 1))
+		(line (pt 192 174)(pt 192 341)(line_width 1))
+		(line (pt 0 393)(pt 190 393)(line_width 3))
+		(line (pt 0 421)(pt 190 421)(line_width 1))
+		(line (pt 191 370)(pt 191 425)(line_width 1))
+		(line (pt 192 370)(pt 192 425)(line_width 1))
+		(line (pt 0 477)(pt 190 477)(line_width 1))
+		(line (pt 0 505)(pt 190 505)(line_width 1))
+		(line (pt 191 454)(pt 191 509)(line_width 1))
+		(line (pt 192 454)(pt 192 509)(line_width 1))
+		(line (pt 0 561)(pt 190 561)(line_width 1))
+		(line (pt 191 538)(pt 191 565)(line_width 1))
+		(line (pt 192 538)(pt 192 565)(line_width 1))
+		(line (pt 0 617)(pt 190 617)(line_width 1))
+		(line (pt 0 645)(pt 190 645)(line_width 1))
+		(line (pt 0 673)(pt 190 673)(line_width 1))
+		(line (pt 191 594)(pt 191 677)(line_width 1))
+		(line (pt 192 594)(pt 192 677)(line_width 1))
+		(line (pt 0 0)(pt 494 0)(line_width 1))
+		(line (pt 494 0)(pt 494 720)(line_width 1))
+		(line (pt 0 720)(pt 494 720)(line_width 1))
+		(line (pt 0 0)(pt 0 720)(line_width 1))
+	)
+)

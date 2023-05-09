@@ -1,0 +1,93 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 2021  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+*/
+(header "symbol" (version "1.1"))
+(symbol
+	(rect 0 0 392 240)
+	(text "xcvr_pll" (rect 172 -1 203 11)(font "Dialog" (font_size 12)))
+	(text "inst" (rect 8 224 20 236)(font "Arial" ))
+	(port
+		(pt 0 80)
+		(input)
+		(text "pll_powerdown" (rect 0 0 56 12)(font "Dialog" (font_size 9)))
+		(text "pll_powerdown" (rect 4 72 82 85)(font "Dialog" (font_size 9)))
+	)
+	(port
+		(pt 0 136)
+		(input)
+		(text "pll_refclk0" (rect 0 0 40 12)(font "Dialog" (font_size 9)))
+		(text "pll_refclk0" (rect 4 128 70 141)(font "Dialog" (font_size 9)))
+	)
+	(port
+		(pt 392 80)
+		(output)
+		(text "tx_serial_clk" (rect 0 0 49 12)(font "Dialog" (font_size 9)))
+		(text "tx_serial_clk" (rect 323 72 401 85)(font "Dialog" (font_size 9)))
+	)
+	(port
+		(pt 392 136)
+		(output)
+		(text "pll_locked" (rect 0 0 37 12)(font "Dialog" (font_size 9)))
+		(text "pll_locked" (rect 339 128 399 141)(font "Dialog" (font_size 9)))
+	)
+	(port
+		(pt 392 192)
+		(output)
+		(text "pll_cal_busy" (rect 0 0 49 12)(font "Dialog" (font_size 9)))
+		(text "pll_cal_busy" (rect 325 184 397 197)(font "Dialog" (font_size 9)))
+	)
+	(drawing
+		(text "pll_powerdown" (rect 27 52 132 118)(font "Dialog" (color 128 0 0)(font_size 10)))
+		(text "pll_powerdown" (rect 119 80 316 171)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text "pll_refclk0" (rect 53 108 172 230)(font "Dialog" (color 128 0 0)(font_size 10)))
+		(text "clk" (rect 119 136 256 283)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text "tx_serial_clk" (rect 286 52 650 118)(font "Dialog" (color 128 0 0)(font_size 10)))
+		(text "clk" (rect 269 80 556 171)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text "pll_locked" (rect 286 108 632 230)(font "Dialog" (color 128 0 0)(font_size 10)))
+		(text "pll_locked" (rect 234 136 528 283)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text "pll_cal_busy" (rect 286 164 644 342)(font "Dialog" (color 128 0 0)(font_size 10)))
+		(text "pll_cal_busy" (rect 220 192 512 395)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text " xcvr_pll " (rect 357 226 774 463)(font "Dialog" (font_size 8)))
+		(line (pt 114 38)(pt 285 38)(line_width 1))
+		(line (pt 285 38)(pt 285 225)(line_width 1))
+		(line (pt 114 225)(pt 285 225)(line_width 1))
+		(line (pt 114 38)(pt 114 225)(line_width 1))
+		(line (pt 0 85)(pt 114 85)(line_width 1))
+		(line (pt 115 62)(pt 115 89)(line_width 1))
+		(line (pt 116 62)(pt 116 89)(line_width 1))
+		(line (pt 0 141)(pt 114 141)(line_width 1))
+		(line (pt 115 118)(pt 115 145)(line_width 1))
+		(line (pt 116 118)(pt 116 145)(line_width 1))
+		(line (pt 399 85)(pt 285 85)(line_width 1))
+		(line (pt 284 62)(pt 284 89)(line_width 1))
+		(line (pt 283 62)(pt 283 89)(line_width 1))
+		(line (pt 399 141)(pt 285 141)(line_width 1))
+		(line (pt 284 118)(pt 284 145)(line_width 1))
+		(line (pt 283 118)(pt 283 145)(line_width 1))
+		(line (pt 399 197)(pt 285 197)(line_width 1))
+		(line (pt 284 174)(pt 284 201)(line_width 1))
+		(line (pt 283 174)(pt 283 201)(line_width 1))
+		(line (pt 0 0)(pt 399 0)(line_width 1))
+		(line (pt 399 0)(pt 399 244)(line_width 1))
+		(line (pt 0 244)(pt 399 244)(line_width 1))
+		(line (pt 0 0)(pt 0 244)(line_width 1))
+	)
+)

@@ -1,0 +1,127 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 2021  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+*/
+(header "symbol" (version "1.1"))
+(symbol
+	(rect 0 0 304 440)
+	(text "mem_rcv_0" (rect 110 -1 161 11)(font "Dialog" (font_size 12)))
+	(text "inst" (rect 8 424 20 436)(font "Arial" ))
+	(port
+		(pt 0 80)
+		(input)
+		(text "clk" (rect 0 0 10 12)(font "Dialog" (font_size 9)))
+		(text "clk" (rect 4 72 22 85)(font "Dialog" (font_size 9)))
+	)
+	(port
+		(pt 0 136)
+		(input)
+		(text "address[9..0]" (rect 0 0 51 12)(font "Dialog" (font_size 9)))
+		(text "address[9..0]" (rect 4 128 82 141)(font "Dialog" (font_size 9)))
+	)
+	(port
+		(pt 0 168)
+		(input)
+		(text "clken" (rect 0 0 20 12)(font "Dialog" (font_size 9)))
+		(text "clken" (rect 4 156 34 169)(font "Dialog" (font_size 9)))
+	)
+	(port
+		(pt 0 192)
+		(input)
+		(text "chipselect" (rect 0 0 37 12)(font "Dialog" (font_size 9)))
+		(text "chipselect" (rect 4 184 64 197)(font "Dialog" (font_size 9)))
+	)
+	(port
+		(pt 0 224)
+		(input)
+		(text "write" (rect 0 0 17 12)(font "Dialog" (font_size 9)))
+		(text "write" (rect 4 212 34 225)(font "Dialog" (font_size 9)))
+	)
+	(port
+		(pt 0 280)
+		(input)
+		(text "writedata[31..0]" (rect 0 0 57 12)(font "Dialog" (font_size 9)))
+		(text "writedata[31..0]" (rect 4 268 100 281)(font "Dialog" (font_size 9)))
+	)
+	(port
+		(pt 0 304)
+		(input)
+		(text "byteenable[3..0]" (rect 0 0 62 12)(font "Dialog" (font_size 9)))
+		(text "byteenable[3..0]" (rect 4 296 100 309)(font "Dialog" (font_size 9)))
+	)
+	(port
+		(pt 0 360)
+		(input)
+		(text "reset" (rect 0 0 20 12)(font "Dialog" (font_size 9)))
+		(text "reset" (rect 4 352 34 365)(font "Dialog" (font_size 9)))
+	)
+	(port
+		(pt 0 392)
+		(input)
+		(text "reset_req" (rect 0 0 38 12)(font "Dialog" (font_size 9)))
+		(text "reset_req" (rect 4 380 58 393)(font "Dialog" (font_size 9)))
+	)
+	(port
+		(pt 0 248)
+		(output)
+		(text "readdata[31..0]" (rect 0 0 57 12)(font "Dialog" (font_size 9)))
+		(text "readdata[31..0]" (rect 4 240 94 253)(font "Dialog" (font_size 9)))
+	)
+	(drawing
+		(text "clk1" (rect 93 52 210 118)(font "Dialog" (color 128 0 0)(font_size 10)))
+		(text "clk" (rect 119 80 256 171)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text "s1" (rect 103 108 218 230)(font "Dialog" (color 128 0 0)(font_size 10)))
+		(text "address" (rect 119 136 280 283)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text "clken" (rect 119 164 268 339)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text "chipselect" (rect 119 192 298 395)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text "write" (rect 119 220 268 451)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text "readdata" (rect 119 248 286 507)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text "writedata" (rect 119 276 292 563)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text "byteenable" (rect 119 304 298 619)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text "reset1" (rect 80 332 196 678)(font "Dialog" (color 128 0 0)(font_size 10)))
+		(text "reset" (rect 119 360 268 731)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text "reset_req" (rect 119 388 292 787)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text " mem_rcv_0 " (rect 243 422 552 855)(font "Dialog" (font_size 8)))
+		(line (pt 114 38)(pt 190 38)(line_width 1))
+		(line (pt 190 38)(pt 190 421)(line_width 1))
+		(line (pt 114 421)(pt 190 421)(line_width 1))
+		(line (pt 114 38)(pt 114 421)(line_width 1))
+		(line (pt 0 85)(pt 114 85)(line_width 1))
+		(line (pt 115 62)(pt 115 89)(line_width 1))
+		(line (pt 116 62)(pt 116 89)(line_width 1))
+		(line (pt 0 141)(pt 114 141)(line_width 3))
+		(line (pt 0 169)(pt 114 169)(line_width 1))
+		(line (pt 0 197)(pt 114 197)(line_width 1))
+		(line (pt 0 225)(pt 114 225)(line_width 1))
+		(line (pt 0 253)(pt 114 253)(line_width 3))
+		(line (pt 0 281)(pt 114 281)(line_width 3))
+		(line (pt 0 309)(pt 114 309)(line_width 3))
+		(line (pt 115 118)(pt 115 313)(line_width 1))
+		(line (pt 116 118)(pt 116 313)(line_width 1))
+		(line (pt 0 365)(pt 114 365)(line_width 1))
+		(line (pt 0 393)(pt 114 393)(line_width 1))
+		(line (pt 115 342)(pt 115 397)(line_width 1))
+		(line (pt 116 342)(pt 116 397)(line_width 1))
+		(line (pt 0 0)(pt 304 0)(line_width 1))
+		(line (pt 304 0)(pt 304 440)(line_width 1))
+		(line (pt 0 440)(pt 304 440)(line_width 1))
+		(line (pt 0 0)(pt 0 440)(line_width 1))
+	)
+)

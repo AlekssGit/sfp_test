@@ -174,7 +174,7 @@ begin
         if(count_data <= 16'd3 & need_setup)
         begin
             setup_done <= 1'b0;
-            if(wait_data % 16'd100 == 16'd0)
+            if(wait_data % 16'd60 == 16'd0)
             begin
                 wait_data <= 16'd1;
 
@@ -206,13 +206,10 @@ begin
                     // 4'd6:   ddr_data <= {32'd0   , ram_data_read , ddr_data[191:0]};
                     // 4'd7:   ddr_data <= {ram_data_read, ddr_data[223:0]};           
                     // endcase
-                    if(count_ram_data == 4'd0)
-                    begin
-                        count_data <= count_data + 16'd1;
-                    end
 
                     if (count_ram_data == 4'd0) //(count_data == 10'd1)
                     begin
+                        count_data <= count_data + 16'd1;
                         ram_address <=   10'd1 + {6'd0, count_ram_data + 4'd1} + ((count_data[9:0] - 10'd1) << 3);
                     end
                     else
@@ -227,14 +224,14 @@ begin
                     
                 // end
 
-                if(count_ram_data == 4'd7) // 4'd8
-                begin
-                    // wait_data <= 16'd1;
-                    // count_ram_data <= 4'd0;
-                    // data    <=   ddr_data;
-                    // addr    <=   {15'd0, count_data};
-                    // count_data <= count_data + 16'd1; // ???
-                end
+                // if(count_ram_data == 4'd7) // 4'd8
+                // begin
+                //     // wait_data <= 16'd1;
+                //     // count_ram_data <= 4'd0;
+                //     // data    <=   ddr_data;
+                //     // addr    <=   {15'd0, count_data};
+                //     // count_data <= count_data + 16'd1; // ???
+                // end
             end
             else
             begin
@@ -244,7 +241,6 @@ begin
                 begin
                     count_ram_data <= 4'd0;
                     addr    <=   {15'd0, count_data}; // + 16'd1};
-                    // count_data <= count_data + 16'd1; // ???
                 end
             end
         end

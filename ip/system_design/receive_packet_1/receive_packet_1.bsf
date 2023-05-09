@@ -1,0 +1,219 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 2021  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+*/
+(header "symbol" (version "1.1"))
+(symbol
+	(rect 0 0 456 496)
+	(text "receive_packet_1" (rect 165 -1 235 11)(font "Dialog" (font_size 12)))
+	(text "inst" (rect 8 480 20 492)(font "Arial" ))
+	(port
+		(pt 0 80)
+		(input)
+		(text "ff_rx_data[7..0]" (rect 0 0 63 12)(font "Dialog" (font_size 9)))
+		(text "ff_rx_data[7..0]" (rect 4 72 100 85)(font "Dialog" (font_size 9)))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "ff_rx_eop" (rect 0 0 41 12)(font "Dialog" (font_size 9)))
+		(text "ff_rx_eop" (rect 4 100 58 113)(font "Dialog" (font_size 9)))
+	)
+	(port
+		(pt 0 168)
+		(input)
+		(text "ff_rx_sop" (rect 0 0 41 12)(font "Dialog" (font_size 9)))
+		(text "ff_rx_sop" (rect 4 156 58 169)(font "Dialog" (font_size 9)))
+	)
+	(port
+		(pt 0 192)
+		(input)
+		(text "ff_rx_dval" (rect 0 0 43 12)(font "Dialog" (font_size 9)))
+		(text "ff_rx_dval" (rect 4 184 64 197)(font "Dialog" (font_size 9)))
+	)
+	(port
+		(pt 0 224)
+		(input)
+		(text "rx_err[4..0]" (rect 0 0 47 12)(font "Dialog" (font_size 9)))
+		(text "rx_err[4..0]" (rect 4 212 76 225)(font "Dialog" (font_size 9)))
+	)
+	(port
+		(pt 456 168)
+		(input)
+		(text "ram_readdata[31..0]" (rect 0 0 80 12)(font "Dialog" (font_size 9)))
+		(text "ram_readdata[31..0]" (rect 340 156 454 169)(font "Dialog" (font_size 9)))
+	)
+	(port
+		(pt 456 248)
+		(input)
+		(text "ram_waitrequest" (rect 0 0 66 12)(font "Dialog" (font_size 9)))
+		(text "ram_waitrequest" (rect 355 240 445 253)(font "Dialog" (font_size 9)))
+	)
+	(port
+		(pt 0 280)
+		(input)
+		(text "clk_original" (rect 0 0 42 12)(font "Dialog" (font_size 9)))
+		(text "clk_original" (rect 4 268 76 281)(font "Dialog" (font_size 9)))
+	)
+	(port
+		(pt 0 336)
+		(input)
+		(text "rst" (rect 0 0 10 12)(font "Dialog" (font_size 9)))
+		(text "rst" (rect 4 324 22 337)(font "Dialog" (font_size 9)))
+	)
+	(port
+		(pt 0 392)
+		(input)
+		(text "fifo_status_clk" (rect 0 0 59 12)(font "Dialog" (font_size 9)))
+		(text "fifo_status_clk" (rect 4 380 94 393)(font "Dialog" (font_size 9)))
+	)
+	(port
+		(pt 0 136)
+		(output)
+		(text "ff_rx_rdy" (rect 0 0 41 12)(font "Dialog" (font_size 9)))
+		(text "ff_rx_rdy" (rect 4 128 58 141)(font "Dialog" (font_size 9)))
+	)
+	(port
+		(pt 456 80)
+		(output)
+		(text "ram_addr[9..0]" (rect 0 0 60 12)(font "Dialog" (font_size 9)))
+		(text "ram_addr[9..0]" (rect 370 72 454 85)(font "Dialog" (font_size 9)))
+	)
+	(port
+		(pt 456 112)
+		(output)
+		(text "ram_chipselect" (rect 0 0 60 12)(font "Dialog" (font_size 9)))
+		(text "ram_chipselect" (rect 366 100 450 113)(font "Dialog" (font_size 9)))
+	)
+	(port
+		(pt 456 136)
+		(output)
+		(text "ram_write" (rect 0 0 40 12)(font "Dialog" (font_size 9)))
+		(text "ram_write" (rect 394 128 448 141)(font "Dialog" (font_size 9)))
+	)
+	(port
+		(pt 456 192)
+		(output)
+		(text "ram_writedata[31..0]" (rect 0 0 80 12)(font "Dialog" (font_size 9)))
+		(text "ram_writedata[31..0]" (rect 337 184 457 197)(font "Dialog" (font_size 9)))
+	)
+	(port
+		(pt 456 224)
+		(output)
+		(text "ram_byteenable[3..0]" (rect 0 0 84 12)(font "Dialog" (font_size 9)))
+		(text "ram_byteenable[3..0]" (rect 334 212 454 225)(font "Dialog" (font_size 9)))
+	)
+	(port
+		(pt 456 304)
+		(output)
+		(text "rx_afull_data[1..0]" (rect 0 0 70 12)(font "Dialog" (font_size 9)))
+		(text "rx_afull_data[1..0]" (rect 352 296 466 309)(font "Dialog" (font_size 9)))
+	)
+	(port
+		(pt 456 336)
+		(output)
+		(text "rx_afull_valid" (rect 0 0 53 12)(font "Dialog" (font_size 9)))
+		(text "rx_afull_valid" (rect 376 324 460 337)(font "Dialog" (font_size 9)))
+	)
+	(port
+		(pt 456 360)
+		(output)
+		(text "rx_afull_channel[1..0]" (rect 0 0 83 12)(font "Dialog" (font_size 9)))
+		(text "rx_afull_channel[1..0]" (rect 333 352 465 365)(font "Dialog" (font_size 9)))
+	)
+	(port
+		(pt 0 448)
+		(output)
+		(text "data_saved" (rect 0 0 47 12)(font "Dialog" (font_size 9)))
+		(text "data_saved" (rect 4 436 64 449)(font "Dialog" (font_size 9)))
+	)
+	(drawing
+		(text "avalon_streaming_sink" (rect 18 52 162 118)(font "Dialog" (color 128 0 0)(font_size 10)))
+		(text "data" (rect 157 80 338 171)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text "endofpacket" (rect 157 108 380 227)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text "ready" (rect 157 136 344 283)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text "startofpacket" (rect 157 164 392 339)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text "valid" (rect 157 192 344 395)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text "error" (rect 157 220 344 451)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text "avalon_master" (rect 305 52 688 118)(font "Dialog" (color 128 0 0)(font_size 10)))
+		(text "address" (rect 261 80 564 171)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text "chipselect" (rect 252 108 564 227)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text "write" (rect 276 136 582 283)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text "readdata" (rect 258 164 564 339)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text "writedata" (rect 255 192 564 395)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text "byteenable" (rect 248 220 556 451)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text "waitrequest" (rect 243 248 552 507)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text "clock" (rect 122 248 274 510)(font "Dialog" (color 128 0 0)(font_size 10)))
+		(text "clk" (rect 157 276 332 563)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text "reset" (rect 123 304 276 622)(font "Dialog" (color 128 0 0)(font_size 10)))
+		(text "reset" (rect 157 332 344 675)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text "fifo_status" (rect 305 276 676 566)(font "Dialog" (color 128 0 0)(font_size 10)))
+		(text "data" (rect 280 304 584 619)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text "valid" (rect 279 332 588 675)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text "channel" (rect 263 360 568 731)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text "fifo_status_clk" (rect 64 360 218 734)(font "Dialog" (color 128 0 0)(font_size 10)))
+		(text "clk" (rect 157 388 332 787)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text "data_saved" (rect 86 416 232 846)(font "Dialog" (color 128 0 0)(font_size 10)))
+		(text "data_saved" (rect 157 444 374 899)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text " receive_packet_1 " (rect 367 478 842 967)(font "Dialog" (font_size 8)))
+		(line (pt 152 38)(pt 304 38)(line_width 1))
+		(line (pt 304 38)(pt 304 477)(line_width 1))
+		(line (pt 152 477)(pt 304 477)(line_width 1))
+		(line (pt 152 38)(pt 152 477)(line_width 1))
+		(line (pt 0 85)(pt 152 85)(line_width 3))
+		(line (pt 0 113)(pt 152 113)(line_width 1))
+		(line (pt 0 141)(pt 152 141)(line_width 1))
+		(line (pt 0 169)(pt 152 169)(line_width 1))
+		(line (pt 0 197)(pt 152 197)(line_width 1))
+		(line (pt 0 225)(pt 152 225)(line_width 3))
+		(line (pt 153 62)(pt 153 229)(line_width 1))
+		(line (pt 154 62)(pt 154 229)(line_width 1))
+		(line (pt 456 85)(pt 304 85)(line_width 3))
+		(line (pt 456 113)(pt 304 113)(line_width 1))
+		(line (pt 456 141)(pt 304 141)(line_width 1))
+		(line (pt 456 169)(pt 304 169)(line_width 3))
+		(line (pt 456 197)(pt 304 197)(line_width 3))
+		(line (pt 456 225)(pt 304 225)(line_width 3))
+		(line (pt 456 253)(pt 304 253)(line_width 1))
+		(line (pt 303 62)(pt 303 257)(line_width 1))
+		(line (pt 302 62)(pt 302 257)(line_width 1))
+		(line (pt 0 281)(pt 152 281)(line_width 1))
+		(line (pt 153 258)(pt 153 285)(line_width 1))
+		(line (pt 154 258)(pt 154 285)(line_width 1))
+		(line (pt 0 337)(pt 152 337)(line_width 1))
+		(line (pt 153 314)(pt 153 341)(line_width 1))
+		(line (pt 154 314)(pt 154 341)(line_width 1))
+		(line (pt 456 309)(pt 304 309)(line_width 3))
+		(line (pt 456 337)(pt 304 337)(line_width 1))
+		(line (pt 456 365)(pt 304 365)(line_width 3))
+		(line (pt 303 286)(pt 303 369)(line_width 1))
+		(line (pt 302 286)(pt 302 369)(line_width 1))
+		(line (pt 0 393)(pt 152 393)(line_width 1))
+		(line (pt 153 370)(pt 153 397)(line_width 1))
+		(line (pt 154 370)(pt 154 397)(line_width 1))
+		(line (pt 0 449)(pt 152 449)(line_width 1))
+		(line (pt 153 426)(pt 153 453)(line_width 1))
+		(line (pt 154 426)(pt 154 453)(line_width 1))
+		(line (pt 0 0)(pt 456 0)(line_width 1))
+		(line (pt 456 0)(pt 456 496)(line_width 1))
+		(line (pt 0 496)(pt 456 496)(line_width 1))
+		(line (pt 0 0)(pt 0 496)(line_width 1))
+	)
+)

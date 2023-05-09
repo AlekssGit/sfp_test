@@ -1,0 +1,104 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 2021  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+*/
+(header "symbol" (version "1.1"))
+(symbol
+	(rect 0 0 168 296)
+	(text "pll" (rect 78 -1 85 11)(font "Dialog" (font_size 12)))
+	(text "inst" (rect 8 280 20 292)(font "Arial" ))
+	(port
+		(pt 0 80)
+		(input)
+		(text "rst" (rect 0 0 10 12)(font "Dialog" (font_size 9)))
+		(text "rst" (rect 4 72 22 85)(font "Dialog" (font_size 9)))
+	)
+	(port
+		(pt 0 136)
+		(input)
+		(text "refclk" (rect 0 0 22 12)(font "Dialog" (font_size 9)))
+		(text "refclk" (rect 4 128 40 141)(font "Dialog" (font_size 9)))
+	)
+	(port
+		(pt 168 80)
+		(output)
+		(text "outclk_0" (rect 0 0 33 12)(font "Dialog" (font_size 9)))
+		(text "outclk_0" (rect 120 72 168 85)(font "Dialog" (font_size 9)))
+	)
+	(port
+		(pt 168 136)
+		(output)
+		(text "outclk_1" (rect 0 0 31 12)(font "Dialog" (font_size 9)))
+		(text "outclk_1" (rect 122 128 170 141)(font "Dialog" (font_size 9)))
+	)
+	(port
+		(pt 168 192)
+		(output)
+		(text "outclk_2" (rect 0 0 33 12)(font "Dialog" (font_size 9)))
+		(text "outclk_2" (rect 120 184 168 197)(font "Dialog" (font_size 9)))
+	)
+	(port
+		(pt 168 248)
+		(output)
+		(text "outclk_3" (rect 0 0 33 12)(font "Dialog" (font_size 9)))
+		(text "outclk_3" (rect 120 240 168 253)(font "Dialog" (font_size 9)))
+	)
+	(drawing
+		(text "reset" (rect 28 52 86 118)(font "Dialog" (color 128 0 0)(font_size 10)))
+		(text "reset" (rect 62 80 154 171)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text "refclk" (rect 24 108 84 230)(font "Dialog" (color 128 0 0)(font_size 10)))
+		(text "clk" (rect 62 136 142 283)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text "outclk0" (rect 115 52 272 118)(font "Dialog" (color 128 0 0)(font_size 10)))
+		(text "clk" (rect 98 80 214 171)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text "outclk1" (rect 115 108 272 230)(font "Dialog" (color 128 0 0)(font_size 10)))
+		(text "clk" (rect 98 136 214 283)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text "outclk2" (rect 115 164 272 342)(font "Dialog" (color 128 0 0)(font_size 10)))
+		(text "clk" (rect 98 192 214 395)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text "outclk3" (rect 115 220 272 454)(font "Dialog" (color 128 0 0)(font_size 10)))
+		(text "clk" (rect 98 248 214 507)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text " pll " (rect 158 282 346 575)(font "Dialog" (font_size 8)))
+		(line (pt 57 38)(pt 114 38)(line_width 1))
+		(line (pt 114 38)(pt 114 281)(line_width 1))
+		(line (pt 57 281)(pt 114 281)(line_width 1))
+		(line (pt 57 38)(pt 57 281)(line_width 1))
+		(line (pt 0 85)(pt 57 85)(line_width 1))
+		(line (pt 58 62)(pt 58 89)(line_width 1))
+		(line (pt 59 62)(pt 59 89)(line_width 1))
+		(line (pt 0 141)(pt 57 141)(line_width 1))
+		(line (pt 58 118)(pt 58 145)(line_width 1))
+		(line (pt 59 118)(pt 59 145)(line_width 1))
+		(line (pt 171 85)(pt 114 85)(line_width 1))
+		(line (pt 113 62)(pt 113 89)(line_width 1))
+		(line (pt 112 62)(pt 112 89)(line_width 1))
+		(line (pt 171 141)(pt 114 141)(line_width 1))
+		(line (pt 113 118)(pt 113 145)(line_width 1))
+		(line (pt 112 118)(pt 112 145)(line_width 1))
+		(line (pt 171 197)(pt 114 197)(line_width 1))
+		(line (pt 113 174)(pt 113 201)(line_width 1))
+		(line (pt 112 174)(pt 112 201)(line_width 1))
+		(line (pt 171 253)(pt 114 253)(line_width 1))
+		(line (pt 113 230)(pt 113 257)(line_width 1))
+		(line (pt 112 230)(pt 112 257)(line_width 1))
+		(line (pt 0 0)(pt 171 0)(line_width 1))
+		(line (pt 171 0)(pt 171 300)(line_width 1))
+		(line (pt 0 300)(pt 171 300)(line_width 1))
+		(line (pt 0 0)(pt 0 300)(line_width 1))
+	)
+)
