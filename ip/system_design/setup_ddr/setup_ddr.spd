@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file
+   path="setup_ddr_10/sim/setup_ddr_data_256.sv"
+   type="SYSTEM_VERILOG"
+   library="setup_ddr_10" />
+ <file
+   path="setup_ddr_10/sim/avalon_mm_ddr.sv"
+   type="SYSTEM_VERILOG"
+   library="setup_ddr_10" />
+ <file
+   path="setup_ddr_10/sim/external_ram_256.sv"
+   type="SYSTEM_VERILOG"
+   library="setup_ddr_10" />
+ <file
+   path="sim/setup_ddr.v"
+   type="VERILOG"
+   library="setup_ddr"
+   hasInlineConfiguration="true" />
+ <topLevel name="setup_ddr.setup_ddr" />
+ <deviceFamily name="cyclone10gx" />
+ <device name="10CX220YF780I5G" />
+</simPackage>

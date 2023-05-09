@@ -1,0 +1,18 @@
+# system info receive_packet_0 on 2023.05.09.20:29:05
+system_info:
+name,value
+DEVICE,10CX220YF780I5G
+DEVICE_FAMILY,Cyclone 10 GX
+GENERATION_ID,0
+#
+#
+# Files generated for receive_packet_0 on 2023.05.09.20:29:05
+files:
+filepath,kind,attributes,module,is_top
+sim/receive_packet_0.v,VERILOG,CONTAINS_INLINE_CONFIGURATION,receive_packet_0,true
+receive_packet_10/sim/receive_packet.sv,SYSTEM_VERILOG,,receive_packet_256,false
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module
+receive_packet_0.receive_packet_0,receive_packet_256

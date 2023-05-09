@@ -157,7 +157,8 @@ begin
     end
 end
 
-always_ff @(posedge clk, posedge reset) 
+// always_ff @(posedge clk, posedge reset) 
+always_ff @(posedge avalon_clk, posedge reset) 
 begin
     if(reset)
     begin
@@ -278,7 +279,7 @@ external_ram_256 ddr_cntrl(
 	.q		                    (read_data	                ),      // dataout
 	.address	                (addr   	                ), 		// address
 	.wren	                    (~setup_done	            ),    	// wren
-	.clock 	                    (clk        	            ),	   	// clk
+	.clock 	                    (/*clk*/ avalon_clk         ),	   	// clk
 	.reset	                    (~rst_n			            ),		// reset
     .ready                      (ram_ready		            ),
     .clock_50                   (clk_50			            ),

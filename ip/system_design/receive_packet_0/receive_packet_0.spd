@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file
+   path="receive_packet_10/sim/receive_packet.sv"
+   type="SYSTEM_VERILOG"
+   library="receive_packet_10" />
+ <file
+   path="sim/receive_packet_0.v"
+   type="VERILOG"
+   library="receive_packet_0"
+   hasInlineConfiguration="true" />
+ <topLevel name="receive_packet_0.receive_packet_0" />
+ <deviceFamily name="cyclone10gx" />
+ <device name="10CX220YF780I5G" />
+</simPackage>

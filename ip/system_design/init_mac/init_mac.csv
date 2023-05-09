@@ -1,0 +1,21 @@
+# system info init_mac on 2023.05.09.20:30:09
+system_info:
+name,value
+DEVICE,10CX220YF780I5G
+DEVICE_FAMILY,Cyclone 10 GX
+GENERATION_ID,0
+#
+#
+# Files generated for init_mac on 2023.05.09.20:30:09
+files:
+filepath,kind,attributes,module,is_top
+sim/init_mac.v,VERILOG,CONTAINS_INLINE_CONFIGURATION,init_mac,true
+init_mac_10/sim/mac_init_top.sv,SYSTEM_VERILOG,,mac_init_top,false
+init_mac_10/sim/avalon_mm_tse_init.sv,SYSTEM_VERILOG,,mac_init_top,false
+init_mac_10/sim/initiate_mac.sv,SYSTEM_VERILOG,,mac_init_top,false
+init_mac_10/sim/mac_defines.sv,SYSTEM_VERILOG,,mac_init_top,false
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module
+init_mac.init_mac,mac_init_top
