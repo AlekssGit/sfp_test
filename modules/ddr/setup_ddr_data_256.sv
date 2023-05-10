@@ -86,7 +86,7 @@ logic [9:0]     ram_address;
 // );
 
 logic [15:0]    count_data;
-logic [15:0]     wait_data;
+logic [7:0]     wait_data;
 
 logic [255:0] ddr_data;
 logic [3:0] count_ram_data;
@@ -163,11 +163,11 @@ begin
     begin
         addr = 25'd0;
     end
-    else if (wait_data % 16'd60 == 16'd0 & count_data == 16'd0)
+    else if (wait_data % 8'd60 == 8'd0 & count_data == 16'd0)
     begin
         addr    =   {15'd0, ram_address }; //+ 10'd1};
     end
-    else if(wait_data == 16'd10 & count_ram_data == 4'd8)
+    else if(wait_data == 8'd10 & count_ram_data == 4'd8)
     begin
         addr    =   {9'd0, count_data}; // + 16'd1};
     end
@@ -197,7 +197,7 @@ always_ff @(posedge avalon_clk, posedge reset)
 begin
     if(reset)
     begin
-        wait_data   <=   16'd1   ;
+        wait_data   <=   8'd1   ;
         count_data  <=   16'd0   ;
         setup_done  <=   1'b0    ;
         // ram_address <=   10'd0   ;
@@ -210,9 +210,9 @@ begin
         if(count_data <= 16'd3 & need_setup)
         begin
             setup_done <= 1'b0;
-            if(wait_data % 16'd60 == 16'd0)
+            if(wait_data % 8'd60 == 8'd0)
             begin
-                wait_data <= 16'd1;
+                wait_data <= 8'd1;
 
                 // if(count_data == 16'd0)
                 // begin
@@ -223,7 +223,7 @@ begin
                 // else 
                 if(count_data == 16'd0)
                 begin
-                    wait_data <= 16'd1;
+                    // wait_data <= 8'd1;
                     count_data <= count_data + 16'd1; // ???
                     // ddr_data <= {224'd0, ram_data_read};
                     // data    <=   {224'd0, ram_data_read}; // ???
@@ -271,9 +271,9 @@ begin
             end
             else
             begin
-                wait_data <= wait_data + 16'd1; // ???
+                wait_data <= wait_data + 8'd1; // ???
                 
-                if(wait_data == 16'd10 & count_data > 16'd0 & count_ram_data == 4'd8)
+                if(wait_data == 8'd10 & count_data > 16'd0 & count_ram_data == 4'd8)
                 begin
                     count_ram_data <= 4'd0;
                     // addr    <=   {15'd0, count_data}; // + 16'd1};

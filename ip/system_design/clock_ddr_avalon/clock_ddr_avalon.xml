@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deploy
- date="2023.05.10.12:21:45"
- outputDirectory="C:/Users/alvas/Documents/Work_ASD/Projects/Learning/sfp_test/ip/system_design/clock_ddr_avalon/">
+ date="2023.05.10.12:58:21"
+ outputDirectory="D:/Documents/Projects/Learning/SFP_test/ip/system_design/clock_ddr_avalon/">
  <perimeter>
   <parameter
      name="AUTO_GENERATION_ID"
@@ -77,17 +77,17 @@
   <parameter name="AUTO_IN_CLK_CLOCK_DOMAIN" value="-1" />
   <generatedFiles>
    <file
-       path="C:\Users\alvas\Documents\Work_ASD\Projects\Learning\sfp_test\ip\system_design\clock_ddr_avalon\synth\clock_ddr_avalon.v"
+       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\clock_ddr_avalon\synth\clock_ddr_avalon.v"
        attributes="CONTAINS_INLINE_CONFIGURATION" />
   </generatedFiles>
   <childGeneratedFiles>
    <file
-       path="C:\Users\alvas\Documents\Work_ASD\Projects\Learning\sfp_test\ip\system_design\clock_ddr_avalon\synth\clock_ddr_avalon.v"
+       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\clock_ddr_avalon\synth\clock_ddr_avalon.v"
        attributes="CONTAINS_INLINE_CONFIGURATION" />
   </childGeneratedFiles>
   <sourceFiles>
    <file
-       path="C:/Users/alvas/Documents/Work_ASD/Projects/Learning/sfp_test/ip/system_design/clock_ddr_avalon.ip" />
+       path="D:/Documents/Projects/Learning/SFP_test/ip/system_design/clock_ddr_avalon.ip" />
   </sourceFiles>
   <childSourceFiles/>
   <messages>
