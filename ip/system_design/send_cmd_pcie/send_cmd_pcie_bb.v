@@ -14,7 +14,8 @@ module send_cmd_pcie (
 		input  wire        ddr_setup_done,        //     ddr_setup_done.setup_done
 		input  wire        system_main_reset,     // resets_information.main_reset
 		input  wire        ddr_avalon_rst,        //                   .ddr_avalon_reset
-		input  wire        board_reset            //                   .board_reset
+		input  wire        board_reset,           //                   .board_reset
+		output wire        ddr_setup_cmd          //      ddr_setup_cmd.ddr_setup_cmd
 	);
 endmodule
 

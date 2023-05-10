@@ -67,7 +67,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
   </table>
   <table class="blueBar">
    <tr>
-    <td class="l">2023.05.10.12:58:41</td>
+    <td class="l">2023.05.10.16:15:45</td>
     <td class="r">Datasheet</td>
    </tr>
   </table>
@@ -1652,7 +1652,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        <a href="#module_pcie">pcie</a>
       </td>
       <td class="from">rxm_bar0&#160;&#160;</td>
-      <td class="main" rowspan="13">send_cmd_pcie</td>
+      <td class="main" rowspan="15">send_cmd_pcie</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;avalon_slave</td>
@@ -1673,9 +1673,15 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
      </tr>
      <tr>
-      <td class="neighbor" rowspan="6">
+      <td class="neighbor" rowspan="8">
        <a href="#module_setup_ddr">setup_ddr</a>
       </td>
+      <td class="from">ddr_setup_cmd&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;ddr_setup_cmd</td>
+     </tr>
+     <tr>
       <td class="from">ddr_status_out&#160;&#160;</td>
      </tr>
      <tr>
@@ -1893,7 +1899,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        <a href="#module_ddr3">ddr3</a>
       </td>
       <td class="from">emif_usr_clk&#160;&#160;</td>
-      <td class="main" rowspan="23">setup_ddr</td>
+      <td class="main" rowspan="25">setup_ddr</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;clock_avalon</td>
@@ -1959,10 +1965,20 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      <tr>
       <td></td>
       <td></td>
-      <td class="from">ddr_status_out&#160;&#160;</td>
-      <td class="neighbor" rowspan="6">
+      <td class="from">ddr_setup_cmd&#160;&#160;</td>
+      <td class="neighbor" rowspan="8">
        <a href="#module_send_cmd_pcie">send_cmd_pcie</a>
       </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;ddr_setup_cmd</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">ddr_status_out&#160;&#160;</td>
      </tr>
      <tr>
       <td></td>
@@ -2385,8 +2401,8 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
   </div>
   <table class="blueBar">
    <tr>
-    <td class="l">generation took 0,00 seconds</td>
-    <td class="r">rendering took 0,08 seconds</td>
+    <td class="l">generation took 0,02 seconds</td>
+    <td class="r">rendering took 0,14 seconds</td>
    </tr>
   </table>
  </body>

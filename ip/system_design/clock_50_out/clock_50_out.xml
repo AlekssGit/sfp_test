@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deploy
- date="2023.05.10.12:58:27"
- outputDirectory="D:/Documents/Projects/Learning/SFP_test/ip/system_design/clock_50_out/">
+ date="2023.05.10.16:15:10"
+ outputDirectory="C:/Users/alvas/Documents/Work_ASD/Projects/Learning/sfp_test/ip/system_design/clock_50_out/">
  <perimeter>
   <parameter
      name="AUTO_GENERATION_ID"
@@ -77,17 +77,17 @@
   <parameter name="AUTO_IN_CLK_CLOCK_DOMAIN" value="-1" />
   <generatedFiles>
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\clock_50_out\synth\clock_50_out.v"
+       path="C:\Users\alvas\Documents\Work_ASD\Projects\Learning\sfp_test\ip\system_design\clock_50_out\synth\clock_50_out.v"
        attributes="CONTAINS_INLINE_CONFIGURATION" />
   </generatedFiles>
   <childGeneratedFiles>
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\clock_50_out\synth\clock_50_out.v"
+       path="C:\Users\alvas\Documents\Work_ASD\Projects\Learning\sfp_test\ip\system_design\clock_50_out\synth\clock_50_out.v"
        attributes="CONTAINS_INLINE_CONFIGURATION" />
   </childGeneratedFiles>
   <sourceFiles>
    <file
-       path="D:/Documents/Projects/Learning/SFP_test/ip/system_design/clock_50_out.ip" />
+       path="C:/Users/alvas/Documents/Work_ASD/Projects/Learning/sfp_test/ip/system_design/clock_50_out.ip" />
   </sourceFiles>
   <childSourceFiles/>
   <messages>

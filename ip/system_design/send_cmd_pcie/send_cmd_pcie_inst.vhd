@@ -15,7 +15,8 @@
 			ddr_setup_done        : in  std_logic                     := 'X';             -- setup_done
 			system_main_reset     : in  std_logic                     := 'X';             -- main_reset
 			ddr_avalon_rst        : in  std_logic                     := 'X';             -- ddr_avalon_reset
-			board_reset           : in  std_logic                     := 'X'              -- board_reset
+			board_reset           : in  std_logic                     := 'X';             -- board_reset
+			ddr_setup_cmd         : out std_logic                                         -- ddr_setup_cmd
 		);
 	end component send_cmd_pcie;
 
@@ -36,6 +37,7 @@
 			ddr_setup_done        => CONNECTED_TO_ddr_setup_done,        --     ddr_setup_done.setup_done
 			system_main_reset     => CONNECTED_TO_system_main_reset,     -- resets_information.main_reset
 			ddr_avalon_rst        => CONNECTED_TO_ddr_avalon_rst,        --                   .ddr_avalon_reset
-			board_reset           => CONNECTED_TO_board_reset            --                   .board_reset
+			board_reset           => CONNECTED_TO_board_reset,           --                   .board_reset
+			ddr_setup_cmd         => CONNECTED_TO_ddr_setup_cmd          --      ddr_setup_cmd.ddr_setup_cmd
 		);
 

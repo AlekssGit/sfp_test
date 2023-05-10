@@ -1,6 +1,7 @@
 `define REG_SEND_PACKET     16'h0050
 `define REG_TEST            16'h0010
 `define REG_DDR_STATUS      16'h00C0
+`define REG_DDR_CNTRL       16'h00B0
 
 module avalon_mm_slave 
 (
@@ -23,7 +24,8 @@ module avalon_mm_slave
     input   logic             ddr_setup_done        ,
     input   logic             system_main_reset     ,
     input   logic             ddr_avalon_rst,
-    input   logic             board_reset
+    input   logic             board_reset,
+    output  logic             ddr_setup_cmd
 );
 
 logic [31:0] data_reg_send_packet;
@@ -48,12 +50,17 @@ begin
     if(!rst_n)
     begin
         data_reg_send_packet <= 32'd0;
+        ddr_setup_cmd <= 1'b0;
     end
     else
     begin
         if(avalon_mm_write & avalon_mm_addr == `REG_SEND_PACKET)
         begin
             data_reg_send_packet <= avalon_mm_write_data;
+        end
+        else if (avalon_mm_write & avalon_mm_addr == `REG_DDR_CNTRL) 
+        begin
+            ddr_setup_cmd <= avalon_mm_write_data[0];
         end
     end
 end

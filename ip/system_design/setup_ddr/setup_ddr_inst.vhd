@@ -24,7 +24,8 @@
 			ddr_local_cal_fail       : out std_logic;                                         -- local_cal_fail
 			system_main_reset        : out std_logic;                                         -- main_reset
 			ddr_avalon_rst           : out std_logic;                                         -- ddr_avalon_reset
-			board_reset              : out std_logic                                          -- board_reset
+			board_reset              : out std_logic;                                         -- board_reset
+			ddr_setup_cmd_pci        : in  std_logic                      := 'X'              -- ddr_setup_cmd
 		);
 	end component setup_ddr;
 
@@ -54,6 +55,7 @@
 			ddr_local_cal_fail       => CONNECTED_TO_ddr_local_cal_fail,       --                   .local_cal_fail
 			system_main_reset        => CONNECTED_TO_system_main_reset,        -- resets_information.main_reset
 			ddr_avalon_rst           => CONNECTED_TO_ddr_avalon_rst,           --                   .ddr_avalon_reset
-			board_reset              => CONNECTED_TO_board_reset               --                   .board_reset
+			board_reset              => CONNECTED_TO_board_reset,              --                   .board_reset
+			ddr_setup_cmd_pci        => CONNECTED_TO_ddr_setup_cmd_pci         --      ddr_setup_cmd.ddr_setup_cmd
 		);
 

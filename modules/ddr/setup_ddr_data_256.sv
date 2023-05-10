@@ -31,7 +31,9 @@ module setup_ddr_data_256
     output  logic           ddr_local_cal_fail,
     output  logic           system_main_reset,
     output  logic           ddr_avalon_rst,
-    output  logic           board_reset
+    output  logic           board_reset,
+
+    input   logic           ddr_setup_cmd_pci
 );
 
 assign system_main_reset = reset;
@@ -65,11 +67,18 @@ always_ff @(posedge clk, posedge reset)
 begin
     if(reset)
     begin
-        need_setup <= 1'b1;
+        need_setup <= 1'b0;
     end    
     else
     begin
-        need_setup <= (setup_done) ? 1'b0 : need_setup;
+        if(need_setup == 1'b0 & setup_done == 1'b0 & ddr_setup_cmd_pci)
+        begin
+            need_setup <= 1'b1;
+        end
+        else
+        begin
+            need_setup <= (setup_done) ? 1'b0 : need_setup; 
+        end
     end
 end
 

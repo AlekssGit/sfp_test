@@ -23,6 +23,7 @@
 		.ddr_local_cal_fail       (_connected_to_ddr_local_cal_fail_),       //  output,    width = 1,                   .local_cal_fail
 		.system_main_reset        (_connected_to_system_main_reset_),        //  output,    width = 1, resets_information.main_reset
 		.ddr_avalon_rst           (_connected_to_ddr_avalon_rst_),           //  output,    width = 1,                   .ddr_avalon_reset
-		.board_reset              (_connected_to_board_reset_)               //  output,    width = 1,                   .board_reset
+		.board_reset              (_connected_to_board_reset_),              //  output,    width = 1,                   .board_reset
+		.ddr_setup_cmd_pci        (_connected_to_ddr_setup_cmd_pci_)         //   input,    width = 1,      ddr_setup_cmd.ddr_setup_cmd
 	);
 
