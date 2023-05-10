@@ -212,6 +212,7 @@ add wave -group ddr_setup    -label "wait_data"         /tb_sfp_test/device/plat
 add wave -group ddr_setup    -label "setup_done"        /tb_sfp_test/device/platform_design/setup_ddr/setup_ddr/setup_done
 add wave -group ddr_setup    -label "avalon_clk"        /tb_sfp_test/device/platform_design/setup_ddr/setup_ddr/avalon_clk
 add wave -group ddr_setup    -label "avalon_reset"      /tb_sfp_test/device/platform_design/setup_ddr/setup_ddr/avalon_reset
+add wave -group ddr_setup    -label "test"              /tb_sfp_test/device/platform_design/setup_ddr/setup_ddr/test
 
 
 # i2c expander test

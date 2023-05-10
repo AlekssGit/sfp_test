@@ -1,4 +1,7 @@
 	component setup_ddr is
+		generic (
+			test : boolean := true
+		);
 		port (
 			amm_addr                 : out std_logic_vector(24 downto 0);                     -- address
 			amm_readdata             : in  std_logic_vector(255 downto 0) := (others => 'X'); -- readdata

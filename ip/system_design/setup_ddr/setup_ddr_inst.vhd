@@ -1,4 +1,7 @@
 	component setup_ddr is
+		generic (
+			test : boolean := true
+		);
 		port (
 			amm_addr                 : out std_logic_vector(24 downto 0);                     -- address
 			amm_readdata             : in  std_logic_vector(255 downto 0) := (others => 'X'); -- readdata
@@ -30,6 +33,9 @@
 	end component setup_ddr;
 
 	u0 : component setup_ddr
+		generic map (
+			test => BOOLEAN_VALUE_FOR_test
+		)
 		port map (
 			amm_addr                 => CONNECTED_TO_amm_addr,                 --      avalon_master.address
 			amm_readdata             => CONNECTED_TO_amm_readdata,             --                   .readdata

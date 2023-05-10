@@ -1,4 +1,6 @@
-	setup_ddr u0 (
+	setup_ddr #(
+		.test (BOOLEAN_VALUE_FOR_test)
+	) u0 (
 		.amm_addr                 (_connected_to_amm_addr_),                 //  output,   width = 25,      avalon_master.address
 		.amm_readdata             (_connected_to_amm_readdata_),             //   input,  width = 256,                   .readdata
 		.amm_writedata            (_connected_to_amm_writedata_),            //  output,  width = 256,                   .writedata

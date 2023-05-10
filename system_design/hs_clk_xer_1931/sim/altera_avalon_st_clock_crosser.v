@@ -11,9 +11,9 @@
 // agreement for further details.
 
 
-// $File: //acds/rel/21.3/ip/avalon_st/altera_avalon_st_handshake_clock_crosser/altera_avalon_st_clock_crosser.v $
+// $File: //acds/rel/21.4/ip/avalon_st/altera_avalon_st_handshake_clock_crosser/altera_avalon_st_clock_crosser.v $
 // $Revision: #1 $
-// $Date: 2021/07/29 $
+// $Date: 2021/09/02 $
 // $Author: psgswbuild $
 //------------------------------------------------------------------------------
 

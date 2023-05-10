@@ -15,7 +15,12 @@
     <node>
       <instanceKey xsi:type="xs:string">setup_ddr</instanceKey>
       <instanceData xsi:type="data">
-        <parameters></parameters>
+        <parameters>
+          <parameter>
+            <name>test</name>
+            <value>true</value>
+          </parameter>
+        </parameters>
         <interconnectAssignments></interconnectAssignments>
         <className>setup_ddr</className>
         <version>1.0</version>
