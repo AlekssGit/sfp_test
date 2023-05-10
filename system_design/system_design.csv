@@ -1,4 +1,4 @@
-# system info system_design on 2023.05.10.16:15:23
+# system info system_design on 2023.05.10.18:56:38
 system_info:
 name,value
 DEVICE,10CX220YF780I5G
@@ -6,7 +6,7 @@ DEVICE_FAMILY,Cyclone 10 GX
 GENERATION_ID,0
 #
 #
-# Files generated for system_design on 2023.05.10.16:15:23
+# Files generated for system_design on 2023.05.10.18:56:38
 files:
 filepath,kind,attributes,module,is_top
 sim/system_design.v,VERILOG,CONTAINS_INLINE_CONFIGURATION,system_design,true

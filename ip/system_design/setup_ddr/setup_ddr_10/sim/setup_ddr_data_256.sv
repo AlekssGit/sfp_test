@@ -63,7 +63,7 @@ logic [24:0]     addr ;
 
 logic need_setup;
 
-always_ff @(posedge clk, posedge reset) 
+always_ff @(posedge avalon_clk, posedge reset) 
 begin
     if(reset)
     begin
@@ -149,7 +149,11 @@ end
 
 always_comb
 begin
-    if(count_data == 16'd1 ) //| count_data == 16'd2)
+    if(reset)
+    begin
+        data = 256'd0;
+    end
+    else if(count_data == 16'd1 ) //| count_data == 16'd2)
     begin
         data = {224'd0, ram_data_read};
     end
@@ -178,13 +182,17 @@ begin
     end
     else if(wait_data == 8'd10 & count_ram_data == 4'd8)
     begin
-        addr    =   {9'd0, count_data}; // + 16'd1};
+        addr    =   {9'd0, count_data + 16'd1};
     end
 end
 
 always_comb
 begin
-    if(count_data == 16'd0)
+    if(reset)
+    begin
+        ram_address = 10'd0;
+    end
+    else if(count_data == 16'd0)
     begin
         ram_address = 10'd1;
     end
