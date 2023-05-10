@@ -1,4 +1,4 @@
-# system info ddr3 on 2023.05.09.22:33:36
+# system info ddr3 on 2023.05.10.12:19:35
 system_info:
 name,value
 DEVICE,10CX220YF780I5G
@@ -6,7 +6,7 @@ DEVICE_FAMILY,Cyclone 10 GX
 GENERATION_ID,0
 #
 #
-# Files generated for ddr3 on 2023.05.09.22:33:36
+# Files generated for ddr3 on 2023.05.10.12:19:35
 files:
 filepath,kind,attributes,module,is_top
 sim/ddr3.v,VERILOG,CONTAINS_INLINE_CONFIGURATION,ddr3,true
