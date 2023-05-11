@@ -18,7 +18,7 @@
         <parameters>
           <parameter>
             <name>test</name>
-            <value>false</value>
+            <value>true</value>
           </parameter>
         </parameters>
         <interconnectAssignments></interconnectAssignments>

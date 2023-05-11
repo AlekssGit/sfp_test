@@ -149,50 +149,54 @@ begin
     endcase        
 end
 
-always_comb
+always_ff @(posedge avalon_clk, posedge reset)
 begin
     if(reset)
     begin
-        data = 256'd0;
+        data <= 256'd0;
     end
     else if(count_data == 16'd0 ) //| count_data == 16'd2)
     begin
-        data = {224'd0, ram_data_read};
+        data <= {224'd0, ram_data_read};
     end
     else
     begin
         if(count_ram_data == 4'd8 )
         begin
-            data = ddr_data;  
+            data <= ddr_data;  
         end      
         else
         begin
-            data = data;
+            data <= data;
         end
     end
 end
 
-always_comb
+always_ff @(posedge avalon_clk, posedge reset)
 begin
     if(reset)
     begin
-        addr = 25'd0;
+        addr <= 25'd0;
     end
     else if (wait_data % 8'd60 == 8'd0 & count_data == 16'd0)
     begin
-        addr    =   {15'd0, ram_address }; //+ 10'd1};
+        addr    <=   {15'd0, ram_address }; //+ 10'd1};
     end
     else if(wait_data == 8'd10 & count_ram_data == 4'd12)
     begin
-        addr    =   {9'd0, count_data + 16'd1};
+        addr    <=   {9'd0, count_data + 16'd1};
     end
 end
 
-always_comb
+always_ff @(posedge avalon_clk, posedge reset)
 begin
-    if(count_data == 16'd0)
+    if(reset)
     begin
-        ram_address = 10'd1;
+        ram_address <= 10'd0;
+    end
+    else if(count_data == 16'd0)
+    begin
+        ram_address <= 10'd1;
     end
     else
     begin
