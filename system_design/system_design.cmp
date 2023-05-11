@@ -1,4 +1,7 @@
 	component system_design is
+		generic (
+			setup_ddr_test : boolean := false
+		);
 		port (
 			clock_50_clk                            : out   std_logic;                                        -- clk
 			ddr_avalon_clk                          : out   std_logic;                                        -- clk

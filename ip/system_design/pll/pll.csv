@@ -1,4 +1,4 @@
-# system info pll on 2023.05.11.18:50:25
+# system info pll on 2023.05.11.23:11:52
 system_info:
 name,value
 DEVICE,10CX220YF780I5G
@@ -6,7 +6,7 @@ DEVICE_FAMILY,Cyclone 10 GX
 GENERATION_ID,0
 #
 #
-# Files generated for pll on 2023.05.11.18:50:25
+# Files generated for pll on 2023.05.11.23:11:52
 files:
 filepath,kind,attributes,module,is_top
 sim/pll.v,VERILOG,CONTAINS_INLINE_CONFIGURATION,pll,true

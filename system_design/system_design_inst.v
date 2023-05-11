@@ -1,4 +1,6 @@
-	system_design u0 (
+	system_design #(
+		.setup_ddr_test (BOOLEAN_VALUE_FOR_setup_ddr_test)
+	) u0 (
 		.clock_50_clk                            (_connected_to_clock_50_clk_),                            //  output,   width = 1,                    clock_50.clk
 		.ddr_avalon_clk                          (_connected_to_ddr_avalon_clk_),                          //  output,   width = 1,                  ddr_avalon.clk
 		.ddr3_global_reset_n_reset_n             (_connected_to_ddr3_global_reset_n_reset_n_),             //   input,   width = 1,         ddr3_global_reset_n.reset_n

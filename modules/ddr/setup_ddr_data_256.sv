@@ -1,37 +1,37 @@
 module setup_ddr_data_256
 (
-    input   logic clk,      // clk_125_tx_rx
-    input   logic reset,    // from reset module
+    input   logic           clk                         ,    // clk_125_tx_rx
+    input   logic           reset                       ,    // from reset module
 
-    output  logic setup_done,
+    output  logic           setup_done                  ,
 
     // interface signals
-    output  logic [24:0]    amm_addr           , 
-    input   logic [255:0]   amm_readdata       , 
-    output  logic [255:0]   amm_writedata      , 
-    output  logic           amm_read           , 
-    output  logic           amm_write          , 
-    output  logic [31:0]    amm_byteenable     , 
-    output  logic [6:0]     amm_burstcount     , 
-    input   logic           amm_readdatavalid  , 
-    input   logic           amm_ready          , 
+    output  logic [24:0]    amm_addr                    , 
+    input   logic [255:0]   amm_readdata                , 
+    output  logic [255:0]   amm_writedata               , 
+    output  logic           amm_read                    , 
+    output  logic           amm_write                   , 
+    output  logic [31:0]    amm_byteenable              , 
+    output  logic [6:0]     amm_burstcount              , 
+    input   logic           amm_readdatavalid           , 
+    input   logic           amm_ready                   , 
 
-    input   logic           avalon_clk      ,
-    input   logic           avalon_reset    ,
-    input   logic           local_cal_success_avalon,
-    input   logic           local_cal_fail_avalon,
+    input   logic           avalon_clk                  ,
+    input   logic           avalon_reset                ,
+    input   logic           local_cal_success_avalon    ,
+    input   logic           local_cal_fail_avalon       ,
     
-    output  logic           reset_local_cal_success,
+    output  logic           reset_local_cal_success     ,
 
-    input   logic           rst_n,
-    input   logic           ram_ready,
-    input   logic           clk_50,
+    input   logic           rst_n                       ,
+    input   logic           ram_ready                   ,
+    input   logic           clk_50                      ,
 
-    output  logic           ddr_local_cal_success,
-    output  logic           ddr_local_cal_fail,
-    output  logic           system_main_reset,
-    output  logic           ddr_avalon_rst,
-    output  logic           board_reset,
+    output  logic           ddr_local_cal_success       ,
+    output  logic           ddr_local_cal_fail          ,
+    output  logic           system_main_reset           ,
+    output  logic           ddr_avalon_rst              ,
+    output  logic           board_reset                 ,
 
     input   logic           ddr_setup_cmd_pci
 );
@@ -57,8 +57,6 @@ begin
         ddr_local_cal_fail      <= local_cal_fail_avalon;
     end
 end
-// assign ddr_local_cal_success   = local_cal_success_avalon;
-// assign ddr_local_cal_fail      = local_cal_fail_avalon;
 
 logic [255:0]    data ;
 logic [24:0]     addr ;
@@ -86,15 +84,6 @@ end
 
 logic [31:0]    ram_data_read;
 logic [9:0]     ram_address;
-
-// ram_packets	ram_inst 
-// (
-// 	.data		(32'd0	        ),    	//    data.datain
-// 	.q			(ram_data_read	),      //       q.dataout
-// 	.address	(ram_address	), 		// address.address
-// 	.wren		(1'b0		    ),    	//    wren.wren
-// 	.clock 		(clk        	)   	//   clock.clk
-// );
 
 logic [15:0]    count_data;
 logic [7:0]     wait_data;
@@ -149,12 +138,9 @@ begin
         4'd4:       ddr_data <= {96'd0   , ram_data_read , ddr_data[127:0]};
         4'd5:       ddr_data <= {64'd0   , ram_data_read , ddr_data[159:0]};
         4'd6:       ddr_data <= {32'd0   , ram_data_read , ddr_data[191:0]};
-        4'd7:       ddr_data <= {ram_data_read, ddr_data[223:0]};      
-        // 4'd8:       ddr_data = ddr_data;      
-        // default:        ddr_data = 256'd0;     
+        4'd7:       ddr_data <= {ram_data_read, ddr_data[223:0]};          
         endcase 
     end
-       
 end
 
 always_ff @(posedge avalon_clk, posedge reset)
@@ -163,7 +149,7 @@ begin
     begin
         data <= 256'd0;
     end
-    else if(count_data == 16'd0 ) //| count_data == 16'd2)
+    else if(count_data == 16'd0 )
     begin
         data <= {224'd0, ram_data_read};
     end
@@ -192,7 +178,7 @@ begin
     end
     else if(wait_data == 8'd10 & count_ram_data == 4'd12)
     begin
-        addr    <=   {9'd0, count_data + 16'd1};
+        addr    <=   {9'd0, count_data }; //+ 16'd1};
     end
 end
 
@@ -242,9 +228,9 @@ begin
                 begin
                     count_data <= count_data + 16'd1; // ???
                 end
-                else //if (count_data == 16'd2 | count_data == 16'd3)
+                else
                 begin
-                    if (count_ram_data == 4'd0) //(count_data == 10'd1)
+                    if (count_ram_data == 4'd0)
                     begin
                         count_data <= count_data + 16'd1;
                     end
@@ -310,8 +296,8 @@ external_ram_256 ddr_cntrl(
     .byte_enable                (byte_enable                ),
     .action_done                (action_done                ),
 
-    .avalon_clk                 (avalon_clk                 ),  // (ddr_avalon_clk             ),
-    .avalon_reset               (avalon_reset               ),  // (ddr_avalon_rst             ),
+    .avalon_clk                 (avalon_clk                 ),
+    .avalon_reset               (avalon_reset               ),
     .local_cal_success_avalon   (local_cal_success_avalon  | test ),
     .local_cal_success          (local_cal_success          )
 );

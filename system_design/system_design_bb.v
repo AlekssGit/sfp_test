@@ -1,4 +1,6 @@
-module system_design (
+module system_design #(
+		parameter setup_ddr_test = 0
+	) (
 		output wire        clock_50_clk,                            //                    clock_50.clk
 		output wire        ddr_avalon_clk,                          //                  ddr_avalon.clk
 		input  wire        ddr3_global_reset_n_reset_n,             //         ddr3_global_reset_n.reset_n

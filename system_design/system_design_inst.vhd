@@ -1,4 +1,7 @@
 	component system_design is
+		generic (
+			setup_ddr_test : boolean := false
+		);
 		port (
 			clock_50_clk                            : out   std_logic;                                        -- clk
 			ddr_avalon_clk                          : out   std_logic;                                        -- clk
@@ -116,6 +119,9 @@
 	end component system_design;
 
 	u0 : component system_design
+		generic map (
+			setup_ddr_test => BOOLEAN_VALUE_FOR_setup_ddr_test
+		)
 		port map (
 			clock_50_clk                            => CONNECTED_TO_clock_50_clk,                            --                    clock_50.clk
 			ddr_avalon_clk                          => CONNECTED_TO_ddr_avalon_clk,                          --                  ddr_avalon.clk

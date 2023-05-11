@@ -199,6 +199,8 @@ elab_debug
 # add wave -group fifo_status    -label "valid"       /tb_sfp_test/device/platform_design/receive_packet_1_fifo_status_valid
 # add wave -group fifo_status    -label "channel"     /tb_sfp_test/device/platform_design/receive_packet_1_fifo_status_channel
 
+add wave /tb_sfp_test/device/platform_design/setup_ddr_test
+
 add wave -group ddr_setup    -label "clk_125"           /tb_sfp_test/device/platform_design/setup_ddr/setup_ddr/clk
 add wave -group ddr_setup    -label "reset"             /tb_sfp_test/device/platform_design/setup_ddr/setup_ddr/reset
 add wave -group ddr_setup    -label "address"           /tb_sfp_test/device/platform_design/setup_ddr/setup_ddr/addr

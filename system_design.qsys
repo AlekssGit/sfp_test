@@ -12,7 +12,7 @@ the sole purpose of programming logic devices manufactured by
 Intel and sold by Intel or its authorized distributors.  Please
 refer to the applicable agreement for further details, at
 https://fpgasoftware.intel.com/eula.-->
-<ipxact:design xmlns:altera="http://www.altera.com/XMLSchema/IPXact2014/extensions" xmlns:ipxact="http://www.accellera.org/XMLSchema/IPXACT/1685-2014">
+<ipxact:design xmlns:ipxact="http://www.accellera.org/XMLSchema/IPXACT/1685-2014" xmlns:altera="http://www.altera.com/XMLSchema/IPXact2014/extensions">
   <ipxact:vendor>Altera Corporation</ipxact:vendor>
   <ipxact:library>system_design</ipxact:library>
   <ipxact:name>system_design</ipxact:name>
@@ -70,7 +70,7 @@ https://fpgasoftware.intel.com/eula.-->
       }
       datum sopceditor_expanded
       {
-         value = "0";
+         value = "1";
          type = "boolean";
       }
    }
@@ -20410,7 +20410,7 @@ https://fpgasoftware.intel.com/eula.-->
                         &lt;/entry&gt;
                         &lt;entry&gt;
                             &lt;key&gt;maximumPendingReadTransactions&lt;/key&gt;
-                            &lt;value&gt;0&lt;/value&gt;
+                            &lt;value&gt;64&lt;/value&gt;
                         &lt;/entry&gt;
                         &lt;entry&gt;
                             &lt;key&gt;maximumPendingWriteTransactions&lt;/key&gt;
@@ -21120,7 +21120,7 @@ https://fpgasoftware.intel.com/eula.-->
                     &lt;/entry&gt;
                     &lt;entry&gt;
                         &lt;key&gt;maximumPendingReadTransactions&lt;/key&gt;
-                        &lt;value&gt;0&lt;/value&gt;
+                        &lt;value&gt;64&lt;/value&gt;
                     &lt;/entry&gt;
                     &lt;entry&gt;
                         &lt;key&gt;maximumPendingWriteTransactions&lt;/key&gt;
@@ -32257,7 +32257,7 @@ https://fpgasoftware.intel.com/eula.-->
       </altera:module>
     </altera:modules>
     <altera:connections>
-      <altera:connection altera:kind="avalon" altera:version="21.3" altera:start="init_mac.avalon_master" altera:end="tse.control_port">
+      <altera:connection altera:kind="avalon" altera:version="21.4" altera:start="init_mac.avalon_master" altera:end="tse.control_port">
         <altera:connection_parameter altera:parameter_name="arbitrationPriority" altera:parameter_value="1"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="baseAddress" altera:parameter_value="0x0000"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="defaultConnection" altera:parameter_value="false"></altera:connection_parameter>
@@ -32276,7 +32276,7 @@ https://fpgasoftware.intel.com/eula.-->
         <altera:connection_parameter altera:parameter_name="qsys_mm.syncResets" altera:parameter_value="FALSE"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="qsys_mm.widthAdapterImplementation" altera:parameter_value="GENERIC_CONVERTER"></altera:connection_parameter>
       </altera:connection>
-      <altera:connection altera:kind="avalon" altera:version="21.3" altera:start="setup_ddr.avalon_master" altera:end="ddr3.ctrl_amm_0">
+      <altera:connection altera:kind="avalon" altera:version="21.4" altera:start="setup_ddr.avalon_master" altera:end="ddr3.ctrl_amm_0">
         <altera:connection_parameter altera:parameter_name="arbitrationPriority" altera:parameter_value="1"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="baseAddress" altera:parameter_value="0x0000"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="defaultConnection" altera:parameter_value="false"></altera:connection_parameter>
@@ -32295,7 +32295,7 @@ https://fpgasoftware.intel.com/eula.-->
         <altera:connection_parameter altera:parameter_name="qsys_mm.syncResets" altera:parameter_value="FALSE"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="qsys_mm.widthAdapterImplementation" altera:parameter_value="GENERIC_CONVERTER"></altera:connection_parameter>
       </altera:connection>
-      <altera:connection altera:kind="avalon" altera:version="21.3" altera:start="receive_packet_1.avalon_master" altera:end="mem_rcv_1.s1">
+      <altera:connection altera:kind="avalon" altera:version="21.4" altera:start="receive_packet_1.avalon_master" altera:end="mem_rcv_1.s1">
         <altera:connection_parameter altera:parameter_name="arbitrationPriority" altera:parameter_value="1"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="baseAddress" altera:parameter_value="0x0000"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="defaultConnection" altera:parameter_value="false"></altera:connection_parameter>
@@ -32314,7 +32314,7 @@ https://fpgasoftware.intel.com/eula.-->
         <altera:connection_parameter altera:parameter_name="qsys_mm.syncResets" altera:parameter_value="FALSE"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="qsys_mm.widthAdapterImplementation" altera:parameter_value="GENERIC_CONVERTER"></altera:connection_parameter>
       </altera:connection>
-      <altera:connection altera:kind="avalon" altera:version="21.3" altera:start="send_packet_2.avalon_master" altera:end="mem_4.s1">
+      <altera:connection altera:kind="avalon" altera:version="21.4" altera:start="send_packet_2.avalon_master" altera:end="mem_4.s1">
         <altera:connection_parameter altera:parameter_name="arbitrationPriority" altera:parameter_value="1"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="baseAddress" altera:parameter_value="0x0000"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="defaultConnection" altera:parameter_value="false"></altera:connection_parameter>
@@ -32333,7 +32333,7 @@ https://fpgasoftware.intel.com/eula.-->
         <altera:connection_parameter altera:parameter_name="qsys_mm.syncResets" altera:parameter_value="FALSE"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="qsys_mm.widthAdapterImplementation" altera:parameter_value="GENERIC_CONVERTER"></altera:connection_parameter>
       </altera:connection>
-      <altera:connection altera:kind="avalon" altera:version="21.3" altera:start="send_packet_1.avalon_master" altera:end="mem_5.s1">
+      <altera:connection altera:kind="avalon" altera:version="21.4" altera:start="send_packet_1.avalon_master" altera:end="mem_5.s1">
         <altera:connection_parameter altera:parameter_name="arbitrationPriority" altera:parameter_value="1"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="baseAddress" altera:parameter_value="0x0000"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="defaultConnection" altera:parameter_value="false"></altera:connection_parameter>
@@ -32352,7 +32352,7 @@ https://fpgasoftware.intel.com/eula.-->
         <altera:connection_parameter altera:parameter_name="qsys_mm.syncResets" altera:parameter_value="FALSE"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="qsys_mm.widthAdapterImplementation" altera:parameter_value="GENERIC_CONVERTER"></altera:connection_parameter>
       </altera:connection>
-      <altera:connection altera:kind="avalon" altera:version="21.3" altera:start="receive_packet_2.avalon_master" altera:end="mem_4.s2">
+      <altera:connection altera:kind="avalon" altera:version="21.4" altera:start="receive_packet_2.avalon_master" altera:end="mem_4.s2">
         <altera:connection_parameter altera:parameter_name="arbitrationPriority" altera:parameter_value="1"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="baseAddress" altera:parameter_value="0x0000"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="defaultConnection" altera:parameter_value="false"></altera:connection_parameter>
@@ -32371,7 +32371,7 @@ https://fpgasoftware.intel.com/eula.-->
         <altera:connection_parameter altera:parameter_name="qsys_mm.syncResets" altera:parameter_value="FALSE"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="qsys_mm.widthAdapterImplementation" altera:parameter_value="GENERIC_CONVERTER"></altera:connection_parameter>
       </altera:connection>
-      <altera:connection altera:kind="avalon" altera:version="21.3" altera:start="pcie.rxm_bar0" altera:end="send_cmd_pcie.avalon_slave">
+      <altera:connection altera:kind="avalon" altera:version="21.4" altera:start="pcie.rxm_bar0" altera:end="send_cmd_pcie.avalon_slave">
         <altera:connection_parameter altera:parameter_name="arbitrationPriority" altera:parameter_value="1"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="baseAddress" altera:parameter_value="0x0000"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="defaultConnection" altera:parameter_value="false"></altera:connection_parameter>
@@ -32390,7 +32390,7 @@ https://fpgasoftware.intel.com/eula.-->
         <altera:connection_parameter altera:parameter_name="qsys_mm.syncResets" altera:parameter_value="FALSE"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="qsys_mm.widthAdapterImplementation" altera:parameter_value="GENERIC_CONVERTER"></altera:connection_parameter>
       </altera:connection>
-      <altera:connection altera:kind="avalon" altera:version="21.3" altera:start="pcie.rxm_bar2" altera:end="ddr3.ctrl_amm_0">
+      <altera:connection altera:kind="avalon" altera:version="21.4" altera:start="pcie.rxm_bar2" altera:end="ddr3.ctrl_amm_0">
         <altera:connection_parameter altera:parameter_name="arbitrationPriority" altera:parameter_value="1"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="baseAddress" altera:parameter_value="0x0000"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="defaultConnection" altera:parameter_value="false"></altera:connection_parameter>
@@ -32409,7 +32409,7 @@ https://fpgasoftware.intel.com/eula.-->
         <altera:connection_parameter altera:parameter_name="qsys_mm.syncResets" altera:parameter_value="FALSE"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="qsys_mm.widthAdapterImplementation" altera:parameter_value="GENERIC_CONVERTER"></altera:connection_parameter>
       </altera:connection>
-      <altera:connection altera:kind="avalon_streaming" altera:version="21.3" altera:start="send_packet_1.avalon_streaming_source" altera:end="tse.transmit_0">
+      <altera:connection altera:kind="avalon_streaming" altera:version="21.4" altera:start="send_packet_1.avalon_streaming_source" altera:end="tse.transmit_0">
         <altera:connection_parameter altera:parameter_name="qsys_mm.burstAdapterImplementation" altera:parameter_value="GENERIC_CONVERTER"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="qsys_mm.clockCrossingAdapter" altera:parameter_value="HANDSHAKE"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="qsys_mm.enableAllPipelines" altera:parameter_value="FALSE"></altera:connection_parameter>
@@ -32424,7 +32424,7 @@ https://fpgasoftware.intel.com/eula.-->
         <altera:connection_parameter altera:parameter_name="qsys_mm.syncResets" altera:parameter_value="FALSE"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="qsys_mm.widthAdapterImplementation" altera:parameter_value="GENERIC_CONVERTER"></altera:connection_parameter>
       </altera:connection>
-      <altera:connection altera:kind="avalon_streaming" altera:version="21.3" altera:start="send_packet_2.avalon_streaming_source" altera:end="tse.transmit_1">
+      <altera:connection altera:kind="avalon_streaming" altera:version="21.4" altera:start="send_packet_2.avalon_streaming_source" altera:end="tse.transmit_1">
         <altera:connection_parameter altera:parameter_name="qsys_mm.burstAdapterImplementation" altera:parameter_value="GENERIC_CONVERTER"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="qsys_mm.clockCrossingAdapter" altera:parameter_value="HANDSHAKE"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="qsys_mm.enableAllPipelines" altera:parameter_value="FALSE"></altera:connection_parameter>
@@ -32439,7 +32439,7 @@ https://fpgasoftware.intel.com/eula.-->
         <altera:connection_parameter altera:parameter_name="qsys_mm.syncResets" altera:parameter_value="FALSE"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="qsys_mm.widthAdapterImplementation" altera:parameter_value="GENERIC_CONVERTER"></altera:connection_parameter>
       </altera:connection>
-      <altera:connection altera:kind="avalon_streaming" altera:version="21.3" altera:start="receive_packet_1.fifo_status" altera:end="tse.receive_fifo_status">
+      <altera:connection altera:kind="avalon_streaming" altera:version="21.4" altera:start="receive_packet_1.fifo_status" altera:end="tse.receive_fifo_status">
         <altera:connection_parameter altera:parameter_name="qsys_mm.burstAdapterImplementation" altera:parameter_value="GENERIC_CONVERTER"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="qsys_mm.clockCrossingAdapter" altera:parameter_value="HANDSHAKE"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="qsys_mm.enableAllPipelines" altera:parameter_value="FALSE"></altera:connection_parameter>
@@ -32454,7 +32454,7 @@ https://fpgasoftware.intel.com/eula.-->
         <altera:connection_parameter altera:parameter_name="qsys_mm.syncResets" altera:parameter_value="FALSE"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="qsys_mm.widthAdapterImplementation" altera:parameter_value="GENERIC_CONVERTER"></altera:connection_parameter>
       </altera:connection>
-      <altera:connection altera:kind="avalon_streaming" altera:version="21.3" altera:start="tse.receive_0" altera:end="receive_packet_1.avalon_streaming_sink">
+      <altera:connection altera:kind="avalon_streaming" altera:version="21.4" altera:start="tse.receive_0" altera:end="receive_packet_1.avalon_streaming_sink">
         <altera:connection_parameter altera:parameter_name="qsys_mm.burstAdapterImplementation" altera:parameter_value="GENERIC_CONVERTER"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="qsys_mm.clockCrossingAdapter" altera:parameter_value="HANDSHAKE"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="qsys_mm.enableAllPipelines" altera:parameter_value="FALSE"></altera:connection_parameter>
@@ -32469,7 +32469,7 @@ https://fpgasoftware.intel.com/eula.-->
         <altera:connection_parameter altera:parameter_name="qsys_mm.syncResets" altera:parameter_value="FALSE"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="qsys_mm.widthAdapterImplementation" altera:parameter_value="GENERIC_CONVERTER"></altera:connection_parameter>
       </altera:connection>
-      <altera:connection altera:kind="avalon_streaming" altera:version="21.3" altera:start="tse.receive_1" altera:end="receive_packet_2.avalon_streaming_sink">
+      <altera:connection altera:kind="avalon_streaming" altera:version="21.4" altera:start="tse.receive_1" altera:end="receive_packet_2.avalon_streaming_sink">
         <altera:connection_parameter altera:parameter_name="qsys_mm.burstAdapterImplementation" altera:parameter_value="GENERIC_CONVERTER"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="qsys_mm.clockCrossingAdapter" altera:parameter_value="HANDSHAKE"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="qsys_mm.enableAllPipelines" altera:parameter_value="FALSE"></altera:connection_parameter>
@@ -32484,85 +32484,89 @@ https://fpgasoftware.intel.com/eula.-->
         <altera:connection_parameter altera:parameter_name="qsys_mm.syncResets" altera:parameter_value="FALSE"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="qsys_mm.widthAdapterImplementation" altera:parameter_value="GENERIC_CONVERTER"></altera:connection_parameter>
       </altera:connection>
-      <altera:connection altera:kind="clock" altera:version="21.3" altera:start="pcie.coreclkout_hip" altera:end="send_cmd_pcie.clock"></altera:connection>
-      <altera:connection altera:kind="clock" altera:version="21.3" altera:start="ddr3.emif_usr_clk" altera:end="setup_ddr.clock_avalon"></altera:connection>
-      <altera:connection altera:kind="clock" altera:version="21.3" altera:start="ddr3.emif_usr_clk" altera:end="clock_ddr_avalon.in_clk"></altera:connection>
-      <altera:connection altera:kind="clock" altera:version="21.3" altera:start="tse.mac_rx_clock_connection_0" altera:end="mem_rcv_1.clk1"></altera:connection>
-      <altera:connection altera:kind="clock" altera:version="21.3" altera:start="tse.mac_rx_clock_connection_0" altera:end="receive_packet_1.clock"></altera:connection>
-      <altera:connection altera:kind="clock" altera:version="21.3" altera:start="tse.mac_rx_clock_connection_1" altera:end="mem_rcv_2.clk1"></altera:connection>
-      <altera:connection altera:kind="clock" altera:version="21.3" altera:start="tse.mac_rx_clock_connection_1" altera:end="mem_4.clk2"></altera:connection>
-      <altera:connection altera:kind="clock" altera:version="21.3" altera:start="tse.mac_rx_clock_connection_1" altera:end="receive_packet_2.clock"></altera:connection>
-      <altera:connection altera:kind="clock" altera:version="21.3" altera:start="tse.mac_tx_clock_connection_0" altera:end="mem_5.clk1"></altera:connection>
-      <altera:connection altera:kind="clock" altera:version="21.3" altera:start="tse.mac_tx_clock_connection_0" altera:end="send_packet_1.clock"></altera:connection>
-      <altera:connection altera:kind="clock" altera:version="21.3" altera:start="tse.mac_tx_clock_connection_1" altera:end="mem_4.clk1"></altera:connection>
-      <altera:connection altera:kind="clock" altera:version="21.3" altera:start="tse.mac_tx_clock_connection_1" altera:end="send_packet_2.clock"></altera:connection>
-      <altera:connection altera:kind="clock" altera:version="21.3" altera:start="pll.outclk0" altera:end="setup_ddr.clock_125_tx_rx"></altera:connection>
-      <altera:connection altera:kind="clock" altera:version="21.3" altera:start="pll.outclk0" altera:end="receive_packet_1.fifo_status_clk"></altera:connection>
-      <altera:connection altera:kind="clock" altera:version="21.3" altera:start="pll.outclk0" altera:end="tse.receive_fifo_status_clock_connection"></altera:connection>
-      <altera:connection altera:kind="clock" altera:version="21.3" altera:start="pll.outclk1" altera:end="init_mac.clock"></altera:connection>
-      <altera:connection altera:kind="clock" altera:version="21.3" altera:start="pll.outclk1" altera:end="setup_ddr.clock_50"></altera:connection>
-      <altera:connection altera:kind="clock" altera:version="21.3" altera:start="pll.outclk1" altera:end="tse.control_port_clock_connection"></altera:connection>
-      <altera:connection altera:kind="clock" altera:version="21.3" altera:start="pll.outclk1" altera:end="clock_50_out.in_clk"></altera:connection>
-      <altera:connection altera:kind="clock" altera:version="21.3" altera:start="pll.outclk2" altera:end="receive_packet_2.fifo_status_clk"></altera:connection>
-      <altera:connection altera:kind="conduit" altera:version="21.3" altera:start="setup_ddr.ddr_setup_cmd" altera:end="send_cmd_pcie.ddr_setup_cmd">
+      <altera:connection altera:kind="clock" altera:version="21.4" altera:start="pcie.coreclkout_hip" altera:end="send_cmd_pcie.clock"></altera:connection>
+      <altera:connection altera:kind="clock" altera:version="21.4" altera:start="ddr3.emif_usr_clk" altera:end="setup_ddr.clock_avalon"></altera:connection>
+      <altera:connection altera:kind="clock" altera:version="21.4" altera:start="ddr3.emif_usr_clk" altera:end="clock_ddr_avalon.in_clk"></altera:connection>
+      <altera:connection altera:kind="clock" altera:version="21.4" altera:start="tse.mac_rx_clock_connection_0" altera:end="mem_rcv_1.clk1"></altera:connection>
+      <altera:connection altera:kind="clock" altera:version="21.4" altera:start="tse.mac_rx_clock_connection_0" altera:end="receive_packet_1.clock"></altera:connection>
+      <altera:connection altera:kind="clock" altera:version="21.4" altera:start="tse.mac_rx_clock_connection_1" altera:end="mem_rcv_2.clk1"></altera:connection>
+      <altera:connection altera:kind="clock" altera:version="21.4" altera:start="tse.mac_rx_clock_connection_1" altera:end="mem_4.clk2"></altera:connection>
+      <altera:connection altera:kind="clock" altera:version="21.4" altera:start="tse.mac_rx_clock_connection_1" altera:end="receive_packet_2.clock"></altera:connection>
+      <altera:connection altera:kind="clock" altera:version="21.4" altera:start="tse.mac_tx_clock_connection_0" altera:end="mem_5.clk1"></altera:connection>
+      <altera:connection altera:kind="clock" altera:version="21.4" altera:start="tse.mac_tx_clock_connection_0" altera:end="send_packet_1.clock"></altera:connection>
+      <altera:connection altera:kind="clock" altera:version="21.4" altera:start="tse.mac_tx_clock_connection_1" altera:end="mem_4.clk1"></altera:connection>
+      <altera:connection altera:kind="clock" altera:version="21.4" altera:start="tse.mac_tx_clock_connection_1" altera:end="send_packet_2.clock"></altera:connection>
+      <altera:connection altera:kind="clock" altera:version="21.4" altera:start="pll.outclk0" altera:end="setup_ddr.clock_125_tx_rx"></altera:connection>
+      <altera:connection altera:kind="clock" altera:version="21.4" altera:start="pll.outclk0" altera:end="receive_packet_1.fifo_status_clk"></altera:connection>
+      <altera:connection altera:kind="clock" altera:version="21.4" altera:start="pll.outclk0" altera:end="tse.receive_fifo_status_clock_connection"></altera:connection>
+      <altera:connection altera:kind="clock" altera:version="21.4" altera:start="pll.outclk1" altera:end="init_mac.clock"></altera:connection>
+      <altera:connection altera:kind="clock" altera:version="21.4" altera:start="pll.outclk1" altera:end="setup_ddr.clock_50"></altera:connection>
+      <altera:connection altera:kind="clock" altera:version="21.4" altera:start="pll.outclk1" altera:end="tse.control_port_clock_connection"></altera:connection>
+      <altera:connection altera:kind="clock" altera:version="21.4" altera:start="pll.outclk1" altera:end="clock_50_out.in_clk"></altera:connection>
+      <altera:connection altera:kind="clock" altera:version="21.4" altera:start="pll.outclk2" altera:end="receive_packet_2.fifo_status_clk"></altera:connection>
+      <altera:connection altera:kind="conduit" altera:version="21.4" altera:start="setup_ddr.ddr_setup_cmd" altera:end="send_cmd_pcie.ddr_setup_cmd">
         <altera:connection_parameter altera:parameter_name="endPort" altera:parameter_value=""></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="endPortLSB" altera:parameter_value="0"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="startPort" altera:parameter_value=""></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="startPortLSB" altera:parameter_value="0"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="width" altera:parameter_value="0"></altera:connection_parameter>
       </altera:connection>
-      <altera:connection altera:kind="conduit" altera:version="21.3" altera:start="setup_ddr.ddr_status_out" altera:end="send_cmd_pcie.ddr_status">
+      <altera:connection altera:kind="conduit" altera:version="21.4" altera:start="setup_ddr.ddr_status_out" altera:end="send_cmd_pcie.ddr_status">
         <altera:connection_parameter altera:parameter_name="endPort" altera:parameter_value=""></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="endPortLSB" altera:parameter_value="0"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="startPort" altera:parameter_value=""></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="startPortLSB" altera:parameter_value="0"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="width" altera:parameter_value="0"></altera:connection_parameter>
       </altera:connection>
-      <altera:connection altera:kind="conduit" altera:version="21.3" altera:start="setup_ddr.resets_information" altera:end="send_cmd_pcie.resets_information">
+      <altera:connection altera:kind="conduit" altera:version="21.4" altera:start="setup_ddr.resets_information" altera:end="send_cmd_pcie.resets_information">
         <altera:connection_parameter altera:parameter_name="endPort" altera:parameter_value=""></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="endPortLSB" altera:parameter_value="0"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="startPort" altera:parameter_value=""></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="startPortLSB" altera:parameter_value="0"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="width" altera:parameter_value="0"></altera:connection_parameter>
       </altera:connection>
-      <altera:connection altera:kind="conduit" altera:version="21.3" altera:start="setup_ddr.setup" altera:end="send_cmd_pcie.ddr_setup_done">
+      <altera:connection altera:kind="conduit" altera:version="21.4" altera:start="setup_ddr.setup" altera:end="send_cmd_pcie.ddr_setup_done">
         <altera:connection_parameter altera:parameter_name="endPort" altera:parameter_value=""></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="endPortLSB" altera:parameter_value="0"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="startPort" altera:parameter_value=""></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="startPortLSB" altera:parameter_value="0"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="width" altera:parameter_value="0"></altera:connection_parameter>
       </altera:connection>
-      <altera:connection altera:kind="conduit" altera:version="21.3" altera:start="ddr3.status" altera:end="setup_ddr.ddr_status">
+      <altera:connection altera:kind="conduit" altera:version="21.4" altera:start="ddr3.status" altera:end="setup_ddr.ddr_status">
         <altera:connection_parameter altera:parameter_name="endPort" altera:parameter_value=""></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="endPortLSB" altera:parameter_value="0"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="startPort" altera:parameter_value=""></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="startPortLSB" altera:parameter_value="0"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="width" altera:parameter_value="0"></altera:connection_parameter>
       </altera:connection>
-      <altera:connection altera:kind="hssi_serial_clock" altera:version="21.3" altera:start="xcvr_pll.tx_serial_clk" altera:end="tse.tx_serial_clk_0"></altera:connection>
-      <altera:connection altera:kind="hssi_serial_clock" altera:version="21.3" altera:start="xcvr_pll.tx_serial_clk" altera:end="tse.tx_serial_clk_1"></altera:connection>
-      <altera:connection altera:kind="reset" altera:version="21.3" altera:start="pcie.app_nreset_status" altera:end="send_cmd_pcie.reset"></altera:connection>
-      <altera:connection altera:kind="reset" altera:version="21.3" altera:start="ddr3.emif_usr_reset_n" altera:end="ddr_avalon_reset.in_reset"></altera:connection>
-      <altera:connection altera:kind="reset" altera:version="21.3" altera:start="ddr3.emif_usr_reset_n" altera:end="setup_ddr.reset_avalon"></altera:connection>
-      <altera:connection altera:kind="reset" altera:version="21.3" altera:start="reset_mod.reset_main" altera:end="reset_main.in_reset"></altera:connection>
-      <altera:connection altera:kind="reset" altera:version="21.3" altera:start="reset_mod.reset_main" altera:end="pll.reset"></altera:connection>
-      <altera:connection altera:kind="reset" altera:version="21.3" altera:start="reset_mod.reset_main" altera:end="send_packet_2.reset"></altera:connection>
-      <altera:connection altera:kind="reset" altera:version="21.3" altera:start="reset_mod.reset_main" altera:end="send_packet_1.reset"></altera:connection>
-      <altera:connection altera:kind="reset" altera:version="21.3" altera:start="reset_mod.reset_main" altera:end="init_mac.reset"></altera:connection>
-      <altera:connection altera:kind="reset" altera:version="21.3" altera:start="reset_mod.reset_main" altera:end="receive_packet_2.reset"></altera:connection>
-      <altera:connection altera:kind="reset" altera:version="21.3" altera:start="reset_mod.reset_main" altera:end="receive_packet_1.reset"></altera:connection>
-      <altera:connection altera:kind="reset" altera:version="21.3" altera:start="reset_mod.reset_main" altera:end="mem_rcv_2.reset1"></altera:connection>
-      <altera:connection altera:kind="reset" altera:version="21.3" altera:start="reset_mod.reset_main" altera:end="mem_rcv_1.reset1"></altera:connection>
-      <altera:connection altera:kind="reset" altera:version="21.3" altera:start="reset_mod.reset_main" altera:end="mem_4.reset1"></altera:connection>
-      <altera:connection altera:kind="reset" altera:version="21.3" altera:start="reset_mod.reset_main" altera:end="mem_5.reset1"></altera:connection>
-      <altera:connection altera:kind="reset" altera:version="21.3" altera:start="reset_mod.reset_main" altera:end="mem_4.reset2"></altera:connection>
-      <altera:connection altera:kind="reset" altera:version="21.3" altera:start="reset_mod.reset_main" altera:end="tse.reset_connection"></altera:connection>
-      <altera:connection altera:kind="reset" altera:version="21.3" altera:start="reset_mod.reset_main" altera:end="setup_ddr.reset_module"></altera:connection>
+      <altera:connection altera:kind="hssi_serial_clock" altera:version="21.4" altera:start="xcvr_pll.tx_serial_clk" altera:end="tse.tx_serial_clk_0"></altera:connection>
+      <altera:connection altera:kind="hssi_serial_clock" altera:version="21.4" altera:start="xcvr_pll.tx_serial_clk" altera:end="tse.tx_serial_clk_1"></altera:connection>
+      <altera:connection altera:kind="reset" altera:version="21.4" altera:start="pcie.app_nreset_status" altera:end="send_cmd_pcie.reset"></altera:connection>
+      <altera:connection altera:kind="reset" altera:version="21.4" altera:start="ddr3.emif_usr_reset_n" altera:end="ddr_avalon_reset.in_reset"></altera:connection>
+      <altera:connection altera:kind="reset" altera:version="21.4" altera:start="ddr3.emif_usr_reset_n" altera:end="setup_ddr.reset_avalon"></altera:connection>
+      <altera:connection altera:kind="reset" altera:version="21.4" altera:start="reset_mod.reset_main" altera:end="reset_main.in_reset"></altera:connection>
+      <altera:connection altera:kind="reset" altera:version="21.4" altera:start="reset_mod.reset_main" altera:end="pll.reset"></altera:connection>
+      <altera:connection altera:kind="reset" altera:version="21.4" altera:start="reset_mod.reset_main" altera:end="send_packet_2.reset"></altera:connection>
+      <altera:connection altera:kind="reset" altera:version="21.4" altera:start="reset_mod.reset_main" altera:end="send_packet_1.reset"></altera:connection>
+      <altera:connection altera:kind="reset" altera:version="21.4" altera:start="reset_mod.reset_main" altera:end="init_mac.reset"></altera:connection>
+      <altera:connection altera:kind="reset" altera:version="21.4" altera:start="reset_mod.reset_main" altera:end="receive_packet_2.reset"></altera:connection>
+      <altera:connection altera:kind="reset" altera:version="21.4" altera:start="reset_mod.reset_main" altera:end="receive_packet_1.reset"></altera:connection>
+      <altera:connection altera:kind="reset" altera:version="21.4" altera:start="reset_mod.reset_main" altera:end="mem_rcv_2.reset1"></altera:connection>
+      <altera:connection altera:kind="reset" altera:version="21.4" altera:start="reset_mod.reset_main" altera:end="mem_rcv_1.reset1"></altera:connection>
+      <altera:connection altera:kind="reset" altera:version="21.4" altera:start="reset_mod.reset_main" altera:end="mem_4.reset1"></altera:connection>
+      <altera:connection altera:kind="reset" altera:version="21.4" altera:start="reset_mod.reset_main" altera:end="mem_5.reset1"></altera:connection>
+      <altera:connection altera:kind="reset" altera:version="21.4" altera:start="reset_mod.reset_main" altera:end="mem_4.reset2"></altera:connection>
+      <altera:connection altera:kind="reset" altera:version="21.4" altera:start="reset_mod.reset_main" altera:end="tse.reset_connection"></altera:connection>
+      <altera:connection altera:kind="reset" altera:version="21.4" altera:start="reset_mod.reset_main" altera:end="setup_ddr.reset_module"></altera:connection>
     </altera:connections>
     <altera:interconnect_requirements></altera:interconnect_requirements>
     <altera:wire_level_connections></altera:wire_level_connections>
-    <altera:hdl_parameters></altera:hdl_parameters>
-    <altera:hdl_parameter_mappings></altera:hdl_parameter_mappings>
+    <altera:hdl_parameters>
+      <altera:hdl_parameter altera:name="setup_ddr_test" altera:type="BOOLEAN" altera:defaultValue="false" altera:exported="true"></altera:hdl_parameter>
+    </altera:hdl_parameters>
+    <altera:hdl_parameter_mappings>
+      <altera:hdl_parameter_mapping altera:module="setup_ddr" altera:parameter="test" altera:exportedValue="setup_ddr_test"></altera:hdl_parameter_mapping>
+    </altera:hdl_parameter_mappings>
     <altera:preserved_ports_for_debug></altera:preserved_ports_for_debug>
     <altera:altera_interface_boundary>
       <altera:interface_mapping altera:name="clock_50" altera:internal="clock_50_out.out_clk" altera:type="clock" altera:dir="start"></altera:interface_mapping>
@@ -32640,11 +32644,11 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:busInterfaces>
           <ipxact:busInterface>
             <ipxact:name>tse.control_port</ipxact:name>
-            <ipxact:busType vendor="intel" library="intel" name="avalon" version="21.3"></ipxact:busType>
+            <ipxact:busType vendor="intel" library="intel" name="avalon" version="21.4"></ipxact:busType>
           </ipxact:busInterface>
           <ipxact:busInterface>
             <ipxact:name>init_mac.avalon_master</ipxact:name>
-            <ipxact:busType vendor="intel" library="intel" name="avalon" version="21.3"></ipxact:busType>
+            <ipxact:busType vendor="intel" library="intel" name="avalon" version="21.4"></ipxact:busType>
             <ipxact:master>
               <ipxact:addressSpaceRef addressSpaceRef="init_mac.avalon_master">
                 <ipxact:baseAddress>0x0000</ipxact:baseAddress>
@@ -32653,11 +32657,11 @@ https://fpgasoftware.intel.com/eula.-->
           </ipxact:busInterface>
           <ipxact:busInterface>
             <ipxact:name>send_cmd_pcie.avalon_slave</ipxact:name>
-            <ipxact:busType vendor="intel" library="intel" name="avalon" version="21.3"></ipxact:busType>
+            <ipxact:busType vendor="intel" library="intel" name="avalon" version="21.4"></ipxact:busType>
           </ipxact:busInterface>
           <ipxact:busInterface>
             <ipxact:name>pcie.rxm_bar0</ipxact:name>
-            <ipxact:busType vendor="intel" library="intel" name="avalon" version="21.3"></ipxact:busType>
+            <ipxact:busType vendor="intel" library="intel" name="avalon" version="21.4"></ipxact:busType>
             <ipxact:master>
               <ipxact:addressSpaceRef addressSpaceRef="pcie.rxm_bar0">
                 <ipxact:baseAddress>0x0000_0000_0000_0000</ipxact:baseAddress>
@@ -32666,11 +32670,11 @@ https://fpgasoftware.intel.com/eula.-->
           </ipxact:busInterface>
           <ipxact:busInterface>
             <ipxact:name>ddr3.ctrl_amm_0</ipxact:name>
-            <ipxact:busType vendor="intel" library="intel" name="avalon" version="21.3"></ipxact:busType>
+            <ipxact:busType vendor="intel" library="intel" name="avalon" version="21.4"></ipxact:busType>
           </ipxact:busInterface>
           <ipxact:busInterface>
             <ipxact:name>pcie.rxm_bar2</ipxact:name>
-            <ipxact:busType vendor="intel" library="intel" name="avalon" version="21.3"></ipxact:busType>
+            <ipxact:busType vendor="intel" library="intel" name="avalon" version="21.4"></ipxact:busType>
             <ipxact:master>
               <ipxact:addressSpaceRef addressSpaceRef="pcie.rxm_bar2">
                 <ipxact:baseAddress>0x0000_0000_0000_0000</ipxact:baseAddress>
@@ -32679,11 +32683,11 @@ https://fpgasoftware.intel.com/eula.-->
           </ipxact:busInterface>
           <ipxact:busInterface>
             <ipxact:name>mem_rcv_1.s1</ipxact:name>
-            <ipxact:busType vendor="intel" library="intel" name="avalon" version="21.3"></ipxact:busType>
+            <ipxact:busType vendor="intel" library="intel" name="avalon" version="21.4"></ipxact:busType>
           </ipxact:busInterface>
           <ipxact:busInterface>
             <ipxact:name>receive_packet_1.avalon_master</ipxact:name>
-            <ipxact:busType vendor="intel" library="intel" name="avalon" version="21.3"></ipxact:busType>
+            <ipxact:busType vendor="intel" library="intel" name="avalon" version="21.4"></ipxact:busType>
             <ipxact:master>
               <ipxact:addressSpaceRef addressSpaceRef="receive_packet_1.avalon_master">
                 <ipxact:baseAddress>0x0000</ipxact:baseAddress>
@@ -32692,11 +32696,11 @@ https://fpgasoftware.intel.com/eula.-->
           </ipxact:busInterface>
           <ipxact:busInterface>
             <ipxact:name>mem_4.s2</ipxact:name>
-            <ipxact:busType vendor="intel" library="intel" name="avalon" version="21.3"></ipxact:busType>
+            <ipxact:busType vendor="intel" library="intel" name="avalon" version="21.4"></ipxact:busType>
           </ipxact:busInterface>
           <ipxact:busInterface>
             <ipxact:name>receive_packet_2.avalon_master</ipxact:name>
-            <ipxact:busType vendor="intel" library="intel" name="avalon" version="21.3"></ipxact:busType>
+            <ipxact:busType vendor="intel" library="intel" name="avalon" version="21.4"></ipxact:busType>
             <ipxact:master>
               <ipxact:addressSpaceRef addressSpaceRef="receive_packet_2.avalon_master">
                 <ipxact:baseAddress>0x0000</ipxact:baseAddress>
@@ -32705,11 +32709,11 @@ https://fpgasoftware.intel.com/eula.-->
           </ipxact:busInterface>
           <ipxact:busInterface>
             <ipxact:name>mem_5.s1</ipxact:name>
-            <ipxact:busType vendor="intel" library="intel" name="avalon" version="21.3"></ipxact:busType>
+            <ipxact:busType vendor="intel" library="intel" name="avalon" version="21.4"></ipxact:busType>
           </ipxact:busInterface>
           <ipxact:busInterface>
             <ipxact:name>send_packet_1.avalon_master</ipxact:name>
-            <ipxact:busType vendor="intel" library="intel" name="avalon" version="21.3"></ipxact:busType>
+            <ipxact:busType vendor="intel" library="intel" name="avalon" version="21.4"></ipxact:busType>
             <ipxact:master>
               <ipxact:addressSpaceRef addressSpaceRef="send_packet_1.avalon_master">
                 <ipxact:baseAddress>0x0000</ipxact:baseAddress>
@@ -32718,11 +32722,11 @@ https://fpgasoftware.intel.com/eula.-->
           </ipxact:busInterface>
           <ipxact:busInterface>
             <ipxact:name>mem_4.s1</ipxact:name>
-            <ipxact:busType vendor="intel" library="intel" name="avalon" version="21.3"></ipxact:busType>
+            <ipxact:busType vendor="intel" library="intel" name="avalon" version="21.4"></ipxact:busType>
           </ipxact:busInterface>
           <ipxact:busInterface>
             <ipxact:name>send_packet_2.avalon_master</ipxact:name>
-            <ipxact:busType vendor="intel" library="intel" name="avalon" version="21.3"></ipxact:busType>
+            <ipxact:busType vendor="intel" library="intel" name="avalon" version="21.4"></ipxact:busType>
             <ipxact:master>
               <ipxact:addressSpaceRef addressSpaceRef="send_packet_2.avalon_master">
                 <ipxact:baseAddress>0x0000</ipxact:baseAddress>
@@ -32731,11 +32735,11 @@ https://fpgasoftware.intel.com/eula.-->
           </ipxact:busInterface>
           <ipxact:busInterface>
             <ipxact:name>ddr3.ctrl_amm_0</ipxact:name>
-            <ipxact:busType vendor="intel" library="intel" name="avalon" version="21.3"></ipxact:busType>
+            <ipxact:busType vendor="intel" library="intel" name="avalon" version="21.4"></ipxact:busType>
           </ipxact:busInterface>
           <ipxact:busInterface>
             <ipxact:name>setup_ddr.avalon_master</ipxact:name>
-            <ipxact:busType vendor="intel" library="intel" name="avalon" version="21.3"></ipxact:busType>
+            <ipxact:busType vendor="intel" library="intel" name="avalon" version="21.4"></ipxact:busType>
             <ipxact:master>
               <ipxact:addressSpaceRef addressSpaceRef="setup_ddr.avalon_master">
                 <ipxact:baseAddress>0x0000_0000</ipxact:baseAddress>
