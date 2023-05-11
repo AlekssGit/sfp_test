@@ -182,7 +182,7 @@ begin
     begin
         addr    =   {15'd0, ram_address }; //+ 10'd1};
     end
-    else if(wait_data == 8'd10 & count_ram_data == 4'd8)
+    else if(wait_data == 8'd10 & count_ram_data == 4'd12)
     begin
         addr    =   {9'd0, count_data + 16'd1};
     end
@@ -243,7 +243,7 @@ begin
             begin
                 wait_data <= wait_data + 8'd1; // ???
                 
-                if(wait_data == 8'd10 & count_data > 16'd0 & count_ram_data == 4'd8)
+                if(wait_data == 8'd10 & count_data > 16'd0 & count_ram_data == 4'd12)
                 begin
                     count_ram_data <= 4'd0;
                 end

@@ -1,4 +1,4 @@
-# system info clock_ddr_avalon on 2023.05.10.22:51:53
+# system info clock_ddr_avalon on 2023.05.10.23:52:11
 system_info:
 name,value
 DEVICE,10CX220YF780I5G
@@ -6,7 +6,7 @@ DEVICE_FAMILY,Cyclone 10 GX
 GENERATION_ID,0
 #
 #
-# Files generated for clock_ddr_avalon on 2023.05.10.22:51:53
+# Files generated for clock_ddr_avalon on 2023.05.10.23:52:11
 files:
 filepath,kind,attributes,module,is_top
 sim/clock_ddr_avalon.v,VERILOG,CONTAINS_INLINE_CONFIGURATION,clock_ddr_avalon,true
