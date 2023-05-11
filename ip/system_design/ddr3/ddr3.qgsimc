@@ -24908,7 +24908,7 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>avalon</className>
-                <version>21.4</version>
+                <version>21.3</version>
                 <name>arch.cal_master/cal_slave_component.avl</name>
                 <end>cal_slave_component/avl</end>
                 <start>arch/cal_master</start>
@@ -24934,7 +24934,7 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>clock</className>
-                <version>21.4</version>
+                <version>21.3</version>
                 <name>arch.cal_slave_clk/arch.cal_slave_clk_in</name>
                 <end>arch/cal_slave_clk_in</end>
                 <start>arch/cal_slave_clk</start>
@@ -24960,7 +24960,7 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>clock</className>
-                <version>21.4</version>
+                <version>21.3</version>
                 <name>arch.cal_slave_clk/cal_slave_component.clk</name>
                 <end>cal_slave_component/clk</end>
                 <start>arch/cal_slave_clk</start>
@@ -24982,7 +24982,7 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>reset</className>
-                <version>21.4</version>
+                <version>21.3</version>
                 <name>arch.cal_slave_reset_n/arch.cal_slave_reset_n_in</name>
                 <end>arch/cal_slave_reset_n_in</end>
                 <start>arch/cal_slave_reset_n</start>
@@ -25004,7 +25004,7 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>reset</className>
-                <version>21.4</version>
+                <version>21.3</version>
                 <name>arch.cal_slave_reset_n/cal_slave_component.rst</name>
                 <end>cal_slave_component/rst</end>
                 <start>arch/cal_slave_reset_n</start>
@@ -25066,7 +25066,7 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>avalon_streaming</className>
-                <version>21.4</version>
+                <version>21.3</version>
                 <name>arch.ctrl_ast_rd_0/ecc_core.ctrl_ast_rd_0</name>
                 <end>ecc_core/ctrl_ast_rd_0</end>
                 <start>arch/ctrl_ast_rd_0</start>
@@ -25092,7 +25092,7 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>clock</className>
-                <version>21.4</version>
+                <version>21.3</version>
                 <name>arch.emif_usr_clk/ecc_core.emif_usr_clk_in</name>
                 <end>ecc_core/emif_usr_clk_in</end>
                 <start>arch/emif_usr_clk</start>
@@ -25114,7 +25114,7 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>reset</className>
-                <version>21.4</version>
+                <version>21.3</version>
                 <name>arch.emif_usr_reset_n/ecc_core.emif_usr_reset_n_in</name>
                 <end>ecc_core/emif_usr_reset_n_in</end>
                 <start>arch/emif_usr_reset_n</start>
@@ -25176,7 +25176,7 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>avalon_streaming</className>
-                <version>21.4</version>
+                <version>21.3</version>
                 <name>ecc_core.ctrl_ast_cmd_0/arch.ctrl_ast_cmd_0</name>
                 <end>arch/ctrl_ast_cmd_0</end>
                 <start>ecc_core/ctrl_ast_cmd_0</start>
@@ -25238,7 +25238,7 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>avalon_streaming</className>
-                <version>21.4</version>
+                <version>21.3</version>
                 <name>ecc_core.ctrl_ast_wr_0/arch.ctrl_ast_wr_0</name>
                 <end>arch/ctrl_ast_wr_0</end>
                 <start>ecc_core/ctrl_ast_wr_0</start>
@@ -25268,7 +25268,7 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>conduit</className>
-                <version>21.4</version>
+                <version>21.3</version>
                 <name>ecc_core.ctrl_ecc_0/arch.ctrl_ecc_0</name>
                 <end>arch/ctrl_ecc_0</end>
                 <start>ecc_core/ctrl_ecc_0</start>
@@ -25387,7 +25387,7 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>avalon</className>
-                <version>21.4</version>
+                <version>21.3</version>
                 <name>arch.cal_master/cal_slave_component.avl</name>
                 <end>cal_slave_component/avl</end>
                 <start>arch/cal_master</start>
@@ -25413,7 +25413,7 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>clock</className>
-                <version>21.4</version>
+                <version>21.3</version>
                 <name>arch.cal_slave_clk/cal_slave_component.clk</name>
                 <end>cal_slave_component/clk</end>
                 <start>arch/cal_slave_clk</start>
@@ -25435,7 +25435,7 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>reset</className>
-                <version>21.4</version>
+                <version>21.3</version>
                 <name>arch.cal_slave_reset_n/cal_slave_component.rst</name>
                 <end>cal_slave_component/rst</end>
                 <start>arch/cal_slave_reset_n</start>
@@ -25489,7 +25489,7 @@
                     </parameters>
                     <interconnectAssignments></interconnectAssignments>
                     <className>clock</className>
-                    <version>21.4</version>
+                    <version>21.3</version>
                     <name>clk_bridge.out_clk/ioaux_master_bridge.clk</name>
                     <end>ioaux_master_bridge/clk</end>
                     <start>clk_bridge/out_clk</start>
@@ -25515,7 +25515,7 @@
                     </parameters>
                     <interconnectAssignments></interconnectAssignments>
                     <className>clock</className>
-                    <version>21.4</version>
+                    <version>21.3</version>
                     <name>clk_bridge.out_clk/ioaux_soft_ram.clk1</name>
                     <end>ioaux_soft_ram/clk1</end>
                     <start>clk_bridge/out_clk</start>
@@ -25541,7 +25541,7 @@
                     </parameters>
                     <interconnectAssignments></interconnectAssignments>
                     <className>clock</className>
-                    <version>21.4</version>
+                    <version>21.3</version>
                     <end>mm_interconnect_0/clk_bridge_out_clk</end>
                     <start>clk_bridge/out_clk</start>
                   </incidentConnection>
@@ -25566,7 +25566,7 @@
                     </parameters>
                     <interconnectAssignments></interconnectAssignments>
                     <className>clock</className>
-                    <version>21.4</version>
+                    <version>21.3</version>
                     <end>rst_controller/clk</end>
                     <start>clk_bridge/out_clk</start>
                   </incidentConnection>
@@ -25680,7 +25680,7 @@
                     </parameters>
                     <interconnectAssignments></interconnectAssignments>
                     <className>clock</className>
-                    <version>21.4</version>
+                    <version>21.3</version>
                     <name>clk_bridge.out_clk/ioaux_master_bridge.clk</name>
                     <end>ioaux_master_bridge/clk</end>
                     <start>clk_bridge/out_clk</start>
@@ -25770,7 +25770,7 @@
                     </parameters>
                     <interconnectAssignments></interconnectAssignments>
                     <className>avalon</className>
-                    <version>21.4</version>
+                    <version>21.3</version>
                     <end>mm_interconnect_0/ioaux_master_bridge_m0</end>
                     <start>ioaux_master_bridge/m0</start>
                   </incidentConnection>
@@ -25791,7 +25791,7 @@
                     </parameters>
                     <interconnectAssignments></interconnectAssignments>
                     <className>reset</className>
-                    <version>21.4</version>
+                    <version>21.3</version>
                     <end>ioaux_master_bridge/reset</end>
                     <start>rst_controller/reset_out</start>
                   </incidentConnection>
@@ -25973,7 +25973,7 @@
                     </parameters>
                     <interconnectAssignments></interconnectAssignments>
                     <className>clock</className>
-                    <version>21.4</version>
+                    <version>21.3</version>
                     <name>clk_bridge.out_clk/ioaux_soft_ram.clk1</name>
                     <end>ioaux_soft_ram/clk1</end>
                     <start>clk_bridge/out_clk</start>
@@ -26063,7 +26063,7 @@
                     </parameters>
                     <interconnectAssignments></interconnectAssignments>
                     <className>avalon</className>
-                    <version>21.4</version>
+                    <version>21.3</version>
                     <end>ioaux_soft_ram/s1</end>
                     <start>mm_interconnect_0/ioaux_soft_ram_s1</start>
                   </incidentConnection>
@@ -26084,7 +26084,7 @@
                     </parameters>
                     <interconnectAssignments></interconnectAssignments>
                     <className>reset</className>
-                    <version>21.4</version>
+                    <version>21.3</version>
                     <end>ioaux_soft_ram/reset1</end>
                     <start>rst_controller/reset_out</start>
                   </incidentConnection>
@@ -26134,7 +26134,7 @@
                     </parameters>
                     <interconnectAssignments></interconnectAssignments>
                     <className>clock</className>
-                    <version>21.4</version>
+                    <version>21.3</version>
                     <end>mm_interconnect_0/clk_bridge_out_clk</end>
                     <start>clk_bridge/out_clk</start>
                   </incidentConnection>
@@ -26223,7 +26223,7 @@
                     </parameters>
                     <interconnectAssignments></interconnectAssignments>
                     <className>avalon</className>
-                    <version>21.4</version>
+                    <version>21.3</version>
                     <end>mm_interconnect_0/ioaux_master_bridge_m0</end>
                     <start>ioaux_master_bridge/m0</start>
                   </incidentConnection>
@@ -26312,7 +26312,7 @@
                     </parameters>
                     <interconnectAssignments></interconnectAssignments>
                     <className>avalon</className>
-                    <version>21.4</version>
+                    <version>21.3</version>
                     <end>ioaux_soft_ram/s1</end>
                     <start>mm_interconnect_0/ioaux_soft_ram_s1</start>
                   </incidentConnection>
@@ -26333,7 +26333,7 @@
                     </parameters>
                     <interconnectAssignments></interconnectAssignments>
                     <className>reset</className>
-                    <version>21.4</version>
+                    <version>21.3</version>
                     <end>mm_interconnect_0/ioaux_master_bridge_reset_reset_bridge_in_reset</end>
                     <start>rst_controller/reset_out</start>
                   </incidentConnection>
@@ -26386,7 +26386,7 @@
                         </parameters>
                         <interconnectAssignments></interconnectAssignments>
                         <className>clock</className>
-                        <version>21.4</version>
+                        <version>21.3</version>
                         <name>clk_bridge_out_clk_clock_bridge.out_clk/ioaux_master_bridge_m0_translator.clk</name>
                         <end>ioaux_master_bridge_m0_translator/clk</end>
                         <start>clk_bridge_out_clk_clock_bridge/out_clk</start>
@@ -26412,7 +26412,7 @@
                         </parameters>
                         <interconnectAssignments></interconnectAssignments>
                         <className>clock</className>
-                        <version>21.4</version>
+                        <version>21.3</version>
                         <name>clk_bridge_out_clk_clock_bridge.out_clk/ioaux_master_bridge_reset_reset_bridge.clk</name>
                         <end>ioaux_master_bridge_reset_reset_bridge/clk</end>
                         <start>clk_bridge_out_clk_clock_bridge/out_clk</start>
@@ -26438,7 +26438,7 @@
                         </parameters>
                         <interconnectAssignments></interconnectAssignments>
                         <className>clock</className>
-                        <version>21.4</version>
+                        <version>21.3</version>
                         <name>clk_bridge_out_clk_clock_bridge.out_clk/ioaux_soft_ram_s1_translator.clk</name>
                         <end>ioaux_soft_ram_s1_translator/clk</end>
                         <start>clk_bridge_out_clk_clock_bridge/out_clk</start>
@@ -26665,7 +26665,7 @@
                         </parameters>
                         <interconnectAssignments></interconnectAssignments>
                         <className>clock</className>
-                        <version>21.4</version>
+                        <version>21.3</version>
                         <name>clk_bridge_out_clk_clock_bridge.out_clk/ioaux_master_bridge_m0_translator.clk</name>
                         <end>ioaux_master_bridge_m0_translator/clk</end>
                         <start>clk_bridge_out_clk_clock_bridge/out_clk</start>
@@ -26755,7 +26755,7 @@
                         </parameters>
                         <interconnectAssignments></interconnectAssignments>
                         <className>avalon</className>
-                        <version>21.4</version>
+                        <version>21.3</version>
                         <name>ioaux_master_bridge_m0_translator.avalon_universal_master_0/ioaux_soft_ram_s1_translator.avalon_universal_slave_0</name>
                         <end>ioaux_soft_ram_s1_translator/avalon_universal_slave_0</end>
                         <start>ioaux_master_bridge_m0_translator/avalon_universal_master_0</start>
@@ -26777,7 +26777,7 @@
                         </parameters>
                         <interconnectAssignments></interconnectAssignments>
                         <className>reset</className>
-                        <version>21.4</version>
+                        <version>21.3</version>
                         <name>ioaux_master_bridge_reset_reset_bridge.out_reset/ioaux_master_bridge_m0_translator.reset</name>
                         <end>ioaux_master_bridge_m0_translator/reset</end>
                         <start>ioaux_master_bridge_reset_reset_bridge/out_reset</start>
@@ -26840,7 +26840,7 @@
                         </parameters>
                         <interconnectAssignments></interconnectAssignments>
                         <className>clock</className>
-                        <version>21.4</version>
+                        <version>21.3</version>
                         <name>clk_bridge_out_clk_clock_bridge.out_clk/ioaux_master_bridge_reset_reset_bridge.clk</name>
                         <end>ioaux_master_bridge_reset_reset_bridge/clk</end>
                         <start>clk_bridge_out_clk_clock_bridge/out_clk</start>
@@ -26862,7 +26862,7 @@
                         </parameters>
                         <interconnectAssignments></interconnectAssignments>
                         <className>reset</className>
-                        <version>21.4</version>
+                        <version>21.3</version>
                         <name>ioaux_master_bridge_reset_reset_bridge.out_reset/ioaux_master_bridge_m0_translator.reset</name>
                         <end>ioaux_master_bridge_m0_translator/reset</end>
                         <start>ioaux_master_bridge_reset_reset_bridge/out_reset</start>
@@ -26884,7 +26884,7 @@
                         </parameters>
                         <interconnectAssignments></interconnectAssignments>
                         <className>reset</className>
-                        <version>21.4</version>
+                        <version>21.3</version>
                         <name>ioaux_master_bridge_reset_reset_bridge.out_reset/ioaux_soft_ram_s1_translator.reset</name>
                         <end>ioaux_soft_ram_s1_translator/reset</end>
                         <start>ioaux_master_bridge_reset_reset_bridge/out_reset</start>
@@ -27163,7 +27163,7 @@
                         </parameters>
                         <interconnectAssignments></interconnectAssignments>
                         <className>clock</className>
-                        <version>21.4</version>
+                        <version>21.3</version>
                         <name>clk_bridge_out_clk_clock_bridge.out_clk/ioaux_soft_ram_s1_translator.clk</name>
                         <end>ioaux_soft_ram_s1_translator/clk</end>
                         <start>clk_bridge_out_clk_clock_bridge/out_clk</start>
@@ -27253,7 +27253,7 @@
                         </parameters>
                         <interconnectAssignments></interconnectAssignments>
                         <className>avalon</className>
-                        <version>21.4</version>
+                        <version>21.3</version>
                         <name>ioaux_master_bridge_m0_translator.avalon_universal_master_0/ioaux_soft_ram_s1_translator.avalon_universal_slave_0</name>
                         <end>ioaux_soft_ram_s1_translator/avalon_universal_slave_0</end>
                         <start>ioaux_master_bridge_m0_translator/avalon_universal_master_0</start>
@@ -27275,7 +27275,7 @@
                         </parameters>
                         <interconnectAssignments></interconnectAssignments>
                         <className>reset</className>
-                        <version>21.4</version>
+                        <version>21.3</version>
                         <name>ioaux_master_bridge_reset_reset_bridge.out_reset/ioaux_soft_ram_s1_translator.reset</name>
                         <end>ioaux_soft_ram_s1_translator/reset</end>
                         <start>ioaux_master_bridge_reset_reset_bridge/out_reset</start>
@@ -27336,7 +27336,7 @@
                     </parameters>
                     <interconnectAssignments></interconnectAssignments>
                     <className>reset</className>
-                    <version>21.4</version>
+                    <version>21.3</version>
                     <end>rst_controller/reset_in0</end>
                     <start>rst_bridge/out_reset</start>
                   </incidentConnection>
@@ -27479,7 +27479,7 @@
                     </parameters>
                     <interconnectAssignments></interconnectAssignments>
                     <className>clock</className>
-                    <version>21.4</version>
+                    <version>21.3</version>
                     <end>rst_controller/clk</end>
                     <start>clk_bridge/out_clk</start>
                   </incidentConnection>
@@ -27500,7 +27500,7 @@
                     </parameters>
                     <interconnectAssignments></interconnectAssignments>
                     <className>reset</className>
-                    <version>21.4</version>
+                    <version>21.3</version>
                     <end>rst_controller/reset_in0</end>
                     <start>rst_bridge/out_reset</start>
                   </incidentConnection>
@@ -27521,7 +27521,7 @@
                     </parameters>
                     <interconnectAssignments></interconnectAssignments>
                     <className>reset</className>
-                    <version>21.4</version>
+                    <version>21.3</version>
                     <end>ioaux_master_bridge/reset</end>
                     <start>rst_controller/reset_out</start>
                   </incidentConnection>
@@ -27542,7 +27542,7 @@
                     </parameters>
                     <interconnectAssignments></interconnectAssignments>
                     <className>reset</className>
-                    <version>21.4</version>
+                    <version>21.3</version>
                     <end>ioaux_soft_ram/reset1</end>
                     <start>rst_controller/reset_out</start>
                   </incidentConnection>
@@ -27563,7 +27563,7 @@
                     </parameters>
                     <interconnectAssignments></interconnectAssignments>
                     <className>reset</className>
-                    <version>21.4</version>
+                    <version>21.3</version>
                     <end>mm_interconnect_0/ioaux_master_bridge_reset_reset_bridge_in_reset</end>
                     <start>rst_controller/reset_out</start>
                   </incidentConnection>
@@ -36991,7 +36991,7 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>avalon_streaming</className>
-                <version>21.4</version>
+                <version>21.3</version>
                 <name>arch.ctrl_ast_rd_0/ecc_core.ctrl_ast_rd_0</name>
                 <end>ecc_core/ctrl_ast_rd_0</end>
                 <start>arch/ctrl_ast_rd_0</start>
@@ -37017,7 +37017,7 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>clock</className>
-                <version>21.4</version>
+                <version>21.3</version>
                 <name>arch.emif_usr_clk/ecc_core.emif_usr_clk_in</name>
                 <end>ecc_core/emif_usr_clk_in</end>
                 <start>arch/emif_usr_clk</start>
@@ -37039,7 +37039,7 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>reset</className>
-                <version>21.4</version>
+                <version>21.3</version>
                 <name>arch.emif_usr_reset_n/ecc_core.emif_usr_reset_n_in</name>
                 <end>ecc_core/emif_usr_reset_n_in</end>
                 <start>arch/emif_usr_reset_n</start>
@@ -37101,7 +37101,7 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>avalon_streaming</className>
-                <version>21.4</version>
+                <version>21.3</version>
                 <name>ecc_core.ctrl_ast_cmd_0/arch.ctrl_ast_cmd_0</name>
                 <end>arch/ctrl_ast_cmd_0</end>
                 <start>ecc_core/ctrl_ast_cmd_0</start>
@@ -37163,7 +37163,7 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>avalon_streaming</className>
-                <version>21.4</version>
+                <version>21.3</version>
                 <name>ecc_core.ctrl_ast_wr_0/arch.ctrl_ast_wr_0</name>
                 <end>arch/ctrl_ast_wr_0</end>
                 <start>ecc_core/ctrl_ast_wr_0</start>
@@ -37193,7 +37193,7 @@
                 </parameters>
                 <interconnectAssignments></interconnectAssignments>
                 <className>conduit</className>
-                <version>21.4</version>
+                <version>21.3</version>
                 <name>ecc_core.ctrl_ecc_0/arch.ctrl_ecc_0</name>
                 <end>arch/ctrl_ecc_0</end>
                 <start>ecc_core/ctrl_ecc_0</start>
