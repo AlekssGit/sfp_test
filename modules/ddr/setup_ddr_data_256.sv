@@ -133,20 +133,28 @@ logic [31:0] test_data  [28] = '{   32'd0,
                                      };
 assign ram_data_read = test_data[ram_address];
 
-always_comb 
+always_ff @(posedge avalon_clk, posedge reset)
 begin
-    case(count_ram_data)
-    4'd0:       ddr_data = {224'd0  , ram_data_read};                  
-    4'd1:       ddr_data = {192'd0  , ram_data_read , ddr_data[31:0]}; 
-    4'd2:       ddr_data = {160'd0  , ram_data_read , ddr_data[63:0]}; 
-    4'd3:       ddr_data = {128'd0  , ram_data_read , ddr_data[95:0]}; 
-    4'd4:       ddr_data = {96'd0   , ram_data_read , ddr_data[127:0]};
-    4'd5:       ddr_data = {64'd0   , ram_data_read , ddr_data[159:0]};
-    4'd6:       ddr_data = {32'd0   , ram_data_read , ddr_data[191:0]};
-    4'd7:       ddr_data = {ram_data_read, ddr_data[223:0]};      
-    4'd8:       ddr_data = ddr_data;      
-    default:        ddr_data = 256'd0;     
-    endcase        
+    if(reset)
+    begin
+        ddr_data <= 256'd0;
+    end
+    else
+    begin
+        case(count_ram_data)
+        4'd0:       ddr_data <= {224'd0  , ram_data_read};                  
+        4'd1:       ddr_data <= {192'd0  , ram_data_read , ddr_data[31:0]}; 
+        4'd2:       ddr_data <= {160'd0  , ram_data_read , ddr_data[63:0]}; 
+        4'd3:       ddr_data <= {128'd0  , ram_data_read , ddr_data[95:0]}; 
+        4'd4:       ddr_data <= {96'd0   , ram_data_read , ddr_data[127:0]};
+        4'd5:       ddr_data <= {64'd0   , ram_data_read , ddr_data[159:0]};
+        4'd6:       ddr_data <= {32'd0   , ram_data_read , ddr_data[191:0]};
+        4'd7:       ddr_data <= {ram_data_read, ddr_data[223:0]};      
+        // 4'd8:       ddr_data = ddr_data;      
+        // default:        ddr_data = 256'd0;     
+        endcase 
+    end
+       
 end
 
 always_ff @(posedge avalon_clk, posedge reset)
@@ -263,7 +271,7 @@ begin
         end
         else
         begin
-            count_data = 16'd0;
+            count_data <= 16'd0;
         end
     end
 end

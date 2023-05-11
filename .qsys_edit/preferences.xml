@@ -3,6 +3,6 @@
  <debug showDebugMenu="0" />
  <window width="1920" height="1040" x="0" y="0" />
  <systemtable filter="All Interfaces" />
- <library expandedCategories="Library,Existing IP Variants,Project" />
+ <library expandedCategories="Project,Existing IP Variants,Library" />
  <generation path="" simulation="VERILOG" modelsim="1" />
 </preferences>

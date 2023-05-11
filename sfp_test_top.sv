@@ -267,7 +267,7 @@ system_design platform_design (
 		.receive_packet_2_data_saved_data_saved (data_saved_2       ),
         .reset_main_out_reset                   (main_reset         ),
         .reset_mod_clock_clk                    (clk_50             ),                  
-		.reset_mod_reset_reset_n                (rst_n & ddr_cal_success),              
+		.reset_mod_reset_reset_n                (rst_n /*& ddr_cal_success*/),              
 		.reset_mod_reset_phy_reset              (reset_phy          ),    
 
         .pcie_send_control_start_ram_addr       (pcie_start_ram_addr), 
