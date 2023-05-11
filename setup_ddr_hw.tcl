@@ -12,7 +12,7 @@
 # 
 # request TCL package from ACDS 21.4
 # 
-package require -exact qsys 21.4
+package require -exact qsys 21.3
 
 
 # 

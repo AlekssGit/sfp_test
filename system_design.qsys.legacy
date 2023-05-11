@@ -21174,7 +21174,7 @@ https://fpgasoftware.intel.com/eula.-->
         <parameterHdlWidth></parameterHdlWidth>
         <parameterName>test</parameterName>
         <parameterType>java.lang.Boolean</parameterType>
-        <parameterValue>true</parameterValue>
+        <parameterValue>false</parameterValue>
     </hdlParameterDescriptorDefinition>
 </hdlParameterDescriptorDefinitionList>]]></parameter>
   <parameter name="hlsFile" value="" />
@@ -31651,7 +31651,7 @@ https://fpgasoftware.intel.com/eula.-->
  </module>
  <connection
    kind="avalon"
-   version="21.4"
+   version="21.3"
    start="init_mac.avalon_master"
    end="tse.control_port">
   <parameter name="arbitrationPriority" value="1" />
@@ -31674,7 +31674,7 @@ https://fpgasoftware.intel.com/eula.-->
  </connection>
  <connection
    kind="avalon"
-   version="21.4"
+   version="21.3"
    start="setup_ddr.avalon_master"
    end="ddr3.ctrl_amm_0">
   <parameter name="arbitrationPriority" value="1" />
@@ -31697,7 +31697,7 @@ https://fpgasoftware.intel.com/eula.-->
  </connection>
  <connection
    kind="avalon"
-   version="21.4"
+   version="21.3"
    start="receive_packet_1.avalon_master"
    end="mem_rcv_1.s1">
   <parameter name="arbitrationPriority" value="1" />
@@ -31720,7 +31720,7 @@ https://fpgasoftware.intel.com/eula.-->
  </connection>
  <connection
    kind="avalon"
-   version="21.4"
+   version="21.3"
    start="send_packet_2.avalon_master"
    end="mem_4.s1">
   <parameter name="arbitrationPriority" value="1" />
@@ -31743,7 +31743,7 @@ https://fpgasoftware.intel.com/eula.-->
  </connection>
  <connection
    kind="avalon"
-   version="21.4"
+   version="21.3"
    start="send_packet_1.avalon_master"
    end="mem_5.s1">
   <parameter name="arbitrationPriority" value="1" />
@@ -31766,7 +31766,7 @@ https://fpgasoftware.intel.com/eula.-->
  </connection>
  <connection
    kind="avalon"
-   version="21.4"
+   version="21.3"
    start="receive_packet_2.avalon_master"
    end="mem_4.s2">
   <parameter name="arbitrationPriority" value="1" />
@@ -31789,7 +31789,7 @@ https://fpgasoftware.intel.com/eula.-->
  </connection>
  <connection
    kind="avalon"
-   version="21.4"
+   version="21.3"
    start="pcie.rxm_bar0"
    end="send_cmd_pcie.avalon_slave">
   <parameter name="arbitrationPriority" value="1" />
@@ -31812,7 +31812,7 @@ https://fpgasoftware.intel.com/eula.-->
  </connection>
  <connection
    kind="avalon"
-   version="21.4"
+   version="21.3"
    start="pcie.rxm_bar2"
    end="ddr3.ctrl_amm_0">
   <parameter name="arbitrationPriority" value="1" />
@@ -31835,7 +31835,7 @@ https://fpgasoftware.intel.com/eula.-->
  </connection>
  <connection
    kind="avalon_streaming"
-   version="21.4"
+   version="21.3"
    start="send_packet_1.avalon_streaming_source"
    end="tse.transmit_0">
   <parameter name="qsys_mm.burstAdapterImplementation" value="GENERIC_CONVERTER" />
@@ -31854,7 +31854,7 @@ https://fpgasoftware.intel.com/eula.-->
  </connection>
  <connection
    kind="avalon_streaming"
-   version="21.4"
+   version="21.3"
    start="send_packet_2.avalon_streaming_source"
    end="tse.transmit_1">
   <parameter name="qsys_mm.burstAdapterImplementation" value="GENERIC_CONVERTER" />
@@ -31873,7 +31873,7 @@ https://fpgasoftware.intel.com/eula.-->
  </connection>
  <connection
    kind="avalon_streaming"
-   version="21.4"
+   version="21.3"
    start="receive_packet_1.fifo_status"
    end="tse.receive_fifo_status">
   <parameter name="qsys_mm.burstAdapterImplementation" value="GENERIC_CONVERTER" />
@@ -31892,7 +31892,7 @@ https://fpgasoftware.intel.com/eula.-->
  </connection>
  <connection
    kind="avalon_streaming"
-   version="21.4"
+   version="21.3"
    start="tse.receive_0"
    end="receive_packet_1.avalon_streaming_sink">
   <parameter name="qsys_mm.burstAdapterImplementation" value="GENERIC_CONVERTER" />
@@ -31911,7 +31911,7 @@ https://fpgasoftware.intel.com/eula.-->
  </connection>
  <connection
    kind="avalon_streaming"
-   version="21.4"
+   version="21.3"
    start="tse.receive_1"
    end="receive_packet_2.avalon_streaming_sink">
   <parameter name="qsys_mm.burstAdapterImplementation" value="GENERIC_CONVERTER" />
@@ -31930,103 +31930,103 @@ https://fpgasoftware.intel.com/eula.-->
  </connection>
  <connection
    kind="clock"
-   version="21.4"
+   version="21.3"
    start="pcie.coreclkout_hip"
    end="send_cmd_pcie.clock" />
  <connection
    kind="clock"
-   version="21.4"
+   version="21.3"
    start="ddr3.emif_usr_clk"
    end="setup_ddr.clock_avalon" />
  <connection
    kind="clock"
-   version="21.4"
+   version="21.3"
    start="ddr3.emif_usr_clk"
    end="clock_ddr_avalon.in_clk" />
  <connection
    kind="clock"
-   version="21.4"
+   version="21.3"
    start="tse.mac_rx_clock_connection_0"
    end="mem_rcv_1.clk1" />
  <connection
    kind="clock"
-   version="21.4"
+   version="21.3"
    start="tse.mac_rx_clock_connection_0"
    end="receive_packet_1.clock" />
  <connection
    kind="clock"
-   version="21.4"
+   version="21.3"
    start="tse.mac_rx_clock_connection_1"
    end="mem_rcv_2.clk1" />
  <connection
    kind="clock"
-   version="21.4"
+   version="21.3"
    start="tse.mac_rx_clock_connection_1"
    end="mem_4.clk2" />
  <connection
    kind="clock"
-   version="21.4"
+   version="21.3"
    start="tse.mac_rx_clock_connection_1"
    end="receive_packet_2.clock" />
  <connection
    kind="clock"
-   version="21.4"
+   version="21.3"
    start="tse.mac_tx_clock_connection_0"
    end="mem_5.clk1" />
  <connection
    kind="clock"
-   version="21.4"
+   version="21.3"
    start="tse.mac_tx_clock_connection_0"
    end="send_packet_1.clock" />
  <connection
    kind="clock"
-   version="21.4"
+   version="21.3"
    start="tse.mac_tx_clock_connection_1"
    end="mem_4.clk1" />
  <connection
    kind="clock"
-   version="21.4"
+   version="21.3"
    start="tse.mac_tx_clock_connection_1"
    end="send_packet_2.clock" />
  <connection
    kind="clock"
-   version="21.4"
+   version="21.3"
    start="pll.outclk0"
    end="setup_ddr.clock_125_tx_rx" />
  <connection
    kind="clock"
-   version="21.4"
+   version="21.3"
    start="pll.outclk0"
    end="receive_packet_1.fifo_status_clk" />
  <connection
    kind="clock"
-   version="21.4"
+   version="21.3"
    start="pll.outclk0"
    end="tse.receive_fifo_status_clock_connection" />
- <connection kind="clock" version="21.4" start="pll.outclk1" end="init_mac.clock" />
+ <connection kind="clock" version="21.3" start="pll.outclk1" end="init_mac.clock" />
  <connection
    kind="clock"
-   version="21.4"
+   version="21.3"
    start="pll.outclk1"
    end="setup_ddr.clock_50" />
  <connection
    kind="clock"
-   version="21.4"
+   version="21.3"
    start="pll.outclk1"
    end="tse.control_port_clock_connection" />
  <connection
    kind="clock"
-   version="21.4"
+   version="21.3"
    start="pll.outclk1"
    end="clock_50_out.in_clk" />
  <connection
    kind="clock"
-   version="21.4"
+   version="21.3"
    start="pll.outclk2"
    end="receive_packet_2.fifo_status_clk" />
  <connection
    kind="conduit"
-   version="21.4"
+   version="21.3"
    start="setup_ddr.ddr_setup_cmd"
    end="send_cmd_pcie.ddr_setup_cmd">
   <parameter name="endPort" value="" />
@@ -32037,7 +32037,7 @@ https://fpgasoftware.intel.com/eula.-->
  </connection>
  <connection
    kind="conduit"
-   version="21.4"
+   version="21.3"
    start="setup_ddr.ddr_status_out"
    end="send_cmd_pcie.ddr_status">
   <parameter name="endPort" value="" />
@@ -32048,7 +32048,7 @@ https://fpgasoftware.intel.com/eula.-->
  </connection>
  <connection
    kind="conduit"
-   version="21.4"
+   version="21.3"
    start="setup_ddr.resets_information"
    end="send_cmd_pcie.resets_information">
   <parameter name="endPort" value="" />
@@ -32059,7 +32059,7 @@ https://fpgasoftware.intel.com/eula.-->
  </connection>
  <connection
    kind="conduit"
-   version="21.4"
+   version="21.3"
    start="setup_ddr.setup"
    end="send_cmd_pcie.ddr_setup_done">
   <parameter name="endPort" value="" />
@@ -32070,7 +32070,7 @@ https://fpgasoftware.intel.com/eula.-->
  </connection>
  <connection
    kind="conduit"
-   version="21.4"
+   version="21.3"
    start="ddr3.status"
    end="setup_ddr.ddr_status">
   <parameter name="endPort" value="" />
@@ -32081,97 +32081,97 @@ https://fpgasoftware.intel.com/eula.-->
  </connection>
  <connection
    kind="hssi_serial_clock"
-   version="21.4"
+   version="21.3"
    start="xcvr_pll.tx_serial_clk"
    end="tse.tx_serial_clk_0" />
  <connection
    kind="hssi_serial_clock"
-   version="21.4"
+   version="21.3"
    start="xcvr_pll.tx_serial_clk"
    end="tse.tx_serial_clk_1" />
  <connection
    kind="reset"
-   version="21.4"
+   version="21.3"
    start="pcie.app_nreset_status"
    end="send_cmd_pcie.reset" />
  <connection
    kind="reset"
-   version="21.4"
+   version="21.3"
    start="ddr3.emif_usr_reset_n"
    end="ddr_avalon_reset.in_reset" />
  <connection
    kind="reset"
-   version="21.4"
+   version="21.3"
    start="ddr3.emif_usr_reset_n"
    end="setup_ddr.reset_avalon" />
  <connection
    kind="reset"
-   version="21.4"
+   version="21.3"
    start="reset_mod.reset_main"
    end="reset_main.in_reset" />
  <connection
    kind="reset"
-   version="21.4"
+   version="21.3"
    start="reset_mod.reset_main"
    end="pll.reset" />
  <connection
    kind="reset"
-   version="21.4"
+   version="21.3"
    start="reset_mod.reset_main"
    end="send_packet_2.reset" />
  <connection
    kind="reset"
-   version="21.4"
+   version="21.3"
    start="reset_mod.reset_main"
    end="send_packet_1.reset" />
  <connection
    kind="reset"
-   version="21.4"
+   version="21.3"
    start="reset_mod.reset_main"
    end="init_mac.reset" />
  <connection
    kind="reset"
-   version="21.4"
+   version="21.3"
    start="reset_mod.reset_main"
    end="receive_packet_2.reset" />
  <connection
    kind="reset"
-   version="21.4"
+   version="21.3"
    start="reset_mod.reset_main"
    end="receive_packet_1.reset" />
  <connection
    kind="reset"
-   version="21.4"
+   version="21.3"
    start="reset_mod.reset_main"
    end="mem_rcv_2.reset1" />
  <connection
    kind="reset"
-   version="21.4"
+   version="21.3"
    start="reset_mod.reset_main"
    end="mem_rcv_1.reset1" />
  <connection
    kind="reset"
-   version="21.4"
+   version="21.3"
    start="reset_mod.reset_main"
    end="mem_4.reset1" />
  <connection
    kind="reset"
-   version="21.4"
+   version="21.3"
    start="reset_mod.reset_main"
    end="mem_5.reset1" />
  <connection
    kind="reset"
-   version="21.4"
+   version="21.3"
    start="reset_mod.reset_main"
    end="mem_4.reset2" />
  <connection
    kind="reset"
-   version="21.4"
+   version="21.3"
    start="reset_mod.reset_main"
    end="tse.reset_connection" />
  <connection
    kind="reset"
-   version="21.4"
+   version="21.3"
    start="reset_mod.reset_main"
    end="setup_ddr.reset_module" />
 </system>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="pcie" kind="pcie" version="1.0" fabric="QSYS">
- <!-- Format version 21.4 67 (Future versions may contain additional information.) -->
- <!-- 2023.05.10.23:53:59 -->
+ <!-- Format version 21.3 170 (Future versions may contain additional information.) -->
+ <!-- 2023.05.11.11:23:29 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
@@ -12358,7 +12358,7 @@ the requested settings for a module instance. -->
    <visible>true</visible>
    <valid>true</valid>
   </parameter>
-  <interface name="coreclkout_hip" kind="clock_source" version="21.4">
+  <interface name="coreclkout_hip" kind="clock_source" version="21.3">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -12427,7 +12427,7 @@ parameters are a RESULT of the module parameters. -->
     <role>clk</role>
    </port>
   </interface>
-  <interface name="refclk" kind="clock_sink" version="21.4">
+  <interface name="refclk" kind="clock_sink" version="21.3">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -12488,7 +12488,7 @@ parameters are a RESULT of the module parameters. -->
     <role>clk</role>
    </port>
   </interface>
-  <interface name="npor" kind="conduit_end" version="21.4">
+  <interface name="npor" kind="conduit_end" version="21.3">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -12547,7 +12547,7 @@ parameters are a RESULT of the module parameters. -->
     <role>pin_perst</role>
    </port>
   </interface>
-  <interface name="app_nreset_status" kind="reset_source" version="21.4">
+  <interface name="app_nreset_status" kind="reset_source" version="21.3">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -12608,7 +12608,7 @@ parameters are a RESULT of the module parameters. -->
     <role>reset_n</role>
    </port>
   </interface>
-  <interface name="hip_ctrl" kind="conduit_end" version="21.4">
+  <interface name="hip_ctrl" kind="conduit_end" version="21.3">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -12667,7 +12667,7 @@ parameters are a RESULT of the module parameters. -->
     <role>simu_mode_pipe</role>
    </port>
   </interface>
-  <interface name="hip_pipe" kind="conduit_end" version="21.4">
+  <interface name="hip_pipe" kind="conduit_end" version="21.3">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -13356,7 +13356,7 @@ parameters are a RESULT of the module parameters. -->
     <role>rate3</role>
    </port>
   </interface>
-  <interface name="hip_serial" kind="conduit_end" version="21.4">
+  <interface name="hip_serial" kind="conduit_end" version="21.3">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -13451,7 +13451,7 @@ parameters are a RESULT of the module parameters. -->
     <role>tx_out3</role>
    </port>
   </interface>
-  <interface name="msi_intfc" kind="conduit_end" version="21.4">
+  <interface name="msi_intfc" kind="conduit_end" version="21.3">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -13504,7 +13504,7 @@ parameters are a RESULT of the module parameters. -->
     <role>msi_intfc</role>
    </port>
   </interface>
-  <interface name="msi_control" kind="conduit_end" version="21.4">
+  <interface name="msi_control" kind="conduit_end" version="21.3">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -13557,7 +13557,7 @@ parameters are a RESULT of the module parameters. -->
     <role>msi_control</role>
    </port>
   </interface>
-  <interface name="msix_intfc" kind="conduit_end" version="21.4">
+  <interface name="msix_intfc" kind="conduit_end" version="21.3">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -13610,7 +13610,7 @@ parameters are a RESULT of the module parameters. -->
     <role>msix_intfc</role>
    </port>
   </interface>
-  <interface name="intx_intfc" kind="conduit_end" version="21.4">
+  <interface name="intx_intfc" kind="conduit_end" version="21.3">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -13669,7 +13669,7 @@ parameters are a RESULT of the module parameters. -->
     <role>intx_ack</role>
    </port>
   </interface>
-  <interface name="txs" kind="avalon_slave" version="21.4">
+  <interface name="txs" kind="avalon_slave" version="21.3">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -14096,7 +14096,7 @@ parameters are a RESULT of the module parameters. -->
     <role>waitrequest</role>
    </port>
   </interface>
-  <interface name="cra" kind="avalon_slave" version="21.4">
+  <interface name="cra" kind="avalon_slave" version="21.3">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -14511,7 +14511,7 @@ parameters are a RESULT of the module parameters. -->
     <role>waitrequest</role>
    </port>
   </interface>
-  <interface name="cra_irq" kind="interrupt_sender" version="21.4">
+  <interface name="cra_irq" kind="interrupt_sender" version="21.3">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -14588,7 +14588,7 @@ parameters are a RESULT of the module parameters. -->
     <role>irq</role>
    </port>
   </interface>
-  <interface name="rxm_bar0" kind="avalon_master" version="21.4">
+  <interface name="rxm_bar0" kind="avalon_master" version="21.3">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -14937,7 +14937,7 @@ parameters are a RESULT of the module parameters. -->
     <role>waitrequest</role>
    </port>
   </interface>
-  <interface name="rxm_bar2" kind="avalon_master" version="21.4">
+  <interface name="rxm_bar2" kind="avalon_master" version="21.3">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -15286,7 +15286,7 @@ parameters are a RESULT of the module parameters. -->
     <role>waitrequest</role>
    </port>
   </interface>
-  <interface name="rxm_irq" kind="interrupt_receiver" version="21.4">
+  <interface name="rxm_irq" kind="interrupt_receiver" version="21.3">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -15370,7 +15370,7 @@ parameters are a RESULT of the module parameters. -->
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
   <displayName>Clock Output</displayName>
-  <version>21.4</version>
+  <version>21.3</version>
  </plugin>
  <plugin>
   <instanceCount>1</instanceCount>
@@ -15378,7 +15378,7 @@ parameters are a RESULT of the module parameters. -->
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
   <displayName>Clock Input</displayName>
-  <version>21.4</version>
+  <version>21.3</version>
  </plugin>
  <plugin>
   <instanceCount>8</instanceCount>
@@ -15386,7 +15386,7 @@ parameters are a RESULT of the module parameters. -->
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
   <displayName>Conduit</displayName>
-  <version>21.4</version>
+  <version>21.3</version>
  </plugin>
  <plugin>
   <instanceCount>1</instanceCount>
@@ -15394,7 +15394,7 @@ parameters are a RESULT of the module parameters. -->
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
   <displayName>Reset Output</displayName>
-  <version>21.4</version>
+  <version>21.3</version>
  </plugin>
  <plugin>
   <instanceCount>2</instanceCount>
@@ -15402,7 +15402,7 @@ parameters are a RESULT of the module parameters. -->
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
   <displayName>Avalon Memory Mapped Agent</displayName>
-  <version>21.4</version>
+  <version>21.3</version>
  </plugin>
  <plugin>
   <instanceCount>1</instanceCount>
@@ -15410,7 +15410,7 @@ parameters are a RESULT of the module parameters. -->
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
   <displayName>Interrupt Sender</displayName>
-  <version>21.4</version>
+  <version>21.3</version>
  </plugin>
  <plugin>
   <instanceCount>2</instanceCount>
@@ -15418,7 +15418,7 @@ parameters are a RESULT of the module parameters. -->
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
   <displayName>Avalon Memory Mapped Host</displayName>
-  <version>21.4</version>
+  <version>21.3</version>
  </plugin>
  <plugin>
   <instanceCount>1</instanceCount>
@@ -15426,8 +15426,8 @@ parameters are a RESULT of the module parameters. -->
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
   <displayName>Interrupt Receiver</displayName>
-  <version>21.4</version>
+  <version>21.3</version>
  </plugin>
- <reportVersion>21.4 67</reportVersion>
+ <reportVersion>21.3 170</reportVersion>
  <uniqueIdentifier></uniqueIdentifier>
 </EnsembleReport>
