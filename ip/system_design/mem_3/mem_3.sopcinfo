@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="mem_3" kind="mem_3" version="1.0" fabric="QSYS">
- <!-- Format version 21.4 67 (Future versions may contain additional information.) -->
- <!-- 2023.05.11.17:19:36 -->
+ <!-- Format version 21.3 170 (Future versions may contain additional information.) -->
+ <!-- 2023.05.11.18:50:48 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
@@ -493,7 +493,7 @@ the requested settings for a module instance. -->
    <visible>true</visible>
    <valid>true</valid>
   </parameter>
-  <interface name="clk1" kind="clock_sink" version="21.4">
+  <interface name="clk1" kind="clock_sink" version="21.3">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -538,7 +538,7 @@ parameters are a RESULT of the module parameters. -->
     <role>clk</role>
    </port>
   </interface>
-  <interface name="s1" kind="avalon_slave" version="21.4">
+  <interface name="s1" kind="avalon_slave" version="21.3">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -947,7 +947,7 @@ parameters are a RESULT of the module parameters. -->
     <role>byteenable</role>
    </port>
   </interface>
-  <interface name="reset1" kind="reset_sink" version="21.4">
+  <interface name="reset1" kind="reset_sink" version="21.3">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -1013,7 +1013,7 @@ parameters are a RESULT of the module parameters. -->
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
   <displayName>Clock Input</displayName>
-  <version>21.4</version>
+  <version>21.3</version>
  </plugin>
  <plugin>
   <instanceCount>1</instanceCount>
@@ -1021,7 +1021,7 @@ parameters are a RESULT of the module parameters. -->
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
   <displayName>Avalon Memory Mapped Agent</displayName>
-  <version>21.4</version>
+  <version>21.3</version>
  </plugin>
  <plugin>
   <instanceCount>1</instanceCount>
@@ -1029,8 +1029,8 @@ parameters are a RESULT of the module parameters. -->
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
   <displayName>Reset Input</displayName>
-  <version>21.4</version>
+  <version>21.3</version>
  </plugin>
- <reportVersion>21.4 67</reportVersion>
+ <reportVersion>21.3 170</reportVersion>
  <uniqueIdentifier></uniqueIdentifier>
 </EnsembleReport>

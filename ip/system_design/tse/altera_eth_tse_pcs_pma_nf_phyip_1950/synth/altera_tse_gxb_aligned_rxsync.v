@@ -20,7 +20,7 @@
 // $Source: /ipbu/cvs/sio/projects/TriSpeedEthernet/src/RTL/strxii_pcs/verilog/altera_tse_alt2gxb_aligned_rxsync.v,v $
 //
 // $Revision: #1 $
-// $Date: 2021/09/02 $
+// $Date: 2021/07/29 $
 // Check in by : $Author: psgswbuild $
 // Author      : Siew Kong NG
 //

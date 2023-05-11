@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deploy
- date="2023.05.11.17:16:21"
- outputDirectory="C:/Users/alvas/Documents/Work_ASD/Projects/Learning/sfp_test/ip/system_design/send_cmd_pcie/">
+ date="2023.05.11.18:50:27"
+ outputDirectory="D:/Documents/Projects/Learning/SFP_test/ip/system_design/send_cmd_pcie/">
  <perimeter>
   <parameter
      name="AUTO_GENERATION_ID"
@@ -193,21 +193,20 @@
   <parameter name="AUTO_DEVICE_SPEEDGRADE" value="5" />
   <generatedFiles>
    <file
-       path="C:\Users\alvas\Documents\Work_ASD\Projects\Learning\sfp_test\ip\system_design\send_cmd_pcie\synth\send_cmd_pcie.v"
+       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\send_cmd_pcie\synth\send_cmd_pcie.v"
        attributes="CONTAINS_INLINE_CONFIGURATION" />
   </generatedFiles>
   <childGeneratedFiles>
    <file
-       path="C:\Users\alvas\Documents\Work_ASD\Projects\Learning\sfp_test\ip\system_design\send_cmd_pcie\synth\send_cmd_pcie.v"
+       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\send_cmd_pcie\synth\send_cmd_pcie.v"
        attributes="CONTAINS_INLINE_CONFIGURATION" />
   </childGeneratedFiles>
   <sourceFiles>
    <file
-       path="C:/Users/alvas/Documents/Work_ASD/Projects/Learning/sfp_test/ip/system_design/send_cmd_pcie.ip" />
+       path="D:/Documents/Projects/Learning/SFP_test/ip/system_design/send_cmd_pcie.ip" />
   </sourceFiles>
   <childSourceFiles>
-   <file
-       path="C:/Users/alvas/Documents/Work_ASD/Projects/Learning/sfp_test/send_cmd_pcie_hw.tcl" />
+   <file path="D:/Documents/Projects/Learning/SFP_test/send_cmd_pcie_hw.tcl" />
   </childSourceFiles>
   <messages>
    <message level="Info" culprit="send_cmd_pcie">"Generating: send_cmd_pcie"</message>
@@ -217,17 +216,16 @@
  <entity kind="send_cmd_pcie" version="1.0" name="avalon_mm_slave">
   <generatedFiles>
    <file
-       path="C:\Users\alvas\Documents\Work_ASD\Projects\Learning\sfp_test\ip\system_design\send_cmd_pcie\send_cmd_pcie_10\synth\avalon_mm_slave.sv"
+       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\send_cmd_pcie\send_cmd_pcie_10\synth\avalon_mm_slave.sv"
        attributes="TOP_LEVEL_FILE" />
   </generatedFiles>
   <childGeneratedFiles>
    <file
-       path="C:\Users\alvas\Documents\Work_ASD\Projects\Learning\sfp_test\ip\system_design\send_cmd_pcie\send_cmd_pcie_10\synth\avalon_mm_slave.sv"
+       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\send_cmd_pcie\send_cmd_pcie_10\synth\avalon_mm_slave.sv"
        attributes="TOP_LEVEL_FILE" />
   </childGeneratedFiles>
   <sourceFiles>
-   <file
-       path="C:/Users/alvas/Documents/Work_ASD/Projects/Learning/sfp_test/send_cmd_pcie_hw.tcl" />
+   <file path="D:/Documents/Projects/Learning/SFP_test/send_cmd_pcie_hw.tcl" />
   </sourceFiles>
   <childSourceFiles/>
   <instantiator instantiator="send_cmd_pcie" as="send_cmd_pcie" />
