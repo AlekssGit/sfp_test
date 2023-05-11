@@ -1,5 +1,5 @@
 module setup_ddr #(
-		parameter test = 0
+		parameter test = 1
 	) (
 		output wire [24:0]  amm_addr,                 //      avalon_master.address
 		input  wire [255:0] amm_readdata,             //                   .readdata

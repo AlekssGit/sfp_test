@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="send_cmd_pcie" kind="send_cmd_pcie" version="1.0" fabric="QSYS">
- <!-- Format version 21.3 170 (Future versions may contain additional information.) -->
- <!-- 2023.05.11.11:22:19 -->
+ <!-- Format version 21.4 67 (Future versions may contain additional information.) -->
+ <!-- 2023.05.11.14:38:09 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
@@ -122,7 +122,7 @@ the requested settings for a module instance. -->
    <visible>true</visible>
    <valid>true</valid>
   </parameter>
-  <interface name="clock" kind="clock_sink" version="21.3">
+  <interface name="clock" kind="clock_sink" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -167,7 +167,7 @@ parameters are a RESULT of the module parameters. -->
     <role>clk</role>
    </port>
   </interface>
-  <interface name="reset" kind="reset_sink" version="21.3">
+  <interface name="reset" kind="reset_sink" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -212,7 +212,7 @@ parameters are a RESULT of the module parameters. -->
     <role>reset_n</role>
    </port>
   </interface>
-  <interface name="avalon_slave" kind="avalon_slave" version="21.3">
+  <interface name="avalon_slave" kind="avalon_slave" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -615,7 +615,7 @@ parameters are a RESULT of the module parameters. -->
     <role>readdatavalid</role>
    </port>
   </interface>
-  <interface name="send_control" kind="conduit_end" version="21.3">
+  <interface name="send_control" kind="conduit_end" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -674,7 +674,7 @@ parameters are a RESULT of the module parameters. -->
     <role>signal</role>
    </port>
   </interface>
-  <interface name="ddr_status" kind="conduit_end" version="21.3">
+  <interface name="ddr_status" kind="conduit_end" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -733,7 +733,7 @@ parameters are a RESULT of the module parameters. -->
     <role>local_cal_fail</role>
    </port>
   </interface>
-  <interface name="ddr_setup_done" kind="conduit_end" version="21.3">
+  <interface name="ddr_setup_done" kind="conduit_end" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -786,7 +786,7 @@ parameters are a RESULT of the module parameters. -->
     <role>setup_done</role>
    </port>
   </interface>
-  <interface name="resets_information" kind="conduit_end" version="21.3">
+  <interface name="resets_information" kind="conduit_end" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -851,7 +851,7 @@ parameters are a RESULT of the module parameters. -->
     <role>board_reset</role>
    </port>
   </interface>
-  <interface name="ddr_setup_cmd" kind="conduit_end" version="21.3">
+  <interface name="ddr_setup_cmd" kind="conduit_end" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -919,7 +919,7 @@ parameters are a RESULT of the module parameters. -->
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
   <displayName>Clock Input</displayName>
-  <version>21.3</version>
+  <version>21.4</version>
  </plugin>
  <plugin>
   <instanceCount>1</instanceCount>
@@ -927,7 +927,7 @@ parameters are a RESULT of the module parameters. -->
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
   <displayName>Reset Input</displayName>
-  <version>21.3</version>
+  <version>21.4</version>
  </plugin>
  <plugin>
   <instanceCount>1</instanceCount>
@@ -935,7 +935,7 @@ parameters are a RESULT of the module parameters. -->
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
   <displayName>Avalon Memory Mapped Agent</displayName>
-  <version>21.3</version>
+  <version>21.4</version>
  </plugin>
  <plugin>
   <instanceCount>5</instanceCount>
@@ -943,8 +943,8 @@ parameters are a RESULT of the module parameters. -->
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
   <displayName>Conduit</displayName>
-  <version>21.3</version>
+  <version>21.4</version>
  </plugin>
- <reportVersion>21.3 170</reportVersion>
+ <reportVersion>21.4 67</reportVersion>
  <uniqueIdentifier></uniqueIdentifier>
 </EnsembleReport>

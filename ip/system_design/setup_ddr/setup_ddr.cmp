@@ -1,6 +1,6 @@
 	component setup_ddr is
 		generic (
-			test : boolean := false
+			test : boolean := true
 		);
 		port (
 			amm_addr                 : out std_logic_vector(24 downto 0);                     -- address

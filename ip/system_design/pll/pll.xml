@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deploy
- date="2023.05.11.11:22:22"
- outputDirectory="D:/Documents/Projects/Learning/SFP_test/ip/system_design/pll/">
+ date="2023.05.11.14:38:28"
+ outputDirectory="C:/Users/alvas/Documents/Work_ASD/Projects/Learning/sfp_test/ip/system_design/pll/">
  <perimeter>
   <parameter
      name="AUTO_GENERATION_ID"
@@ -106,21 +106,21 @@
   <parameter name="AUTO_DEVICE_SPEEDGRADE" value="5" />
   <generatedFiles>
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\pll\synth\pll.v"
+       path="C:\Users\alvas\Documents\Work_ASD\Projects\Learning\sfp_test\ip\system_design\pll\synth\pll.v"
        attributes="CONTAINS_INLINE_CONFIGURATION" />
   </generatedFiles>
   <childGeneratedFiles>
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\pll\synth\pll.v"
+       path="C:\Users\alvas\Documents\Work_ASD\Projects\Learning\sfp_test\ip\system_design\pll\synth\pll.v"
        attributes="CONTAINS_INLINE_CONFIGURATION" />
   </childGeneratedFiles>
   <sourceFiles>
    <file
-       path="D:/Documents/Projects/Learning/SFP_test/ip/system_design/pll.ip" />
+       path="C:/Users/alvas/Documents/Work_ASD/Projects/Learning/sfp_test/ip/system_design/pll.ip" />
   </sourceFiles>
   <childSourceFiles>
    <file
-       path="C:/intelfpga_pro/21.3/ip/altera/altera_iopll/top/altera_iopll_hw.tcl" />
+       path="C:/intelfpga_pro/21.4/ip/altera/altera_iopll/top/altera_iopll_hw.tcl" />
   </childSourceFiles>
   <messages>
    <message level="Info" culprit="pll">"Generating: pll"</message>
@@ -910,17 +910,17 @@
   <parameter name="c_cnt_bypass_en5" value="true" />
   <generatedFiles>
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\pll\altera_iopll_1931\synth\pll_altera_iopll_1931_ldt7zry.v"
+       path="C:\Users\alvas\Documents\Work_ASD\Projects\Learning\sfp_test\ip\system_design\pll\altera_iopll_1931\synth\pll_altera_iopll_1931_ldt7zry.v"
        attributes="" />
   </generatedFiles>
   <childGeneratedFiles>
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\pll\altera_iopll_1931\synth\pll_altera_iopll_1931_ldt7zry.v"
+       path="C:\Users\alvas\Documents\Work_ASD\Projects\Learning\sfp_test\ip\system_design\pll\altera_iopll_1931\synth\pll_altera_iopll_1931_ldt7zry.v"
        attributes="" />
   </childGeneratedFiles>
   <sourceFiles>
    <file
-       path="C:/intelfpga_pro/21.3/ip/altera/altera_iopll/top/altera_iopll_hw.tcl" />
+       path="C:/intelfpga_pro/21.4/ip/altera/altera_iopll/top/altera_iopll_hw.tcl" />
   </sourceFiles>
   <childSourceFiles/>
   <instantiator instantiator="pll" as="pll" />

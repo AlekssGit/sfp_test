@@ -232,7 +232,7 @@ begin
     end 
     else
     begin
-		if(local_cal_success)
+		if(local_cal_success_avalon)
 		begin
 			if(address_changed & ~write_cmd & wren)
 			begin
@@ -257,7 +257,7 @@ begin
     end 
     else
     begin
-		if(local_cal_success)
+		if(local_cal_success_avalon)
 		begin
 			if(address_changed & ~read_cmd & ~wren)
 			begin

@@ -215,6 +215,29 @@ add wave -group ddr_setup    -label "avalon_reset"      /tb_sfp_test/device/plat
 add wave -group ddr_setup    -label "test"              /tb_sfp_test/device/platform_design/setup_ddr/setup_ddr/test
 
 
+add wave -group ddr_setup_avalon    -label "rst_n           "              /tb_sfp_test/device/platform_design/setup_ddr/setup_ddr/rst_n    
+add wave -group ddr_setup_avalon    -label "clk_50          "              /tb_sfp_test/device/platform_design/setup_ddr/setup_ddr/clk_50    
+add wave -group ddr_setup_avalon    -label "wr_rq_avalon    "              /tb_sfp_test/device/platform_design/setup_ddr/setup_ddr/wr_rq_avalon    
+add wave -group ddr_setup_avalon    -label "rd_rq_avalon    "              /tb_sfp_test/device/platform_design/setup_ddr/setup_ddr/rd_rq_avalon    
+add wave -group ddr_setup_avalon    -label "rd_valid        "              /tb_sfp_test/device/platform_design/setup_ddr/setup_ddr/rd_valid        
+add wave -group ddr_setup_avalon    -label "wr_adr          "              /tb_sfp_test/device/platform_design/setup_ddr/setup_ddr/wr_adr          
+add wave -group ddr_setup_avalon    -label "rd_adr          "              /tb_sfp_test/device/platform_design/setup_ddr/setup_ddr/rd_adr          
+add wave -group ddr_setup_avalon    -label "wr_data_avalon  "              /tb_sfp_test/device/platform_design/setup_ddr/setup_ddr/wr_data_avalon  
+add wave -group ddr_setup_avalon    -label "rd_data         "              /tb_sfp_test/device/platform_design/setup_ddr/setup_ddr/rd_data         
+add wave -group ddr_setup_avalon    -label "byte_enable     "              /tb_sfp_test/device/platform_design/setup_ddr/setup_ddr/byte_enable     
+add wave -group ddr_setup_avalon    -label "action_done     "              /tb_sfp_test/device/platform_design/setup_ddr/setup_ddr/action_done     
+add wave -group ddr_setup_avalon    -label "read_data       "              /tb_sfp_test/device/platform_design/setup_ddr/setup_ddr/read_data       
+add wave -group ddr_setup_avalon    -label "amm_addr          "              /tb_sfp_test/device/platform_design/setup_ddr/setup_ddr/amm_addr                  
+add wave -group ddr_setup_avalon    -label "amm_readdata      "              /tb_sfp_test/device/platform_design/setup_ddr/setup_ddr/amm_readdata              
+add wave -group ddr_setup_avalon    -label "amm_writedata     "              /tb_sfp_test/device/platform_design/setup_ddr/setup_ddr/amm_writedata             
+add wave -group ddr_setup_avalon    -label "amm_read          "              /tb_sfp_test/device/platform_design/setup_ddr/setup_ddr/amm_read                  
+add wave -group ddr_setup_avalon    -label "amm_write         "              /tb_sfp_test/device/platform_design/setup_ddr/setup_ddr/amm_write                 
+add wave -group ddr_setup_avalon    -label "amm_byteenable    "              /tb_sfp_test/device/platform_design/setup_ddr/setup_ddr/amm_byteenable            
+add wave -group ddr_setup_avalon    -label "amm_burstcount    "              /tb_sfp_test/device/platform_design/setup_ddr/setup_ddr/amm_burstcount            
+add wave -group ddr_setup_avalon    -label "amm_readdatavalid "              /tb_sfp_test/device/platform_design/setup_ddr/setup_ddr/amm_readdatavalid         
+add wave -group ddr_setup_avalon    -label "amm_ready         "              /tb_sfp_test/device/platform_design/setup_ddr/setup_ddr/amm_ready                 
+
+
 # i2c expander test
 # add wave -group i2c_slave -label "clk"          /tb_sfp_test/i2c_slave/clk
 # add wave -group i2c_slave -label "state"        /tb_sfp_test/i2c_slave/state

@@ -1,4 +1,4 @@
-# system info ddr_avalon_reset on 2023.05.11.11:22:12
+# system info ddr_avalon_reset on 2023.05.11.14:39:23
 system_info:
 name,value
 DEVICE,10CX220YF780I5G
@@ -6,7 +6,7 @@ DEVICE_FAMILY,Cyclone 10 GX
 GENERATION_ID,0
 #
 #
-# Files generated for ddr_avalon_reset on 2023.05.11.11:22:12
+# Files generated for ddr_avalon_reset on 2023.05.11.14:39:23
 files:
 filepath,kind,attributes,module,is_top
 sim/ddr_avalon_reset.v,VERILOG,CONTAINS_INLINE_CONFIGURATION,ddr_avalon_reset,true

@@ -300,7 +300,7 @@ external_ram_256 ddr_cntrl(
 
     .avalon_clk                 (avalon_clk                 ),  // (ddr_avalon_clk             ),
     .avalon_reset               (avalon_reset               ),  // (ddr_avalon_rst             ),
-    .local_cal_success_avalon   (local_cal_success_avalon   ),
+    .local_cal_success_avalon   (local_cal_success_avalon  | test ),
     .local_cal_success          (local_cal_success          )
 );
 
