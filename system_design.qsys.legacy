@@ -20230,11 +20230,10 @@ https://fpgasoftware.intel.com/eula.-->
                     <parameterValueMap>
                         <entry>
                             <key>associatedClock</key>
-                            <value>clock_avalon</value>
                         </entry>
                         <entry>
                             <key>synchronousEdges</key>
-                            <value>DEASSERT</value>
+                            <value>NONE</value>
                         </entry>
                     </parameterValueMap>
                 </parameters>
@@ -20936,11 +20935,10 @@ https://fpgasoftware.intel.com/eula.-->
                 <parameterValueMap>
                     <entry>
                         <key>associatedClock</key>
-                        <value>clock_avalon</value>
                     </entry>
                     <entry>
                         <key>synchronousEdges</key>
-                        <value>DEASSERT</value>
+                        <value>NONE</value>
                     </entry>
                 </parameterValueMap>
             </parameters>

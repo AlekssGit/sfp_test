@@ -105,7 +105,7 @@
    type="SDC_ENTITY"
    library="hs_clk_xer_1931" />
  <file
-   path="altera_mm_interconnect_1920/sim/system_design_altera_mm_interconnect_1920_656hvpi.v"
+   path="altera_mm_interconnect_1920/sim/system_design_altera_mm_interconnect_1920_cessh5i.v"
    type="VERILOG"
    library="altera_mm_interconnect_1920"
    hasInlineConfiguration="true" />

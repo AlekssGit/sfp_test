@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="system_design" kind="system_design" version="1.0" fabric="QSYS">
  <!-- Format version 21.4 67 (Future versions may contain additional information.) -->
- <!-- 2023.05.11.23:14:33 -->
+ <!-- 2023.05.12.17:50:19 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
@@ -34461,11 +34461,10 @@ the requested settings for a module instance. -->
                     <parameterValueMap>
                         <entry>
                             <key>associatedClock</key>
-                            <value>clock_avalon</value>
                         </entry>
                         <entry>
                             <key>synchronousEdges</key>
-                            <value>DEASSERT</value>
+                            <value>NONE</value>
                         </entry>
                     </parameterValueMap>
                 </parameters>
@@ -35226,11 +35225,10 @@ the requested settings for a module instance. -->
                 <parameterValueMap>
                     <entry>
                         <key>associatedClock</key>
-                        <value>clock_avalon</value>
                     </entry>
                     <entry>
                         <key>synchronousEdges</key>
-                        <value>DEASSERT</value>
+                        <value>NONE</value>
                     </entry>
                 </parameterValueMap>
             </parameters>
@@ -36211,7 +36209,7 @@ particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
    <parameter name="associatedClock">
     <type>java.lang.String</type>
-    <value>clock_avalon</value>
+    <value></value>
     <derived>false</derived>
     <enabled>true</enabled>
     <visible>true</visible>
@@ -36219,7 +36217,7 @@ parameters are a RESULT of the module parameters. -->
    </parameter>
    <parameter name="synchronousEdges">
     <type>com.altera.sopcmodel.reset.Reset$Edges</type>
-    <value>DEASSERT</value>
+    <value>NONE</value>
     <derived>false</derived>
     <enabled>true</enabled>
     <visible>true</visible>

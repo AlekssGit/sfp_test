@@ -146,43 +146,43 @@ always @(posedge clock, posedge reset)
 begin
     if(reset)
     begin
-        wr_rq       = 1'b0      ;
-        rd_rq       = 1'b0      ;
-        wr_adr      = 25'd0     ; 
-        rd_adr      = 25'd0     ;
-        wr_data     = 256'd0    ;   
-        q_local     = 256'd0    ;     
-        ready       = 1'b1      ;  
+        wr_rq       <= 1'b0      ;
+        rd_rq       <= 1'b0      ;
+        wr_adr      <= 25'd0     ; 
+        rd_adr      <= 25'd0     ;
+        wr_data     <= 256'd0    ;   
+        q_local     <= 256'd0    ;     
+        ready       <= 1'b1      ;  
     end
     else if(action_done_latch_local_prev)
     begin        
-        ready = 1'b1;
+        ready <= 1'b1;
         if(rd_rq)
         begin
-            q_local = rd_data_local_first;
+            q_local <= rd_data_local_first;
         end
-        rd_rq = 1'b0;
-        wr_rq = 1'b0;
+        rd_rq <= 1'b0;
+        wr_rq <= 1'b0;
     end 
     else
     begin
         if(write_cmd)
         begin
-            ready = 1'b0;
+            ready <= 1'b0;
             if(wr_rq == 1'b0)
             begin
-                wr_rq   = 1'b1;
-                wr_adr  = address_local;
-                wr_data = data;
+                wr_rq   <= 1'b1;
+                wr_adr  <= address_local;
+                wr_data <= data;
             end
         end
         else if(read_cmd)
         begin
-            ready = 1'b0;
+            ready <= 1'b0;
             if(rd_rq == 1'b0)
             begin
-                rd_rq   = 1'b1;
-                rd_adr  = address_local;
+                rd_rq   <= 1'b1;
+                rd_adr  <= address_local;
             end
         end
     end
@@ -192,19 +192,19 @@ always@(posedge clock, posedge reset)
 begin
 	if(reset)
 	begin
-		address_changed = 	1'b0;
-		prev_address	=	25'd0;
+		address_changed <= 	1'b0;
+		prev_address	<=	25'd0;
 	end
 	else
 	begin
 		if(prev_address != address_local)
 		begin
-			prev_address = address_local;
-			address_changed = 1'b1;
+			prev_address <= address_local;
+			address_changed <= 1'b1;
 		end
 		else
 		begin
-            address_changed = 1'b0;
+            address_changed <= 1'b0;
 		end
 	end
 end
@@ -228,7 +228,7 @@ always @(posedge clock, posedge reset)
 begin
     if(reset)
     begin
-        write_cmd    = 1'b0;  
+        write_cmd    <= 1'b0;  
     end 
     else
     begin
@@ -238,12 +238,12 @@ begin
 			begin
                 if(ready)
                 begin
-                    write_cmd = 1'b1;    
+                    write_cmd <= 1'b1;    
                 end			
 			end
 			else
 			begin
-				write_cmd = 1'b0;
+				write_cmd <= 1'b0;
 			end
 		end   
     end   
@@ -253,7 +253,7 @@ always @(posedge clock, posedge reset)
 begin
     if(reset)
     begin
-        read_cmd	=	1'b0;  
+        read_cmd	<=	1'b0;  
     end 
     else
     begin
@@ -261,17 +261,13 @@ begin
 		begin
 			if(address_changed & ~read_cmd & ~wren)
 			begin
-				read_cmd = 1'b1;
+				read_cmd <= 1'b1;
 			end
 			else
 			begin
-				read_cmd = 1'b0;
+				read_cmd <= 1'b0;
 			end
 		end   
     end   
 end
-
-logic rst_n;
-assign rst_n = ~reset;
-
 endmodule

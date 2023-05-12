@@ -19,7 +19,7 @@ logic clk_1250;
 wire i2c_scl;
 wire i2c_sda;
 
-sfp_test_top device (
+sfp_test_top #(.test(1)) device (
     .clk_50             (clk_50         ),
     .rst_n              (rst_n          ),
 

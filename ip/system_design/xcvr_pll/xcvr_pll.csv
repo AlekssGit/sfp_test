@@ -1,4 +1,4 @@
-# system info xcvr_pll on 2023.05.11.23:15:15
+# system info xcvr_pll on 2023.05.12.17:50:42
 system_info:
 name,value
 DEVICE,10CX220YF780I5G
@@ -6,7 +6,7 @@ DEVICE_FAMILY,Cyclone 10 GX
 GENERATION_ID,0
 #
 #
-# Files generated for xcvr_pll on 2023.05.11.23:15:15
+# Files generated for xcvr_pll on 2023.05.12.17:50:42
 files:
 filepath,kind,attributes,module,is_top
 sim/xcvr_pll.v,VERILOG,CONTAINS_INLINE_CONFIGURATION,xcvr_pll,true
