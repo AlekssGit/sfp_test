@@ -44,6 +44,7 @@ assign reset_local_cal_success = local_cal_success_avalon;
 assign ddr_avalon_rst = avalon_reset;
 assign board_reset = rst_n;
 
+// Под вопросом, надо бы убирать отсюда
 always_ff @(posedge avalon_clk, posedge avalon_reset)
 begin
     if(avalon_reset)
@@ -63,7 +64,8 @@ logic [24:0]     addr ;
 
 logic need_setup;
 
-always_ff @(posedge avalon_clk, posedge reset) 
+// always_ff @(posedge avalon_clk, posedge reset) 
+always_ff @(posedge clk, posedge reset) 
 begin
     if(reset)
     begin
@@ -122,7 +124,8 @@ logic [31:0] test_data  [28] = '{   32'd0,
                                      };
 assign ram_data_read = test_data[ram_address];
 
-always_ff @(posedge avalon_clk, posedge reset)
+// always_ff @(posedge avalon_clk, posedge reset)
+always_ff @(posedge clk, posedge reset)
 begin
     if(reset)
     begin
@@ -143,7 +146,8 @@ begin
     end
 end
 
-always_ff @(posedge avalon_clk, posedge reset)
+// always_ff @(posedge avalon_clk, posedge reset)
+always_ff @(posedge clk, posedge reset)
 begin
     if(reset)
     begin
@@ -166,7 +170,8 @@ begin
     end
 end
 
-always_ff @(posedge avalon_clk, posedge reset)
+// always_ff @(posedge avalon_clk, posedge reset)
+always_ff @(posedge clk, posedge reset)
 begin
     if(reset)
     begin
@@ -182,7 +187,8 @@ begin
     end
 end
 
-always_ff @(posedge avalon_clk, posedge reset)
+// always_ff @(posedge avalon_clk, posedge reset)
+always_ff @(posedge clk, posedge reset)
 begin
     if(reset)
     begin
@@ -205,8 +211,8 @@ begin
     end    
 end
 
-// always_ff @(posedge clk, posedge reset) 
-always_ff @(posedge avalon_clk, posedge reset) 
+always_ff @(posedge clk, posedge reset) 
+// always_ff @(posedge avalon_clk, posedge reset) 
 begin
     if(reset)
     begin
@@ -281,7 +287,7 @@ external_ram_256 ddr_cntrl(
 	.q		                    (read_data	                ),      // dataout
 	.address	                (addr   	                ), 		// address
 	.wren	                    (~setup_done	            ),    	// wren
-	.clock 	                    (/*clk*/ avalon_clk         ),	   	// clk
+	.clock 	                    (/*avalon_clk*/       clk   ),	   	// clk
 	.reset	                    (~rst_n			            ),		// reset
     .ready                      (ram_ready		            ),
     .clock_50                   (clk_50			            ),
