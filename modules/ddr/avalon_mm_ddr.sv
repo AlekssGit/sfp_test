@@ -95,17 +95,17 @@ always @(posedge CLK_I, posedge RST_I)
 begin
     if(RST_I)
     begin
-        flag_wr = 1'b0;
+        flag_wr <= 1'b0;
     end    
     else
     begin
         if(WR & ~READY)
         begin
-            flag_wr = 1'b1;
+            flag_wr <= 1'b1;
         end
         else if(state != WRITE)
         begin
-            flag_wr = 1'b0;
+            flag_wr <= 1'b0;
         end
     end
 end
@@ -115,17 +115,17 @@ always @(posedge CLK_I, posedge RST_I)
 begin
     if(RST_I)
     begin
-        flag_rd = 1'b0;
+        flag_rd <= 1'b0;
     end    
     else
     begin
         if(RD & RD_VALID)
         begin
-            flag_rd = 1'b1;
+            flag_rd <= 1'b1;
         end
         else if(state != READ)
         begin
-            flag_rd = 1'b0;
+            flag_rd <= 1'b0;
         end
     end
 end
@@ -172,7 +172,7 @@ always @(posedge CLK_I, posedge RST_I)
 begin
     if(RST_I)
     begin
-        prev_wr_rq = 1'b0;
+        prev_wr_rq <= 1'b0;
     end  
     else
     begin
@@ -184,7 +184,7 @@ always @(posedge CLK_I, posedge RST_I)
 begin
     if(RST_I)
     begin
-        new_task_write = 1'b0;
+        new_task_write <= 1'b0;
     end  
     else
     begin
@@ -192,16 +192,16 @@ begin
         begin
             if(prev_wr_rq == 1'b1 & wr_rq_local == 1'b0)
             begin
-                new_task_write = 1'b0;
+                new_task_write <= 1'b0;
             end
             else if(state == WRITE)
             begin
-                new_task_write = 1'b0;
+                new_task_write <= 1'b0;
             end
         end
         else if(prev_wr_rq == 1'b0 & wr_rq_local == 1'b1)
         begin
-            new_task_write = 1'b1;
+            new_task_write <= 1'b1;
         end
     end  
 end
@@ -213,7 +213,7 @@ always @(posedge CLK_I, posedge RST_I)
 begin
     if(RST_I)
     begin
-        prev_rd_rq = 1'b0;
+        prev_rd_rq <= 1'b0;
     end  
     else
     begin
@@ -225,7 +225,7 @@ always @(posedge CLK_I, posedge RST_I)
 begin
     if(RST_I)
     begin
-        new_task_read = 1'b0;
+        new_task_read <= 1'b0;
     end  
     else
     begin
@@ -233,16 +233,16 @@ begin
         begin
             if(prev_rd_rq == 1'b1 & rd_rq_local == 1'b0)
             begin
-                new_task_read = 1'b0;
+                new_task_read <= 1'b0;
             end
             else if(state == READ)
             begin
-                new_task_read = 1'b0;
+                new_task_read <= 1'b0;
             end
         end
         else if(prev_rd_rq == 1'b0 & rd_rq_local == 1'b1)
         begin
-            new_task_read = 1'b1;
+            new_task_read <= 1'b1;
         end
     end  
 end
@@ -270,11 +270,11 @@ always @(posedge CLK_I, posedge RST_I)
 begin
     if(RST_I)
     begin
-        state = IDLE;
+        state <= IDLE;
     end
     else
     begin
-        state = state_next;
+        state <= state_next;
     end
 end
 
