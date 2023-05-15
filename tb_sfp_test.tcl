@@ -275,6 +275,6 @@ add wave -group ddr_setup_avalon    -label "amm_ready         "              /tb
 # add wave -group i2c_master -label "rd_data_i2c_ctrl"  /tb_sfp_test/device/expander_device/i2c_ctrl/rd_data
 # add wave -group i2c_master -label "state_i2c_mm"  /tb_sfp_test/device/expander_device/i2c_ctrl/mm_exp/state
 
-
-run 1000us 
+# 1000us
+run 45us  
 wave zoom full
