@@ -7,6 +7,6 @@
    showClockDomains="0"
    showResetDomains="0"
    showAvalonDomains="0" />
- <library expandedCategories="Library,Existing IP Variants,Project" />
+ <library expandedCategories="Project,Existing IP Variants,Library" />
  <generation path="" simulation="VERILOG" modelsim="1" />
 </preferences>

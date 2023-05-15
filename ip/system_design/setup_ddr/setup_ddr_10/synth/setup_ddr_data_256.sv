@@ -177,7 +177,7 @@ begin
     begin
         addr <= 25'd0;
     end
-    else if (wait_data % 8'd20 == 8'd0 & count_data == 16'd0)
+    else if (wait_data % 8'd8 == 8'd0 & count_data == 16'd0) // was 20
     begin
         addr    <=   {15'd0, ram_address };
     end
@@ -226,7 +226,7 @@ begin
         if(count_data <= 16'd3 & need_setup)
         begin
             setup_done <= 1'b0;
-            if(wait_data % 8'd30 == 8'd0)
+            if(wait_data % 8'd10 == 8'd0) //was 30
             begin
                 wait_data <= 8'd1;
 
