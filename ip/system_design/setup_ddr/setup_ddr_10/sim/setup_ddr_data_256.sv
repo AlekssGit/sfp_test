@@ -159,7 +159,7 @@ begin
     end
     else
     begin
-        if(count_ram_data == 4'd8 )
+        if(count_ram_data == 4'd7 )
         begin
             data <= ddr_data;  
         end      
@@ -181,7 +181,7 @@ begin
     begin
         addr    <=   {15'd0, ram_address };
     end
-    else if(wait_data == 8'd10 & count_ram_data == 4'd12)
+    else if(wait_data == 8'd5 & count_ram_data == 4'd7)
     begin
         addr    <=   {9'd0, count_data };
     end
@@ -247,13 +247,13 @@ begin
             begin
                 wait_data <= wait_data + 8'd1; // ???
                 
-                if(wait_data == 8'd10 & count_data > 16'd0 & count_ram_data == 4'd12)
+                if(wait_data == 8'd5 & count_data > 16'd0 & count_ram_data == 4'd7)
                 begin
                     count_ram_data <= 4'd0;
                 end
             end
         end
-        else if(count_data == 16'd100)
+        else if(count_data == 16'd40) // wait for the last data
         begin
             setup_done <= 1'b1;
         end
