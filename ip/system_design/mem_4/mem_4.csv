@@ -1,4 +1,4 @@
-# system info mem_4 on 2023.05.15.19:20:27
+# system info mem_4 on 2023.05.16.10:34:47
 system_info:
 name,value
 DEVICE,10CX220YF780I5G
@@ -6,7 +6,7 @@ DEVICE_FAMILY,Cyclone 10 GX
 GENERATION_ID,0
 #
 #
-# Files generated for mem_4 on 2023.05.15.19:20:27
+# Files generated for mem_4 on 2023.05.16.10:34:47
 files:
 filepath,kind,attributes,module,is_top
 sim/mem_4.v,VERILOG,CONTAINS_INLINE_CONFIGURATION,mem_4,true
