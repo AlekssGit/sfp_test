@@ -1,4 +1,4 @@
-# system info reset_main on 2023.05.16.10:34:48
+# system info reset_main on 2023.05.16.21:23:42
 system_info:
 name,value
 DEVICE,10CX220YF780I5G
@@ -6,7 +6,7 @@ DEVICE_FAMILY,Cyclone 10 GX
 GENERATION_ID,0
 #
 #
-# Files generated for reset_main on 2023.05.16.10:34:48
+# Files generated for reset_main on 2023.05.16.21:23:42
 files:
 filepath,kind,attributes,module,is_top
 sim/reset_main.v,VERILOG,CONTAINS_INLINE_CONFIGURATION,reset_main,true

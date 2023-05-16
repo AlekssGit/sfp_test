@@ -133,7 +133,7 @@ begin
     end
     else
     begin
-        case(count_ram_data)
+        case(count_ram_data - 4'd1) //was without minus
         4'd0:       ddr_data <= {224'd0  , ram_data_read};                  
         4'd1:       ddr_data <= {192'd0  , ram_data_read , ddr_data[31:0]}; 
         4'd2:       ddr_data <= {160'd0  , ram_data_read , ddr_data[63:0]}; 
@@ -159,7 +159,7 @@ begin
     end
     else
     begin
-        if(count_ram_data == 4'd7 )
+        if(count_ram_data == 4'd8 & count_data <= 16'd3 )
         begin
             data <= ddr_data;  
         end      
@@ -181,7 +181,7 @@ begin
     begin
         addr    <=   {15'd0, ram_address };
     end
-    else if(wait_data == 8'd3 & count_ram_data == 4'd7)
+    else if(wait_data == 8'd3 & count_ram_data == 4'd8)
     begin
         addr    <=   {9'd0, count_data };
     end
@@ -200,14 +200,15 @@ begin
     end
     else
     begin
-        if (count_ram_data == 4'd0)
-        begin
-            ram_address <=   10'd1 + {6'd0, count_ram_data + 4'd1} + ((count_data[9:0] - 10'd1) << 3);
-        end
-        else
-        begin
-            ram_address <=   10'd1 + {6'd0, count_ram_data + 4'd1} + ((count_data[9:0] - 10'd2) << 3);
-        end
+        ram_address <=   10'd1 + {6'd0, count_ram_data + 4'd1} + ((count_data[9:0] - 10'd1) << 3);
+        // if (count_ram_data == 4'd0)
+        // begin
+        //     ram_address <=   10'd1 + {6'd0, count_ram_data + 4'd1} + ((count_data[9:0] - 10'd1) << 3);
+        // end
+        // else
+        // begin
+        //     ram_address <=   10'd1 + {6'd0, count_ram_data + 4'd1} + ((count_data[9:0] - 10'd2) << 3);
+        // end
     end    
 end
 
@@ -228,26 +229,37 @@ begin
             setup_done <= 1'b0;
             if(wait_data % 8'd5 == 8'd0) //was 30
             begin
-                wait_data <= 8'd1;
+                // wait_data <= 8'd1;
 
                 if(count_data == 16'd0)
                 begin
-                    count_data <= count_data + 16'd1; // ???
+                    wait_data <= 8'd1;
+                    count_data <= count_data + 16'd1;
                 end
                 else
                 begin
-                    if (count_ram_data == 4'd0)
+                    // if (count_ram_data == 4'd6) //was 0
+                    // begin
+                    //     count_data <= count_data + 16'd1;
+                    // end
+                    count_ram_data <= count_ram_data + 4'd1;
+
+                    if(count_ram_data == 4'd7) // was 6
                     begin
-                        count_data <= count_data + 16'd1;
+                        wait_data <= 8'd1;
                     end
-                    count_ram_data <= count_ram_data + 4'd1; // ???
                 end
-            end
+            end 
             else
             begin
-                wait_data <= wait_data + 8'd1; // ???
+                if (count_ram_data == 4'd8 & wait_data == 8'd1) //was 0 without wait_data
+                begin
+                    count_data <= count_data + 16'd1;
+                end
+
+                wait_data <= wait_data + 8'd1;
                 
-                if(wait_data == 8'd3 & count_data > 16'd0 & count_ram_data == 4'd7)
+                if(wait_data == 8'd3 & count_data > 16'd0 & count_ram_data == 4'd8) // was 7
                 begin
                     count_ram_data <= 4'd0;
                 end
@@ -259,7 +271,7 @@ begin
         end
         else if(need_setup)
         begin
-            count_data <= count_data + 16'd1; // ???
+            count_data <= count_data + 16'd1;
         end
         else
         begin
