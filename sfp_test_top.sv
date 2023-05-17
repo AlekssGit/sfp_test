@@ -22,7 +22,7 @@ module sfp_test_top (
     input   logic   clk_50  ,
     input   logic   rst_n   ,
 
-    input   logic   clk_125_lvds_tse,
+    input   logic   clk_125_lvds_tse, // need to setup in clockController.exe
     output  logic   reset_phy   ,
 // ---------------------------------------------------
     input   logic   sgmii_rx_1  , 
@@ -406,7 +406,7 @@ begin
     begin
 		if(mac_inited & rx_ready )
 		begin
-            if(ALLOW_SEND == 1'b1)
+            if(`ALLOW_SEND == 1'b1)
             begin
                 counter_to_send <= counter_to_send + 1;
                 if(counter_to_send == `PERIOD_BTN_SEND_1)
