@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deploy
- date="2023.05.16.23:38:47"
+ date="2023.05.17.18:08:04"
  outputDirectory="C:/Users/alvas/Documents/Work_ASD/Projects/Learning/sfp_test/ip/system_design/setup_ddr/">
  <perimeter>
   <parameter
@@ -168,12 +168,6 @@
        direction="input"
        role="local_cal_fail"
        width="1" />
-  </interface>
-  <interface name="ddr_ready" kind="conduit" start="0">
-   <property name="associatedClock" value="" />
-   <property name="associatedReset" value="" />
-   <property name="prSafe" value="false" />
-   <port name="ram_ready" direction="input" role="ram_ready" width="1" />
   </interface>
   <interface name="clock_125_tx_rx" kind="clock" start="0">
    <property name="clockRate" value="0" />

@@ -13,7 +13,6 @@
 		.setup_done               (_connected_to_setup_done_),               //  output,    width = 1,              setup.setup_done
 		.local_cal_success_avalon (_connected_to_local_cal_success_avalon_), //   input,    width = 1,         ddr_status.local_cal_success
 		.local_cal_fail_avalon    (_connected_to_local_cal_fail_avalon_),    //   input,    width = 1,                   .local_cal_fail
-		.ram_ready                (_connected_to_ram_ready_),                //   input,    width = 1,          ddr_ready.ram_ready
 		.clk                      (_connected_to_clk_),                      //   input,    width = 1,    clock_125_tx_rx.clk
 		.avalon_clk               (_connected_to_avalon_clk_),               //   input,    width = 1,       clock_avalon.clk
 		.clk_50                   (_connected_to_clk_50_),                   //   input,    width = 1,           clock_50.clk

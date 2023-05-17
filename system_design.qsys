@@ -70,7 +70,7 @@ https://fpgasoftware.intel.com/eula.-->
       }
       datum sopceditor_expanded
       {
-         value = "1";
+         value = "0";
          type = "boolean";
       }
    }
@@ -279,7 +279,7 @@ https://fpgasoftware.intel.com/eula.-->
       }
       datum sopceditor_expanded
       {
-         value = "1";
+         value = "0";
          type = "boolean";
       }
    }
@@ -300,7 +300,7 @@ https://fpgasoftware.intel.com/eula.-->
       }
       datum sopceditor_expanded
       {
-         value = "0";
+         value = "1";
          type = "boolean";
       }
    }
@@ -326,7 +326,7 @@ https://fpgasoftware.intel.com/eula.-->
       }
       datum sopceditor_expanded
       {
-         value = "1";
+         value = "0";
          type = "boolean";
       }
    }
@@ -20539,39 +20539,6 @@ https://fpgasoftware.intel.com/eula.-->
                 &lt;/parameters&gt;
             &lt;/interface&gt;
             &lt;interface&gt;
-                &lt;name&gt;ddr_ready&lt;/name&gt;
-                &lt;type&gt;conduit&lt;/type&gt;
-                &lt;isStart&gt;false&lt;/isStart&gt;
-                &lt;ports&gt;
-                    &lt;port&gt;
-                        &lt;name&gt;ram_ready&lt;/name&gt;
-                        &lt;role&gt;ram_ready&lt;/role&gt;
-                        &lt;direction&gt;Input&lt;/direction&gt;
-                        &lt;width&gt;1&lt;/width&gt;
-                        &lt;lowerBound&gt;0&lt;/lowerBound&gt;
-                        &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
-                        &lt;terminationValue&gt;0&lt;/terminationValue&gt;
-                    &lt;/port&gt;
-                &lt;/ports&gt;
-                &lt;assignments&gt;
-                    &lt;assignmentValueMap/&gt;
-                &lt;/assignments&gt;
-                &lt;parameters&gt;
-                    &lt;parameterValueMap&gt;
-                        &lt;entry&gt;
-                            &lt;key&gt;associatedClock&lt;/key&gt;
-                        &lt;/entry&gt;
-                        &lt;entry&gt;
-                            &lt;key&gt;associatedReset&lt;/key&gt;
-                        &lt;/entry&gt;
-                        &lt;entry&gt;
-                            &lt;key&gt;prSafe&lt;/key&gt;
-                            &lt;value&gt;false&lt;/value&gt;
-                        &lt;/entry&gt;
-                    &lt;/parameterValueMap&gt;
-                &lt;/parameters&gt;
-            &lt;/interface&gt;
-            &lt;interface&gt;
                 &lt;name&gt;clock_125_tx_rx&lt;/name&gt;
                 &lt;type&gt;clock&lt;/type&gt;
                 &lt;isStart&gt;false&lt;/isStart&gt;
@@ -21222,39 +21189,6 @@ https://fpgasoftware.intel.com/eula.-->
                 &lt;port&gt;
                     &lt;name&gt;local_cal_fail_avalon&lt;/name&gt;
                     &lt;role&gt;local_cal_fail&lt;/role&gt;
-                    &lt;direction&gt;Input&lt;/direction&gt;
-                    &lt;width&gt;1&lt;/width&gt;
-                    &lt;lowerBound&gt;0&lt;/lowerBound&gt;
-                    &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
-                    &lt;terminationValue&gt;0&lt;/terminationValue&gt;
-                &lt;/port&gt;
-            &lt;/ports&gt;
-            &lt;assignments&gt;
-                &lt;assignmentValueMap/&gt;
-            &lt;/assignments&gt;
-            &lt;parameters&gt;
-                &lt;parameterValueMap&gt;
-                    &lt;entry&gt;
-                        &lt;key&gt;associatedClock&lt;/key&gt;
-                    &lt;/entry&gt;
-                    &lt;entry&gt;
-                        &lt;key&gt;associatedReset&lt;/key&gt;
-                    &lt;/entry&gt;
-                    &lt;entry&gt;
-                        &lt;key&gt;prSafe&lt;/key&gt;
-                        &lt;value&gt;false&lt;/value&gt;
-                    &lt;/entry&gt;
-                &lt;/parameterValueMap&gt;
-            &lt;/parameters&gt;
-        &lt;/interface&gt;
-        &lt;interface&gt;
-            &lt;name&gt;ddr_ready&lt;/name&gt;
-            &lt;type&gt;conduit&lt;/type&gt;
-            &lt;isStart&gt;false&lt;/isStart&gt;
-            &lt;ports&gt;
-                &lt;port&gt;
-                    &lt;name&gt;ram_ready&lt;/name&gt;
-                    &lt;role&gt;ram_ready&lt;/role&gt;
                     &lt;direction&gt;Input&lt;/direction&gt;
                     &lt;width&gt;1&lt;/width&gt;
                     &lt;lowerBound&gt;0&lt;/lowerBound&gt;
@@ -32574,7 +32508,7 @@ https://fpgasoftware.intel.com/eula.-->
       <altera:interface_mapping altera:name="ddr3_oct" altera:internal="ddr3.oct" altera:type="conduit" altera:dir="end"></altera:interface_mapping>
       <altera:interface_mapping altera:name="ddr_avalon" altera:internal="clock_ddr_avalon.out_clk" altera:type="clock" altera:dir="start"></altera:interface_mapping>
       <altera:interface_mapping altera:name="ddr_avalon_reset" altera:internal="ddr_avalon_reset.out_reset" altera:type="reset" altera:dir="start"></altera:interface_mapping>
-      <altera:interface_mapping altera:name="ddr_ready" altera:internal="setup_ddr.ddr_ready" altera:type="conduit" altera:dir="end"></altera:interface_mapping>
+      <altera:interface_mapping altera:name="ddr_ready" altera:internal="setup_ddr.ddr_ready"></altera:interface_mapping>
       <altera:interface_mapping altera:name="init_mac_led_link" altera:internal="init_mac.led_link"></altera:interface_mapping>
       <altera:interface_mapping altera:name="mac_inited" altera:internal="init_mac.mac_inited" altera:type="conduit" altera:dir="end"></altera:interface_mapping>
       <altera:interface_mapping altera:name="mac_mdio" altera:internal="tse.mac_mdio_connection" altera:type="conduit" altera:dir="end"></altera:interface_mapping>

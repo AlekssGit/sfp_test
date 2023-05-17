@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="setup_ddr" kind="setup_ddr" version="1.0" fabric="QSYS">
  <!-- Format version 21.4 67 (Future versions may contain additional information.) -->
- <!-- 2023.05.16.23:38:47 -->
+ <!-- 2023.05.17.18:08:03 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
@@ -671,59 +671,6 @@ parameters are a RESULT of the module parameters. -->
     <role>local_cal_fail</role>
    </port>
   </interface>
-  <interface name="ddr_ready" kind="conduit_end" version="21.4">
-   <!-- The connection points exposed by a module instance for the
-particular module parameters. Connection points and their
-parameters are a RESULT of the module parameters. -->
-   <parameter name="associatedClock">
-    <type>java.lang.String</type>
-    <value></value>
-    <derived>false</derived>
-    <enabled>true</enabled>
-    <visible>true</visible>
-    <valid>true</valid>
-   </parameter>
-   <parameter name="associatedReset">
-    <type>java.lang.String</type>
-    <value></value>
-    <derived>false</derived>
-    <enabled>true</enabled>
-    <visible>true</visible>
-    <valid>true</valid>
-   </parameter>
-   <parameter name="prSafe">
-    <type>boolean</type>
-    <value>false</value>
-    <derived>false</derived>
-    <enabled>true</enabled>
-    <visible>false</visible>
-    <valid>true</valid>
-   </parameter>
-   <parameter name="deviceFamily">
-    <type>java.lang.String</type>
-    <value>UNKNOWN</value>
-    <derived>false</derived>
-    <enabled>true</enabled>
-    <visible>true</visible>
-    <valid>true</valid>
-   </parameter>
-   <parameter name="generateLegacySim">
-    <type>boolean</type>
-    <value>false</value>
-    <derived>false</derived>
-    <enabled>true</enabled>
-    <visible>true</visible>
-    <valid>true</valid>
-   </parameter>
-   <type>conduit</type>
-   <isStart>false</isStart>
-   <port>
-    <name>ram_ready</name>
-    <direction>Input</direction>
-    <width>1</width>
-    <role>ram_ready</role>
-   </port>
-  </interface>
   <interface name="clock_125_tx_rx" kind="clock_sink" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
@@ -1242,7 +1189,7 @@ parameters are a RESULT of the module parameters. -->
   <version>21.4</version>
  </plugin>
  <plugin>
-  <instanceCount>7</instanceCount>
+  <instanceCount>6</instanceCount>
   <name>conduit_end</name>
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>

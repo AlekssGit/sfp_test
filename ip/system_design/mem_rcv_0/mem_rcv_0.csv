@@ -1,4 +1,4 @@
-# system info mem_rcv_0 on 2023.05.16.23:38:52
+# system info mem_rcv_0 on 2023.05.17.18:08:07
 system_info:
 name,value
 DEVICE,10CX220YF780I5G
@@ -6,7 +6,7 @@ DEVICE_FAMILY,Cyclone 10 GX
 GENERATION_ID,0
 #
 #
-# Files generated for mem_rcv_0 on 2023.05.16.23:38:52
+# Files generated for mem_rcv_0 on 2023.05.17.18:08:07
 files:
 filepath,kind,attributes,module,is_top
 sim/mem_rcv_0.v,VERILOG,CONTAINS_INLINE_CONFIGURATION,mem_rcv_0,true

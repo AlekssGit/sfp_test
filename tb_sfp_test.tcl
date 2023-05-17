@@ -199,8 +199,6 @@ elab_debug
 # add wave -group fifo_status    -label "valid"       /tb_sfp_test/device/platform_design/receive_packet_1_fifo_status_valid
 # add wave -group fifo_status    -label "channel"     /tb_sfp_test/device/platform_design/receive_packet_1_fifo_status_channel
 
-add wave /tb_sfp_test/device/platform_design/setup_ddr_test
-
 add wave -group ddr_setup    -label "clk_125"           /tb_sfp_test/device/platform_design/setup_ddr/setup_ddr/clk
 add wave -group ddr_setup    -label "reset"             /tb_sfp_test/device/platform_design/setup_ddr/setup_ddr/reset
 add wave -group ddr_setup    -label "address"           /tb_sfp_test/device/platform_design/setup_ddr/setup_ddr/addr
@@ -214,8 +212,6 @@ add wave -group ddr_setup    -label "wait_data"         /tb_sfp_test/device/plat
 add wave -group ddr_setup    -label "setup_done"        /tb_sfp_test/device/platform_design/setup_ddr/setup_ddr/setup_done
 add wave -group ddr_setup    -label "avalon_clk"        /tb_sfp_test/device/platform_design/setup_ddr/setup_ddr/avalon_clk
 add wave -group ddr_setup    -label "avalon_reset"      /tb_sfp_test/device/platform_design/setup_ddr/setup_ddr/avalon_reset
-add wave -group ddr_setup    -label "test"              /tb_sfp_test/device/platform_design/setup_ddr/setup_ddr/test
-
 
 add wave -group ddr_setup_avalon    -label "rst_n           "              /tb_sfp_test/device/platform_design/setup_ddr/setup_ddr/rst_n    
 add wave -group ddr_setup_avalon    -label "clk_50          "              /tb_sfp_test/device/platform_design/setup_ddr/setup_ddr/clk_50    

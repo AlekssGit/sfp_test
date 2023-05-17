@@ -357,43 +357,6 @@ https://fpgasoftware.intel.com/eula.-->
       </ipxact:parameters>
     </ipxact:busInterface>
     <ipxact:busInterface>
-      <ipxact:name>ddr_ready</ipxact:name>
-      <ipxact:busType vendor="intel" library="intel" name="conduit" version="21.4"></ipxact:busType>
-      <ipxact:abstractionTypes>
-        <ipxact:abstractionType>
-          <ipxact:abstractionRef vendor="intel" library="intel" name="conduit" version="21.4"></ipxact:abstractionRef>
-          <ipxact:portMaps>
-            <ipxact:portMap>
-              <ipxact:logicalPort>
-                <ipxact:name>ram_ready</ipxact:name>
-              </ipxact:logicalPort>
-              <ipxact:physicalPort>
-                <ipxact:name>ram_ready</ipxact:name>
-              </ipxact:physicalPort>
-            </ipxact:portMap>
-          </ipxact:portMaps>
-        </ipxact:abstractionType>
-      </ipxact:abstractionTypes>
-      <ipxact:slave></ipxact:slave>
-      <ipxact:parameters>
-        <ipxact:parameter parameterId="associatedClock" type="string">
-          <ipxact:name>associatedClock</ipxact:name>
-          <ipxact:displayName>associatedClock</ipxact:displayName>
-          <ipxact:value></ipxact:value>
-        </ipxact:parameter>
-        <ipxact:parameter parameterId="associatedReset" type="string">
-          <ipxact:name>associatedReset</ipxact:name>
-          <ipxact:displayName>associatedReset</ipxact:displayName>
-          <ipxact:value></ipxact:value>
-        </ipxact:parameter>
-        <ipxact:parameter parameterId="prSafe" type="bit">
-          <ipxact:name>prSafe</ipxact:name>
-          <ipxact:displayName>Partial Reconfiguration Safe</ipxact:displayName>
-          <ipxact:value>false</ipxact:value>
-        </ipxact:parameter>
-      </ipxact:parameters>
-    </ipxact:busInterface>
-    <ipxact:busInterface>
       <ipxact:name>clock_125_tx_rx</ipxact:name>
       <ipxact:busType vendor="intel" library="intel" name="clock" version="21.4"></ipxact:busType>
       <ipxact:abstractionTypes>
@@ -974,19 +937,6 @@ https://fpgasoftware.intel.com/eula.-->
         </ipxact:wire>
       </ipxact:port>
       <ipxact:port>
-        <ipxact:name>ram_ready</ipxact:name>
-        <ipxact:wire>
-          <ipxact:direction>in</ipxact:direction>
-          <ipxact:vectors></ipxact:vectors>
-          <ipxact:wireTypeDefs>
-            <ipxact:wireTypeDef>
-              <ipxact:typeName>STD_LOGIC</ipxact:typeName>
-              <ipxact:viewRef>QUARTUS_SYNTH</ipxact:viewRef>
-            </ipxact:wireTypeDef>
-          </ipxact:wireTypeDefs>
-        </ipxact:wire>
-      </ipxact:port>
-      <ipxact:port>
         <ipxact:name>clk</ipxact:name>
         <ipxact:wire>
           <ipxact:direction>in</ipxact:direction>
@@ -1530,39 +1480,6 @@ https://fpgasoftware.intel.com/eula.-->
             &lt;/parameters&gt;
         &lt;/interface&gt;
         &lt;interface&gt;
-            &lt;name&gt;ddr_ready&lt;/name&gt;
-            &lt;type&gt;conduit&lt;/type&gt;
-            &lt;isStart&gt;false&lt;/isStart&gt;
-            &lt;ports&gt;
-                &lt;port&gt;
-                    &lt;name&gt;ram_ready&lt;/name&gt;
-                    &lt;role&gt;ram_ready&lt;/role&gt;
-                    &lt;direction&gt;Input&lt;/direction&gt;
-                    &lt;width&gt;1&lt;/width&gt;
-                    &lt;lowerBound&gt;0&lt;/lowerBound&gt;
-                    &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
-                    &lt;terminationValue&gt;0&lt;/terminationValue&gt;
-                &lt;/port&gt;
-            &lt;/ports&gt;
-            &lt;assignments&gt;
-                &lt;assignmentValueMap/&gt;
-            &lt;/assignments&gt;
-            &lt;parameters&gt;
-                &lt;parameterValueMap&gt;
-                    &lt;entry&gt;
-                        &lt;key&gt;associatedClock&lt;/key&gt;
-                    &lt;/entry&gt;
-                    &lt;entry&gt;
-                        &lt;key&gt;associatedReset&lt;/key&gt;
-                    &lt;/entry&gt;
-                    &lt;entry&gt;
-                        &lt;key&gt;prSafe&lt;/key&gt;
-                        &lt;value&gt;false&lt;/value&gt;
-                    &lt;/entry&gt;
-                &lt;/parameterValueMap&gt;
-            &lt;/parameters&gt;
-        &lt;/interface&gt;
-        &lt;interface&gt;
             &lt;name&gt;clock_125_tx_rx&lt;/name&gt;
             &lt;type&gt;clock&lt;/type&gt;
             &lt;isStart&gt;false&lt;/isStart&gt;
@@ -1949,9 +1866,7 @@ https://fpgasoftware.intel.com/eula.-->
       <altera:interface_mapping altera:name="clock_avalon" altera:internal="setup_ddr.clock_avalon" altera:type="clock" altera:dir="end">
         <altera:port_mapping altera:name="avalon_clk" altera:internal="avalon_clk"></altera:port_mapping>
       </altera:interface_mapping>
-      <altera:interface_mapping altera:name="ddr_ready" altera:internal="setup_ddr.ddr_ready" altera:type="conduit" altera:dir="end">
-        <altera:port_mapping altera:name="ram_ready" altera:internal="ram_ready"></altera:port_mapping>
-      </altera:interface_mapping>
+      <altera:interface_mapping altera:name="ddr_ready" altera:internal="setup_ddr.ddr_ready"></altera:interface_mapping>
       <altera:interface_mapping altera:name="ddr_setup_cmd" altera:internal="setup_ddr.ddr_setup_cmd" altera:type="conduit" altera:dir="end">
         <altera:port_mapping altera:name="ddr_setup_cmd_pci" altera:internal="ddr_setup_cmd_pci"></altera:port_mapping>
       </altera:interface_mapping>

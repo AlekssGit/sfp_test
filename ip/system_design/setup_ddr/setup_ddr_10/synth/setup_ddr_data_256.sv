@@ -24,7 +24,6 @@ module setup_ddr_data_256
     output  logic           reset_local_cal_success     ,
 
     input   logic           rst_n                       ,
-    input   logic           ram_ready                   ,
     input   logic           clk_50                      ,
 
     output  logic           ddr_local_cal_success       ,
@@ -293,6 +292,8 @@ logic           action_done    ;
 logic [255:0] read_data;
 
 logic local_cal_success;
+
+logic ram_ready;
 
 external_ram_256 ddr_cntrl(
     .data                       (data                       ),    	// datain

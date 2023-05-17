@@ -281,7 +281,7 @@ system_design #(.setup_ddr_test(test)) platform_design (
 		.send_packet_2_control_cmd_send         (cmd_send_2         ),       
 		
         //.ddr_setup_setup_done                   (ddr_setup_done     ),
-        .ddr_ready_ram_ready                    (ddr_ready          ),  
+        //.ddr_ready_ram_ready                    (ddr_ready          ),  
         .reset_board_reset                      (rst_n              ),             
 
         .mem_cal_success_cal_success            (ddr_cal_success    ),
@@ -404,18 +404,33 @@ begin
     end 
     else
     begin
-		if(mac_inited && rx_ready )
+		if(mac_inited & rx_ready )
 		begin
-            counter_to_send <= counter_to_send + 1;
-            if(counter_to_send == `PERIOD_BTN_SEND_1)
+            if(ALLOW_SEND == 1'b1)
+            begin
+                counter_to_send <= counter_to_send + 1;
+                if(counter_to_send == `PERIOD_BTN_SEND_1)
+                begin
+                    cmd_send_1 <= 1'b1;
+                    transmit_start_addr <= 25'd1;
+                end
+                else if(counter_to_send == `PERIOD_BTN_SEND_1 + 32'd3)
+                begin
+                    cmd_send_1 <= 1'b0;
+                end
+                else if(counter_to_send == `PERIOD_BTN_SEND_2 + 32'd10)
+                begin
+                    counter_to_send <= 32'd0;                
+                end
+            end
+            else if(pcie_send_cmd)
             begin
                 cmd_send_1 <= 1'b1;
-                transmit_start_addr <= 25'd1;
             end
-            else if(counter_to_send == `PERIOD_BTN_SEND_1 + 32'd3)
+            else
+            begin
                 cmd_send_1 <= 1'b0;
-            else if(counter_to_send == `PERIOD_BTN_SEND_2 + 32'd10)
-                counter_to_send <= 32'd0;
+            end
 		end   
     end   
 end
@@ -450,7 +465,6 @@ begin
             begin
                 cmd_send_2 <= 1'b0;
             end
-
 		end   
     end   
 end

@@ -49,7 +49,6 @@
 			send_packet_1_control_cmd_send          : in    std_logic                     := 'X';             -- cmd_send
 			send_packet_2_control_start_ram_addr    : in    std_logic_vector(24 downto 0) := (others => 'X'); -- start_ram_addr
 			send_packet_2_control_cmd_send          : in    std_logic                     := 'X';             -- cmd_send
-			ddr_ready_ram_ready                     : in    std_logic                     := 'X';             -- ram_ready
 			reset_board_reset                       : in    std_logic                     := 'X';             -- reset
 			mem_cal_success_cal_success             : out   std_logic;                                        -- cal_success
 			mac_misc_1_magic_wakeup                 : out   std_logic;                                        -- magic_wakeup
@@ -169,7 +168,6 @@
 			send_packet_1_control_cmd_send          => CONNECTED_TO_send_packet_1_control_cmd_send,          --                            .cmd_send
 			send_packet_2_control_start_ram_addr    => CONNECTED_TO_send_packet_2_control_start_ram_addr,    --       send_packet_2_control.start_ram_addr
 			send_packet_2_control_cmd_send          => CONNECTED_TO_send_packet_2_control_cmd_send,          --                            .cmd_send
-			ddr_ready_ram_ready                     => CONNECTED_TO_ddr_ready_ram_ready,                     --                   ddr_ready.ram_ready
 			reset_board_reset                       => CONNECTED_TO_reset_board_reset,                       --                 reset_board.reset
 			mem_cal_success_cal_success             => CONNECTED_TO_mem_cal_success_cal_success,             --             mem_cal_success.cal_success
 			mac_misc_1_magic_wakeup                 => CONNECTED_TO_mac_misc_1_magic_wakeup,                 --                  mac_misc_1.magic_wakeup

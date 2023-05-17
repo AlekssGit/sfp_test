@@ -18,7 +18,6 @@ module setup_ddr #(
 		output wire         setup_done,               //              setup.setup_done
 		input  wire         local_cal_success_avalon, //         ddr_status.local_cal_success
 		input  wire         local_cal_fail_avalon,    //                   .local_cal_fail
-		input  wire         ram_ready,                //          ddr_ready.ram_ready
 		input  wire         clk,                      //    clock_125_tx_rx.clk
 		input  wire         avalon_clk,               //       clock_avalon.clk
 		input  wire         clk_50,                   //           clock_50.clk
@@ -49,7 +48,6 @@ module setup_ddr #(
 		.setup_done               (setup_done),               //  output,    width = 1,              setup.setup_done
 		.local_cal_success_avalon (local_cal_success_avalon), //   input,    width = 1,         ddr_status.local_cal_success
 		.local_cal_fail_avalon    (local_cal_fail_avalon),    //   input,    width = 1,                   .local_cal_fail
-		.ram_ready                (ram_ready),                //   input,    width = 1,          ddr_ready.ram_ready
 		.clk                      (clk),                      //   input,    width = 1,    clock_125_tx_rx.clk
 		.avalon_clk               (avalon_clk),               //   input,    width = 1,       clock_avalon.clk
 		.clk_50                   (clk_50),                   //   input,    width = 1,           clock_50.clk

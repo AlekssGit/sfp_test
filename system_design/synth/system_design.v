@@ -52,7 +52,6 @@ module system_design #(
 		input  wire        send_packet_1_control_cmd_send,          //                            .cmd_send
 		input  wire [24:0] send_packet_2_control_start_ram_addr,    //       send_packet_2_control.start_ram_addr
 		input  wire        send_packet_2_control_cmd_send,          //                            .cmd_send
-		input  wire        ddr_ready_ram_ready,                     //                   ddr_ready.ram_ready
 		input  wire        reset_board_reset,                       //                 reset_board.reset
 		output wire        mem_cal_success_cal_success,             //             mem_cal_success.cal_success
 		output wire        mac_misc_1_magic_wakeup,                 //                  mac_misc_1.magic_wakeup
@@ -719,7 +718,6 @@ module system_design #(
 		.setup_done               (setup_ddr_setup_setup_done),                    //  output,    width = 1,              setup.setup_done
 		.local_cal_success_avalon (ddr3_status_local_cal_success),                 //   input,    width = 1,         ddr_status.local_cal_success
 		.local_cal_fail_avalon    (ddr3_status_local_cal_fail),                    //   input,    width = 1,                   .local_cal_fail
-		.ram_ready                (ddr_ready_ram_ready),                           //   input,    width = 1,          ddr_ready.ram_ready
 		.clk                      (pll_outclk0_clk),                               //   input,    width = 1,    clock_125_tx_rx.clk
 		.avalon_clk               (ddr3_emif_usr_clk_clk),                         //   input,    width = 1,       clock_avalon.clk
 		.clk_50                   (pll_outclk1_clk),                               //   input,    width = 1,           clock_50.clk

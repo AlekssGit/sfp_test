@@ -15,7 +15,6 @@
 			setup_done               : out std_logic;                                         -- setup_done
 			local_cal_success_avalon : in  std_logic                      := 'X';             -- local_cal_success
 			local_cal_fail_avalon    : in  std_logic                      := 'X';             -- local_cal_fail
-			ram_ready                : in  std_logic                      := 'X';             -- ram_ready
 			clk                      : in  std_logic                      := 'X';             -- clk
 			avalon_clk               : in  std_logic                      := 'X';             -- clk
 			clk_50                   : in  std_logic                      := 'X';             -- clk
@@ -49,7 +48,6 @@
 			setup_done               => CONNECTED_TO_setup_done,               --              setup.setup_done
 			local_cal_success_avalon => CONNECTED_TO_local_cal_success_avalon, --         ddr_status.local_cal_success
 			local_cal_fail_avalon    => CONNECTED_TO_local_cal_fail_avalon,    --                   .local_cal_fail
-			ram_ready                => CONNECTED_TO_ram_ready,                --          ddr_ready.ram_ready
 			clk                      => CONNECTED_TO_clk,                      --    clock_125_tx_rx.clk
 			avalon_clk               => CONNECTED_TO_avalon_clk,               --       clock_avalon.clk
 			clk_50                   => CONNECTED_TO_clk_50,                   --           clock_50.clk

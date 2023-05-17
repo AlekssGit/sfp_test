@@ -13,7 +13,6 @@ module setup_ddr #(
 		output wire         setup_done,               //              setup.setup_done
 		input  wire         local_cal_success_avalon, //         ddr_status.local_cal_success
 		input  wire         local_cal_fail_avalon,    //                   .local_cal_fail
-		input  wire         ram_ready,                //          ddr_ready.ram_ready
 		input  wire         clk,                      //    clock_125_tx_rx.clk
 		input  wire         avalon_clk,               //       clock_avalon.clk
 		input  wire         clk_50,                   //           clock_50.clk

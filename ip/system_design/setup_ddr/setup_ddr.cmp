@@ -15,7 +15,6 @@
 			setup_done               : out std_logic;                                         -- setup_done
 			local_cal_success_avalon : in  std_logic                      := 'X';             -- local_cal_success
 			local_cal_fail_avalon    : in  std_logic                      := 'X';             -- local_cal_fail
-			ram_ready                : in  std_logic                      := 'X';             -- ram_ready
 			clk                      : in  std_logic                      := 'X';             -- clk
 			avalon_clk               : in  std_logic                      := 'X';             -- clk
 			clk_50                   : in  std_logic                      := 'X';             -- clk
