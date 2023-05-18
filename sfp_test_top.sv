@@ -1,7 +1,7 @@
 // `define TEST 1
 
 `ifdef TEST
-	`define ALLOW_SEND		    1'b1
+	`define ALLOW_SEND		    1'b0
 	`define PERIOD_BTN_SEND_1	32'h000000ff // 32'hffffffff	//
 	`define PERIOD_BTN_SEND_2	32'h000001ff // 32'hffffffff	//
     `define TIME_TO_BLINK       32'd2000
@@ -447,23 +447,40 @@ begin
     begin
 		if(mac_inited && rx_ready )
 		begin
-            if(counter_to_send == `PERIOD_BTN_SEND_2 && cmd_2_send_first == 1'b0 && `ALLOW_SEND)
+            if(pcie_send_cmd)
             begin
-                cmd_send_2 <= 1'b1;
+                if(cmd_send_2 == 1'b1)
+                begin
+                    if(counter_to_send == `PERIOD_BTN_SEND_2 + 32'd3)
+                    begin
+                        cmd_send_2 <= 1'b0;
+                    end
+                end
+                else
+                begin
+                    cmd_send_2 <= 1'b1;
+                end
             end
-            else if(counter_to_send == `PERIOD_BTN_SEND_2 + 32'd3  && cmd_2_send_first == 1'b0  && `ALLOW_SEND)
-            begin    
-                cmd_send_2 <= 1'b0; 
+            else
+            begin
+                if(counter_to_send == `PERIOD_BTN_SEND_2 /*&& cmd_2_send_first == 1'b0*/ && `ALLOW_SEND)
+                begin
+                    cmd_send_2 <= 1'b1;
+                end
+                else if(counter_to_send == `PERIOD_BTN_SEND_2 + 32'd3  /*&& cmd_2_send_first == 1'b0 */ && `ALLOW_SEND)
+                begin    
+                    cmd_send_2 <= 1'b0; 
 
-                cmd_2_send_first <= 1'b1;   
-            end
-            else if(data_saved_2 && ~cmd_send_2)
-            begin
-                cmd_send_2 <= 1'b1;
-            end
-            else if(~data_saved_2)
-            begin
-                cmd_send_2 <= 1'b0;
+                    cmd_2_send_first <= 1'b1;   
+                end
+                else if(data_saved_2 && ~cmd_send_2)
+                begin
+                    cmd_send_2 <= 1'b1;
+                end
+                else if(~data_saved_2)
+                begin
+                    cmd_send_2 <= 1'b0;
+                end
             end
 		end   
     end   

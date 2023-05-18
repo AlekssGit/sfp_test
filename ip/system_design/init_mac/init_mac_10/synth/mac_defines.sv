@@ -79,7 +79,7 @@
 
 `define IF_MODE             32'h0000_0003
 
-// `define TEST 1
+`define TEST 1
 
 `ifdef TEST
     `define WAIT_INIT_TIME      32'd5_000

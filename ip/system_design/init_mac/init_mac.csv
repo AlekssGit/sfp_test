@@ -1,4 +1,4 @@
-# system info init_mac on 2023.05.17.18:08:17
+# system info init_mac on 2023.05.18.19:22:11
 system_info:
 name,value
 DEVICE,10CX220YF780I5G
@@ -6,7 +6,7 @@ DEVICE_FAMILY,Cyclone 10 GX
 GENERATION_ID,0
 #
 #
-# Files generated for init_mac on 2023.05.17.18:08:17
+# Files generated for init_mac on 2023.05.18.19:22:11
 files:
 filepath,kind,attributes,module,is_top
 sim/init_mac.v,VERILOG,CONTAINS_INLINE_CONFIGURATION,init_mac,true

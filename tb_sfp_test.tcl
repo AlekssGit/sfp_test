@@ -38,31 +38,31 @@ elab_debug
 # add wave -group sgmii_2   /tb_sfp_test/device/sgmii_tx_2
 # add wave -group sgmii_2   /tb_sfp_test/device/sgmii_rx_2
 
-# add wave -group resets  -label "rst_n"      /tb_sfp_test/device/rst_n
-# add wave -group resets  -label "main_reset" /tb_sfp_test/device/main_reset
-# add wave -group resets  -label "reset_phy"  /tb_sfp_test/device/reset_phy
-# add wave -group resets  -label "tx_analogreset"  /tb_sfp_test/device/tx_analogreset
-# add wave -group resets  -label "tx_digitalreset"  /tb_sfp_test/device/tx_digitalreset
-# add wave -group resets  -label "rx_analogreset"  /tb_sfp_test/device/rx_analogreset
-# add wave -group resets  -label "rx_digitalreset"  /tb_sfp_test/device/rx_digitalreset
-# add wave -group resets  -label "tx_ready"  /tb_sfp_test/device/tx_ready
-# add wave -group resets  -label "rx_ready"  /tb_sfp_test/device/rx_ready
+add wave -group resets  -label "rst_n"      /tb_sfp_test/device/rst_n
+add wave -group resets  -label "main_reset" /tb_sfp_test/device/main_reset
+add wave -group resets  -label "reset_phy"  /tb_sfp_test/device/reset_phy
+add wave -group resets  -label "tx_analogreset"  /tb_sfp_test/device/tx_analogreset
+add wave -group resets  -label "tx_digitalreset"  /tb_sfp_test/device/tx_digitalreset
+add wave -group resets  -label "rx_analogreset"  /tb_sfp_test/device/rx_analogreset
+add wave -group resets  -label "rx_digitalreset"  /tb_sfp_test/device/rx_digitalreset
+add wave -group resets  -label "tx_ready"  /tb_sfp_test/device/tx_ready
+add wave -group resets  -label "rx_ready"  /tb_sfp_test/device/rx_ready
 
-# add wave -group avalon_tse_Setup   -label "init_timer"              /tb_sfp_test/device/platform_design/init_mac/init_mac/control_init/timer
-# add wave -group avalon_tse_Setup   -label "mac_inited"              /tb_sfp_test/device/mac_inited
-# add wave -group avalon_tse_Setup   -label "link_ch1_reg"            /tb_sfp_test/device/platform_design/init_mac/init_mac/control_init/link_ch1_reg
-# add wave -group avalon_tse_Setup   -label "link_ch2_reg"            /tb_sfp_test/device/platform_design/init_mac/init_mac/control_init/link_ch2_reg
-# add wave -group avalon_tse_Setup   -label "count_channels_inited"   /tb_sfp_test/device/platform_design/init_mac/init_mac/control_init/count_channels_inited
-# add wave -group avalon_tse_Setup   -label "init_state"              /tb_sfp_test/device/platform_design/init_mac/init_mac/control_init/init_state
-# add wave -group avalon_tse_Setup   -label "wr_adr"                  /tb_sfp_test/device/platform_design/init_mac/init_mac/control_init/wr_adr
-# add wave -group avalon_tse_Setup   -label "allow_add_channel"       /tb_sfp_test/device/platform_design/init_mac/init_mac/control_init/allow_add_channel
+add wave -group avalon_tse_Setup   -label "init_timer"              /tb_sfp_test/device/platform_design/init_mac/init_mac/control_init/timer
+add wave -group avalon_tse_Setup   -label "mac_inited"              /tb_sfp_test/device/mac_inited
+add wave -group avalon_tse_Setup   -label "link_ch1_reg"            /tb_sfp_test/device/platform_design/init_mac/init_mac/control_init/link_ch1_reg
+add wave -group avalon_tse_Setup   -label "link_ch2_reg"            /tb_sfp_test/device/platform_design/init_mac/init_mac/control_init/link_ch2_reg
+add wave -group avalon_tse_Setup   -label "count_channels_inited"   /tb_sfp_test/device/platform_design/init_mac/init_mac/control_init/count_channels_inited
+add wave -group avalon_tse_Setup   -label "init_state"              /tb_sfp_test/device/platform_design/init_mac/init_mac/control_init/init_state
+add wave -group avalon_tse_Setup   -label "wr_adr"                  /tb_sfp_test/device/platform_design/init_mac/init_mac/control_init/wr_adr
+add wave -group avalon_tse_Setup   -label "allow_add_channel"       /tb_sfp_test/device/platform_design/init_mac/init_mac/control_init/allow_add_channel
 
-# add wave -group avalon_tse_Setup   -label "mm_readdata"             /tb_sfp_test/device/platform_design/init_mac_avalon_master_readdata
-# add wave -group avalon_tse_Setup   -label "mm_waitrequest"          /tb_sfp_test/device/platform_design/init_mac_avalon_master_waitrequest
-# add wave -group avalon_tse_Setup   -label "mm_address"              /tb_sfp_test/device/platform_design/init_mac_avalon_master_address
-# add wave -group avalon_tse_Setup   -label "mm_read"                 /tb_sfp_test/device/platform_design/init_mac_avalon_master_read
-# add wave -group avalon_tse_Setup   -label "mm_writedata"            /tb_sfp_test/device/platform_design/init_mac_avalon_master_writedata
-# add wave -group avalon_tse_Setup   -label "mm_write"                /tb_sfp_test/device/platform_design/init_mac_avalon_master_write
+add wave -group avalon_tse_Setup   -label "mm_readdata"             /tb_sfp_test/device/platform_design/init_mac_avalon_master_readdata
+add wave -group avalon_tse_Setup   -label "mm_waitrequest"          /tb_sfp_test/device/platform_design/init_mac_avalon_master_waitrequest
+add wave -group avalon_tse_Setup   -label "mm_address"              /tb_sfp_test/device/platform_design/init_mac_avalon_master_address
+add wave -group avalon_tse_Setup   -label "mm_read"                 /tb_sfp_test/device/platform_design/init_mac_avalon_master_read
+add wave -group avalon_tse_Setup   -label "mm_writedata"            /tb_sfp_test/device/platform_design/init_mac_avalon_master_writedata
+add wave -group avalon_tse_Setup   -label "mm_write"                /tb_sfp_test/device/platform_design/init_mac_avalon_master_write
 
 
 # # add wave -group mdio   -label "mdc"       /tb_sfp_test/device/mdio_mdc
@@ -187,9 +187,9 @@ elab_debug
 # # add wave -group avalon_mem_rcv_2    -label "write"          /tb_sfp_test/device/platform_design/mem_rcv_2/mem_rcv_0/write
 # # add wave -group avalon_mem_rcv_2    -label "writedata"      /tb_sfp_test/device/platform_design/mem_rcv_2/mem_rcv_0/writedata
 
-# add wave -label "cmd_send_1"    /tb_sfp_test/device/cmd_send_1
-# add wave -label "cmd_send_2"    /tb_sfp_test/device/cmd_send_2
-# add wave -label "data_saved_2"  /tb_sfp_test/device/data_saved_2
+add wave -label "cmd_send_1"    /tb_sfp_test/device/cmd_send_1
+add wave -label "cmd_send_2"    /tb_sfp_test/device/cmd_send_2
+add wave -label "data_saved_2"  /tb_sfp_test/device/data_saved_2
 
 # add wave -group misc_1    -label "magic_wakeup"     /tb_sfp_test/device/platform_design/mac_misc_1_magic_wakeup
 # add wave -group misc_1    -label "magic_sleep_n"    /tb_sfp_test/device/platform_design/mac_misc_1_magic_sleep_n
@@ -213,27 +213,27 @@ add wave -group ddr_setup    -label "setup_done"        /tb_sfp_test/device/plat
 add wave -group ddr_setup    -label "avalon_clk"        /tb_sfp_test/device/platform_design/setup_ddr/setup_ddr/avalon_clk
 add wave -group ddr_setup    -label "avalon_reset"      /tb_sfp_test/device/platform_design/setup_ddr/setup_ddr/avalon_reset
 
-add wave -group ddr_setup_avalon    -label "rst_n           "              /tb_sfp_test/device/platform_design/setup_ddr/setup_ddr/rst_n    
-add wave -group ddr_setup_avalon    -label "clk_50          "              /tb_sfp_test/device/platform_design/setup_ddr/setup_ddr/clk_50    
-add wave -group ddr_setup_avalon    -label "wr_rq_avalon    "              /tb_sfp_test/device/platform_design/setup_ddr/setup_ddr/wr_rq_avalon    
-add wave -group ddr_setup_avalon    -label "rd_rq_avalon    "              /tb_sfp_test/device/platform_design/setup_ddr/setup_ddr/rd_rq_avalon    
-add wave -group ddr_setup_avalon    -label "rd_valid        "              /tb_sfp_test/device/platform_design/setup_ddr/setup_ddr/rd_valid        
-add wave -group ddr_setup_avalon    -label "wr_adr          "              /tb_sfp_test/device/platform_design/setup_ddr/setup_ddr/wr_adr          
-add wave -group ddr_setup_avalon    -label "rd_adr          "              /tb_sfp_test/device/platform_design/setup_ddr/setup_ddr/rd_adr          
-add wave -group ddr_setup_avalon    -label "wr_data_avalon  "              /tb_sfp_test/device/platform_design/setup_ddr/setup_ddr/wr_data_avalon  
-add wave -group ddr_setup_avalon    -label "rd_data         "              /tb_sfp_test/device/platform_design/setup_ddr/setup_ddr/rd_data         
-add wave -group ddr_setup_avalon    -label "byte_enable     "              /tb_sfp_test/device/platform_design/setup_ddr/setup_ddr/byte_enable     
-add wave -group ddr_setup_avalon    -label "action_done     "              /tb_sfp_test/device/platform_design/setup_ddr/setup_ddr/action_done     
-add wave -group ddr_setup_avalon    -label "read_data       "              /tb_sfp_test/device/platform_design/setup_ddr/setup_ddr/read_data       
-add wave -group ddr_setup_avalon    -label "amm_addr          "              /tb_sfp_test/device/platform_design/setup_ddr/setup_ddr/amm_addr                  
-add wave -group ddr_setup_avalon    -label "amm_readdata      "              /tb_sfp_test/device/platform_design/setup_ddr/setup_ddr/amm_readdata              
-add wave -group ddr_setup_avalon    -label "amm_writedata     "              /tb_sfp_test/device/platform_design/setup_ddr/setup_ddr/amm_writedata             
-add wave -group ddr_setup_avalon    -label "amm_read          "              /tb_sfp_test/device/platform_design/setup_ddr/setup_ddr/amm_read                  
-add wave -group ddr_setup_avalon    -label "amm_write         "              /tb_sfp_test/device/platform_design/setup_ddr/setup_ddr/amm_write                 
-add wave -group ddr_setup_avalon    -label "amm_byteenable    "              /tb_sfp_test/device/platform_design/setup_ddr/setup_ddr/amm_byteenable            
-add wave -group ddr_setup_avalon    -label "amm_burstcount    "              /tb_sfp_test/device/platform_design/setup_ddr/setup_ddr/amm_burstcount            
-add wave -group ddr_setup_avalon    -label "amm_readdatavalid "              /tb_sfp_test/device/platform_design/setup_ddr/setup_ddr/amm_readdatavalid         
-add wave -group ddr_setup_avalon    -label "amm_ready         "              /tb_sfp_test/device/platform_design/setup_ddr/setup_ddr/amm_ready                 
+# add wave -group ddr_setup_avalon    -label "rst_n           "              /tb_sfp_test/device/platform_design/setup_ddr/setup_ddr/rst_n    
+# add wave -group ddr_setup_avalon    -label "clk_50          "              /tb_sfp_test/device/platform_design/setup_ddr/setup_ddr/clk_50    
+# add wave -group ddr_setup_avalon    -label "wr_rq_avalon    "              /tb_sfp_test/device/platform_design/setup_ddr/setup_ddr/wr_rq_avalon    
+# add wave -group ddr_setup_avalon    -label "rd_rq_avalon    "              /tb_sfp_test/device/platform_design/setup_ddr/setup_ddr/rd_rq_avalon    
+# add wave -group ddr_setup_avalon    -label "rd_valid        "              /tb_sfp_test/device/platform_design/setup_ddr/setup_ddr/rd_valid        
+# add wave -group ddr_setup_avalon    -label "wr_adr          "              /tb_sfp_test/device/platform_design/setup_ddr/setup_ddr/wr_adr          
+# add wave -group ddr_setup_avalon    -label "rd_adr          "              /tb_sfp_test/device/platform_design/setup_ddr/setup_ddr/rd_adr          
+# add wave -group ddr_setup_avalon    -label "wr_data_avalon  "              /tb_sfp_test/device/platform_design/setup_ddr/setup_ddr/wr_data_avalon  
+# add wave -group ddr_setup_avalon    -label "rd_data         "              /tb_sfp_test/device/platform_design/setup_ddr/setup_ddr/rd_data         
+# add wave -group ddr_setup_avalon    -label "byte_enable     "              /tb_sfp_test/device/platform_design/setup_ddr/setup_ddr/byte_enable     
+# add wave -group ddr_setup_avalon    -label "action_done     "              /tb_sfp_test/device/platform_design/setup_ddr/setup_ddr/action_done     
+# add wave -group ddr_setup_avalon    -label "read_data       "              /tb_sfp_test/device/platform_design/setup_ddr/setup_ddr/read_data       
+# add wave -group ddr_setup_avalon    -label "amm_addr          "              /tb_sfp_test/device/platform_design/setup_ddr/setup_ddr/amm_addr                  
+# add wave -group ddr_setup_avalon    -label "amm_readdata      "              /tb_sfp_test/device/platform_design/setup_ddr/setup_ddr/amm_readdata              
+# add wave -group ddr_setup_avalon    -label "amm_writedata     "              /tb_sfp_test/device/platform_design/setup_ddr/setup_ddr/amm_writedata             
+# add wave -group ddr_setup_avalon    -label "amm_read          "              /tb_sfp_test/device/platform_design/setup_ddr/setup_ddr/amm_read                  
+# add wave -group ddr_setup_avalon    -label "amm_write         "              /tb_sfp_test/device/platform_design/setup_ddr/setup_ddr/amm_write                 
+# add wave -group ddr_setup_avalon    -label "amm_byteenable    "              /tb_sfp_test/device/platform_design/setup_ddr/setup_ddr/amm_byteenable            
+# add wave -group ddr_setup_avalon    -label "amm_burstcount    "              /tb_sfp_test/device/platform_design/setup_ddr/setup_ddr/amm_burstcount            
+# add wave -group ddr_setup_avalon    -label "amm_readdatavalid "              /tb_sfp_test/device/platform_design/setup_ddr/setup_ddr/amm_readdatavalid         
+# add wave -group ddr_setup_avalon    -label "amm_ready         "              /tb_sfp_test/device/platform_design/setup_ddr/setup_ddr/amm_ready                 
 
 
 # i2c expander test
@@ -272,5 +272,5 @@ add wave -group ddr_setup_avalon    -label "amm_ready         "              /tb
 # add wave -group i2c_master -label "state_i2c_mm"  /tb_sfp_test/device/expander_device/i2c_ctrl/mm_exp/state
 
 # 1000us
-run 45us  
+run 165us  
 wave zoom full

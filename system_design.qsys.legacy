@@ -228,7 +228,7 @@ https://fpgasoftware.intel.com/eula.-->
       }
       datum sopceditor_expanded
       {
-         value = "0";
+         value = "1";
          type = "boolean";
       }
    }
@@ -288,7 +288,7 @@ https://fpgasoftware.intel.com/eula.-->
       }
       datum sopceditor_expanded
       {
-         value = "1";
+         value = "0";
          type = "boolean";
       }
    }
@@ -301,7 +301,7 @@ https://fpgasoftware.intel.com/eula.-->
       }
       datum sopceditor_expanded
       {
-         value = "0";
+         value = "1";
          type = "boolean";
       }
    }
