@@ -9,7 +9,7 @@
     `define I2C_CLK_DIVIDE      32'd62 
     `define RELAX_TIME          32'd1500
 `else
-	`define ALLOW_SEND		    1'b1
+	`define ALLOW_SEND		    1'b0
     `define PERIOD_BTN_SEND_1	32'h05F5E100
 	`define PERIOD_BTN_SEND_2	32'h06F5E100
     `define TIME_TO_BLINK       32'd50_000_000 
@@ -406,7 +406,7 @@ begin
     begin
 		if(mac_inited & rx_ready )
 		begin
-            if(`ALLOW_SEND == 1'b1)
+            if(`ALLOW_SEND == 1'b1 | pcie_send_cmd)
             begin
                 counter_to_send <= counter_to_send + 1;
                 if(counter_to_send == `PERIOD_BTN_SEND_1)

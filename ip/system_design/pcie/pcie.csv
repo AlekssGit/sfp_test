@@ -1,4 +1,4 @@
-# system info pcie on 2023.05.18.19:24:24
+# system info pcie on 2023.05.18.19:38:44
 system_info:
 name,value
 DEVICE,10CX220YF780I5G
@@ -6,7 +6,7 @@ DEVICE_FAMILY,Cyclone 10 GX
 GENERATION_ID,0
 #
 #
-# Files generated for pcie on 2023.05.18.19:24:24
+# Files generated for pcie on 2023.05.18.19:38:44
 files:
 filepath,kind,attributes,module,is_top
 sim/pcie.v,VERILOG,CONTAINS_INLINE_CONFIGURATION,pcie,true
