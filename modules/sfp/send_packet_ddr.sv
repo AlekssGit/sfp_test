@@ -342,7 +342,7 @@ external_ram_256 ddr_cntrl(
     .data                       (256'd0                     ),    	// datain
 	.q		                    (ram_data_read              ),      // dataout
 	.address	                (ram_address_tx             ), 		// address
-	.wren	                    (~setup_done	            ),    	// wren
+	.wren	                    (1'b0       	            ),    	// wren
 	.clock 	                    (clk_original               ),	   	// clk
 	.reset	                    (~rst_n			            ),		// reset
     .ready                      (ram_ready		            ),

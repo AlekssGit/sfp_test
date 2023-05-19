@@ -395,7 +395,7 @@ logic               send_cmd            ;
 logic	[24:0]		transmit_start_addr		;
 
 assign start_ram_addr_1 = transmit_start_addr;
-assign start_ram_addr_2 = 25'd5; //transmit_start_addr;
+assign start_ram_addr_2 = pcie_start_ram_addr; //25'd5; //transmit_start_addr;
 
 logic cmd_2_send_first;
 
