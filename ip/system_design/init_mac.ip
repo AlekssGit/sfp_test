@@ -20,10 +20,10 @@ https://fpgasoftware.intel.com/eula.-->
   <ipxact:busInterfaces>
     <ipxact:busInterface>
       <ipxact:name>clock</ipxact:name>
-      <ipxact:busType vendor="intel" library="intel" name="clock" version="21.3"></ipxact:busType>
+      <ipxact:busType vendor="intel" library="intel" name="clock" version="21.4"></ipxact:busType>
       <ipxact:abstractionTypes>
         <ipxact:abstractionType>
-          <ipxact:abstractionRef vendor="intel" library="intel" name="clock" version="21.3"></ipxact:abstractionRef>
+          <ipxact:abstractionRef vendor="intel" library="intel" name="clock" version="21.4"></ipxact:abstractionRef>
           <ipxact:portMaps>
             <ipxact:portMap>
               <ipxact:logicalPort>
@@ -57,10 +57,10 @@ https://fpgasoftware.intel.com/eula.-->
     </ipxact:busInterface>
     <ipxact:busInterface>
       <ipxact:name>reset</ipxact:name>
-      <ipxact:busType vendor="intel" library="intel" name="reset" version="21.3"></ipxact:busType>
+      <ipxact:busType vendor="intel" library="intel" name="reset" version="21.4"></ipxact:busType>
       <ipxact:abstractionTypes>
         <ipxact:abstractionType>
-          <ipxact:abstractionRef vendor="intel" library="intel" name="reset" version="21.3"></ipxact:abstractionRef>
+          <ipxact:abstractionRef vendor="intel" library="intel" name="reset" version="21.4"></ipxact:abstractionRef>
           <ipxact:portMaps>
             <ipxact:portMap>
               <ipxact:logicalPort>
@@ -89,10 +89,10 @@ https://fpgasoftware.intel.com/eula.-->
     </ipxact:busInterface>
     <ipxact:busInterface>
       <ipxact:name>avalon_master</ipxact:name>
-      <ipxact:busType vendor="intel" library="intel" name="avalon" version="21.3"></ipxact:busType>
+      <ipxact:busType vendor="intel" library="intel" name="avalon" version="21.4"></ipxact:busType>
       <ipxact:abstractionTypes>
         <ipxact:abstractionType>
-          <ipxact:abstractionRef vendor="intel" library="intel" name="avalon" version="21.3"></ipxact:abstractionRef>
+          <ipxact:abstractionRef vendor="intel" library="intel" name="avalon" version="21.4"></ipxact:abstractionRef>
           <ipxact:portMaps>
             <ipxact:portMap>
               <ipxact:logicalPort>
@@ -321,10 +321,10 @@ https://fpgasoftware.intel.com/eula.-->
     </ipxact:busInterface>
     <ipxact:busInterface>
       <ipxact:name>mac_inited</ipxact:name>
-      <ipxact:busType vendor="intel" library="intel" name="conduit" version="21.3"></ipxact:busType>
+      <ipxact:busType vendor="intel" library="intel" name="conduit" version="21.4"></ipxact:busType>
       <ipxact:abstractionTypes>
         <ipxact:abstractionType>
-          <ipxact:abstractionRef vendor="intel" library="intel" name="conduit" version="21.3"></ipxact:abstractionRef>
+          <ipxact:abstractionRef vendor="intel" library="intel" name="conduit" version="21.4"></ipxact:abstractionRef>
           <ipxact:portMaps>
             <ipxact:portMap>
               <ipxact:logicalPort>

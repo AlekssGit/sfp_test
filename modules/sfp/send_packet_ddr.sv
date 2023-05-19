@@ -218,13 +218,45 @@ end
 
 logic [7:0] need_count_prepare; 
 
+always_ff @(posedge clk_original, posedge rst)
+begin
+    if(rst)
+    begin
+        data_ready <= 1'b0;
+    end
+    else
+    begin
+        if(state == PREPARE_DATA)
+        begin
+            if(ram_address_tx_local == 25'd0 & count_prepare_wait >= 10'd20)
+            begin
+                data_ready <= 1'b0;
+            end
+            else if(wait_data_flag & ram_address_tx_local > start_ram_addr & address_wait == ram_address_tx_local)
+            begin
+                if(ram_ready_local)
+                begin
+                    if(count_prepared == need_count_prepare)
+                    begin
+                        data_ready <= 1'b1;
+                    end 
+                end
+            end           
+        end
+        else
+        begin
+            data_ready <= 1'b0;
+        end
+    end
+end
+
 logic [8:0] i;
 
 always@ (posedge clk_original, posedge rst)
 begin
     if(rst)
     begin
-        data_ready              = 1'b0;
+        // data_ready              = 1'b0;
         packet_size             = 11'd0;
         need_count_avalon_st    = 11'd0;
         count_prepared          = 11'd0;
@@ -238,7 +270,7 @@ begin
         begin
             if(ram_address_tx_local == 25'd0 & count_prepare_wait >= 10'd20)
             begin
-                data_ready = 1'b0;
+                // data_ready = 1'b0;
                 if(ram_ready_local)
                 begin
                     ram_address_tx_local = start_ram_addr; 
@@ -278,7 +310,7 @@ begin
                     end
                     else
                     begin
-                        data_ready = 1'b1;
+                        // data_ready = 1'b1;
                     end 
                 end
             end
@@ -290,7 +322,7 @@ begin
         else
         begin
             ram_address_tx_local = 25'd0;
-            data_ready = 1'b0;
+            // data_ready = 1'b0;
         end
     end
 end
