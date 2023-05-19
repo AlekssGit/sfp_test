@@ -47,8 +47,6 @@
 			pcie_send_control_signal                : out   std_logic;                                        -- signal
 			send_packet_1_control_start_ram_addr    : in    std_logic_vector(24 downto 0) := (others => 'X'); -- start_ram_addr
 			send_packet_1_control_cmd_send          : in    std_logic                     := 'X';             -- cmd_send
-			send_packet_2_control_start_ram_addr    : in    std_logic_vector(24 downto 0) := (others => 'X'); -- start_ram_addr
-			send_packet_2_control_cmd_send          : in    std_logic                     := 'X';             -- cmd_send
 			reset_board_reset                       : in    std_logic                     := 'X';             -- reset
 			mem_cal_success_cal_success             : out   std_logic;                                        -- cal_success
 			mac_misc_1_magic_wakeup                 : out   std_logic;                                        -- magic_wakeup
@@ -112,6 +110,9 @@
 			tse_rx_cdr_refclk_3_clk                 : in    std_logic                     := 'X';             -- clk
 			sgmii_4_rxp                             : in    std_logic                     := 'X';             -- rxp
 			sgmii_4_txp                             : out   std_logic;                                        -- txp
+			tx_2_reset_board_reset                  : in    std_logic                     := 'X';             -- reset
+			tx_2_control_start_ram_addr             : in    std_logic_vector(24 downto 0) := (others => 'X'); -- start_ram_addr
+			tx_2_control_cmd_send                   : in    std_logic                     := 'X';             -- cmd_send
 			xcvr_pll_powerdown_pll_powerdown        : in    std_logic                     := 'X';             -- pll_powerdown
 			xcvr_pll_refclk_clk                     : in    std_logic                     := 'X'              -- clk
 		);
@@ -166,8 +167,6 @@
 			pcie_send_control_signal                => CONNECTED_TO_pcie_send_control_signal,                --                            .signal
 			send_packet_1_control_start_ram_addr    => CONNECTED_TO_send_packet_1_control_start_ram_addr,    --       send_packet_1_control.start_ram_addr
 			send_packet_1_control_cmd_send          => CONNECTED_TO_send_packet_1_control_cmd_send,          --                            .cmd_send
-			send_packet_2_control_start_ram_addr    => CONNECTED_TO_send_packet_2_control_start_ram_addr,    --       send_packet_2_control.start_ram_addr
-			send_packet_2_control_cmd_send          => CONNECTED_TO_send_packet_2_control_cmd_send,          --                            .cmd_send
 			reset_board_reset                       => CONNECTED_TO_reset_board_reset,                       --                 reset_board.reset
 			mem_cal_success_cal_success             => CONNECTED_TO_mem_cal_success_cal_success,             --             mem_cal_success.cal_success
 			mac_misc_1_magic_wakeup                 => CONNECTED_TO_mac_misc_1_magic_wakeup,                 --                  mac_misc_1.magic_wakeup
@@ -231,6 +230,9 @@
 			tse_rx_cdr_refclk_3_clk                 => CONNECTED_TO_tse_rx_cdr_refclk_3_clk,                 --         tse_rx_cdr_refclk_3.clk
 			sgmii_4_rxp                             => CONNECTED_TO_sgmii_4_rxp,                             --                     sgmii_4.rxp
 			sgmii_4_txp                             => CONNECTED_TO_sgmii_4_txp,                             --                            .txp
+			tx_2_reset_board_reset                  => CONNECTED_TO_tx_2_reset_board_reset,                  --            tx_2_reset_board.reset
+			tx_2_control_start_ram_addr             => CONNECTED_TO_tx_2_control_start_ram_addr,             --                tx_2_control.start_ram_addr
+			tx_2_control_cmd_send                   => CONNECTED_TO_tx_2_control_cmd_send,                   --                            .cmd_send
 			xcvr_pll_powerdown_pll_powerdown        => CONNECTED_TO_xcvr_pll_powerdown_pll_powerdown,        --          xcvr_pll_powerdown.pll_powerdown
 			xcvr_pll_refclk_clk                     => CONNECTED_TO_xcvr_pll_refclk_clk                      --             xcvr_pll_refclk.clk
 		);

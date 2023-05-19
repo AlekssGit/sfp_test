@@ -1,0 +1,20 @@
+# system info tx_2 on 2023.05.19.12:53:25
+system_info:
+name,value
+DEVICE,10CX220YF780I5G
+DEVICE_FAMILY,Cyclone 10 GX
+GENERATION_ID,0
+#
+#
+# Files generated for tx_2 on 2023.05.19.12:53:25
+files:
+filepath,kind,attributes,module,is_top
+sim/tx_2.v,VERILOG,CONTAINS_INLINE_CONFIGURATION,tx_2,true
+send_packet_ddr_10/sim/send_packet_ddr.sv,SYSTEM_VERILOG,,send_packet_ddr,false
+send_packet_ddr_10/sim/avalon_mm_ddr.sv,SYSTEM_VERILOG,,send_packet_ddr,false
+send_packet_ddr_10/sim/external_ram_256.sv,SYSTEM_VERILOG,,send_packet_ddr,false
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module
+tx_2.tx_2,send_packet_ddr

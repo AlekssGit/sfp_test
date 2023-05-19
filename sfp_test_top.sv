@@ -277,8 +277,8 @@ system_design #(.setup_ddr_test(test)) platform_design (
         .send_packet_1_control_start_ram_addr   (start_ram_addr_1   ), 
 		.send_packet_1_control_cmd_send         (cmd_send_1         ),       
 		
-        .send_packet_2_control_start_ram_addr   (start_ram_addr_2   ), 
-		.send_packet_2_control_cmd_send         (cmd_send_2         ),       
+        // .send_packet_2_control_start_ram_addr   (start_ram_addr_2   ), 
+		// .send_packet_2_control_cmd_send         (cmd_send_2         ),       
 		
         //.ddr_setup_setup_done                   (ddr_setup_done     ),
         //.ddr_ready_ram_ready                    (ddr_ready          ),  
@@ -363,6 +363,10 @@ system_design #(.setup_ddr_test(test)) platform_design (
 
         .sgmii_4_rxp                            (sgmii_rx_4         ),           
 		.sgmii_4_txp                            (sgmii_tx_4         ),
+
+        .tx_2_reset_board_reset                 (rst_n              ),                  
+        .tx_2_control_start_ram_addr            (start_ram_addr_2   ),             
+        .tx_2_control_cmd_send                  (cmd_send_2         ),                           
 
         .xcvr_pll_powerdown_pll_powerdown       (1'b0               ),
         .xcvr_pll_refclk_clk                    (clk_125_lvds_tse   )             

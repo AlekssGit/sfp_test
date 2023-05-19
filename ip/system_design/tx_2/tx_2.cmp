@@ -1,0 +1,28 @@
+	component tx_2 is
+		port (
+			amm_addr          : out std_logic_vector(24 downto 0);                     -- address
+			amm_readdata      : in  std_logic_vector(255 downto 0) := (others => 'X'); -- readdata
+			amm_writedata     : out std_logic_vector(255 downto 0);                    -- writedata
+			amm_read          : out std_logic;                                         -- read
+			amm_write         : out std_logic;                                         -- write
+			amm_byteenable    : out std_logic_vector(31 downto 0);                     -- byteenable
+			amm_burstcount    : out std_logic_vector(6 downto 0);                      -- burstcount
+			amm_readdatavalid : in  std_logic                      := 'X';             -- readdatavalid
+			amm_ready         : in  std_logic                      := 'X';             -- waitrequest
+			clk_50            : in  std_logic                      := 'X';             -- clk
+			rst_n             : in  std_logic                      := 'X';             -- reset
+			avalon_clk        : in  std_logic                      := 'X';             -- clk
+			clk_original      : in  std_logic                      := 'X';             -- clk
+			rst               : in  std_logic                      := 'X';             -- reset
+			ff_tx_data        : out std_logic_vector(7 downto 0);                      -- data
+			ff_tx_eop         : out std_logic;                                         -- endofpacket
+			ff_tx_err         : out std_logic;                                         -- error
+			ff_tx_rdy         : in  std_logic                      := 'X';             -- ready
+			ff_tx_sop         : out std_logic;                                         -- startofpacket
+			ff_tx_wren        : out std_logic;                                         -- valid
+			avalon_reset      : in  std_logic                      := 'X';             -- reset
+			start_ram_addr    : in  std_logic_vector(24 downto 0)  := (others => 'X'); -- start_ram_addr
+			cmd_send          : in  std_logic                      := 'X'              -- cmd_send
+		);
+	end component tx_2;
+

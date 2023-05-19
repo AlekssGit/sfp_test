@@ -41,9 +41,9 @@
 			"label": "setup_ip",
 			"type": "shell",
 			"command": "ip-setup-simulation --quartus-project=sfp_test --revision=sfp_test --output-directory=C:/Users/alvas/Documents/Work_ASD/Projects/Learning/sfp_test/sim_setup --use-relative-paths",
-            "presentation": {
-                "close": true
-            }
+            // "presentation": {
+            //     "close": true
+            // }
 		}
     ]
 }

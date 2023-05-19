@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deploy
- date="2023.05.18.19:38:09"
- outputDirectory="D:/Documents/Projects/Learning/SFP_test/ip/system_design/reset_mod/">
+ date="2023.05.19.12:56:20"
+ outputDirectory="C:/Users/alvas/Documents/Work_ASD/Projects/Learning/sfp_test/ip/system_design/reset_mod/">
  <perimeter>
   <parameter
      name="AUTO_GENERATION_ID"
@@ -88,20 +88,21 @@
   <parameter name="AUTO_DEVICE_SPEEDGRADE" value="5" />
   <generatedFiles>
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\reset_mod\synth\reset_mod.v"
+       path="C:\Users\alvas\Documents\Work_ASD\Projects\Learning\sfp_test\ip\system_design\reset_mod\synth\reset_mod.v"
        attributes="CONTAINS_INLINE_CONFIGURATION" />
   </generatedFiles>
   <childGeneratedFiles>
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\reset_mod\synth\reset_mod.v"
+       path="C:\Users\alvas\Documents\Work_ASD\Projects\Learning\sfp_test\ip\system_design\reset_mod\synth\reset_mod.v"
        attributes="CONTAINS_INLINE_CONFIGURATION" />
   </childGeneratedFiles>
   <sourceFiles>
    <file
-       path="D:/Documents/Projects/Learning/SFP_test/ip/system_design/reset_mod.ip" />
+       path="C:/Users/alvas/Documents/Work_ASD/Projects/Learning/sfp_test/ip/system_design/reset_mod.ip" />
   </sourceFiles>
   <childSourceFiles>
-   <file path="D:/Documents/Projects/Learning/SFP_test/reset_module_hw.tcl" />
+   <file
+       path="C:/Users/alvas/Documents/Work_ASD/Projects/Learning/sfp_test/reset_module_hw.tcl" />
   </childSourceFiles>
   <messages>
    <message level="Info" culprit="reset_mod">"Generating: reset_mod"</message>
@@ -111,16 +112,17 @@
  <entity kind="reset_module" version="1.0" name="reset_module">
   <generatedFiles>
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\reset_mod\reset_module_10\synth\reset_module.sv"
+       path="C:\Users\alvas\Documents\Work_ASD\Projects\Learning\sfp_test\ip\system_design\reset_mod\reset_module_10\synth\reset_module.sv"
        attributes="TOP_LEVEL_FILE" />
   </generatedFiles>
   <childGeneratedFiles>
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\reset_mod\reset_module_10\synth\reset_module.sv"
+       path="C:\Users\alvas\Documents\Work_ASD\Projects\Learning\sfp_test\ip\system_design\reset_mod\reset_module_10\synth\reset_module.sv"
        attributes="TOP_LEVEL_FILE" />
   </childGeneratedFiles>
   <sourceFiles>
-   <file path="D:/Documents/Projects/Learning/SFP_test/reset_module_hw.tcl" />
+   <file
+       path="C:/Users/alvas/Documents/Work_ASD/Projects/Learning/sfp_test/reset_module_hw.tcl" />
   </sourceFiles>
   <childSourceFiles/>
   <instantiator instantiator="reset_mod" as="reset_mod" />

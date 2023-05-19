@@ -37,6 +37,7 @@
 #     setup_ddr.setup_ddr
 #     pcie.pcie
 #     send_cmd_pcie.send_cmd_pcie
+#     tx_2.tx_2
 #     system_design.system_design
 # 
 # Intel recommends that you source this Quartus-generated IP simulation
@@ -103,7 +104,7 @@
 # 
 # IP SIMULATION SCRIPT
 # ----------------------------------------
-# ACDS 21.4 67 win32 2023.05.18.12:01:21
+# ACDS 21.4 67 win32 2023.05.19.13:00:30
 
 # ----------------------------------------
 # Initialize variables

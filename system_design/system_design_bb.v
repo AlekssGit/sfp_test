@@ -45,8 +45,6 @@ module system_design #(
 		output wire        pcie_send_control_signal,                //                            .signal
 		input  wire [24:0] send_packet_1_control_start_ram_addr,    //       send_packet_1_control.start_ram_addr
 		input  wire        send_packet_1_control_cmd_send,          //                            .cmd_send
-		input  wire [24:0] send_packet_2_control_start_ram_addr,    //       send_packet_2_control.start_ram_addr
-		input  wire        send_packet_2_control_cmd_send,          //                            .cmd_send
 		input  wire        reset_board_reset,                       //                 reset_board.reset
 		output wire        mem_cal_success_cal_success,             //             mem_cal_success.cal_success
 		output wire        mac_misc_1_magic_wakeup,                 //                  mac_misc_1.magic_wakeup
@@ -110,6 +108,9 @@ module system_design #(
 		input  wire        tse_rx_cdr_refclk_3_clk,                 //         tse_rx_cdr_refclk_3.clk
 		input  wire        sgmii_4_rxp,                             //                     sgmii_4.rxp
 		output wire        sgmii_4_txp,                             //                            .txp
+		input  wire        tx_2_reset_board_reset,                  //            tx_2_reset_board.reset
+		input  wire [24:0] tx_2_control_start_ram_addr,             //                tx_2_control.start_ram_addr
+		input  wire        tx_2_control_cmd_send,                   //                            .cmd_send
 		input  wire        xcvr_pll_powerdown_pll_powerdown,        //          xcvr_pll_powerdown.pll_powerdown
 		input  wire        xcvr_pll_refclk_clk                      //             xcvr_pll_refclk.clk
 	);

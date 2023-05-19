@@ -47,8 +47,6 @@
 			pcie_send_control_signal                : out   std_logic;                                        -- signal
 			send_packet_1_control_start_ram_addr    : in    std_logic_vector(24 downto 0) := (others => 'X'); -- start_ram_addr
 			send_packet_1_control_cmd_send          : in    std_logic                     := 'X';             -- cmd_send
-			send_packet_2_control_start_ram_addr    : in    std_logic_vector(24 downto 0) := (others => 'X'); -- start_ram_addr
-			send_packet_2_control_cmd_send          : in    std_logic                     := 'X';             -- cmd_send
 			reset_board_reset                       : in    std_logic                     := 'X';             -- reset
 			mem_cal_success_cal_success             : out   std_logic;                                        -- cal_success
 			mac_misc_1_magic_wakeup                 : out   std_logic;                                        -- magic_wakeup
@@ -112,6 +110,9 @@
 			tse_rx_cdr_refclk_3_clk                 : in    std_logic                     := 'X';             -- clk
 			sgmii_4_rxp                             : in    std_logic                     := 'X';             -- rxp
 			sgmii_4_txp                             : out   std_logic;                                        -- txp
+			tx_2_reset_board_reset                  : in    std_logic                     := 'X';             -- reset
+			tx_2_control_start_ram_addr             : in    std_logic_vector(24 downto 0) := (others => 'X'); -- start_ram_addr
+			tx_2_control_cmd_send                   : in    std_logic                     := 'X';             -- cmd_send
 			xcvr_pll_powerdown_pll_powerdown        : in    std_logic                     := 'X';             -- pll_powerdown
 			xcvr_pll_refclk_clk                     : in    std_logic                     := 'X'              -- clk
 		);

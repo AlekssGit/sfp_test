@@ -2,7 +2,7 @@ set_global_assignment -name FAMILY "Cyclone 10 GX"
 set_global_assignment -name TOP_LEVEL_ENTITY sfp_test_top
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 21.4.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "14:30:14  MAY 15, 2022"
-set_global_assignment -name LAST_QUARTUS_VERSION "21.3.0 Pro Edition"
+set_global_assignment -name LAST_QUARTUS_VERSION "21.4.0 Pro Edition"
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 100
@@ -196,3 +196,4 @@ set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.5-V SSTL CLASS I" -to 
 set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to mem_ras_n -entity sfp_test_top
 set_instance_assignment -name IO_STANDARD "1.5 V" -to mem_reset_n -entity sfp_test_top
 set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to mem_we_n -entity sfp_test_top
+set_global_assignment -name IP_FILE ip/system_design/tx_2.ip

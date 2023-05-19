@@ -39,7 +39,7 @@ https://fpgasoftware.intel.com/eula.-->
    {
       datum _sortIndex
       {
-         value = "12";
+         value = "13";
          type = "int";
       }
       datum sopceditor_expanded
@@ -52,7 +52,7 @@ https://fpgasoftware.intel.com/eula.-->
    {
       datum _sortIndex
       {
-         value = "16";
+         value = "17";
          type = "int";
       }
       datum sopceditor_expanded
@@ -65,12 +65,12 @@ https://fpgasoftware.intel.com/eula.-->
    {
       datum _sortIndex
       {
-         value = "15";
+         value = "16";
          type = "int";
       }
       datum sopceditor_expanded
       {
-         value = "0";
+         value = "1";
          type = "boolean";
       }
    }
@@ -86,7 +86,7 @@ https://fpgasoftware.intel.com/eula.-->
    {
       datum _sortIndex
       {
-         value = "17";
+         value = "18";
          type = "int";
       }
       datum sopceditor_expanded
@@ -99,7 +99,7 @@ https://fpgasoftware.intel.com/eula.-->
    {
       datum _sortIndex
       {
-         value = "11";
+         value = "12";
          type = "int";
       }
       datum sopceditor_expanded
@@ -162,7 +162,7 @@ https://fpgasoftware.intel.com/eula.-->
    {
       datum _sortIndex
       {
-         value = "7";
+         value = "8";
          type = "int";
       }
       datum sopceditor_expanded
@@ -183,7 +183,7 @@ https://fpgasoftware.intel.com/eula.-->
    {
       datum _sortIndex
       {
-         value = "8";
+         value = "9";
          type = "int";
       }
       datum sopceditor_expanded
@@ -196,7 +196,7 @@ https://fpgasoftware.intel.com/eula.-->
    {
       datum _sortIndex
       {
-         value = "19";
+         value = "20";
          type = "int";
       }
       datum sopceditor_expanded
@@ -209,12 +209,12 @@ https://fpgasoftware.intel.com/eula.-->
    {
       datum _sortIndex
       {
-         value = "9";
+         value = "10";
          type = "int";
       }
       datum sopceditor_expanded
       {
-         value = "0";
+         value = "1";
          type = "boolean";
       }
    }
@@ -222,7 +222,7 @@ https://fpgasoftware.intel.com/eula.-->
    {
       datum _sortIndex
       {
-         value = "5";
+         value = "6";
          type = "int";
       }
       datum sopceditor_expanded
@@ -235,12 +235,12 @@ https://fpgasoftware.intel.com/eula.-->
    {
       datum _sortIndex
       {
-         value = "6";
+         value = "7";
          type = "int";
       }
       datum sopceditor_expanded
       {
-         value = "1";
+         value = "0";
          type = "boolean";
       }
    }
@@ -248,7 +248,7 @@ https://fpgasoftware.intel.com/eula.-->
    {
       datum _sortIndex
       {
-         value = "13";
+         value = "14";
          type = "int";
       }
       datum sopceditor_expanded
@@ -261,12 +261,12 @@ https://fpgasoftware.intel.com/eula.-->
    {
       datum _sortIndex
       {
-         value = "10";
+         value = "11";
          type = "int";
       }
       datum sopceditor_expanded
       {
-         value = "0";
+         value = "1";
          type = "boolean";
       }
    }
@@ -274,7 +274,7 @@ https://fpgasoftware.intel.com/eula.-->
    {
       datum _sortIndex
       {
-         value = "20";
+         value = "21";
          type = "int";
       }
       datum sopceditor_expanded
@@ -300,7 +300,7 @@ https://fpgasoftware.intel.com/eula.-->
       }
       datum sopceditor_expanded
       {
-         value = "0";
+         value = "1";
          type = "boolean";
       }
    }
@@ -313,7 +313,7 @@ https://fpgasoftware.intel.com/eula.-->
       }
       datum sopceditor_expanded
       {
-         value = "1";
+         value = "0";
          type = "boolean";
       }
    }
@@ -321,12 +321,12 @@ https://fpgasoftware.intel.com/eula.-->
    {
       datum _sortIndex
       {
-         value = "18";
+         value = "19";
          type = "int";
       }
       datum sopceditor_expanded
       {
-         value = "0";
+         value = "1";
          type = "boolean";
       }
    }
@@ -339,7 +339,7 @@ https://fpgasoftware.intel.com/eula.-->
       }
       datum sopceditor_expanded
       {
-         value = "0";
+         value = "1";
          type = "boolean";
       }
    }
@@ -351,11 +351,19 @@ https://fpgasoftware.intel.com/eula.-->
          type = "String";
       }
    }
+   element tx_2
+   {
+      datum _sortIndex
+      {
+         value = "5";
+         type = "int";
+      }
+   }
    element xcvr_pll
    {
       datum _sortIndex
       {
-         value = "14";
+         value = "15";
          type = "int";
       }
       datum sopceditor_expanded
@@ -19229,7 +19237,7 @@ https://fpgasoftware.intel.com/eula.-->
           </ipxact:parameters>
         </altera:altera_module_parameters>
       </altera:module>
-      <altera:module altera:enabled="true" altera:auto_export="false">
+      <altera:module altera:enabled="false" altera:auto_export="false">
         <altera:entity_info>
           <ipxact:vendor>Altera Corporation</ipxact:vendor>
           <ipxact:library>send_packet_2</ipxact:library>
@@ -31699,6 +31707,1281 @@ https://fpgasoftware.intel.com/eula.-->
       <altera:module altera:enabled="true" altera:auto_export="false">
         <altera:entity_info>
           <ipxact:vendor>Altera Corporation</ipxact:vendor>
+          <ipxact:library>tx_2</ipxact:library>
+          <ipxact:name>altera_generic_component</ipxact:name>
+          <ipxact:version>1.0</ipxact:version>
+        </altera:entity_info>
+        <altera:altera_module_parameters>
+          <ipxact:parameters>
+            <ipxact:parameter parameterId="componentDefinition" type="string">
+              <ipxact:name>componentDefinition</ipxact:name>
+              <ipxact:displayName>Component definition</ipxact:displayName>
+              <ipxact:value>&lt;componentDefinition&gt;
+    &lt;boundary&gt;
+        &lt;interfaces&gt;
+            &lt;interface&gt;
+                &lt;name&gt;avalon_master&lt;/name&gt;
+                &lt;type&gt;avalon&lt;/type&gt;
+                &lt;isStart&gt;true&lt;/isStart&gt;
+                &lt;ports&gt;
+                    &lt;port&gt;
+                        &lt;name&gt;amm_addr&lt;/name&gt;
+                        &lt;role&gt;address&lt;/role&gt;
+                        &lt;direction&gt;Output&lt;/direction&gt;
+                        &lt;width&gt;25&lt;/width&gt;
+                        &lt;lowerBound&gt;0&lt;/lowerBound&gt;
+                        &lt;vhdlType&gt;STD_LOGIC_VECTOR&lt;/vhdlType&gt;
+                        &lt;terminationValue&gt;0&lt;/terminationValue&gt;
+                    &lt;/port&gt;
+                    &lt;port&gt;
+                        &lt;name&gt;amm_readdata&lt;/name&gt;
+                        &lt;role&gt;readdata&lt;/role&gt;
+                        &lt;direction&gt;Input&lt;/direction&gt;
+                        &lt;width&gt;256&lt;/width&gt;
+                        &lt;lowerBound&gt;0&lt;/lowerBound&gt;
+                        &lt;vhdlType&gt;STD_LOGIC_VECTOR&lt;/vhdlType&gt;
+                        &lt;terminationValue&gt;0&lt;/terminationValue&gt;
+                    &lt;/port&gt;
+                    &lt;port&gt;
+                        &lt;name&gt;amm_writedata&lt;/name&gt;
+                        &lt;role&gt;writedata&lt;/role&gt;
+                        &lt;direction&gt;Output&lt;/direction&gt;
+                        &lt;width&gt;256&lt;/width&gt;
+                        &lt;lowerBound&gt;0&lt;/lowerBound&gt;
+                        &lt;vhdlType&gt;STD_LOGIC_VECTOR&lt;/vhdlType&gt;
+                        &lt;terminationValue&gt;0&lt;/terminationValue&gt;
+                    &lt;/port&gt;
+                    &lt;port&gt;
+                        &lt;name&gt;amm_read&lt;/name&gt;
+                        &lt;role&gt;read&lt;/role&gt;
+                        &lt;direction&gt;Output&lt;/direction&gt;
+                        &lt;width&gt;1&lt;/width&gt;
+                        &lt;lowerBound&gt;0&lt;/lowerBound&gt;
+                        &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
+                        &lt;terminationValue&gt;0&lt;/terminationValue&gt;
+                    &lt;/port&gt;
+                    &lt;port&gt;
+                        &lt;name&gt;amm_write&lt;/name&gt;
+                        &lt;role&gt;write&lt;/role&gt;
+                        &lt;direction&gt;Output&lt;/direction&gt;
+                        &lt;width&gt;1&lt;/width&gt;
+                        &lt;lowerBound&gt;0&lt;/lowerBound&gt;
+                        &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
+                        &lt;terminationValue&gt;0&lt;/terminationValue&gt;
+                    &lt;/port&gt;
+                    &lt;port&gt;
+                        &lt;name&gt;amm_byteenable&lt;/name&gt;
+                        &lt;role&gt;byteenable&lt;/role&gt;
+                        &lt;direction&gt;Output&lt;/direction&gt;
+                        &lt;width&gt;32&lt;/width&gt;
+                        &lt;lowerBound&gt;0&lt;/lowerBound&gt;
+                        &lt;vhdlType&gt;STD_LOGIC_VECTOR&lt;/vhdlType&gt;
+                        &lt;terminationValue&gt;0&lt;/terminationValue&gt;
+                    &lt;/port&gt;
+                    &lt;port&gt;
+                        &lt;name&gt;amm_burstcount&lt;/name&gt;
+                        &lt;role&gt;burstcount&lt;/role&gt;
+                        &lt;direction&gt;Output&lt;/direction&gt;
+                        &lt;width&gt;7&lt;/width&gt;
+                        &lt;lowerBound&gt;0&lt;/lowerBound&gt;
+                        &lt;vhdlType&gt;STD_LOGIC_VECTOR&lt;/vhdlType&gt;
+                        &lt;terminationValue&gt;0&lt;/terminationValue&gt;
+                    &lt;/port&gt;
+                    &lt;port&gt;
+                        &lt;name&gt;amm_readdatavalid&lt;/name&gt;
+                        &lt;role&gt;readdatavalid&lt;/role&gt;
+                        &lt;direction&gt;Input&lt;/direction&gt;
+                        &lt;width&gt;1&lt;/width&gt;
+                        &lt;lowerBound&gt;0&lt;/lowerBound&gt;
+                        &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
+                        &lt;terminationValue&gt;0&lt;/terminationValue&gt;
+                    &lt;/port&gt;
+                    &lt;port&gt;
+                        &lt;name&gt;amm_ready&lt;/name&gt;
+                        &lt;role&gt;waitrequest&lt;/role&gt;
+                        &lt;direction&gt;Input&lt;/direction&gt;
+                        &lt;width&gt;1&lt;/width&gt;
+                        &lt;lowerBound&gt;0&lt;/lowerBound&gt;
+                        &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
+                        &lt;terminationValue&gt;0&lt;/terminationValue&gt;
+                    &lt;/port&gt;
+                &lt;/ports&gt;
+                &lt;assignments&gt;
+                    &lt;assignmentValueMap/&gt;
+                &lt;/assignments&gt;
+                &lt;parameters&gt;
+                    &lt;parameterValueMap&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;adaptsTo&lt;/key&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;addressGroup&lt;/key&gt;
+                            &lt;value&gt;0&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;addressUnits&lt;/key&gt;
+                            &lt;value&gt;WORDS&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;alwaysBurstMaxBurst&lt;/key&gt;
+                            &lt;value&gt;false&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;associatedClock&lt;/key&gt;
+                            &lt;value&gt;clock_ddr&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;associatedReset&lt;/key&gt;
+                            &lt;value&gt;reset_ddr&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;bitsPerSymbol&lt;/key&gt;
+                            &lt;value&gt;8&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;burstOnBurstBoundariesOnly&lt;/key&gt;
+                            &lt;value&gt;false&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;burstcountUnits&lt;/key&gt;
+                            &lt;value&gt;WORDS&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;constantBurstBehavior&lt;/key&gt;
+                            &lt;value&gt;false&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;dBSBigEndian&lt;/key&gt;
+                            &lt;value&gt;false&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;doStreamReads&lt;/key&gt;
+                            &lt;value&gt;false&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;doStreamWrites&lt;/key&gt;
+                            &lt;value&gt;false&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;holdTime&lt;/key&gt;
+                            &lt;value&gt;0&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;interleaveBursts&lt;/key&gt;
+                            &lt;value&gt;false&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;isAsynchronous&lt;/key&gt;
+                            &lt;value&gt;false&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;isBigEndian&lt;/key&gt;
+                            &lt;value&gt;false&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;isReadable&lt;/key&gt;
+                            &lt;value&gt;false&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;isWriteable&lt;/key&gt;
+                            &lt;value&gt;false&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;linewrapBursts&lt;/key&gt;
+                            &lt;value&gt;false&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;maxAddressWidth&lt;/key&gt;
+                            &lt;value&gt;32&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;maximumPendingReadTransactions&lt;/key&gt;
+                            &lt;value&gt;64&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;maximumPendingWriteTransactions&lt;/key&gt;
+                            &lt;value&gt;0&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;minimumReadLatency&lt;/key&gt;
+                            &lt;value&gt;1&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;minimumResponseLatency&lt;/key&gt;
+                            &lt;value&gt;1&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;prSafe&lt;/key&gt;
+                            &lt;value&gt;false&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;readLatency&lt;/key&gt;
+                            &lt;value&gt;0&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;readWaitTime&lt;/key&gt;
+                            &lt;value&gt;1&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;registerIncomingSignals&lt;/key&gt;
+                            &lt;value&gt;false&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;registerOutgoingSignals&lt;/key&gt;
+                            &lt;value&gt;false&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;setupTime&lt;/key&gt;
+                            &lt;value&gt;0&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;timingUnits&lt;/key&gt;
+                            &lt;value&gt;Cycles&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;waitrequestAllowance&lt;/key&gt;
+                            &lt;value&gt;0&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;writeWaitTime&lt;/key&gt;
+                            &lt;value&gt;0&lt;/value&gt;
+                        &lt;/entry&gt;
+                    &lt;/parameterValueMap&gt;
+                &lt;/parameters&gt;
+            &lt;/interface&gt;
+            &lt;interface&gt;
+                &lt;name&gt;clock_50&lt;/name&gt;
+                &lt;type&gt;clock&lt;/type&gt;
+                &lt;isStart&gt;false&lt;/isStart&gt;
+                &lt;ports&gt;
+                    &lt;port&gt;
+                        &lt;name&gt;clk_50&lt;/name&gt;
+                        &lt;role&gt;clk&lt;/role&gt;
+                        &lt;direction&gt;Input&lt;/direction&gt;
+                        &lt;width&gt;1&lt;/width&gt;
+                        &lt;lowerBound&gt;0&lt;/lowerBound&gt;
+                        &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
+                        &lt;terminationValue&gt;0&lt;/terminationValue&gt;
+                    &lt;/port&gt;
+                &lt;/ports&gt;
+                &lt;assignments&gt;
+                    &lt;assignmentValueMap/&gt;
+                &lt;/assignments&gt;
+                &lt;parameters&gt;
+                    &lt;parameterValueMap&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;clockRate&lt;/key&gt;
+                            &lt;value&gt;0&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;externallyDriven&lt;/key&gt;
+                            &lt;value&gt;false&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;ptfSchematicName&lt;/key&gt;
+                        &lt;/entry&gt;
+                    &lt;/parameterValueMap&gt;
+                &lt;/parameters&gt;
+            &lt;/interface&gt;
+            &lt;interface&gt;
+                &lt;name&gt;reset_board&lt;/name&gt;
+                &lt;type&gt;reset&lt;/type&gt;
+                &lt;isStart&gt;false&lt;/isStart&gt;
+                &lt;ports&gt;
+                    &lt;port&gt;
+                        &lt;name&gt;rst_n&lt;/name&gt;
+                        &lt;role&gt;reset&lt;/role&gt;
+                        &lt;direction&gt;Input&lt;/direction&gt;
+                        &lt;width&gt;1&lt;/width&gt;
+                        &lt;lowerBound&gt;0&lt;/lowerBound&gt;
+                        &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
+                        &lt;terminationValue&gt;0&lt;/terminationValue&gt;
+                    &lt;/port&gt;
+                &lt;/ports&gt;
+                &lt;assignments&gt;
+                    &lt;assignmentValueMap/&gt;
+                &lt;/assignments&gt;
+                &lt;parameters&gt;
+                    &lt;parameterValueMap&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;associatedClock&lt;/key&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;synchronousEdges&lt;/key&gt;
+                            &lt;value&gt;NONE&lt;/value&gt;
+                        &lt;/entry&gt;
+                    &lt;/parameterValueMap&gt;
+                &lt;/parameters&gt;
+            &lt;/interface&gt;
+            &lt;interface&gt;
+                &lt;name&gt;clock_ddr&lt;/name&gt;
+                &lt;type&gt;clock&lt;/type&gt;
+                &lt;isStart&gt;false&lt;/isStart&gt;
+                &lt;ports&gt;
+                    &lt;port&gt;
+                        &lt;name&gt;avalon_clk&lt;/name&gt;
+                        &lt;role&gt;clk&lt;/role&gt;
+                        &lt;direction&gt;Input&lt;/direction&gt;
+                        &lt;width&gt;1&lt;/width&gt;
+                        &lt;lowerBound&gt;0&lt;/lowerBound&gt;
+                        &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
+                        &lt;terminationValue&gt;0&lt;/terminationValue&gt;
+                    &lt;/port&gt;
+                &lt;/ports&gt;
+                &lt;assignments&gt;
+                    &lt;assignmentValueMap/&gt;
+                &lt;/assignments&gt;
+                &lt;parameters&gt;
+                    &lt;parameterValueMap&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;clockRate&lt;/key&gt;
+                            &lt;value&gt;0&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;externallyDriven&lt;/key&gt;
+                            &lt;value&gt;false&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;ptfSchematicName&lt;/key&gt;
+                        &lt;/entry&gt;
+                    &lt;/parameterValueMap&gt;
+                &lt;/parameters&gt;
+            &lt;/interface&gt;
+            &lt;interface&gt;
+                &lt;name&gt;clock_tse&lt;/name&gt;
+                &lt;type&gt;clock&lt;/type&gt;
+                &lt;isStart&gt;false&lt;/isStart&gt;
+                &lt;ports&gt;
+                    &lt;port&gt;
+                        &lt;name&gt;clk_original&lt;/name&gt;
+                        &lt;role&gt;clk&lt;/role&gt;
+                        &lt;direction&gt;Input&lt;/direction&gt;
+                        &lt;width&gt;1&lt;/width&gt;
+                        &lt;lowerBound&gt;0&lt;/lowerBound&gt;
+                        &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
+                        &lt;terminationValue&gt;0&lt;/terminationValue&gt;
+                    &lt;/port&gt;
+                &lt;/ports&gt;
+                &lt;assignments&gt;
+                    &lt;assignmentValueMap/&gt;
+                &lt;/assignments&gt;
+                &lt;parameters&gt;
+                    &lt;parameterValueMap&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;clockRate&lt;/key&gt;
+                            &lt;value&gt;0&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;externallyDriven&lt;/key&gt;
+                            &lt;value&gt;false&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;ptfSchematicName&lt;/key&gt;
+                        &lt;/entry&gt;
+                    &lt;/parameterValueMap&gt;
+                &lt;/parameters&gt;
+            &lt;/interface&gt;
+            &lt;interface&gt;
+                &lt;name&gt;reset&lt;/name&gt;
+                &lt;type&gt;reset&lt;/type&gt;
+                &lt;isStart&gt;false&lt;/isStart&gt;
+                &lt;ports&gt;
+                    &lt;port&gt;
+                        &lt;name&gt;rst&lt;/name&gt;
+                        &lt;role&gt;reset&lt;/role&gt;
+                        &lt;direction&gt;Input&lt;/direction&gt;
+                        &lt;width&gt;1&lt;/width&gt;
+                        &lt;lowerBound&gt;0&lt;/lowerBound&gt;
+                        &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
+                        &lt;terminationValue&gt;0&lt;/terminationValue&gt;
+                    &lt;/port&gt;
+                &lt;/ports&gt;
+                &lt;assignments&gt;
+                    &lt;assignmentValueMap/&gt;
+                &lt;/assignments&gt;
+                &lt;parameters&gt;
+                    &lt;parameterValueMap&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;associatedClock&lt;/key&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;synchronousEdges&lt;/key&gt;
+                            &lt;value&gt;NONE&lt;/value&gt;
+                        &lt;/entry&gt;
+                    &lt;/parameterValueMap&gt;
+                &lt;/parameters&gt;
+            &lt;/interface&gt;
+            &lt;interface&gt;
+                &lt;name&gt;avalon_streaming_source&lt;/name&gt;
+                &lt;type&gt;avalon_streaming&lt;/type&gt;
+                &lt;isStart&gt;true&lt;/isStart&gt;
+                &lt;ports&gt;
+                    &lt;port&gt;
+                        &lt;name&gt;ff_tx_data&lt;/name&gt;
+                        &lt;role&gt;data&lt;/role&gt;
+                        &lt;direction&gt;Output&lt;/direction&gt;
+                        &lt;width&gt;8&lt;/width&gt;
+                        &lt;lowerBound&gt;0&lt;/lowerBound&gt;
+                        &lt;vhdlType&gt;STD_LOGIC_VECTOR&lt;/vhdlType&gt;
+                        &lt;terminationValue&gt;0&lt;/terminationValue&gt;
+                    &lt;/port&gt;
+                    &lt;port&gt;
+                        &lt;name&gt;ff_tx_eop&lt;/name&gt;
+                        &lt;role&gt;endofpacket&lt;/role&gt;
+                        &lt;direction&gt;Output&lt;/direction&gt;
+                        &lt;width&gt;1&lt;/width&gt;
+                        &lt;lowerBound&gt;0&lt;/lowerBound&gt;
+                        &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
+                        &lt;terminationValue&gt;0&lt;/terminationValue&gt;
+                    &lt;/port&gt;
+                    &lt;port&gt;
+                        &lt;name&gt;ff_tx_err&lt;/name&gt;
+                        &lt;role&gt;error&lt;/role&gt;
+                        &lt;direction&gt;Output&lt;/direction&gt;
+                        &lt;width&gt;1&lt;/width&gt;
+                        &lt;lowerBound&gt;0&lt;/lowerBound&gt;
+                        &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
+                        &lt;terminationValue&gt;0&lt;/terminationValue&gt;
+                    &lt;/port&gt;
+                    &lt;port&gt;
+                        &lt;name&gt;ff_tx_rdy&lt;/name&gt;
+                        &lt;role&gt;ready&lt;/role&gt;
+                        &lt;direction&gt;Input&lt;/direction&gt;
+                        &lt;width&gt;1&lt;/width&gt;
+                        &lt;lowerBound&gt;0&lt;/lowerBound&gt;
+                        &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
+                        &lt;terminationValue&gt;0&lt;/terminationValue&gt;
+                    &lt;/port&gt;
+                    &lt;port&gt;
+                        &lt;name&gt;ff_tx_sop&lt;/name&gt;
+                        &lt;role&gt;startofpacket&lt;/role&gt;
+                        &lt;direction&gt;Output&lt;/direction&gt;
+                        &lt;width&gt;1&lt;/width&gt;
+                        &lt;lowerBound&gt;0&lt;/lowerBound&gt;
+                        &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
+                        &lt;terminationValue&gt;0&lt;/terminationValue&gt;
+                    &lt;/port&gt;
+                    &lt;port&gt;
+                        &lt;name&gt;ff_tx_wren&lt;/name&gt;
+                        &lt;role&gt;valid&lt;/role&gt;
+                        &lt;direction&gt;Output&lt;/direction&gt;
+                        &lt;width&gt;1&lt;/width&gt;
+                        &lt;lowerBound&gt;0&lt;/lowerBound&gt;
+                        &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
+                        &lt;terminationValue&gt;0&lt;/terminationValue&gt;
+                    &lt;/port&gt;
+                &lt;/ports&gt;
+                &lt;assignments&gt;
+                    &lt;assignmentValueMap/&gt;
+                &lt;/assignments&gt;
+                &lt;parameters&gt;
+                    &lt;parameterValueMap&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;associatedClock&lt;/key&gt;
+                            &lt;value&gt;clock_tse&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;associatedReset&lt;/key&gt;
+                            &lt;value&gt;reset&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;beatsPerCycle&lt;/key&gt;
+                            &lt;value&gt;1&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;dataBitsPerSymbol&lt;/key&gt;
+                            &lt;value&gt;8&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;emptyWithinPacket&lt;/key&gt;
+                            &lt;value&gt;false&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;errorDescriptor&lt;/key&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;firstSymbolInHighOrderBits&lt;/key&gt;
+                            &lt;value&gt;true&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;highOrderSymbolAtMSB&lt;/key&gt;
+                            &lt;value&gt;false&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;maxChannel&lt;/key&gt;
+                            &lt;value&gt;0&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;packetDescription&lt;/key&gt;
+                            &lt;value&gt;&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;prSafe&lt;/key&gt;
+                            &lt;value&gt;false&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;readyAllowance&lt;/key&gt;
+                            &lt;value&gt;0&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;readyLatency&lt;/key&gt;
+                            &lt;value&gt;0&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;symbolsPerBeat&lt;/key&gt;
+                            &lt;value&gt;1&lt;/value&gt;
+                        &lt;/entry&gt;
+                    &lt;/parameterValueMap&gt;
+                &lt;/parameters&gt;
+            &lt;/interface&gt;
+            &lt;interface&gt;
+                &lt;name&gt;reset_ddr&lt;/name&gt;
+                &lt;type&gt;reset&lt;/type&gt;
+                &lt;isStart&gt;false&lt;/isStart&gt;
+                &lt;ports&gt;
+                    &lt;port&gt;
+                        &lt;name&gt;avalon_reset&lt;/name&gt;
+                        &lt;role&gt;reset&lt;/role&gt;
+                        &lt;direction&gt;Input&lt;/direction&gt;
+                        &lt;width&gt;1&lt;/width&gt;
+                        &lt;lowerBound&gt;0&lt;/lowerBound&gt;
+                        &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
+                        &lt;terminationValue&gt;0&lt;/terminationValue&gt;
+                    &lt;/port&gt;
+                &lt;/ports&gt;
+                &lt;assignments&gt;
+                    &lt;assignmentValueMap/&gt;
+                &lt;/assignments&gt;
+                &lt;parameters&gt;
+                    &lt;parameterValueMap&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;associatedClock&lt;/key&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;synchronousEdges&lt;/key&gt;
+                            &lt;value&gt;NONE&lt;/value&gt;
+                        &lt;/entry&gt;
+                    &lt;/parameterValueMap&gt;
+                &lt;/parameters&gt;
+            &lt;/interface&gt;
+            &lt;interface&gt;
+                &lt;name&gt;control&lt;/name&gt;
+                &lt;type&gt;conduit&lt;/type&gt;
+                &lt;isStart&gt;false&lt;/isStart&gt;
+                &lt;ports&gt;
+                    &lt;port&gt;
+                        &lt;name&gt;start_ram_addr&lt;/name&gt;
+                        &lt;role&gt;start_ram_addr&lt;/role&gt;
+                        &lt;direction&gt;Input&lt;/direction&gt;
+                        &lt;width&gt;25&lt;/width&gt;
+                        &lt;lowerBound&gt;0&lt;/lowerBound&gt;
+                        &lt;vhdlType&gt;STD_LOGIC_VECTOR&lt;/vhdlType&gt;
+                        &lt;terminationValue&gt;0&lt;/terminationValue&gt;
+                    &lt;/port&gt;
+                    &lt;port&gt;
+                        &lt;name&gt;cmd_send&lt;/name&gt;
+                        &lt;role&gt;cmd_send&lt;/role&gt;
+                        &lt;direction&gt;Input&lt;/direction&gt;
+                        &lt;width&gt;1&lt;/width&gt;
+                        &lt;lowerBound&gt;0&lt;/lowerBound&gt;
+                        &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
+                        &lt;terminationValue&gt;0&lt;/terminationValue&gt;
+                    &lt;/port&gt;
+                &lt;/ports&gt;
+                &lt;assignments&gt;
+                    &lt;assignmentValueMap/&gt;
+                &lt;/assignments&gt;
+                &lt;parameters&gt;
+                    &lt;parameterValueMap&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;associatedClock&lt;/key&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;associatedReset&lt;/key&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;prSafe&lt;/key&gt;
+                            &lt;value&gt;false&lt;/value&gt;
+                        &lt;/entry&gt;
+                    &lt;/parameterValueMap&gt;
+                &lt;/parameters&gt;
+            &lt;/interface&gt;
+        &lt;/interfaces&gt;
+    &lt;/boundary&gt;
+    &lt;originalModuleInfo&gt;
+        &lt;className&gt;send_packet_ddr&lt;/className&gt;
+        &lt;version&gt;1.0&lt;/version&gt;
+        &lt;displayName&gt;send_packet_ddr&lt;/displayName&gt;
+    &lt;/originalModuleInfo&gt;
+    &lt;systemInfoParameterDescriptors&gt;
+        &lt;descriptors/&gt;
+    &lt;/systemInfoParameterDescriptors&gt;
+    &lt;systemInfos&gt;
+        &lt;connPtSystemInfos/&gt;
+    &lt;/systemInfos&gt;
+&lt;/componentDefinition&gt;</ipxact:value>
+            </ipxact:parameter>
+            <ipxact:parameter parameterId="defaultBoundary" type="string">
+              <ipxact:name>defaultBoundary</ipxact:name>
+              <ipxact:displayName>Default boundary</ipxact:displayName>
+              <ipxact:value>&lt;boundaryDefinition&gt;
+    &lt;interfaces&gt;
+        &lt;interface&gt;
+            &lt;name&gt;avalon_master&lt;/name&gt;
+            &lt;type&gt;avalon&lt;/type&gt;
+            &lt;isStart&gt;true&lt;/isStart&gt;
+            &lt;ports&gt;
+                &lt;port&gt;
+                    &lt;name&gt;amm_addr&lt;/name&gt;
+                    &lt;role&gt;address&lt;/role&gt;
+                    &lt;direction&gt;Output&lt;/direction&gt;
+                    &lt;width&gt;25&lt;/width&gt;
+                    &lt;lowerBound&gt;0&lt;/lowerBound&gt;
+                    &lt;vhdlType&gt;STD_LOGIC_VECTOR&lt;/vhdlType&gt;
+                    &lt;terminationValue&gt;0&lt;/terminationValue&gt;
+                &lt;/port&gt;
+                &lt;port&gt;
+                    &lt;name&gt;amm_readdata&lt;/name&gt;
+                    &lt;role&gt;readdata&lt;/role&gt;
+                    &lt;direction&gt;Input&lt;/direction&gt;
+                    &lt;width&gt;256&lt;/width&gt;
+                    &lt;lowerBound&gt;0&lt;/lowerBound&gt;
+                    &lt;vhdlType&gt;STD_LOGIC_VECTOR&lt;/vhdlType&gt;
+                    &lt;terminationValue&gt;0&lt;/terminationValue&gt;
+                &lt;/port&gt;
+                &lt;port&gt;
+                    &lt;name&gt;amm_writedata&lt;/name&gt;
+                    &lt;role&gt;writedata&lt;/role&gt;
+                    &lt;direction&gt;Output&lt;/direction&gt;
+                    &lt;width&gt;256&lt;/width&gt;
+                    &lt;lowerBound&gt;0&lt;/lowerBound&gt;
+                    &lt;vhdlType&gt;STD_LOGIC_VECTOR&lt;/vhdlType&gt;
+                    &lt;terminationValue&gt;0&lt;/terminationValue&gt;
+                &lt;/port&gt;
+                &lt;port&gt;
+                    &lt;name&gt;amm_read&lt;/name&gt;
+                    &lt;role&gt;read&lt;/role&gt;
+                    &lt;direction&gt;Output&lt;/direction&gt;
+                    &lt;width&gt;1&lt;/width&gt;
+                    &lt;lowerBound&gt;0&lt;/lowerBound&gt;
+                    &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
+                    &lt;terminationValue&gt;0&lt;/terminationValue&gt;
+                &lt;/port&gt;
+                &lt;port&gt;
+                    &lt;name&gt;amm_write&lt;/name&gt;
+                    &lt;role&gt;write&lt;/role&gt;
+                    &lt;direction&gt;Output&lt;/direction&gt;
+                    &lt;width&gt;1&lt;/width&gt;
+                    &lt;lowerBound&gt;0&lt;/lowerBound&gt;
+                    &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
+                    &lt;terminationValue&gt;0&lt;/terminationValue&gt;
+                &lt;/port&gt;
+                &lt;port&gt;
+                    &lt;name&gt;amm_byteenable&lt;/name&gt;
+                    &lt;role&gt;byteenable&lt;/role&gt;
+                    &lt;direction&gt;Output&lt;/direction&gt;
+                    &lt;width&gt;32&lt;/width&gt;
+                    &lt;lowerBound&gt;0&lt;/lowerBound&gt;
+                    &lt;vhdlType&gt;STD_LOGIC_VECTOR&lt;/vhdlType&gt;
+                    &lt;terminationValue&gt;0&lt;/terminationValue&gt;
+                &lt;/port&gt;
+                &lt;port&gt;
+                    &lt;name&gt;amm_burstcount&lt;/name&gt;
+                    &lt;role&gt;burstcount&lt;/role&gt;
+                    &lt;direction&gt;Output&lt;/direction&gt;
+                    &lt;width&gt;7&lt;/width&gt;
+                    &lt;lowerBound&gt;0&lt;/lowerBound&gt;
+                    &lt;vhdlType&gt;STD_LOGIC_VECTOR&lt;/vhdlType&gt;
+                    &lt;terminationValue&gt;0&lt;/terminationValue&gt;
+                &lt;/port&gt;
+                &lt;port&gt;
+                    &lt;name&gt;amm_readdatavalid&lt;/name&gt;
+                    &lt;role&gt;readdatavalid&lt;/role&gt;
+                    &lt;direction&gt;Input&lt;/direction&gt;
+                    &lt;width&gt;1&lt;/width&gt;
+                    &lt;lowerBound&gt;0&lt;/lowerBound&gt;
+                    &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
+                    &lt;terminationValue&gt;0&lt;/terminationValue&gt;
+                &lt;/port&gt;
+                &lt;port&gt;
+                    &lt;name&gt;amm_ready&lt;/name&gt;
+                    &lt;role&gt;waitrequest&lt;/role&gt;
+                    &lt;direction&gt;Input&lt;/direction&gt;
+                    &lt;width&gt;1&lt;/width&gt;
+                    &lt;lowerBound&gt;0&lt;/lowerBound&gt;
+                    &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
+                    &lt;terminationValue&gt;0&lt;/terminationValue&gt;
+                &lt;/port&gt;
+            &lt;/ports&gt;
+            &lt;assignments&gt;
+                &lt;assignmentValueMap/&gt;
+            &lt;/assignments&gt;
+            &lt;parameters&gt;
+                &lt;parameterValueMap&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;adaptsTo&lt;/key&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;addressGroup&lt;/key&gt;
+                        &lt;value&gt;0&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;addressUnits&lt;/key&gt;
+                        &lt;value&gt;WORDS&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;alwaysBurstMaxBurst&lt;/key&gt;
+                        &lt;value&gt;false&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;associatedClock&lt;/key&gt;
+                        &lt;value&gt;clock_ddr&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;associatedReset&lt;/key&gt;
+                        &lt;value&gt;reset_ddr&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;bitsPerSymbol&lt;/key&gt;
+                        &lt;value&gt;8&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;burstOnBurstBoundariesOnly&lt;/key&gt;
+                        &lt;value&gt;false&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;burstcountUnits&lt;/key&gt;
+                        &lt;value&gt;WORDS&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;constantBurstBehavior&lt;/key&gt;
+                        &lt;value&gt;false&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;dBSBigEndian&lt;/key&gt;
+                        &lt;value&gt;false&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;doStreamReads&lt;/key&gt;
+                        &lt;value&gt;false&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;doStreamWrites&lt;/key&gt;
+                        &lt;value&gt;false&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;holdTime&lt;/key&gt;
+                        &lt;value&gt;0&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;interleaveBursts&lt;/key&gt;
+                        &lt;value&gt;false&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;isAsynchronous&lt;/key&gt;
+                        &lt;value&gt;false&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;isBigEndian&lt;/key&gt;
+                        &lt;value&gt;false&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;isReadable&lt;/key&gt;
+                        &lt;value&gt;false&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;isWriteable&lt;/key&gt;
+                        &lt;value&gt;false&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;linewrapBursts&lt;/key&gt;
+                        &lt;value&gt;false&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;maxAddressWidth&lt;/key&gt;
+                        &lt;value&gt;32&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;maximumPendingReadTransactions&lt;/key&gt;
+                        &lt;value&gt;64&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;maximumPendingWriteTransactions&lt;/key&gt;
+                        &lt;value&gt;0&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;minimumReadLatency&lt;/key&gt;
+                        &lt;value&gt;1&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;minimumResponseLatency&lt;/key&gt;
+                        &lt;value&gt;1&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;prSafe&lt;/key&gt;
+                        &lt;value&gt;false&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;readLatency&lt;/key&gt;
+                        &lt;value&gt;0&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;readWaitTime&lt;/key&gt;
+                        &lt;value&gt;1&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;registerIncomingSignals&lt;/key&gt;
+                        &lt;value&gt;false&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;registerOutgoingSignals&lt;/key&gt;
+                        &lt;value&gt;false&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;setupTime&lt;/key&gt;
+                        &lt;value&gt;0&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;timingUnits&lt;/key&gt;
+                        &lt;value&gt;Cycles&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;waitrequestAllowance&lt;/key&gt;
+                        &lt;value&gt;0&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;writeWaitTime&lt;/key&gt;
+                        &lt;value&gt;0&lt;/value&gt;
+                    &lt;/entry&gt;
+                &lt;/parameterValueMap&gt;
+            &lt;/parameters&gt;
+        &lt;/interface&gt;
+        &lt;interface&gt;
+            &lt;name&gt;clock_50&lt;/name&gt;
+            &lt;type&gt;clock&lt;/type&gt;
+            &lt;isStart&gt;false&lt;/isStart&gt;
+            &lt;ports&gt;
+                &lt;port&gt;
+                    &lt;name&gt;clk_50&lt;/name&gt;
+                    &lt;role&gt;clk&lt;/role&gt;
+                    &lt;direction&gt;Input&lt;/direction&gt;
+                    &lt;width&gt;1&lt;/width&gt;
+                    &lt;lowerBound&gt;0&lt;/lowerBound&gt;
+                    &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
+                    &lt;terminationValue&gt;0&lt;/terminationValue&gt;
+                &lt;/port&gt;
+            &lt;/ports&gt;
+            &lt;assignments&gt;
+                &lt;assignmentValueMap/&gt;
+            &lt;/assignments&gt;
+            &lt;parameters&gt;
+                &lt;parameterValueMap&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;clockRate&lt;/key&gt;
+                        &lt;value&gt;0&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;externallyDriven&lt;/key&gt;
+                        &lt;value&gt;false&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;ptfSchematicName&lt;/key&gt;
+                    &lt;/entry&gt;
+                &lt;/parameterValueMap&gt;
+            &lt;/parameters&gt;
+        &lt;/interface&gt;
+        &lt;interface&gt;
+            &lt;name&gt;reset_board&lt;/name&gt;
+            &lt;type&gt;reset&lt;/type&gt;
+            &lt;isStart&gt;false&lt;/isStart&gt;
+            &lt;ports&gt;
+                &lt;port&gt;
+                    &lt;name&gt;rst_n&lt;/name&gt;
+                    &lt;role&gt;reset&lt;/role&gt;
+                    &lt;direction&gt;Input&lt;/direction&gt;
+                    &lt;width&gt;1&lt;/width&gt;
+                    &lt;lowerBound&gt;0&lt;/lowerBound&gt;
+                    &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
+                    &lt;terminationValue&gt;0&lt;/terminationValue&gt;
+                &lt;/port&gt;
+            &lt;/ports&gt;
+            &lt;assignments&gt;
+                &lt;assignmentValueMap/&gt;
+            &lt;/assignments&gt;
+            &lt;parameters&gt;
+                &lt;parameterValueMap&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;associatedClock&lt;/key&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;synchronousEdges&lt;/key&gt;
+                        &lt;value&gt;NONE&lt;/value&gt;
+                    &lt;/entry&gt;
+                &lt;/parameterValueMap&gt;
+            &lt;/parameters&gt;
+        &lt;/interface&gt;
+        &lt;interface&gt;
+            &lt;name&gt;clock_ddr&lt;/name&gt;
+            &lt;type&gt;clock&lt;/type&gt;
+            &lt;isStart&gt;false&lt;/isStart&gt;
+            &lt;ports&gt;
+                &lt;port&gt;
+                    &lt;name&gt;avalon_clk&lt;/name&gt;
+                    &lt;role&gt;clk&lt;/role&gt;
+                    &lt;direction&gt;Input&lt;/direction&gt;
+                    &lt;width&gt;1&lt;/width&gt;
+                    &lt;lowerBound&gt;0&lt;/lowerBound&gt;
+                    &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
+                    &lt;terminationValue&gt;0&lt;/terminationValue&gt;
+                &lt;/port&gt;
+            &lt;/ports&gt;
+            &lt;assignments&gt;
+                &lt;assignmentValueMap/&gt;
+            &lt;/assignments&gt;
+            &lt;parameters&gt;
+                &lt;parameterValueMap&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;clockRate&lt;/key&gt;
+                        &lt;value&gt;0&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;externallyDriven&lt;/key&gt;
+                        &lt;value&gt;false&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;ptfSchematicName&lt;/key&gt;
+                    &lt;/entry&gt;
+                &lt;/parameterValueMap&gt;
+            &lt;/parameters&gt;
+        &lt;/interface&gt;
+        &lt;interface&gt;
+            &lt;name&gt;clock_tse&lt;/name&gt;
+            &lt;type&gt;clock&lt;/type&gt;
+            &lt;isStart&gt;false&lt;/isStart&gt;
+            &lt;ports&gt;
+                &lt;port&gt;
+                    &lt;name&gt;clk_original&lt;/name&gt;
+                    &lt;role&gt;clk&lt;/role&gt;
+                    &lt;direction&gt;Input&lt;/direction&gt;
+                    &lt;width&gt;1&lt;/width&gt;
+                    &lt;lowerBound&gt;0&lt;/lowerBound&gt;
+                    &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
+                    &lt;terminationValue&gt;0&lt;/terminationValue&gt;
+                &lt;/port&gt;
+            &lt;/ports&gt;
+            &lt;assignments&gt;
+                &lt;assignmentValueMap/&gt;
+            &lt;/assignments&gt;
+            &lt;parameters&gt;
+                &lt;parameterValueMap&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;clockRate&lt;/key&gt;
+                        &lt;value&gt;0&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;externallyDriven&lt;/key&gt;
+                        &lt;value&gt;false&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;ptfSchematicName&lt;/key&gt;
+                    &lt;/entry&gt;
+                &lt;/parameterValueMap&gt;
+            &lt;/parameters&gt;
+        &lt;/interface&gt;
+        &lt;interface&gt;
+            &lt;name&gt;reset&lt;/name&gt;
+            &lt;type&gt;reset&lt;/type&gt;
+            &lt;isStart&gt;false&lt;/isStart&gt;
+            &lt;ports&gt;
+                &lt;port&gt;
+                    &lt;name&gt;rst&lt;/name&gt;
+                    &lt;role&gt;reset&lt;/role&gt;
+                    &lt;direction&gt;Input&lt;/direction&gt;
+                    &lt;width&gt;1&lt;/width&gt;
+                    &lt;lowerBound&gt;0&lt;/lowerBound&gt;
+                    &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
+                    &lt;terminationValue&gt;0&lt;/terminationValue&gt;
+                &lt;/port&gt;
+            &lt;/ports&gt;
+            &lt;assignments&gt;
+                &lt;assignmentValueMap/&gt;
+            &lt;/assignments&gt;
+            &lt;parameters&gt;
+                &lt;parameterValueMap&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;associatedClock&lt;/key&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;synchronousEdges&lt;/key&gt;
+                        &lt;value&gt;NONE&lt;/value&gt;
+                    &lt;/entry&gt;
+                &lt;/parameterValueMap&gt;
+            &lt;/parameters&gt;
+        &lt;/interface&gt;
+        &lt;interface&gt;
+            &lt;name&gt;avalon_streaming_source&lt;/name&gt;
+            &lt;type&gt;avalon_streaming&lt;/type&gt;
+            &lt;isStart&gt;true&lt;/isStart&gt;
+            &lt;ports&gt;
+                &lt;port&gt;
+                    &lt;name&gt;ff_tx_data&lt;/name&gt;
+                    &lt;role&gt;data&lt;/role&gt;
+                    &lt;direction&gt;Output&lt;/direction&gt;
+                    &lt;width&gt;8&lt;/width&gt;
+                    &lt;lowerBound&gt;0&lt;/lowerBound&gt;
+                    &lt;vhdlType&gt;STD_LOGIC_VECTOR&lt;/vhdlType&gt;
+                    &lt;terminationValue&gt;0&lt;/terminationValue&gt;
+                &lt;/port&gt;
+                &lt;port&gt;
+                    &lt;name&gt;ff_tx_eop&lt;/name&gt;
+                    &lt;role&gt;endofpacket&lt;/role&gt;
+                    &lt;direction&gt;Output&lt;/direction&gt;
+                    &lt;width&gt;1&lt;/width&gt;
+                    &lt;lowerBound&gt;0&lt;/lowerBound&gt;
+                    &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
+                    &lt;terminationValue&gt;0&lt;/terminationValue&gt;
+                &lt;/port&gt;
+                &lt;port&gt;
+                    &lt;name&gt;ff_tx_err&lt;/name&gt;
+                    &lt;role&gt;error&lt;/role&gt;
+                    &lt;direction&gt;Output&lt;/direction&gt;
+                    &lt;width&gt;1&lt;/width&gt;
+                    &lt;lowerBound&gt;0&lt;/lowerBound&gt;
+                    &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
+                    &lt;terminationValue&gt;0&lt;/terminationValue&gt;
+                &lt;/port&gt;
+                &lt;port&gt;
+                    &lt;name&gt;ff_tx_rdy&lt;/name&gt;
+                    &lt;role&gt;ready&lt;/role&gt;
+                    &lt;direction&gt;Input&lt;/direction&gt;
+                    &lt;width&gt;1&lt;/width&gt;
+                    &lt;lowerBound&gt;0&lt;/lowerBound&gt;
+                    &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
+                    &lt;terminationValue&gt;0&lt;/terminationValue&gt;
+                &lt;/port&gt;
+                &lt;port&gt;
+                    &lt;name&gt;ff_tx_sop&lt;/name&gt;
+                    &lt;role&gt;startofpacket&lt;/role&gt;
+                    &lt;direction&gt;Output&lt;/direction&gt;
+                    &lt;width&gt;1&lt;/width&gt;
+                    &lt;lowerBound&gt;0&lt;/lowerBound&gt;
+                    &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
+                    &lt;terminationValue&gt;0&lt;/terminationValue&gt;
+                &lt;/port&gt;
+                &lt;port&gt;
+                    &lt;name&gt;ff_tx_wren&lt;/name&gt;
+                    &lt;role&gt;valid&lt;/role&gt;
+                    &lt;direction&gt;Output&lt;/direction&gt;
+                    &lt;width&gt;1&lt;/width&gt;
+                    &lt;lowerBound&gt;0&lt;/lowerBound&gt;
+                    &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
+                    &lt;terminationValue&gt;0&lt;/terminationValue&gt;
+                &lt;/port&gt;
+            &lt;/ports&gt;
+            &lt;assignments&gt;
+                &lt;assignmentValueMap/&gt;
+            &lt;/assignments&gt;
+            &lt;parameters&gt;
+                &lt;parameterValueMap&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;associatedClock&lt;/key&gt;
+                        &lt;value&gt;clock_tse&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;associatedReset&lt;/key&gt;
+                        &lt;value&gt;reset&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;beatsPerCycle&lt;/key&gt;
+                        &lt;value&gt;1&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;dataBitsPerSymbol&lt;/key&gt;
+                        &lt;value&gt;8&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;emptyWithinPacket&lt;/key&gt;
+                        &lt;value&gt;false&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;errorDescriptor&lt;/key&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;firstSymbolInHighOrderBits&lt;/key&gt;
+                        &lt;value&gt;true&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;highOrderSymbolAtMSB&lt;/key&gt;
+                        &lt;value&gt;false&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;maxChannel&lt;/key&gt;
+                        &lt;value&gt;0&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;packetDescription&lt;/key&gt;
+                        &lt;value&gt;&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;prSafe&lt;/key&gt;
+                        &lt;value&gt;false&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;readyAllowance&lt;/key&gt;
+                        &lt;value&gt;0&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;readyLatency&lt;/key&gt;
+                        &lt;value&gt;0&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;symbolsPerBeat&lt;/key&gt;
+                        &lt;value&gt;1&lt;/value&gt;
+                    &lt;/entry&gt;
+                &lt;/parameterValueMap&gt;
+            &lt;/parameters&gt;
+        &lt;/interface&gt;
+        &lt;interface&gt;
+            &lt;name&gt;reset_ddr&lt;/name&gt;
+            &lt;type&gt;reset&lt;/type&gt;
+            &lt;isStart&gt;false&lt;/isStart&gt;
+            &lt;ports&gt;
+                &lt;port&gt;
+                    &lt;name&gt;avalon_reset&lt;/name&gt;
+                    &lt;role&gt;reset&lt;/role&gt;
+                    &lt;direction&gt;Input&lt;/direction&gt;
+                    &lt;width&gt;1&lt;/width&gt;
+                    &lt;lowerBound&gt;0&lt;/lowerBound&gt;
+                    &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
+                    &lt;terminationValue&gt;0&lt;/terminationValue&gt;
+                &lt;/port&gt;
+            &lt;/ports&gt;
+            &lt;assignments&gt;
+                &lt;assignmentValueMap/&gt;
+            &lt;/assignments&gt;
+            &lt;parameters&gt;
+                &lt;parameterValueMap&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;associatedClock&lt;/key&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;synchronousEdges&lt;/key&gt;
+                        &lt;value&gt;NONE&lt;/value&gt;
+                    &lt;/entry&gt;
+                &lt;/parameterValueMap&gt;
+            &lt;/parameters&gt;
+        &lt;/interface&gt;
+        &lt;interface&gt;
+            &lt;name&gt;control&lt;/name&gt;
+            &lt;type&gt;conduit&lt;/type&gt;
+            &lt;isStart&gt;false&lt;/isStart&gt;
+            &lt;ports&gt;
+                &lt;port&gt;
+                    &lt;name&gt;start_ram_addr&lt;/name&gt;
+                    &lt;role&gt;start_ram_addr&lt;/role&gt;
+                    &lt;direction&gt;Input&lt;/direction&gt;
+                    &lt;width&gt;25&lt;/width&gt;
+                    &lt;lowerBound&gt;0&lt;/lowerBound&gt;
+                    &lt;vhdlType&gt;STD_LOGIC_VECTOR&lt;/vhdlType&gt;
+                    &lt;terminationValue&gt;0&lt;/terminationValue&gt;
+                &lt;/port&gt;
+                &lt;port&gt;
+                    &lt;name&gt;cmd_send&lt;/name&gt;
+                    &lt;role&gt;cmd_send&lt;/role&gt;
+                    &lt;direction&gt;Input&lt;/direction&gt;
+                    &lt;width&gt;1&lt;/width&gt;
+                    &lt;lowerBound&gt;0&lt;/lowerBound&gt;
+                    &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
+                    &lt;terminationValue&gt;0&lt;/terminationValue&gt;
+                &lt;/port&gt;
+            &lt;/ports&gt;
+            &lt;assignments&gt;
+                &lt;assignmentValueMap/&gt;
+            &lt;/assignments&gt;
+            &lt;parameters&gt;
+                &lt;parameterValueMap&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;associatedClock&lt;/key&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;associatedReset&lt;/key&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;prSafe&lt;/key&gt;
+                        &lt;value&gt;false&lt;/value&gt;
+                    &lt;/entry&gt;
+                &lt;/parameterValueMap&gt;
+            &lt;/parameters&gt;
+        &lt;/interface&gt;
+    &lt;/interfaces&gt;
+&lt;/boundaryDefinition&gt;</ipxact:value>
+            </ipxact:parameter>
+            <ipxact:parameter parameterId="generationInfoDefinition" type="string">
+              <ipxact:name>generationInfoDefinition</ipxact:name>
+              <ipxact:displayName>Generation Behavior</ipxact:displayName>
+              <ipxact:value>&lt;generationInfoDefinition&gt;
+    &lt;hdlLibraryName&gt;tx_2&lt;/hdlLibraryName&gt;
+    &lt;fileSets&gt;
+        &lt;fileSet&gt;
+            &lt;fileSetName&gt;tx_2&lt;/fileSetName&gt;
+            &lt;fileSetFixedName&gt;tx_2&lt;/fileSetFixedName&gt;
+            &lt;fileSetKind&gt;QUARTUS_SYNTH&lt;/fileSetKind&gt;
+            &lt;fileSetFiles/&gt;
+        &lt;/fileSet&gt;
+        &lt;fileSet&gt;
+            &lt;fileSetName&gt;tx_2&lt;/fileSetName&gt;
+            &lt;fileSetFixedName&gt;tx_2&lt;/fileSetFixedName&gt;
+            &lt;fileSetKind&gt;SIM_VERILOG&lt;/fileSetKind&gt;
+            &lt;fileSetFiles/&gt;
+        &lt;/fileSet&gt;
+        &lt;fileSet&gt;
+            &lt;fileSetName&gt;tx_2&lt;/fileSetName&gt;
+            &lt;fileSetFixedName&gt;tx_2&lt;/fileSetFixedName&gt;
+            &lt;fileSetKind&gt;SIM_VHDL&lt;/fileSetKind&gt;
+            &lt;fileSetFiles/&gt;
+        &lt;/fileSet&gt;
+        &lt;fileSet&gt;
+            &lt;fileSetName&gt;tx_2&lt;/fileSetName&gt;
+            &lt;fileSetFixedName&gt;tx_2&lt;/fileSetFixedName&gt;
+            &lt;fileSetKind&gt;CDC&lt;/fileSetKind&gt;
+            &lt;fileSetFiles/&gt;
+        &lt;/fileSet&gt;
+    &lt;/fileSets&gt;
+&lt;/generationInfoDefinition&gt;</ipxact:value>
+            </ipxact:parameter>
+            <ipxact:parameter parameterId="hdlParameters" type="string">
+              <ipxact:name>hdlParameters</ipxact:name>
+              <ipxact:displayName>HDL Parameters</ipxact:displayName>
+              <ipxact:value>&lt;hdlParameterDescriptorDefinitionList/&gt;</ipxact:value>
+            </ipxact:parameter>
+            <ipxact:parameter parameterId="hlsFile" type="string">
+              <ipxact:name>hlsFile</ipxact:name>
+              <ipxact:displayName>HLS file</ipxact:displayName>
+              <ipxact:value></ipxact:value>
+            </ipxact:parameter>
+            <ipxact:parameter parameterId="logicalView" type="string">
+              <ipxact:name>logicalView</ipxact:name>
+              <ipxact:displayName>Logical view</ipxact:displayName>
+              <ipxact:value>ip/system_design/tx_2.ip</ipxact:value>
+            </ipxact:parameter>
+            <ipxact:parameter parameterId="moduleAssignmentDefinition" type="string">
+              <ipxact:name>moduleAssignmentDefinition</ipxact:name>
+              <ipxact:displayName>Module Assignments</ipxact:displayName>
+              <ipxact:value>&lt;assignmentDefinition&gt;
+    &lt;assignmentValueMap/&gt;
+&lt;/assignmentDefinition&gt;</ipxact:value>
+            </ipxact:parameter>
+            <ipxact:parameter parameterId="svInterfaceDefinition" type="string">
+              <ipxact:name>svInterfaceDefinition</ipxact:name>
+              <ipxact:displayName>System Verilog Interface definition</ipxact:displayName>
+              <ipxact:value></ipxact:value>
+            </ipxact:parameter>
+          </ipxact:parameters>
+        </altera:altera_module_parameters>
+      </altera:module>
+      <altera:module altera:enabled="true" altera:auto_export="false">
+        <altera:entity_info>
+          <ipxact:vendor>Altera Corporation</ipxact:vendor>
           <ipxact:library>xcvr_pll</ipxact:library>
           <ipxact:name>altera_generic_component</ipxact:name>
           <ipxact:version>1.0</ipxact:version>
@@ -32189,7 +33472,7 @@ https://fpgasoftware.intel.com/eula.-->
       </altera:module>
     </altera:modules>
     <altera:connections>
-      <altera:connection altera:kind="avalon" altera:version="21.3" altera:start="init_mac.avalon_master" altera:end="tse.control_port">
+      <altera:connection altera:kind="avalon" altera:version="21.4" altera:start="init_mac.avalon_master" altera:end="tse.control_port">
         <altera:connection_parameter altera:parameter_name="arbitrationPriority" altera:parameter_value="1"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="baseAddress" altera:parameter_value="0x0000"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="defaultConnection" altera:parameter_value="false"></altera:connection_parameter>
@@ -32208,7 +33491,7 @@ https://fpgasoftware.intel.com/eula.-->
         <altera:connection_parameter altera:parameter_name="qsys_mm.syncResets" altera:parameter_value="FALSE"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="qsys_mm.widthAdapterImplementation" altera:parameter_value="GENERIC_CONVERTER"></altera:connection_parameter>
       </altera:connection>
-      <altera:connection altera:kind="avalon" altera:version="21.3" altera:start="setup_ddr.avalon_master" altera:end="ddr3.ctrl_amm_0">
+      <altera:connection altera:kind="avalon" altera:version="21.4" altera:start="setup_ddr.avalon_master" altera:end="ddr3.ctrl_amm_0">
         <altera:connection_parameter altera:parameter_name="arbitrationPriority" altera:parameter_value="1"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="baseAddress" altera:parameter_value="0x0000"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="defaultConnection" altera:parameter_value="false"></altera:connection_parameter>
@@ -32227,7 +33510,7 @@ https://fpgasoftware.intel.com/eula.-->
         <altera:connection_parameter altera:parameter_name="qsys_mm.syncResets" altera:parameter_value="FALSE"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="qsys_mm.widthAdapterImplementation" altera:parameter_value="GENERIC_CONVERTER"></altera:connection_parameter>
       </altera:connection>
-      <altera:connection altera:kind="avalon" altera:version="21.3" altera:start="receive_packet_1.avalon_master" altera:end="mem_rcv_1.s1">
+      <altera:connection altera:kind="avalon" altera:version="21.4" altera:start="tx_2.avalon_master" altera:end="ddr3.ctrl_amm_0">
         <altera:connection_parameter altera:parameter_name="arbitrationPriority" altera:parameter_value="1"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="baseAddress" altera:parameter_value="0x0000"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="defaultConnection" altera:parameter_value="false"></altera:connection_parameter>
@@ -32246,7 +33529,7 @@ https://fpgasoftware.intel.com/eula.-->
         <altera:connection_parameter altera:parameter_name="qsys_mm.syncResets" altera:parameter_value="FALSE"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="qsys_mm.widthAdapterImplementation" altera:parameter_value="GENERIC_CONVERTER"></altera:connection_parameter>
       </altera:connection>
-      <altera:connection altera:kind="avalon" altera:version="21.3" altera:start="send_packet_2.avalon_master" altera:end="mem_4.s1">
+      <altera:connection altera:kind="avalon" altera:version="21.4" altera:start="receive_packet_1.avalon_master" altera:end="mem_rcv_1.s1">
         <altera:connection_parameter altera:parameter_name="arbitrationPriority" altera:parameter_value="1"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="baseAddress" altera:parameter_value="0x0000"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="defaultConnection" altera:parameter_value="false"></altera:connection_parameter>
@@ -32265,7 +33548,7 @@ https://fpgasoftware.intel.com/eula.-->
         <altera:connection_parameter altera:parameter_name="qsys_mm.syncResets" altera:parameter_value="FALSE"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="qsys_mm.widthAdapterImplementation" altera:parameter_value="GENERIC_CONVERTER"></altera:connection_parameter>
       </altera:connection>
-      <altera:connection altera:kind="avalon" altera:version="21.3" altera:start="send_packet_1.avalon_master" altera:end="mem_5.s1">
+      <altera:connection altera:kind="avalon" altera:version="21.4" altera:start="send_packet_2.avalon_master" altera:end="mem_4.s1">
         <altera:connection_parameter altera:parameter_name="arbitrationPriority" altera:parameter_value="1"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="baseAddress" altera:parameter_value="0x0000"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="defaultConnection" altera:parameter_value="false"></altera:connection_parameter>
@@ -32284,7 +33567,7 @@ https://fpgasoftware.intel.com/eula.-->
         <altera:connection_parameter altera:parameter_name="qsys_mm.syncResets" altera:parameter_value="FALSE"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="qsys_mm.widthAdapterImplementation" altera:parameter_value="GENERIC_CONVERTER"></altera:connection_parameter>
       </altera:connection>
-      <altera:connection altera:kind="avalon" altera:version="21.3" altera:start="receive_packet_2.avalon_master" altera:end="mem_4.s2">
+      <altera:connection altera:kind="avalon" altera:version="21.4" altera:start="send_packet_1.avalon_master" altera:end="mem_5.s1">
         <altera:connection_parameter altera:parameter_name="arbitrationPriority" altera:parameter_value="1"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="baseAddress" altera:parameter_value="0x0000"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="defaultConnection" altera:parameter_value="false"></altera:connection_parameter>
@@ -32303,7 +33586,7 @@ https://fpgasoftware.intel.com/eula.-->
         <altera:connection_parameter altera:parameter_name="qsys_mm.syncResets" altera:parameter_value="FALSE"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="qsys_mm.widthAdapterImplementation" altera:parameter_value="GENERIC_CONVERTER"></altera:connection_parameter>
       </altera:connection>
-      <altera:connection altera:kind="avalon" altera:version="21.3" altera:start="pcie.rxm_bar0" altera:end="send_cmd_pcie.avalon_slave">
+      <altera:connection altera:kind="avalon" altera:version="21.4" altera:start="receive_packet_2.avalon_master" altera:end="mem_4.s2">
         <altera:connection_parameter altera:parameter_name="arbitrationPriority" altera:parameter_value="1"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="baseAddress" altera:parameter_value="0x0000"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="defaultConnection" altera:parameter_value="false"></altera:connection_parameter>
@@ -32322,7 +33605,7 @@ https://fpgasoftware.intel.com/eula.-->
         <altera:connection_parameter altera:parameter_name="qsys_mm.syncResets" altera:parameter_value="FALSE"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="qsys_mm.widthAdapterImplementation" altera:parameter_value="GENERIC_CONVERTER"></altera:connection_parameter>
       </altera:connection>
-      <altera:connection altera:kind="avalon" altera:version="21.3" altera:start="pcie.rxm_bar2" altera:end="ddr3.ctrl_amm_0">
+      <altera:connection altera:kind="avalon" altera:version="21.4" altera:start="pcie.rxm_bar0" altera:end="send_cmd_pcie.avalon_slave">
         <altera:connection_parameter altera:parameter_name="arbitrationPriority" altera:parameter_value="1"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="baseAddress" altera:parameter_value="0x0000"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="defaultConnection" altera:parameter_value="false"></altera:connection_parameter>
@@ -32341,7 +33624,11 @@ https://fpgasoftware.intel.com/eula.-->
         <altera:connection_parameter altera:parameter_name="qsys_mm.syncResets" altera:parameter_value="FALSE"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="qsys_mm.widthAdapterImplementation" altera:parameter_value="GENERIC_CONVERTER"></altera:connection_parameter>
       </altera:connection>
-      <altera:connection altera:kind="avalon_streaming" altera:version="21.3" altera:start="send_packet_1.avalon_streaming_source" altera:end="tse.transmit_0">
+      <altera:connection altera:kind="avalon" altera:version="21.4" altera:start="pcie.rxm_bar2" altera:end="ddr3.ctrl_amm_0">
+        <altera:connection_parameter altera:parameter_name="arbitrationPriority" altera:parameter_value="1"></altera:connection_parameter>
+        <altera:connection_parameter altera:parameter_name="baseAddress" altera:parameter_value="0x0000"></altera:connection_parameter>
+        <altera:connection_parameter altera:parameter_name="defaultConnection" altera:parameter_value="false"></altera:connection_parameter>
+        <altera:connection_parameter altera:parameter_name="domainAlias" altera:parameter_value=""></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="qsys_mm.burstAdapterImplementation" altera:parameter_value="GENERIC_CONVERTER"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="qsys_mm.clockCrossingAdapter" altera:parameter_value="HANDSHAKE"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="qsys_mm.enableAllPipelines" altera:parameter_value="FALSE"></altera:connection_parameter>
@@ -32356,7 +33643,7 @@ https://fpgasoftware.intel.com/eula.-->
         <altera:connection_parameter altera:parameter_name="qsys_mm.syncResets" altera:parameter_value="FALSE"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="qsys_mm.widthAdapterImplementation" altera:parameter_value="GENERIC_CONVERTER"></altera:connection_parameter>
       </altera:connection>
-      <altera:connection altera:kind="avalon_streaming" altera:version="21.3" altera:start="send_packet_2.avalon_streaming_source" altera:end="tse.transmit_1">
+      <altera:connection altera:kind="avalon_streaming" altera:version="21.4" altera:start="send_packet_1.avalon_streaming_source" altera:end="tse.transmit_0">
         <altera:connection_parameter altera:parameter_name="qsys_mm.burstAdapterImplementation" altera:parameter_value="GENERIC_CONVERTER"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="qsys_mm.clockCrossingAdapter" altera:parameter_value="HANDSHAKE"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="qsys_mm.enableAllPipelines" altera:parameter_value="FALSE"></altera:connection_parameter>
@@ -32371,7 +33658,7 @@ https://fpgasoftware.intel.com/eula.-->
         <altera:connection_parameter altera:parameter_name="qsys_mm.syncResets" altera:parameter_value="FALSE"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="qsys_mm.widthAdapterImplementation" altera:parameter_value="GENERIC_CONVERTER"></altera:connection_parameter>
       </altera:connection>
-      <altera:connection altera:kind="avalon_streaming" altera:version="21.3" altera:start="receive_packet_1.fifo_status" altera:end="tse.receive_fifo_status">
+      <altera:connection altera:kind="avalon_streaming" altera:version="21.4" altera:start="send_packet_2.avalon_streaming_source" altera:end="tse.transmit_1">
         <altera:connection_parameter altera:parameter_name="qsys_mm.burstAdapterImplementation" altera:parameter_value="GENERIC_CONVERTER"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="qsys_mm.clockCrossingAdapter" altera:parameter_value="HANDSHAKE"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="qsys_mm.enableAllPipelines" altera:parameter_value="FALSE"></altera:connection_parameter>
@@ -32386,7 +33673,7 @@ https://fpgasoftware.intel.com/eula.-->
         <altera:connection_parameter altera:parameter_name="qsys_mm.syncResets" altera:parameter_value="FALSE"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="qsys_mm.widthAdapterImplementation" altera:parameter_value="GENERIC_CONVERTER"></altera:connection_parameter>
       </altera:connection>
-      <altera:connection altera:kind="avalon_streaming" altera:version="21.3" altera:start="tse.receive_0" altera:end="receive_packet_1.avalon_streaming_sink">
+      <altera:connection altera:kind="avalon_streaming" altera:version="21.4" altera:start="tx_2.avalon_streaming_source" altera:end="tse.transmit_1">
         <altera:connection_parameter altera:parameter_name="qsys_mm.burstAdapterImplementation" altera:parameter_value="GENERIC_CONVERTER"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="qsys_mm.clockCrossingAdapter" altera:parameter_value="HANDSHAKE"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="qsys_mm.enableAllPipelines" altera:parameter_value="FALSE"></altera:connection_parameter>
@@ -32401,7 +33688,7 @@ https://fpgasoftware.intel.com/eula.-->
         <altera:connection_parameter altera:parameter_name="qsys_mm.syncResets" altera:parameter_value="FALSE"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="qsys_mm.widthAdapterImplementation" altera:parameter_value="GENERIC_CONVERTER"></altera:connection_parameter>
       </altera:connection>
-      <altera:connection altera:kind="avalon_streaming" altera:version="21.3" altera:start="tse.receive_1" altera:end="receive_packet_2.avalon_streaming_sink">
+      <altera:connection altera:kind="avalon_streaming" altera:version="21.4" altera:start="receive_packet_1.fifo_status" altera:end="tse.receive_fifo_status">
         <altera:connection_parameter altera:parameter_name="qsys_mm.burstAdapterImplementation" altera:parameter_value="GENERIC_CONVERTER"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="qsys_mm.clockCrossingAdapter" altera:parameter_value="HANDSHAKE"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="qsys_mm.enableAllPipelines" altera:parameter_value="FALSE"></altera:connection_parameter>
@@ -32416,80 +33703,115 @@ https://fpgasoftware.intel.com/eula.-->
         <altera:connection_parameter altera:parameter_name="qsys_mm.syncResets" altera:parameter_value="FALSE"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="qsys_mm.widthAdapterImplementation" altera:parameter_value="GENERIC_CONVERTER"></altera:connection_parameter>
       </altera:connection>
-      <altera:connection altera:kind="clock" altera:version="21.3" altera:start="pcie.coreclkout_hip" altera:end="send_cmd_pcie.clock"></altera:connection>
-      <altera:connection altera:kind="clock" altera:version="21.3" altera:start="ddr3.emif_usr_clk" altera:end="setup_ddr.clock_avalon"></altera:connection>
-      <altera:connection altera:kind="clock" altera:version="21.3" altera:start="ddr3.emif_usr_clk" altera:end="clock_ddr_avalon.in_clk"></altera:connection>
-      <altera:connection altera:kind="clock" altera:version="21.3" altera:start="tse.mac_rx_clock_connection_0" altera:end="mem_rcv_1.clk1"></altera:connection>
-      <altera:connection altera:kind="clock" altera:version="21.3" altera:start="tse.mac_rx_clock_connection_0" altera:end="receive_packet_1.clock"></altera:connection>
-      <altera:connection altera:kind="clock" altera:version="21.3" altera:start="tse.mac_rx_clock_connection_1" altera:end="mem_rcv_2.clk1"></altera:connection>
-      <altera:connection altera:kind="clock" altera:version="21.3" altera:start="tse.mac_rx_clock_connection_1" altera:end="mem_4.clk2"></altera:connection>
-      <altera:connection altera:kind="clock" altera:version="21.3" altera:start="tse.mac_rx_clock_connection_1" altera:end="receive_packet_2.clock"></altera:connection>
-      <altera:connection altera:kind="clock" altera:version="21.3" altera:start="tse.mac_tx_clock_connection_0" altera:end="mem_5.clk1"></altera:connection>
-      <altera:connection altera:kind="clock" altera:version="21.3" altera:start="tse.mac_tx_clock_connection_0" altera:end="send_packet_1.clock"></altera:connection>
-      <altera:connection altera:kind="clock" altera:version="21.3" altera:start="tse.mac_tx_clock_connection_1" altera:end="mem_4.clk1"></altera:connection>
-      <altera:connection altera:kind="clock" altera:version="21.3" altera:start="tse.mac_tx_clock_connection_1" altera:end="send_packet_2.clock"></altera:connection>
-      <altera:connection altera:kind="clock" altera:version="21.3" altera:start="pll.outclk0" altera:end="setup_ddr.clock_125_tx_rx"></altera:connection>
-      <altera:connection altera:kind="clock" altera:version="21.3" altera:start="pll.outclk0" altera:end="receive_packet_1.fifo_status_clk"></altera:connection>
-      <altera:connection altera:kind="clock" altera:version="21.3" altera:start="pll.outclk0" altera:end="tse.receive_fifo_status_clock_connection"></altera:connection>
-      <altera:connection altera:kind="clock" altera:version="21.3" altera:start="pll.outclk1" altera:end="init_mac.clock"></altera:connection>
-      <altera:connection altera:kind="clock" altera:version="21.3" altera:start="pll.outclk1" altera:end="setup_ddr.clock_50"></altera:connection>
-      <altera:connection altera:kind="clock" altera:version="21.3" altera:start="pll.outclk1" altera:end="tse.control_port_clock_connection"></altera:connection>
-      <altera:connection altera:kind="clock" altera:version="21.3" altera:start="pll.outclk1" altera:end="clock_50_out.in_clk"></altera:connection>
-      <altera:connection altera:kind="clock" altera:version="21.3" altera:start="pll.outclk2" altera:end="receive_packet_2.fifo_status_clk"></altera:connection>
-      <altera:connection altera:kind="conduit" altera:version="21.3" altera:start="setup_ddr.ddr_setup_cmd" altera:end="send_cmd_pcie.ddr_setup_cmd">
+      <altera:connection altera:kind="avalon_streaming" altera:version="21.4" altera:start="tse.receive_0" altera:end="receive_packet_1.avalon_streaming_sink">
+        <altera:connection_parameter altera:parameter_name="qsys_mm.burstAdapterImplementation" altera:parameter_value="GENERIC_CONVERTER"></altera:connection_parameter>
+        <altera:connection_parameter altera:parameter_name="qsys_mm.clockCrossingAdapter" altera:parameter_value="HANDSHAKE"></altera:connection_parameter>
+        <altera:connection_parameter altera:parameter_name="qsys_mm.enableAllPipelines" altera:parameter_value="FALSE"></altera:connection_parameter>
+        <altera:connection_parameter altera:parameter_name="qsys_mm.enableEccProtection" altera:parameter_value="FALSE"></altera:connection_parameter>
+        <altera:connection_parameter altera:parameter_name="qsys_mm.enableInstrumentation" altera:parameter_value="FALSE"></altera:connection_parameter>
+        <altera:connection_parameter altera:parameter_name="qsys_mm.insertDefaultSlave" altera:parameter_value="FALSE"></altera:connection_parameter>
+        <altera:connection_parameter altera:parameter_name="qsys_mm.interconnectResetSource" altera:parameter_value="DEFAULT"></altera:connection_parameter>
+        <altera:connection_parameter altera:parameter_name="qsys_mm.interconnectType" altera:parameter_value="STANDARD"></altera:connection_parameter>
+        <altera:connection_parameter altera:parameter_name="qsys_mm.maxAdditionalLatency" altera:parameter_value="1"></altera:connection_parameter>
+        <altera:connection_parameter altera:parameter_name="qsys_mm.optimizeRdFifoSize" altera:parameter_value="FALSE"></altera:connection_parameter>
+        <altera:connection_parameter altera:parameter_name="qsys_mm.piplineType" altera:parameter_value="PIPELINE_STAGE"></altera:connection_parameter>
+        <altera:connection_parameter altera:parameter_name="qsys_mm.syncResets" altera:parameter_value="FALSE"></altera:connection_parameter>
+        <altera:connection_parameter altera:parameter_name="qsys_mm.widthAdapterImplementation" altera:parameter_value="GENERIC_CONVERTER"></altera:connection_parameter>
+      </altera:connection>
+      <altera:connection altera:kind="avalon_streaming" altera:version="21.4" altera:start="tse.receive_1" altera:end="receive_packet_2.avalon_streaming_sink">
+        <altera:connection_parameter altera:parameter_name="qsys_mm.burstAdapterImplementation" altera:parameter_value="GENERIC_CONVERTER"></altera:connection_parameter>
+        <altera:connection_parameter altera:parameter_name="qsys_mm.clockCrossingAdapter" altera:parameter_value="HANDSHAKE"></altera:connection_parameter>
+        <altera:connection_parameter altera:parameter_name="qsys_mm.enableAllPipelines" altera:parameter_value="FALSE"></altera:connection_parameter>
+        <altera:connection_parameter altera:parameter_name="qsys_mm.enableEccProtection" altera:parameter_value="FALSE"></altera:connection_parameter>
+        <altera:connection_parameter altera:parameter_name="qsys_mm.enableInstrumentation" altera:parameter_value="FALSE"></altera:connection_parameter>
+        <altera:connection_parameter altera:parameter_name="qsys_mm.insertDefaultSlave" altera:parameter_value="FALSE"></altera:connection_parameter>
+        <altera:connection_parameter altera:parameter_name="qsys_mm.interconnectResetSource" altera:parameter_value="DEFAULT"></altera:connection_parameter>
+        <altera:connection_parameter altera:parameter_name="qsys_mm.interconnectType" altera:parameter_value="STANDARD"></altera:connection_parameter>
+        <altera:connection_parameter altera:parameter_name="qsys_mm.maxAdditionalLatency" altera:parameter_value="1"></altera:connection_parameter>
+        <altera:connection_parameter altera:parameter_name="qsys_mm.optimizeRdFifoSize" altera:parameter_value="FALSE"></altera:connection_parameter>
+        <altera:connection_parameter altera:parameter_name="qsys_mm.piplineType" altera:parameter_value="PIPELINE_STAGE"></altera:connection_parameter>
+        <altera:connection_parameter altera:parameter_name="qsys_mm.syncResets" altera:parameter_value="FALSE"></altera:connection_parameter>
+        <altera:connection_parameter altera:parameter_name="qsys_mm.widthAdapterImplementation" altera:parameter_value="GENERIC_CONVERTER"></altera:connection_parameter>
+      </altera:connection>
+      <altera:connection altera:kind="clock" altera:version="21.4" altera:start="pcie.coreclkout_hip" altera:end="send_cmd_pcie.clock"></altera:connection>
+      <altera:connection altera:kind="clock" altera:version="21.4" altera:start="ddr3.emif_usr_clk" altera:end="setup_ddr.clock_avalon"></altera:connection>
+      <altera:connection altera:kind="clock" altera:version="21.4" altera:start="ddr3.emif_usr_clk" altera:end="tx_2.clock_ddr"></altera:connection>
+      <altera:connection altera:kind="clock" altera:version="21.4" altera:start="ddr3.emif_usr_clk" altera:end="clock_ddr_avalon.in_clk"></altera:connection>
+      <altera:connection altera:kind="clock" altera:version="21.4" altera:start="tse.mac_rx_clock_connection_0" altera:end="mem_rcv_1.clk1"></altera:connection>
+      <altera:connection altera:kind="clock" altera:version="21.4" altera:start="tse.mac_rx_clock_connection_0" altera:end="receive_packet_1.clock"></altera:connection>
+      <altera:connection altera:kind="clock" altera:version="21.4" altera:start="tse.mac_rx_clock_connection_1" altera:end="mem_rcv_2.clk1"></altera:connection>
+      <altera:connection altera:kind="clock" altera:version="21.4" altera:start="tse.mac_rx_clock_connection_1" altera:end="mem_4.clk2"></altera:connection>
+      <altera:connection altera:kind="clock" altera:version="21.4" altera:start="tse.mac_rx_clock_connection_1" altera:end="receive_packet_2.clock"></altera:connection>
+      <altera:connection altera:kind="clock" altera:version="21.4" altera:start="tse.mac_tx_clock_connection_0" altera:end="mem_5.clk1"></altera:connection>
+      <altera:connection altera:kind="clock" altera:version="21.4" altera:start="tse.mac_tx_clock_connection_0" altera:end="send_packet_1.clock"></altera:connection>
+      <altera:connection altera:kind="clock" altera:version="21.4" altera:start="tse.mac_tx_clock_connection_1" altera:end="mem_4.clk1"></altera:connection>
+      <altera:connection altera:kind="clock" altera:version="21.4" altera:start="tse.mac_tx_clock_connection_1" altera:end="send_packet_2.clock"></altera:connection>
+      <altera:connection altera:kind="clock" altera:version="21.4" altera:start="tse.mac_tx_clock_connection_1" altera:end="tx_2.clock_tse"></altera:connection>
+      <altera:connection altera:kind="clock" altera:version="21.4" altera:start="pll.outclk0" altera:end="setup_ddr.clock_125_tx_rx"></altera:connection>
+      <altera:connection altera:kind="clock" altera:version="21.4" altera:start="pll.outclk0" altera:end="receive_packet_1.fifo_status_clk"></altera:connection>
+      <altera:connection altera:kind="clock" altera:version="21.4" altera:start="pll.outclk0" altera:end="tse.receive_fifo_status_clock_connection"></altera:connection>
+      <altera:connection altera:kind="clock" altera:version="21.4" altera:start="pll.outclk1" altera:end="init_mac.clock"></altera:connection>
+      <altera:connection altera:kind="clock" altera:version="21.4" altera:start="pll.outclk1" altera:end="setup_ddr.clock_50"></altera:connection>
+      <altera:connection altera:kind="clock" altera:version="21.4" altera:start="pll.outclk1" altera:end="tx_2.clock_50"></altera:connection>
+      <altera:connection altera:kind="clock" altera:version="21.4" altera:start="pll.outclk1" altera:end="tse.control_port_clock_connection"></altera:connection>
+      <altera:connection altera:kind="clock" altera:version="21.4" altera:start="pll.outclk1" altera:end="clock_50_out.in_clk"></altera:connection>
+      <altera:connection altera:kind="clock" altera:version="21.4" altera:start="pll.outclk2" altera:end="receive_packet_2.fifo_status_clk"></altera:connection>
+      <altera:connection altera:kind="conduit" altera:version="21.4" altera:start="setup_ddr.ddr_setup_cmd" altera:end="send_cmd_pcie.ddr_setup_cmd">
         <altera:connection_parameter altera:parameter_name="endPort" altera:parameter_value=""></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="endPortLSB" altera:parameter_value="0"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="startPort" altera:parameter_value=""></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="startPortLSB" altera:parameter_value="0"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="width" altera:parameter_value="0"></altera:connection_parameter>
       </altera:connection>
-      <altera:connection altera:kind="conduit" altera:version="21.3" altera:start="setup_ddr.ddr_status_out" altera:end="send_cmd_pcie.ddr_status">
+      <altera:connection altera:kind="conduit" altera:version="21.4" altera:start="setup_ddr.ddr_status_out" altera:end="send_cmd_pcie.ddr_status">
         <altera:connection_parameter altera:parameter_name="endPort" altera:parameter_value=""></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="endPortLSB" altera:parameter_value="0"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="startPort" altera:parameter_value=""></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="startPortLSB" altera:parameter_value="0"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="width" altera:parameter_value="0"></altera:connection_parameter>
       </altera:connection>
-      <altera:connection altera:kind="conduit" altera:version="21.3" altera:start="setup_ddr.resets_information" altera:end="send_cmd_pcie.resets_information">
+      <altera:connection altera:kind="conduit" altera:version="21.4" altera:start="setup_ddr.resets_information" altera:end="send_cmd_pcie.resets_information">
         <altera:connection_parameter altera:parameter_name="endPort" altera:parameter_value=""></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="endPortLSB" altera:parameter_value="0"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="startPort" altera:parameter_value=""></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="startPortLSB" altera:parameter_value="0"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="width" altera:parameter_value="0"></altera:connection_parameter>
       </altera:connection>
-      <altera:connection altera:kind="conduit" altera:version="21.3" altera:start="setup_ddr.setup" altera:end="send_cmd_pcie.ddr_setup_done">
+      <altera:connection altera:kind="conduit" altera:version="21.4" altera:start="setup_ddr.setup" altera:end="send_cmd_pcie.ddr_setup_done">
         <altera:connection_parameter altera:parameter_name="endPort" altera:parameter_value=""></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="endPortLSB" altera:parameter_value="0"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="startPort" altera:parameter_value=""></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="startPortLSB" altera:parameter_value="0"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="width" altera:parameter_value="0"></altera:connection_parameter>
       </altera:connection>
-      <altera:connection altera:kind="conduit" altera:version="21.3" altera:start="ddr3.status" altera:end="setup_ddr.ddr_status">
+      <altera:connection altera:kind="conduit" altera:version="21.4" altera:start="ddr3.status" altera:end="setup_ddr.ddr_status">
         <altera:connection_parameter altera:parameter_name="endPort" altera:parameter_value=""></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="endPortLSB" altera:parameter_value="0"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="startPort" altera:parameter_value=""></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="startPortLSB" altera:parameter_value="0"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="width" altera:parameter_value="0"></altera:connection_parameter>
       </altera:connection>
-      <altera:connection altera:kind="hssi_serial_clock" altera:version="21.3" altera:start="xcvr_pll.tx_serial_clk" altera:end="tse.tx_serial_clk_0"></altera:connection>
-      <altera:connection altera:kind="hssi_serial_clock" altera:version="21.3" altera:start="xcvr_pll.tx_serial_clk" altera:end="tse.tx_serial_clk_1"></altera:connection>
-      <altera:connection altera:kind="reset" altera:version="21.3" altera:start="pcie.app_nreset_status" altera:end="send_cmd_pcie.reset"></altera:connection>
-      <altera:connection altera:kind="reset" altera:version="21.3" altera:start="ddr3.emif_usr_reset_n" altera:end="ddr_avalon_reset.in_reset"></altera:connection>
-      <altera:connection altera:kind="reset" altera:version="21.3" altera:start="ddr3.emif_usr_reset_n" altera:end="setup_ddr.reset_avalon"></altera:connection>
-      <altera:connection altera:kind="reset" altera:version="21.3" altera:start="reset_mod.reset_main" altera:end="reset_main.in_reset"></altera:connection>
-      <altera:connection altera:kind="reset" altera:version="21.3" altera:start="reset_mod.reset_main" altera:end="pll.reset"></altera:connection>
-      <altera:connection altera:kind="reset" altera:version="21.3" altera:start="reset_mod.reset_main" altera:end="send_packet_2.reset"></altera:connection>
-      <altera:connection altera:kind="reset" altera:version="21.3" altera:start="reset_mod.reset_main" altera:end="send_packet_1.reset"></altera:connection>
-      <altera:connection altera:kind="reset" altera:version="21.3" altera:start="reset_mod.reset_main" altera:end="init_mac.reset"></altera:connection>
-      <altera:connection altera:kind="reset" altera:version="21.3" altera:start="reset_mod.reset_main" altera:end="receive_packet_2.reset"></altera:connection>
-      <altera:connection altera:kind="reset" altera:version="21.3" altera:start="reset_mod.reset_main" altera:end="receive_packet_1.reset"></altera:connection>
-      <altera:connection altera:kind="reset" altera:version="21.3" altera:start="reset_mod.reset_main" altera:end="mem_rcv_2.reset1"></altera:connection>
-      <altera:connection altera:kind="reset" altera:version="21.3" altera:start="reset_mod.reset_main" altera:end="mem_rcv_1.reset1"></altera:connection>
-      <altera:connection altera:kind="reset" altera:version="21.3" altera:start="reset_mod.reset_main" altera:end="mem_4.reset1"></altera:connection>
-      <altera:connection altera:kind="reset" altera:version="21.3" altera:start="reset_mod.reset_main" altera:end="mem_5.reset1"></altera:connection>
-      <altera:connection altera:kind="reset" altera:version="21.3" altera:start="reset_mod.reset_main" altera:end="mem_4.reset2"></altera:connection>
-      <altera:connection altera:kind="reset" altera:version="21.3" altera:start="reset_mod.reset_main" altera:end="tse.reset_connection"></altera:connection>
-      <altera:connection altera:kind="reset" altera:version="21.3" altera:start="reset_mod.reset_main" altera:end="setup_ddr.reset_module"></altera:connection>
+      <altera:connection altera:kind="hssi_serial_clock" altera:version="21.4" altera:start="xcvr_pll.tx_serial_clk" altera:end="tse.tx_serial_clk_0"></altera:connection>
+      <altera:connection altera:kind="hssi_serial_clock" altera:version="21.4" altera:start="xcvr_pll.tx_serial_clk" altera:end="tse.tx_serial_clk_1"></altera:connection>
+      <altera:connection altera:kind="reset" altera:version="21.4" altera:start="pcie.app_nreset_status" altera:end="send_cmd_pcie.reset"></altera:connection>
+      <altera:connection altera:kind="reset" altera:version="21.4" altera:start="ddr3.emif_usr_reset_n" altera:end="ddr_avalon_reset.in_reset"></altera:connection>
+      <altera:connection altera:kind="reset" altera:version="21.4" altera:start="ddr3.emif_usr_reset_n" altera:end="setup_ddr.reset_avalon"></altera:connection>
+      <altera:connection altera:kind="reset" altera:version="21.4" altera:start="ddr3.emif_usr_reset_n" altera:end="tx_2.reset_ddr"></altera:connection>
+      <altera:connection altera:kind="reset" altera:version="21.4" altera:start="reset_mod.reset_main" altera:end="reset_main.in_reset"></altera:connection>
+      <altera:connection altera:kind="reset" altera:version="21.4" altera:start="reset_mod.reset_main" altera:end="pll.reset"></altera:connection>
+      <altera:connection altera:kind="reset" altera:version="21.4" altera:start="reset_mod.reset_main" altera:end="send_packet_2.reset"></altera:connection>
+      <altera:connection altera:kind="reset" altera:version="21.4" altera:start="reset_mod.reset_main" altera:end="send_packet_1.reset"></altera:connection>
+      <altera:connection altera:kind="reset" altera:version="21.4" altera:start="reset_mod.reset_main" altera:end="init_mac.reset"></altera:connection>
+      <altera:connection altera:kind="reset" altera:version="21.4" altera:start="reset_mod.reset_main" altera:end="receive_packet_2.reset"></altera:connection>
+      <altera:connection altera:kind="reset" altera:version="21.4" altera:start="reset_mod.reset_main" altera:end="receive_packet_1.reset"></altera:connection>
+      <altera:connection altera:kind="reset" altera:version="21.4" altera:start="reset_mod.reset_main" altera:end="tx_2.reset"></altera:connection>
+      <altera:connection altera:kind="reset" altera:version="21.4" altera:start="reset_mod.reset_main" altera:end="mem_rcv_2.reset1"></altera:connection>
+      <altera:connection altera:kind="reset" altera:version="21.4" altera:start="reset_mod.reset_main" altera:end="mem_rcv_1.reset1"></altera:connection>
+      <altera:connection altera:kind="reset" altera:version="21.4" altera:start="reset_mod.reset_main" altera:end="mem_4.reset1"></altera:connection>
+      <altera:connection altera:kind="reset" altera:version="21.4" altera:start="reset_mod.reset_main" altera:end="mem_5.reset1"></altera:connection>
+      <altera:connection altera:kind="reset" altera:version="21.4" altera:start="reset_mod.reset_main" altera:end="mem_4.reset2"></altera:connection>
+      <altera:connection altera:kind="reset" altera:version="21.4" altera:start="reset_mod.reset_main" altera:end="tse.reset_connection"></altera:connection>
+      <altera:connection altera:kind="reset" altera:version="21.4" altera:start="reset_mod.reset_main" altera:end="setup_ddr.reset_module"></altera:connection>
     </altera:connections>
     <altera:interconnect_requirements></altera:interconnect_requirements>
     <altera:wire_level_connections></altera:wire_level_connections>
@@ -32542,7 +33864,7 @@ https://fpgasoftware.intel.com/eula.-->
       <altera:interface_mapping altera:name="rx_set_locktoref_0" altera:internal="tse.rx_set_locktoref_0" altera:type="conduit" altera:dir="end"></altera:interface_mapping>
       <altera:interface_mapping altera:name="rx_set_locktoref_1" altera:internal="tse.rx_set_locktoref_1" altera:type="conduit" altera:dir="end"></altera:interface_mapping>
       <altera:interface_mapping altera:name="send_packet_1_control" altera:internal="send_packet_1.control" altera:type="conduit" altera:dir="end"></altera:interface_mapping>
-      <altera:interface_mapping altera:name="send_packet_2_control" altera:internal="send_packet_2.control" altera:type="conduit" altera:dir="end"></altera:interface_mapping>
+      <altera:interface_mapping altera:name="send_packet_2_control" altera:internal="send_packet_2.control"></altera:interface_mapping>
       <altera:interface_mapping altera:name="serdes_control_connection_0" altera:internal="tse.serdes_control_connection_0" altera:type="conduit" altera:dir="end"></altera:interface_mapping>
       <altera:interface_mapping altera:name="serdes_control_connection_1" altera:internal="tse.serdes_control_connection_1" altera:type="conduit" altera:dir="end"></altera:interface_mapping>
       <altera:interface_mapping altera:name="sgmii_1" altera:internal="tse.serial_connection_0" altera:type="conduit" altera:dir="end"></altera:interface_mapping>
@@ -32558,6 +33880,8 @@ https://fpgasoftware.intel.com/eula.-->
       <altera:interface_mapping altera:name="tse_rx_cdr_refclk_3" altera:internal="tse.rx_cdr_refclk_3" altera:type="clock" altera:dir="end"></altera:interface_mapping>
       <altera:interface_mapping altera:name="tse_tx_serial_clk_2" altera:internal="tse.tx_serial_clk_2" altera:type="hssi_serial_clock" altera:dir="end"></altera:interface_mapping>
       <altera:interface_mapping altera:name="tse_tx_serial_clk_3" altera:internal="tse.tx_serial_clk_3" altera:type="hssi_serial_clock" altera:dir="end"></altera:interface_mapping>
+      <altera:interface_mapping altera:name="tx_2_control" altera:internal="tx_2.control" altera:type="conduit" altera:dir="end"></altera:interface_mapping>
+      <altera:interface_mapping altera:name="tx_2_reset_board" altera:internal="tx_2.reset_board" altera:type="reset" altera:dir="end"></altera:interface_mapping>
       <altera:interface_mapping altera:name="tx_analogreset_0" altera:internal="tse.tx_analogreset_0" altera:type="conduit" altera:dir="end"></altera:interface_mapping>
       <altera:interface_mapping altera:name="tx_analogreset_1" altera:internal="tse.tx_analogreset_1" altera:type="conduit" altera:dir="end"></altera:interface_mapping>
       <altera:interface_mapping altera:name="tx_cal_busy_0" altera:internal="tse.tx_cal_busy_0" altera:type="conduit" altera:dir="end"></altera:interface_mapping>
@@ -32576,11 +33900,11 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:busInterfaces>
           <ipxact:busInterface>
             <ipxact:name>tse.control_port</ipxact:name>
-            <ipxact:busType vendor="intel" library="intel" name="avalon" version="21.3"></ipxact:busType>
+            <ipxact:busType vendor="intel" library="intel" name="avalon" version="21.4"></ipxact:busType>
           </ipxact:busInterface>
           <ipxact:busInterface>
             <ipxact:name>init_mac.avalon_master</ipxact:name>
-            <ipxact:busType vendor="intel" library="intel" name="avalon" version="21.3"></ipxact:busType>
+            <ipxact:busType vendor="intel" library="intel" name="avalon" version="21.4"></ipxact:busType>
             <ipxact:master>
               <ipxact:addressSpaceRef addressSpaceRef="init_mac.avalon_master">
                 <ipxact:baseAddress>0x0000</ipxact:baseAddress>
@@ -32589,11 +33913,11 @@ https://fpgasoftware.intel.com/eula.-->
           </ipxact:busInterface>
           <ipxact:busInterface>
             <ipxact:name>send_cmd_pcie.avalon_slave</ipxact:name>
-            <ipxact:busType vendor="intel" library="intel" name="avalon" version="21.3"></ipxact:busType>
+            <ipxact:busType vendor="intel" library="intel" name="avalon" version="21.4"></ipxact:busType>
           </ipxact:busInterface>
           <ipxact:busInterface>
             <ipxact:name>pcie.rxm_bar0</ipxact:name>
-            <ipxact:busType vendor="intel" library="intel" name="avalon" version="21.3"></ipxact:busType>
+            <ipxact:busType vendor="intel" library="intel" name="avalon" version="21.4"></ipxact:busType>
             <ipxact:master>
               <ipxact:addressSpaceRef addressSpaceRef="pcie.rxm_bar0">
                 <ipxact:baseAddress>0x0000_0000_0000_0000</ipxact:baseAddress>
@@ -32602,11 +33926,11 @@ https://fpgasoftware.intel.com/eula.-->
           </ipxact:busInterface>
           <ipxact:busInterface>
             <ipxact:name>ddr3.ctrl_amm_0</ipxact:name>
-            <ipxact:busType vendor="intel" library="intel" name="avalon" version="21.3"></ipxact:busType>
+            <ipxact:busType vendor="intel" library="intel" name="avalon" version="21.4"></ipxact:busType>
           </ipxact:busInterface>
           <ipxact:busInterface>
             <ipxact:name>pcie.rxm_bar2</ipxact:name>
-            <ipxact:busType vendor="intel" library="intel" name="avalon" version="21.3"></ipxact:busType>
+            <ipxact:busType vendor="intel" library="intel" name="avalon" version="21.4"></ipxact:busType>
             <ipxact:master>
               <ipxact:addressSpaceRef addressSpaceRef="pcie.rxm_bar2">
                 <ipxact:baseAddress>0x0000_0000_0000_0000</ipxact:baseAddress>
@@ -32615,11 +33939,11 @@ https://fpgasoftware.intel.com/eula.-->
           </ipxact:busInterface>
           <ipxact:busInterface>
             <ipxact:name>mem_rcv_1.s1</ipxact:name>
-            <ipxact:busType vendor="intel" library="intel" name="avalon" version="21.3"></ipxact:busType>
+            <ipxact:busType vendor="intel" library="intel" name="avalon" version="21.4"></ipxact:busType>
           </ipxact:busInterface>
           <ipxact:busInterface>
             <ipxact:name>receive_packet_1.avalon_master</ipxact:name>
-            <ipxact:busType vendor="intel" library="intel" name="avalon" version="21.3"></ipxact:busType>
+            <ipxact:busType vendor="intel" library="intel" name="avalon" version="21.4"></ipxact:busType>
             <ipxact:master>
               <ipxact:addressSpaceRef addressSpaceRef="receive_packet_1.avalon_master">
                 <ipxact:baseAddress>0x0000</ipxact:baseAddress>
@@ -32628,11 +33952,11 @@ https://fpgasoftware.intel.com/eula.-->
           </ipxact:busInterface>
           <ipxact:busInterface>
             <ipxact:name>mem_4.s2</ipxact:name>
-            <ipxact:busType vendor="intel" library="intel" name="avalon" version="21.3"></ipxact:busType>
+            <ipxact:busType vendor="intel" library="intel" name="avalon" version="21.4"></ipxact:busType>
           </ipxact:busInterface>
           <ipxact:busInterface>
             <ipxact:name>receive_packet_2.avalon_master</ipxact:name>
-            <ipxact:busType vendor="intel" library="intel" name="avalon" version="21.3"></ipxact:busType>
+            <ipxact:busType vendor="intel" library="intel" name="avalon" version="21.4"></ipxact:busType>
             <ipxact:master>
               <ipxact:addressSpaceRef addressSpaceRef="receive_packet_2.avalon_master">
                 <ipxact:baseAddress>0x0000</ipxact:baseAddress>
@@ -32641,11 +33965,11 @@ https://fpgasoftware.intel.com/eula.-->
           </ipxact:busInterface>
           <ipxact:busInterface>
             <ipxact:name>mem_5.s1</ipxact:name>
-            <ipxact:busType vendor="intel" library="intel" name="avalon" version="21.3"></ipxact:busType>
+            <ipxact:busType vendor="intel" library="intel" name="avalon" version="21.4"></ipxact:busType>
           </ipxact:busInterface>
           <ipxact:busInterface>
             <ipxact:name>send_packet_1.avalon_master</ipxact:name>
-            <ipxact:busType vendor="intel" library="intel" name="avalon" version="21.3"></ipxact:busType>
+            <ipxact:busType vendor="intel" library="intel" name="avalon" version="21.4"></ipxact:busType>
             <ipxact:master>
               <ipxact:addressSpaceRef addressSpaceRef="send_packet_1.avalon_master">
                 <ipxact:baseAddress>0x0000</ipxact:baseAddress>
@@ -32653,27 +33977,27 @@ https://fpgasoftware.intel.com/eula.-->
             </ipxact:master>
           </ipxact:busInterface>
           <ipxact:busInterface>
-            <ipxact:name>mem_4.s1</ipxact:name>
-            <ipxact:busType vendor="intel" library="intel" name="avalon" version="21.3"></ipxact:busType>
+            <ipxact:name>ddr3.ctrl_amm_0</ipxact:name>
+            <ipxact:busType vendor="intel" library="intel" name="avalon" version="21.4"></ipxact:busType>
           </ipxact:busInterface>
           <ipxact:busInterface>
-            <ipxact:name>send_packet_2.avalon_master</ipxact:name>
-            <ipxact:busType vendor="intel" library="intel" name="avalon" version="21.3"></ipxact:busType>
+            <ipxact:name>setup_ddr.avalon_master</ipxact:name>
+            <ipxact:busType vendor="intel" library="intel" name="avalon" version="21.4"></ipxact:busType>
             <ipxact:master>
-              <ipxact:addressSpaceRef addressSpaceRef="send_packet_2.avalon_master">
-                <ipxact:baseAddress>0x0000</ipxact:baseAddress>
+              <ipxact:addressSpaceRef addressSpaceRef="setup_ddr.avalon_master">
+                <ipxact:baseAddress>0x0000_0000</ipxact:baseAddress>
               </ipxact:addressSpaceRef>
             </ipxact:master>
           </ipxact:busInterface>
           <ipxact:busInterface>
             <ipxact:name>ddr3.ctrl_amm_0</ipxact:name>
-            <ipxact:busType vendor="intel" library="intel" name="avalon" version="21.3"></ipxact:busType>
+            <ipxact:busType vendor="intel" library="intel" name="avalon" version="21.4"></ipxact:busType>
           </ipxact:busInterface>
           <ipxact:busInterface>
-            <ipxact:name>setup_ddr.avalon_master</ipxact:name>
-            <ipxact:busType vendor="intel" library="intel" name="avalon" version="21.3"></ipxact:busType>
+            <ipxact:name>tx_2.avalon_master</ipxact:name>
+            <ipxact:busType vendor="intel" library="intel" name="avalon" version="21.4"></ipxact:busType>
             <ipxact:master>
-              <ipxact:addressSpaceRef addressSpaceRef="setup_ddr.avalon_master">
+              <ipxact:addressSpaceRef addressSpaceRef="tx_2.avalon_master">
                 <ipxact:baseAddress>0x0000_0000</ipxact:baseAddress>
               </ipxact:addressSpaceRef>
             </ipxact:master>
@@ -32741,17 +34065,17 @@ https://fpgasoftware.intel.com/eula.-->
             </ipxact:segments>
           </ipxact:addressSpace>
           <ipxact:addressSpace>
-            <ipxact:name>send_packet_2.avalon_master</ipxact:name>
+            <ipxact:name>setup_ddr.avalon_master</ipxact:name>
             <ipxact:segments>
               <ipxact:segment>
-                <ipxact:name>mem_4.s1</ipxact:name>
-                <ipxact:addressOffset>0x0000</ipxact:addressOffset>
-                <ipxact:range>0x1000</ipxact:range>
+                <ipxact:name>ddr3.ctrl_amm_0</ipxact:name>
+                <ipxact:addressOffset>0x0000_0000</ipxact:addressOffset>
+                <ipxact:range>0x4000_0000</ipxact:range>
               </ipxact:segment>
             </ipxact:segments>
           </ipxact:addressSpace>
           <ipxact:addressSpace>
-            <ipxact:name>setup_ddr.avalon_master</ipxact:name>
+            <ipxact:name>tx_2.avalon_master</ipxact:name>
             <ipxact:segments>
               <ipxact:segment>
                 <ipxact:name>ddr3.ctrl_amm_0</ipxact:name>

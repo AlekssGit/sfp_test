@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<node xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:altera="http://www.altera.com/XMLSchema/Qsys/SystemTree">
+  <instanceKey xsi:type="xs:string">tx_2</instanceKey>
+  <instanceData xsi:type="data">
+    <parameters></parameters>
+    <interconnectAssignments></interconnectAssignments>
+    <className>tx_2</className>
+    <version>1.0</version>
+    <name>tx_2</name>
+    <uniqueName>tx_2</uniqueName>
+    <nonce>0</nonce>
+    <incidentConnections></incidentConnections>
+  </instanceData>
+  <children>
+    <node>
+      <instanceKey xsi:type="xs:string">tx_2</instanceKey>
+      <instanceData xsi:type="data">
+        <parameters></parameters>
+        <interconnectAssignments></interconnectAssignments>
+        <className>send_packet_ddr</className>
+        <version>1.0</version>
+        <name>tx_2</name>
+        <uniqueName>send_packet_ddr</uniqueName>
+        <fixedName>send_packet_ddr</fixedName>
+        <nonce>0</nonce>
+        <incidentConnections></incidentConnections>
+        <path>tx_2.tx_2</path>
+      </instanceData>
+      <children></children>
+    </node>
+  </children>
+</node>
