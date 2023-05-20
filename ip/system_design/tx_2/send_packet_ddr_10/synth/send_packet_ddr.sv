@@ -217,6 +217,7 @@ begin
 end
 
 logic [7:0] need_count_prepare; 
+logic [8:0] i;
 
 always_ff @(posedge clk_original, posedge rst)
 begin
@@ -250,7 +251,34 @@ begin
     end
 end
 
-logic [8:0] i;
+always_ff @(posedge clk_original, posedge rst)
+begin
+    if(rst)
+    begin
+        for(i = 9'd0; i < 9'd256; i++) packet_data[i] <= 7'd0;
+    end
+    else
+    begin
+        if(state == PREPARE_DATA)
+        begin
+            if(wait_data_flag & ram_address_tx_local > start_ram_addr & address_wait == ram_address_tx_local)
+            begin
+                if(ram_ready_local)
+                begin
+                    for(i = 9'd0; i < 9'd8; i++) 
+                    begin
+                        packet_data[1 + 0 + i * 4 + count_prepared * 9'd32] <= ram_data_read_local[i * 32 + 31  -:  8];
+                        packet_data[1 + 1 + i * 4 + count_prepared * 9'd32] <= ram_data_read_local[i * 32 + 23  -:  8];
+                        packet_data[1 + 2 + i * 4 + count_prepared * 9'd32] <= ram_data_read_local[i * 32 + 15  -:  8];
+                        packet_data[1 + 3 + i * 4 + count_prepared * 9'd32] <= ram_data_read_local[i * 32 + 7   -:  8];
+                    end
+                end
+            end
+        end        
+    end
+end
+
+
 
 always@ (posedge clk_original, posedge rst)
 begin
@@ -262,7 +290,7 @@ begin
         count_prepared          = 11'd0;
         ram_address_tx_local    = 25'd0;
 
-        for(i = 9'd0; i < 9'd256; i++) packet_data[i] = 7'd0;
+        // for(i = 9'd0; i < 9'd256; i++) packet_data[i] = 7'd0;
     end
     else
     begin
@@ -294,13 +322,13 @@ begin
             begin
                 if(ram_ready_local)
                 begin
-                    for(i = 9'd0; i < 9'd8; i++) 
-                    begin
-                        packet_data[1 + 0 + i * 4 + count_prepared * 9'd32] = ram_data_read_local[i * 32 + 31  -:  8];
-                        packet_data[1 + 1 + i * 4 + count_prepared * 9'd32] = ram_data_read_local[i * 32 + 23  -:  8];
-                        packet_data[1 + 2 + i * 4 + count_prepared * 9'd32] = ram_data_read_local[i * 32 + 15  -:  8];
-                        packet_data[1 + 3 + i * 4 + count_prepared * 9'd32] = ram_data_read_local[i * 32 + 7   -:  8];
-                    end
+                    // for(i = 9'd0; i < 9'd8; i++) 
+                    // begin
+                    //     packet_data[1 + 0 + i * 4 + count_prepared * 9'd32] = ram_data_read_local[i * 32 + 31  -:  8];
+                    //     packet_data[1 + 1 + i * 4 + count_prepared * 9'd32] = ram_data_read_local[i * 32 + 23  -:  8];
+                    //     packet_data[1 + 2 + i * 4 + count_prepared * 9'd32] = ram_data_read_local[i * 32 + 15  -:  8];
+                    //     packet_data[1 + 3 + i * 4 + count_prepared * 9'd32] = ram_data_read_local[i * 32 + 7   -:  8];
+                    // end
                     
                     count_prepared = count_prepared + 11'd1;
 
