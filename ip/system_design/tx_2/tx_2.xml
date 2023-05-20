@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deploy
- date="2023.05.20.10:57:12"
- outputDirectory="C:/Users/alvas/Documents/Work_ASD/Projects/Learning/sfp_test/ip/system_design/tx_2/">
+ date="2023.05.20.14:37:18"
+ outputDirectory="D:/Documents/Projects/Learning/SFP_test/ip/system_design/tx_2/">
  <perimeter>
   <parameter
      name="AUTO_GENERATION_ID"
@@ -234,21 +234,20 @@
   <parameter name="AUTO_CLOCK_50_CLOCK_RATE" value="-1" />
   <generatedFiles>
    <file
-       path="C:\Users\alvas\Documents\Work_ASD\Projects\Learning\sfp_test\ip\system_design\tx_2\synth\tx_2.v"
+       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\tx_2\synth\tx_2.v"
        attributes="CONTAINS_INLINE_CONFIGURATION" />
   </generatedFiles>
   <childGeneratedFiles>
    <file
-       path="C:\Users\alvas\Documents\Work_ASD\Projects\Learning\sfp_test\ip\system_design\tx_2\synth\tx_2.v"
+       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\tx_2\synth\tx_2.v"
        attributes="CONTAINS_INLINE_CONFIGURATION" />
   </childGeneratedFiles>
   <sourceFiles>
    <file
-       path="C:/Users/alvas/Documents/Work_ASD/Projects/Learning/sfp_test/ip/system_design/tx_2.ip" />
+       path="D:/Documents/Projects/Learning/SFP_test/ip/system_design/tx_2.ip" />
   </sourceFiles>
   <childSourceFiles>
-   <file
-       path="C:/Users/alvas/Documents/Work_ASD/Projects/Learning/sfp_test/send_packet_ddr_hw.tcl" />
+   <file path="D:/Documents/Projects/Learning/SFP_test/send_packet_ddr_hw.tcl" />
   </childSourceFiles>
   <messages>
    <message level="Info" culprit="tx_2">"Generating: tx_2"</message>
@@ -258,29 +257,28 @@
  <entity kind="send_packet_ddr" version="1.0" name="send_packet_ddr">
   <generatedFiles>
    <file
-       path="C:\Users\alvas\Documents\Work_ASD\Projects\Learning\sfp_test\ip\system_design\tx_2\send_packet_ddr_10\synth\send_packet_ddr.sv"
+       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\tx_2\send_packet_ddr_10\synth\send_packet_ddr.sv"
        attributes="TOP_LEVEL_FILE" />
    <file
-       path="C:\Users\alvas\Documents\Work_ASD\Projects\Learning\sfp_test\ip\system_design\tx_2\send_packet_ddr_10\synth\avalon_mm_ddr.sv"
+       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\tx_2\send_packet_ddr_10\synth\avalon_mm_ddr.sv"
        attributes="" />
    <file
-       path="C:\Users\alvas\Documents\Work_ASD\Projects\Learning\sfp_test\ip\system_design\tx_2\send_packet_ddr_10\synth\external_ram_256.sv"
+       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\tx_2\send_packet_ddr_10\synth\external_ram_256.sv"
        attributes="" />
   </generatedFiles>
   <childGeneratedFiles>
    <file
-       path="C:\Users\alvas\Documents\Work_ASD\Projects\Learning\sfp_test\ip\system_design\tx_2\send_packet_ddr_10\synth\send_packet_ddr.sv"
+       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\tx_2\send_packet_ddr_10\synth\send_packet_ddr.sv"
        attributes="TOP_LEVEL_FILE" />
    <file
-       path="C:\Users\alvas\Documents\Work_ASD\Projects\Learning\sfp_test\ip\system_design\tx_2\send_packet_ddr_10\synth\avalon_mm_ddr.sv"
+       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\tx_2\send_packet_ddr_10\synth\avalon_mm_ddr.sv"
        attributes="" />
    <file
-       path="C:\Users\alvas\Documents\Work_ASD\Projects\Learning\sfp_test\ip\system_design\tx_2\send_packet_ddr_10\synth\external_ram_256.sv"
+       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\tx_2\send_packet_ddr_10\synth\external_ram_256.sv"
        attributes="" />
   </childGeneratedFiles>
   <sourceFiles>
-   <file
-       path="C:/Users/alvas/Documents/Work_ASD/Projects/Learning/sfp_test/send_packet_ddr_hw.tcl" />
+   <file path="D:/Documents/Projects/Learning/SFP_test/send_packet_ddr_hw.tcl" />
   </sourceFiles>
   <childSourceFiles/>
   <instantiator instantiator="tx_2" as="tx_2" />
