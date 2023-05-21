@@ -330,13 +330,11 @@ end
 assign need_count_prepare = (packet_size % 8'd32 == 0) ? packet_size/8'd32 : packet_size/8'd32 + 8'd1;
 assign need_count_avalon_st = packet_size;
 
-
 always@ (posedge clk_original, posedge rst)
 begin
     if(rst)
     begin
         packet_size             <= 11'd0;
-        // need_count_avalon_st    = 11'd0;
         count_prepared          <= 11'd0;
     end
     else
@@ -355,10 +353,7 @@ begin
                     // if(packet_size > 0)
                     if(ram_data_read_local[10:0] > 11'd0)
                     begin
-                        // need_count_prepare = (packet_size % 8'd32 == 0) ? packet_size/8'd32 : packet_size/8'd32 + 8'd1;
-                        // need_count_avalon_st = packet_size;
                         count_prepared <= 11'd0;
-                        // ram_address_tx_local = start_ram_addr + 25'd1;
                     end
                 end
             end
@@ -367,11 +362,6 @@ begin
                 if(ram_ready_local)
                 begin                    
                     count_prepared <= count_prepared + 11'd1;
-
-                    if(count_prepared < need_count_prepare)
-                    begin
-                        // ram_address_tx_local = ram_address_tx_local + 25'd1;
-                    end
                 end
             end
         end
@@ -403,9 +393,7 @@ begin
     endcase
 end
 //-------------------------------------------------------------------------------------------------
-
 assign ff_tx_data = packet_data [counter_data_write];
-
 
 //control and work with ddr
 //-------------------------------------------------------------------------------------------------
