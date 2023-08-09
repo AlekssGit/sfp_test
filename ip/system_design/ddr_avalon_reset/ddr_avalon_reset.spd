@@ -7,5 +7,5 @@
    hasInlineConfiguration="true" />
  <topLevel name="ddr_avalon_reset.ddr_avalon_reset" />
  <deviceFamily name="cyclone10gx" />
- <device name="10CX220YF780I5G" />
+ <device name="10CX220YF780E5G" />
 </simPackage>

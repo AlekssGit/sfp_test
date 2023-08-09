@@ -37,13 +37,20 @@ logic [31:0] ddr_status;
 logic d_ddr_local_success;
 logic d_ddr_local_fail;
 
+logic d_system_main_reset;
+logic d_ddr_avalon_rst;
+
 always_ff @(posedge clk)
 begin
     d_ddr_local_success <= ddr_local_cal_success;
     d_ddr_local_fail <= ddr_local_cal_fail;
+
+    d_system_main_reset <= system_main_reset;
+
+    d_ddr_avalon_rst <= ddr_avalon_rst;
 end
 
-assign ddr_status = {26'h0, board_reset, ddr_avalon_rst, system_main_reset, ddr_setup_done, d_ddr_local_success, d_ddr_local_fail};
+assign ddr_status = {26'h0, board_reset, d_ddr_avalon_rst, d_system_main_reset, ddr_setup_done, d_ddr_local_success, d_ddr_local_fail};
 
 always_ff @(posedge clk, negedge rst_n)
 begin

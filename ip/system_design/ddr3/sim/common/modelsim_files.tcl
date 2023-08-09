@@ -19,9 +19,9 @@ namespace eval ddr3 {
   
   proc get_memory_files {QSYS_SIMDIR} {
     set memory_files [list]
-    lappend memory_files "[normalize_path "$QSYS_SIMDIR/../altera_emif_arch_nf_191/sim/ddr3_altera_emif_arch_nf_191_zhajlla_seq_params_sim.hex"]"
-    lappend memory_files "[normalize_path "$QSYS_SIMDIR/../altera_emif_arch_nf_191/sim/ddr3_altera_emif_arch_nf_191_zhajlla_seq_params_synth.hex"]"
-    lappend memory_files "[normalize_path "$QSYS_SIMDIR/../altera_emif_arch_nf_191/sim/ddr3_altera_emif_arch_nf_191_zhajlla_seq_cal.hex"]"
+    lappend memory_files "[normalize_path "$QSYS_SIMDIR/../altera_emif_arch_nf_191/sim/ddr3_altera_emif_arch_nf_191_rzd4hmq_seq_params_sim.hex"]"
+    lappend memory_files "[normalize_path "$QSYS_SIMDIR/../altera_emif_arch_nf_191/sim/ddr3_altera_emif_arch_nf_191_rzd4hmq_seq_params_synth.hex"]"
+    lappend memory_files "[normalize_path "$QSYS_SIMDIR/../altera_emif_arch_nf_191/sim/ddr3_altera_emif_arch_nf_191_rzd4hmq_seq_cal.hex"]"
     lappend memory_files "[normalize_path "$QSYS_SIMDIR/../altera_avalon_onchip_memory2_1931/sim/seq_cal_soft_m20k.hex"]"
     return $memory_files
   }
@@ -33,8 +33,8 @@ namespace eval ddr3 {
   
   proc get_design_files {USER_DEFINED_COMPILE_OPTIONS USER_DEFINED_VERILOG_COMPILE_OPTIONS USER_DEFINED_VHDL_COMPILE_OPTIONS QSYS_SIMDIR} {
     set design_files [list]
-    lappend design_files "vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../altera_emif_arch_nf_191/sim/ddr3_altera_emif_arch_nf_191_zhajlla_top.sv"]\"  -work altera_emif_arch_nf_191"                                
-    lappend design_files "vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../altera_emif_arch_nf_191/sim/ddr3_altera_emif_arch_nf_191_zhajlla_io_aux.sv"]\"  -work altera_emif_arch_nf_191"                             
+    lappend design_files "vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../altera_emif_arch_nf_191/sim/ddr3_altera_emif_arch_nf_191_rzd4hmq_top.sv"]\"  -work altera_emif_arch_nf_191"                                
+    lappend design_files "vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../altera_emif_arch_nf_191/sim/ddr3_altera_emif_arch_nf_191_rzd4hmq_io_aux.sv"]\"  -work altera_emif_arch_nf_191"                             
     lappend design_files "vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../altera_emif_arch_nf_191/sim/altera_emif_arch_nf_oct.sv"]\"  -work altera_emif_arch_nf_191"                                                 
     lappend design_files "vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../altera_emif_arch_nf_191/sim/altera_emif_arch_nf_buf_udir_df_o.sv"]\"  -work altera_emif_arch_nf_191"                                       
     lappend design_files "vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../altera_emif_arch_nf_191/sim/altera_emif_arch_nf_buf_bdir_df.sv"]\"  -work altera_emif_arch_nf_191"                                         
@@ -72,7 +72,7 @@ namespace eval ddr3 {
     lappend design_files "vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../altera_emif_arch_nf_191/sim/mem_array_abphy.sv"]\"  -work altera_emif_arch_nf_191"                                                         
     lappend design_files "vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../altera_emif_arch_nf_191/sim/io_12_lane_bcm__nf5es_abphy.sv"]\"  -work altera_emif_arch_nf_191"                                             
     lappend design_files "vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../altera_emif_arch_nf_191/sim/io_12_lane__nf5es_abphy.sv"]\"  -work altera_emif_arch_nf_191"                                                 
-    lappend design_files "vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../altera_emif_arch_nf_191/sim/ddr3_altera_emif_arch_nf_191_zhajlla.sv"]\"  -work altera_emif_arch_nf_191"                                    
+    lappend design_files "vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../altera_emif_arch_nf_191/sim/ddr3_altera_emif_arch_nf_191_rzd4hmq.sv"]\"  -work altera_emif_arch_nf_191"                                    
     lappend design_files "vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../altera_emif_ecc_nf_191/sim/altera_emif_ecc_core.v"]\"  -work altera_emif_ecc_nf_191"                                                           
     lappend design_files "vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../altera_emif_ecc_nf_191/sim/altera_emif_io_hmc_ecc.v"]\"  -work altera_emif_ecc_nf_191"                                                         
     lappend design_files "vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../altera_emif_ecc_nf_191/sim/altera_emif_io_hmc_ecc_amm2ast.v"]\"  -work altera_emif_ecc_nf_191"                                                 
@@ -92,7 +92,7 @@ namespace eval ddr3 {
     lappend design_files "vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../altera_emif_ecc_nf_191/sim/altera_emif_io_hmc_ecc_sv_112.v"]\"  -work altera_emif_ecc_nf_191"                                                  
     lappend design_files "vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../altera_emif_ecc_nf_191/sim/altera_emif_io_hmc_ecc_wrapper.v"]\"  -work altera_emif_ecc_nf_191"                                                 
     lappend design_files "vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../altera_emif_ecc_nf_191/sim/altera_emif_io_hmc_fifo.v"]\"  -work altera_emif_ecc_nf_191"                                                        
-    lappend design_files "vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../altera_emif_ecc_191/sim/ddr3_altera_emif_ecc_191_gxje6ji.v"]\"  -work altera_emif_ecc_191"                                                     
+    lappend design_files "vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../altera_emif_ecc_191/sim/ddr3_altera_emif_ecc_191_avv67ei.v"]\"  -work altera_emif_ecc_191"                                                     
     lappend design_files "vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../altera_avalon_mm_bridge_2001/sim/ddr3_altera_avalon_mm_bridge_2001_k2bg7dq.v"]\"  -work altera_avalon_mm_bridge_2001"                          
     lappend design_files "vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../altera_avalon_onchip_memory2_1931/sim/ddr3_altera_avalon_onchip_memory2_1931_ecie4wq.v"]\"  -work altera_avalon_onchip_memory2_1931"           
     lappend design_files "vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../altera_merlin_master_translator_191/sim/ddr3_altera_merlin_master_translator_191_g7h47bq.sv"]\"  -work altera_merlin_master_translator_191"
@@ -101,7 +101,7 @@ namespace eval ddr3 {
     lappend design_files "vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../altera_reset_controller_1921/sim/altera_reset_controller.v"]\"  -work altera_reset_controller_1921"                                            
     lappend design_files "vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../altera_reset_controller_1921/sim/altera_reset_synchronizer.v"]\"  -work altera_reset_controller_1921"                                          
     lappend design_files "vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../altera_emif_cal_slave_nf_191/sim/ddr3_altera_emif_cal_slave_nf_191_rmzieji.v"]\"  -work altera_emif_cal_slave_nf_191"                          
-    lappend design_files "vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../altera_emif_c10_1910/sim/ddr3_altera_emif_c10_1910_c6wrrsi.v"]\"  -work altera_emif_c10_1910"                                                  
+    lappend design_files "vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../altera_emif_c10_1910/sim/ddr3_altera_emif_c10_1910_szj773a.v"]\"  -work altera_emif_c10_1910"                                                  
     lappend design_files "vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/ddr3.v"]\"  -work ddr3"                                                                                                                           
     return $design_files
   }

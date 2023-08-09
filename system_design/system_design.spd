@@ -249,7 +249,7 @@
    hasInlineConfiguration="true" />
  <topLevel name="system_design.system_design" />
  <deviceFamily name="cyclone10gx" />
- <device name="10CX220YF780I5G" />
+ <device name="10CX220YF780E5G" />
  <modelMap controllerPath="system_design.mem_4" modelPath="system_design.mem_4" />
  <modelMap controllerPath="system_design.mem_5" modelPath="system_design.mem_5" />
  <modelMap

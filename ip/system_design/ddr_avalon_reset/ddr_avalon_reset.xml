@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deploy
- date="2023.05.20.14:37:23"
+ date="2023.06.22.17:38:33"
  outputDirectory="D:/Documents/Projects/Learning/SFP_test/ip/system_design/ddr_avalon_reset/">
  <perimeter>
   <parameter
@@ -24,7 +24,7 @@
   <parameter
      name="AUTO_DEVICE"
      type="String"
-     defaultValue="10CX220YF780I5G"
+     defaultValue="10CX220YF780E5G"
      onHdl="0"
      affectsHdl="1" />
   <parameter
@@ -48,7 +48,7 @@
  </perimeter>
  <entity kind="ddr_avalon_reset" version="1.0" name="ddr_avalon_reset">
   <parameter name="AUTO_GENERATION_ID" value="0" />
-  <parameter name="AUTO_DEVICE" value="10CX220YF780I5G" />
+  <parameter name="AUTO_DEVICE" value="10CX220YF780E5G" />
   <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone 10 GX" />
   <parameter name="AUTO_UNIQUE_ID" value="" />
   <parameter name="AUTO_DEVICE_SPEEDGRADE" value="5" />

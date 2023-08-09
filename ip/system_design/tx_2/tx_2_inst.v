@@ -1,4 +1,6 @@
-	tx_2 u0 (
+	tx_2 #(
+		.COUNT_PREPARE_WAIT_VAL (INTEGER_VALUE_FOR_COUNT_PREPARE_WAIT_VAL)
+	) u0 (
 		.amm_addr          (_connected_to_amm_addr_),          //  output,   width = 25,           avalon_master.address
 		.amm_readdata      (_connected_to_amm_readdata_),      //   input,  width = 256,                        .readdata
 		.amm_writedata     (_connected_to_amm_writedata_),     //  output,  width = 256,                        .writedata

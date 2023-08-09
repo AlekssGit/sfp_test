@@ -11,5 +11,5 @@
    hasInlineConfiguration="true" />
  <topLevel name="reset_mod.reset_mod" />
  <deviceFamily name="cyclone10gx" />
- <device name="10CX220YF780I5G" />
+ <device name="10CX220YF780E5G" />
 </simPackage>

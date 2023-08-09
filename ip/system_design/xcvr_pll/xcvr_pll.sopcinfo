@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="xcvr_pll" kind="xcvr_pll" version="1.0" fabric="QSYS">
  <!-- Format version 21.3 170 (Future versions may contain additional information.) -->
- <!-- 2023.05.20.14:37:25 -->
+ <!-- 2023.06.22.17:38:32 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
@@ -32,7 +32,7 @@
  </parameter>
  <parameter name="AUTO_DEVICE">
   <type>java.lang.String</type>
-  <value>10CX220YF780I5G</value>
+  <value>10CX220YF780E5G</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -99,7 +99,7 @@
    name="xcvr_pll"
    kind="altera_xcvr_atx_pll_a10"
    version="19.1"
-   entity="xcvr_pll_altera_xcvr_atx_pll_a10_191_rdwboly"
+   entity="xcvr_pll_altera_xcvr_atx_pll_a10_191_6oxhjba"
    library="altera_xcvr_atx_pll_a10_191"
    path="xcvr_pll"
    hpath="xcvr_pll"
@@ -1148,7 +1148,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="atx_pll_pm_speed_grade">
    <type>java.lang.String</type>
-   <value>i4</value>
+   <value>e4</value>
    <derived>true</derived>
    <enabled>false</enabled>
    <visible>false</visible>
@@ -1650,7 +1650,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="device">
    <type>java.lang.String</type>
-   <value>10CX220YF780I5G</value>
+   <value>10CX220YF780E5G</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -1709,7 +1709,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="pma_speedgrade">
    <type>java.lang.String</type>
-   <value>i4</value>
+   <value>e4</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>

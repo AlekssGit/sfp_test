@@ -187,7 +187,7 @@ module tse (
 		output wire        rx_recovclkout_3      //          serdes_control_connection_3.export
 	);
 
-	tse_altera_eth_tse_1950_ag3tuna tse (
+	tse_altera_eth_tse_1950_vweooxa tse (
 		.clk                  (clk),                  //   input,   width = 1,        control_port_clock_connection.clk
 		.reset                (reset),                //   input,   width = 1,                     reset_connection.reset
 		.reg_data_out         (reg_data_out),         //  output,  width = 32,                         control_port.readdata

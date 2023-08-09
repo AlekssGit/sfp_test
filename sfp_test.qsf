@@ -6,7 +6,7 @@ set_global_assignment -name LAST_QUARTUS_VERSION "21.3.0 Pro Edition"
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 100
-set_global_assignment -name DEVICE 10CX220YF780I5G
+set_global_assignment -name DEVICE 10CX220YF780E5G
 set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
 set_global_assignment -name EDA_SIMULATION_TOOL "QuestaSim (Verilog)"
 set_global_assignment -name EDA_TIME_SCALE "1 ps" -section_id eda_simulation
@@ -29,8 +29,8 @@ set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to sgmi
 set_location_assignment PIN_G27 -to "sgmii_tx_1(n)"
 set_instance_assignment -name IO_STANDARD "CURRENT MODE LOGIC (CML)" -to sgmii_rx_1 -entity sfp_test_top
 set_location_assignment PIN_AC7 -to blink_led
-set_global_assignment -name ENABLE_SIGNALTAP OFF
-set_global_assignment -name USE_SIGNALTAP_FILE output_files/stp.stp
+set_global_assignment -name ENABLE_SIGNALTAP ON
+set_global_assignment -name USE_SIGNALTAP_FILE stp1.stp
 set_instance_assignment -name IO_STANDARD "CURRENT MODE LOGIC (CML)" -to sgmii_rx_2 -entity sfp_test_top
 set_global_assignment -name POWER_USE_DEVICE_CHARACTERISTICS TYPICAL
 set_global_assignment -name NOMINAL_CORE_SUPPLY_VOLTAGE 0.9V
@@ -197,3 +197,4 @@ set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to mem_ras_n -entit
 set_instance_assignment -name IO_STANDARD "1.5 V" -to mem_reset_n -entity sfp_test_top
 set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to mem_we_n -entity sfp_test_top
 set_global_assignment -name IP_FILE ip/system_design/tx_2.ip
+set_global_assignment -name SIGNALTAP_FILE stp1.stp

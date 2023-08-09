@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="system_design" kind="system_design" version="1.0" fabric="QSYS">
  <!-- Format version 21.3 170 (Future versions may contain additional information.) -->
- <!-- 2023.05.20.14:37:55 -->
+ <!-- 2023.06.22.17:39:06 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
@@ -32,7 +32,7 @@
  </parameter>
  <parameter name="AUTO_DEVICE">
   <type>java.lang.String</type>
-  <value>10CX220YF780I5G</value>
+  <value>10CX220YF780E5G</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -697,7 +697,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="AUTO_DEVICE">
    <type>java.lang.String</type>
-   <value>10CX220YF780I5G</value>
+   <value>10CX220YF780E5G</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -1184,7 +1184,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="AUTO_DEVICE">
    <type>java.lang.String</type>
-   <value>10CX220YF780I5G</value>
+   <value>10CX220YF780E5G</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -2944,7 +2944,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="SYS_INFO_DEVICE">
    <type>java.lang.String</type>
-   <value>10CX220YF780I5G</value>
+   <value>10CX220YF780E5G</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -2990,7 +2990,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="SYS_INFO_DEVICE_TEMPERATURE_GRADE">
    <type>java.lang.String</type>
-   <value>INDUSTRIAL</value>
+   <value>EXTENDED</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -3038,7 +3038,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="AUTO_DEVICE">
    <type>java.lang.String</type>
-   <value>10CX220YF780I5G</value>
+   <value>10CX220YF780E5G</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -4313,7 +4313,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="AUTO_DEVICE">
    <type>java.lang.String</type>
-   <value>10CX220YF780I5G</value>
+   <value>10CX220YF780E5G</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -5185,7 +5185,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="AUTO_DEVICE">
    <type>java.lang.String</type>
-   <value>10CX220YF780I5G</value>
+   <value>10CX220YF780E5G</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -7433,7 +7433,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="AUTO_DEVICE">
    <type>java.lang.String</type>
-   <value>10CX220YF780I5G</value>
+   <value>10CX220YF780E5G</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -9517,7 +9517,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="AUTO_DEVICE">
    <type>java.lang.String</type>
-   <value>10CX220YF780I5G</value>
+   <value>10CX220YF780E5G</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -11096,7 +11096,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="AUTO_DEVICE">
    <type>java.lang.String</type>
-   <value>10CX220YF780I5G</value>
+   <value>10CX220YF780E5G</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -12675,7 +12675,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="AUTO_DEVICE">
    <type>java.lang.String</type>
-   <value>10CX220YF780I5G</value>
+   <value>10CX220YF780E5G</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -18725,7 +18725,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="part_trait_device">
    <type>java.lang.String</type>
-   <value>10CX220YF780I5G</value>
+   <value>10CX220YF780E5G</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -18814,7 +18814,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="AUTO_DEVICE">
    <type>java.lang.String</type>
-   <value>10CX220YF780I5G</value>
+   <value>10CX220YF780E5G</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -22611,7 +22611,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="system_info_device_component">
    <type>java.lang.String</type>
-   <value>10CX220YF780I5G</value>
+   <value>10CX220YF780E5G</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -22667,7 +22667,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="AUTO_DEVICE">
    <type>java.lang.String</type>
-   <value>10CX220YF780I5G</value>
+   <value>10CX220YF780E5G</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -24417,7 +24417,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="AUTO_DEVICE">
    <type>java.lang.String</type>
-   <value>10CX220YF780I5G</value>
+   <value>10CX220YF780E5G</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -26567,7 +26567,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="AUTO_DEVICE">
    <type>java.lang.String</type>
-   <value>10CX220YF780I5G</value>
+   <value>10CX220YF780E5G</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -27741,7 +27741,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="AUTO_DEVICE">
    <type>java.lang.String</type>
-   <value>10CX220YF780I5G</value>
+   <value>10CX220YF780E5G</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -28304,7 +28304,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="AUTO_DEVICE">
    <type>java.lang.String</type>
-   <value>10CX220YF780I5G</value>
+   <value>10CX220YF780E5G</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -29728,7 +29728,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="AUTO_DEVICE">
    <type>java.lang.String</type>
-   <value>10CX220YF780I5G</value>
+   <value>10CX220YF780E5G</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -31558,7 +31558,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="AUTO_DEVICE">
    <type>java.lang.String</type>
-   <value>10CX220YF780I5G</value>
+   <value>10CX220YF780E5G</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -33709,7 +33709,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="AUTO_DEVICE">
    <type>java.lang.String</type>
-   <value>10CX220YF780I5G</value>
+   <value>10CX220YF780E5G</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -44879,7 +44879,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="DEVICE">
    <type>java.lang.String</type>
-   <value>10CX220YF780I5G</value>
+   <value>10CX220YF780E5G</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -44925,7 +44925,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="AUTO_DEVICE">
    <type>java.lang.String</type>
-   <value>10CX220YF780I5G</value>
+   <value>10CX220YF780E5G</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -53333,7 +53333,18 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="hdlParameters">
    <type>com.altera.qsys.blackboxmodule.definitions.HdlParameterDescriptorDefinitionList</type>
-   <value><![CDATA[<hdlParameterDescriptorDefinitionList/>]]></value>
+   <value><![CDATA[<hdlParameterDescriptorDefinitionList>
+    <hdlParameterDescriptorDefinition>
+        <description></description>
+        <enabled>true</enabled>
+        <exported>false</exported>
+        <parameterHdlType>INTEGER</parameterHdlType>
+        <parameterHdlWidth></parameterHdlWidth>
+        <parameterName>COUNT_PREPARE_WAIT_VAL</parameterName>
+        <parameterType>java.lang.Integer</parameterType>
+        <parameterValue>80</parameterValue>
+    </hdlParameterDescriptorDefinition>
+</hdlParameterDescriptorDefinitionList>]]></value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -53350,7 +53361,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="AUTO_DEVICE">
    <type>java.lang.String</type>
-   <value>10CX220YF780I5G</value>
+   <value>10CX220YF780E5G</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -54761,7 +54772,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="device">
    <type>java.lang.String</type>
-   <value>10CX220YF780I5G</value>
+   <value>10CX220YF780E5G</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -54788,7 +54799,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="AUTO_DEVICE">
    <type>java.lang.String</type>
-   <value>10CX220YF780I5G</value>
+   <value>10CX220YF780E5G</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>

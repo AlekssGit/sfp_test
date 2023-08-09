@@ -1,12 +1,12 @@
-# system info send_packet_1 on 2023.05.20.14:38:19
+# system info send_packet_1 on 2023.06.22.17:39:28
 system_info:
 name,value
-DEVICE,10CX220YF780I5G
+DEVICE,10CX220YF780E5G
 DEVICE_FAMILY,Cyclone 10 GX
 GENERATION_ID,0
 #
 #
-# Files generated for send_packet_1 on 2023.05.20.14:38:19
+# Files generated for send_packet_1 on 2023.06.22.17:39:28
 files:
 filepath,kind,attributes,module,is_top
 sim/send_packet_1.v,VERILOG,CONTAINS_INLINE_CONFIGURATION,send_packet_1,true

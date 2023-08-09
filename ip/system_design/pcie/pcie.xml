@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deploy
- date="2023.05.20.14:38:14"
+ date="2023.06.22.17:39:21"
  outputDirectory="D:/Documents/Projects/Learning/SFP_test/ip/system_design/pcie/">
  <perimeter>
   <parameter
@@ -24,7 +24,7 @@
   <parameter
      name="AUTO_DEVICE"
      type="String"
-     defaultValue="10CX220YF780I5G"
+     defaultValue="10CX220YF780E5G"
      onHdl="0"
      affectsHdl="1" />
   <parameter
@@ -624,7 +624,7 @@
   <parameter name="AUTO_RXM_BAR2_ADDRESS_MAP" value="" />
   <parameter name="AUTO_RXM_BAR0_ADDRESS_WIDTH" value="-1" />
   <parameter name="AUTO_REFCLK_CLOCK_DOMAIN" value="-1" />
-  <parameter name="AUTO_DEVICE" value="10CX220YF780I5G" />
+  <parameter name="AUTO_DEVICE" value="10CX220YF780E5G" />
   <parameter name="AUTO_RXM_IRQ_INTERRUPTS_USED" value="-1" />
   <parameter name="AUTO_REFCLK_CLOCK_RATE" value="-1" />
   <parameter name="AUTO_REFCLK_RESET_DOMAIN" value="-1" />
@@ -652,7 +652,7 @@
   </childSourceFiles>
   <messages>
    <message level="Info" culprit="pcie">"Generating: pcie"</message>
-   <message level="Info" culprit="pcie">"Generating: pcie_altera_pcie_a10_hip_2011_ub5pqua"</message>
+   <message level="Info" culprit="pcie">"Generating: pcie_altera_pcie_a10_hip_2011_tyey65q"</message>
    <message level="Info" culprit="phy_g2x4">"Generating: phy_g2x4"</message>
    <message level="Info" culprit="fpll_g1g2xn">"Generating: fpll_g1g2xn"</message>
    <message level="Info" culprit="pcie">"Generating: pcie_altera_pcie_a10_hip_altera_xcvr_native_a10_2011_nqkigkq"</message>
@@ -693,7 +693,7 @@
  <entity
    kind="altera_pcie_a10_hip"
    version="20.1.1"
-   name="pcie_altera_pcie_a10_hip_2011_ub5pqua">
+   name="pcie_altera_pcie_a10_hip_2011_tyey65q">
   <parameter name="pf2_bar2_size_hwtcl" value="12" />
   <parameter name="pf7_bar3_present_hwtcl" value="0" />
   <parameter name="slave_address_map_4_hwtcl" value="0" />
@@ -1064,7 +1064,7 @@
   <parameter name="data_byte_width_integer_txs_hwtcl" value="16" />
   <parameter name="pf4_virtio_pciconfig_access_bar_offset_hwtcl" value="0" />
   <parameter name="pf5_virtio_notification_structure_length_hwtcl" value="0" />
-  <parameter name="part_trait_device" value="10CX220YF780I5G" />
+  <parameter name="part_trait_device" value="10CX220YF780E5G" />
   <parameter name="pf3vf_virtio_isrstatus_bar_indicator_hwtcl" value="0" />
   <parameter name="pf2_vf_count_user_hwtcl" value="0" />
   <parameter name="force_tag_checking_on_hwtcl" value="0" />
@@ -2219,13 +2219,13 @@
   <parameter name="pf_tph_support_hwtcl" value="0" />
   <generatedFiles>
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\pcie\altera_pcie_a10_hip_2011\synth\altpcie_a10_hip_pllnphy_2011_ub5pqua.v"
+       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\pcie\altera_pcie_a10_hip_2011\synth\altpcie_a10_hip_pllnphy_2011_tyey65q.v"
        attributes="" />
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\pcie\altera_pcie_a10_hip_2011\synth\altpcie_a10_hip_pipen1b_2011_ub5pqua.v"
+       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\pcie\altera_pcie_a10_hip_2011\synth\altpcie_a10_hip_pipen1b_2011_tyey65q.v"
        attributes="" />
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\pcie\altera_pcie_a10_hip_2011\synth\pcie_altera_pcie_a10_hip_2011_ub5pqua.v"
+       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\pcie\altera_pcie_a10_hip_2011\synth\pcie_altera_pcie_a10_hip_2011_tyey65q.v"
        attributes="" />
    <file
        path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\pcie\altera_pcie_a10_hip_2011\synth\altpcie_sc_bitsync.v"
@@ -2344,13 +2344,13 @@
   </generatedFiles>
   <childGeneratedFiles>
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\pcie\altera_pcie_a10_hip_2011\synth\altpcie_a10_hip_pllnphy_2011_ub5pqua.v"
+       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\pcie\altera_pcie_a10_hip_2011\synth\altpcie_a10_hip_pllnphy_2011_tyey65q.v"
        attributes="" />
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\pcie\altera_pcie_a10_hip_2011\synth\altpcie_a10_hip_pipen1b_2011_ub5pqua.v"
+       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\pcie\altera_pcie_a10_hip_2011\synth\altpcie_a10_hip_pipen1b_2011_tyey65q.v"
        attributes="" />
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\pcie\altera_pcie_a10_hip_2011\synth\pcie_altera_pcie_a10_hip_2011_ub5pqua.v"
+       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\pcie\altera_pcie_a10_hip_2011\synth\pcie_altera_pcie_a10_hip_2011_tyey65q.v"
        attributes="" />
    <file
        path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\pcie\altera_pcie_a10_hip_2011\synth\altpcie_sc_bitsync.v"
@@ -2479,7 +2479,7 @@
   </childSourceFiles>
   <instantiator instantiator="pcie" as="pcie" />
   <messages>
-   <message level="Info" culprit="pcie">"Generating: pcie_altera_pcie_a10_hip_2011_ub5pqua"</message>
+   <message level="Info" culprit="pcie">"Generating: pcie_altera_pcie_a10_hip_2011_tyey65q"</message>
    <message level="Info" culprit="phy_g2x4">"Generating: phy_g2x4"</message>
    <message level="Info" culprit="fpll_g1g2xn">"Generating: fpll_g1g2xn"</message>
    <message level="Info" culprit="pcie">"Generating: pcie_altera_pcie_a10_hip_altera_xcvr_native_a10_2011_nqkigkq"</message>
@@ -4517,7 +4517,7 @@
    <file
        path="C:/intelfpga_pro/21.3/ip/altera/alt_xcvr/altera_xcvr_native_phy/altera_xcvr_native_vi/tcl/altera_xcvr_native_a10_hw.tcl" />
   </childSourceFiles>
-  <instantiator instantiator="pcie_altera_pcie_a10_hip_2011_ub5pqua" as="phy_g2x4" />
+  <instantiator instantiator="pcie_altera_pcie_a10_hip_2011_tyey65q" as="phy_g2x4" />
   <messages>
    <message level="Info" culprit="pcie">"Generating: pcie_altera_pcie_a10_hip_altera_xcvr_native_a10_2011_nqkigkq"</message>
    <message level="Info" culprit="pcie">"Generating: pcie_altera_xcvr_native_a10_191_vtbxjmi"</message>
@@ -5252,7 +5252,7 @@
    <file
        path="C:/intelfpga_pro/21.3/ip/altera/alt_xcvr/altera_xcvr_pll/altera_xcvr_fpll_vi/tcl/altera_xcvr_fpll_a10_hw.tcl" />
   </childSourceFiles>
-  <instantiator instantiator="pcie_altera_pcie_a10_hip_2011_ub5pqua" as="fpll_g1g2xn" />
+  <instantiator instantiator="pcie_altera_pcie_a10_hip_2011_tyey65q" as="fpll_g1g2xn" />
   <messages>
    <message level="Info" culprit="pcie">"Generating: pcie_altera_pcie_a10_hip_altera_xcvr_fpll_a10_2011_dxkofyy"</message>
    <message level="Info" culprit="pcie">"Generating: altera_xcvr_fpll_a10"</message>

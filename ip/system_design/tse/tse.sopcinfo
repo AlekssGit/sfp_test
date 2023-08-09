@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="tse" kind="tse" version="1.0" fabric="QSYS">
  <!-- Format version 21.3 170 (Future versions may contain additional information.) -->
- <!-- 2023.05.20.14:38:14 -->
+ <!-- 2023.06.22.17:39:23 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
@@ -32,7 +32,7 @@
  </parameter>
  <parameter name="AUTO_DEVICE">
   <type>java.lang.String</type>
-  <value>10CX220YF780I5G</value>
+  <value>10CX220YF780E5G</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -279,7 +279,7 @@
    name="tse"
    kind="altera_eth_tse"
    version="19.5.0"
-   entity="tse_altera_eth_tse_1950_ag3tuna"
+   entity="tse_altera_eth_tse_1950_vweooxa"
    library="altera_eth_tse_1950"
    path="tse"
    hpath="tse"
@@ -1812,7 +1812,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="DEVICE">
    <type>java.lang.String</type>
-   <value>10CX220YF780I5G</value>
+   <value>10CX220YF780E5G</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -25125,7 +25125,7 @@ parameters are a RESULT of the module parameters. -->
    name="tse_i_nf_native_phyip_0"
    kind="altera_xcvr_native_a10"
    version="19.1"
-   entity="tse_altera_xcvr_native_a10_191_xaroupi"
+   entity="tse_altera_xcvr_native_a10_191_ybh6yry"
    library="altera_xcvr_native_a10_191"
    path="tse.i_nf_native_phyip_0"
    hpath="tse|i_nf_native_phyip_0"
@@ -25143,7 +25143,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="device">
    <type>java.lang.String</type>
-   <value>10CX220YF780I5G</value>
+   <value>10CX220YF780E5G</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -32907,7 +32907,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="cdr_pll_pm_speed_grade">
    <type>java.lang.String</type>
-   <value>i4</value>
+   <value>e4</value>
    <derived>true</derived>
    <enabled>false</enabled>
    <visible>false</visible>
@@ -33723,7 +33723,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="pma_rx_buf_pm_speed_grade">
    <type>java.lang.String</type>
-   <value>i4</value>
+   <value>e4</value>
    <derived>true</derived>
    <enabled>false</enabled>
    <visible>false</visible>
@@ -34979,7 +34979,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="pma_tx_buf_pm_speed_grade">
    <type>java.lang.String</type>
-   <value>i4</value>
+   <value>e4</value>
    <derived>true</derived>
    <enabled>false</enabled>
    <visible>false</visible>
@@ -35787,7 +35787,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="hssi_rx_pld_pcs_interface_hd_chnl_speed_grade">
    <type>java.lang.String</type>
-   <value>i3</value>
+   <value>e3</value>
    <derived>true</derived>
    <enabled>false</enabled>
    <visible>false</visible>
@@ -36706,7 +36706,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="hssi_tx_pld_pcs_interface_hd_chnl_speed_grade">
    <type>java.lang.String</type>
-   <value>i3</value>
+   <value>e3</value>
    <derived>true</derived>
    <enabled>false</enabled>
    <visible>false</visible>
@@ -37204,7 +37204,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="pcs_speedgrade">
    <type>java.lang.String</type>
-   <value>i3</value>
+   <value>e3</value>
    <derived>true</derived>
    <enabled>false</enabled>
    <visible>false</visible>
@@ -37212,7 +37212,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="pma_speedgrade">
    <type>java.lang.String</type>
-   <value>i4</value>
+   <value>e4</value>
    <derived>true</derived>
    <enabled>false</enabled>
    <visible>false</visible>
@@ -42203,7 +42203,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="device">
    <type>java.lang.String</type>
-   <value>10CX220YF780I5G</value>
+   <value>10CX220YF780E5G</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -49967,7 +49967,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="cdr_pll_pm_speed_grade">
    <type>java.lang.String</type>
-   <value>i4</value>
+   <value>e4</value>
    <derived>true</derived>
    <enabled>false</enabled>
    <visible>false</visible>
@@ -50783,7 +50783,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="pma_rx_buf_pm_speed_grade">
    <type>java.lang.String</type>
-   <value>i4</value>
+   <value>e4</value>
    <derived>true</derived>
    <enabled>false</enabled>
    <visible>false</visible>
@@ -52039,7 +52039,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="pma_tx_buf_pm_speed_grade">
    <type>java.lang.String</type>
-   <value>i4</value>
+   <value>e4</value>
    <derived>true</derived>
    <enabled>false</enabled>
    <visible>false</visible>
@@ -52847,7 +52847,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="hssi_rx_pld_pcs_interface_hd_chnl_speed_grade">
    <type>java.lang.String</type>
-   <value>i3</value>
+   <value>e3</value>
    <derived>true</derived>
    <enabled>false</enabled>
    <visible>false</visible>
@@ -53766,7 +53766,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="hssi_tx_pld_pcs_interface_hd_chnl_speed_grade">
    <type>java.lang.String</type>
-   <value>i3</value>
+   <value>e3</value>
    <derived>true</derived>
    <enabled>false</enabled>
    <visible>false</visible>
@@ -54264,7 +54264,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="pcs_speedgrade">
    <type>java.lang.String</type>
-   <value>i3</value>
+   <value>e3</value>
    <derived>true</derived>
    <enabled>false</enabled>
    <visible>false</visible>
@@ -54272,7 +54272,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="pma_speedgrade">
    <type>java.lang.String</type>
-   <value>i4</value>
+   <value>e4</value>
    <derived>true</derived>
    <enabled>false</enabled>
    <visible>false</visible>
@@ -59261,7 +59261,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="device">
    <type>java.lang.String</type>
-   <value>10CX220YF780I5G</value>
+   <value>10CX220YF780E5G</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -67025,7 +67025,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="cdr_pll_pm_speed_grade">
    <type>java.lang.String</type>
-   <value>i4</value>
+   <value>e4</value>
    <derived>true</derived>
    <enabled>false</enabled>
    <visible>false</visible>
@@ -67841,7 +67841,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="pma_rx_buf_pm_speed_grade">
    <type>java.lang.String</type>
-   <value>i4</value>
+   <value>e4</value>
    <derived>true</derived>
    <enabled>false</enabled>
    <visible>false</visible>
@@ -69097,7 +69097,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="pma_tx_buf_pm_speed_grade">
    <type>java.lang.String</type>
-   <value>i4</value>
+   <value>e4</value>
    <derived>true</derived>
    <enabled>false</enabled>
    <visible>false</visible>
@@ -69905,7 +69905,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="hssi_rx_pld_pcs_interface_hd_chnl_speed_grade">
    <type>java.lang.String</type>
-   <value>i3</value>
+   <value>e3</value>
    <derived>true</derived>
    <enabled>false</enabled>
    <visible>false</visible>
@@ -70824,7 +70824,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="hssi_tx_pld_pcs_interface_hd_chnl_speed_grade">
    <type>java.lang.String</type>
-   <value>i3</value>
+   <value>e3</value>
    <derived>true</derived>
    <enabled>false</enabled>
    <visible>false</visible>
@@ -71322,7 +71322,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="pcs_speedgrade">
    <type>java.lang.String</type>
-   <value>i3</value>
+   <value>e3</value>
    <derived>true</derived>
    <enabled>false</enabled>
    <visible>false</visible>
@@ -71330,7 +71330,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="pma_speedgrade">
    <type>java.lang.String</type>
-   <value>i4</value>
+   <value>e4</value>
    <derived>true</derived>
    <enabled>false</enabled>
    <visible>false</visible>
@@ -76319,7 +76319,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="device">
    <type>java.lang.String</type>
-   <value>10CX220YF780I5G</value>
+   <value>10CX220YF780E5G</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -84083,7 +84083,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="cdr_pll_pm_speed_grade">
    <type>java.lang.String</type>
-   <value>i4</value>
+   <value>e4</value>
    <derived>true</derived>
    <enabled>false</enabled>
    <visible>false</visible>
@@ -84899,7 +84899,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="pma_rx_buf_pm_speed_grade">
    <type>java.lang.String</type>
-   <value>i4</value>
+   <value>e4</value>
    <derived>true</derived>
    <enabled>false</enabled>
    <visible>false</visible>
@@ -86155,7 +86155,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="pma_tx_buf_pm_speed_grade">
    <type>java.lang.String</type>
-   <value>i4</value>
+   <value>e4</value>
    <derived>true</derived>
    <enabled>false</enabled>
    <visible>false</visible>
@@ -86963,7 +86963,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="hssi_rx_pld_pcs_interface_hd_chnl_speed_grade">
    <type>java.lang.String</type>
-   <value>i3</value>
+   <value>e3</value>
    <derived>true</derived>
    <enabled>false</enabled>
    <visible>false</visible>
@@ -87882,7 +87882,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="hssi_tx_pld_pcs_interface_hd_chnl_speed_grade">
    <type>java.lang.String</type>
-   <value>i3</value>
+   <value>e3</value>
    <derived>true</derived>
    <enabled>false</enabled>
    <visible>false</visible>
@@ -88380,7 +88380,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="pcs_speedgrade">
    <type>java.lang.String</type>
-   <value>i3</value>
+   <value>e3</value>
    <derived>true</derived>
    <enabled>false</enabled>
    <visible>false</visible>
@@ -88388,7 +88388,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="pma_speedgrade">
    <type>java.lang.String</type>
-   <value>i4</value>
+   <value>e4</value>
    <derived>true</derived>
    <enabled>false</enabled>
    <visible>false</visible>

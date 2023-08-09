@@ -12,7 +12,7 @@ the sole purpose of programming logic devices manufactured by
 Intel and sold by Intel or its authorized distributors.  Please
 refer to the applicable agreement for further details, at
 https://fpgasoftware.intel.com/eula.-->
-<ipxact:component xmlns:ipxact="http://www.accellera.org/XMLSchema/IPXACT/1685-2014" xmlns:altera="http://www.altera.com/XMLSchema/IPXact2014/extensions">
+<ipxact:component xmlns:altera="http://www.altera.com/XMLSchema/IPXact2014/extensions" xmlns:ipxact="http://www.accellera.org/XMLSchema/IPXACT/1685-2014">
   <ipxact:vendor>Altera Corporation</ipxact:vendor>
   <ipxact:library>tx_2</ipxact:library>
   <ipxact:name>tx_2</ipxact:name>
@@ -1022,14 +1022,20 @@ https://fpgasoftware.intel.com/eula.-->
       <ipxact:version>1.0</ipxact:version>
     </altera:entity_info>
     <altera:altera_module_parameters>
-      <ipxact:parameters></ipxact:parameters>
+      <ipxact:parameters>
+        <ipxact:parameter parameterId="COUNT_PREPARE_WAIT_VAL" type="int">
+          <ipxact:name>COUNT_PREPARE_WAIT_VAL</ipxact:name>
+          <ipxact:displayName>COUNT_PREPARE_WAIT_VAL</ipxact:displayName>
+          <ipxact:value>80</ipxact:value>
+        </ipxact:parameter>
+      </ipxact:parameters>
     </altera:altera_module_parameters>
     <altera:altera_system_parameters>
       <ipxact:parameters>
         <ipxact:parameter parameterId="device" type="string">
           <ipxact:name>device</ipxact:name>
           <ipxact:displayName>Device</ipxact:displayName>
-          <ipxact:value>10CX220YF780I5G</ipxact:value>
+          <ipxact:value>10CX220YF780E5G</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="deviceFamily" type="string">
           <ipxact:name>deviceFamily</ipxact:name>

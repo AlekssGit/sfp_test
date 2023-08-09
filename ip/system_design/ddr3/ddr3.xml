@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deploy
- date="2023.05.20.14:38:09"
+ date="2023.06.22.17:39:19"
  outputDirectory="D:/Documents/Projects/Learning/SFP_test/ip/system_design/ddr3/">
  <perimeter>
   <parameter
@@ -24,7 +24,7 @@
   <parameter
      name="AUTO_DEVICE"
      type="String"
-     defaultValue="10CX220YF780I5G"
+     defaultValue="10CX220YF780E5G"
      onHdl="0"
      affectsHdl="1" />
   <parameter
@@ -191,7 +191,7 @@
  </perimeter>
  <entity kind="ddr3" version="1.0" name="ddr3">
   <parameter name="AUTO_GENERATION_ID" value="0" />
-  <parameter name="AUTO_DEVICE" value="10CX220YF780I5G" />
+  <parameter name="AUTO_DEVICE" value="10CX220YF780E5G" />
   <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone 10 GX" />
   <parameter name="AUTO_PLL_REF_CLK_RESET_DOMAIN" value="-1" />
   <parameter name="AUTO_UNIQUE_ID" value="" />
@@ -238,15 +238,15 @@
   </childSourceFiles>
   <messages>
    <message level="Info" culprit="ddr3">"Generating: ddr3"</message>
-   <message level="Info" culprit="ddr3">"Generating: ddr3_altera_emif_c10_1910_c6wrrsi"</message>
-   <message level="Info" culprit="ddr3">"Generating: ddr3_altera_emif_arch_nf_191_zhajlla"</message>
-   <message level="Info" culprit="ddr3">"Generating: ddr3_altera_emif_ecc_191_gxje6ji"</message>
+   <message level="Info" culprit="ddr3">"Generating: ddr3_altera_emif_c10_1910_szj773a"</message>
+   <message level="Info" culprit="ddr3">"Generating: ddr3_altera_emif_arch_nf_191_rzd4hmq"</message>
+   <message level="Info" culprit="ddr3">"Generating: ddr3_altera_emif_ecc_191_avv67ei"</message>
    <message level="Info" culprit="ddr3">"Generating: altera_emif_ecc_core"</message>
    <message level="Info" culprit="ddr3">"Generating: ddr3_altera_emif_cal_slave_nf_191_rmzieji"</message>
    <message level="Info" culprit="ddr3">"Generating: ddr3_altera_avalon_mm_bridge_2001_k2bg7dq"</message>
    <message level="Info" culprit="ddr3">"Generating: ddr3_altera_avalon_onchip_memory2_1931_ecie4wq"</message>
    <message level="Info" culprit="ioaux_soft_ram">Starting RTL generation for module 'ddr3_altera_avalon_onchip_memory2_1931_ecie4wq'</message>
-   <message level="Info" culprit="ioaux_soft_ram">  Generation command is [exec C:/intelfpga_pro/21.3/quartus/bin64//perl/bin/perl.exe -I C:/intelfpga_pro/21.3/quartus/bin64//perl/lib -I C:/intelfpga_pro/21.3/quartus/sopc_builder/bin/europa -I C:/intelfpga_pro/21.3/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_pro/21.3/quartus/sopc_builder/bin -I C:/intelfpga_pro/21.3/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_pro/21.3/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- C:/intelfpga_pro/21.3/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=ddr3_altera_avalon_onchip_memory2_1931_ecie4wq --dir=C:/Users/ALEKSA~1/AppData/Local/Temp/alt9497_795488674088469455.dir/0019_ioaux_soft_ram_gen/ --quartus_dir=C:/intelfpga_pro/21.3/quartus --verilog --config=C:/Users/ALEKSA~1/AppData/Local/Temp/alt9497_795488674088469455.dir/0019_ioaux_soft_ram_gen//ddr3_altera_avalon_onchip_memory2_1931_ecie4wq_component_configuration.pl  --do_build_sim=0  ]</message>
+   <message level="Info" culprit="ioaux_soft_ram">  Generation command is [exec C:/intelfpga_pro/21.3/quartus/bin64//perl/bin/perl.exe -I C:/intelfpga_pro/21.3/quartus/bin64//perl/lib -I C:/intelfpga_pro/21.3/quartus/sopc_builder/bin/europa -I C:/intelfpga_pro/21.3/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_pro/21.3/quartus/sopc_builder/bin -I C:/intelfpga_pro/21.3/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_pro/21.3/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- C:/intelfpga_pro/21.3/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=ddr3_altera_avalon_onchip_memory2_1931_ecie4wq --dir=C:/Users/ALEKSA~1/AppData/Local/Temp/alt9530_7639908179846662063.dir/0019_ioaux_soft_ram_gen/ --quartus_dir=C:/intelfpga_pro/21.3/quartus --verilog --config=C:/Users/ALEKSA~1/AppData/Local/Temp/alt9530_7639908179846662063.dir/0019_ioaux_soft_ram_gen//ddr3_altera_avalon_onchip_memory2_1931_ecie4wq_component_configuration.pl  --do_build_sim=0  ]</message>
    <message level="Info" culprit="ioaux_soft_ram">Done RTL generation for module 'ddr3_altera_avalon_onchip_memory2_1931_ecie4wq'</message>
    <message level="Info" culprit="ddr3">"Generating: ddr3_altera_mm_interconnect_1920_trcm3ta"</message>
    <message level="Info" culprit="ddr3">"Generating: ddr3_altera_merlin_master_translator_191_g7h47bq"</message>
@@ -257,7 +257,7 @@
  <entity
    kind="altera_emif_c10"
    version="19.1.0"
-   name="ddr3_altera_emif_c10_1910_c6wrrsi">
+   name="ddr3_altera_emif_c10_1910_szj773a">
   <parameter name="PHY_DDRT_IO_VOLTAGE" value="1.2" />
   <parameter name="BOARD_QDR4_USE_DEFAULT_SLEW_RATES" value="true" />
   <parameter name="CTRL_QDR4_WAR_TURNAROUND_DELAY_CYC" value="11" />
@@ -513,7 +513,7 @@
   <parameter name="PHY_QDR2_DEFAULT_IO" value="true" />
   <parameter name="MEM_DDR3_TTL_DM_WIDTH" value="5" />
   <parameter name="PHY_RLD2_CONFIG_ENUM" value="CONFIG_PHY_AND_SOFT_CTRL" />
-  <parameter name="PHY_TARGET_SPEEDGRADE" value="I5" />
+  <parameter name="PHY_TARGET_SPEEDGRADE" value="E5" />
   <parameter name="PHY_RLD3_DATA_IN_MODE_ENUM" value="unset" />
   <parameter name="MEM_DDR3_ATCL_ENUM" value="DDR3_ATCL_DISABLED" />
   <parameter name="MEM_LPDDR3_CTRL_CFG_WRITE_ODT_RANK" value="0" />
@@ -966,7 +966,7 @@
   <parameter name="DIAG_RLD2_SIM_VERBOSE" value="true" />
   <parameter
      name="PHY_FPGA_SPEEDGRADE_GUI"
-     value="I5 (Production) - change device under &apos;View&apos;-&gt;&apos;Device Family&apos;" />
+     value="E5 (Production) - change device under &apos;View&apos;-&gt;&apos;Device Family&apos;" />
   <parameter name="DIAG_QDR2_SIM_CAL_MODE_ENUM" value="SIM_CAL_MODE_SKIP" />
   <parameter
      name="MEM_DDR4_USER_VREFDQ_TRAINING_RANGE"
@@ -1173,7 +1173,7 @@
   <parameter name="CTRL_DDR3_ECC_STATUS_EN" value="false" />
   <parameter name="PHY_QDR4_AC_DEEMPHASIS_ENUM" value="unset" />
   <parameter name="BOARD_RLD3_USE_DEFAULT_SLEW_RATES" value="true" />
-  <parameter name="SYS_INFO_DEVICE" value="10CX220YF780I5G" />
+  <parameter name="SYS_INFO_DEVICE" value="10CX220YF780E5G" />
   <parameter name="PHY_QDR4_USER_DLL_CORE_UPDN_EN" value="true" />
   <parameter name="PHY_RLD3_AC_SLEW_RATE_ENUM" value="unset" />
   <parameter name="MEM_DDR3_TDQSCKDS" value="450" />
@@ -1978,7 +1978,7 @@
   <parameter name="PHY_QDR2_USER_AC_MODE_ENUM" value="unset" />
   <parameter name="DIAG_QDR4_SEPARATE_READ_WRITE_ITFS" value="false" />
   <parameter name="MEM_DDR4_CK_WIDTH" value="1" />
-  <parameter name="SYS_INFO_DEVICE_TEMPERATURE_GRADE" value="INDUSTRIAL" />
+  <parameter name="SYS_INFO_DEVICE_TEMPERATURE_GRADE" value="EXTENDED" />
   <parameter name="PHY_QDR2_DEFAULT_REF_CLK_FREQ" value="true" />
   <parameter name="PHY_QDR4_DATA_IN_MODE_ENUM" value="unset" />
   <parameter name="MEM_DDR4_SPD_148_DRAM_DRV" value="0" />
@@ -2797,12 +2797,12 @@
   <parameter name="MEM_DDRT_W_ODT0_4X4" value="on,on,off,off" />
   <generatedFiles>
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\ddr3\altera_emif_c10_1910\synth\ddr3_altera_emif_c10_1910_c6wrrsi.v"
+       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\ddr3\altera_emif_c10_1910\synth\ddr3_altera_emif_c10_1910_szj773a.v"
        attributes="CONTAINS_INLINE_CONFIGURATION" />
   </generatedFiles>
   <childGeneratedFiles>
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\ddr3\altera_emif_c10_1910\synth\ddr3_altera_emif_c10_1910_c6wrrsi.v"
+       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\ddr3\altera_emif_c10_1910\synth\ddr3_altera_emif_c10_1910_szj773a.v"
        attributes="CONTAINS_INLINE_CONFIGURATION" />
   </childGeneratedFiles>
   <sourceFiles>
@@ -2833,15 +2833,15 @@
   </childSourceFiles>
   <instantiator instantiator="ddr3" as="ddr3" />
   <messages>
-   <message level="Info" culprit="ddr3">"Generating: ddr3_altera_emif_c10_1910_c6wrrsi"</message>
-   <message level="Info" culprit="ddr3">"Generating: ddr3_altera_emif_arch_nf_191_zhajlla"</message>
-   <message level="Info" culprit="ddr3">"Generating: ddr3_altera_emif_ecc_191_gxje6ji"</message>
+   <message level="Info" culprit="ddr3">"Generating: ddr3_altera_emif_c10_1910_szj773a"</message>
+   <message level="Info" culprit="ddr3">"Generating: ddr3_altera_emif_arch_nf_191_rzd4hmq"</message>
+   <message level="Info" culprit="ddr3">"Generating: ddr3_altera_emif_ecc_191_avv67ei"</message>
    <message level="Info" culprit="ddr3">"Generating: altera_emif_ecc_core"</message>
    <message level="Info" culprit="ddr3">"Generating: ddr3_altera_emif_cal_slave_nf_191_rmzieji"</message>
    <message level="Info" culprit="ddr3">"Generating: ddr3_altera_avalon_mm_bridge_2001_k2bg7dq"</message>
    <message level="Info" culprit="ddr3">"Generating: ddr3_altera_avalon_onchip_memory2_1931_ecie4wq"</message>
    <message level="Info" culprit="ioaux_soft_ram">Starting RTL generation for module 'ddr3_altera_avalon_onchip_memory2_1931_ecie4wq'</message>
-   <message level="Info" culprit="ioaux_soft_ram">  Generation command is [exec C:/intelfpga_pro/21.3/quartus/bin64//perl/bin/perl.exe -I C:/intelfpga_pro/21.3/quartus/bin64//perl/lib -I C:/intelfpga_pro/21.3/quartus/sopc_builder/bin/europa -I C:/intelfpga_pro/21.3/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_pro/21.3/quartus/sopc_builder/bin -I C:/intelfpga_pro/21.3/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_pro/21.3/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- C:/intelfpga_pro/21.3/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=ddr3_altera_avalon_onchip_memory2_1931_ecie4wq --dir=C:/Users/ALEKSA~1/AppData/Local/Temp/alt9497_795488674088469455.dir/0019_ioaux_soft_ram_gen/ --quartus_dir=C:/intelfpga_pro/21.3/quartus --verilog --config=C:/Users/ALEKSA~1/AppData/Local/Temp/alt9497_795488674088469455.dir/0019_ioaux_soft_ram_gen//ddr3_altera_avalon_onchip_memory2_1931_ecie4wq_component_configuration.pl  --do_build_sim=0  ]</message>
+   <message level="Info" culprit="ioaux_soft_ram">  Generation command is [exec C:/intelfpga_pro/21.3/quartus/bin64//perl/bin/perl.exe -I C:/intelfpga_pro/21.3/quartus/bin64//perl/lib -I C:/intelfpga_pro/21.3/quartus/sopc_builder/bin/europa -I C:/intelfpga_pro/21.3/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_pro/21.3/quartus/sopc_builder/bin -I C:/intelfpga_pro/21.3/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_pro/21.3/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- C:/intelfpga_pro/21.3/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=ddr3_altera_avalon_onchip_memory2_1931_ecie4wq --dir=C:/Users/ALEKSA~1/AppData/Local/Temp/alt9530_7639908179846662063.dir/0019_ioaux_soft_ram_gen/ --quartus_dir=C:/intelfpga_pro/21.3/quartus --verilog --config=C:/Users/ALEKSA~1/AppData/Local/Temp/alt9530_7639908179846662063.dir/0019_ioaux_soft_ram_gen//ddr3_altera_avalon_onchip_memory2_1931_ecie4wq_component_configuration.pl  --do_build_sim=0  ]</message>
    <message level="Info" culprit="ioaux_soft_ram">Done RTL generation for module 'ddr3_altera_avalon_onchip_memory2_1931_ecie4wq'</message>
    <message level="Info" culprit="ddr3">"Generating: ddr3_altera_mm_interconnect_1920_trcm3ta"</message>
    <message level="Info" culprit="ddr3">"Generating: ddr3_altera_merlin_master_translator_191_g7h47bq"</message>
@@ -2852,7 +2852,7 @@
  <entity
    kind="altera_emif_arch_nf"
    version="19.1"
-   name="ddr3_altera_emif_arch_nf_191_zhajlla">
+   name="ddr3_altera_emif_arch_nf_191_rzd4hmq">
   <parameter name="SEC_HMC_CFG_WR_TO_WR_DIFF_CHIP" value="3" />
   <parameter name="CTRL_QDR4_WAR_TURNAROUND_DELAY_CYC" value="11" />
   <parameter name="DIAG_QDR2_EX_DESIGN_ISSP_EN" value="true" />
@@ -3035,7 +3035,7 @@
      name="DIAG_DDR4_EXPORT_SEQ_AVALON_SLAVE"
      value="CAL_DEBUG_EXPORT_MODE_DISABLED" />
   <parameter name="MEM_DDR3_TTL_DM_WIDTH" value="5" />
-  <parameter name="PHY_TARGET_SPEEDGRADE" value="I5" />
+  <parameter name="PHY_TARGET_SPEEDGRADE" value="E5" />
   <parameter name="PHY_DDRT_USER_DATA_IO_STD_ENUM" value="unset" />
   <parameter name="CENTER_TIDS_1" value="0" />
   <parameter name="MEM_DDR4_DISCRETE_MIRROR_ADDRESSING_EN" value="false" />
@@ -3372,7 +3372,7 @@
   <parameter name="PORT_MEM_A_PINLOC_AUTOGEN_WCNT" value="17" />
   <parameter
      name="PHY_FPGA_SPEEDGRADE_GUI"
-     value="I5 (Production) - change device under &apos;View&apos;-&gt;&apos;Device Family&apos;" />
+     value="E5 (Production) - change device under &apos;View&apos;-&gt;&apos;Device Family&apos;" />
   <parameter name="PRI_HMC_CFG_MEM_IF_ROWADDR_WIDTH" value="row_width_15" />
   <parameter name="PINS_WDB_15" value="0" />
   <parameter name="PINS_WDB_14" value="0" />
@@ -5529,7 +5529,7 @@
   <parameter name="PHY_RLD2_PLL_REF_CLK_IO_STD_ENUM" value="unset" />
   <parameter name="CTRL_DDR3_ECC_STATUS_EN" value="false" />
   <parameter name="PHY_QDR4_AC_DEEMPHASIS_ENUM" value="unset" />
-  <parameter name="SYS_INFO_DEVICE" value="10CX220YF780I5G" />
+  <parameter name="SYS_INFO_DEVICE" value="10CX220YF780E5G" />
   <parameter name="PHY_QDR4_USER_DLL_CORE_UPDN_EN" value="true" />
   <parameter name="PHY_RLD3_AC_SLEW_RATE_ENUM" value="unset" />
   <parameter name="MEM_DDR3_TDQSCKDS" value="450" />
@@ -6182,7 +6182,7 @@
      value="CAL_DEBUG_EXPORT_MODE_DISABLED" />
   <parameter name="PHY_QDR2_USER_AC_MODE_ENUM" value="unset" />
   <parameter name="MEM_DDR4_CK_WIDTH" value="1" />
-  <parameter name="SYS_INFO_DEVICE_TEMPERATURE_GRADE" value="INDUSTRIAL" />
+  <parameter name="SYS_INFO_DEVICE_TEMPERATURE_GRADE" value="EXTENDED" />
   <parameter name="SEC_HMC_CFG_SRF_AUTOEXIT_EN" value="disable" />
   <parameter name="BOARD_DDRT_TIS_DERATING_PS" value="0" />
   <parameter name="PORT_CTRL_AMM_ADDRESS_WIDTH" value="1" />
@@ -6914,10 +6914,10 @@
   <parameter name="MEM_DDRT_I2C_DIMM_0_SA" value="0" />
   <generatedFiles>
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\ddr3\altera_emif_arch_nf_191\synth\ddr3_altera_emif_arch_nf_191_zhajlla_top.sv"
+       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\ddr3\altera_emif_arch_nf_191\synth\ddr3_altera_emif_arch_nf_191_rzd4hmq_top.sv"
        attributes="" />
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\ddr3\altera_emif_arch_nf_191\synth\ddr3_altera_emif_arch_nf_191_zhajlla_io_aux.sv"
+       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\ddr3\altera_emif_arch_nf_191\synth\ddr3_altera_emif_arch_nf_191_rzd4hmq_io_aux.sv"
        attributes="" />
    <file
        path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\ddr3\altera_emif_arch_nf_191\synth\altera_emif_arch_nf_oct.sv"
@@ -6965,7 +6965,7 @@
        path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\ddr3\altera_emif_arch_nf_191\synth\twentynm_io_12_lane_nf5es_encrypted_abphy.sv"
        attributes="" />
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\ddr3\altera_emif_arch_nf_191\synth\ddr3_altera_emif_arch_nf_191_zhajlla.sv"
+       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\ddr3\altera_emif_arch_nf_191\synth\ddr3_altera_emif_arch_nf_191_rzd4hmq.sv"
        attributes="" />
    <file
        path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\ddr3\altera_emif_arch_nf_191\synth\altera_emif_arch_nf_bufs.sv"
@@ -7025,54 +7025,54 @@
        path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\ddr3\altera_emif_arch_nf_191\synth\altera_std_synchronizer_nocut.v"
        attributes="" />
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\ddr3\altera_emif_arch_nf_191\synth\ddr3_altera_emif_arch_nf_191_zhajlla_ip_parameters.tcl"
+       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\ddr3\altera_emif_arch_nf_191\synth\ddr3_altera_emif_arch_nf_191_rzd4hmq_ip_parameters.tcl"
        attributes="" />
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\ddr3\altera_emif_arch_nf_191\synth\ddr3_altera_emif_arch_nf_191_zhajlla_utils.tcl"
+       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\ddr3\altera_emif_arch_nf_191\synth\ddr3_altera_emif_arch_nf_191_rzd4hmq_utils.tcl"
        attributes="" />
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\ddr3\altera_emif_arch_nf_191\synth\ddr3_altera_emif_arch_nf_191_zhajlla_parameters.tcl"
+       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\ddr3\altera_emif_arch_nf_191\synth\ddr3_altera_emif_arch_nf_191_rzd4hmq_parameters.tcl"
        attributes="" />
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\ddr3\altera_emif_arch_nf_191\synth\ddr3_altera_emif_arch_nf_191_zhajlla_pin_map.tcl"
+       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\ddr3\altera_emif_arch_nf_191\synth\ddr3_altera_emif_arch_nf_191_rzd4hmq_pin_map.tcl"
        attributes="" />
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\ddr3\altera_emif_arch_nf_191\synth\ddr3_altera_emif_arch_nf_191_zhajlla_report_io_timing.tcl"
+       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\ddr3\altera_emif_arch_nf_191\synth\ddr3_altera_emif_arch_nf_191_rzd4hmq_report_io_timing.tcl"
        attributes="" />
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\ddr3\altera_emif_arch_nf_191\synth\ddr3_altera_emif_arch_nf_191_zhajlla_report_timing.tcl"
+       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\ddr3\altera_emif_arch_nf_191\synth\ddr3_altera_emif_arch_nf_191_rzd4hmq_report_timing.tcl"
        attributes="" />
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\ddr3\altera_emif_arch_nf_191\synth\ddr3_altera_emif_arch_nf_191_zhajlla_report_timing_core.tcl"
+       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\ddr3\altera_emif_arch_nf_191\synth\ddr3_altera_emif_arch_nf_191_rzd4hmq_report_timing_core.tcl"
        attributes="" />
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\ddr3\altera_emif_arch_nf_191\synth\ddr3_altera_emif_arch_nf_191_zhajlla.sdc"
+       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\ddr3\altera_emif_arch_nf_191\synth\ddr3_altera_emif_arch_nf_191_rzd4hmq.sdc"
        attributes="NO_AUTO_INSTANCE_DISCOVERY NO_SDC_PROMOTION" />
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\ddr3\altera_emif_arch_nf_191\synth\ddr3_altera_emif_arch_nf_191_zhajlla_seq_params_sim.hex"
+       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\ddr3\altera_emif_arch_nf_191\synth\ddr3_altera_emif_arch_nf_191_rzd4hmq_seq_params_sim.hex"
        attributes="" />
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\ddr3\altera_emif_arch_nf_191\synth\ddr3_altera_emif_arch_nf_191_zhajlla_seq_params_sim.txt"
+       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\ddr3\altera_emif_arch_nf_191\synth\ddr3_altera_emif_arch_nf_191_rzd4hmq_seq_params_sim.txt"
        attributes="" />
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\ddr3\altera_emif_arch_nf_191\synth\ddr3_altera_emif_arch_nf_191_zhajlla_seq_params_synth.hex"
+       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\ddr3\altera_emif_arch_nf_191\synth\ddr3_altera_emif_arch_nf_191_rzd4hmq_seq_params_synth.hex"
        attributes="" />
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\ddr3\altera_emif_arch_nf_191\synth\ddr3_altera_emif_arch_nf_191_zhajlla_seq_params_synth.txt"
+       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\ddr3\altera_emif_arch_nf_191\synth\ddr3_altera_emif_arch_nf_191_rzd4hmq_seq_params_synth.txt"
        attributes="" />
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\ddr3\altera_emif_arch_nf_191\synth\ddr3_altera_emif_arch_nf_191_zhajlla_seq_cal.hex"
+       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\ddr3\altera_emif_arch_nf_191\synth\ddr3_altera_emif_arch_nf_191_rzd4hmq_seq_cal.hex"
        attributes="" />
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\ddr3\altera_emif_arch_nf_191\synth\ddr3_altera_emif_arch_nf_191_zhajlla_readme.txt"
+       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\ddr3\altera_emif_arch_nf_191\synth\ddr3_altera_emif_arch_nf_191_rzd4hmq_readme.txt"
        attributes="" />
   </generatedFiles>
   <childGeneratedFiles>
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\ddr3\altera_emif_arch_nf_191\synth\ddr3_altera_emif_arch_nf_191_zhajlla_top.sv"
+       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\ddr3\altera_emif_arch_nf_191\synth\ddr3_altera_emif_arch_nf_191_rzd4hmq_top.sv"
        attributes="" />
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\ddr3\altera_emif_arch_nf_191\synth\ddr3_altera_emif_arch_nf_191_zhajlla_io_aux.sv"
+       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\ddr3\altera_emif_arch_nf_191\synth\ddr3_altera_emif_arch_nf_191_rzd4hmq_io_aux.sv"
        attributes="" />
    <file
        path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\ddr3\altera_emif_arch_nf_191\synth\altera_emif_arch_nf_oct.sv"
@@ -7120,7 +7120,7 @@
        path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\ddr3\altera_emif_arch_nf_191\synth\twentynm_io_12_lane_nf5es_encrypted_abphy.sv"
        attributes="" />
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\ddr3\altera_emif_arch_nf_191\synth\ddr3_altera_emif_arch_nf_191_zhajlla.sv"
+       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\ddr3\altera_emif_arch_nf_191\synth\ddr3_altera_emif_arch_nf_191_rzd4hmq.sv"
        attributes="" />
    <file
        path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\ddr3\altera_emif_arch_nf_191\synth\altera_emif_arch_nf_bufs.sv"
@@ -7180,46 +7180,46 @@
        path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\ddr3\altera_emif_arch_nf_191\synth\altera_std_synchronizer_nocut.v"
        attributes="" />
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\ddr3\altera_emif_arch_nf_191\synth\ddr3_altera_emif_arch_nf_191_zhajlla_ip_parameters.tcl"
+       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\ddr3\altera_emif_arch_nf_191\synth\ddr3_altera_emif_arch_nf_191_rzd4hmq_ip_parameters.tcl"
        attributes="" />
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\ddr3\altera_emif_arch_nf_191\synth\ddr3_altera_emif_arch_nf_191_zhajlla_utils.tcl"
+       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\ddr3\altera_emif_arch_nf_191\synth\ddr3_altera_emif_arch_nf_191_rzd4hmq_utils.tcl"
        attributes="" />
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\ddr3\altera_emif_arch_nf_191\synth\ddr3_altera_emif_arch_nf_191_zhajlla_parameters.tcl"
+       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\ddr3\altera_emif_arch_nf_191\synth\ddr3_altera_emif_arch_nf_191_rzd4hmq_parameters.tcl"
        attributes="" />
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\ddr3\altera_emif_arch_nf_191\synth\ddr3_altera_emif_arch_nf_191_zhajlla_pin_map.tcl"
+       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\ddr3\altera_emif_arch_nf_191\synth\ddr3_altera_emif_arch_nf_191_rzd4hmq_pin_map.tcl"
        attributes="" />
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\ddr3\altera_emif_arch_nf_191\synth\ddr3_altera_emif_arch_nf_191_zhajlla_report_io_timing.tcl"
+       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\ddr3\altera_emif_arch_nf_191\synth\ddr3_altera_emif_arch_nf_191_rzd4hmq_report_io_timing.tcl"
        attributes="" />
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\ddr3\altera_emif_arch_nf_191\synth\ddr3_altera_emif_arch_nf_191_zhajlla_report_timing.tcl"
+       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\ddr3\altera_emif_arch_nf_191\synth\ddr3_altera_emif_arch_nf_191_rzd4hmq_report_timing.tcl"
        attributes="" />
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\ddr3\altera_emif_arch_nf_191\synth\ddr3_altera_emif_arch_nf_191_zhajlla_report_timing_core.tcl"
+       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\ddr3\altera_emif_arch_nf_191\synth\ddr3_altera_emif_arch_nf_191_rzd4hmq_report_timing_core.tcl"
        attributes="" />
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\ddr3\altera_emif_arch_nf_191\synth\ddr3_altera_emif_arch_nf_191_zhajlla.sdc"
+       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\ddr3\altera_emif_arch_nf_191\synth\ddr3_altera_emif_arch_nf_191_rzd4hmq.sdc"
        attributes="NO_AUTO_INSTANCE_DISCOVERY NO_SDC_PROMOTION" />
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\ddr3\altera_emif_arch_nf_191\synth\ddr3_altera_emif_arch_nf_191_zhajlla_seq_params_sim.hex"
+       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\ddr3\altera_emif_arch_nf_191\synth\ddr3_altera_emif_arch_nf_191_rzd4hmq_seq_params_sim.hex"
        attributes="" />
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\ddr3\altera_emif_arch_nf_191\synth\ddr3_altera_emif_arch_nf_191_zhajlla_seq_params_sim.txt"
+       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\ddr3\altera_emif_arch_nf_191\synth\ddr3_altera_emif_arch_nf_191_rzd4hmq_seq_params_sim.txt"
        attributes="" />
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\ddr3\altera_emif_arch_nf_191\synth\ddr3_altera_emif_arch_nf_191_zhajlla_seq_params_synth.hex"
+       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\ddr3\altera_emif_arch_nf_191\synth\ddr3_altera_emif_arch_nf_191_rzd4hmq_seq_params_synth.hex"
        attributes="" />
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\ddr3\altera_emif_arch_nf_191\synth\ddr3_altera_emif_arch_nf_191_zhajlla_seq_params_synth.txt"
+       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\ddr3\altera_emif_arch_nf_191\synth\ddr3_altera_emif_arch_nf_191_rzd4hmq_seq_params_synth.txt"
        attributes="" />
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\ddr3\altera_emif_arch_nf_191\synth\ddr3_altera_emif_arch_nf_191_zhajlla_seq_cal.hex"
+       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\ddr3\altera_emif_arch_nf_191\synth\ddr3_altera_emif_arch_nf_191_rzd4hmq_seq_cal.hex"
        attributes="" />
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\ddr3\altera_emif_arch_nf_191\synth\ddr3_altera_emif_arch_nf_191_zhajlla_readme.txt"
+       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\ddr3\altera_emif_arch_nf_191\synth\ddr3_altera_emif_arch_nf_191_rzd4hmq_readme.txt"
        attributes="" />
   </childGeneratedFiles>
   <sourceFiles>
@@ -7227,15 +7227,15 @@
        path="C:/intelfpga_pro/21.3/ip/altera/emif/ip_arch_nf/altera_emif_arch_nf_hw.tcl" />
   </sourceFiles>
   <childSourceFiles/>
-  <instantiator instantiator="ddr3_altera_emif_c10_1910_c6wrrsi" as="arch" />
+  <instantiator instantiator="ddr3_altera_emif_c10_1910_szj773a" as="arch" />
   <messages>
-   <message level="Info" culprit="ddr3">"Generating: ddr3_altera_emif_arch_nf_191_zhajlla"</message>
+   <message level="Info" culprit="ddr3">"Generating: ddr3_altera_emif_arch_nf_191_rzd4hmq"</message>
   </messages>
  </entity>
  <entity
    kind="altera_emif_ecc"
    version="19.1"
-   name="ddr3_altera_emif_ecc_191_gxje6ji">
+   name="ddr3_altera_emif_ecc_191_avv67ei">
   <parameter name="PHY_DDRT_IO_VOLTAGE" value="1.2" />
   <parameter name="BOARD_QDR4_USE_DEFAULT_SLEW_RATES" value="true" />
   <parameter name="CTRL_QDR4_WAR_TURNAROUND_DELAY_CYC" value="11" />
@@ -7492,7 +7492,7 @@
   <parameter name="PHY_QDR2_DEFAULT_IO" value="true" />
   <parameter name="MEM_DDR3_TTL_DM_WIDTH" value="5" />
   <parameter name="PHY_RLD2_CONFIG_ENUM" value="CONFIG_PHY_AND_SOFT_CTRL" />
-  <parameter name="PHY_TARGET_SPEEDGRADE" value="I5" />
+  <parameter name="PHY_TARGET_SPEEDGRADE" value="E5" />
   <parameter name="PHY_RLD3_DATA_IN_MODE_ENUM" value="unset" />
   <parameter name="MEM_DDR3_ATCL_ENUM" value="DDR3_ATCL_DISABLED" />
   <parameter name="MEM_LPDDR3_CTRL_CFG_WRITE_ODT_RANK" value="0" />
@@ -7945,7 +7945,7 @@
   <parameter name="DIAG_RLD2_SIM_VERBOSE" value="true" />
   <parameter
      name="PHY_FPGA_SPEEDGRADE_GUI"
-     value="I5 (Production) - change device under &apos;View&apos;-&gt;&apos;Device Family&apos;" />
+     value="E5 (Production) - change device under &apos;View&apos;-&gt;&apos;Device Family&apos;" />
   <parameter name="DIAG_QDR2_SIM_CAL_MODE_ENUM" value="SIM_CAL_MODE_SKIP" />
   <parameter
      name="MEM_DDR4_USER_VREFDQ_TRAINING_RANGE"
@@ -8153,7 +8153,7 @@
   <parameter name="CTRL_DDR3_ECC_STATUS_EN" value="false" />
   <parameter name="PHY_QDR4_AC_DEEMPHASIS_ENUM" value="unset" />
   <parameter name="BOARD_RLD3_USE_DEFAULT_SLEW_RATES" value="true" />
-  <parameter name="SYS_INFO_DEVICE" value="10CX220YF780I5G" />
+  <parameter name="SYS_INFO_DEVICE" value="10CX220YF780E5G" />
   <parameter name="PHY_QDR4_USER_DLL_CORE_UPDN_EN" value="true" />
   <parameter name="PHY_RLD3_AC_SLEW_RATE_ENUM" value="unset" />
   <parameter name="MEM_DDR3_TDQSCKDS" value="450" />
@@ -8958,7 +8958,7 @@
   <parameter name="PHY_QDR2_USER_AC_MODE_ENUM" value="unset" />
   <parameter name="DIAG_QDR4_SEPARATE_READ_WRITE_ITFS" value="false" />
   <parameter name="MEM_DDR4_CK_WIDTH" value="1" />
-  <parameter name="SYS_INFO_DEVICE_TEMPERATURE_GRADE" value="INDUSTRIAL" />
+  <parameter name="SYS_INFO_DEVICE_TEMPERATURE_GRADE" value="EXTENDED" />
   <parameter name="PHY_QDR2_DEFAULT_REF_CLK_FREQ" value="true" />
   <parameter name="PHY_QDR4_DATA_IN_MODE_ENUM" value="unset" />
   <parameter name="MEM_DDR4_SPD_148_DRAM_DRV" value="0" />
@@ -9511,7 +9511,7 @@
   <parameter name="PLL_EXTRA_CLK_ACTUAL_DUTY_CYCLE_GUI_4" value="50.0" />
   <parameter name="PLL_EXTRA_CLK_ACTUAL_DUTY_CYCLE_GUI_5" value="50.0" />
   <parameter name="CTRL_AUTO_PRECHARGE_EN" value="false" />
-  <parameter name="AUTO_DEVICE" value="10CX220YF780I5G" />
+  <parameter name="AUTO_DEVICE" value="10CX220YF780E5G" />
   <parameter name="PLL_EXTRA_CLK_ACTUAL_DUTY_CYCLE_GUI_6" value="50.0" />
   <parameter name="MEM_DDRT_SPD_141_DRAM_VREFDQ_R1" value="29" />
   <parameter name="PLL_EXTRA_CLK_ACTUAL_DUTY_CYCLE_GUI_7" value="50.0" />
@@ -9778,12 +9778,12 @@
   <parameter name="MEM_DDRT_W_ODT0_4X4" value="on,on,off,off" />
   <generatedFiles>
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\ddr3\altera_emif_ecc_191\synth\ddr3_altera_emif_ecc_191_gxje6ji.v"
+       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\ddr3\altera_emif_ecc_191\synth\ddr3_altera_emif_ecc_191_avv67ei.v"
        attributes="CONTAINS_INLINE_CONFIGURATION" />
   </generatedFiles>
   <childGeneratedFiles>
    <file
-       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\ddr3\altera_emif_ecc_191\synth\ddr3_altera_emif_ecc_191_gxje6ji.v"
+       path="D:\Documents\Projects\Learning\SFP_test\ip\system_design\ddr3\altera_emif_ecc_191\synth\ddr3_altera_emif_ecc_191_avv67ei.v"
        attributes="CONTAINS_INLINE_CONFIGURATION" />
   </childGeneratedFiles>
   <sourceFiles>
@@ -9794,9 +9794,9 @@
    <file
        path="C:/intelfpga_pro/21.3/ip/altera/emif/ip_ecc/ip_core_nf/altera_emif_ecc_nf_hw.tcl" />
   </childSourceFiles>
-  <instantiator instantiator="ddr3_altera_emif_c10_1910_c6wrrsi" as="ecc_core" />
+  <instantiator instantiator="ddr3_altera_emif_c10_1910_szj773a" as="ecc_core" />
   <messages>
-   <message level="Info" culprit="ddr3">"Generating: ddr3_altera_emif_ecc_191_gxje6ji"</message>
+   <message level="Info" culprit="ddr3">"Generating: ddr3_altera_emif_ecc_191_avv67ei"</message>
    <message level="Info" culprit="ddr3">"Generating: altera_emif_ecc_core"</message>
   </messages>
  </entity>
@@ -9807,7 +9807,7 @@
   <parameter
      name="SOFT_RAM_HEXFILE"
      value="../../emif/ip_arch_nf/src/seq_cal_soft_m20k.hex" />
-  <parameter name="AUTO_DEVICE" value="10CX220YF780I5G" />
+  <parameter name="AUTO_DEVICE" value="10CX220YF780E5G" />
   <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone 10 GX" />
   <parameter name="ENABLE_JTAG_UART" value="false" />
   <parameter name="ENABLE_SOFT_RAM" value="true" />
@@ -9841,14 +9841,14 @@
        path="C:/intelfpga_pro/21.3/ip/altera/merlin/altera_reset_controller/altera_reset_controller_hw.tcl" />
   </childSourceFiles>
   <instantiator
-     instantiator="ddr3_altera_emif_c10_1910_c6wrrsi"
+     instantiator="ddr3_altera_emif_c10_1910_szj773a"
      as="cal_slave_component" />
   <messages>
    <message level="Info" culprit="ddr3">"Generating: ddr3_altera_emif_cal_slave_nf_191_rmzieji"</message>
    <message level="Info" culprit="ddr3">"Generating: ddr3_altera_avalon_mm_bridge_2001_k2bg7dq"</message>
    <message level="Info" culprit="ddr3">"Generating: ddr3_altera_avalon_onchip_memory2_1931_ecie4wq"</message>
    <message level="Info" culprit="ioaux_soft_ram">Starting RTL generation for module 'ddr3_altera_avalon_onchip_memory2_1931_ecie4wq'</message>
-   <message level="Info" culprit="ioaux_soft_ram">  Generation command is [exec C:/intelfpga_pro/21.3/quartus/bin64//perl/bin/perl.exe -I C:/intelfpga_pro/21.3/quartus/bin64//perl/lib -I C:/intelfpga_pro/21.3/quartus/sopc_builder/bin/europa -I C:/intelfpga_pro/21.3/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_pro/21.3/quartus/sopc_builder/bin -I C:/intelfpga_pro/21.3/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_pro/21.3/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- C:/intelfpga_pro/21.3/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=ddr3_altera_avalon_onchip_memory2_1931_ecie4wq --dir=C:/Users/ALEKSA~1/AppData/Local/Temp/alt9497_795488674088469455.dir/0019_ioaux_soft_ram_gen/ --quartus_dir=C:/intelfpga_pro/21.3/quartus --verilog --config=C:/Users/ALEKSA~1/AppData/Local/Temp/alt9497_795488674088469455.dir/0019_ioaux_soft_ram_gen//ddr3_altera_avalon_onchip_memory2_1931_ecie4wq_component_configuration.pl  --do_build_sim=0  ]</message>
+   <message level="Info" culprit="ioaux_soft_ram">  Generation command is [exec C:/intelfpga_pro/21.3/quartus/bin64//perl/bin/perl.exe -I C:/intelfpga_pro/21.3/quartus/bin64//perl/lib -I C:/intelfpga_pro/21.3/quartus/sopc_builder/bin/europa -I C:/intelfpga_pro/21.3/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_pro/21.3/quartus/sopc_builder/bin -I C:/intelfpga_pro/21.3/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_pro/21.3/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- C:/intelfpga_pro/21.3/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=ddr3_altera_avalon_onchip_memory2_1931_ecie4wq --dir=C:/Users/ALEKSA~1/AppData/Local/Temp/alt9530_7639908179846662063.dir/0019_ioaux_soft_ram_gen/ --quartus_dir=C:/intelfpga_pro/21.3/quartus --verilog --config=C:/Users/ALEKSA~1/AppData/Local/Temp/alt9530_7639908179846662063.dir/0019_ioaux_soft_ram_gen//ddr3_altera_avalon_onchip_memory2_1931_ecie4wq_component_configuration.pl  --do_build_sim=0  ]</message>
    <message level="Info" culprit="ioaux_soft_ram">Done RTL generation for module 'ddr3_altera_avalon_onchip_memory2_1931_ecie4wq'</message>
    <message level="Info" culprit="ddr3">"Generating: ddr3_altera_mm_interconnect_1920_trcm3ta"</message>
    <message level="Info" culprit="ddr3">"Generating: ddr3_altera_merlin_master_translator_191_g7h47bq"</message>
@@ -10117,7 +10117,7 @@
   <parameter name="PHY_QDR2_DEFAULT_IO" value="true" />
   <parameter name="MEM_DDR3_TTL_DM_WIDTH" value="5" />
   <parameter name="PHY_RLD2_CONFIG_ENUM" value="CONFIG_PHY_AND_SOFT_CTRL" />
-  <parameter name="PHY_TARGET_SPEEDGRADE" value="I5" />
+  <parameter name="PHY_TARGET_SPEEDGRADE" value="E5" />
   <parameter name="PHY_RLD3_DATA_IN_MODE_ENUM" value="unset" />
   <parameter name="MEM_DDR3_ATCL_ENUM" value="DDR3_ATCL_DISABLED" />
   <parameter name="MEM_LPDDR3_CTRL_CFG_WRITE_ODT_RANK" value="0" />
@@ -10576,7 +10576,7 @@
   <parameter name="DIAG_RLD2_SIM_VERBOSE" value="true" />
   <parameter
      name="PHY_FPGA_SPEEDGRADE_GUI"
-     value="I5 (Production) - change device under &apos;View&apos;-&gt;&apos;Device Family&apos;" />
+     value="E5 (Production) - change device under &apos;View&apos;-&gt;&apos;Device Family&apos;" />
   <parameter name="DIAG_QDR2_SIM_CAL_MODE_ENUM" value="SIM_CAL_MODE_SKIP" />
   <parameter
      name="MEM_DDR4_USER_VREFDQ_TRAINING_RANGE"
@@ -10786,7 +10786,7 @@
   <parameter name="CTRL_DDR3_ECC_STATUS_EN" value="false" />
   <parameter name="PHY_QDR4_AC_DEEMPHASIS_ENUM" value="unset" />
   <parameter name="BOARD_RLD3_USE_DEFAULT_SLEW_RATES" value="true" />
-  <parameter name="SYS_INFO_DEVICE" value="10CX220YF780I5G" />
+  <parameter name="SYS_INFO_DEVICE" value="10CX220YF780E5G" />
   <parameter name="PHY_QDR4_USER_DLL_CORE_UPDN_EN" value="true" />
   <parameter name="PHY_RLD3_AC_SLEW_RATE_ENUM" value="unset" />
   <parameter name="MEM_DDR3_TDQSCKDS" value="450" />
@@ -11601,7 +11601,7 @@
   <parameter name="PHY_QDR2_USER_AC_MODE_ENUM" value="unset" />
   <parameter name="DIAG_QDR4_SEPARATE_READ_WRITE_ITFS" value="false" />
   <parameter name="MEM_DDR4_CK_WIDTH" value="1" />
-  <parameter name="SYS_INFO_DEVICE_TEMPERATURE_GRADE" value="INDUSTRIAL" />
+  <parameter name="SYS_INFO_DEVICE_TEMPERATURE_GRADE" value="EXTENDED" />
   <parameter name="PHY_QDR2_DEFAULT_REF_CLK_FREQ" value="true" />
   <parameter name="PHY_QDR4_DATA_IN_MODE_ENUM" value="unset" />
   <parameter name="MEM_DDR4_SPD_148_DRAM_DRV" value="0" />
@@ -12553,7 +12553,7 @@
        path="C:/intelfpga_pro/21.3/ip/altera/emif/ip_ecc/ip_core_nf/altera_emif_ecc_nf_hw.tcl" />
   </sourceFiles>
   <childSourceFiles/>
-  <instantiator instantiator="ddr3_altera_emif_ecc_191_gxje6ji" as="core" />
+  <instantiator instantiator="ddr3_altera_emif_ecc_191_avv67ei" as="core" />
   <messages>
    <message level="Info" culprit="ddr3">"Generating: altera_emif_ecc_core"</message>
   </messages>
@@ -12659,7 +12659,7 @@
   <messages>
    <message level="Info" culprit="ddr3">"Generating: ddr3_altera_avalon_onchip_memory2_1931_ecie4wq"</message>
    <message level="Info" culprit="ioaux_soft_ram">Starting RTL generation for module 'ddr3_altera_avalon_onchip_memory2_1931_ecie4wq'</message>
-   <message level="Info" culprit="ioaux_soft_ram">  Generation command is [exec C:/intelfpga_pro/21.3/quartus/bin64//perl/bin/perl.exe -I C:/intelfpga_pro/21.3/quartus/bin64//perl/lib -I C:/intelfpga_pro/21.3/quartus/sopc_builder/bin/europa -I C:/intelfpga_pro/21.3/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_pro/21.3/quartus/sopc_builder/bin -I C:/intelfpga_pro/21.3/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_pro/21.3/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- C:/intelfpga_pro/21.3/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=ddr3_altera_avalon_onchip_memory2_1931_ecie4wq --dir=C:/Users/ALEKSA~1/AppData/Local/Temp/alt9497_795488674088469455.dir/0019_ioaux_soft_ram_gen/ --quartus_dir=C:/intelfpga_pro/21.3/quartus --verilog --config=C:/Users/ALEKSA~1/AppData/Local/Temp/alt9497_795488674088469455.dir/0019_ioaux_soft_ram_gen//ddr3_altera_avalon_onchip_memory2_1931_ecie4wq_component_configuration.pl  --do_build_sim=0  ]</message>
+   <message level="Info" culprit="ioaux_soft_ram">  Generation command is [exec C:/intelfpga_pro/21.3/quartus/bin64//perl/bin/perl.exe -I C:/intelfpga_pro/21.3/quartus/bin64//perl/lib -I C:/intelfpga_pro/21.3/quartus/sopc_builder/bin/europa -I C:/intelfpga_pro/21.3/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_pro/21.3/quartus/sopc_builder/bin -I C:/intelfpga_pro/21.3/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_pro/21.3/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- C:/intelfpga_pro/21.3/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=ddr3_altera_avalon_onchip_memory2_1931_ecie4wq --dir=C:/Users/ALEKSA~1/AppData/Local/Temp/alt9530_7639908179846662063.dir/0019_ioaux_soft_ram_gen/ --quartus_dir=C:/intelfpga_pro/21.3/quartus --verilog --config=C:/Users/ALEKSA~1/AppData/Local/Temp/alt9530_7639908179846662063.dir/0019_ioaux_soft_ram_gen//ddr3_altera_avalon_onchip_memory2_1931_ecie4wq_component_configuration.pl  --do_build_sim=0  ]</message>
    <message level="Info" culprit="ioaux_soft_ram">Done RTL generation for module 'ddr3_altera_avalon_onchip_memory2_1931_ecie4wq'</message>
   </messages>
  </entity>
@@ -12667,7 +12667,7 @@
    kind="altera_mm_interconnect"
    version="19.2.0"
    name="ddr3_altera_mm_interconnect_1920_trcm3ta">
-  <parameter name="AUTO_DEVICE" value="10CX220YF780I5G" />
+  <parameter name="AUTO_DEVICE" value="10CX220YF780E5G" />
   <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone 10 GX" />
   <parameter name="AUTO_DEVICE_SPEEDGRADE" value="" />
   <parameter

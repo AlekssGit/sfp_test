@@ -11,6 +11,6 @@
    hasInlineConfiguration="true" />
  <topLevel name="mem_3.mem_3" />
  <deviceFamily name="cyclone10gx" />
- <device name="10CX220YF780I5G" />
+ <device name="10CX220YF780E5G" />
  <modelMap controllerPath="mem_3.mem_3" modelPath="mem_3.mem_3" />
 </simPackage>

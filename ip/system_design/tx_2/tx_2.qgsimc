@@ -15,7 +15,12 @@
     <node>
       <instanceKey xsi:type="xs:string">tx_2</instanceKey>
       <instanceData xsi:type="data">
-        <parameters></parameters>
+        <parameters>
+          <parameter>
+            <name>COUNT_PREPARE_WAIT_VAL</name>
+            <value>80</value>
+          </parameter>
+        </parameters>
         <interconnectAssignments></interconnectAssignments>
         <className>send_packet_ddr</className>
         <version>1.0</version>

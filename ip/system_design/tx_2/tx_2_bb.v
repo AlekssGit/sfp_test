@@ -1,4 +1,6 @@
-module tx_2 (
+module tx_2 #(
+		parameter COUNT_PREPARE_WAIT_VAL = 80
+	) (
 		output wire [24:0]  amm_addr,          //           avalon_master.address
 		input  wire [255:0] amm_readdata,      //                        .readdata
 		output wire [255:0] amm_writedata,     //                        .writedata

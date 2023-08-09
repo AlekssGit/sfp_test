@@ -12,7 +12,7 @@ the sole purpose of programming logic devices manufactured by
 Intel and sold by Intel or its authorized distributors.  Please
 refer to the applicable agreement for further details, at
 https://fpgasoftware.intel.com/eula.-->
-<ipxact:design xmlns:ipxact="http://www.accellera.org/XMLSchema/IPXACT/1685-2014" xmlns:altera="http://www.altera.com/XMLSchema/IPXact2014/extensions">
+<ipxact:design xmlns:altera="http://www.altera.com/XMLSchema/IPXact2014/extensions" xmlns:ipxact="http://www.accellera.org/XMLSchema/IPXACT/1685-2014">
   <ipxact:vendor>Altera Corporation</ipxact:vendor>
   <ipxact:library>system_design</ipxact:library>
   <ipxact:name>system_design</ipxact:name>
@@ -383,7 +383,7 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:parameter parameterId="device" type="string">
           <ipxact:name>device</ipxact:name>
           <ipxact:displayName>Device</ipxact:displayName>
-          <ipxact:value>10CX220YF780I5G</ipxact:value>
+          <ipxact:value>10CX220YF780E5G</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="deviceFamily" type="string">
           <ipxact:name>deviceFamily</ipxact:name>
@@ -32952,7 +32952,18 @@ https://fpgasoftware.intel.com/eula.-->
             <ipxact:parameter parameterId="hdlParameters" type="string">
               <ipxact:name>hdlParameters</ipxact:name>
               <ipxact:displayName>HDL Parameters</ipxact:displayName>
-              <ipxact:value>&lt;hdlParameterDescriptorDefinitionList/&gt;</ipxact:value>
+              <ipxact:value>&lt;hdlParameterDescriptorDefinitionList&gt;
+    &lt;hdlParameterDescriptorDefinition&gt;
+        &lt;description&gt;&lt;/description&gt;
+        &lt;enabled&gt;true&lt;/enabled&gt;
+        &lt;exported&gt;false&lt;/exported&gt;
+        &lt;parameterHdlType&gt;INTEGER&lt;/parameterHdlType&gt;
+        &lt;parameterHdlWidth&gt;&lt;/parameterHdlWidth&gt;
+        &lt;parameterName&gt;COUNT_PREPARE_WAIT_VAL&lt;/parameterName&gt;
+        &lt;parameterType&gt;java.lang.Integer&lt;/parameterType&gt;
+        &lt;parameterValue&gt;80&lt;/parameterValue&gt;
+    &lt;/hdlParameterDescriptorDefinition&gt;
+&lt;/hdlParameterDescriptorDefinitionList&gt;</ipxact:value>
             </ipxact:parameter>
             <ipxact:parameter parameterId="hlsFile" type="string">
               <ipxact:name>hlsFile</ipxact:name>

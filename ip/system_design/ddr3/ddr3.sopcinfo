@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="ddr3" kind="ddr3" version="1.0" fabric="QSYS">
  <!-- Format version 21.3 170 (Future versions may contain additional information.) -->
- <!-- 2023.05.20.14:38:08 -->
+ <!-- 2023.06.22.17:39:19 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
@@ -32,7 +32,7 @@
  </parameter>
  <parameter name="AUTO_DEVICE">
   <type>java.lang.String</type>
-  <value>10CX220YF780I5G</value>
+  <value>10CX220YF780E5G</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -99,7 +99,7 @@
    name="ddr3"
    kind="altera_emif_c10"
    version="19.1.0"
-   entity="ddr3_altera_emif_c10_1910_c6wrrsi"
+   entity="ddr3_altera_emif_c10_1910_szj773a"
    library="altera_emif_c10_1910"
    path="ddr3"
    hpath="ddr3"
@@ -117,7 +117,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="SYS_INFO_DEVICE">
    <type>java.lang.String</type>
-   <value>10CX220YF780I5G</value>
+   <value>10CX220YF780E5G</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -135,7 +135,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="SYS_INFO_DEVICE_TEMPERATURE_GRADE">
    <type>java.lang.String</type>
-   <value>INDUSTRIAL</value>
+   <value>EXTENDED</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -243,7 +243,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="PHY_FPGA_SPEEDGRADE_GUI">
    <type>java.lang.String</type>
-   <value>I5 (Production) - change device under 'View'-&gt;'Device Family'</value>
+   <value>E5 (Production) - change device under 'View'-&gt;'Device Family'</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -251,7 +251,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="PHY_TARGET_SPEEDGRADE">
    <type>java.lang.String</type>
-   <value>I5</value>
+   <value>E5</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -19781,7 +19781,7 @@ parameters are a RESULT of the module parameters. -->
    name="ddr3_arch"
    kind="altera_emif_arch_nf"
    version="19.1"
-   entity="ddr3_altera_emif_arch_nf_191_zhajlla"
+   entity="ddr3_altera_emif_arch_nf_191_rzd4hmq"
    library="altera_emif_arch_nf_191"
    path="ddr3.arch"
    hpath="ddr3|arch"
@@ -19798,7 +19798,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="SYS_INFO_DEVICE">
    <type>java.lang.String</type>
-   <value>10CX220YF780I5G</value>
+   <value>10CX220YF780E5G</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -19814,7 +19814,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="SYS_INFO_DEVICE_TEMPERATURE_GRADE">
    <type>java.lang.String</type>
-   <value>INDUSTRIAL</value>
+   <value>EXTENDED</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -19910,7 +19910,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="PHY_FPGA_SPEEDGRADE_GUI">
    <type>java.lang.String</type>
-   <value>I5 (Production) - change device under 'View'-&gt;'Device Family'</value>
+   <value>E5 (Production) - change device under 'View'-&gt;'Device Family'</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -19918,7 +19918,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="PHY_TARGET_SPEEDGRADE">
    <type>java.lang.String</type>
-   <value>I5</value>
+   <value>E5</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -52313,7 +52313,7 @@ parameters are a RESULT of the module parameters. -->
    name="ddr3_ecc_core"
    kind="altera_emif_ecc"
    version="19.1"
-   entity="ddr3_altera_emif_ecc_191_gxje6ji"
+   entity="ddr3_altera_emif_ecc_191_avv67ei"
    library="altera_emif_ecc_191"
    path="ddr3.ecc_core"
    hpath="ddr3|ecc_core"
@@ -52330,7 +52330,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="SYS_INFO_DEVICE">
    <type>java.lang.String</type>
-   <value>10CX220YF780I5G</value>
+   <value>10CX220YF780E5G</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -52346,7 +52346,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="SYS_INFO_DEVICE_TEMPERATURE_GRADE">
    <type>java.lang.String</type>
-   <value>INDUSTRIAL</value>
+   <value>EXTENDED</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -52442,7 +52442,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="PHY_FPGA_SPEEDGRADE_GUI">
    <type>java.lang.String</type>
-   <value>I5 (Production) - change device under 'View'-&gt;'Device Family'</value>
+   <value>E5 (Production) - change device under 'View'-&gt;'Device Family'</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -52450,7 +52450,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="PHY_TARGET_SPEEDGRADE">
    <type>java.lang.String</type>
-   <value>I5</value>
+   <value>E5</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -71027,7 +71027,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="AUTO_DEVICE">
    <type>java.lang.String</type>
-   <value>10CX220YF780I5G</value>
+   <value>10CX220YF780E5G</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -72343,7 +72343,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="AUTO_DEVICE">
    <type>java.lang.String</type>
-   <value>10CX220YF780I5G</value>
+   <value>10CX220YF780E5G</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>

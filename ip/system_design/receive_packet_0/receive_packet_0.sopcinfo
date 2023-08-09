@@ -5,7 +5,7 @@
  version="1.0"
  fabric="QSYS">
  <!-- Format version 21.3 170 (Future versions may contain additional information.) -->
- <!-- 2023.05.20.14:37:24 -->
+ <!-- 2023.06.22.17:38:33 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
@@ -36,7 +36,7 @@
  </parameter>
  <parameter name="AUTO_DEVICE">
   <type>java.lang.String</type>
-  <value>10CX220YF780I5G</value>
+  <value>10CX220YF780E5G</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>

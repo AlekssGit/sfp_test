@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <simPackage>
  <file
-   path="altera_emif_arch_nf_191/sim/ddr3_altera_emif_arch_nf_191_zhajlla_top.sv"
+   path="altera_emif_arch_nf_191/sim/ddr3_altera_emif_arch_nf_191_rzd4hmq_top.sv"
    type="SYSTEM_VERILOG"
    library="altera_emif_arch_nf_191" />
  <file
-   path="altera_emif_arch_nf_191/sim/ddr3_altera_emif_arch_nf_191_zhajlla_io_aux.sv"
+   path="altera_emif_arch_nf_191/sim/ddr3_altera_emif_arch_nf_191_rzd4hmq_io_aux.sv"
    type="SYSTEM_VERILOG"
    library="altera_emif_arch_nf_191" />
  <file
@@ -157,31 +157,31 @@
    type="SYSTEM_VERILOG"
    library="altera_emif_arch_nf_191" />
  <file
-   path="altera_emif_arch_nf_191/sim/ddr3_altera_emif_arch_nf_191_zhajlla_seq_params_sim.hex"
+   path="altera_emif_arch_nf_191/sim/ddr3_altera_emif_arch_nf_191_rzd4hmq_seq_params_sim.hex"
    type="HEX"
    library="altera_emif_arch_nf_191" />
  <file
-   path="altera_emif_arch_nf_191/sim/ddr3_altera_emif_arch_nf_191_zhajlla_seq_params_sim.txt"
+   path="altera_emif_arch_nf_191/sim/ddr3_altera_emif_arch_nf_191_rzd4hmq_seq_params_sim.txt"
    type="OTHER"
    library="altera_emif_arch_nf_191" />
  <file
-   path="altera_emif_arch_nf_191/sim/ddr3_altera_emif_arch_nf_191_zhajlla_seq_params_synth.hex"
+   path="altera_emif_arch_nf_191/sim/ddr3_altera_emif_arch_nf_191_rzd4hmq_seq_params_synth.hex"
    type="HEX"
    library="altera_emif_arch_nf_191" />
  <file
-   path="altera_emif_arch_nf_191/sim/ddr3_altera_emif_arch_nf_191_zhajlla_seq_params_synth.txt"
+   path="altera_emif_arch_nf_191/sim/ddr3_altera_emif_arch_nf_191_rzd4hmq_seq_params_synth.txt"
    type="OTHER"
    library="altera_emif_arch_nf_191" />
  <file
-   path="altera_emif_arch_nf_191/sim/ddr3_altera_emif_arch_nf_191_zhajlla_seq_cal.hex"
+   path="altera_emif_arch_nf_191/sim/ddr3_altera_emif_arch_nf_191_rzd4hmq_seq_cal.hex"
    type="HEX"
    library="altera_emif_arch_nf_191" />
  <file
-   path="altera_emif_arch_nf_191/sim/ddr3_altera_emif_arch_nf_191_zhajlla_readme.txt"
+   path="altera_emif_arch_nf_191/sim/ddr3_altera_emif_arch_nf_191_rzd4hmq_readme.txt"
    type="OTHER"
    library="altera_emif_arch_nf_191" />
  <file
-   path="altera_emif_arch_nf_191/sim/ddr3_altera_emif_arch_nf_191_zhajlla.sv"
+   path="altera_emif_arch_nf_191/sim/ddr3_altera_emif_arch_nf_191_rzd4hmq.sv"
    type="SYSTEM_VERILOG"
    library="altera_emif_arch_nf_191" />
  <file
@@ -261,7 +261,7 @@
    type="VERILOG"
    library="altera_emif_ecc_nf_191" />
  <file
-   path="altera_emif_ecc_191/sim/ddr3_altera_emif_ecc_191_gxje6ji.v"
+   path="altera_emif_ecc_191/sim/ddr3_altera_emif_ecc_191_avv67ei.v"
    type="VERILOG"
    library="altera_emif_ecc_191"
    hasInlineConfiguration="true" />
@@ -308,7 +308,7 @@
    library="altera_emif_cal_slave_nf_191"
    hasInlineConfiguration="true" />
  <file
-   path="altera_emif_c10_1910/sim/ddr3_altera_emif_c10_1910_c6wrrsi.v"
+   path="altera_emif_c10_1910/sim/ddr3_altera_emif_c10_1910_szj773a.v"
    type="VERILOG"
    library="altera_emif_c10_1910"
    hasInlineConfiguration="true" />
@@ -319,7 +319,7 @@
    hasInlineConfiguration="true" />
  <topLevel name="ddr3.ddr3" />
  <deviceFamily name="cyclone10gx" />
- <device name="10CX220YF780I5G" />
+ <device name="10CX220YF780E5G" />
  <modelMap
    controllerPath="ddr3.ddr3.cal_slave_component.ioaux_soft_ram"
    modelPath="ddr3.ddr3.cal_slave_component.ioaux_soft_ram" />

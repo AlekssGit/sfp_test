@@ -451,6 +451,38 @@ set_max_skew -from [get_registers {system_design:platform_design|tse:tse|tse_alt
 set_max_skew -from [get_registers {system_design:platform_design|tse:tse|tse_altera_eth_tse_1950_vweooxa:tse|altera_eth_tse_pcs_pma_nf_phyip:i_tse_pcs_0|altera_tse_top_1000_base_x_strx_gx:altera_tse_top_1000_base_x_strx_gx_inst|altera_tse_top_sgmii_strx_gx:U_SGMII|altera_tse_top_rx_converter:U_RXCV|altera_tse_a_fifo_24:U_DSW|altera_tse_gray_cnt:U_WRT|g_out[*]}] -to [get_registers {*altera_tse_a_fifo_24:*altera_std_synchronizer_nocut:*|din_s1*}] 7.500 
 
 
+set_max_skew -from [get_registers "platform_design\|setup_ddr\|setup_ddr\|ddr_cntrl\|wr_data_avalon\[*\]"] -to [get_registers "platform_design\|setup_ddr\|setup_ddr\|avalon_mm\|wr_data_local_first\[*\]"] 0.8
+set_max_skew -from [get_registers "platform_design\|tx_2\|tx_2\|ddr_cntrl\|rd_data_avalon\[*\]"] -to [get_registers "platform_design\|tx_2\|tx_2\|ddr_cntrl\|rd_data_local_first\[*\]"] 0.8
+
+set_max_skew -from [get_registers "platform_design\|setup_ddr\|setup_ddr\|ddr_cntrl\|local_cal_success_avalon_1"] -to [get_registers "platform_design\|setup_ddr\|setup_ddr\|ddr_cntrl\|local_cal_success_avalon_2"] 0.8
+set_max_skew -from [get_registers "platform_design\|setup_ddr\|setup_ddr\|ddr_cntrl\|action_done_latch"] -to [get_registers "platform_design\|setup_ddr\|setup_ddr\|ddr_cntrl\|action_done_latch_local_first"] 0.8
+set_max_skew -from [get_registers "platform_design\|tx_2\|tx_2\|ddr_cntrl\|action_done_latch"] -to [get_registers "platform_design\|tx_2\|tx_2\|ddr_cntrl\|action_done_latch_local_first"] 0.8
+
+set_max_skew -from [get_registers "platform_design\|tx_2\|tx_2\|ddr_cntrl\|rd_adr\[*\]"] -to [get_registers "platform_design\|tx_2\|tx_2\|avalon_mm\|rd_adr_local_first\[*\]"] 0.8
+
+set_max_skew -from [get_registers "platform_design\|send_cmd_pcie\|send_cmd_pcie\|data_reg_send_packet[5]"] -to [get_registers "pcie_send_cmd_d"] 0.8
+
+set_max_skew -from [get_registers "platform_design\|setup_ddr\|setup_ddr\|ddr_local_cal_fail"] -to [get_registers "platform_design\|send_cmd_pcie\|send_cmd_pcie\|d_ddr_local_fail"] 0.8
+set_max_skew -from [get_registers "platform_design\|setup_ddr\|setup_ddr\|ddr_local_cal_success"] -to [get_registers "platform_design\|send_cmd_pcie\|send_cmd_pcie\|d_ddr_local_success"] 0.8
+set_max_skew -from [get_registers "platform_design\|reset_mod\|reset_mod\|need_wait_phy_work"] -to [get_registers "platform_design\|send_cmd_pcie\|send_cmd_pcie\|d_system_main_reset"] 0.8
+set_max_skew -from [get_registers "platform_design\|reset_mod\|reset_mod\|need_reset_phy"] -to [get_registers "platform_design\|send_cmd_pcie\|send_cmd_pcie\|d_system_main_reset"] 0.8
+set_max_skew -from [get_registers "platform_design\|ddr3\|ddr3\|arch\|arch_inst\|non_hps.core_clks_rsts_inst\|reset_sync_pri_sdc_anchor"] -to [get_registers "platform_design\|send_cmd_pcie\|send_cmd_pcie\|d_ddr_avalon_rst"] 0.8
+
+
+set_data_delay -from [get_registers "platform_design\|setup_ddr\|setup_ddr\|ddr_cntrl\|wr_data_avalon\[*\]"] -to [get_registers "platform_design\|setup_ddr\|setup_ddr\|avalon_mm\|wr_data_local_first\[*\]"] 0.9
+set_data_delay -from [get_registers "platform_design\|tx_2\|tx_2\|ddr_cntrl\|rd_data_avalon\[*\]"] -to [get_registers "platform_design\|tx_2\|tx_2\|ddr_cntrl\|rd_data_local_first\[*\]"] 0.9
+
+set_data_delay -from [get_registers "platform_design\|tx_2\|tx_2\|ddr_cntrl\|action_done_latch"] -to [get_registers "platform_design\|tx_2\|tx_2\|ddr_cntrl\|action_done_latch_local_first"] 0.9
+
+set_data_delay -from [get_registers "platform_design\|tx_2\|tx_2\|ddr_cntrl\|rd_adr\[*\]"] -to [get_registers "platform_design\|tx_2\|tx_2\|avalon_mm\|rd_adr_local_first\[*\]"] 0.9
+
+set_data_delay -from [get_registers "platform_design\|send_cmd_pcie\|send_cmd_pcie\|data_reg_send_packet[5]"] -to [get_registers "pcie_send_cmd_d"] 0.9
+
+set_data_delay -from [get_registers "platform_design\|setup_ddr\|setup_ddr\|ddr_local_cal_fail"] -to [get_registers "platform_design\|send_cmd_pcie\|send_cmd_pcie\|d_ddr_local_fail"] 0.9
+set_data_delay -from [get_registers "platform_design\|setup_ddr\|setup_ddr\|ddr_local_cal_success"] -to [get_registers "platform_design\|send_cmd_pcie\|send_cmd_pcie\|d_ddr_local_success"] 0.9
+set_data_delay -from [get_registers "platform_design\|reset_mod\|reset_mod\|need_wait_phy_work"] -to [get_registers "platform_design\|send_cmd_pcie\|send_cmd_pcie\|d_system_main_reset"] 0.9
+set_data_delay -from [get_registers "platform_design\|reset_mod\|reset_mod\|need_reset_phy"] -to [get_registers "platform_design\|send_cmd_pcie\|send_cmd_pcie\|d_system_main_reset"] 0.9
+set_data_delay -from [get_registers "platform_design\|ddr3\|ddr3\|arch\|arch_inst\|non_hps.core_clks_rsts_inst\|reset_sync_pri_sdc_anchor"] -to [get_registers "platform_design\|send_cmd_pcie\|send_cmd_pcie\|d_ddr_avalon_rst"] 0.9
 #**************************************************************
 # Set Disable Timing
 #**************************************************************

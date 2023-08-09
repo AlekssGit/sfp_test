@@ -223,15 +223,15 @@
    library="altera_pcie_a10_hip_2011"
    hasInlineConfiguration="true" />
  <file
-   path="altera_pcie_a10_hip_2011/sim/altpcie_a10_hip_pllnphy_2011_ub5pqua.v"
+   path="altera_pcie_a10_hip_2011/sim/altpcie_a10_hip_pllnphy_2011_tyey65q.v"
    type="VERILOG"
    library="altera_pcie_a10_hip_2011" />
  <file
-   path="altera_pcie_a10_hip_2011/sim/altpcie_a10_hip_pipen1b_2011_ub5pqua.v"
+   path="altera_pcie_a10_hip_2011/sim/altpcie_a10_hip_pipen1b_2011_tyey65q.v"
    type="VERILOG"
    library="altera_pcie_a10_hip_2011" />
  <file
-   path="altera_pcie_a10_hip_2011/sim/pcie_altera_pcie_a10_hip_2011_ub5pqua.v"
+   path="altera_pcie_a10_hip_2011/sim/pcie_altera_pcie_a10_hip_2011_tyey65q.v"
    type="VERILOG"
    library="altera_pcie_a10_hip_2011" />
  <file
@@ -385,5 +385,5 @@
    hasInlineConfiguration="true" />
  <topLevel name="pcie.pcie" />
  <deviceFamily name="cyclone10gx" />
- <device name="10CX220YF780I5G" />
+ <device name="10CX220YF780E5G" />
 </simPackage>

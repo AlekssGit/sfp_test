@@ -7826,7 +7826,7 @@
           </parameter>
           <parameter>
             <name>PHY_FPGA_SPEEDGRADE_GUI</name>
-            <value>I5 (Production) - change device under 'View'-&gt;'Device Family'</value>
+            <value>E5 (Production) - change device under 'View'-&gt;'Device Family'</value>
           </parameter>
           <parameter>
             <name>PHY_HPS_ENABLE_EARLY_RELEASE</name>
@@ -8898,7 +8898,7 @@
           </parameter>
           <parameter>
             <name>PHY_TARGET_SPEEDGRADE</name>
-            <value>I5</value>
+            <value>E5</value>
           </parameter>
           <parameter>
             <name>PHY_USER_PERIODIC_OCT_RECAL_ENUM</name>
@@ -9330,7 +9330,7 @@
           </parameter>
           <parameter>
             <name>SYS_INFO_DEVICE</name>
-            <value>10CX220YF780I5G</value>
+            <value>10CX220YF780E5G</value>
           </parameter>
           <parameter>
             <name>SYS_INFO_DEVICE_DIE_REVISIONS</name>
@@ -9350,7 +9350,7 @@
           </parameter>
           <parameter>
             <name>SYS_INFO_DEVICE_TEMPERATURE_GRADE</name>
-            <value>INDUSTRIAL</value>
+            <value>EXTENDED</value>
           </parameter>
           <parameter>
             <name>SYS_INFO_UNIQUE_ID</name>
@@ -9369,7 +9369,7 @@
         <className>altera_emif_c10</className>
         <version>19.1.0</version>
         <name>ddr3</name>
-        <uniqueName>ddr3_altera_emif_c10_1910_c6wrrsi</uniqueName>
+        <uniqueName>ddr3_altera_emif_c10_1910_szj773a</uniqueName>
         <nonce>0</nonce>
         <incidentConnections></incidentConnections>
         <path>ddr3.ddr3</path>
@@ -17381,7 +17381,7 @@
               </parameter>
               <parameter>
                 <name>PHY_FPGA_SPEEDGRADE_GUI</name>
-                <value>I5 (Production) - change device under 'View'-&gt;'Device Family'</value>
+                <value>E5 (Production) - change device under 'View'-&gt;'Device Family'</value>
               </parameter>
               <parameter>
                 <name>PHY_HAS_DCC</name>
@@ -18465,7 +18465,7 @@
               </parameter>
               <parameter>
                 <name>PHY_TARGET_SPEEDGRADE</name>
-                <value>I5</value>
+                <value>E5</value>
               </parameter>
               <parameter>
                 <name>PHY_USERMODE_OCT</name>
@@ -24209,7 +24209,7 @@
               </parameter>
               <parameter>
                 <name>SYS_INFO_DEVICE</name>
-                <value>10CX220YF780I5G</value>
+                <value>10CX220YF780E5G</value>
               </parameter>
               <parameter>
                 <name>SYS_INFO_DEVICE_DIE_REVISIONS</name>
@@ -24229,7 +24229,7 @@
               </parameter>
               <parameter>
                 <name>SYS_INFO_DEVICE_TEMPERATURE_GRADE</name>
-                <value>INDUSTRIAL</value>
+                <value>EXTENDED</value>
               </parameter>
               <parameter>
                 <name>SYS_INFO_UNIQUE_ID</name>
@@ -24820,7 +24820,7 @@
             <className>altera_emif_arch_nf</className>
             <version>19.1</version>
             <name>arch</name>
-            <uniqueName>ddr3_altera_emif_arch_nf_191_zhajlla</uniqueName>
+            <uniqueName>ddr3_altera_emif_arch_nf_191_rzd4hmq</uniqueName>
             <nonce>0</nonce>
             <incidentConnections>
               <incidentConnection>
@@ -35388,7 +35388,7 @@
               </parameter>
               <parameter>
                 <name>PHY_FPGA_SPEEDGRADE_GUI</name>
-                <value>I5 (Production) - change device under 'View'-&gt;'Device Family'</value>
+                <value>E5 (Production) - change device under 'View'-&gt;'Device Family'</value>
               </parameter>
               <parameter>
                 <name>PHY_HPS_ENABLE_EARLY_RELEASE</name>
@@ -36460,7 +36460,7 @@
               </parameter>
               <parameter>
                 <name>PHY_TARGET_SPEEDGRADE</name>
-                <value>I5</value>
+                <value>E5</value>
               </parameter>
               <parameter>
                 <name>PHY_USER_PERIODIC_OCT_RECAL_ENUM</name>
@@ -36892,7 +36892,7 @@
               </parameter>
               <parameter>
                 <name>SYS_INFO_DEVICE</name>
-                <value>10CX220YF780I5G</value>
+                <value>10CX220YF780E5G</value>
               </parameter>
               <parameter>
                 <name>SYS_INFO_DEVICE_DIE_REVISIONS</name>
@@ -36912,7 +36912,7 @@
               </parameter>
               <parameter>
                 <name>SYS_INFO_DEVICE_TEMPERATURE_GRADE</name>
-                <value>INDUSTRIAL</value>
+                <value>EXTENDED</value>
               </parameter>
               <parameter>
                 <name>SYS_INFO_UNIQUE_ID</name>
@@ -36931,7 +36931,7 @@
             <className>altera_emif_ecc</className>
             <version>19.1</version>
             <name>ecc_core</name>
-            <uniqueName>ddr3_altera_emif_ecc_191_gxje6ji</uniqueName>
+            <uniqueName>ddr3_altera_emif_ecc_191_avv67ei</uniqueName>
             <nonce>0</nonce>
             <incidentConnections>
               <incidentConnection>
@@ -45028,7 +45028,7 @@
                   </parameter>
                   <parameter>
                     <name>PHY_FPGA_SPEEDGRADE_GUI</name>
-                    <value>I5 (Production) - change device under 'View'-&gt;'Device Family'</value>
+                    <value>E5 (Production) - change device under 'View'-&gt;'Device Family'</value>
                   </parameter>
                   <parameter>
                     <name>PHY_HMC_CLK_RATIO</name>
@@ -46104,7 +46104,7 @@
                   </parameter>
                   <parameter>
                     <name>PHY_TARGET_SPEEDGRADE</name>
-                    <value>I5</value>
+                    <value>E5</value>
                   </parameter>
                   <parameter>
                     <name>PHY_USER_PERIODIC_OCT_RECAL_ENUM</name>
@@ -46656,7 +46656,7 @@
                   </parameter>
                   <parameter>
                     <name>SYS_INFO_DEVICE</name>
-                    <value>10CX220YF780I5G</value>
+                    <value>10CX220YF780E5G</value>
                   </parameter>
                   <parameter>
                     <name>SYS_INFO_DEVICE_DIE_REVISIONS</name>
@@ -46676,7 +46676,7 @@
                   </parameter>
                   <parameter>
                     <name>SYS_INFO_DEVICE_TEMPERATURE_GRADE</name>
-                    <value>INDUSTRIAL</value>
+                    <value>EXTENDED</value>
                   </parameter>
                   <parameter>
                     <name>SYS_INFO_UNIQUE_ID</name>

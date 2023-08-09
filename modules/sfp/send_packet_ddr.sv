@@ -47,6 +47,8 @@ module send_packet_ddr
 
 );
 
+parameter COUNT_PREPARE_WAIT_VAL = 80;
+
 enum int unsigned {IDLE, PREPARE_DATA, WRITE} state, state_next;
 
 logic prev_cmd_send;
@@ -174,23 +176,23 @@ always@ (posedge clk_original, posedge rst)
 begin
     if(rst)
     begin
-        wait_data_flag = 1'b0;
-        address_wait = 25'd0;
+        wait_data_flag <= 1'b0;
+        address_wait <= 25'd0;
     end
     else
     begin
         if(~ram_ready_local & address_wait != ram_address_tx_local & state == PREPARE_DATA & ram_address_tx_local > 25'd0)
         begin
-            wait_data_flag = 1'b1;
-            address_wait = ram_address_tx_local;
+            wait_data_flag <= 1'b1;
+            address_wait <= ram_address_tx_local;
         end
         else if(wait_data_flag & ram_ready_local & address_wait < ram_address_tx_local & state == PREPARE_DATA)
         begin
-            wait_data_flag = 1'b0;
+            wait_data_flag <= 1'b0;
         end
         else if(state != PREPARE_DATA)
         begin
-            wait_data_flag = 1'b0;
+            wait_data_flag <= 1'b0;
         end
     end
 end
@@ -201,17 +203,17 @@ always@ (posedge clk_original, posedge rst)
 begin
     if(rst)
     begin
-        count_prepare_wait = 10'd0;
+        count_prepare_wait <= 10'd0;
     end    
     else
     begin
-        if(state == PREPARE_DATA & count_prepare_wait < 10'd25)
+        if(state == PREPARE_DATA & count_prepare_wait < COUNT_PREPARE_WAIT_VAL + 10'd5) // 10'd25
         begin
-            count_prepare_wait = count_prepare_wait + 10'd1;
+            count_prepare_wait <= count_prepare_wait + 10'd1;
         end
         else
         begin
-            count_prepare_wait = 10'd0;
+            count_prepare_wait <= 10'd0;
         end
     end
 end
@@ -229,7 +231,7 @@ begin
     begin
         if(state == PREPARE_DATA)
         begin
-            if(ram_address_tx_local == 25'd0 & count_prepare_wait >= 10'd20)
+            if(ram_address_tx_local == 25'd0) // & count_prepare_wait >= COUNT_PREPARE_WAIT_VAL) // 10'd20
             begin
                 data_ready <= 1'b0;
             end
@@ -288,7 +290,7 @@ begin
     begin
         if(state == PREPARE_DATA)
         begin
-            if(ram_address_tx_local == 25'd0 & count_prepare_wait >= 10'd20)
+            if(ram_address_tx_local == 25'd0) // & count_prepare_wait >= COUNT_PREPARE_WAIT_VAL) // 10'd20
             begin
                 if(ram_ready_local)
                 begin
@@ -307,7 +309,7 @@ begin
             end
             else if(wait_data_flag & ram_address_tx_local > start_ram_addr & address_wait == ram_address_tx_local)
             begin
-                if(ram_ready_local)
+                if(ram_ready_local) // & count_prepare_wait >= COUNT_PREPARE_WAIT_VAL)
                 begin
                     if(count_prepared + 11'd1 < need_count_prepare) //was without 11'd1
                     begin
@@ -315,7 +317,7 @@ begin
                     end
                 end
             end
-            else if(count_prepare_wait < 10'd20 & ram_address_tx_local == 25'd0)
+            else if(count_prepare_wait < COUNT_PREPARE_WAIT_VAL & ram_address_tx_local == 25'd0) // 10'd20
             begin
                 ram_address_tx_local <= 25'd0;
             end
@@ -341,7 +343,7 @@ begin
     begin
         if(state == PREPARE_DATA)
         begin
-            if(ram_address_tx_local == 25'd0 & count_prepare_wait >= 10'd20)
+            if(ram_address_tx_local == 25'd0) // & count_prepare_wait >= COUNT_PREPARE_WAIT_VAL) // 10'd20
             begin
 
             end

@@ -12,7 +12,7 @@ the sole purpose of programming logic devices manufactured by
 Intel and sold by Intel or its authorized distributors.  Please
 refer to the applicable agreement for further details, at
 https://fpgasoftware.intel.com/eula.-->
-<ipxact:component xmlns:ipxact="http://www.accellera.org/XMLSchema/IPXACT/1685-2014" xmlns:altera="http://www.altera.com/XMLSchema/IPXact2014/extensions">
+<ipxact:component xmlns:altera="http://www.altera.com/XMLSchema/IPXact2014/extensions" xmlns:ipxact="http://www.accellera.org/XMLSchema/IPXACT/1685-2014">
   <ipxact:vendor>Intel Corporation</ipxact:vendor>
   <ipxact:library>xcvr_pll</ipxact:library>
   <ipxact:name>xcvr_pll</ipxact:name>
@@ -492,7 +492,7 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:parameter parameterId="device" type="string">
           <ipxact:name>device</ipxact:name>
           <ipxact:displayName>device</ipxact:displayName>
-          <ipxact:value>10CX220YF780I5G</ipxact:value>
+          <ipxact:value>10CX220YF780E5G</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="base_device" type="string">
           <ipxact:name>base_device</ipxact:name>
@@ -701,7 +701,7 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:parameter parameterId="device" type="string">
           <ipxact:name>device</ipxact:name>
           <ipxact:displayName>Device</ipxact:displayName>
-          <ipxact:value>10CX220YF780I5G</ipxact:value>
+          <ipxact:value>10CX220YF780E5G</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="deviceFamily" type="string">
           <ipxact:name>deviceFamily</ipxact:name>

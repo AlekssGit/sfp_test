@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <preferences>
  <debug showDebugMenu="0" />
- <window width="1936" height="1096" x="1912" y="-8" />
+ <window width="1936" height="1056" x="1912" y="-8" />
  <systemtable
    filter="All Interfaces"
    showClockDomains="0"
    showResetDomains="0"
    showAvalonDomains="0" />
- <library expandedCategories="Project,Library,Existing IP Variants" />
+ <library expandedCategories="Existing IP Variants,Project,Library" />
  <generation path="" simulation="VERILOG" modelsim="1" />
 </preferences>

@@ -12,7 +12,7 @@ the sole purpose of programming logic devices manufactured by
 Intel and sold by Intel or its authorized distributors.  Please
 refer to the applicable agreement for further details, at
 https://fpgasoftware.intel.com/eula.-->
-<ipxact:component xmlns:ipxact="http://www.accellera.org/XMLSchema/IPXACT/1685-2014" xmlns:altera="http://www.altera.com/XMLSchema/IPXact2014/extensions">
+<ipxact:component xmlns:altera="http://www.altera.com/XMLSchema/IPXact2014/extensions" xmlns:ipxact="http://www.accellera.org/XMLSchema/IPXACT/1685-2014">
   <ipxact:vendor>Intel Corporation</ipxact:vendor>
   <ipxact:library>ddr3</ipxact:library>
   <ipxact:name>ddr3</ipxact:name>
@@ -1267,7 +1267,7 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:parameter parameterId="SYS_INFO_DEVICE" type="string">
           <ipxact:name>SYS_INFO_DEVICE</ipxact:name>
           <ipxact:displayName>PARAM_SYS_INFO_DEVICE_NAME</ipxact:displayName>
-          <ipxact:value>10CX220YF780I5G</ipxact:value>
+          <ipxact:value>10CX220YF780E5G</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="SYS_INFO_DEVICE_SPEEDGRADE" type="string">
           <ipxact:name>SYS_INFO_DEVICE_SPEEDGRADE</ipxact:name>
@@ -1277,7 +1277,7 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:parameter parameterId="SYS_INFO_DEVICE_TEMPERATURE_GRADE" type="string">
           <ipxact:name>SYS_INFO_DEVICE_TEMPERATURE_GRADE</ipxact:name>
           <ipxact:displayName>PARAM_SYS_INFO_DEVICE_TEMPERATURE_GRADE_NAME</ipxact:displayName>
-          <ipxact:value>INDUSTRIAL</ipxact:value>
+          <ipxact:value>EXTENDED</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="SYS_INFO_DEVICE_POWER_MODEL" type="string">
           <ipxact:name>SYS_INFO_DEVICE_POWER_MODEL</ipxact:name>
@@ -9171,7 +9171,7 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:parameter parameterId="device" type="string">
           <ipxact:name>device</ipxact:name>
           <ipxact:displayName>Device</ipxact:displayName>
-          <ipxact:value>10CX220YF780I5G</ipxact:value>
+          <ipxact:value>10CX220YF780E5G</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="deviceFamily" type="string">
           <ipxact:name>deviceFamily</ipxact:name>

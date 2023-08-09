@@ -652,7 +652,7 @@
           </parameter>
           <parameter>
             <name>SYS_INFO_DEVICE</name>
-            <value>10CX220YF780I5G</value>
+            <value>10CX220YF780E5G</value>
           </parameter>
           <parameter>
             <name>SYS_INFO_DEVICE_DIE_REVISIONS</name>
@@ -672,7 +672,7 @@
           </parameter>
           <parameter>
             <name>SYS_INFO_DEVICE_TEMPERATURE_GRADE</name>
-            <value>INDUSTRIAL</value>
+            <value>EXTENDED</value>
           </parameter>
           <parameter>
             <name>SYS_INFO_UNIQUE_ID</name>
@@ -34497,7 +34497,7 @@
           </parameter>
           <parameter>
             <name>part_trait_device</name>
-            <value>10CX220YF780I5G</value>
+            <value>10CX220YF780E5G</value>
           </parameter>
           <parameter>
             <name>slave_address_map_0_hwtcl</name>
@@ -35626,7 +35626,7 @@
           </parameter>
           <parameter>
             <name>system_info_device_component</name>
-            <value>10CX220YF780I5G</value>
+            <value>10CX220YF780E5G</value>
           </parameter>
           <parameter>
             <name>system_info_device_family</name>
@@ -45677,7 +45677,7 @@
           </parameter>
           <parameter>
             <name>DEVICE</name>
-            <value>10CX220YF780I5G</value>
+            <value>10CX220YF780E5G</value>
           </parameter>
           <parameter>
             <name>componentDefinition</name>
@@ -57934,7 +57934,18 @@
           </parameter>
           <parameter>
             <name>hdlParameters</name>
-            <value>&lt;hdlParameterDescriptorDefinitionList/&gt;</value>
+            <value>&lt;hdlParameterDescriptorDefinitionList&gt;
+    &lt;hdlParameterDescriptorDefinition&gt;
+        &lt;description&gt;&lt;/description&gt;
+        &lt;enabled&gt;true&lt;/enabled&gt;
+        &lt;exported&gt;false&lt;/exported&gt;
+        &lt;parameterHdlType&gt;INTEGER&lt;/parameterHdlType&gt;
+        &lt;parameterHdlWidth&gt;&lt;/parameterHdlWidth&gt;
+        &lt;parameterName&gt;COUNT_PREPARE_WAIT_VAL&lt;/parameterName&gt;
+        &lt;parameterType&gt;java.lang.Integer&lt;/parameterType&gt;
+        &lt;parameterValue&gt;80&lt;/parameterValue&gt;
+    &lt;/hdlParameterDescriptorDefinition&gt;
+&lt;/hdlParameterDescriptorDefinitionList&gt;</value>
           </parameter>
           <parameter>
             <name>hlsFile</name>
@@ -58662,7 +58673,7 @@
           </parameter>
           <parameter>
             <name>device</name>
-            <value>10CX220YF780I5G</value>
+            <value>10CX220YF780E5G</value>
           </parameter>
           <parameter>
             <name>device_family</name>

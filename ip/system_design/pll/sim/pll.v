@@ -12,7 +12,7 @@ module pll (
 		output wire  outclk_3  // outclk3.clk
 	);
 
-	pll_altera_iopll_1931_ldt7zry pll (
+	pll_altera_iopll_1931_bd2ubhi pll (
 		.rst      (rst),      //   input,  width = 1,   reset.reset
 		.refclk   (refclk),   //   input,  width = 1,  refclk.clk
 		.outclk_0 (outclk_0), //  output,  width = 1, outclk0.clk

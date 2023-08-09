@@ -212,6 +212,7 @@ end
 logic local_cal_success_local_first;
 
 logic local_cal_success_avalon_1;
+logic local_cal_success_avalon_2;
 
 always_ff @(posedge clock_50) 
 begin
@@ -224,6 +225,11 @@ begin
     local_cal_success_avalon_1 <= local_cal_success_avalon;
 end
 
+always_ff @(posedge clock) 
+begin
+    local_cal_success_avalon_2 <= local_cal_success_avalon_1;
+end
+
 always @(posedge clock, posedge reset) 
 begin
     if(reset)
@@ -232,7 +238,7 @@ begin
     end 
     else
     begin
-		if(local_cal_success_avalon)
+		if(local_cal_success_avalon_2)
 		begin
 			if(address_changed & ~write_cmd & wren)
 			begin
@@ -257,7 +263,7 @@ begin
     end 
     else
     begin
-		if(local_cal_success_avalon)
+		if(local_cal_success_avalon_2)
 		begin
 			if(address_changed & ~read_cmd & ~wren)
 			begin

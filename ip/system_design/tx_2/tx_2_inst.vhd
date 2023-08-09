@@ -1,4 +1,7 @@
 	component tx_2 is
+		generic (
+			COUNT_PREPARE_WAIT_VAL : integer := 80
+		);
 		port (
 			amm_addr          : out std_logic_vector(24 downto 0);                     -- address
 			amm_readdata      : in  std_logic_vector(255 downto 0) := (others => 'X'); -- readdata
@@ -27,6 +30,9 @@
 	end component tx_2;
 
 	u0 : component tx_2
+		generic map (
+			COUNT_PREPARE_WAIT_VAL => INTEGER_VALUE_FOR_COUNT_PREPARE_WAIT_VAL
+		)
 		port map (
 			amm_addr          => CONNECTED_TO_amm_addr,          --           avalon_master.address
 			amm_readdata      => CONNECTED_TO_amm_readdata,      --                        .readdata

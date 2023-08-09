@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="pll" kind="pll" version="1.0" fabric="QSYS">
  <!-- Format version 21.3 170 (Future versions may contain additional information.) -->
- <!-- 2023.05.20.14:37:23 -->
+ <!-- 2023.06.22.17:38:31 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
@@ -32,7 +32,7 @@
  </parameter>
  <parameter name="AUTO_DEVICE">
   <type>java.lang.String</type>
-  <value>10CX220YF780I5G</value>
+  <value>10CX220YF780E5G</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -99,7 +99,7 @@
    name="pll"
    kind="altera_iopll"
    version="19.3.1"
-   entity="pll_altera_iopll_1931_ldt7zry"
+   entity="pll_altera_iopll_1931_bd2ubhi"
    library="altera_iopll_1931"
    path="pll"
    hpath="pll"
@@ -128,7 +128,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="gui_device_component">
    <type>java.lang.String</type>
-   <value>10CX220YF780I5G</value>
+   <value>10CX220YF780E5G</value>
    <derived>true</derived>
    <enabled>false</enabled>
    <visible>true</visible>
@@ -361,7 +361,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="system_info_device_component">
    <type>java.lang.String</type>
-   <value>10CX220YF780I5G</value>
+   <value>10CX220YF780E5G</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>

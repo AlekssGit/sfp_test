@@ -1,4 +1,7 @@
 	component tx_2 is
+		generic (
+			COUNT_PREPARE_WAIT_VAL : integer := 80
+		);
 		port (
 			amm_addr          : out std_logic_vector(24 downto 0);                     -- address
 			amm_readdata      : in  std_logic_vector(255 downto 0) := (others => 'X'); -- readdata

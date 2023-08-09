@@ -18,7 +18,7 @@
         <parameters>
           <parameter>
             <name>DEVICE</name>
-            <value>10CX220YF780I5G</value>
+            <value>10CX220YF780E5G</value>
           </parameter>
           <parameter>
             <name>DEV_BOARD</name>
@@ -741,7 +741,7 @@
         <className>altera_eth_tse</className>
         <version>19.5.0</version>
         <name>tse</name>
-        <uniqueName>tse_altera_eth_tse_1950_ag3tuna</uniqueName>
+        <uniqueName>tse_altera_eth_tse_1950_vweooxa</uniqueName>
         <nonce>0</nonce>
         <incidentConnections></incidentConnections>
         <path>tse.tse</path>
@@ -2433,7 +2433,7 @@
               </parameter>
               <parameter>
                 <name>cdr_pll_pm_speed_grade</name>
-                <value>i4</value>
+                <value>e4</value>
               </parameter>
               <parameter>
                 <name>cdr_pll_pma_width</name>
@@ -2593,7 +2593,7 @@
               </parameter>
               <parameter>
                 <name>device</name>
-                <value>10CX220YF780I5G</value>
+                <value>10CX220YF780E5G</value>
               </parameter>
               <parameter>
                 <name>device_family</name>
@@ -5289,7 +5289,7 @@
               </parameter>
               <parameter>
                 <name>hssi_rx_pld_pcs_interface_hd_chnl_speed_grade</name>
-                <value>i3</value>
+                <value>e3</value>
               </parameter>
               <parameter>
                 <name>hssi_rx_pld_pcs_interface_hd_chnl_sup_mode</name>
@@ -5733,7 +5733,7 @@
               </parameter>
               <parameter>
                 <name>hssi_tx_pld_pcs_interface_hd_chnl_speed_grade</name>
-                <value>i3</value>
+                <value>e3</value>
               </parameter>
               <parameter>
                 <name>hssi_tx_pld_pcs_interface_hd_chnl_sup_mode</name>
@@ -6037,7 +6037,7 @@
               </parameter>
               <parameter>
                 <name>pcs_speedgrade</name>
-                <value>i3</value>
+                <value>e3</value>
               </parameter>
               <parameter>
                 <name>pcs_tx_delay1_ctrl</name>
@@ -6833,7 +6833,7 @@
               </parameter>
               <parameter>
                 <name>pma_rx_buf_pm_speed_grade</name>
-                <value>i4</value>
+                <value>e4</value>
               </parameter>
               <parameter>
                 <name>pma_rx_buf_pm_tx_rx_cvp_mode</name>
@@ -7293,7 +7293,7 @@
               </parameter>
               <parameter>
                 <name>pma_speedgrade</name>
-                <value>i4</value>
+                <value>e4</value>
               </parameter>
               <parameter>
                 <name>pma_tx_buf_calibration_en</name>
@@ -7441,7 +7441,7 @@
               </parameter>
               <parameter>
                 <name>pma_tx_buf_pm_speed_grade</name>
-                <value>i4</value>
+                <value>e4</value>
               </parameter>
               <parameter>
                 <name>pma_tx_buf_power_mode</name>
@@ -8064,7 +8064,7 @@
             <className>altera_xcvr_native_a10</className>
             <version>19.1</version>
             <name>i_nf_native_phyip_0</name>
-            <uniqueName>tse_altera_xcvr_native_a10_191_xaroupi</uniqueName>
+            <uniqueName>tse_altera_xcvr_native_a10_191_ybh6yry</uniqueName>
             <nonce>0</nonce>
             <incidentConnections>
               <incidentConnection>
@@ -9066,7 +9066,7 @@
               </parameter>
               <parameter>
                 <name>cdr_pll_pm_speed_grade</name>
-                <value>i4</value>
+                <value>e4</value>
               </parameter>
               <parameter>
                 <name>cdr_pll_pma_width</name>
@@ -9226,7 +9226,7 @@
               </parameter>
               <parameter>
                 <name>device</name>
-                <value>10CX220YF780I5G</value>
+                <value>10CX220YF780E5G</value>
               </parameter>
               <parameter>
                 <name>device_family</name>
@@ -11922,7 +11922,7 @@
               </parameter>
               <parameter>
                 <name>hssi_rx_pld_pcs_interface_hd_chnl_speed_grade</name>
-                <value>i3</value>
+                <value>e3</value>
               </parameter>
               <parameter>
                 <name>hssi_rx_pld_pcs_interface_hd_chnl_sup_mode</name>
@@ -12366,7 +12366,7 @@
               </parameter>
               <parameter>
                 <name>hssi_tx_pld_pcs_interface_hd_chnl_speed_grade</name>
-                <value>i3</value>
+                <value>e3</value>
               </parameter>
               <parameter>
                 <name>hssi_tx_pld_pcs_interface_hd_chnl_sup_mode</name>
@@ -12670,7 +12670,7 @@
               </parameter>
               <parameter>
                 <name>pcs_speedgrade</name>
-                <value>i3</value>
+                <value>e3</value>
               </parameter>
               <parameter>
                 <name>pcs_tx_delay1_ctrl</name>
@@ -13466,7 +13466,7 @@
               </parameter>
               <parameter>
                 <name>pma_rx_buf_pm_speed_grade</name>
-                <value>i4</value>
+                <value>e4</value>
               </parameter>
               <parameter>
                 <name>pma_rx_buf_pm_tx_rx_cvp_mode</name>
@@ -13926,7 +13926,7 @@
               </parameter>
               <parameter>
                 <name>pma_speedgrade</name>
-                <value>i4</value>
+                <value>e4</value>
               </parameter>
               <parameter>
                 <name>pma_tx_buf_calibration_en</name>
@@ -14074,7 +14074,7 @@
               </parameter>
               <parameter>
                 <name>pma_tx_buf_pm_speed_grade</name>
-                <value>i4</value>
+                <value>e4</value>
               </parameter>
               <parameter>
                 <name>pma_tx_buf_power_mode</name>
@@ -14697,7 +14697,7 @@
             <className>altera_xcvr_native_a10</className>
             <version>19.1</version>
             <name>i_nf_native_phyip_1</name>
-            <uniqueName>tse_altera_xcvr_native_a10_191_xaroupi</uniqueName>
+            <uniqueName>tse_altera_xcvr_native_a10_191_ybh6yry</uniqueName>
             <nonce>0</nonce>
             <incidentConnections>
               <incidentConnection>
@@ -15699,7 +15699,7 @@
               </parameter>
               <parameter>
                 <name>cdr_pll_pm_speed_grade</name>
-                <value>i4</value>
+                <value>e4</value>
               </parameter>
               <parameter>
                 <name>cdr_pll_pma_width</name>
@@ -15859,7 +15859,7 @@
               </parameter>
               <parameter>
                 <name>device</name>
-                <value>10CX220YF780I5G</value>
+                <value>10CX220YF780E5G</value>
               </parameter>
               <parameter>
                 <name>device_family</name>
@@ -18555,7 +18555,7 @@
               </parameter>
               <parameter>
                 <name>hssi_rx_pld_pcs_interface_hd_chnl_speed_grade</name>
-                <value>i3</value>
+                <value>e3</value>
               </parameter>
               <parameter>
                 <name>hssi_rx_pld_pcs_interface_hd_chnl_sup_mode</name>
@@ -18999,7 +18999,7 @@
               </parameter>
               <parameter>
                 <name>hssi_tx_pld_pcs_interface_hd_chnl_speed_grade</name>
-                <value>i3</value>
+                <value>e3</value>
               </parameter>
               <parameter>
                 <name>hssi_tx_pld_pcs_interface_hd_chnl_sup_mode</name>
@@ -19303,7 +19303,7 @@
               </parameter>
               <parameter>
                 <name>pcs_speedgrade</name>
-                <value>i3</value>
+                <value>e3</value>
               </parameter>
               <parameter>
                 <name>pcs_tx_delay1_ctrl</name>
@@ -20099,7 +20099,7 @@
               </parameter>
               <parameter>
                 <name>pma_rx_buf_pm_speed_grade</name>
-                <value>i4</value>
+                <value>e4</value>
               </parameter>
               <parameter>
                 <name>pma_rx_buf_pm_tx_rx_cvp_mode</name>
@@ -20559,7 +20559,7 @@
               </parameter>
               <parameter>
                 <name>pma_speedgrade</name>
-                <value>i4</value>
+                <value>e4</value>
               </parameter>
               <parameter>
                 <name>pma_tx_buf_calibration_en</name>
@@ -20707,7 +20707,7 @@
               </parameter>
               <parameter>
                 <name>pma_tx_buf_pm_speed_grade</name>
-                <value>i4</value>
+                <value>e4</value>
               </parameter>
               <parameter>
                 <name>pma_tx_buf_power_mode</name>
@@ -21330,7 +21330,7 @@
             <className>altera_xcvr_native_a10</className>
             <version>19.1</version>
             <name>i_nf_native_phyip_2</name>
-            <uniqueName>tse_altera_xcvr_native_a10_191_xaroupi</uniqueName>
+            <uniqueName>tse_altera_xcvr_native_a10_191_ybh6yry</uniqueName>
             <nonce>0</nonce>
             <incidentConnections>
               <incidentConnection>
@@ -22332,7 +22332,7 @@
               </parameter>
               <parameter>
                 <name>cdr_pll_pm_speed_grade</name>
-                <value>i4</value>
+                <value>e4</value>
               </parameter>
               <parameter>
                 <name>cdr_pll_pma_width</name>
@@ -22492,7 +22492,7 @@
               </parameter>
               <parameter>
                 <name>device</name>
-                <value>10CX220YF780I5G</value>
+                <value>10CX220YF780E5G</value>
               </parameter>
               <parameter>
                 <name>device_family</name>
@@ -25188,7 +25188,7 @@
               </parameter>
               <parameter>
                 <name>hssi_rx_pld_pcs_interface_hd_chnl_speed_grade</name>
-                <value>i3</value>
+                <value>e3</value>
               </parameter>
               <parameter>
                 <name>hssi_rx_pld_pcs_interface_hd_chnl_sup_mode</name>
@@ -25632,7 +25632,7 @@
               </parameter>
               <parameter>
                 <name>hssi_tx_pld_pcs_interface_hd_chnl_speed_grade</name>
-                <value>i3</value>
+                <value>e3</value>
               </parameter>
               <parameter>
                 <name>hssi_tx_pld_pcs_interface_hd_chnl_sup_mode</name>
@@ -25936,7 +25936,7 @@
               </parameter>
               <parameter>
                 <name>pcs_speedgrade</name>
-                <value>i3</value>
+                <value>e3</value>
               </parameter>
               <parameter>
                 <name>pcs_tx_delay1_ctrl</name>
@@ -26732,7 +26732,7 @@
               </parameter>
               <parameter>
                 <name>pma_rx_buf_pm_speed_grade</name>
-                <value>i4</value>
+                <value>e4</value>
               </parameter>
               <parameter>
                 <name>pma_rx_buf_pm_tx_rx_cvp_mode</name>
@@ -27192,7 +27192,7 @@
               </parameter>
               <parameter>
                 <name>pma_speedgrade</name>
-                <value>i4</value>
+                <value>e4</value>
               </parameter>
               <parameter>
                 <name>pma_tx_buf_calibration_en</name>
@@ -27340,7 +27340,7 @@
               </parameter>
               <parameter>
                 <name>pma_tx_buf_pm_speed_grade</name>
-                <value>i4</value>
+                <value>e4</value>
               </parameter>
               <parameter>
                 <name>pma_tx_buf_power_mode</name>
@@ -27963,7 +27963,7 @@
             <className>altera_xcvr_native_a10</className>
             <version>19.1</version>
             <name>i_nf_native_phyip_3</name>
-            <uniqueName>tse_altera_xcvr_native_a10_191_xaroupi</uniqueName>
+            <uniqueName>tse_altera_xcvr_native_a10_191_ybh6yry</uniqueName>
             <nonce>0</nonce>
             <incidentConnections>
               <incidentConnection>

@@ -19,5 +19,5 @@
    hasInlineConfiguration="true" />
  <topLevel name="setup_ddr.setup_ddr" />
  <deviceFamily name="cyclone10gx" />
- <device name="10CX220YF780I5G" />
+ <device name="10CX220YF780E5G" />
 </simPackage>

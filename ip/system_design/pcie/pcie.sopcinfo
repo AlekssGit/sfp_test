@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="pcie" kind="pcie" version="1.0" fabric="QSYS">
  <!-- Format version 21.3 170 (Future versions may contain additional information.) -->
- <!-- 2023.05.20.14:38:14 -->
+ <!-- 2023.06.22.17:39:21 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
@@ -32,7 +32,7 @@
  </parameter>
  <parameter name="AUTO_DEVICE">
   <type>java.lang.String</type>
-  <value>10CX220YF780I5G</value>
+  <value>10CX220YF780E5G</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -149,7 +149,7 @@
    name="pcie"
    kind="altera_pcie_a10_hip"
    version="20.1.1"
-   entity="pcie_altera_pcie_a10_hip_2011_ub5pqua"
+   entity="pcie_altera_pcie_a10_hip_2011_tyey65q"
    library="altera_pcie_a10_hip_2011"
    path="pcie"
    hpath="pcie"
@@ -285,7 +285,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="part_trait_device">
    <type>java.lang.String</type>
-   <value>10CX220YF780I5G</value>
+   <value>10CX220YF780E5G</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>

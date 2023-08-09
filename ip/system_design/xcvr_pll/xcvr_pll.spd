@@ -93,11 +93,11 @@
    type="OTHER"
    library="altera_xcvr_atx_pll_a10_191" />
  <file
-   path="altera_xcvr_atx_pll_a10_191/sim/xcvr_pll_altera_xcvr_atx_pll_a10_191_rdwboly.sv"
+   path="altera_xcvr_atx_pll_a10_191/sim/xcvr_pll_altera_xcvr_atx_pll_a10_191_6oxhjba.sv"
    type="SYSTEM_VERILOG"
    library="altera_xcvr_atx_pll_a10_191" />
  <file
-   path="altera_xcvr_atx_pll_a10_191/sim/alt_xcvr_atx_pll_rcfg_opt_logic_rdwboly.sv"
+   path="altera_xcvr_atx_pll_a10_191/sim/alt_xcvr_atx_pll_rcfg_opt_logic_6oxhjba.sv"
    type="SYSTEM_VERILOG"
    library="altera_xcvr_atx_pll_a10_191" />
  <file
@@ -107,5 +107,5 @@
    hasInlineConfiguration="true" />
  <topLevel name="xcvr_pll.xcvr_pll" />
  <deviceFamily name="cyclone10gx" />
- <device name="10CX220YF780I5G" />
+ <device name="10CX220YF780E5G" />
 </simPackage>

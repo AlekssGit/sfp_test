@@ -171,7 +171,7 @@ module pcie (
 		input  wire [15:0]  rxm_irq_i                 //           rxm_irq.irq
 	);
 
-	pcie_altera_pcie_a10_hip_2011_ub5pqua #(
+	pcie_altera_pcie_a10_hip_2011_tyey65q #(
 		.force_tag_checking_on_hwtcl                          (0),
 		.bar0_address_width_mux_hwtcl                         (16),
 		.bar1_address_width_mux_hwtcl                         (0),

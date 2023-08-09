@@ -10,8 +10,8 @@
     `define RELAX_TIME          32'd1500
 `else
 	`define ALLOW_SEND		    1'b0
-    `define PERIOD_BTN_SEND_1	32'h05F5E100
-	`define PERIOD_BTN_SEND_2	32'h06F5E100
+    `define PERIOD_BTN_SEND_1	32'h05F5E100 // 00989680 
+	`define PERIOD_BTN_SEND_2	32'h06F5E100 // 01312D00  
     `define TIME_TO_BLINK       32'd50_000_000 
     `define BLINK_LED_DIVIDE    32'd25_000_000
     `define I2C_CLK_DIVIDE      32'd124 
@@ -399,6 +399,13 @@ assign start_ram_addr_2 = pcie_start_ram_addr; //25'd5; //transmit_start_addr;
 
 logic cmd_2_send_first;
 
+logic pcie_send_cmd_d;
+
+always_ff @(posedge clk_50_pll)
+begin
+    pcie_send_cmd_d <= pcie_send_cmd;    
+end
+
 always @(posedge clk_50_pll, posedge main_reset) 
 begin
     if(main_reset)
@@ -410,7 +417,7 @@ begin
     begin
 		if(mac_inited & rx_ready )
 		begin
-            if(`ALLOW_SEND == 1'b1 | pcie_send_cmd)
+            if(`ALLOW_SEND == 1'b1 | pcie_send_cmd_d)
             begin
                 counter_to_send <= counter_to_send + 1;
                 if(counter_to_send == `PERIOD_BTN_SEND_1)
@@ -427,7 +434,7 @@ begin
                     counter_to_send <= 32'd0;                
                 end
             end
-            else if(pcie_send_cmd)
+            else if(pcie_send_cmd_d)
             begin
                 cmd_send_1 <= 1'b1;
             end
@@ -451,7 +458,7 @@ begin
     begin
 		if(mac_inited && rx_ready )
 		begin
-            if(pcie_send_cmd)
+            if(pcie_send_cmd_d)
             begin
                 if(cmd_send_2 == 1'b1)
                 begin

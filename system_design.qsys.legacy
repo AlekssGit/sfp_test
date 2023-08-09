@@ -363,7 +363,7 @@ https://fpgasoftware.intel.com/eula.-->
 }
 ]]></parameter>
  <parameter name="designId" value="" />
- <parameter name="device" value="10CX220YF780I5G" />
+ <parameter name="device" value="10CX220YF780E5G" />
  <parameter name="deviceFamily" value="Cyclone 10 GX" />
  <parameter name="deviceSpeedGrade" value="5" />
  <parameter name="fabricMode" value="QSYS" />
@@ -32359,7 +32359,18 @@ https://fpgasoftware.intel.com/eula.-->
         </fileSet>
     </fileSets>
 </generationInfoDefinition>]]></parameter>
-  <parameter name="hdlParameters"><![CDATA[<hdlParameterDescriptorDefinitionList/>]]></parameter>
+  <parameter name="hdlParameters"><![CDATA[<hdlParameterDescriptorDefinitionList>
+    <hdlParameterDescriptorDefinition>
+        <description></description>
+        <enabled>true</enabled>
+        <exported>false</exported>
+        <parameterHdlType>INTEGER</parameterHdlType>
+        <parameterHdlWidth></parameterHdlWidth>
+        <parameterName>COUNT_PREPARE_WAIT_VAL</parameterName>
+        <parameterType>java.lang.Integer</parameterType>
+        <parameterValue>80</parameterValue>
+    </hdlParameterDescriptorDefinition>
+</hdlParameterDescriptorDefinitionList>]]></parameter>
   <parameter name="hlsFile" value="" />
   <parameter name="logicalView">ip/system_design/tx_2.ip</parameter>
   <parameter name="moduleAssignmentDefinition"><![CDATA[<assignmentDefinition>

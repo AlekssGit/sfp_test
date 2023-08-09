@@ -11,7 +11,7 @@ module xcvr_pll (
 		output wire  pll_cal_busy   //  pll_cal_busy.pll_cal_busy
 	);
 
-	xcvr_pll_altera_xcvr_atx_pll_a10_191_rdwboly #(
+	xcvr_pll_altera_xcvr_atx_pll_a10_191_6oxhjba #(
 		.enable_pll_reconfig                                              (0),
 		.rcfg_jtag_enable                                                 (0),
 		.rcfg_separate_avmm_busy                                          (0),
