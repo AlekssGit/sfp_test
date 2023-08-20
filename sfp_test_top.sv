@@ -275,7 +275,7 @@ system_design #(.setup_ddr_test(test)) platform_design (
         .pcie_send_control_signal               (pcie_send_cmd      ),                 
 		
         .send_packet_1_control_start_ram_addr   (start_ram_addr_1   ), 
-		.send_packet_1_control_cmd_send         (cmd_send_1         ),       
+		.send_packet_1_control_cmd_send         (1'b0 /* cmd_send_1 */         ),       
 		
         // .send_packet_2_control_start_ram_addr   (start_ram_addr_2   ), 
 		// .send_packet_2_control_cmd_send         (cmd_send_2         ),       

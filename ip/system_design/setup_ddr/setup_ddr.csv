@@ -1,4 +1,4 @@
-# system info setup_ddr on 2023.06.22.17:39:22
+# system info setup_ddr on 2023.08.19.18:00:25
 system_info:
 name,value
 DEVICE,10CX220YF780E5G
@@ -6,7 +6,7 @@ DEVICE_FAMILY,Cyclone 10 GX
 GENERATION_ID,0
 #
 #
-# Files generated for setup_ddr on 2023.06.22.17:39:22
+# Files generated for setup_ddr on 2023.08.19.18:00:25
 files:
 filepath,kind,attributes,module,is_top
 sim/setup_ddr.v,VERILOG,CONTAINS_INLINE_CONFIGURATION,setup_ddr,true

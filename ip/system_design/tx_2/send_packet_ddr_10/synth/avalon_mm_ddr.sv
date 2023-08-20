@@ -35,6 +35,7 @@ logic           RD          ;
 logic           WR          ;
 logic [31:0]    BYTE_ENABLE ;
 logic [6:0]     BURST_COUNT ;
+logic           RD_VALID_d    ;
 logic           RD_VALID    ;
 logic           READY       ;
 
@@ -48,8 +49,13 @@ assign amm_read_0           =   RD                  ;
 assign amm_write_0          =   WR                  ;
 assign amm_byteenable_0     =   BYTE_ENABLE         ;
 assign amm_burstcount_0     =   BURST_COUNT         ;
-assign RD_VALID             =   amm_readdatavalid_0 ;
+assign RD_VALID_d             =   amm_readdatavalid_0 ;
 assign READY                =   amm_ready_0         ;
+
+always_ff @(posedge CLK_I) 
+begin
+    RD_VALID <= RD_VALID_d;
+end
 
 enum int unsigned {IDLE, READ, WRITE, TEST} state, state_next;
 
@@ -261,7 +267,9 @@ end
 assign action_done = (state == READ || state == WRITE) ? (state == READ) ? RD_VALID : (WR_prev & ~WR /*& READY*/) : 1'b0;
 
 //TODO Так не работает, ready может быть опущен в конце 
-assign rd_valid = (state == READ ) ? READY : 1'b0;
+// Не используется
+assign rd_valid = 1'b0;
+// assign rd_valid = (state == READ ) ? READY : 1'b0;
 
 assign rd_data = (state == READ & action_done) ? DAT_I : 256'd0;
 
