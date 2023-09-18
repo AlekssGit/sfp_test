@@ -35,7 +35,7 @@ logic           RD          ;
 logic           WR          ;
 logic [31:0]    BYTE_ENABLE ;
 logic [6:0]     BURST_COUNT ;
-logic           RD_VALID_d    ;
+// logic           RD_VALID_d    ;
 logic           RD_VALID    ;
 logic           READY       ;
 
@@ -49,13 +49,13 @@ assign amm_read_0           =   RD                  ;
 assign amm_write_0          =   WR                  ;
 assign amm_byteenable_0     =   BYTE_ENABLE         ;
 assign amm_burstcount_0     =   BURST_COUNT         ;
-assign RD_VALID_d             =   amm_readdatavalid_0 ;
+assign RD_VALID             =   amm_readdatavalid_0 ;
 assign READY                =   amm_ready_0         ;
 
-always_ff @(posedge CLK_I) 
-begin
-    RD_VALID <= RD_VALID_d;
-end
+// always_ff @(posedge CLK_I) 
+// begin
+//     RD_VALID <= RD_VALID_d;
+// end
 
 enum int unsigned {IDLE, READ, WRITE, TEST} state, state_next;
 
@@ -136,6 +136,45 @@ begin
     end
 end
 
+logic rd_d;
+always_ff @(posedge CLK_I) 
+begin
+    rd_d <= RD;
+end
+
+logic wait_data_rd;
+always_ff @(posedge CLK_I, posedge RST_I) 
+begin
+    if(RST_I)
+    begin
+        wait_data_rd <= 1'b0;
+    end
+    else
+    begin
+        if(state == READ & RD == 1'b0)
+        begin
+            wait_data_rd <= 1'b1;
+        end
+        else if (state != READ)
+        begin
+            wait_data_rd <= 1'b0;
+        end
+    end
+end
+
+logic ready_d;
+always_ff @(posedge CLK_I, posedge RST_I) 
+begin
+    if(RST_I)
+    begin
+        ready_d <= 1'b0;
+    end
+    else
+    begin
+        ready_d <= READY;
+    end
+end
+
 always_comb 
 begin
     case(state)
@@ -149,7 +188,8 @@ begin
     READ:
     begin
         ADR_O   = rd_adr_local;
-        RD      = (flag_rd) ?    1'b0    :   1'b1;
+        //new variation
+        RD      = (rd_d & (!ready_d & !READY)) ? 1'b0 : (wait_data_rd) ? 1'b0 : 1'b1; //(flag_rd) ?    1'b0    :   1'b1;
         WR      = 1'b0;
         DAT_O   = wr_data_local;
     end
@@ -267,11 +307,25 @@ end
 assign action_done = (state == READ || state == WRITE) ? (state == READ) ? RD_VALID : (WR_prev & ~WR /*& READY*/) : 1'b0;
 
 //TODO Так не работает, ready может быть опущен в конце 
-// Не используется
+// Не используется в других модулях
 assign rd_valid = 1'b0;
 // assign rd_valid = (state == READ ) ? READY : 1'b0;
 
-assign rd_data = (state == READ & action_done) ? DAT_I : 256'd0;
+// assign rd_data = (state == READ & action_done) ? DAT_I : 256'd0;
+always_ff @( posedge CLK_I, posedge RST_I )
+begin
+    if(RST_I)
+    begin
+        rd_data <= 256'd0;
+    end
+    else
+    begin
+        if(state == READ & RD_VALID)
+        begin
+            rd_data <= DAT_I;
+        end
+    end
+end
 
 // State machine
 always @(posedge CLK_I, posedge RST_I) 

@@ -10,8 +10,8 @@
     `define RELAX_TIME          32'd1500
 `else
 	`define ALLOW_SEND		    1'b0
-    `define PERIOD_BTN_SEND_1	32'h05F5E100 // 00989680 
-	`define PERIOD_BTN_SEND_2	32'h06F5E100 // 01312D00  
+    `define PERIOD_BTN_SEND_1	32'h01312d00 // 05F5E100 00989680 
+	`define PERIOD_BTN_SEND_2	32'h01646033 // 06F5E100 01312D00  
     `define TIME_TO_BLINK       32'd50_000_000 
     `define BLINK_LED_DIVIDE    32'd25_000_000
     `define I2C_CLK_DIVIDE      32'd124 

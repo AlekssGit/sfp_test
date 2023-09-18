@@ -111,7 +111,7 @@ logic [255:0] rd_data_local_first;
 logic [255:0] rd_data_avalon;
 always_ff @(posedge avalon_clk) 
 begin
-    if(action_done)
+    if(action_done_latch)
         rd_data_avalon <= rd_data;
     else
         rd_data_avalon <= rd_data_avalon;

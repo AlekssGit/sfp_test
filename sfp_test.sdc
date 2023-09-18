@@ -380,7 +380,7 @@ set_max_delay -to [get_pins -compatibility_mode {*twentynm_xcvr_native_inst|*ins
 set_max_delay -to [get_pins -compatibility_mode {*twentynm_xcvr_native_inst|*inst_twentynm_pcs|*twentynm_hssi_*_pld_pcs_interface*|pld_pma_rxpma_rstb}] 20.000
 set_max_delay -from [get_registers {auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|jtag_acq_clk_xing|intel_stp_status_bits_cdc_u1|stp_status_bits_in_reg_acq[*]}] -to [get_registers {auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|jtag_acq_clk_xing|intel_stp_status_bits_cdc_u1|stp_status_bits_out_reg_tck[*]}] 30.000
 
-
+set_max_delay -from [get_registers "platform_design\|send_cmd_pcie\|send_cmd_pcie\|data_reg_send_packet[5]"] -to [get_registers "pcie_send_cmd_d"] 10.000
 #**************************************************************
 # Set Minimum Delay
 #**************************************************************
@@ -460,7 +460,7 @@ set_max_skew -from [get_registers "platform_design\|tx_2\|tx_2\|ddr_cntrl\|actio
 
 set_max_skew -from [get_registers "platform_design\|tx_2\|tx_2\|ddr_cntrl\|rd_adr\[*\]"] -to [get_registers "platform_design\|tx_2\|tx_2\|avalon_mm\|rd_adr_local_first\[*\]"] 0.8
 
-set_max_skew -from [get_registers "platform_design\|send_cmd_pcie\|send_cmd_pcie\|data_reg_send_packet[5]"] -to [get_registers "pcie_send_cmd_d"] 0.8
+# set_max_skew -from [get_registers "platform_design\|send_cmd_pcie\|send_cmd_pcie\|data_reg_send_packet[5]"] -to [get_registers "pcie_send_cmd_d"] 0.8
 
 set_max_skew -from [get_registers "platform_design\|setup_ddr\|setup_ddr\|ddr_local_cal_fail"] -to [get_registers "platform_design\|send_cmd_pcie\|send_cmd_pcie\|d_ddr_local_fail"] 0.8
 set_max_skew -from [get_registers "platform_design\|setup_ddr\|setup_ddr\|ddr_local_cal_success"] -to [get_registers "platform_design\|send_cmd_pcie\|send_cmd_pcie\|d_ddr_local_success"] 0.8
@@ -476,7 +476,7 @@ set_data_delay -from [get_registers "platform_design\|tx_2\|tx_2\|ddr_cntrl\|act
 
 set_data_delay -from [get_registers "platform_design\|tx_2\|tx_2\|ddr_cntrl\|rd_adr\[*\]"] -to [get_registers "platform_design\|tx_2\|tx_2\|avalon_mm\|rd_adr_local_first\[*\]"] 0.9
 
-set_data_delay -from [get_registers "platform_design\|send_cmd_pcie\|send_cmd_pcie\|data_reg_send_packet[5]"] -to [get_registers "pcie_send_cmd_d"] 0.9
+# set_data_delay -from [get_registers "platform_design\|send_cmd_pcie\|send_cmd_pcie\|data_reg_send_packet[5]"] -to [get_registers "pcie_send_cmd_d"] 0.9
 
 set_data_delay -from [get_registers "platform_design\|setup_ddr\|setup_ddr\|ddr_local_cal_fail"] -to [get_registers "platform_design\|send_cmd_pcie\|send_cmd_pcie\|d_ddr_local_fail"] 0.9
 set_data_delay -from [get_registers "platform_design\|setup_ddr\|setup_ddr\|ddr_local_cal_success"] -to [get_registers "platform_design\|send_cmd_pcie\|send_cmd_pcie\|d_ddr_local_success"] 0.9
