@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file
+   path="receive_packet_ddr_10/sim/receive_packet_ddr.sv"
+   type="SYSTEM_VERILOG"
+   library="receive_packet_ddr_10" />
+ <file
+   path="receive_packet_ddr_10/sim/avalon_mm_ddr.sv"
+   type="SYSTEM_VERILOG"
+   library="receive_packet_ddr_10" />
+ <file
+   path="receive_packet_ddr_10/sim/external_ram_256.sv"
+   type="SYSTEM_VERILOG"
+   library="receive_packet_ddr_10" />
+ <file
+   path="sim/rx_2.v"
+   type="VERILOG"
+   library="rx_2"
+   hasInlineConfiguration="true" />
+ <topLevel name="rx_2.rx_2" />
+ <deviceFamily name="cyclone10gx" />
+ <device name="10CX220YF780E5G" />
+</simPackage>

@@ -1,0 +1,31 @@
+	component rx_2 is
+		port (
+			ff_rx_data        : in  std_logic_vector(7 downto 0)   := (others => 'X'); -- data
+			ff_rx_eop         : in  std_logic                      := 'X';             -- endofpacket
+			ff_rx_rdy         : out std_logic;                                         -- ready
+			ff_rx_sop         : in  std_logic                      := 'X';             -- startofpacket
+			ff_rx_dval        : in  std_logic                      := 'X';             -- valid
+			rx_err            : in  std_logic_vector(4 downto 0)   := (others => 'X'); -- error
+			amm_addr          : out std_logic_vector(24 downto 0);                     -- address
+			amm_readdata      : in  std_logic_vector(255 downto 0) := (others => 'X'); -- readdata
+			amm_writedata     : out std_logic_vector(255 downto 0);                    -- writedata
+			amm_read          : out std_logic;                                         -- read
+			amm_write         : out std_logic;                                         -- write
+			amm_byteenable    : out std_logic_vector(31 downto 0);                     -- byteenable
+			amm_burstcount    : out std_logic_vector(6 downto 0);                      -- burstcount
+			amm_readdatavalid : in  std_logic                      := 'X';             -- readdatavalid
+			amm_ready         : in  std_logic                      := 'X';             -- waitrequest
+			rx_afull_data     : out std_logic_vector(1 downto 0);                      -- data
+			rx_afull_valid    : out std_logic;                                         -- valid
+			rx_afull_channel  : out std_logic;                                         -- channel
+			size_received     : out std_logic_vector(11 downto 0);                     -- size_received
+			data_saved        : out std_logic;                                         -- data_saved
+			rst               : in  std_logic                      := 'X';             -- reset
+			clk_original      : in  std_logic                      := 'X';             -- clk
+			rst_n             : in  std_logic                      := 'X';             -- reset
+			avalon_clk        : in  std_logic                      := 'X';             -- clk
+			avalon_reset      : in  std_logic                      := 'X';             -- reset
+			fifo_status_clk   : in  std_logic                      := 'X'              -- clk
+		);
+	end component rx_2;
+

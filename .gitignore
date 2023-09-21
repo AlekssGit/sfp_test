@@ -5,3 +5,5 @@
 /tmp-clearbox
 
 *.stp
+
+/asdpci.dll

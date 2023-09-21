@@ -200,6 +200,8 @@ logic mdio_oen ;
 
 logic data_saved_1;
 logic data_saved_2;
+logic [11:0] size_received_2;
+logic [31:0] send_ch_2_timer;
 
 assign mdio_in = 1'b1;
 
@@ -265,15 +267,20 @@ system_design #(.setup_ddr_test(test)) platform_design (
         .pll_refclk_clk                         (clk_50             ),  
 
         .receive_packet_1_data_saved_data_saved (data_saved_1       ),                     
-		.receive_packet_2_data_saved_data_saved (data_saved_2       ),
+	
         .reset_main_out_reset                   (main_reset         ),
         .reset_mod_clock_clk                    (clk_50             ),                  
 		.reset_mod_reset_reset_n                (rst_n & (ddr_cal_success | test)),              
 		.reset_mod_reset_phy_reset              (reset_phy          ),    
 
+		.rx_2_rx_signals_size_received          (size_received_2    ),                
+		.rx_2_rx_signals_data_saved             (data_saved_2       ),    
+		.rx_2_reset_board_reset                 (rst_n              ),  
+
         .pcie_send_control_start_ram_addr       (pcie_start_ram_addr), 
-        .pcie_send_control_signal               (pcie_send_cmd      ),                 
-		
+        .pcie_send_control_signal               (pcie_send_cmd      ),            
+		.pcie_send_control_ch_2_timer           (send_ch_2_timer    ),
+
         .send_packet_1_control_start_ram_addr   (start_ram_addr_1   ), 
 		.send_packet_1_control_cmd_send         (1'b0 /* cmd_send_1 */         ),       
 		
@@ -390,7 +397,8 @@ phyip_reset phy_resets
    .rx_cal_busy         (rx_cal_busy        )
 );
 
-logic   [31:0]      counter_to_send     ;
+logic   [31:0]      counter_to_send_1     ;
+logic   [31:0]      counter_to_send_2     ;
 logic               send_cmd            ;
 logic	[24:0]		transmit_start_addr		;
 
@@ -400,17 +408,19 @@ assign start_ram_addr_2 = pcie_start_ram_addr; //25'd5; //transmit_start_addr;
 logic cmd_2_send_first;
 
 logic pcie_send_cmd_d;
+logic [31:0] send_ch_2_timer_d;
 
 always_ff @(posedge clk_50_pll)
 begin
     pcie_send_cmd_d <= pcie_send_cmd;    
+    send_ch_2_timer_d <= send_ch_2_timer; 
 end
 
 always @(posedge clk_50_pll, posedge main_reset) 
 begin
     if(main_reset)
     begin
-        counter_to_send <= 32'd0;  
+        counter_to_send_1 <= 32'd0;  
         cmd_send_1    <= 1'b0;  
     end 
     else
@@ -419,19 +429,19 @@ begin
 		begin
             if(`ALLOW_SEND == 1'b1 | pcie_send_cmd_d)
             begin
-                counter_to_send <= counter_to_send + 1;
-                if(counter_to_send == `PERIOD_BTN_SEND_1)
+                counter_to_send_1 <= counter_to_send_1 + 1;
+                if(counter_to_send_1 == `PERIOD_BTN_SEND_1)
                 begin
                     cmd_send_1 <= 1'b1;
                     transmit_start_addr <= 25'd1;
                 end
-                else if(counter_to_send == `PERIOD_BTN_SEND_1 + 32'd3)
+                else if(counter_to_send_1 == `PERIOD_BTN_SEND_1 + 32'd3)
                 begin
                     cmd_send_1 <= 1'b0;
                 end
-                else if(counter_to_send == `PERIOD_BTN_SEND_2 + 32'd10)
+                else if(counter_to_send_1 == `PERIOD_BTN_SEND_1 + 32'd10)
                 begin
-                    counter_to_send <= 32'd0;                
+                    counter_to_send_1 <= 32'd0;                
                 end
             end
             else if(pcie_send_cmd_d)
@@ -453,6 +463,8 @@ begin
         cmd_send_2    <= 1'b0;  
 
         cmd_2_send_first <= 1'b0;
+
+        counter_to_send_2 <= 32'd0;
     end 
     else
     begin
@@ -462,9 +474,12 @@ begin
             begin
                 if(cmd_send_2 == 1'b1)
                 begin
-                    if(counter_to_send == `PERIOD_BTN_SEND_2 + 32'd3)
+                    counter_to_send_2 <= counter_to_send_2 + 1;
+                    // if(counter_to_send_2 == `PERIOD_BTN_SEND_2 + 32'd3)
+                    if(counter_to_send_2 >= send_ch_2_timer + 32'd3)
                     begin
                         cmd_send_2 <= 1'b0;
+                        counter_to_send_2 <= 32'd0;
                     end
                 end
                 else
@@ -474,17 +489,19 @@ begin
             end
             else
             begin
-                if(counter_to_send == `PERIOD_BTN_SEND_2 /*&& cmd_2_send_first == 1'b0*/ && `ALLOW_SEND)
-                begin
-                    cmd_send_2 <= 1'b1;
-                end
-                else if(counter_to_send == `PERIOD_BTN_SEND_2 + 32'd3  /*&& cmd_2_send_first == 1'b0 */ && `ALLOW_SEND)
-                begin    
-                    cmd_send_2 <= 1'b0; 
+                counter_to_send_2 <= 32'd0;
+                // if(counter_to_send_1 == `PERIOD_BTN_SEND_2 && `ALLOW_SEND)
+                // begin
+                //     cmd_send_2 <= 1'b1;
+                // end
+                // else if(counter_to_send_1 == `PERIOD_BTN_SEND_2 + 32'd3 && `ALLOW_SEND)
+                // begin    
+                //     cmd_send_2 <= 1'b0; 
 
-                    cmd_2_send_first <= 1'b1;   
-                end
-                else if(data_saved_2 && ~cmd_send_2)
+                //     cmd_2_send_first <= 1'b1;   
+                // end
+                // else 
+                if(data_saved_2 && ~cmd_send_2)
                 begin
                     cmd_send_2 <= 1'b1;
                 end
@@ -497,7 +514,7 @@ begin
     end   
 end
 
-// SFP expnaders gpio_led_blink
+// SFP expanders gpio_led_blink
 logic clk_i2c; 
 generator #(`I2C_CLK_DIVIDE) i2c_clk_divide	(
 	.nreset_i	(rst_n),

@@ -36,13 +36,16 @@ module system_design #(
 		output wire        pcie_hip_serial_tx_out3,                 //                            .tx_out3
 		input  wire        pll_refclk_clk,                          //                  pll_refclk.clk
 		output wire        receive_packet_1_data_saved_data_saved,  // receive_packet_1_data_saved.data_saved
-		output wire        receive_packet_2_data_saved_data_saved,  // receive_packet_2_data_saved.data_saved
 		output wire        reset_main_out_reset,                    //              reset_main_out.reset
 		input  wire        reset_mod_clock_clk,                     //             reset_mod_clock.clk
 		input  wire        reset_mod_reset_reset_n,                 //             reset_mod_reset.reset_n
 		output wire        reset_mod_reset_phy_reset,               //         reset_mod_reset_phy.reset
+		output wire [11:0] rx_2_rx_signals_size_received,           //             rx_2_rx_signals.size_received
+		output wire        rx_2_rx_signals_data_saved,              //                            .data_saved
+		input  wire        rx_2_reset_board_reset,                  //            rx_2_reset_board.reset
 		output wire [5:0]  pcie_send_control_start_ram_addr,        //           pcie_send_control.start_ram_addr
 		output wire        pcie_send_control_signal,                //                            .signal
+		output wire [31:0] pcie_send_control_ch_2_timer,            //                            .ch_2_timer
 		input  wire [24:0] send_packet_1_control_start_ram_addr,    //       send_packet_1_control.start_ram_addr
 		input  wire        send_packet_1_control_cmd_send,          //                            .cmd_send
 		input  wire        reset_board_reset,                       //                 reset_board.reset

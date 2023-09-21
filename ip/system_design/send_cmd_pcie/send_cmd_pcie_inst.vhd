@@ -10,6 +10,7 @@
 			avalon_mm_rd_valid    : out std_logic;                                        -- readdatavalid
 			start_ram_addr        : out std_logic_vector(5 downto 0);                     -- start_ram_addr
 			send_cmd              : out std_logic;                                        -- signal
+			send_ch_2_timer       : out std_logic_vector(31 downto 0);                    -- ch_2_timer
 			ddr_local_cal_success : in  std_logic                     := 'X';             -- local_cal_success
 			ddr_local_cal_fail    : in  std_logic                     := 'X';             -- local_cal_fail
 			ddr_setup_done        : in  std_logic                     := 'X';             -- setup_done
@@ -32,6 +33,7 @@
 			avalon_mm_rd_valid    => CONNECTED_TO_avalon_mm_rd_valid,    --                   .readdatavalid
 			start_ram_addr        => CONNECTED_TO_start_ram_addr,        --       send_control.start_ram_addr
 			send_cmd              => CONNECTED_TO_send_cmd,              --                   .signal
+			send_ch_2_timer       => CONNECTED_TO_send_ch_2_timer,       --                   .ch_2_timer
 			ddr_local_cal_success => CONNECTED_TO_ddr_local_cal_success, --         ddr_status.local_cal_success
 			ddr_local_cal_fail    => CONNECTED_TO_ddr_local_cal_fail,    --                   .local_cal_fail
 			ddr_setup_done        => CONNECTED_TO_ddr_setup_done,        --     ddr_setup_done.setup_done

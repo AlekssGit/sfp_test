@@ -1,7 +1,8 @@
-`define REG_SEND_PACKET     16'h0050
-`define REG_TEST            16'h0010
-`define REG_DDR_STATUS      16'h00C0
-`define REG_DDR_CNTRL       16'h00B0
+`define REG_SEND_PACKET             16'h0050
+`define REG_TEST                    16'h0010
+`define REG_DDR_STATUS              16'h00C0
+`define REG_DDR_CNTRL               16'h00B0
+`define REG_SEND_CHANNEL_2_TIMER    16'h0060
 
 module avalon_mm_slave 
 (
@@ -18,6 +19,7 @@ module avalon_mm_slave
 
     output  logic             send_cmd              ,
     output  logic   [5:0]     start_ram_addr        ,
+    output  logic   [31:0]    send_ch_2_timer       ,
 
     input   logic             ddr_local_cal_success ,
     input   logic             ddr_local_cal_fail    ,
@@ -58,6 +60,8 @@ begin
     begin
         data_reg_send_packet <= 32'd0;
         ddr_setup_cmd <= 1'b0;
+
+        send_ch_2_timer <= 32'h01646033;
     end
     else
     begin
@@ -68,6 +72,10 @@ begin
         else if (avalon_mm_write & avalon_mm_addr == `REG_DDR_CNTRL) 
         begin
             ddr_setup_cmd <= avalon_mm_write_data[0];
+        end
+        else if (avalon_mm_write & avalon_mm_addr == `REG_SEND_CHANNEL_2_TIMER) 
+        begin
+            send_ch_2_timer <= avalon_mm_write_data[31:0];
         end
     end
 end
@@ -91,6 +99,10 @@ begin
         else if(avalon_mm_read & avalon_mm_addr == `REG_DDR_STATUS)
         begin
             avalon_mm_read_data <= ddr_status;
+        end
+        else if(avalon_mm_read & avalon_mm_addr == `REG_SEND_CHANNEL_2_TIMER)
+        begin
+            avalon_mm_read_data <= send_ch_2_timer;
         end
         else if(avalon_mm_read)
         begin

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="send_cmd_pcie" kind="send_cmd_pcie" version="1.0" fabric="QSYS">
  <!-- Format version 21.3 170 (Future versions may contain additional information.) -->
- <!-- 2023.08.23.22:57:42 -->
+ <!-- 2023.09.21.12:13:30 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
@@ -672,6 +672,12 @@ parameters are a RESULT of the module parameters. -->
     <direction>Output</direction>
     <width>1</width>
     <role>signal</role>
+   </port>
+   <port>
+    <name>send_ch_2_timer</name>
+    <direction>Output</direction>
+    <width>32</width>
+    <role>ch_2_timer</role>
    </port>
   </interface>
   <interface name="ddr_status" kind="conduit_end" version="21.3">

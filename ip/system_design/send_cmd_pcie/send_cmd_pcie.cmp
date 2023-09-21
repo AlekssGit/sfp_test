@@ -10,6 +10,7 @@
 			avalon_mm_rd_valid    : out std_logic;                                        -- readdatavalid
 			start_ram_addr        : out std_logic_vector(5 downto 0);                     -- start_ram_addr
 			send_cmd              : out std_logic;                                        -- signal
+			send_ch_2_timer       : out std_logic_vector(31 downto 0);                    -- ch_2_timer
 			ddr_local_cal_success : in  std_logic                     := 'X';             -- local_cal_success
 			ddr_local_cal_fail    : in  std_logic                     := 'X';             -- local_cal_fail
 			ddr_setup_done        : in  std_logic                     := 'X';             -- setup_done

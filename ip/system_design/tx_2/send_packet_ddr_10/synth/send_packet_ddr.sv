@@ -6,10 +6,6 @@ module send_packet_ddr
     input   logic           cmd_send        ,
     input   logic   [24:0]  start_ram_addr  ,
 
-    // output  logic   [24:0]  ram_address_tx  ,
-    // input   logic   [255:0] ram_data_read   ,
-    // input   logic           ram_ready       ,
-
     // avalon mm tse
     output  logic   [7:0]   ff_tx_data      ,		
     output  logic           ff_tx_eop       ,		
@@ -34,16 +30,6 @@ module send_packet_ddr
 
     input   logic           rst_n                       ,
     input   logic           clk_50                      
-
-    // //on chip memory avalon mm
-    // output  logic   [9:0]   ram_addr        ,
-    // // output  logic           ram_clken       ,
-    // output  logic           ram_chipselect  ,
-    // output  logic           ram_write       ,
-    // input   logic   [31:0]  ram_readdata    ,
-    // output  logic   [31:0]  ram_writedata   ,
-    // output  logic   [3:0]   ram_byteenable  ,
-    // input   logic           ram_waitrequest
 
 );
 
@@ -76,7 +62,7 @@ always@ (posedge clk_original, posedge rst)
 begin
     if(rst)
     begin
-       counter_data_write = 11'd0; 
+        counter_data_write = 11'd0; 
     end 
     else
     begin
@@ -151,7 +137,7 @@ end
 logic [255:0]   ram_data_read;
 logic [255:0]   ram_data_read_local;
 logic [255:0]   ram_data_read_local_first;
- 
+
 always_ff @(posedge clk_original)
 begin
     ram_data_read_local_first    <= ram_data_read;
@@ -160,7 +146,7 @@ end
 
 logic [24:0]    ram_address_tx_local;
 logic [24:0]    ram_address_tx;
- 
+
 always_ff @(posedge clk_original) 
 begin
     ram_address_tx    <= ram_address_tx_local;
@@ -231,7 +217,7 @@ begin
     begin
         if(state == PREPARE_DATA)
         begin
-            if(ram_address_tx_local == 25'd0) // & count_prepare_wait >= COUNT_PREPARE_WAIT_VAL) // 10'd20
+            if(ram_address_tx_local == 25'd0) // 10'd20
             begin
                 data_ready <= 1'b0;
             end
@@ -290,7 +276,7 @@ begin
     begin
         if(state == PREPARE_DATA)
         begin
-            if(ram_address_tx_local == 25'd0) // & count_prepare_wait >= COUNT_PREPARE_WAIT_VAL) // 10'd20
+            if(ram_address_tx_local == 25'd0) // 10'd20
             begin
                 if(ram_ready_local)
                 begin
@@ -309,7 +295,7 @@ begin
             end
             else if(wait_data_flag & ram_address_tx_local > start_ram_addr & address_wait == ram_address_tx_local)
             begin
-                if(ram_ready_local) // & count_prepare_wait >= COUNT_PREPARE_WAIT_VAL)
+                if(ram_ready_local)
                 begin
                     if(count_prepared + 11'd1 < need_count_prepare) //was without 11'd1
                     begin
@@ -343,7 +329,7 @@ begin
     begin
         if(state == PREPARE_DATA)
         begin
-            if(ram_address_tx_local == 25'd0) // & count_prepare_wait >= COUNT_PREPARE_WAIT_VAL) // 10'd20
+            if(ram_address_tx_local == 25'd0)
             begin
 
             end
@@ -352,7 +338,7 @@ begin
                 if(ram_ready_local)
                 begin
                     packet_size <= ram_data_read_local[10:0];
-                    // if(packet_size > 0)
+
                     if(ram_data_read_local[10:0] > 11'd0)
                     begin
                         count_prepared <= 11'd0;

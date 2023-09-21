@@ -1,0 +1,20 @@
+# system info rx_2 on 2023.09.21.12:13:41
+system_info:
+name,value
+DEVICE,10CX220YF780E5G
+DEVICE_FAMILY,Cyclone 10 GX
+GENERATION_ID,0
+#
+#
+# Files generated for rx_2 on 2023.09.21.12:13:41
+files:
+filepath,kind,attributes,module,is_top
+sim/rx_2.v,VERILOG,CONTAINS_INLINE_CONFIGURATION,rx_2,true
+receive_packet_ddr_10/sim/receive_packet_ddr.sv,SYSTEM_VERILOG,,receive_packet_ddr,false
+receive_packet_ddr_10/sim/avalon_mm_ddr.sv,SYSTEM_VERILOG,,receive_packet_ddr,false
+receive_packet_ddr_10/sim/external_ram_256.sv,SYSTEM_VERILOG,,receive_packet_ddr,false
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module
+rx_2.rx_2,receive_packet_ddr

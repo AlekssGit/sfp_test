@@ -36,13 +36,16 @@
 		.pcie_hip_serial_tx_out3                 (_connected_to_pcie_hip_serial_tx_out3_),                 //  output,   width = 1,                            .tx_out3
 		.pll_refclk_clk                          (_connected_to_pll_refclk_clk_),                          //   input,   width = 1,                  pll_refclk.clk
 		.receive_packet_1_data_saved_data_saved  (_connected_to_receive_packet_1_data_saved_data_saved_),  //  output,   width = 1, receive_packet_1_data_saved.data_saved
-		.receive_packet_2_data_saved_data_saved  (_connected_to_receive_packet_2_data_saved_data_saved_),  //  output,   width = 1, receive_packet_2_data_saved.data_saved
 		.reset_main_out_reset                    (_connected_to_reset_main_out_reset_),                    //  output,   width = 1,              reset_main_out.reset
 		.reset_mod_clock_clk                     (_connected_to_reset_mod_clock_clk_),                     //   input,   width = 1,             reset_mod_clock.clk
 		.reset_mod_reset_reset_n                 (_connected_to_reset_mod_reset_reset_n_),                 //   input,   width = 1,             reset_mod_reset.reset_n
 		.reset_mod_reset_phy_reset               (_connected_to_reset_mod_reset_phy_reset_),               //  output,   width = 1,         reset_mod_reset_phy.reset
+		.rx_2_rx_signals_size_received           (_connected_to_rx_2_rx_signals_size_received_),           //  output,  width = 12,             rx_2_rx_signals.size_received
+		.rx_2_rx_signals_data_saved              (_connected_to_rx_2_rx_signals_data_saved_),              //  output,   width = 1,                            .data_saved
+		.rx_2_reset_board_reset                  (_connected_to_rx_2_reset_board_reset_),                  //   input,   width = 1,            rx_2_reset_board.reset
 		.pcie_send_control_start_ram_addr        (_connected_to_pcie_send_control_start_ram_addr_),        //  output,   width = 6,           pcie_send_control.start_ram_addr
 		.pcie_send_control_signal                (_connected_to_pcie_send_control_signal_),                //  output,   width = 1,                            .signal
+		.pcie_send_control_ch_2_timer            (_connected_to_pcie_send_control_ch_2_timer_),            //  output,  width = 32,                            .ch_2_timer
 		.send_packet_1_control_start_ram_addr    (_connected_to_send_packet_1_control_start_ram_addr_),    //   input,  width = 25,       send_packet_1_control.start_ram_addr
 		.send_packet_1_control_cmd_send          (_connected_to_send_packet_1_control_cmd_send_),          //   input,   width = 1,                            .cmd_send
 		.reset_board_reset                       (_connected_to_reset_board_reset_),                       //   input,   width = 1,                 reset_board.reset

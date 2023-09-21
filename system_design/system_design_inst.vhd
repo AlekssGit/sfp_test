@@ -38,13 +38,16 @@
 			pcie_hip_serial_tx_out3                 : out   std_logic;                                        -- tx_out3
 			pll_refclk_clk                          : in    std_logic                     := 'X';             -- clk
 			receive_packet_1_data_saved_data_saved  : out   std_logic;                                        -- data_saved
-			receive_packet_2_data_saved_data_saved  : out   std_logic;                                        -- data_saved
 			reset_main_out_reset                    : out   std_logic;                                        -- reset
 			reset_mod_clock_clk                     : in    std_logic                     := 'X';             -- clk
 			reset_mod_reset_reset_n                 : in    std_logic                     := 'X';             -- reset_n
 			reset_mod_reset_phy_reset               : out   std_logic;                                        -- reset
+			rx_2_rx_signals_size_received           : out   std_logic_vector(11 downto 0);                    -- size_received
+			rx_2_rx_signals_data_saved              : out   std_logic;                                        -- data_saved
+			rx_2_reset_board_reset                  : in    std_logic                     := 'X';             -- reset
 			pcie_send_control_start_ram_addr        : out   std_logic_vector(5 downto 0);                     -- start_ram_addr
 			pcie_send_control_signal                : out   std_logic;                                        -- signal
+			pcie_send_control_ch_2_timer            : out   std_logic_vector(31 downto 0);                    -- ch_2_timer
 			send_packet_1_control_start_ram_addr    : in    std_logic_vector(24 downto 0) := (others => 'X'); -- start_ram_addr
 			send_packet_1_control_cmd_send          : in    std_logic                     := 'X';             -- cmd_send
 			reset_board_reset                       : in    std_logic                     := 'X';             -- reset
@@ -158,13 +161,16 @@
 			pcie_hip_serial_tx_out3                 => CONNECTED_TO_pcie_hip_serial_tx_out3,                 --                            .tx_out3
 			pll_refclk_clk                          => CONNECTED_TO_pll_refclk_clk,                          --                  pll_refclk.clk
 			receive_packet_1_data_saved_data_saved  => CONNECTED_TO_receive_packet_1_data_saved_data_saved,  -- receive_packet_1_data_saved.data_saved
-			receive_packet_2_data_saved_data_saved  => CONNECTED_TO_receive_packet_2_data_saved_data_saved,  -- receive_packet_2_data_saved.data_saved
 			reset_main_out_reset                    => CONNECTED_TO_reset_main_out_reset,                    --              reset_main_out.reset
 			reset_mod_clock_clk                     => CONNECTED_TO_reset_mod_clock_clk,                     --             reset_mod_clock.clk
 			reset_mod_reset_reset_n                 => CONNECTED_TO_reset_mod_reset_reset_n,                 --             reset_mod_reset.reset_n
 			reset_mod_reset_phy_reset               => CONNECTED_TO_reset_mod_reset_phy_reset,               --         reset_mod_reset_phy.reset
+			rx_2_rx_signals_size_received           => CONNECTED_TO_rx_2_rx_signals_size_received,           --             rx_2_rx_signals.size_received
+			rx_2_rx_signals_data_saved              => CONNECTED_TO_rx_2_rx_signals_data_saved,              --                            .data_saved
+			rx_2_reset_board_reset                  => CONNECTED_TO_rx_2_reset_board_reset,                  --            rx_2_reset_board.reset
 			pcie_send_control_start_ram_addr        => CONNECTED_TO_pcie_send_control_start_ram_addr,        --           pcie_send_control.start_ram_addr
 			pcie_send_control_signal                => CONNECTED_TO_pcie_send_control_signal,                --                            .signal
+			pcie_send_control_ch_2_timer            => CONNECTED_TO_pcie_send_control_ch_2_timer,            --                            .ch_2_timer
 			send_packet_1_control_start_ram_addr    => CONNECTED_TO_send_packet_1_control_start_ram_addr,    --       send_packet_1_control.start_ram_addr
 			send_packet_1_control_cmd_send          => CONNECTED_TO_send_packet_1_control_cmd_send,          --                            .cmd_send
 			reset_board_reset                       => CONNECTED_TO_reset_board_reset,                       --                 reset_board.reset

@@ -399,6 +399,14 @@ https://fpgasoftware.intel.com/eula.-->
                 <ipxact:name>send_cmd</ipxact:name>
               </ipxact:physicalPort>
             </ipxact:portMap>
+            <ipxact:portMap>
+              <ipxact:logicalPort>
+                <ipxact:name>ch_2_timer</ipxact:name>
+              </ipxact:logicalPort>
+              <ipxact:physicalPort>
+                <ipxact:name>send_ch_2_timer</ipxact:name>
+              </ipxact:physicalPort>
+            </ipxact:portMap>
           </ipxact:portMaps>
         </ipxact:abstractionType>
       </ipxact:abstractionTypes>
@@ -758,6 +766,24 @@ https://fpgasoftware.intel.com/eula.-->
           <ipxact:wireTypeDefs>
             <ipxact:wireTypeDef>
               <ipxact:typeName>STD_LOGIC</ipxact:typeName>
+              <ipxact:viewRef>QUARTUS_SYNTH</ipxact:viewRef>
+            </ipxact:wireTypeDef>
+          </ipxact:wireTypeDefs>
+        </ipxact:wire>
+      </ipxact:port>
+      <ipxact:port>
+        <ipxact:name>send_ch_2_timer</ipxact:name>
+        <ipxact:wire>
+          <ipxact:direction>out</ipxact:direction>
+          <ipxact:vectors>
+            <ipxact:vector>
+              <ipxact:left>0</ipxact:left>
+              <ipxact:right>31</ipxact:right>
+            </ipxact:vector>
+          </ipxact:vectors>
+          <ipxact:wireTypeDefs>
+            <ipxact:wireTypeDef>
+              <ipxact:typeName>STD_LOGIC_VECTOR</ipxact:typeName>
               <ipxact:viewRef>QUARTUS_SYNTH</ipxact:viewRef>
             </ipxact:wireTypeDef>
           </ipxact:wireTypeDefs>
@@ -1252,6 +1278,15 @@ https://fpgasoftware.intel.com/eula.-->
                     &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
                     &lt;terminationValue&gt;0&lt;/terminationValue&gt;
                 &lt;/port&gt;
+                &lt;port&gt;
+                    &lt;name&gt;send_ch_2_timer&lt;/name&gt;
+                    &lt;role&gt;ch_2_timer&lt;/role&gt;
+                    &lt;direction&gt;Output&lt;/direction&gt;
+                    &lt;width&gt;32&lt;/width&gt;
+                    &lt;lowerBound&gt;0&lt;/lowerBound&gt;
+                    &lt;vhdlType&gt;STD_LOGIC_VECTOR&lt;/vhdlType&gt;
+                    &lt;terminationValue&gt;0&lt;/terminationValue&gt;
+                &lt;/port&gt;
             &lt;/ports&gt;
             &lt;assignments&gt;
                 &lt;assignmentValueMap/&gt;
@@ -1499,6 +1534,7 @@ https://fpgasoftware.intel.com/eula.-->
         <altera:port_mapping altera:name="system_main_reset" altera:internal="system_main_reset"></altera:port_mapping>
       </altera:interface_mapping>
       <altera:interface_mapping altera:name="send_control" altera:internal="send_cmd_pcie.send_control" altera:type="conduit" altera:dir="end">
+        <altera:port_mapping altera:name="send_ch_2_timer" altera:internal="send_ch_2_timer"></altera:port_mapping>
         <altera:port_mapping altera:name="send_cmd" altera:internal="send_cmd"></altera:port_mapping>
         <altera:port_mapping altera:name="start_ram_addr" altera:internal="start_ram_addr"></altera:port_mapping>
       </altera:interface_mapping>

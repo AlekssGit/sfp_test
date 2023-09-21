@@ -9,6 +9,7 @@ module send_cmd_pcie (
 		output wire        avalon_mm_rd_valid,    //                   .readdatavalid
 		output wire [5:0]  start_ram_addr,        //       send_control.start_ram_addr
 		output wire        send_cmd,              //                   .signal
+		output wire [31:0] send_ch_2_timer,       //                   .ch_2_timer
 		input  wire        ddr_local_cal_success, //         ddr_status.local_cal_success
 		input  wire        ddr_local_cal_fail,    //                   .local_cal_fail
 		input  wire        ddr_setup_done,        //     ddr_setup_done.setup_done

@@ -198,3 +198,4 @@ set_instance_assignment -name IO_STANDARD "1.5 V" -to mem_reset_n -entity sfp_te
 set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to mem_we_n -entity sfp_test_top
 set_global_assignment -name IP_FILE ip/system_design/tx_2.ip
 set_global_assignment -name SIGNALTAP_FILE stp1.stp
+set_global_assignment -name IP_FILE ip/system_design/rx_2.ip

@@ -41,13 +41,16 @@ module system_design #(
 		output wire        pcie_hip_serial_tx_out3,                 //                            .tx_out3
 		input  wire        pll_refclk_clk,                          //                  pll_refclk.clk
 		output wire        receive_packet_1_data_saved_data_saved,  // receive_packet_1_data_saved.data_saved
-		output wire        receive_packet_2_data_saved_data_saved,  // receive_packet_2_data_saved.data_saved
 		output wire        reset_main_out_reset,                    //              reset_main_out.reset
 		input  wire        reset_mod_clock_clk,                     //             reset_mod_clock.clk
 		input  wire        reset_mod_reset_reset_n,                 //             reset_mod_reset.reset_n
 		output wire        reset_mod_reset_phy_reset,               //         reset_mod_reset_phy.reset
+		output wire [11:0] rx_2_rx_signals_size_received,           //             rx_2_rx_signals.size_received
+		output wire        rx_2_rx_signals_data_saved,              //                            .data_saved
+		input  wire        rx_2_reset_board_reset,                  //            rx_2_reset_board.reset
 		output wire [5:0]  pcie_send_control_start_ram_addr,        //           pcie_send_control.start_ram_addr
 		output wire        pcie_send_control_signal,                //                            .signal
+		output wire [31:0] pcie_send_control_ch_2_timer,            //                            .ch_2_timer
 		input  wire [24:0] send_packet_1_control_start_ram_addr,    //       send_packet_1_control.start_ram_addr
 		input  wire        send_packet_1_control_cmd_send,          //                            .cmd_send
 		input  wire        reset_board_reset,                       //                 reset_board.reset
@@ -147,21 +150,20 @@ module system_design #(
 	wire          tse_receive_0_startofpacket;                                // tse:data_rx_sop_0 -> receive_packet_1:ff_rx_sop
 	wire          tse_receive_0_endofpacket;                                  // tse:data_rx_eop_0 -> receive_packet_1:ff_rx_eop
 	wire    [4:0] tse_receive_0_error;                                        // tse:data_rx_error_0 -> receive_packet_1:rx_err
-	wire          tse_receive_1_valid;                                        // tse:data_rx_valid_1 -> receive_packet_2:ff_rx_dval
-	wire    [7:0] tse_receive_1_data;                                         // tse:data_rx_data_1 -> receive_packet_2:ff_rx_data
-	wire          tse_receive_1_ready;                                        // receive_packet_2:ff_rx_rdy -> tse:data_rx_ready_1
-	wire          tse_receive_1_startofpacket;                                // tse:data_rx_sop_1 -> receive_packet_2:ff_rx_sop
-	wire          tse_receive_1_endofpacket;                                  // tse:data_rx_eop_1 -> receive_packet_2:ff_rx_eop
-	wire    [4:0] tse_receive_1_error;                                        // tse:data_rx_error_1 -> receive_packet_2:rx_err
-	wire          pcie_coreclkout_hip_clk;                                    // pcie:coreclkout_hip -> [irq_mapper:clk, mm_interconnect_1:pcie_coreclkout_hip_clk, mm_interconnect_5:pcie_coreclkout_hip_clk, send_cmd_pcie:clk]
-	wire          ddr3_emif_usr_clk_clk;                                      // ddr3:emif_usr_clk -> [clock_ddr_avalon:in_clk, mm_interconnect_1:ddr3_emif_usr_clk_clk, rst_controller_005:clk, setup_ddr:avalon_clk, tx_2:avalon_clk]
+	wire          tse_receive_1_valid;                                        // tse:data_rx_valid_1 -> rx_2:ff_rx_dval
+	wire    [7:0] tse_receive_1_data;                                         // tse:data_rx_data_1 -> rx_2:ff_rx_data
+	wire          tse_receive_1_ready;                                        // rx_2:ff_rx_rdy -> tse:data_rx_ready_1
+	wire          tse_receive_1_startofpacket;                                // tse:data_rx_sop_1 -> rx_2:ff_rx_sop
+	wire          tse_receive_1_endofpacket;                                  // tse:data_rx_eop_1 -> rx_2:ff_rx_eop
+	wire    [4:0] tse_receive_1_error;                                        // tse:data_rx_error_1 -> rx_2:rx_err
+	wire          pcie_coreclkout_hip_clk;                                    // pcie:coreclkout_hip -> [irq_mapper:clk, mm_interconnect_1:pcie_coreclkout_hip_clk, mm_interconnect_4:pcie_coreclkout_hip_clk, send_cmd_pcie:clk]
+	wire          ddr3_emif_usr_clk_clk;                                      // ddr3:emif_usr_clk -> [clock_ddr_avalon:in_clk, mm_interconnect_1:ddr3_emif_usr_clk_clk, rst_controller_006:clk, rx_2:avalon_clk, setup_ddr:avalon_clk, tx_2:avalon_clk]
 	wire          tse_mac_rx_clock_connection_0_clk;                          // tse:mac_rx_clk_0 -> [mem_rcv_1:clk, mm_interconnect_2:tse_mac_rx_clock_connection_0_clk, receive_packet_1:clk_original, rst_controller_004:clk]
-	wire          tse_mac_rx_clock_connection_1_clk;                          // tse:mac_rx_clk_1 -> [mem_4:clk2, mem_rcv_2:clk, mm_interconnect_4:tse_mac_rx_clock_connection_1_clk, receive_packet_2:clk_original, rst_controller_002:clk]
+	wire          tse_mac_rx_clock_connection_1_clk;                          // tse:mac_rx_clk_1 -> [mem_4:clk2, rst_controller_002:clk, rst_controller_005:clk, rx_2:clk_original]
 	wire          tse_mac_tx_clock_connection_0_clk;                          // tse:mac_tx_clk_0 -> [mem_5:clk, mm_interconnect_3:tse_mac_tx_clock_connection_0_clk, rst_controller_003:clk, send_packet_1:clk_original]
 	wire          tse_mac_tx_clock_connection_1_clk;                          // tse:mac_tx_clk_1 -> [mem_4:clk, rst_controller_001:clk, tx_2:clk_original]
-	wire          pll_outclk0_clk;                                            // pll:outclk_0 -> [receive_packet_1:fifo_status_clk, setup_ddr:clk, tse:rx_afull_clk]
+	wire          pll_outclk0_clk;                                            // pll:outclk_0 -> [receive_packet_1:fifo_status_clk, rx_2:fifo_status_clk, setup_ddr:clk, tse:rx_afull_clk]
 	wire          pll_outclk1_clk;                                            // pll:outclk_1 -> [clock_50_out:in_clk, init_mac:clk, rst_controller:clk, setup_ddr:clk_50, tse:clk, tx_2:clk_50]
-	wire          pll_outclk2_clk;                                            // pll:outclk_2 -> receive_packet_2:fifo_status_clk
 	wire          send_cmd_pcie_ddr_setup_cmd_ddr_setup_cmd;                  // send_cmd_pcie:ddr_setup_cmd -> setup_ddr:ddr_setup_cmd_pci
 	wire          setup_ddr_ddr_status_out_local_cal_fail;                    // setup_ddr:ddr_local_cal_fail -> send_cmd_pcie:ddr_local_cal_fail
 	wire          setup_ddr_ddr_status_out_local_cal_success;                 // setup_ddr:ddr_local_cal_success -> send_cmd_pcie:ddr_local_cal_success
@@ -172,8 +174,8 @@ module system_design #(
 	wire          ddr3_status_local_cal_fail;                                 // ddr3:local_cal_fail -> setup_ddr:local_cal_fail_avalon
 	wire          ddr3_status_local_cal_success;                              // ddr3:local_cal_success -> setup_ddr:local_cal_success_avalon
 	wire          xcvr_pll_tx_serial_clk_clk;                                 // xcvr_pll:tx_serial_clk -> [tse:tx_serial_clk_0, tse:tx_serial_clk_1]
-	wire          pcie_app_nreset_status_reset;                               // pcie:app_nreset_status -> [irq_mapper:reset, mm_interconnect_1:pcie_rxm_bar2_translator_reset_reset_bridge_in_reset_reset, mm_interconnect_5:pcie_rxm_bar0_translator_reset_reset_bridge_in_reset_reset, send_cmd_pcie:rst_n]
-	wire          ddr3_emif_usr_reset_n_reset;                                // ddr3:emif_usr_reset_n -> [ddr_avalon_reset:in_reset, rst_controller_005:reset_in0, setup_ddr:avalon_reset, tx_2:avalon_reset]
+	wire          pcie_app_nreset_status_reset;                               // pcie:app_nreset_status -> [irq_mapper:reset, mm_interconnect_1:pcie_rxm_bar2_translator_reset_reset_bridge_in_reset_reset, mm_interconnect_4:pcie_rxm_bar0_translator_reset_reset_bridge_in_reset_reset, send_cmd_pcie:rst_n]
+	wire          ddr3_emif_usr_reset_n_reset;                                // ddr3:emif_usr_reset_n -> [ddr_avalon_reset:in_reset, rst_controller_005:reset_in0, rst_controller_006:reset_in0, setup_ddr:avalon_reset, tx_2:avalon_reset]
 	wire          reset_mod_reset_main_reset;                                 // reset_mod:reset -> [pll:rst, reset_main:in_reset, rst_controller:reset_in0, rst_controller_001:reset_in0, rst_controller_002:reset_in0, rst_controller_003:reset_in0, rst_controller_004:reset_in0, setup_ddr:reset, tx_2:rst]
 	wire  [255:0] setup_ddr_avalon_master_readdata;                           // mm_interconnect_1:setup_ddr_avalon_master_readdata -> setup_ddr:amm_readdata
 	wire          setup_ddr_avalon_master_waitrequest;                        // mm_interconnect_1:setup_ddr_avalon_master_waitrequest -> setup_ddr:amm_ready
@@ -193,6 +195,15 @@ module system_design #(
 	wire  [255:0] tx_2_avalon_master_writedata;                               // tx_2:amm_writedata -> mm_interconnect_1:tx_2_avalon_master_writedata
 	wire          tx_2_avalon_master_write;                                   // tx_2:amm_write -> mm_interconnect_1:tx_2_avalon_master_write
 	wire    [6:0] tx_2_avalon_master_burstcount;                              // tx_2:amm_burstcount -> mm_interconnect_1:tx_2_avalon_master_burstcount
+	wire  [255:0] rx_2_avalon_master_readdata;                                // mm_interconnect_1:rx_2_avalon_master_readdata -> rx_2:amm_readdata
+	wire          rx_2_avalon_master_waitrequest;                             // mm_interconnect_1:rx_2_avalon_master_waitrequest -> rx_2:amm_ready
+	wire   [24:0] rx_2_avalon_master_address;                                 // rx_2:amm_addr -> mm_interconnect_1:rx_2_avalon_master_address
+	wire          rx_2_avalon_master_read;                                    // rx_2:amm_read -> mm_interconnect_1:rx_2_avalon_master_read
+	wire   [31:0] rx_2_avalon_master_byteenable;                              // rx_2:amm_byteenable -> mm_interconnect_1:rx_2_avalon_master_byteenable
+	wire          rx_2_avalon_master_readdatavalid;                           // mm_interconnect_1:rx_2_avalon_master_readdatavalid -> rx_2:amm_readdatavalid
+	wire  [255:0] rx_2_avalon_master_writedata;                               // rx_2:amm_writedata -> mm_interconnect_1:rx_2_avalon_master_writedata
+	wire          rx_2_avalon_master_write;                                   // rx_2:amm_write -> mm_interconnect_1:rx_2_avalon_master_write
+	wire    [6:0] rx_2_avalon_master_burstcount;                              // rx_2:amm_burstcount -> mm_interconnect_1:rx_2_avalon_master_burstcount
 	wire  [127:0] pcie_rxm_bar2_readdata;                                     // mm_interconnect_1:pcie_rxm_bar2_readdata -> pcie:rxm_bar2_readdata_i
 	wire          pcie_rxm_bar2_waitrequest;                                  // mm_interconnect_1:pcie_rxm_bar2_waitrequest -> pcie:rxm_bar2_waitrequest_i
 	wire   [63:0] pcie_rxm_bar2_address;                                      // pcie:rxm_bar2_address_o -> mm_interconnect_1:pcie_rxm_bar2_address
@@ -239,46 +250,33 @@ module system_design #(
 	wire          mm_interconnect_3_mem_5_s1_write;                           // mm_interconnect_3:mem_5_s1_write -> mem_5:write
 	wire   [31:0] mm_interconnect_3_mem_5_s1_writedata;                       // mm_interconnect_3:mem_5_s1_writedata -> mem_5:writedata
 	wire          mm_interconnect_3_mem_5_s1_clken;                           // mm_interconnect_3:mem_5_s1_clken -> mem_5:clken
-	wire          receive_packet_2_avalon_master_chipselect;                  // receive_packet_2:ram_chipselect -> mm_interconnect_4:receive_packet_2_avalon_master_chipselect
-	wire   [31:0] receive_packet_2_avalon_master_readdata;                    // mm_interconnect_4:receive_packet_2_avalon_master_readdata -> receive_packet_2:ram_readdata
-	wire          receive_packet_2_avalon_master_waitrequest;                 // mm_interconnect_4:receive_packet_2_avalon_master_waitrequest -> receive_packet_2:ram_waitrequest
-	wire    [9:0] receive_packet_2_avalon_master_address;                     // receive_packet_2:ram_addr -> mm_interconnect_4:receive_packet_2_avalon_master_address
-	wire    [3:0] receive_packet_2_avalon_master_byteenable;                  // receive_packet_2:ram_byteenable -> mm_interconnect_4:receive_packet_2_avalon_master_byteenable
-	wire          receive_packet_2_avalon_master_write;                       // receive_packet_2:ram_write -> mm_interconnect_4:receive_packet_2_avalon_master_write
-	wire   [31:0] receive_packet_2_avalon_master_writedata;                   // receive_packet_2:ram_writedata -> mm_interconnect_4:receive_packet_2_avalon_master_writedata
-	wire          mm_interconnect_4_mem_4_s2_chipselect;                      // mm_interconnect_4:mem_4_s2_chipselect -> mem_4:chipselect2
-	wire   [31:0] mm_interconnect_4_mem_4_s2_readdata;                        // mem_4:readdata2 -> mm_interconnect_4:mem_4_s2_readdata
-	wire    [9:0] mm_interconnect_4_mem_4_s2_address;                         // mm_interconnect_4:mem_4_s2_address -> mem_4:address2
-	wire    [3:0] mm_interconnect_4_mem_4_s2_byteenable;                      // mm_interconnect_4:mem_4_s2_byteenable -> mem_4:byteenable2
-	wire          mm_interconnect_4_mem_4_s2_write;                           // mm_interconnect_4:mem_4_s2_write -> mem_4:write2
-	wire   [31:0] mm_interconnect_4_mem_4_s2_writedata;                       // mm_interconnect_4:mem_4_s2_writedata -> mem_4:writedata2
-	wire          mm_interconnect_4_mem_4_s2_clken;                           // mm_interconnect_4:mem_4_s2_clken -> mem_4:clken2
-	wire  [127:0] pcie_rxm_bar0_readdata;                                     // mm_interconnect_5:pcie_rxm_bar0_readdata -> pcie:rxm_bar0_readdata_i
-	wire          pcie_rxm_bar0_waitrequest;                                  // mm_interconnect_5:pcie_rxm_bar0_waitrequest -> pcie:rxm_bar0_waitrequest_i
-	wire   [63:0] pcie_rxm_bar0_address;                                      // pcie:rxm_bar0_address_o -> mm_interconnect_5:pcie_rxm_bar0_address
-	wire   [15:0] pcie_rxm_bar0_byteenable;                                   // pcie:rxm_bar0_byteenable_o -> mm_interconnect_5:pcie_rxm_bar0_byteenable
-	wire          pcie_rxm_bar0_read;                                         // pcie:rxm_bar0_read_o -> mm_interconnect_5:pcie_rxm_bar0_read
-	wire          pcie_rxm_bar0_readdatavalid;                                // mm_interconnect_5:pcie_rxm_bar0_readdatavalid -> pcie:rxm_bar0_readdatavalid_i
-	wire  [127:0] pcie_rxm_bar0_writedata;                                    // pcie:rxm_bar0_writedata_o -> mm_interconnect_5:pcie_rxm_bar0_writedata
-	wire          pcie_rxm_bar0_write;                                        // pcie:rxm_bar0_write_o -> mm_interconnect_5:pcie_rxm_bar0_write
-	wire    [5:0] pcie_rxm_bar0_burstcount;                                   // pcie:rxm_bar0_burstcount_o -> mm_interconnect_5:pcie_rxm_bar0_burstcount
-	wire   [31:0] mm_interconnect_5_send_cmd_pcie_avalon_slave_readdata;      // send_cmd_pcie:avalon_mm_read_data -> mm_interconnect_5:send_cmd_pcie_avalon_slave_readdata
-	wire   [15:0] mm_interconnect_5_send_cmd_pcie_avalon_slave_address;       // mm_interconnect_5:send_cmd_pcie_avalon_slave_address -> send_cmd_pcie:avalon_mm_addr
-	wire          mm_interconnect_5_send_cmd_pcie_avalon_slave_read;          // mm_interconnect_5:send_cmd_pcie_avalon_slave_read -> send_cmd_pcie:avalon_mm_read
-	wire          mm_interconnect_5_send_cmd_pcie_avalon_slave_readdatavalid; // send_cmd_pcie:avalon_mm_rd_valid -> mm_interconnect_5:send_cmd_pcie_avalon_slave_readdatavalid
-	wire          mm_interconnect_5_send_cmd_pcie_avalon_slave_write;         // mm_interconnect_5:send_cmd_pcie_avalon_slave_write -> send_cmd_pcie:avalon_mm_write
-	wire   [31:0] mm_interconnect_5_send_cmd_pcie_avalon_slave_writedata;     // mm_interconnect_5:send_cmd_pcie_avalon_slave_writedata -> send_cmd_pcie:avalon_mm_write_data
+	wire  [127:0] pcie_rxm_bar0_readdata;                                     // mm_interconnect_4:pcie_rxm_bar0_readdata -> pcie:rxm_bar0_readdata_i
+	wire          pcie_rxm_bar0_waitrequest;                                  // mm_interconnect_4:pcie_rxm_bar0_waitrequest -> pcie:rxm_bar0_waitrequest_i
+	wire   [63:0] pcie_rxm_bar0_address;                                      // pcie:rxm_bar0_address_o -> mm_interconnect_4:pcie_rxm_bar0_address
+	wire   [15:0] pcie_rxm_bar0_byteenable;                                   // pcie:rxm_bar0_byteenable_o -> mm_interconnect_4:pcie_rxm_bar0_byteenable
+	wire          pcie_rxm_bar0_read;                                         // pcie:rxm_bar0_read_o -> mm_interconnect_4:pcie_rxm_bar0_read
+	wire          pcie_rxm_bar0_readdatavalid;                                // mm_interconnect_4:pcie_rxm_bar0_readdatavalid -> pcie:rxm_bar0_readdatavalid_i
+	wire  [127:0] pcie_rxm_bar0_writedata;                                    // pcie:rxm_bar0_writedata_o -> mm_interconnect_4:pcie_rxm_bar0_writedata
+	wire          pcie_rxm_bar0_write;                                        // pcie:rxm_bar0_write_o -> mm_interconnect_4:pcie_rxm_bar0_write
+	wire    [5:0] pcie_rxm_bar0_burstcount;                                   // pcie:rxm_bar0_burstcount_o -> mm_interconnect_4:pcie_rxm_bar0_burstcount
+	wire   [31:0] mm_interconnect_4_send_cmd_pcie_avalon_slave_readdata;      // send_cmd_pcie:avalon_mm_read_data -> mm_interconnect_4:send_cmd_pcie_avalon_slave_readdata
+	wire   [15:0] mm_interconnect_4_send_cmd_pcie_avalon_slave_address;       // mm_interconnect_4:send_cmd_pcie_avalon_slave_address -> send_cmd_pcie:avalon_mm_addr
+	wire          mm_interconnect_4_send_cmd_pcie_avalon_slave_read;          // mm_interconnect_4:send_cmd_pcie_avalon_slave_read -> send_cmd_pcie:avalon_mm_read
+	wire          mm_interconnect_4_send_cmd_pcie_avalon_slave_readdatavalid; // send_cmd_pcie:avalon_mm_rd_valid -> mm_interconnect_4:send_cmd_pcie_avalon_slave_readdatavalid
+	wire          mm_interconnect_4_send_cmd_pcie_avalon_slave_write;         // mm_interconnect_4:send_cmd_pcie_avalon_slave_write -> send_cmd_pcie:avalon_mm_write
+	wire   [31:0] mm_interconnect_4_send_cmd_pcie_avalon_slave_writedata;     // mm_interconnect_4:send_cmd_pcie_avalon_slave_writedata -> send_cmd_pcie:avalon_mm_write_data
 	wire   [15:0] pcie_rxm_irq_irq;                                           // irq_mapper:sender_irq -> pcie:rxm_irq_i
 	wire          rst_controller_reset_out_reset;                             // rst_controller:reset_out -> [init_mac:reset, tse:reset]
 	wire          rst_controller_001_reset_out_reset;                         // rst_controller_001:reset_out -> mem_4:reset
 	wire          rst_controller_001_reset_out_reset_req;                     // rst_controller_001:reset_req -> mem_4:reset_req
-	wire          rst_controller_002_reset_out_reset;                         // rst_controller_002:reset_out -> [mem_4:reset2, mem_rcv_2:reset, mm_interconnect_4:receive_packet_2_reset_reset_bridge_in_reset_reset, receive_packet_2:rst]
-	wire          rst_controller_002_reset_out_reset_req;                     // rst_controller_002:reset_req -> [mem_4:reset_req2, mem_rcv_2:reset_req, rst_translator:reset_req_in]
+	wire          rst_controller_002_reset_out_reset;                         // rst_controller_002:reset_out -> [mem_4:reset2, rx_2:rst]
+	wire          rst_controller_002_reset_out_reset_req;                     // rst_controller_002:reset_req -> mem_4:reset_req2
 	wire          rst_controller_003_reset_out_reset;                         // rst_controller_003:reset_out -> [mem_5:reset, mm_interconnect_3:send_packet_1_reset_reset_bridge_in_reset_reset, send_packet_1:rst]
 	wire          rst_controller_003_reset_out_reset_req;                     // rst_controller_003:reset_req -> [mem_5:reset_req, rst_translator_001:reset_req_in]
 	wire          rst_controller_004_reset_out_reset;                         // rst_controller_004:reset_out -> [mem_rcv_1:reset, mm_interconnect_2:receive_packet_1_reset_reset_bridge_in_reset_reset, receive_packet_1:rst]
 	wire          rst_controller_004_reset_out_reset_req;                     // rst_controller_004:reset_req -> [mem_rcv_1:reset_req, rst_translator_002:reset_req_in]
-	wire          rst_controller_005_reset_out_reset;                         // rst_controller_005:reset_out -> mm_interconnect_1:setup_ddr_avalon_master_translator_reset_reset_bridge_in_reset_reset
+	wire          rst_controller_005_reset_out_reset;                         // rst_controller_005:reset_out -> rx_2:avalon_reset
+	wire          rst_controller_006_reset_out_reset;                         // rst_controller_006:reset_out -> mm_interconnect_1:rx_2_reset_ddr_reset_bridge_in_reset_reset
 
 	clock_50_out clock_50_out (
 		.in_clk  (pll_outclk1_clk), //   input,  width = 1,  in_clk.clk
@@ -353,13 +351,13 @@ module system_design #(
 		.byteenable  (),                                       //   input,   width = 4,       .byteenable
 		.reset       (rst_controller_001_reset_out_reset),     //   input,   width = 1, reset1.reset
 		.reset_req   (rst_controller_001_reset_out_reset_req), //   input,   width = 1,       .reset_req
-		.address2    (mm_interconnect_4_mem_4_s2_address),     //   input,  width = 10,     s2.address
-		.chipselect2 (mm_interconnect_4_mem_4_s2_chipselect),  //   input,   width = 1,       .chipselect
-		.clken2      (mm_interconnect_4_mem_4_s2_clken),       //   input,   width = 1,       .clken
-		.write2      (mm_interconnect_4_mem_4_s2_write),       //   input,   width = 1,       .write
-		.readdata2   (mm_interconnect_4_mem_4_s2_readdata),    //  output,  width = 32,       .readdata
-		.writedata2  (mm_interconnect_4_mem_4_s2_writedata),   //   input,  width = 32,       .writedata
-		.byteenable2 (mm_interconnect_4_mem_4_s2_byteenable),  //   input,   width = 4,       .byteenable
+		.address2    (),                                       //   input,  width = 10,     s2.address
+		.chipselect2 (),                                       //   input,   width = 1,       .chipselect
+		.clken2      (),                                       //   input,   width = 1,       .clken
+		.write2      (),                                       //   input,   width = 1,       .write
+		.readdata2   (),                                       //  output,  width = 32,       .readdata
+		.writedata2  (),                                       //   input,  width = 32,       .writedata
+		.byteenable2 (),                                       //   input,   width = 4,       .byteenable
 		.clk2        (tse_mac_rx_clock_connection_1_clk),      //   input,   width = 1,   clk2.clk
 		.reset2      (rst_controller_002_reset_out_reset),     //   input,   width = 1, reset2.reset
 		.reset_req2  (rst_controller_002_reset_out_reset_req)  //   input,   width = 1,       .reset_req
@@ -389,19 +387,6 @@ module system_design #(
 		.byteenable (mm_interconnect_2_mem_rcv_1_s1_byteenable), //   input,   width = 4,       .byteenable
 		.reset      (rst_controller_004_reset_out_reset),        //   input,   width = 1, reset1.reset
 		.reset_req  (rst_controller_004_reset_out_reset_req)     //   input,   width = 1,       .reset_req
-	);
-
-	mem_rcv_0 mem_rcv_2 (
-		.clk        (tse_mac_rx_clock_connection_1_clk),      //   input,   width = 1,   clk1.clk
-		.address    (),                                       //   input,  width = 10,     s1.address
-		.clken      (),                                       //   input,   width = 1,       .clken
-		.chipselect (),                                       //   input,   width = 1,       .chipselect
-		.write      (),                                       //   input,   width = 1,       .write
-		.readdata   (),                                       //  output,  width = 32,       .readdata
-		.writedata  (),                                       //   input,  width = 32,       .writedata
-		.byteenable (),                                       //   input,   width = 4,       .byteenable
-		.reset      (rst_controller_002_reset_out_reset),     //   input,   width = 1, reset1.reset
-		.reset_req  (rst_controller_002_reset_out_reset_req)  //   input,   width = 1,       .reset_req
 	);
 
 	pcie pcie (
@@ -577,7 +562,7 @@ module system_design #(
 		.refclk   (pll_refclk_clk),             //   input,  width = 1,  refclk.clk
 		.outclk_0 (pll_outclk0_clk),            //  output,  width = 1, outclk0.clk
 		.outclk_1 (pll_outclk1_clk),            //  output,  width = 1, outclk1.clk
-		.outclk_2 (pll_outclk2_clk),            //  output,  width = 1, outclk2.clk
+		.outclk_2 (),                           //  output,  width = 1, outclk2.clk
 		.outclk_3 ()                            //  output,  width = 1, outclk3.clk
 	);
 
@@ -604,29 +589,6 @@ module system_design #(
 		.data_saved       (receive_packet_1_data_saved_data_saved)      //  output,   width = 1,            data_saved.data_saved
 	);
 
-	receive_packet_0 receive_packet_2 (
-		.ff_rx_data       (tse_receive_1_data),                         //   input,   width = 8, avalon_streaming_sink.data
-		.ff_rx_eop        (tse_receive_1_endofpacket),                  //   input,   width = 1,                      .endofpacket
-		.ff_rx_rdy        (tse_receive_1_ready),                        //  output,   width = 1,                      .ready
-		.ff_rx_sop        (tse_receive_1_startofpacket),                //   input,   width = 1,                      .startofpacket
-		.ff_rx_dval       (tse_receive_1_valid),                        //   input,   width = 1,                      .valid
-		.rx_err           (tse_receive_1_error),                        //   input,   width = 5,                      .error
-		.ram_addr         (receive_packet_2_avalon_master_address),     //  output,  width = 10,         avalon_master.address
-		.ram_chipselect   (receive_packet_2_avalon_master_chipselect),  //  output,   width = 1,                      .chipselect
-		.ram_write        (receive_packet_2_avalon_master_write),       //  output,   width = 1,                      .write
-		.ram_readdata     (receive_packet_2_avalon_master_readdata),    //   input,  width = 32,                      .readdata
-		.ram_writedata    (receive_packet_2_avalon_master_writedata),   //  output,  width = 32,                      .writedata
-		.ram_byteenable   (receive_packet_2_avalon_master_byteenable),  //  output,   width = 4,                      .byteenable
-		.ram_waitrequest  (receive_packet_2_avalon_master_waitrequest), //   input,   width = 1,                      .waitrequest
-		.clk_original     (tse_mac_rx_clock_connection_1_clk),          //   input,   width = 1,                 clock.clk
-		.rst              (rst_controller_002_reset_out_reset),         //   input,   width = 1,                 reset.reset
-		.rx_afull_data    (),                                           //  output,   width = 2,           fifo_status.data
-		.rx_afull_valid   (),                                           //  output,   width = 1,                      .valid
-		.rx_afull_channel (),                                           //  output,   width = 2,                      .channel
-		.fifo_status_clk  (pll_outclk2_clk),                            //   input,   width = 1,       fifo_status_clk.clk
-		.data_saved       (receive_packet_2_data_saved_data_saved)      //  output,   width = 1,            data_saved.data_saved
-	);
-
 	reset_main reset_main (
 		.in_reset  (reset_mod_reset_main_reset), //   input,  width = 1,  in_reset.reset
 		.out_reset (reset_main_out_reset)        //  output,  width = 1, out_reset.reset
@@ -639,17 +601,47 @@ module system_design #(
 		.reset_phy (reset_mod_reset_phy_reset)   //  output,  width = 1,  reset_phy.reset
 	);
 
+	rx_2 rx_2 (
+		.ff_rx_data        (tse_receive_1_data),                 //   input,    width = 8, avalon_streaming_sink.data
+		.ff_rx_eop         (tse_receive_1_endofpacket),          //   input,    width = 1,                      .endofpacket
+		.ff_rx_rdy         (tse_receive_1_ready),                //  output,    width = 1,                      .ready
+		.ff_rx_sop         (tse_receive_1_startofpacket),        //   input,    width = 1,                      .startofpacket
+		.ff_rx_dval        (tse_receive_1_valid),                //   input,    width = 1,                      .valid
+		.rx_err            (tse_receive_1_error),                //   input,    width = 5,                      .error
+		.amm_addr          (rx_2_avalon_master_address),         //  output,   width = 25,         avalon_master.address
+		.amm_readdata      (rx_2_avalon_master_readdata),        //   input,  width = 256,                      .readdata
+		.amm_writedata     (rx_2_avalon_master_writedata),       //  output,  width = 256,                      .writedata
+		.amm_read          (rx_2_avalon_master_read),            //  output,    width = 1,                      .read
+		.amm_write         (rx_2_avalon_master_write),           //  output,    width = 1,                      .write
+		.amm_byteenable    (rx_2_avalon_master_byteenable),      //  output,   width = 32,                      .byteenable
+		.amm_burstcount    (rx_2_avalon_master_burstcount),      //  output,    width = 7,                      .burstcount
+		.amm_readdatavalid (rx_2_avalon_master_readdatavalid),   //   input,    width = 1,                      .readdatavalid
+		.amm_ready         (rx_2_avalon_master_waitrequest),     //   input,    width = 1,                      .waitrequest
+		.rx_afull_data     (),                                   //  output,    width = 2,           fifo_status.data
+		.rx_afull_valid    (),                                   //  output,    width = 1,                      .valid
+		.rx_afull_channel  (),                                   //  output,    width = 1,                      .channel
+		.size_received     (rx_2_rx_signals_size_received),      //  output,   width = 12,            rx_signals.size_received
+		.data_saved        (rx_2_rx_signals_data_saved),         //  output,    width = 1,                      .data_saved
+		.rst               (rst_controller_002_reset_out_reset), //   input,    width = 1,                 reset.reset
+		.clk_original      (tse_mac_rx_clock_connection_1_clk),  //   input,    width = 1,             clock_tse.clk
+		.rst_n             (rx_2_reset_board_reset),             //   input,    width = 1,           reset_board.reset
+		.avalon_clk        (ddr3_emif_usr_clk_clk),              //   input,    width = 1,             clock_ddr.clk
+		.avalon_reset      (rst_controller_005_reset_out_reset), //   input,    width = 1,             reset_ddr.reset
+		.fifo_status_clk   (pll_outclk0_clk)                     //   input,    width = 1,       fifo_status_clk.clk
+	);
+
 	send_cmd_pcie send_cmd_pcie (
 		.clk                   (pcie_coreclkout_hip_clk),                                    //   input,   width = 1,              clock.clk
 		.rst_n                 (pcie_app_nreset_status_reset),                               //   input,   width = 1,              reset.reset_n
-		.avalon_mm_read        (mm_interconnect_5_send_cmd_pcie_avalon_slave_read),          //   input,   width = 1,       avalon_slave.read
-		.avalon_mm_write       (mm_interconnect_5_send_cmd_pcie_avalon_slave_write),         //   input,   width = 1,                   .write
-		.avalon_mm_addr        (mm_interconnect_5_send_cmd_pcie_avalon_slave_address),       //   input,  width = 16,                   .address
-		.avalon_mm_write_data  (mm_interconnect_5_send_cmd_pcie_avalon_slave_writedata),     //   input,  width = 32,                   .writedata
-		.avalon_mm_read_data   (mm_interconnect_5_send_cmd_pcie_avalon_slave_readdata),      //  output,  width = 32,                   .readdata
-		.avalon_mm_rd_valid    (mm_interconnect_5_send_cmd_pcie_avalon_slave_readdatavalid), //  output,   width = 1,                   .readdatavalid
+		.avalon_mm_read        (mm_interconnect_4_send_cmd_pcie_avalon_slave_read),          //   input,   width = 1,       avalon_slave.read
+		.avalon_mm_write       (mm_interconnect_4_send_cmd_pcie_avalon_slave_write),         //   input,   width = 1,                   .write
+		.avalon_mm_addr        (mm_interconnect_4_send_cmd_pcie_avalon_slave_address),       //   input,  width = 16,                   .address
+		.avalon_mm_write_data  (mm_interconnect_4_send_cmd_pcie_avalon_slave_writedata),     //   input,  width = 32,                   .writedata
+		.avalon_mm_read_data   (mm_interconnect_4_send_cmd_pcie_avalon_slave_readdata),      //  output,  width = 32,                   .readdata
+		.avalon_mm_rd_valid    (mm_interconnect_4_send_cmd_pcie_avalon_slave_readdatavalid), //  output,   width = 1,                   .readdatavalid
 		.start_ram_addr        (pcie_send_control_start_ram_addr),                           //  output,   width = 6,       send_control.start_ram_addr
 		.send_cmd              (pcie_send_control_signal),                                   //  output,   width = 1,                   .signal
+		.send_ch_2_timer       (pcie_send_control_ch_2_timer),                               //  output,  width = 32,                   .ch_2_timer
 		.ddr_local_cal_success (setup_ddr_ddr_status_out_local_cal_success),                 //   input,   width = 1,         ddr_status.local_cal_success
 		.ddr_local_cal_fail    (setup_ddr_ddr_status_out_local_cal_fail),                    //   input,   width = 1,                   .local_cal_fail
 		.ddr_setup_done        (setup_ddr_setup_setup_done),                                 //   input,   width = 1,     ddr_setup_done.setup_done
@@ -927,47 +919,56 @@ module system_design #(
 		.pll_cal_busy  ()                                  //  output,  width = 1,  pll_cal_busy.pll_cal_busy
 	);
 
-	system_design_altera_mm_interconnect_1920_n7h2xly mm_interconnect_1 (
-		.setup_ddr_avalon_master_address                                      (setup_ddr_avalon_master_address),                 //   input,   width = 25,                                        setup_ddr_avalon_master.address
-		.setup_ddr_avalon_master_waitrequest                                  (setup_ddr_avalon_master_waitrequest),             //  output,    width = 1,                                                               .waitrequest
-		.setup_ddr_avalon_master_burstcount                                   (setup_ddr_avalon_master_burstcount),              //   input,    width = 7,                                                               .burstcount
-		.setup_ddr_avalon_master_byteenable                                   (setup_ddr_avalon_master_byteenable),              //   input,   width = 32,                                                               .byteenable
-		.setup_ddr_avalon_master_read                                         (setup_ddr_avalon_master_read),                    //   input,    width = 1,                                                               .read
-		.setup_ddr_avalon_master_readdata                                     (setup_ddr_avalon_master_readdata),                //  output,  width = 256,                                                               .readdata
-		.setup_ddr_avalon_master_readdatavalid                                (setup_ddr_avalon_master_readdatavalid),           //  output,    width = 1,                                                               .readdatavalid
-		.setup_ddr_avalon_master_write                                        (setup_ddr_avalon_master_write),                   //   input,    width = 1,                                                               .write
-		.setup_ddr_avalon_master_writedata                                    (setup_ddr_avalon_master_writedata),               //   input,  width = 256,                                                               .writedata
-		.tx_2_avalon_master_address                                           (tx_2_avalon_master_address),                      //   input,   width = 25,                                             tx_2_avalon_master.address
-		.tx_2_avalon_master_waitrequest                                       (tx_2_avalon_master_waitrequest),                  //  output,    width = 1,                                                               .waitrequest
-		.tx_2_avalon_master_burstcount                                        (tx_2_avalon_master_burstcount),                   //   input,    width = 7,                                                               .burstcount
-		.tx_2_avalon_master_byteenable                                        (tx_2_avalon_master_byteenable),                   //   input,   width = 32,                                                               .byteenable
-		.tx_2_avalon_master_read                                              (tx_2_avalon_master_read),                         //   input,    width = 1,                                                               .read
-		.tx_2_avalon_master_readdata                                          (tx_2_avalon_master_readdata),                     //  output,  width = 256,                                                               .readdata
-		.tx_2_avalon_master_readdatavalid                                     (tx_2_avalon_master_readdatavalid),                //  output,    width = 1,                                                               .readdatavalid
-		.tx_2_avalon_master_write                                             (tx_2_avalon_master_write),                        //   input,    width = 1,                                                               .write
-		.tx_2_avalon_master_writedata                                         (tx_2_avalon_master_writedata),                    //   input,  width = 256,                                                               .writedata
-		.pcie_rxm_bar2_address                                                (pcie_rxm_bar2_address),                           //   input,   width = 64,                                                  pcie_rxm_bar2.address
-		.pcie_rxm_bar2_waitrequest                                            (pcie_rxm_bar2_waitrequest),                       //  output,    width = 1,                                                               .waitrequest
-		.pcie_rxm_bar2_burstcount                                             (pcie_rxm_bar2_burstcount),                        //   input,    width = 6,                                                               .burstcount
-		.pcie_rxm_bar2_byteenable                                             (pcie_rxm_bar2_byteenable),                        //   input,   width = 16,                                                               .byteenable
-		.pcie_rxm_bar2_read                                                   (pcie_rxm_bar2_read),                              //   input,    width = 1,                                                               .read
-		.pcie_rxm_bar2_readdata                                               (pcie_rxm_bar2_readdata),                          //  output,  width = 128,                                                               .readdata
-		.pcie_rxm_bar2_readdatavalid                                          (pcie_rxm_bar2_readdatavalid),                     //  output,    width = 1,                                                               .readdatavalid
-		.pcie_rxm_bar2_write                                                  (pcie_rxm_bar2_write),                             //   input,    width = 1,                                                               .write
-		.pcie_rxm_bar2_writedata                                              (pcie_rxm_bar2_writedata),                         //   input,  width = 128,                                                               .writedata
-		.ddr3_ctrl_amm_0_address                                              (mm_interconnect_1_ddr3_ctrl_amm_0_address),       //  output,   width = 25,                                                ddr3_ctrl_amm_0.address
-		.ddr3_ctrl_amm_0_write                                                (mm_interconnect_1_ddr3_ctrl_amm_0_write),         //  output,    width = 1,                                                               .write
-		.ddr3_ctrl_amm_0_read                                                 (mm_interconnect_1_ddr3_ctrl_amm_0_read),          //  output,    width = 1,                                                               .read
-		.ddr3_ctrl_amm_0_readdata                                             (mm_interconnect_1_ddr3_ctrl_amm_0_readdata),      //   input,  width = 256,                                                               .readdata
-		.ddr3_ctrl_amm_0_writedata                                            (mm_interconnect_1_ddr3_ctrl_amm_0_writedata),     //  output,  width = 256,                                                               .writedata
-		.ddr3_ctrl_amm_0_burstcount                                           (mm_interconnect_1_ddr3_ctrl_amm_0_burstcount),    //  output,    width = 7,                                                               .burstcount
-		.ddr3_ctrl_amm_0_byteenable                                           (mm_interconnect_1_ddr3_ctrl_amm_0_byteenable),    //  output,   width = 32,                                                               .byteenable
-		.ddr3_ctrl_amm_0_readdatavalid                                        (mm_interconnect_1_ddr3_ctrl_amm_0_readdatavalid), //   input,    width = 1,                                                               .readdatavalid
-		.ddr3_ctrl_amm_0_waitrequest                                          (~mm_interconnect_1_ddr3_ctrl_amm_0_waitrequest),  //   input,    width = 1,                                                               .waitrequest
-		.setup_ddr_avalon_master_translator_reset_reset_bridge_in_reset_reset (rst_controller_005_reset_out_reset),              //   input,    width = 1, setup_ddr_avalon_master_translator_reset_reset_bridge_in_reset.reset
-		.pcie_rxm_bar2_translator_reset_reset_bridge_in_reset_reset           (~pcie_app_nreset_status_reset),                   //   input,    width = 1,           pcie_rxm_bar2_translator_reset_reset_bridge_in_reset.reset
-		.ddr3_emif_usr_clk_clk                                                (ddr3_emif_usr_clk_clk),                           //   input,    width = 1,                                              ddr3_emif_usr_clk.clk
-		.pcie_coreclkout_hip_clk                                              (pcie_coreclkout_hip_clk)                          //   input,    width = 1,                                            pcie_coreclkout_hip.clk
+	system_design_altera_mm_interconnect_1920_5jxcd5y mm_interconnect_1 (
+		.setup_ddr_avalon_master_address                            (setup_ddr_avalon_master_address),                 //   input,   width = 25,                              setup_ddr_avalon_master.address
+		.setup_ddr_avalon_master_waitrequest                        (setup_ddr_avalon_master_waitrequest),             //  output,    width = 1,                                                     .waitrequest
+		.setup_ddr_avalon_master_burstcount                         (setup_ddr_avalon_master_burstcount),              //   input,    width = 7,                                                     .burstcount
+		.setup_ddr_avalon_master_byteenable                         (setup_ddr_avalon_master_byteenable),              //   input,   width = 32,                                                     .byteenable
+		.setup_ddr_avalon_master_read                               (setup_ddr_avalon_master_read),                    //   input,    width = 1,                                                     .read
+		.setup_ddr_avalon_master_readdata                           (setup_ddr_avalon_master_readdata),                //  output,  width = 256,                                                     .readdata
+		.setup_ddr_avalon_master_readdatavalid                      (setup_ddr_avalon_master_readdatavalid),           //  output,    width = 1,                                                     .readdatavalid
+		.setup_ddr_avalon_master_write                              (setup_ddr_avalon_master_write),                   //   input,    width = 1,                                                     .write
+		.setup_ddr_avalon_master_writedata                          (setup_ddr_avalon_master_writedata),               //   input,  width = 256,                                                     .writedata
+		.tx_2_avalon_master_address                                 (tx_2_avalon_master_address),                      //   input,   width = 25,                                   tx_2_avalon_master.address
+		.tx_2_avalon_master_waitrequest                             (tx_2_avalon_master_waitrequest),                  //  output,    width = 1,                                                     .waitrequest
+		.tx_2_avalon_master_burstcount                              (tx_2_avalon_master_burstcount),                   //   input,    width = 7,                                                     .burstcount
+		.tx_2_avalon_master_byteenable                              (tx_2_avalon_master_byteenable),                   //   input,   width = 32,                                                     .byteenable
+		.tx_2_avalon_master_read                                    (tx_2_avalon_master_read),                         //   input,    width = 1,                                                     .read
+		.tx_2_avalon_master_readdata                                (tx_2_avalon_master_readdata),                     //  output,  width = 256,                                                     .readdata
+		.tx_2_avalon_master_readdatavalid                           (tx_2_avalon_master_readdatavalid),                //  output,    width = 1,                                                     .readdatavalid
+		.tx_2_avalon_master_write                                   (tx_2_avalon_master_write),                        //   input,    width = 1,                                                     .write
+		.tx_2_avalon_master_writedata                               (tx_2_avalon_master_writedata),                    //   input,  width = 256,                                                     .writedata
+		.rx_2_avalon_master_address                                 (rx_2_avalon_master_address),                      //   input,   width = 25,                                   rx_2_avalon_master.address
+		.rx_2_avalon_master_waitrequest                             (rx_2_avalon_master_waitrequest),                  //  output,    width = 1,                                                     .waitrequest
+		.rx_2_avalon_master_burstcount                              (rx_2_avalon_master_burstcount),                   //   input,    width = 7,                                                     .burstcount
+		.rx_2_avalon_master_byteenable                              (rx_2_avalon_master_byteenable),                   //   input,   width = 32,                                                     .byteenable
+		.rx_2_avalon_master_read                                    (rx_2_avalon_master_read),                         //   input,    width = 1,                                                     .read
+		.rx_2_avalon_master_readdata                                (rx_2_avalon_master_readdata),                     //  output,  width = 256,                                                     .readdata
+		.rx_2_avalon_master_readdatavalid                           (rx_2_avalon_master_readdatavalid),                //  output,    width = 1,                                                     .readdatavalid
+		.rx_2_avalon_master_write                                   (rx_2_avalon_master_write),                        //   input,    width = 1,                                                     .write
+		.rx_2_avalon_master_writedata                               (rx_2_avalon_master_writedata),                    //   input,  width = 256,                                                     .writedata
+		.pcie_rxm_bar2_address                                      (pcie_rxm_bar2_address),                           //   input,   width = 64,                                        pcie_rxm_bar2.address
+		.pcie_rxm_bar2_waitrequest                                  (pcie_rxm_bar2_waitrequest),                       //  output,    width = 1,                                                     .waitrequest
+		.pcie_rxm_bar2_burstcount                                   (pcie_rxm_bar2_burstcount),                        //   input,    width = 6,                                                     .burstcount
+		.pcie_rxm_bar2_byteenable                                   (pcie_rxm_bar2_byteenable),                        //   input,   width = 16,                                                     .byteenable
+		.pcie_rxm_bar2_read                                         (pcie_rxm_bar2_read),                              //   input,    width = 1,                                                     .read
+		.pcie_rxm_bar2_readdata                                     (pcie_rxm_bar2_readdata),                          //  output,  width = 128,                                                     .readdata
+		.pcie_rxm_bar2_readdatavalid                                (pcie_rxm_bar2_readdatavalid),                     //  output,    width = 1,                                                     .readdatavalid
+		.pcie_rxm_bar2_write                                        (pcie_rxm_bar2_write),                             //   input,    width = 1,                                                     .write
+		.pcie_rxm_bar2_writedata                                    (pcie_rxm_bar2_writedata),                         //   input,  width = 128,                                                     .writedata
+		.ddr3_ctrl_amm_0_address                                    (mm_interconnect_1_ddr3_ctrl_amm_0_address),       //  output,   width = 25,                                      ddr3_ctrl_amm_0.address
+		.ddr3_ctrl_amm_0_write                                      (mm_interconnect_1_ddr3_ctrl_amm_0_write),         //  output,    width = 1,                                                     .write
+		.ddr3_ctrl_amm_0_read                                       (mm_interconnect_1_ddr3_ctrl_amm_0_read),          //  output,    width = 1,                                                     .read
+		.ddr3_ctrl_amm_0_readdata                                   (mm_interconnect_1_ddr3_ctrl_amm_0_readdata),      //   input,  width = 256,                                                     .readdata
+		.ddr3_ctrl_amm_0_writedata                                  (mm_interconnect_1_ddr3_ctrl_amm_0_writedata),     //  output,  width = 256,                                                     .writedata
+		.ddr3_ctrl_amm_0_burstcount                                 (mm_interconnect_1_ddr3_ctrl_amm_0_burstcount),    //  output,    width = 7,                                                     .burstcount
+		.ddr3_ctrl_amm_0_byteenable                                 (mm_interconnect_1_ddr3_ctrl_amm_0_byteenable),    //  output,   width = 32,                                                     .byteenable
+		.ddr3_ctrl_amm_0_readdatavalid                              (mm_interconnect_1_ddr3_ctrl_amm_0_readdatavalid), //   input,    width = 1,                                                     .readdatavalid
+		.ddr3_ctrl_amm_0_waitrequest                                (~mm_interconnect_1_ddr3_ctrl_amm_0_waitrequest),  //   input,    width = 1,                                                     .waitrequest
+		.rx_2_reset_ddr_reset_bridge_in_reset_reset                 (rst_controller_006_reset_out_reset),              //   input,    width = 1,                 rx_2_reset_ddr_reset_bridge_in_reset.reset
+		.pcie_rxm_bar2_translator_reset_reset_bridge_in_reset_reset (~pcie_app_nreset_status_reset),                   //   input,    width = 1, pcie_rxm_bar2_translator_reset_reset_bridge_in_reset.reset
+		.ddr3_emif_usr_clk_clk                                      (ddr3_emif_usr_clk_clk),                           //   input,    width = 1,                                    ddr3_emif_usr_clk.clk
+		.pcie_coreclkout_hip_clk                                    (pcie_coreclkout_hip_clk)                          //   input,    width = 1,                                  pcie_coreclkout_hip.clk
 	);
 
 	system_design_altera_mm_interconnect_1920_qky3gdi mm_interconnect_2 (
@@ -1008,26 +1009,7 @@ module system_design #(
 		.tse_mac_tx_clock_connection_0_clk               (tse_mac_tx_clock_connection_0_clk)        //   input,   width = 1,             tse_mac_tx_clock_connection_0.clk
 	);
 
-	system_design_altera_mm_interconnect_1920_rvh6iyy mm_interconnect_4 (
-		.receive_packet_2_avalon_master_address             (receive_packet_2_avalon_master_address),     //   input,  width = 10,               receive_packet_2_avalon_master.address
-		.receive_packet_2_avalon_master_waitrequest         (receive_packet_2_avalon_master_waitrequest), //  output,   width = 1,                                             .waitrequest
-		.receive_packet_2_avalon_master_byteenable          (receive_packet_2_avalon_master_byteenable),  //   input,   width = 4,                                             .byteenable
-		.receive_packet_2_avalon_master_chipselect          (receive_packet_2_avalon_master_chipselect),  //   input,   width = 1,                                             .chipselect
-		.receive_packet_2_avalon_master_readdata            (receive_packet_2_avalon_master_readdata),    //  output,  width = 32,                                             .readdata
-		.receive_packet_2_avalon_master_write               (receive_packet_2_avalon_master_write),       //   input,   width = 1,                                             .write
-		.receive_packet_2_avalon_master_writedata           (receive_packet_2_avalon_master_writedata),   //   input,  width = 32,                                             .writedata
-		.mem_4_s2_address                                   (mm_interconnect_4_mem_4_s2_address),         //  output,  width = 10,                                     mem_4_s2.address
-		.mem_4_s2_write                                     (mm_interconnect_4_mem_4_s2_write),           //  output,   width = 1,                                             .write
-		.mem_4_s2_readdata                                  (mm_interconnect_4_mem_4_s2_readdata),        //   input,  width = 32,                                             .readdata
-		.mem_4_s2_writedata                                 (mm_interconnect_4_mem_4_s2_writedata),       //  output,  width = 32,                                             .writedata
-		.mem_4_s2_byteenable                                (mm_interconnect_4_mem_4_s2_byteenable),      //  output,   width = 4,                                             .byteenable
-		.mem_4_s2_chipselect                                (mm_interconnect_4_mem_4_s2_chipselect),      //  output,   width = 1,                                             .chipselect
-		.mem_4_s2_clken                                     (mm_interconnect_4_mem_4_s2_clken),           //  output,   width = 1,                                             .clken
-		.receive_packet_2_reset_reset_bridge_in_reset_reset (rst_controller_002_reset_out_reset),         //   input,   width = 1, receive_packet_2_reset_reset_bridge_in_reset.reset
-		.tse_mac_rx_clock_connection_1_clk                  (tse_mac_rx_clock_connection_1_clk)           //   input,   width = 1,                tse_mac_rx_clock_connection_1.clk
-	);
-
-	system_design_altera_mm_interconnect_1920_nmewghq mm_interconnect_5 (
+	system_design_altera_mm_interconnect_1920_nmewghq mm_interconnect_4 (
 		.pcie_rxm_bar0_address                                      (pcie_rxm_bar0_address),                                      //   input,   width = 64,                                        pcie_rxm_bar0.address
 		.pcie_rxm_bar0_waitrequest                                  (pcie_rxm_bar0_waitrequest),                                  //  output,    width = 1,                                                     .waitrequest
 		.pcie_rxm_bar0_burstcount                                   (pcie_rxm_bar0_burstcount),                                   //   input,    width = 6,                                                     .burstcount
@@ -1037,12 +1019,12 @@ module system_design #(
 		.pcie_rxm_bar0_readdatavalid                                (pcie_rxm_bar0_readdatavalid),                                //  output,    width = 1,                                                     .readdatavalid
 		.pcie_rxm_bar0_write                                        (pcie_rxm_bar0_write),                                        //   input,    width = 1,                                                     .write
 		.pcie_rxm_bar0_writedata                                    (pcie_rxm_bar0_writedata),                                    //   input,  width = 128,                                                     .writedata
-		.send_cmd_pcie_avalon_slave_address                         (mm_interconnect_5_send_cmd_pcie_avalon_slave_address),       //  output,   width = 16,                           send_cmd_pcie_avalon_slave.address
-		.send_cmd_pcie_avalon_slave_write                           (mm_interconnect_5_send_cmd_pcie_avalon_slave_write),         //  output,    width = 1,                                                     .write
-		.send_cmd_pcie_avalon_slave_read                            (mm_interconnect_5_send_cmd_pcie_avalon_slave_read),          //  output,    width = 1,                                                     .read
-		.send_cmd_pcie_avalon_slave_readdata                        (mm_interconnect_5_send_cmd_pcie_avalon_slave_readdata),      //   input,   width = 32,                                                     .readdata
-		.send_cmd_pcie_avalon_slave_writedata                       (mm_interconnect_5_send_cmd_pcie_avalon_slave_writedata),     //  output,   width = 32,                                                     .writedata
-		.send_cmd_pcie_avalon_slave_readdatavalid                   (mm_interconnect_5_send_cmd_pcie_avalon_slave_readdatavalid), //   input,    width = 1,                                                     .readdatavalid
+		.send_cmd_pcie_avalon_slave_address                         (mm_interconnect_4_send_cmd_pcie_avalon_slave_address),       //  output,   width = 16,                           send_cmd_pcie_avalon_slave.address
+		.send_cmd_pcie_avalon_slave_write                           (mm_interconnect_4_send_cmd_pcie_avalon_slave_write),         //  output,    width = 1,                                                     .write
+		.send_cmd_pcie_avalon_slave_read                            (mm_interconnect_4_send_cmd_pcie_avalon_slave_read),          //  output,    width = 1,                                                     .read
+		.send_cmd_pcie_avalon_slave_readdata                        (mm_interconnect_4_send_cmd_pcie_avalon_slave_readdata),      //   input,   width = 32,                                                     .readdata
+		.send_cmd_pcie_avalon_slave_writedata                       (mm_interconnect_4_send_cmd_pcie_avalon_slave_writedata),     //  output,   width = 32,                                                     .writedata
+		.send_cmd_pcie_avalon_slave_readdatavalid                   (mm_interconnect_4_send_cmd_pcie_avalon_slave_readdatavalid), //   input,    width = 1,                                                     .readdatavalid
 		.pcie_rxm_bar0_translator_reset_reset_bridge_in_reset_reset (~pcie_app_nreset_status_reset),                              //   input,    width = 1, pcie_rxm_bar0_translator_reset_reset_bridge_in_reset.reset
 		.pcie_coreclkout_hip_clk                                    (pcie_coreclkout_hip_clk)                                     //   input,    width = 1,                                  pcie_coreclkout_hip.clk
 	);
@@ -1395,8 +1377,71 @@ module system_design #(
 		.ADAPT_RESET_REQUEST       (0)
 	) rst_controller_005 (
 		.reset_in0      (~ddr3_emif_usr_reset_n_reset),       //   input,  width = 1, reset_in0.reset
-		.clk            (ddr3_emif_usr_clk_clk),              //   input,  width = 1,       clk.clk
+		.clk            (tse_mac_rx_clock_connection_1_clk),  //   input,  width = 1,       clk.clk
 		.reset_out      (rst_controller_005_reset_out_reset), //  output,  width = 1, reset_out.reset
+		.reset_req      (),                                   // (terminated),                       
+		.reset_req_in0  (1'b0),                               // (terminated),                       
+		.reset_in1      (1'b0),                               // (terminated),                       
+		.reset_req_in1  (1'b0),                               // (terminated),                       
+		.reset_in2      (1'b0),                               // (terminated),                       
+		.reset_req_in2  (1'b0),                               // (terminated),                       
+		.reset_in3      (1'b0),                               // (terminated),                       
+		.reset_req_in3  (1'b0),                               // (terminated),                       
+		.reset_in4      (1'b0),                               // (terminated),                       
+		.reset_req_in4  (1'b0),                               // (terminated),                       
+		.reset_in5      (1'b0),                               // (terminated),                       
+		.reset_req_in5  (1'b0),                               // (terminated),                       
+		.reset_in6      (1'b0),                               // (terminated),                       
+		.reset_req_in6  (1'b0),                               // (terminated),                       
+		.reset_in7      (1'b0),                               // (terminated),                       
+		.reset_req_in7  (1'b0),                               // (terminated),                       
+		.reset_in8      (1'b0),                               // (terminated),                       
+		.reset_req_in8  (1'b0),                               // (terminated),                       
+		.reset_in9      (1'b0),                               // (terminated),                       
+		.reset_req_in9  (1'b0),                               // (terminated),                       
+		.reset_in10     (1'b0),                               // (terminated),                       
+		.reset_req_in10 (1'b0),                               // (terminated),                       
+		.reset_in11     (1'b0),                               // (terminated),                       
+		.reset_req_in11 (1'b0),                               // (terminated),                       
+		.reset_in12     (1'b0),                               // (terminated),                       
+		.reset_req_in12 (1'b0),                               // (terminated),                       
+		.reset_in13     (1'b0),                               // (terminated),                       
+		.reset_req_in13 (1'b0),                               // (terminated),                       
+		.reset_in14     (1'b0),                               // (terminated),                       
+		.reset_req_in14 (1'b0),                               // (terminated),                       
+		.reset_in15     (1'b0),                               // (terminated),                       
+		.reset_req_in15 (1'b0)                                // (terminated),                       
+	);
+
+	altera_reset_controller #(
+		.NUM_RESET_INPUTS          (1),
+		.OUTPUT_RESET_SYNC_EDGES   ("deassert"),
+		.SYNC_DEPTH                (2),
+		.RESET_REQUEST_PRESENT     (0),
+		.RESET_REQ_WAIT_TIME       (1),
+		.MIN_RST_ASSERTION_TIME    (3),
+		.RESET_REQ_EARLY_DSRT_TIME (1),
+		.USE_RESET_REQUEST_IN0     (0),
+		.USE_RESET_REQUEST_IN1     (0),
+		.USE_RESET_REQUEST_IN2     (0),
+		.USE_RESET_REQUEST_IN3     (0),
+		.USE_RESET_REQUEST_IN4     (0),
+		.USE_RESET_REQUEST_IN5     (0),
+		.USE_RESET_REQUEST_IN6     (0),
+		.USE_RESET_REQUEST_IN7     (0),
+		.USE_RESET_REQUEST_IN8     (0),
+		.USE_RESET_REQUEST_IN9     (0),
+		.USE_RESET_REQUEST_IN10    (0),
+		.USE_RESET_REQUEST_IN11    (0),
+		.USE_RESET_REQUEST_IN12    (0),
+		.USE_RESET_REQUEST_IN13    (0),
+		.USE_RESET_REQUEST_IN14    (0),
+		.USE_RESET_REQUEST_IN15    (0),
+		.ADAPT_RESET_REQUEST       (0)
+	) rst_controller_006 (
+		.reset_in0      (~ddr3_emif_usr_reset_n_reset),       //   input,  width = 1, reset_in0.reset
+		.clk            (ddr3_emif_usr_clk_clk),              //   input,  width = 1,       clk.clk
+		.reset_out      (rst_controller_006_reset_out_reset), //  output,  width = 1, reset_out.reset
 		.reset_req      (),                                   // (terminated),                       
 		.reset_req_in0  (1'b0),                               // (terminated),                       
 		.reset_in1      (1'b0),                               // (terminated),                       

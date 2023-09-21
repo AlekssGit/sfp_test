@@ -9,6 +9,7 @@
 		.avalon_mm_rd_valid    (_connected_to_avalon_mm_rd_valid_),    //  output,   width = 1,                   .readdatavalid
 		.start_ram_addr        (_connected_to_start_ram_addr_),        //  output,   width = 6,       send_control.start_ram_addr
 		.send_cmd              (_connected_to_send_cmd_),              //  output,   width = 1,                   .signal
+		.send_ch_2_timer       (_connected_to_send_ch_2_timer_),       //  output,  width = 32,                   .ch_2_timer
 		.ddr_local_cal_success (_connected_to_ddr_local_cal_success_), //   input,   width = 1,         ddr_status.local_cal_success
 		.ddr_local_cal_fail    (_connected_to_ddr_local_cal_fail_),    //   input,   width = 1,                   .local_cal_fail
 		.ddr_setup_done        (_connected_to_ddr_setup_done_),        //   input,   width = 1,     ddr_setup_done.setup_done
