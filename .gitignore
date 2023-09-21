@@ -7,3 +7,5 @@
 *.stp
 
 /asdpci.dll
+
+__pycache__
