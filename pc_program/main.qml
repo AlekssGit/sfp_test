@@ -18,8 +18,10 @@ ApplicationWindow {
     property QtObject btn_init_ddr
     property QtObject btn_start_send_def
     property QtObject btn_stop_send_def
+    property QtObject btn_set_pack_to_ddr
 
     property QtObject packet_time
+    property QtObject btn_update_timer
     property string text_timer_reg
 
     color: "transparent"
@@ -185,6 +187,34 @@ ApplicationWindow {
         }
 
         Rectangle {
+            id: setPackDdrRect
+            width: 60
+            height: 50
+            anchors {
+                top: connectRect.bottom
+                topMargin: 12
+                left: stopSendDefRect.right
+                leftMargin: 12  
+            }             
+            Button {
+                id: setPackToDdrBtn
+                text: "set pack to ddr"
+                width: parent.width
+                height: parent.height
+                contentItem: Text {
+                    text: setPackToDdrBtn.text
+                    font: setPackToDdrBtn.font
+                    horizontalAlignment: Text.AlignHCenter
+                    verticalAlignment: Text.AlignVCenter                    
+                    wrapMode: Text.WordWrap
+                }
+                onClicked: {
+                    btn_set_pack_to_ddr.click()
+                }
+            }
+        }
+
+        Rectangle {
             id: timer2Rect
             width: 160
             height: 80
@@ -200,11 +230,12 @@ ApplicationWindow {
                 anchors.top: parent.top
                 anchors.topMargin: 0
                 text: text_timer_reg
-                font.pixelSize: 16
+                font.pixelSize: 12
                 color: "Black"
                 horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
                 background: Rectangle {
-                    width: timer2Rect.width
+                    width: timer2Rect.width - 40
                     height: timer2Rect.height/2
                     color: inputTimer.enabled ? "transparent" : "#353637"
                     border.color: inputTimer.enabled ? "black" : "transparent"
@@ -214,7 +245,7 @@ ApplicationWindow {
             TextField {
                 id: inputTimer
                 anchors.bottom: parent.bottom
-                anchors.bottomMargin: 0
+                anchors.bottomMargin: 10
                 font.pixelSize: 16
                 color: "Black"
                 horizontalAlignment: Text.AlignLeft
@@ -231,6 +262,35 @@ ApplicationWindow {
                     packet_time.value_changed(inputTimer.text)
                 }
             }
+
+            Rectangle {
+                id: updateTimerRect
+                width: 40
+                height: 40
+                anchors {
+                    top: parent.top
+                    topMargin: 0
+                    right: parent.right
+                    rightMargin: 0  
+                }             
+                Button {
+                    id: updateTimerBtn
+                    text: "update"
+                    width: parent.width
+                    height: parent.height
+                    contentItem: Text {
+                        text: updateTimerBtn.text
+                        font: updateTimerBtn.font
+                        horizontalAlignment: Text.AlignHCenter
+                        verticalAlignment: Text.AlignVCenter                    
+                        // wrapMode: Text.WordWrap
+                    }
+                    onClicked: {
+                        btn_update_timer.click()
+                    }
+                }
+            }
+
         }        
     }
 
